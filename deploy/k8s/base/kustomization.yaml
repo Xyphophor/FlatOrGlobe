@@ -1,0 +1,11 @@
+# Socle commun aux environnements. Les overlays fixent l'espace de noms, l'image (tag),
+# SITE_ENV, le nombre de répliques et l'accès (Ingress public ou Tailscale).
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+labels:
+  - pairs:
+      app.kubernetes.io/name: flat-or-globe
+    includeSelectors: true
+resources:
+  - deployment.yaml
+  - service.yaml

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "orb-transit",
+  "title": "Transits of Venus, 1761, 1769 and 2012: every contact timing in Newcomb's tabular summary (1891) and the adopted positions of the stations, our transcription, and the contact III timings of the venus2012.de project, reduced into the astronomical unit with DE440",
+  "tab": "orb",
+  "build": "fog:orb-transit",
+  "kind": "transcription",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "TRANSIT_FIT.a",
+      "how": "the baseline between stations is in Earth radii (Newcomb's log ρ sin φ′, log ρ cos φ′); the unit comes out in Earth radii and is turned into km with a⊕ = 6378.137 km"
+    },
+    {
+      "field": "TRANSIT_ROWS, TRANSIT_FIT",
+      "how": "JPL DE440 gives the shape of the orbits in astronomical units"
+    }
+  ],
+  "verdict_rule": "Contact times that do not depend on the station's place on the Earth the way a distant Sun requires, or that no single unit fits across the stations.",
+  "license": "other",
+  "license_note": "Newcomb 1891 (US government publication, public domain); the venus2012.de timings were published openly by the project for evaluation (archived copy, cited); JPL DE440, public.",
+  "sources": [
+    {
+      "cite": "S. Newcomb, Discussion of observations of the transits of Venus in 1761 and 1769, Astronomical Papers prepared for the use of the American Ephemeris and Nautical Almanac, vol. II, part V (Washington, 1891), chapter IV (table of adopted positions, pp. 343-345) and chapter VI (tabular summary, pp. 364-371)",
+      "url": "https://archive.org/details/02aAstronomicalPapersPreparedForTheUse"
+    },
+    {
+      "cite": "U. Backhaus (Universität Duisburg-Essen), Transit of Venus 2012, project \"Contact times\" (www.venus2012.de): the contact III timings sent by participants, file participants/daten3.txt as archived by the Internet Archive on 2024-05-19",
+      "url": "http://web.archive.org/web/20240519220217/http://www.venus2012.de/participants/daten3.txt"
+    },
+    {
+      "cite": "R. S. Park, W. M. Folkner, J. G. Williams and D. H. Boggs, The JPL Planetary and Lunar Ephemerides DE440 and DE441, Astron. J. 161 (2021) 105",
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/"
+    }
+  ],
+  "collected": "2026-11-18",
+  "units": {
+    "lmt, gmt_obs, gmt_tab": "h:m:s, Newcomb's astronomical reckoning from noon of June 3, 1769 (hours restored where the print omits them)",
+    "resid": "s, observed − tabular, as printed",
+    "lat": "deg, minutes",
+    "log_rho_sin, log_rho_cos": "logarithms, equatorial radii ('n' negative)",
+    "lon": "h:m:s of time, + west",
+    "v2012/daten3.txt": "semicolon-separated, Latin-1: contact; observer; place; latitude and longitude (geodetic deg, east +); UT of June 6, 2012"
+  },
+  "inputs": [
+    {
+      "glob": "transcription/*.csv",
+      "how": "transcription",
+      "origin": "S. Newcomb, Astronomical Papers II part V (Washington, 1891), chapter VI pp. 357-371 and chapter IV (stations), Internet Archive scan; typed by hand by the assistant (Claude) from the scans, under Xyphophor's review.",
+      "checks": "Every printed residual equals observed − tabular, and every local − Greenwich time equals the station's printed longitude (the build fails otherwise); seven lines of 1761 contact IV whose printed residuals disagree with Newcomb's own times are flagged 'res'."
+    },
+    {
+      "path": "v2012/daten3.txt",
+      "url": "http://web.archive.org/web/20240519220217id_/http://www.venus2012.de/participants/daten3.txt",
+      "how": "download",
+      "origin": "venus2012.de project, participants/daten3.txt, Internet Archive copy of 19 May 2024.",
+      "caveats": "One line has latitude and longitude swapped; nothing is corrected.",
+      "public_raw": "no",
+      "public_raw_why": "The file names the amateur observers who sent their timings; it stays in the Internet Archive, where it was published, and is not copied into the public repository."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/orb-transit.js"
+  ],
+  "notes": "DE440 is the file of moon-eclcraters. Checks: printed residual = observed − tabular, local − Greenwich = −longitude. Method and references: go doc -all ./internal/build/orbtransit.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/orbtransit",
+    "src/tabs/orb/transit-logic.js"
+  ],
+  "sections": [
+    "orb/orb-h2transit"
+  ]
+}

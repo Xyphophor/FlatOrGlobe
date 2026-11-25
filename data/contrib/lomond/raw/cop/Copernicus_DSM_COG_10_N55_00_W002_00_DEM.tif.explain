@@ -1,0 +1,45 @@
+# Copernicus_DSM_COG_10_N55_00_W002_00_DEM.tif
+
+Dataset: contrib-lomond — Bass Rock seen from East Lomond Hill (Fife), 9 August 2023, 5:28 am:
+  where the sea horizon cuts the rock, against the air of that morning
+File: data/contrib/lomond/raw/cop/Copernicus_DSM_COG_10_N55_00_W002_00_DEM.tif
+SHA-256: ceb5cd2a27b9a956abc1671faab39b1f5e1575b943c9dab8381ffe933e35ea08 (also in
+  data/contrib/lomond/inputs.lock; check with: cd data/contrib/lomond && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: the file may be shared but is kept
+  out of git for its size. Get it from fog fetch contrib-lomond, then compare its SHA-256 with the
+  one above.
+Obtained: downloaded as published (fog fetch or by hand).
+From: Copernicus DEM GLO-30 tiles, open bucket copernicus-dem-30m (fog fetch contrib-lomond).
+Collected: 2026-10-14
+Licence: CC-BY-4.0 — Photograph: KenRDKAB (https://x.com/KenRDKAB), published with his permission
+  (2026-10-15). Copernicus DEM GLO-30: (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space GmbH
+  2014-2018, provided under COPERNICUS by the European Union and ESA. Tide gauge: IOC Sea Level
+  Station Monitoring Facility (National Oceanography Centre). Weather: Open-Meteo (ERA5, Copernicus;
+  NOAA GFS), CC BY 4.0.
+Sources:
+- Copernicus DEM GLO-30, European Space Agency, open bucket copernicus-dem-30m
+  <https://doi.org/10.5270/ESA-c5d3d65>
+- IOC Sea Level Station Monitoring Facility, Leith (leit), 15-minute readings, 26 July to 23 August
+  2023 <https://www.ioc-sealevelmonitoring.org/station.php?code=leit>
+- Open-Meteo historical weather (ERA5), historical forecast (NOAA GFS, pressure levels) and marine
+  APIs <https://open-meteo.com/>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- LOM_SITE.rock.d, LOM_TRACED[].globe, LOM_FAN: distances are great circles on a 6,371 km sphere
+  from coordinates (the camera located on Copernicus GLO-30), and the globe's rays are traced over
+  that sphere
+What would vindicate the flat model (rule 5): The horizon where the photograph puts it on the rock,
+  given by rays traced over a plane in air the model and the reanalysis allow, while the globe needs
+  implausible air.
+Built by: fog build contrib-lomond
+Generated files:
+- src/data/presets/contrib-lomond.js
+Code:
+- tools/internal/build/lomond
+- src/tabs/contrib/lomond
+Shown on the page:
+- #tab-contrib/lm-h2
+Notes: fog fetch contrib-lomond gets everything (DEM tiles, gauge, weather). The contributor's slide
+  (public/photos/contrib-lomond-2023-08-09.jpg) is read too and hashed into the preset's header.
+
+Written by `fog build explain` from data/contrib/lomond/dataset.json and data/contrib/lomond/inputs.lock: edit those, not this file.

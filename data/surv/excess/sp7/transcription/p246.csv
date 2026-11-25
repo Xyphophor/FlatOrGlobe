@@ -1,0 +1,10 @@
+page,printed,net,k,no,station,deg,min,sec,corr,sph,exc,log,dist,flag
+246,234,second and last section of the triangulation west of the Dauphin Island base net,1,33,Ducros,45,40,33.0,0.0,33.0,0.0,3.794727,6233.42,
+246,234,second and last section of the triangulation west of the Dauphin Island base net,1,33,Bienvenue,82,00,03.1,+0.1,03.2,0.1,3.935932,8628.44,
+246,234,second and last section of the triangulation west of the Dauphin Island base net,1,33,Martello Tower,52,19,23.9,0.0,23.9,0.0,3.838615,6896.27,
+246,234,second and last section of the triangulation west of the Dauphin Island base net,2,34,Caernarvon,44,49,59.7,+1.3,61.0,0.1,3.935932,8628.44,sph seconds printed 61.0 (>=60; obs+corr=61.0 consistent); checked at 400 dpi
+246,234,second and last section of the triangulation west of the Dauphin Island base net,2,34,Ducros,95,18,19.8,+1.4,21.2,0.1,4.085848,12185.6,
+246,234,second and last section of the triangulation west of the Dauphin Island base net,2,34,Martello Tower,39,51,36.7,+1.3,38.0,0.0,3.894517,7843.63,
+246,234,second and last section of the triangulation west of the Dauphin Island base net,3,35,Saint Patrick's Church (center),27,11,44.4,-0.2,44.2,0.1,3.894517,7843.63,
+246,234,second and last section of the triangulation west of the Dauphin Island base net,3,35,Ducros,97,16,17.0,-0.3,16.7,0.1,4.231066,17024.2,
+246,234,second and last section of the triangulation west of the Dauphin Island base net,3,35,Caernarvon,55,31,59.6,-0.2,59.4,0.1,4.150739,14149.4,

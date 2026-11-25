@@ -1,0 +1,39 @@
+# LCO.mseed
+
+Dataset: seis-waves — Tohoku 2011 recorded on three components at fourteen GSN stations: the kinds
+  of waves told apart by their motion, and the direction the P wave came from
+File: data/seis/waves/raw/nias2005/LCO.mseed
+SHA-256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 (also in
+  data/seis/waves/inputs.lock; check with: cd data/seis/waves && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: the file may be shared but is kept
+  out of git for its size. Get it from fog fetch seis-waves, then compare its SHA-256 with the one
+  above.
+Obtained: the answer of a public web API to the request given.
+From: EarthScope FDSN dataselect, three components, 2011-03-11 05:41-08:16 UTC (and the other
+  events' windows).
+Collected: 2026-10-30
+Licence: other — GSN (network IU, Albuquerque Seismological Laboratory/USGS), open data from the
+  EarthScope (ex-IRIS) data centre; cite the network DOI 10.7914/SN/IU.
+Sources:
+- Albuquerque Seismological Laboratory/USGS (2014), Global Seismograph Network (GSN - IRIS/USGS),
+  International Federation of Digital Seismograph Networks, network IU
+  <https://doi.org/10.7914/SN/IU>
+- EarthScope Consortium, FDSN web services (station, dataselect)
+  <https://service.earthscope.org/fdsnws/>
+Evidence class (rule 10): measure
+What would vindicate the flat model (rule 5): Flat would win if the direction the P wave arrives
+  from, read off its own motion, matched the straight line to the epicentre on one flat map better
+  than the great-circle direction.
+Built by: fog build seis-waves
+Generated files:
+- src/data/presets/seis-waves.js
+Code:
+- tools/internal/build/seiswaves
+- src/tabs/seis/wavesfig.js
+Shown on the page:
+- #tab-seis/wv-h1
+Notes: Window 05:41-08:16 UTC on 2011-03-11 (data window only; no origin time or travel time is used
+  in the analysis). Station latitudes and longitudes, and the ISC epicentre, enter only as angles.
+  Sensor orientations come from the channel metadata.
+
+Written by `fog build explain` from data/seis/waves/dataset.json and data/seis/waves/inputs.lock: edit those, not this file.

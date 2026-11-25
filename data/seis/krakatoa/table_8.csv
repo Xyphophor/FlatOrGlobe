@@ -1,0 +1,49 @@
+# Strachey (1888), Table VIII (pp. 75-76): time intervals between successive passages, irrespective of direction (h:mm).
+# Transcribed by hand 2026-10-03 as an independent check on tables_3_4.csv. Toronto V-VI: the sixth wave arrived before the fifth
+# (printed "*0 42"); Washington V-VI and VI-VII: printed "1 3 or 1 48" and "36 52 or 37 37" (VI unsure), left out here.
+station,I-II,II-III,III-IV,IV-V,V-VI,VI-VII
+Pawlowsk,17:10,19:50,14:35,21:45,,
+St. Petersburg,17:10,19:15,15:10,21:55,,
+Aberdeen,14:00,22:40,12:00,24:40,11:08,26:00
+Glasgow,13:43,22:53,11:48,24:49,9:53,27:12
+Armagh,13:17,23:13,11:37,25:00,9:45,27:23
+Stonyhurst,13:50,22:42,12:08,24:25,10:10,27:00
+Liverpool,13:43,22:44,12:15,24:40,9:50,26:55
+Berlin,15:45,21:00,13:37,23:00,,
+Geldeston,14:27,21:56,12:42,24:15,11:05,25:27
+Magdeburg,15:37,20:52,13:50,21:13,13:37,
+Valencia,12:50,23:36,11:19,25:32,9:31,
+Oxford,14:12,22:10,12:20,,,
+Greenwich,14:13,22:15,12:32,24:17,10:58,26:05
+Kew,14:17,22:07,12:30,24:28,10:50,26:10
+Leipsic,14:40,,,,,
+Brussels,14:55,21:42,12:35,23:56,11:17,
+Falmouth,13:39,22:42,12:02,,,
+Parc St. Maur,14:40,21:40,13:03,23:47,,
+Montsouris,14:47,21:33,,,,
+Vienna,16:35,20:00,,,,
+Munich,15:55,21:00,14:10,21:20,,
+Buda-Pesth,15:50,20:35,15:15,20:35,,
+Modena,15:25,20:55,13:25,22:50,12:05,24:05
+Rome,15:55,20:00,,,,
+Serra da Estrella,13:40,22:30,12:00,,,
+Coimbra,12:55,22:55,12:13,,,
+Lisbon,13:00,22:55,12:20,,,
+Palermo,15:50,,,,,
+San Fernando,13:38,22:12,12:50,,,
+Calcutta,28:01,8:34,,,,
+Bombay,26:57,9:37,25:33,,,
+Mauritius,26:13,8:20,27:50,6:45,28:30,6:15
+Loanda,18:15,16:42,19:23,15:45,20:00,15:00
+Dunedin,21:45,13:15,22:45,,,
+"Wellington, N.Z.",21:55,13:30,22:15,,,
+Melbourne,26:11,8:47,26:28,,,
+Sydney,25:31,9:23,26:07,9:14,,
+South Georgia,12:25,20:35,15:36,,,
+Tokio,25:29,9:52,,,,
+Zi-Ka-Wei,28:12,7:15,,,,
+Toronto,8:15,29:30,2:35,34:07,-0:42,36:25
+New York,7:33,29:55,2:57,,,
+"Hastings-on-Hudson, N.Y.",7:30,30:15,2:35,,,
+Washington,7:20,30:13,2:18,34:20,,
+Havana,5:15,31:35,1:10,,,

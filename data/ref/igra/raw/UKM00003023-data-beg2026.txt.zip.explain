@@ -1,0 +1,39 @@
+# UKM00003023-data-beg2026.txt.zip
+
+Dataset: ref-igra — Every 2026 radiosonde sounding of IGRA 2 (NOAA NCEI, ~800 stations, twice
+  daily): the refraction coefficient k of the measured air, day and night
+File: data/ref/igra/raw/UKM00003023-data-beg2026.txt.zip
+SHA-256: 997540037b3cedfd0fa7fadba62f51ecb08cce68be1c4101b4e54a4b9e343c40 (also in
+  data/ref/igra/inputs.lock; check with: cd data/ref/igra && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: the file may be shared but is kept
+  out of git for its size. Get it from fog fetch ref-igra, then compare its SHA-256 with the one
+  above.
+Obtained: downloaded as published (fog fetch or by hand).
+From: NOAA NCEI, IGRA 2 current-year file of each station (data-y2d), downloaded once (fog fetch
+  ref-igra).
+Collected: 2026-10-28
+Licence: public-domain
+Sources:
+- I. Durre, X. Yin, R. S. Vose, S. Applequist and J. Arnfield, Enhancing the Data Coverage in the
+  Integrated Global Radiosonde Archive, J. Atmos. Oceanic Technol. 35 (2018) 1753-1770; IGRA version
+  2, NOAA National Centers for Environmental Information
+  <https://www.ncei.noaa.gov/data/integrated-global-radiosonde-archive/>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- k: k = R/ρ is the ray's curvature divided by the Earth's: the radius is its unit (503 = R ·
+  78.8e-6)
+What would vindicate the flat model (rule 5): Air in which k ≥ 1 (a ray curving as much as the
+  ground, the globe looking flat) in most soundings, in every climate, by day and by night.
+Built by: fog build ref-igra
+Generated files:
+- src/data/presets/ref-igra.js
+Code:
+- tools/internal/build/igra
+- src/tabs/ref/values.js
+- src/tabs/ref/formfigs.js
+Shown on the page:
+- #tab-ref/rf-higra
+Notes: fog fetch ref-igra downloads the current-year files once (data-y2d, ~500 MB); the lock
+  freezes them as collected. Method and references: go doc -all ./internal/build/igra.
+
+Written by `fog build explain` from data/ref/igra/dataset.json and data/ref/igra/inputs.lock: edit those, not this file.

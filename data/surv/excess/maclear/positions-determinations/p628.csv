@@ -1,0 +1,15 @@
+page,printed,state,station,alias,lat_d,lat_m,lat_s,lon_d,lon_m,lon_s,flag
+628,579,Cape Colony,East End of Base Line,East End of Base,-33,-13,-55.651,-0,-1,-52.264,from Riebeek's Kasteel
+628,579,Cape Colony,Zwart Berg,,-33,-3,-14.286,-0,-12,-3.776,from Riebeek's Kasteel
+628,579,Cape Colony,Piket Berg,,-32,-41,-42.759,-0,-4,-11.767,from Riebeek's Kasteel
+628,579,Cape Colony,"Klip Fontein, Contre Berg",K. F. Contre Berg,-33,-24,-39.006,0,0,2.398,from West End of Base Line
+628,579,Cape Colony,East End of Base Line,East End of Base,-33,-13,-55.650,-0,-1,-52.271,from West End of Base Line
+628,579,Cape Colony,"Klip Fontein, Contre Berg",K. F. Contre Berg,-33,-24,-39.005,0,0,2.394,from East End of Base Line
+628,579,Cape Colony,Drie Fontein,,-33,-21,-20.323,-0,-14,-19.526,from East End of Base Line
+628,579,Cape Colony,Patrys Berg,,-32,-50,-24.870,0,25,50.706,from Zwart Berg
+628,579,Cape Colony,Piket Berg,,-32,-41,-42.759,-0,-4,-11.768,from Zwart Berg
+628,579,Cape Colony,Drie Fontein,,-33,-21,-20.318,-0,-14,-19.534,from Zwart Berg
+628,579,Cape Colony,Eland's Berg,,-32,-19,-44.383,0,7,55.295,from Patrys Berg
+628,579,Cape Colony,Piket Berg,,-32,-41,-42.759,-0,-4,-11.773,from Patrys Berg
+628,579,Cape Colony,Kapitein's Kloof,,-32,-42,-54.317,-0,-5,-37.026,from Patrys Berg
+628,579,Cape Colony,Patrys Berg,,-32,-50,-24.870,0,25,50.716,from Piket Berg

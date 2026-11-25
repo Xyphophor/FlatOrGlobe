@@ -1,0 +1,13 @@
+{
+  "fp-cv-axis": "as",
+  "fp-cv-phi": "φ = {p}°",
+  "fp-cv-omega-sinphi": "Ω sin φ = {v} °/u",
+  "fp-cv-black-omega": "zwart = Ω, identiek op elke plek",
+  "fp-cv-teal-vertical": "turquoise = het deel langs de verticaal van je vloer",
+  "fp-cv-phi-sweep": "φ = 48,85°  ·  {rate} °/u  ·  {sweep}° in {hours} u",
+  "fp-cv-swings-note": "slingeringen ~30× uitgedund · ellips overdreven · bestreken hoek exact",
+  "fp-cv-latitude": "breedtegraad",
+  "fp-cv-precession-unit": "precessie, °/u",
+  "fp-cv-time-note": "tijd ×{x} · slingertempo niet op schaal · bestreken hoek exact",
+  "fp-cv-sin0": "sin 0 = 0 — niets draait, in geen van beide kaders"
+}

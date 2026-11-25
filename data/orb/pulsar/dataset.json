@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "id": "orb-pulsar",
+  "title": "Millisecond pulsars: timing positions of the EPTA second data release against VLBI positions of the MSPSRπ catalogue (our transcription), giving the astronomical unit",
+  "tab": "orb",
+  "build": "fog:orb-pulsar",
+  "kind": "archive",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "PSR_ROWS[].a, PSR_AU",
+      "how": "the timing model places each observatory by its terrestrial coordinates (the daily delay of up to 21 ms) and takes the Earth's orbit shape from DE440, whose scale rests partly on radar ranging"
+    }
+  ],
+  "verdict_rule": "Timing latitudes that disagree with the interferometric ones by more than their errors allow, the same way for every pulsar (no single astronomical unit), or pulses showing no annual delay at all.",
+  "license": "other",
+  "license_note": "EPTA DR2 (Zenodo 8300645), CC BY 4.0; Ding et al. 2023 table transcribed as data, cited.",
+  "sources": [
+    {
+      "cite": "J. Antoniadis et al. (EPTA), The second data release from the European Pulsar Timing Array I. The dataset and timing analysis, A&A 678 (2023) A48; data on Zenodo, record 8300645",
+      "url": "https://zenodo.org/records/8300645"
+    },
+    {
+      "cite": "H. Ding et al., The MSPSRpi catalogue: VLBA astrometry of 18 millisecond pulsars, MNRAS 519 (2023) 4982-5007, Table 5 (arXiv:2212.06351)",
+      "url": "https://arxiv.org/abs/2212.06351"
+    }
+  ],
+  "collected": "2026-11-18",
+  "units": {
+    "ra, dec": "J2000 reference position at t_ref (MJD), as printed",
+    "*_rel, *_refpt, *_cal, *_core": "mas, the error budget of the reference position",
+    "pmra, pmdec": "mas/yr (pmra = mu_alpha cos delta)"
+  },
+  "inputs": [
+    {
+      "path": "raw/EPTA-DR2.zip",
+      "url": "https://zenodo.org/api/records/8300645/files/EPTA-DR2.zip/content",
+      "gitignored": true,
+      "how": "download",
+      "origin": "EPTA DR2 on Zenodo (record 8300645), CC BY 4.0."
+    },
+    {
+      "glob": "transcription/*.csv",
+      "how": "transcription",
+      "origin": "H. Ding et al., MNRAS 519 (2023) 4982, Table 5 (arXiv:2212.06351); typed by hand by the assistant (Claude) from the scans, under Xyphophor's review.",
+      "checks": "The build checks the transcribed positions against the timing positions within the printed errors."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/orb-pulsar.js"
+  ],
+  "notes": "The timing fixes only A·cos β; the VLBI latitude, an angle against quasars, splits the product. Version DR2full of EPTA DR2. Method and references: go doc -all ./internal/build/orbpulsar.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/orbpulsar",
+    "src/tabs/orb/pulsar-logic.js"
+  ],
+  "sections": [
+    "orb/orb-h2psr"
+  ]
+}

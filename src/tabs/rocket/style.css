@@ -1,0 +1,6 @@
+/* Onglet rocket : la vitrine en 16:9 (3:4 sur téléphone, ses légendes sont longues), comme celle du tunnel de orb ; tableau aligné à gauche. */
+#tab-rocket canvas.rocket-reel { width: 100%; display: block; aspect-ratio: 16 / 9; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fbfaf7; cursor: pointer; }
+
+#tab-rocket .cnav-table th, #tab-rocket .cnav-table td { text-align: left; }
+@media (max-width: 559px) { #tab-rocket canvas.rocket-reel { aspect-ratio: 3 / 4; } }
+@media (max-width: 420px) { #tab-rocket .rk-sum th, #tab-rocket .rk-sum td { font-size: 12.5px; padding: 4px 5px; } }

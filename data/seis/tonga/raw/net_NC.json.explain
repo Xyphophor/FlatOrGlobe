@@ -1,0 +1,40 @@
+# net_NC.json
+
+Dataset: seis-tonga — Hunga Tonga 2022 pressure wave (Lamb wave) at 102 US ASOS stations,
+  one-minute pressure (IEM)
+File: data/seis/tonga/raw/net_NC.json
+SHA-256: ca4d203cae102065121ad6147bad569698990cc4504657f59757e8bf8442aa3f (also in
+  data/seis/tonga/inputs.lock; check with: cd data/seis/tonga && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: the file may be shared but is kept
+  out of git for its size. Get it from fog fetch seis-tonga, then compare its SHA-256 with the one
+  above.
+Obtained: the answer of a public web API to the request given.
+From: Iowa Environmental Mesonet, list of the ASOS stations of each state network.
+Collected: 2026-10-03
+Licence: other — Iowa Environmental Mesonet (Iowa State University) archive of NWS/FAA ASOS
+  one-minute data: open, no account; credit IEM.
+Sources:
+- Iowa Environmental Mesonet, ASOS one-minute data (pres1), 2022-01-15 to 2022-01-18
+  <https://mesonet.agron.iastate.edu/request/asos/1min.phtml>
+- USGS event page: Hunga Tonga-Hunga Ha'apai, 2022-01-15 04:14:45 UTC, 20.546 S 175.390 W
+  <https://earthquake.usgs.gov/>
+Evidence class (rule 10): measure
+What would vindicate the flat model (rule 5): No second arrival sloping the opposite way: the V of
+  the outbound (A1) and antipodal (A2) passages is what needs no speed at all (tg-call2).
+Built by: fog build seis-tonga
+Generated files:
+- src/data/presets/seis-tonga.js
+- data/seis/tonga/picks.json
+- data/seis/tonga/picks.csv
+Code:
+- tools/internal/build/tonga
+- src/tabs/atmo/tongalogic.js
+- src/tabs/atmo/lambpool.js
+Shown on the page:
+- #tab-atmo/tg-h1
+- #tab-atmo/lp-h1
+Notes: The picks use no Earth model (wide windows that do not encode the answer); the angle from the
+  vent comes after. Two stations per state, the first online ones with an archive begun before 2000,
+  in IEM's order. The verdict rule is paraphrased from the page's callout tg-call2.
+
+Written by `fog build explain` from data/seis/tonga/dataset.json and data/seis/tonga/inputs.lock: edit those, not this file.

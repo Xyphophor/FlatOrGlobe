@@ -1,0 +1,33 @@
+[
+ {
+  "key": "obs",
+  "kind": "wdc-annual-means",
+  "name": "Magnetic observatories — annual means",
+  "years": [
+   2015,
+   2025
+  ],
+  "mean_codes": [
+   1,
+   2,
+   4
+  ],
+  "cite": "BGS World Data Centre for Geomagnetism (Edinburgh), Worldwide Observatory Annual Means; values supplied by the observatory operators.",
+  "url": "https://geomag.bgs.ac.uk/data_service/data/annual_means.shtml"
+ },
+ {
+  "key": "survey",
+  "kind": "wdc-survey",
+  "name": "Repeat stations and one-off survey stations",
+  "years": [
+   1990,
+   2025
+  ],
+  "types": [
+   "repeat-station",
+   "one-off"
+  ],
+  "cite": "BGS World Data Centre for Geomagnetism (Edinburgh), Global Survey Data (repeat stations and one-off stations), via the WDC API; values supplied by national survey institutes.",
+  "url": "https://wdcapi.bgs.ac.uk/global-geomagnetic-survey"
+ }
+]

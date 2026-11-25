@@ -1,0 +1,55 @@
+# Strachey (1888), Royal Society Krakatoa report, Part II, Tables II, III and IV (pp. 62, 65-67), transcribed by hand 2026-10-03.
+# Times: hours:minutes after 0 h, 27 August 1883, Greenwich Mean Time. I, III, V, VII travel from Krakatoa towards its antipodes
+# (Table III); II, IV, VI return towards Krakatoa (Table IV). Flags kept from the print: "?" after a time = queried by Strachey;
+# "*" = time given by Prof. Ragona (Modena); "+" = Palermo, differs slightly from Prof. Cacciatore's value.
+# Cell "?" alone = the wave could not be identified in the trace; empty cell = no trace received for that period.
+# lat/lon: Table II, degrees and minutes as printed (N/S, E/W of Greenwich). Hastings-on-Hudson and Cordoba are not in Table II.
+station,lat,lon,I,II,III,IV,V,VI,VII
+Krakatoa,6 9 S,105 22 E,,,,,,,
+Melbourne,37 50 S,144 58 E,8:14,34:25,43:12,69:40,,,
+Sydney,33 54 S,151 14 E,8:24,33:55,43:18,69:25,78:39,?,
+Dunedin,45 52 S,170 37 E,10:15,32:00,45:15,68:00?,?,?,?
+"Wellington, N.Z.",41 16 S,174 47 E,10:20,32:15,45:45,68:00?,?,?,?
+South Georgia,54 31 S,36 6 W,15:24,27:49,48:24,64:00?,?,?,?
+Loanda,8 49 S,13 7 E,12:18,30:33,47:15,66:38,82:23,102:23,117:23
+Mauritius,20 6 S,57 33 E,8:17,34:30,42:50,70:40,77:25,105:55,112:10
+Bombay,18 54 N,72 49 E,7:26,34:23,44:00,69:33,?,?,?
+Calcutta,22 33 N,88 21 E,6:47,34:48,43:22?,?,?,?,?
+Zi-Ka-Wei,31 12 N,121 26 E,7:27,35:39,42:54?,?,,,
+Tokio,35 41 N,139 46 E,8:51,34:20,44:12?,?,?,?,?
+Pawlowsk,59 41 N,30 29 E,12:18,29:28,49:18,63:53,85:38,,
+St. Petersburg,59 56 N,30 18 E,12:14,29:24,48:39,63:49,85:44?,,
+Buda-Pesth,47 30 N,19 2 E,12:30,28:20,48:55,64:10,84:45?,,
+Vienna,48 12 N,16 22 E,12:34,29:09,49:09?,,,,
+Berlin,52 30 N,13 19 E,12:52,28:37,49:37,63:14,86:14,?,122:37?
+Leipsic,51 20 N,12 24 E,14:00?,28:40?,?,?,?,?,
+Magdeburg,52 9 N,11 38 E,12:59,28:36,49:28,63:18?,84:31,98:08?,?
+Munich,48 9 N,11 34 E,12:35,28:30,49:30,63:40,85:00,?,
+Modena,44 38 N,10 55 E,12:51*,28:16*,49:11*,62:36*,85:26*,97:31*,121:36*
+Rome,41 54 N,12 29 E,13:00,28:55,48:55,?,?,?,?
+Palermo,38 7 N,13 21 E,13:37?+,29:27?+,?,?,?,?,?
+San Fernando,36 28 N,6 13 W,13:22,27:00,49:12,62:02,,,
+Lisbon,38 42 N,9 8 W,14:17,27:17,50:12,62:32,?,,
+Serra da Estrella,40 25 N,7 35 W,13:50?,27:30?,50:00?,62:00?,?,?,
+Coimbra,40 13 N,8 26 W,14:20,27:15,50:10,62:23,?,,
+Parc St. Maur,48 48 N,2 31 E,13:41,28:21,50:01,63:04,86:51,,
+Montsouris,48 49 N,2 20 E,13:34,28:21,49:54,,,,
+Brussels,50 52 N,4 21 E,13:28,28:23,50:05,62:40?,86:36,97:53,?
+Greenwich,51 29 N,0 0 E,13:45,27:58,50:13,62:45,87:02,98:00,124:05?
+Kew,51 28 N,0 19 W,13:48,28:05,50:12,62:42,87:10,98:00,124:10
+Geldeston,52 28 N,1 32 E,13:39,28:06,50:02,62:44,86:59,98:04,123:31
+Oxford,51 46 N,1 16 W,13:53,28:05,50:15,62:35,?,?,
+Falmouth,50 9 N,5 4 W,14:04,27:43,50:25,62:27,?,98:00,?
+Valencia,51 55 N,10 18 W,14:25,27:15,50:51,62:10,87:42,97:13,?
+Armagh,54 21 N,6 39 W,14:15,27:32,50:45,62:22,87:22,97:07,124:30?
+Liverpool,53 24 N,3 4 W,13:58,27:41,50:25,62:40,87:20,97:10?,124:05?
+Stonyhurst,53 51 N,2 28 W,13:55,27:45,50:27,62:35,87:00,97:10,124:10
+Glasgow,55 53 N,4 18 W,14:02,27:45,50:38,62:26,87:15,97:08,124:20
+Aberdeen,57 10 N,2 6 W,13:52,27:52,50:32,62:32,87:12,98:20,124:20
+Toronto,43 39 N,79 23 W,17:33,25:48,55:18,57:53,92:00,91:18,127:43
+New York,40 43 N,74 0 W,17:53,25:26,55:21,58:18,?,?,?
+"Hastings-on-Hudson, N.Y.",,,17:56?,25:26?,55:41?,58:16?,?,?,?
+Washington,38 54 N,77 2 W,18:00,25:20,55:33,57:51,92:11,?,128:00?
+Mexico,19 25 N,99 5 W,?,?,?,?,?,?,?
+Havana,23 10 N,82 22 W,19:00?*,24:15?,55:50?,57:00?,?,?,?
+Cordoba,,,?,?,?,?,?,?,?

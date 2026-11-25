@@ -1,0 +1,22 @@
+{
+  "aria": "Animation: the same scene as the Earth's curvature goes from 100 % to a flat plane, seen from the side and from the observer's eye",
+  "horizon": "horizon",
+  "horizon-far": "horizon → far off",
+  "dip": "dip",
+  "eye": "eye",
+  "side-stamp": "side view · heights ×{ex}, planet radius ÷{ex}",
+  "side-stamp2": "same scale both ways · {km} across",
+  "eye-stamp": "eye view · true angles · {f} high",
+  "eye-stamp2": "same angular scale across · no refraction",
+  "eye-stamp2-elev": "tops at their true angles · spacing schematic",
+  "eye-level": "eye level",
+  "plane": "plane — curvature 0 %",
+  "curv": "curvature {pct} % · radius {R}",
+  "globe": "globe",
+  "plane-w": "plane",
+  "r-dip": "dip now",
+  "r-hidden": "hidden on {name} now",
+  "r-diff": "{b} − {a} now",
+  "click-pause": "click: pause",
+  "click-play": "click: play"
+}

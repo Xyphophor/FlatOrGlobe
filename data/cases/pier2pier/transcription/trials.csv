@@ -1,0 +1,7 @@
+# Les essais de la présentation (PIER2PIER 2) : date (UTC = heure locale en février), source, caméra, hauteurs au-dessus de la marée, vu ou non.
+# date,time_utc,source_site,source_h_m,camera_site,camera_h_m,seen,note
+2019-02-02,,worthing,1.0,brighton,1.0,no,"Observation No. 1: not seen; attributed by the operators to a refraction zone and an inferior mirage over the sea"
+2019-02-23,20:48,brighton,1.0,worthing,1.0,yes,"red laser at Brighton blocked and released, recorded by the P900 at Worthing"
+2019-02-23,,worthing,1.0,brighton,1.0,yes,"green laser at Worthing, recorded by the B700 at Brighton"
+2019-02-23,,worthing,0.5,brighton,0.7,yes,"green laser about 0.5 m above the tide"
+2019-02-23,,worthing,0.15,brighton,0.7,yes,"green laser about 0.15 m (6 inches) above the tide"

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "id": "seis-waves",
+  "title": "Tohoku 2011 recorded on three components at fourteen GSN stations: the kinds of waves told apart by their motion, and the direction the P wave came from",
+  "tab": "seis",
+  "build": "fog:seis-waves",
+  "kind": "api",
+  "evidence": "measure",
+  "radius_enters_via": [],
+  "verdict_rule": "Flat would win if the direction the P wave arrives from, read off its own motion, matched the straight line to the epicentre on one flat map better than the great-circle direction.",
+  "license": "other",
+  "license_note": "GSN (network IU, Albuquerque Seismological Laboratory/USGS), open data from the EarthScope (ex-IRIS) data centre; cite the network DOI 10.7914/SN/IU.",
+  "sources": [
+    {
+      "cite": "Albuquerque Seismological Laboratory/USGS (2014), Global Seismograph Network (GSN - IRIS/USGS), International Federation of Digital Seismograph Networks, network IU",
+      "url": "https://doi.org/10.7914/SN/IU"
+    },
+    {
+      "cite": "EarthScope Consortium, FDSN web services (station, dataselect)",
+      "url": "https://service.earthscope.org/fdsnws/"
+    }
+  ],
+  "collected": "2026-10-30",
+  "units": {
+    "traces": "ground velocity over each station's peak (counts / channel scale)",
+    "directions": "degrees clockwise from north"
+  },
+  "inputs": [
+    {
+      "path": "stations.txt",
+      "how": "ours",
+      "origin": "Our list of fourteen GSN stations."
+    },
+    {
+      "glob": "raw/*/*.txt",
+      "how": "api",
+      "origin": "EarthScope FDSN station service, channel metadata (orientation) of each station."
+    },
+    {
+      "glob": "raw/*/*.mseed",
+      "gitignored": true,
+      "how": "api",
+      "origin": "EarthScope FDSN dataselect, three components, 2011-03-11 05:41-08:16 UTC (and the other events' windows)."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/seis-waves.js"
+  ],
+  "notes": "Window 05:41-08:16 UTC on 2011-03-11 (data window only; no origin time or travel time is used in the analysis). Station latitudes and longitudes, and the ISC epicentre, enter only as angles. Sensor orientations come from the channel metadata.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/seiswaves",
+    "src/tabs/seis/wavesfig.js"
+  ],
+  "sections": [
+    "seis/wv-h1"
+  ]
+}

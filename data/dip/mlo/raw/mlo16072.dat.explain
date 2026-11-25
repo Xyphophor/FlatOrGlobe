@@ -1,0 +1,43 @@
+# mlo16072.dat
+
+Dataset: dip-mlo — Mauna Loa Observatory: last direct sunlight of every evening of 2016 (NOAA GML)
+  and the horizon towards the setting Sun (Copernicus DEM)
+File: data/dip/mlo/raw/mlo16072.dat
+SHA-256: 5c6411dc9d7cd0b39fe0f7979b818d890fc10c127d6b648d63f759ab6d9269c6 (also in
+  data/dip/mlo/inputs.lock; check with: cd data/dip/mlo && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: the file may be shared but is kept
+  out of git for its size. Get it from fog fetch dip-mlo, then compare its SHA-256 with the one
+  above.
+Obtained: downloaded as published (fog fetch or by hand).
+From: NOAA GML baseline radiation, Mauna Loa, one-minute means, 2016
+  (gml.noaa.gov/aftp/data/radiation/baseline/mlo/).
+Collected: 2026-10-03
+Licence: other — NOAA GML baseline radiation data: public domain (US government). Copernicus DEM
+  GLO-30: (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space GmbH 2014-2018, provided under
+  COPERNICUS by the European Union and ESA; free licence.
+Sources:
+- NOAA Global Monitoring Laboratory, baseline surface radiation, Mauna Loa (MLO), one-minute means,
+  2016 <https://gml.noaa.gov/aftp/data/radiation/baseline/mlo/>
+- Copernicus DEM GLO-30 (ESA / Airbus), open bucket <https://copernicus-dem-30m.s3.amazonaws.com/>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- MLO_HORIZON, MLO_SEA, MLO_PROFILE: the horizon and the sea dip are computed on a sphere of radius
+  6,371 km from the Copernicus DEM (heights over the WGS84/EGM2008 geoid)
+What would vindicate the flat model (rule 5): Last light at the times a flat Sun at the model's
+  height would give, or a sea horizon that never dips below the observatory's eye level.
+Built by: fog build dip-mlo
+Generated files:
+- src/data/presets/dip-mlo.js
+- src/data/presets/dip-mlo-profile.js
+Code:
+- tools/internal/build/mlo
+- tools/internal/dem
+- src/tabs/dip/mlo.js
+- src/tabs/dip/mlo-anim.js
+Shown on the page:
+- #tab-dip/ml-h1
+Notes: Every clear evening is kept; the featured one is chosen by a rule fixed in advance (closest
+  to the median solar altitude among the clear sea-horizon evenings). The tiles live in raw/cop/
+  (copied from data/dem/cache/cop/ on 2026-10-14); a .none marker means no tile, open sea.
+
+Written by `fog build explain` from data/dip/mlo/dataset.json and data/dip/mlo/inputs.lock: edit those, not this file.

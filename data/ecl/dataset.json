@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "id": "ecl-nasa",
+  "title": "NASA eclipse predictions (Fred Espenak): 2027 Besselian elements, 2009/2027/2045 paths, Saros 136, lunar months",
+  "tab": "ecl",
+  "build": "fog:ecl",
+  "kind": "archive",
+  "evidence": "model",
+  "radius_enters_via": [],
+  "verdict_rule": "",
+  "license": "other",
+  "license_note": "Eclipse Predictions by Fred Espenak, NASA's GSFC: free use with this credit (eclipse.gsfc.nasa.gov).",
+  "sources": [
+    {
+      "cite": "Eclipse Predictions by Fred Espenak, NASA's GSFC; ephemerides VSOP87/ELP2000-85",
+      "url": "https://eclipse.gsfc.nasa.gov/"
+    }
+  ],
+  "collected": "2026-09-24",
+  "units": {
+    "lat, lon": "degrees, N and E positive (deg min.m in the pages)",
+    "dur": "s (m s in the pages)",
+    "width": "km",
+    "t0TDT": "h TDT",
+    "deltaT": "s",
+    "months": "days"
+  },
+  "inputs": [
+    {
+      "path": "raw/SE2027Aug02Tbeselm.html",
+      "url": "https://eclipse.gsfc.nasa.gov/SEbeselm/SEbeselm2001/SE2027Aug02Tbeselm.html",
+      "how": "download",
+      "origin": "NASA eclipse web site (Fred Espenak, GSFC), the page given in the URL.",
+      "checks": "Besselian elements reproduce the central line (data/ecl/README.md, 2026-09-24)."
+    },
+    {
+      "path": "raw/SE2009Jul22Tpath.html",
+      "url": "https://eclipse.gsfc.nasa.gov/SEpath/SEpath2001/SE2009Jul22Tpath.html",
+      "how": "download",
+      "origin": "NASA eclipse web site (Fred Espenak, GSFC), the page given in the URL.",
+      "checks": "Besselian elements reproduce the central line (data/ecl/README.md, 2026-09-24)."
+    },
+    {
+      "path": "raw/SE2027Aug02Tpath.html",
+      "url": "https://eclipse.gsfc.nasa.gov/SEpath/SEpath2001/SE2027Aug02Tpath.html",
+      "how": "download",
+      "origin": "NASA eclipse web site (Fred Espenak, GSFC), the page given in the URL.",
+      "checks": "Besselian elements reproduce the central line (data/ecl/README.md, 2026-09-24)."
+    },
+    {
+      "path": "raw/SE2045Aug12Tpath.html",
+      "url": "https://eclipse.gsfc.nasa.gov/SEpath/SEpath2001/SE2045Aug12Tpath.html",
+      "how": "download",
+      "origin": "NASA eclipse web site (Fred Espenak, GSFC), the page given in the URL.",
+      "checks": "Besselian elements reproduce the central line (data/ecl/README.md, 2026-09-24)."
+    },
+    {
+      "path": "raw/SEsaros136.html",
+      "url": "https://eclipse.gsfc.nasa.gov/SEsaros/SEsaros136.html",
+      "how": "download",
+      "origin": "NASA eclipse web site (Fred Espenak, GSFC), the page given in the URL.",
+      "checks": "Besselian elements reproduce the central line (data/ecl/README.md, 2026-09-24)."
+    },
+    {
+      "path": "raw/SEsaros.html",
+      "url": "https://eclipse.gsfc.nasa.gov/SEsaros/SEsaros.html",
+      "how": "download",
+      "origin": "NASA eclipse web site (Fred Espenak, GSFC), the page given in the URL.",
+      "checks": "Besselian elements reproduce the central line (data/ecl/README.md, 2026-09-24)."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/ecl.js"
+  ],
+  "notes": "Predictions, not measurements: the ecl tab compares them with the two models. Checks of 2026-09-24 (Besselian elements reproduce the central line) are in data/ecl/README.md.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/ecl",
+    "src/tabs/ecl/local.js",
+    "src/tabs/ecl/flat.js",
+    "src/tabs/ecl/saros.js"
+  ],
+  "sections": [
+    "ecl/ecl-h22",
+    "ecl/ecl-h23"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "contents": "Sommaire",
+  "link": "Lien vers cette section",
+  "group-start": "Accueil",
+  "group-sky": "Ciel et horizon",
+  "group-ground": "Sol et distances",
+  "group-geometry": "Géométrie",
+  "group-motion": "Mouvements",
+  "group-both": "Les deux",
+  "group-answers": "Objections",
+  "group-collab": "Ensemble",
+  "group-verdict": "Bilan",
+  "ai-note": "Pour les assistants IA : chaque onglet est aussi publié en Markdown simple (en anglais), avec le même texte, les mêmes chiffres calculés, les sources et les classes de preuve. Point d’entrée : <a href=\"/llms.txt\">/llms.txt</a>.",
+  "theme": "Thème",
+  "theme-auto": "Auto",
+  "theme-light": "Clair",
+  "theme-dark": "Sombre",
+  "menu": "Onglets",
+  "prev": "Précédent",
+  "next": "Suivant",
+  "loading": "Chargement…"
+}

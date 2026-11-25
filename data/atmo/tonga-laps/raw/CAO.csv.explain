@@ -1,0 +1,40 @@
+# CAO.csv
+
+Dataset: atmo-tonga-laps — Hunga Tonga 2022 pressure wave: every passage over seven days at the
+  102 US ASOS barometers of seis-tonga (IEM one-minute pressure)
+File: data/atmo/tonga-laps/raw/CAO.csv
+SHA-256: 23cd0f432ee9e11cfca7307b6071d5522dc6122ab22120dca7695dc67a6ce1ce (also in
+  data/atmo/tonga-laps/inputs.lock; check with: cd data/atmo/tonga-laps && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: the file may be shared but is kept
+  out of git for its size. Get it from fog fetch atmo-tonga-laps, then compare its SHA-256 with the
+  one above.
+Obtained: the answer of a public web API to the request given.
+From: Iowa Environmental Mesonet, ASOS one-minute pressure (pres1), one request per station for
+  2022-01-15 to 2022-01-22 (fog fetch atmo-tonga-laps).
+What could still be wrong: Station barometers report to 0.01 inHg-class precision and some minutes
+  are missing; gaps are skipped, not filled.
+Collected: 2026-11-21
+Licence: other — Iowa Environmental Mesonet (Iowa State University) archive of NWS/FAA ASOS
+  one-minute data: open, no account; credit IEM.
+Sources:
+- Iowa Environmental Mesonet, ASOS one-minute data (pres1), 2022-01-15 to 2022-01-22
+  <https://mesonet.agron.iastate.edu/request/asos/1min.phtml>
+- R. S. Matoza et al., Atmospheric waves and global seismoacoustic observations of the January 2022
+  Hunga eruption, Tonga, Science 377 (2022) 95-100 (four outbound and three antipodal passages over
+  six days) <https://doi.org/10.1126/science.abo7063>
+Evidence class (rule 10): measure
+What would vindicate the flat model (rule 5): Laps that change with the station's position, as any
+  echo would make them, or no regular passages after the first two.
+Built by: fog build atmo-tonga-laps
+Generated files:
+- src/data/presets/atmo-tonga-laps.js
+Code:
+- tools/internal/build/tongalaps
+- src/tabs/atmo/lambpool.js
+Shown on the page:
+- #tab-atmo/lp-h1
+Notes: Same stations as seis-tonga (its raw station lists choose them). Picks use no Earth model:
+  each passage is the largest band-passed peak 6 to 30 h after the previous one. A lap is read at
+  one station, so neither the position nor the explosion time enters.
+
+Written by `fog build explain` from data/atmo/tonga-laps/dataset.json and data/atmo/tonga-laps/inputs.lock: edit those, not this file.

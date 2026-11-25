@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "id": "contrib-lomond",
+  "title": "Bass Rock seen from East Lomond Hill (Fife), 9 August 2023, 5:28 am: where the sea horizon cuts the rock, against the air of that morning",
+  "tab": "contrib",
+  "build": "fog:contrib-lomond",
+  "kind": "archive",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "LOM_SITE.rock.d, LOM_TRACED[].globe, LOM_FAN",
+      "how": "distances are great circles on a 6,371 km sphere from coordinates (the camera located on Copernicus GLO-30), and the globe's rays are traced over that sphere"
+    }
+  ],
+  "verdict_rule": "The horizon where the photograph puts it on the rock, given by rays traced over a plane in air the model and the reanalysis allow, while the globe needs implausible air.",
+  "license": "CC-BY-4.0",
+  "license_note": "Photograph: KenRDKAB (https://x.com/KenRDKAB), published with his permission (2026-10-15). Copernicus DEM GLO-30: (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA. Tide gauge: IOC Sea Level Station Monitoring Facility (National Oceanography Centre). Weather: Open-Meteo (ERA5, Copernicus; NOAA GFS), CC BY 4.0.",
+  "sources": [
+    {
+      "cite": "Copernicus DEM GLO-30, European Space Agency, open bucket copernicus-dem-30m",
+      "url": "https://doi.org/10.5270/ESA-c5d3d65"
+    },
+    {
+      "cite": "IOC Sea Level Station Monitoring Facility, Leith (leit), 15-minute readings, 26 July to 23 August 2023",
+      "url": "https://www.ioc-sealevelmonitoring.org/station.php?code=leit"
+    },
+    {
+      "cite": "Open-Meteo historical weather (ERA5), historical forecast (NOAA GFS, pressure levels) and marine APIs",
+      "url": "https://open-meteo.com/"
+    }
+  ],
+  "collected": "2026-10-14",
+  "units": {
+    "z": "m above the four weeks' mean sea level at Leith (about Ordnance Datum Newlyn, within 0.2 m)",
+    "time": "UTC (BST = UTC + 1)",
+    "d": "m, great circle on a 6,371 km sphere",
+    "az": "degrees from north",
+    "f": "share of the rock, counted from its foot, below the sea horizon"
+  },
+  "inputs": [
+    {
+      "glob": "raw/cop/*",
+      "gitignored": true,
+      "how": "download",
+      "origin": "Copernicus DEM GLO-30 tiles, open bucket copernicus-dem-30m (fog fetch contrib-lomond)."
+    },
+    {
+      "glob": "raw/leith.json",
+      "gitignored": true,
+      "how": "api",
+      "origin": "IOC Sea Level Station Monitoring Facility, Leith (leit), 15-minute readings 26 July - 23 August 2023 (fog fetch).",
+      "caveats": "A gap at the time of the photo is filled by 12 fitted constituents (internal/tide), not by a reading."
+    },
+    {
+      "glob": "raw/weather.json",
+      "gitignored": true,
+      "how": "api",
+      "origin": "Open-Meteo historical weather (ERA5), historical forecast (GFS) and marine APIs (fog fetch)."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/contrib-lomond.js"
+  ],
+  "notes": "fog fetch contrib-lomond gets everything (DEM tiles, gauge, weather). The contributor's slide (public/photos/contrib-lomond-2023-08-09.jpg) is read too and hashed into the preset's header.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/lomond",
+    "src/tabs/contrib/lomond"
+  ],
+  "sections": [
+    "contrib/lm-h2"
+  ]
+}

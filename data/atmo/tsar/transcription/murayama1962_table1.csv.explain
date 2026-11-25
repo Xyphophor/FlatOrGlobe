@@ -1,0 +1,40 @@
+# murayama1962_table1.csv
+
+Dataset: atmo-tsar — Pressure wave of the 30 October 1961 Novaya Zemlya explosion: three passages
+  at eight Japanese microbarographs and Showa Base (Murayama 1962, Table 1)
+File: data/atmo/tsar/transcription/murayama1962_table1.csv
+SHA-256: 6a1a292b6bebf3406c2ef58b56e2252c7af545b75743d177569ccb45c0ce8b6d (also in
+  data/atmo/tsar/inputs.lock; check with: cd data/atmo/tsar && sha256sum -c inputs.lock)
+In the public repository: yes, beside this description.
+Obtained: typed by hand (or OCR checked by hand) from a printed or scanned source.
+From: N. Murayama, J. Meteor. Soc. Japan 40 (1962) 222-231, Table 1, pp. 226-227 (J-STAGE scan);
+  typed by hand by the assistant (Claude) from the scans, under Xyphophor's review.
+Checks: The printed velocities are recomputed from the transcribed times and distances and must
+  agree (the build fails otherwise).
+What could still be wrong: Only the numbers of the table are copied; a digit misread in a time that
+  the velocity check does not cover would go unseen.
+Collected: 2026-11-21
+Licence: other — Journal of the Meteorological Society of Japan, free access on J-STAGE (©
+  Meteorological Society of Japan); only the table's numbers are transcribed.
+Sources:
+- N. Murayama, Pressure Waves Produced by the Nuclear Explosion on October 30, 1961 - Preliminary
+  Report, J. Meteor. Soc. Japan, Ser. II, 40 (1962) 222-231, Table 1 (pp. 226-227)
+  <https://doi.org/10.2151/jmsj1923.40.4_222>
+Evidence class (rule 10): measure
+What would vindicate the flat model (rule 5): Laps that change with the station's position, as any
+  echo would make them, or no third train after the first two.
+Built by: fog build atmo-tsar
+Generated files:
+- src/data/presets/atmo-tsar.js
+Code:
+- tools/internal/build/tsar
+- src/tabs/atmo/lambpool.js
+- src/tabs/atmo/lambfig.js
+Shown on the page:
+- #tab-atmo/lp-h1
+Notes: Laps are read at one station (third train minus first), so neither the site, the distance nor
+  the explosion time enters. The first and third trains travel the same way round, so the wind along
+  the path is not cancelled as it is for Krakatoa's two directions. The printed distances and
+  velocities used the radius of 1962 and serve only to check the transcription.
+
+Written by `fog build explain` from data/atmo/tsar/dataset.json and data/atmo/tsar/inputs.lock: edit those, not this file.

@@ -1,0 +1,39 @@
+# table_8.csv
+
+Dataset: seis-krakatoa — Krakatoa 1883 air wave: passage times I-VII at 47 barographs (Strachey
+  1888)
+File: data/seis/krakatoa/table_8.csv
+SHA-256: 7463890902fac88f400a837fe3087e419005328cb61d7b4520c96ca0388d10a2 (also in
+  data/seis/krakatoa/inputs.lock; check with: cd data/seis/krakatoa && sha256sum -c inputs.lock)
+In the public repository: yes, beside this description.
+Obtained: typed by hand (or OCR checked by hand) from a printed or scanned source.
+From: R. Strachey in Symons (ed.), The Eruption of Krakatoa (Royal Society, 1888), Part II, tables
+  III, IV and VIII, Internet Archive scan.
+Checks: The build checks the 175 intervals of table VIII against the transcribed times.
+What could still be wrong: Strachey's velocities and degrees are not taken (they used the radius of
+  his day).
+Collected: 2026-10-03
+Licence: public-domain
+Sources:
+- G. J. Symons (ed.), The Eruption of Krakatoa and Subsequent Phenomena, Report of the Krakatoa
+  Committee of the Royal Society (London: Trübner, 1888), Part II: R. Strachey, "On the air waves
+  and sounds caused by the eruption of Krakatoa in August, 1883", pp. 57-88; Tables II-IV (pp. 62,
+  65-67) and VIII (pp. 75-76) <https://archive.org/details/eruptionofkrakat00roya>
+Evidence class (rule 10): measure
+What would vindicate the flat model (rule 5): Laps that change with the station's position, as any
+  echo would make them, or no regular passages after the first two.
+Built by: fog build krakatoa
+Generated files:
+- src/data/presets/seis-krakatoa.js
+Code:
+- tools/internal/build/krakatoa
+- src/tabs/atmo/krakatoalogic.js
+- src/tabs/atmo/lambpool.js
+Shown on the page:
+- #tab-atmo/kr-h1
+- #tab-atmo/lp-h1
+Notes: Positions serve only to draw stations and to test the flat model; the radius uses lap times
+  at one station. Strachey's velocities and distances in degrees are not taken (they used the radius
+  of his day).
+
+Written by `fog build explain` from data/seis/krakatoa/dataset.json and data/seis/krakatoa/inputs.lock: edit those, not this file.

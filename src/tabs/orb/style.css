@@ -1,0 +1,4 @@
+#tab-orb tr.dim td { color: var(--ink-soft); }
+/* Vitrine du tunnel (2026-10-25) : même cadre que celle de results, 16:9, 4:5 sur téléphone. */
+#tab-orb canvas.orb-reel { width: 100%; display: block; aspect-ratio: 16 / 9; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fbfaf7; cursor: pointer; }
+@media (max-width: 559px) { #tab-orb canvas.orb-reel { aspect-ratio: 4 / 5; } }

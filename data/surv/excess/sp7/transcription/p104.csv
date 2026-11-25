@@ -1,0 +1,16 @@
+page,printed,net,k,no,station,deg,min,sec,corr,sph,exc,log,dist,flag
+104,97,Dauphin Island base net,1,1,Cedar Point,37,43,12.90,+0.24,13.14,0.09,4.0278321,10661.838,
+104,97,Dauphin Island base net,1,1,Dauphin I'd. East Base,103,52,29.53,+0.17,29.70,0.10,4.2283570,16918.31,
+104,97,Dauphin Island base net,1,1,Dauphin I'd. West Base,38,24,16.86,+0.59,17.45,0.10,4.0344585,10825.76,
+104,97,Dauphin Island base net,2,2,Point aux Pins,58,14,08.33,-0.35,07.98,0.21,4.2283570,16918.31,
+104,97,Dauphin Island base net,2,2,Cedar Point,51,42,20.35,-0.27,20.08,0.21,4.1936051,15617.27,
+104,97,Dauphin Island base net,2,2,Dauphin I'd. West Base,70,03,33.20,-0.63,32.57,0.21,4.2719755,18705.77,"print: sine-rule residual 1.7e-6 on this triangle (about 0.25 arcsec on the 70 deg angle); every printed digit of the triangle checked at 400 dpi, obs+corr=sph, closure and log=dist hold"
+104,97,Dauphin Island base net,3,3,Cat Island,66,28,28.62,-0.29,28.33,0.08,4.0278321,10661.84,
+104,97,Dauphin Island base net,3,3,Dauphin I'd. East Base,52,04,29.67,-0.33,29.34,0.07,3.9624929,9172.61,
+104,97,Dauphin Island base net,3,3,Dauphin I'd. West Base,61,27,02.69,-0.14,02.55,0.07,4.0092138,10214.42,
+104,97,Dauphin Island base net,4,4,Point aux Pins,35,37,34.88,+0.26,35.14,0.09,3.9624929,9172.61,
+104,97,Dauphin Island base net,4,4,Cat Island,97,21,37.37,+0.29,37.66,0.09,4.1936052,15617.27,
+104,97,Dauphin Island base net,4,4,Dauphin I'd. West Base,47,00,47.37,+0.10,47.47,0.09,4.0614191,11519.11,
+104,97,Dauphin Island base net,5,5,Fort Morgan (1847),50,44,14.6,+0.1,14.7,0.2,4.2283570,16918.31,
+104,97,Dauphin Island base net,5,5,Dauphin I'd. West Base,47,21,43.0,+0.2,43.2,0.2,4.2061437,16074.73,
+104,97,Dauphin Island base net,5,5,Cedar Point,81,54,02.6,+0.2,02.8,0.3,4.3351203,21633.17,

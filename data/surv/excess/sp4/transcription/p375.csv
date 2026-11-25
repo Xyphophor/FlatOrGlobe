@@ -1,0 +1,16 @@
+page,printed,net,k,no,station,deg,min,sec,corr,sph,exc,log,dist,flag
+375,367,"Adjusted triangles, Maryland, Delaware, and New Jersey",1,25,Cape May L. H.,47,22,55.58,+0.50,56.08,0.64,4.4106843,25744.49,
+375,367,"Adjusted triangles, Maryland, Delaware, and New Jersey",1,25,Stone,63,21,07.51,-0.13,07.38,0.63,4.4951038,31268.27,
+375,367,"Adjusted triangles, Maryland, Delaware, and New Jersey",1,25,Egg Island L. H.,69,15,59.85,-1.40,58.45,0.64,4.5147947,32718.60,
+375,367,"Adjusted triangles, Maryland, Delaware, and New Jersey",2,27,Cape May L. H.,36,47,03.68,+2.74,06.42,0.23,4.3324073,21498.46,
+375,367,"Adjusted triangles, Maryland, Delaware, and New Jersey",2,27,Brandywine Shoal L.H.,119,25,53.80,+0.86,54.66,0.23,4.4951037,31268.26,
+375,367,"Adjusted triangles, Maryland, Delaware, and New Jersey",2,27,Egg Island L. H.,23,46,60.03,-0.42,59.61,0.23,4.1607175,14478.30,
+375,367,"Adjusted triangles, Maryland, Delaware, and New Jersey",3,29,Cape Henlopen L. H.,34,13,26.27,-0.24,26.03,0.36,4.2713299,18677.98,
+375,367,"Adjusted triangles, Maryland, Delaware, and New Jersey",3,29,Stone,44,20,32.22,+0.73,32.95,0.36,4.3657066,23211.67,"print: log 4.365 706 6 differs from distance 23 211.67 (log gives 4.365 706 4), 2e-7 over tolerance"
+375,367,"Adjusted triangles, Maryland, Delaware, and New Jersey",3,29,Brandywine Shoal L.H.,101,26,01.68,+0.42,02.10,0.36,4.5125584,32550.56,
+375,367,"Adjusted triangles, Maryland, Delaware, and New Jersey",4,30,Cape Henlopen L. H.,72,22,43.32,+0.32,43.64,0.53,4.5147946,32718.60,
+375,367,"Adjusted triangles, Maryland, Delaware, and New Jersey",4,30,Stone,36,08,48.50,+0.39,48.89,0.53,4.3064120,20249.39,
+375,367,"Adjusted triangles, Maryland, Delaware, and New Jersey",4,30,Cape May L. H.,71,28,28.59,+0.47,29.06,0.53,4.5125583,32550.55,
+375,367,"Adjusted triangles, Maryland, Delaware, and New Jersey",5,31,Cape Henlopen L. H.,38,09,17.05,+0.56,17.61,0.25,4.1607175,14478.30,
+375,367,"Adjusted triangles, Maryland, Delaware, and New Jersey",5,31,Brandywine Shoal L.H.,59,46,25.73,-1.33,24.40,0.25,4.3064120,20249.39,
+375,367,"Adjusted triangles, Maryland, Delaware, and New Jersey",5,31,Cape May L. H.,82,04,20.49,-1.76,18.73,0.24,4.3657066,23211.67,"print: log 4.365 706 6 differs from distance 23 211.67 (log gives 4.365 706 4), 2e-7 over tolerance"

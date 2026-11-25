@@ -1,0 +1,22 @@
+#tab-home .homegrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin: 16px 0; }
+#tab-home .homecard { display: flex; flex-direction: column; gap: 6px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px; text-decoration: none; color: var(--ink); }
+#tab-home .homecard:hover { border-color: var(--ink); }
+#tab-home .homecard.pending { opacity: .55; cursor: default; }
+#tab-home .homeh { font-size: 14px; }
+#tab-home .homedo { font-size: 13px; color: var(--ink-2); }
+#tab-home .homego { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); margin-top: auto; }
+#tab-home .notes { font-size: 14px; color: var(--ink-2); max-width: 74ch; }
+#tab-home .homefig { display: block; margin: 0 0 6px; background: var(--surface); border-radius: 8px; padding: 6px; }
+#tab-home .homefig svg { display: block; width: 100%; height: auto; }
+#tab-home canvas.home-radii { width: 100%; display: block; height: 380px; border: 1px solid var(--line); border-radius: 8px; background: #fdfdfc; }
+@media (max-width: 559px) { #tab-home canvas.home-radii { height: 500px; } }
+#tab-home .home-radii-tab td.num { font-family: var(--mono); white-space: nowrap; text-align: right; }
+#tab-home .home-radii-tab .sub { color: var(--ink-soft); font-size: 11px; }
+#tab-home .home-h3 { font-size: 18px; margin: 26px 0 6px; }
+#tab-home .home-verdict { border-left: 3px solid var(--globe); padding: 4px 0 4px 12px; margin: 12px 0; max-width: 74ch; font-size: 15px; }
+#tab-home .home-verdict p { margin: 6px 0; }
+#tab-home .home-verdict p.f { color: var(--flat); font-size: 14px; }
+#tab-home details.fold { max-width: 74ch; }
+/* la vitrine du site (epic37/UC05) : paysage, portrait au téléphone (VIDEO_FIG_PHONE) */
+#tab-home canvas.home-reel { width: 100%; display: block; aspect-ratio: 16 / 9; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fbfaf7; cursor: pointer; }
+@media (max-width: 559px) { #tab-home canvas.home-reel { aspect-ratio: 4 / 5; } }

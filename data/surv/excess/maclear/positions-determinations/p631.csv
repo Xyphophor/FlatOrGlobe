@@ -1,0 +1,12 @@
+page,printed,state,station,alias,lat_d,lat_m,lat_s,lon_d,lon_m,lon_s,flag
+631,582,Cape Colony,Kamies-Sector Berg,,-30,-21,-20.700,0,20,16.600,from Bokkeveld Berg
+631,582,Cape Colony,Keibiskow,,-30,-50,-2.661,-0,-52,-38.111,from Bokkeveld Berg
+631,582,Cape Colony,Kamies-Sector Berg,,-30,-21,-20.701,0,20,16.601,from Louis Fontein
+631,582,Cape Colony,Roode Wal,,-30,-33,-7.288,1,1,7.587,from Louis Fontein
+631,582,Cape Colony,Ezels Kop,Ezel's Kop,-30,-21,-47.813,0,24,2.997,from Louis Fontein
+631,582,Cape Colony,Kamies-Sector Berg,,-30,-21,-20.700,0,20,16.603,from Eland's Hoogte
+631,582,Cape Colony,Bokkeveld Berg,,-31,-8,-41.913,-0,-28,-55.153,from Keibiskow
+631,582,Cape Colony,Boschluis,,-29,-59,-29.152,-0,-30,-46.406,from Keibiskow
+631,582,Cape Colony,Vogel Klip,,-29,-46,-9.997,0,37,5.674,from Roode Wal
+631,582,Cape Colony,Vogel Klip,,-29,-46,-9.997,0,37,5.670,from Ezels Kop
+631,582,Cape Colony,Bokkeveld Berg,,-31,-8,-41.913,-0,-28,-55.148,from Kamies-Sector Berg

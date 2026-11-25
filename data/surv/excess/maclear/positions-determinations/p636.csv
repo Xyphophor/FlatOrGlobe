@@ -1,0 +1,15 @@
+page,printed,state,station,alias,lat_d,lat_m,lat_s,lon_d,lon_m,lon_s,flag
+636,587,Cape Colony,Spion Berg,,-30,-59,-30.92,-1,-17,-11.13,from Bokkeveld Berg
+636,587,Cape Colony,"Groote Toren B., Hantam",,-31,-20,-13.69,-1,-11,-28.20,from Klip Rug
+636,587,Cape Colony,Spion Berg,,-30,-59,-30.92,-1,-17,-11.13,from Klip Rug
+636,587,Cape Colony,Lion's Rump Signal Stat.,"Lion's Rump, signal staff",-33,-55,-0.76,0,4,25.00,from Tygerberg
+636,587,Cape Colony,"Naval Yard, Simon's Tn.",,-34,-11,-28.83,0,2,57.00,from Tygerberg
+636,587,Cape Colony,"Noah's Ark, Simon's Bay",Noah's Ark,-34,-11,-31.38,0,1,23.90,from Tygerberg
+636,587,Cape Colony,"Naval Yard, clock tower",,-34,-11,-30.29,0,2,56.28,from Tygerberg; latitude last digit blotted in scan (read 30.29)
+636,587,Cape Colony,"Naval Yard, clock tower",,-34,-11,-30.30,0,2,56.28,from Kogel Berg
+636,587,Cape Colony,Zonder-Einde Berg,Zondereinde Berg,-34,-3,-47.264,-1,-22,-35.26,from Danger Point
+636,587,Cape Colony,Cape L'Agulhas,,-34,-49,-2.263,-1,-31,-54.00,from Danger Point; latitude last digit blotted in scan (read 2.263)
+636,587,Cape Colony,Babylon's Tower,,-34,-19,-29.37,-0,-48,-50.25,from Danger Point
+636,587,Cape Colony,"Zwart Berg, Caledon",Zwart Berg (Caledon),-34,-11,-26.58,-1,-1,-5.93,from Danger Point; latitude digit blotted in scan (read 26.58)
+636,587,Cape Colony,Gunner's Quoin,,-34,-43,-30.30,-1,-9,-17.45,from Babylon's Tower; latitude digit blotted in scan (read 30.30)
+636,587,Cape Colony,Cape L'Agulhas,,-34,-49,-2.264,-1,-31,-54.00,from Zonder-Einde Berg; latitude digits blotted in scan (read 2.264)

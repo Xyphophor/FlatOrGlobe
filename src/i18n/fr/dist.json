@@ -1,0 +1,10 @@
+{
+  "cv-globe-title": "GLOBE · trajet le plus court = arc de grand cercle",
+  "cv-n-pole": "pôle N",
+  "cv-polar-title": "PLAT · POLAIRE (disque AE) · règle = corde droite",
+  "cv-cart-title": "PLAT · CARTÉSIEN (lat/lon en grille x-y) · règle = ligne droite",
+  "cap-polar": "<b>Carte polaire (le disque terre-plate).</b> Les mêmes points tracés à r = 90°−φ, θ = λ, reliés par des <em>lignes de règle droites</em> — comment n'importe qui mesure une carte plate. Chaque segment sud ressort bien plus long que son miroir nord identique, et les deux paires sont déformées de quantités différentes.",
+  "cap-cart": "<b>Carte cartésienne.</b> Les mêmes points lus comme x = λ, y = φ, reliés par des lignes de règle droites. Les paires miroirs restent égales entre elles — la grille est symétrique de part et d'autre de l'équateur — mais chaque longueur est gonflée par rapport à la distance orthodromique, et d'un facteur différent pour chaque segment.",
+  "exp3-out": "VI  latitude {lat}° , étendue Δλ = {dl}°<br>VD  <span class=\"g\">globe : cette jambe {globeKm} · jambe miroir {mirrorKm} → <b>égales</b></span><br>VD  <span class=\"f\">disque plat : cette jambe {aeKm} · jambe miroir {aeMKm} → rapport {ratio}×</span>",
+  "exp3-verdict": "<b>Règle de verdict :</b> si les deux jambes miroirs mesurent la même chose, le globe survit. Si la jambe sud fait réellement {ratio2}× la jambe nord, le disque survit. Les compagnies aériennes tranchent cela chaque jour : Sydney–Santiago fait environ 11 400 km et se vole sans escale en environ 12 h 30, ce qu'aucun avion ne pourrait faire s'il s'agissait des ~25 000 km qu'exige le disque."
+}

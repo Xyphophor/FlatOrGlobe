@@ -1,0 +1,10 @@
+{
+  "cv-globe-title": "GLOBE · shortest path = great-circle arc",
+  "cv-n-pole": "N pole",
+  "cv-polar-title": "FLAT · POLAR (AE disk) · ruler = straight chord",
+  "cv-cart-title": "FLAT · CARTESIAN (lat/lon as x‑y grid) · ruler = straight line",
+  "cap-polar": "<b>Polar map (the flat‑earth disk).</b> The same endpoints plotted at r = 90°−φ, θ = λ, joined by <em>straight ruler lines</em> — how anyone measures a flat map. Each southern segment comes out far longer than its identical northern mirror, and the two pairs are distorted by different amounts.",
+  "cap-cart": "<b>Cartesian map.</b> The same endpoints read as x = λ, y = φ, joined by straight ruler lines. Mirror pairs stay equal to each other — the grid is symmetric across the equator — but every length is inflated relative to the great‑circle distance, and by a different factor for each segment.",
+  "exp3-out": "IV  latitude {lat}° , span Δλ = {dl}°<br>DV  <span class=\"g\">globe: this leg {globeKm} · mirror leg {mirrorKm} → <b>equal</b></span><br>DV  <span class=\"f\">flat disc: this leg {aeKm} · mirror leg {aeMKm} → ratio {ratio}×</span>",
+  "exp3-verdict": "<b>Verdict rule:</b> if the two mirror legs measure the same, the globe survives. If the southern one is really {ratio2}× the northern one, the disc survives. Airlines settle this daily: Sydney–Santiago is about 11,400 km and is flown non-stop in roughly 12½ hours, which no aircraft could do if it were the ~25,000 km the disc requires."
+}

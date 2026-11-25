@@ -1,0 +1,13 @@
+page,printed,k,no,station,reg,deg,min,sec,exc,sph_deg,sph_min,sph_sec,cord_sec,log,dist,t2page,flag
+723,530,1,65,Ennordre,202,47,23,37.64,0.12,47,23,37.57,37.45,3.9910087552,9795.0973,850,
+723,530,1,65,Méri,204,99,42,6.96,0.41,99,42,6.89,6.48,4.1178612942,13117.8082,850,
+723,530,1,65,Morogues,206,32,54,16.27,0.14,32,54,16.21,16.07,,,850,
+723,530,2,66,Méri,204,77,55,22.78,0.46,77,55,22.27,21.81,4.1441056751,13934.9584,852,
+723,530,2,66,Morogues,207,58,39,22.23,0.34,58,39,21.73,21.39,4.0853140716,12170.6752,852,log10(dist) differs from printed log by 6e-7 (print; verified 300 dpi)
+723,530,2,66,Bourges,213,43,25,17.61,0.31,43,25,17.11,16.80,,,852,
+723,530,3,67,Morogues,209,15,21,24.5,,,,,,,4296.2,852,excess and spherical and chord angles not printed (left empty) (side given to 0.1 toise; logarithm not printed)
+723,530,3,67,Bourges,213,43,50,47.8,,,,,,,11237.8,852,excess and spherical and chord angles not printed (left empty) (side given to 0.1 toise; logarithm not printed)
+723,530,3,67,Vasselai,*,120,47,47.7,,,,,,,,852,excess and spherical and chord angles not printed (left empty)
+723,530,4,68,Les Ais,209,26,23,16.0,,,,,,,,852,excess and spherical and chord angles not printed (left empty)
+723,530,4,68,Bourges,213,50,28,8.0,,,,,,,7456.6,852,excess and spherical and chord angles not printed (left empty) (side given to 0.1 toise; logarithm not printed)
+723,530,4,68,Vasselai,*,103,8,36.0,,,,,,,9413.2,852,excess and spherical and chord angles not printed (left empty) (side given to 0.1 toise; logarithm not printed)

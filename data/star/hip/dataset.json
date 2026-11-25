@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "star-hip",
+  "title": "Hipparcos main catalogue: the 960 stars brighter than V = 4.55 that have a position and six fast-moving stars, positions (ICRS, epoch J1991.25) and proper motions",
+  "tab": "star",
+  "build": "fog:star-hip",
+  "kind": "archive",
+  "evidence": "measure",
+  "radius_enters_via": [],
+  "verdict_rule": "Angles between the same stars that change with the observer's place or with the hour of the night, as lights on a dome a few thousand kilometres up would show.",
+  "license": "other",
+  "license_note": "The Hipparcos and Tycho Catalogues (ESA 1997), distributed by the CDS (VizieR I/239), free for scientific use with citation.",
+  "sources": [
+    {
+      "cite": "ESA, The Hipparcos and Tycho Catalogues, ESA SP-1200 (1997); VizieR I/239, table hip_main",
+      "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/I/239"
+    }
+  ],
+  "collected": "2026-11-11",
+  "units": {
+    "ra, dec": "deg, ICRS, epoch J1991.25, as published (fields H8, H9)",
+    "pmra": "mas/yr, proper motion in right ascension times cos(dec) (H12)",
+    "pmde": "mas/yr, proper motion in declination (H13)",
+    "v": "mag, Johnson V (H5)",
+    "bv": "mag, Johnson B-V colour (H37)"
+  },
+  "inputs": [
+    {
+      "path": "raw/hip_bright.tsv",
+      "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I/239/hip_main&-out=HIP,Vmag,RAICRS,DEICRS,Plx,pmRA,pmDE,B-V&Vmag=%3C4.55&-out.max=3000&-sort=HIP",
+      "how": "api",
+      "origin": "VizieR I/239 (Hipparcos main catalogue), Harvard mirror, the request in the URL; the file's header carries the request and its date."
+    },
+    {
+      "path": "raw/hip_fast.tsv",
+      "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I/239/hip_main&-out=HIP,Vmag,RAICRS,DEICRS,Plx,pmRA,pmDE,B-V&HIP=87937,57939,24186,104214,104217,439&-out.max=3000&-sort=HIP",
+      "how": "api",
+      "origin": "VizieR I/239 (Hipparcos main catalogue), Harvard mirror, the request in the URL; the file's header carries the request and its date."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/star-hip.js"
+  ],
+  "notes": "Two of the 962 bright entries (HIP 55203 and 78727, close binaries) have no astrometric solution in the main catalogue and are left out. Nothing is computed by the build: the rows are copied as published, rounded to 1e-5 deg and 0.1 mas/yr. The page moves the stars itself (src/tabs/star/radec-logic.js): proper motion along a straight line with no radial velocity, precession as a rotation about the pole of the ecliptic. The two files are VizieR answers (Harvard mirror; the CDS server was down on the day), their headers carry the request and its date.",
+  "public_raw": "no",
+  "public_raw_why": "CDS/VizieR distributes it free for scientific use with citation; its terms do not say that a copy may be republished, so only the hash and the request are given.",
+  "code": [
+    "tools/internal/build/starhip",
+    "src/tabs/star/radec-logic.js"
+  ],
+  "sections": [
+    "star/sky-h2a",
+    "star/sky-h2b",
+    "star/sky-h2c"
+  ]
+}

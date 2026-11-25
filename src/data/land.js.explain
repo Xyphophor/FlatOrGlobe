@@ -1,0 +1,24 @@
+# land.js
+
+File: src/data/land.js (generated: never edited by hand)
+
+From the dataset: land — Natural Earth 1:110m land polygons, rasterised as the 0.5-degree land
+  mask of every map (data/land/, every input with its own .explain)
+Inputs:
+- data/land/raw/ne_110m_land.geojson — download
+Collected: 2026-10-03
+Licence: public-domain
+Sources:
+- Natural Earth, 1:110m physical vectors, land (ne_110m_land), public domain
+  <https://www.naturalearthdata.com/>
+Evidence class (rule 10): model
+Built by: fog build land
+Generated files:
+- src/data/land.js
+Code:
+- tools/internal/build/land
+Notes: Decorative only: maps use it to fill the land; no number on the site depends on it. Until
+  2026-10-14 the file lived in the gitignored data/dem/cache/ne/; it is now kept here (138 KB,
+  public domain).
+
+Written by `fog build explain` from data/land/dataset.json and the lock files: edit those, not this file.

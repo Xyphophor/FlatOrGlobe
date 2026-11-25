@@ -1,0 +1,4 @@
+#Network | Station | Location | Channel | Latitude | Longitude | Elevation | Depth | Azimuth | Dip | SensorDescription | Scale | ScaleFreq | ScaleUnits | SampleRate | StartTime | EndTime
+IU|PAB|00|BH1|39.5446|-4.3499|950.0|0.0|0.0|0.0|Streckeisen STS-1VBB w/E300|4.3185E9|0.02|m/s|20.0|2009-08-14T00:00:00.0000|2010-04-24T09:00:00.0000
+IU|PAB|00|BH2|39.5446|-4.3499|950.0|0.0|90.0|0.0|Streckeisen STS-1VBB w/E300|4.02322E9|0.02|m/s|20.0|2009-08-14T00:00:00.0000|2010-04-24T09:00:00.0000
+IU|PAB|00|BHZ|39.5446|-4.3499|950.0|0.0|0.0|-90.0|Streckeisen STS-1VBB w/E300|5.81169E9|0.02|m/s|20.0|2009-08-14T00:00:00.0000|2010-04-25T16:59:33.0000

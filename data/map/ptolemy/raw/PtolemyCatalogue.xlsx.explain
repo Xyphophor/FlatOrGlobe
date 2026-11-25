@@ -1,0 +1,38 @@
+# PtolemyCatalogue.xlsx
+
+Dataset: map-ptolemy — Ptolemy's Geography: the 6,372 coordinates of the catalogue (books 2-7) and
+  the modern positions of 56 identified towns
+File: data/map/ptolemy/raw/PtolemyCatalogue.xlsx
+SHA-256: 448a6f229148038c5899c54d67285ce35887dedb090a7910ac46c6f61e2d2fb3 (also in
+  data/map/ptolemy/inputs.lock; check with: cd data/map/ptolemy && sha256sum -c inputs.lock)
+In the public repository: yes, beside this description.
+Obtained: downloaded as published (fog fetch or by hand).
+From: Graßhoff & Defaux, Catalog of Ptolemy's Geography (Zenodo 3585758).
+URL: https://zenodo.org/api/records/3585758/files/PtolemyCatalogue.xlsx/content
+What could still be wrong: Five cells typed with truncated decimals (37.33333) move by less than a
+  minute.
+Collected: 2026-10-26
+Licence: CC-BY-4.0
+Sources:
+- G. Graßhoff & O. Defaux, Catalog of Ptolemy's Geography, main books (Humboldt University Berlin /
+  Max Planck Institute for the History of Science, 2019), after A. Stückelberger & G. Graßhoff,
+  Klaudios Ptolemaios, Handbuch der Geographie (Schwabe, Basel, 2006); CC BY 4.0
+  <https://zenodo.org/record/3585758>
+- Wikidata, coordinate location (P625) of the modern site of each identified town, CC0; the
+  identifications are those of the catalogue (column Modern_location) <https://www.wikidata.org/>
+Evidence class (rule 10): model
+Built by: fog build map-ptolemy
+Generated files:
+- src/data/presets/map-ptolemy.js
+Code:
+- tools/internal/build/ptolemy
+- src/tabs/map/maps.js
+Shown on the page:
+- #tab-map/map-h2ptol
+Notes: History, not evidence: the map tab carries no badge. Coordinates are rounded to 1/12 degree
+  (5 minutes), Ptolemy's own finest step; five catalogue cells typed with truncated decimals
+  (37.33333) move by less than a minute. modern.csv was made once with Wikidata's API (wbgetentities
+  by English Wikipedia title) for 56 towns whose identification the catalogue gives and the
+  literature does not dispute; Panticapaeum was left out (no coordinates under that title).
+
+Written by `fog build explain` from data/map/ptolemy/dataset.json and data/map/ptolemy/inputs.lock: edit those, not this file.

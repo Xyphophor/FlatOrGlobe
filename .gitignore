@@ -1,0 +1,66 @@
+node_modules/
+/dist/
+.DS_Store
+*.log
+__pycache__/
+*.pyc
+/data/dem/cache/**
+
+# vidéos du propriétaire : hors git tant que l hébergement n est pas décidé (epic05/UC04)
+/public/video/
+
+# pressions ASOS brutes (21 Mo), retéléchargeables par fog fetch seis-tonga
+/data/seis/tonga/raw/**
+/data/atmo/tonga-laps/raw/**
+
+# rayonnement à la minute de Mauna Loa (NOAA GML), retéléchargeable par fog fetch dip-mlo
+/data/dip/mlo/raw/**
+
+# scripts de travail non versionnés (CLAUDE.md : « point initial, comme les autres .*.mjs »)
+/scripts/.*
+
+# points normaux du laser lunaire (EDC/DGFI) et données solaires/stellaires brutes (epic19), retéléchargeables
+/data/moon/llr/raw/**
+/data/orb/raw/**
+
+# Bordighera (onglet hh) : OSM, TINITALY et la position PRIVÉE du balcon du propriétaire (eye.json)
+/data/hh/bordighera/raw/**
+/data/ref/bordighera/raw/**
+/data/contrib/adelaide/raw/**
+
+# contribution Bass Rock (onglet contrib) : tuiles GLO-30, marégraphe, météo, retéléchargeables par fog fetch contrib-lomond
+/data/contrib/lomond/raw/**
+/data/contrib/flightdip/raw/**
+
+# binaire Go de la chaîne de données (make fog)
+/tools/bin/
+
+# RINEX bruts du GPS (BKG, ~130 Mo), retéléchargeables par fog fetch gps-raw
+/data/gps/raw/**
+# les mêmes RINEX pour sat-doppler (lien vers ../gps/raw posé par fog fetch sat-doppler)
+/data/sat/raw
+/prerender/
+# Schott, USC&GS Special Publication No. 7 (NOAA, ~25 Mo), retéléchargeable
+/data/surv/excess/*/raw/**
+
+# éclipses de Lune (moon-eclcraters) : DE440 (114 Mo) et le Gazetteer (24 Mo), retéléchargeables par fog fetch
+/data/moon/eclcraters/raw/de440.bsp
+/data/moon/eclcraters/raw/*.zip
+# radiosondages IGRA 2 de 2026 (ref-igra, ~500 Mo), retéléchargeables par fog fetch
+/data/ref/igra/raw/**
+# BSRN (sun-bsrn, ~500 Mo), retéléchargeables par fog fetch
+/data/sun/bsrn/raw/**
+# bulletins ISC des séismes M>=7 2000-2023 (seis-bulk, ~250 Mo), retéléchargeables par fog fetch
+/data/seis/bulk/raw/**
+# sismogrammes GSN de Tohoku (seis-waves, ~19 Mo), retéléchargeables par fog fetch
+/data/seis/waves/raw/*/*.mseed
+
+# marégraphes horaires UHSLC (onglet grav, epic37/UC01, ~50 Mo), retéléchargeables par fog fetch grav-tides
+/data/grav/tides/raw/**
+/data/grav/ticon/raw/**
+/data/orb/pulsar/raw/**
+
+# les .explain (métadonnées de chaque fichier de données, fog build explain) sont versionnés, même dans les dossiers
+# dont les données restent hors git : ils disent d'où vient le fichier, son hash, et pourquoi il n'est pas là
+!/data/**/
+!/data/**/*.explain

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "id": "mag-obs",
+  "title": "Measured magnetic inclination and total field: 186 observatories (annual means) and 2,147 survey stations, with IGRF-14",
+  "tab": "mag",
+  "build": "fog:mag-obs",
+  "kind": "api",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "IGRF-14 (igrf14coeffs.txt)",
+      "how": "magnetic latitude from the IGRF pole, a model fitted on the globe; the measured I and F themselves carry no radius"
+    }
+  ],
+  "verdict_rule": "A flat residual box centred on zero and as narrow as the globe's, with the same median north and south of the magnetic equator; or a field-strength box narrower than every globe box.",
+  "license": "other",
+  "license_note": "BGS World Data Centre for Geomagnetism (Edinburgh): data free for scientific use with acknowledgement of the WDC and the observatory operators / survey institutes; IGRF-14 (IAGA) public.",
+  "sources": [
+    {
+      "cite": "BGS World Data Centre for Geomagnetism (Edinburgh), Worldwide Observatory Annual Means; values supplied by the observatory operators",
+      "url": "https://geomag.bgs.ac.uk/data_service/data/annual_means.shtml"
+    },
+    {
+      "cite": "BGS World Data Centre for Geomagnetism (Edinburgh), Global Survey Data (repeat stations and one-off stations), via the WDC API; values supplied by national survey institutes",
+      "url": "https://wdcapi.bgs.ac.uk/global-geomagnetic-survey"
+    },
+    {
+      "cite": "IAGA, International Geomagnetic Reference Field, 14th generation (IGRF-14) coefficients",
+      "url": "https://www.ngdc.noaa.gov/IAGA/vmod/coeffs/igrf14coeffs.txt"
+    }
+  ],
+  "collected": "2026-09-27/2026-10-14",
+  "units": {
+    "lat, lon": "degrees, geodetic, N and E positive (lon -180..180 in the outputs)",
+    "year": "decimal year",
+    "I": "degrees, down positive",
+    "F": "nT (null when not measured)",
+    "q": "WDC mean code (1 all days, 2 quiet days, 4 absolute obs only) or R / O / M / A / C",
+    "IGRF": "nT (Gauss coefficients), nT/yr (secular variation)"
+  },
+  "inputs": [
+    {
+      "path": "sources.json",
+      "how": "ours",
+      "origin": "Our list of the sources and their adapters.",
+      "public_raw": "yes"
+    },
+    {
+      "path": "igrf14coeffs.txt",
+      "url": "https://www.ngdc.noaa.gov/IAGA/vmod/coeffs/igrf14coeffs.txt",
+      "how": "download",
+      "origin": "IAGA IGRF-14 coefficients (NOAA NCEI).",
+      "public_raw": "yes"
+    },
+    {
+      "path": "raw/annual_means.html",
+      "how": "scrape",
+      "origin": "BGS WDC Worldwide Observatory Annual Means form (the list of observatories), as fetched on 2026-10-14."
+    },
+    {
+      "glob": "raw/obs/*.html",
+      "how": "scrape",
+      "origin": "BGS WDC annual-means page of each observatory (fog fetch mag-obs).",
+      "caveats": "Values are supplied by the observatory operators; a few years are flagged provisional on the pages."
+    },
+    {
+      "glob": "raw/survey/*.json",
+      "how": "api",
+      "origin": "BGS WDC API, global geomagnetic survey (repeat and one-off stations)."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/mag-obs.js",
+    "src/data/presets/igrf14.js",
+    "data/mag/measurements.csv"
+  ],
+  "notes": "Edit sources.json only (adapters: wdc-annual-means, wdc-survey, csv), then fog fetch mag-obs, fog lock mag-obs, fog build mag-obs, node scripts/fit_mag_obs.mjs. raw/annual_means.html is the WDC form (the list of observatories) as fetched on 2026-10-14; it reproduces the 2026-09-28 build exactly (KLI listed but not fetched, HON fetched but no longer listed).",
+  "public_raw": "no",
+  "public_raw_why": "The BGS World Data Centre allows scientific use with acknowledgement but does not say that its pages and answers may be republished; only the hash and the source are given.",
+  "code": [
+    "tools/internal/build/mag",
+    "scripts/fit_mag_obs.mjs",
+    "src/tabs/mag/obs-logic.js",
+    "src/tabs/mag/obs-figs.js"
+  ],
+  "sections": [
+    "mag/mg-obs-h",
+    "mag/mg-obs-hF"
+  ]
+}

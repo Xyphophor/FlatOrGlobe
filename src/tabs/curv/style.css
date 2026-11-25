@@ -1,0 +1,28 @@
+/* curv : le style commun vient de src/core/legacy.css ; ici seulement ce qui est propre à l'onglet. */
+#tab-curv canvas { width: 100%; display: block; border: 1px solid var(--line); border-radius: 8px; }
+#tab-curv canvas.curv-side { aspect-ratio: 16 / 8; min-height: 220px; background: #fdfdfc; }
+#tab-curv canvas.curv-frame { aspect-ratio: 3 / 2; background: #28303a; }
+#tab-curv .curv-ctl { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px 16px; margin: 10px 0; }
+#tab-curv .curv-ctl .field { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 0; }
+#tab-curv .curv-ctl .field label { flex: 1 0 100%; font-size: 13px; }
+#tab-curv .curv-ctl input[type=range] { flex: 1 1 120px; min-width: 0; }
+#tab-curv .curv-ctl input[type=number] { width: 7em; }
+#tab-curv .curv-presets { display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0 10px; }
+#tab-curv .curv-presets button { font-size: 12px; }
+#tab-curv .exp-out .sub { color: var(--ink-soft); padding-left: 1.2em; }
+#tab-curv td.num { font-family: var(--mono); white-space: nowrap; }
+#tab-curv .curv-tri-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; margin: 8px 0; }
+#tab-curv .curv-tri-row figure { margin: 0; }
+#tab-curv .curv-tri-row figcaption { font-size: 12px; line-height: 1.45; margin-top: 4px; font-family: var(--mono); }
+#tab-curv .curv-tri-row figcaption b { display: block; font-family: var(--sans, system-ui); }
+#tab-curv .curv-tri-row .f { color: var(--flat); }
+#tab-curv .curv-tri-row .g { color: var(--globe); }
+#tab-curv .curv-calc .curv-cam { flex: 1 1 100%; }
+#tab-curv .curv-calc .curv-cam select { max-width: 100%; }
+#tab-curv .curv-calc [hidden] { display: none; }
+#tab-curv .curv-camsum { font-size: 13px; margin: 10px 0 0; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; }
+#tab-curv .exp-out .chk { margin-top: 6px; font-family: var(--sans, system-ui); color: var(--ink-2); line-height: 1.5; }
+#tab-curv canvas.curv-depth { aspect-ratio: 16 / 8; min-height: 300px; background: #0e131a; }
+@media (max-width: 600px) { #tab-curv canvas.curv-depth { aspect-ratio: 3 / 4; } }
+#tab-curv .curv-play { display: flex; justify-content: flex-end; margin: 6px 0 2px; }
+#tab-curv .curv-playb { font-size: 12px; }

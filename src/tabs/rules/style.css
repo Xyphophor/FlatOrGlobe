@@ -1,0 +1,3 @@
+/* Onglet rules (2026-11-25) : une règle par paragraphe ; son numéro et son titre en couleur, un filet à gauche. */
+#tab-rules .notes { border-left: 3px solid var(--line); padding-left: 12px; }
+#tab-rules .notes > b:first-child, #tab-rules .notes p > b:first-child { color: var(--globe); }

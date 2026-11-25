@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "id": "grav-tides",
+  "title": "Hourly sea level at five tide gauges (Brest, Marseille, Pensacola, Manila, Fremantle), UHSLC research-quality data, year 2018",
+  "tab": "grav",
+  "build": "fog:grav-tides",
+  "kind": "archive",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "frequencies of the harmonic lines",
+      "how": "not the radius: the harmonic fit takes the frequency of each tidal line from the mean motions of the Moon and the Sun (Meeus); the periods read off the spectrum and the spring-neap cycle use the clock alone"
+    }
+  ],
+  "verdict_rule": "A tide gauge whose record has one high water per lunar day and no semidiurnal line at 12 h 25 min anywhere, or a fortnightly spring-neap cycle that does not follow the phases of the Moon, would favour a local Moon pulling water under itself over a plane.",
+  "license": "other",
+  "license_note": "University of Hawaii Sea Level Center data are freely available for research and education, with citation of Caldwell, Merrifield & Thompson (2015) and the UHSLC.",
+  "sources": [
+    {
+      "cite": "P. C. Caldwell, M. A. Merrifield, P. R. Thompson, Sea level measured by tide gauges from global oceans — the Joint Archive for Sea Level holdings (NCEI Accession 0019568), Version 5.5, NOAA National Centers for Environmental Information (2015), doi:10.7289/V5V40S7W",
+      "url": "https://uhslc.soest.hawaii.edu/datainfo/"
+    }
+  ],
+  "collected": "2026-11-13",
+  "units": {
+    "year, month, day, hour": "UTC (GMT), as in the UHSLC CSV",
+    "level": "mm above the station's zero, -32767 = missing"
+  },
+  "inputs": [
+    {
+      "path": "raw/h822a.csv",
+      "url": "https://uhslc.soest.hawaii.edu/data/csv/rqds/atlantic/hourly/h822a.csv",
+      "gitignored": true,
+      "how": "download",
+      "origin": "UHSLC research-quality hourly sea level, the station file given in the URL."
+    },
+    {
+      "path": "raw/h824a.csv",
+      "url": "https://uhslc.soest.hawaii.edu/data/csv/rqds/atlantic/hourly/h824a.csv",
+      "gitignored": true,
+      "how": "download",
+      "origin": "UHSLC research-quality hourly sea level, the station file given in the URL."
+    },
+    {
+      "path": "raw/h762a.csv",
+      "url": "https://uhslc.soest.hawaii.edu/data/csv/rqds/atlantic/hourly/h762a.csv",
+      "gitignored": true,
+      "how": "download",
+      "origin": "UHSLC research-quality hourly sea level, the station file given in the URL."
+    },
+    {
+      "path": "raw/h370a.csv",
+      "url": "https://uhslc.soest.hawaii.edu/data/csv/rqds/pacific/hourly/h370a.csv",
+      "gitignored": true,
+      "how": "download",
+      "origin": "UHSLC research-quality hourly sea level, the station file given in the URL."
+    },
+    {
+      "path": "raw/h175a.csv",
+      "url": "https://uhslc.soest.hawaii.edu/data/csv/rqds/indian/hourly/h175a.csv",
+      "gitignored": true,
+      "how": "download",
+      "origin": "UHSLC research-quality hourly sea level, the station file given in the URL."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/grav-tides.js"
+  ],
+  "notes": "Each file is the station's whole research-quality hourly record (Brest since 1846); the build reads 2018 only, the last year every station has. Stations chosen for their kinds of tide: Brest semidiurnal and large, Marseille almost none (Mediterranean), Pensacola diurnal (Gulf of Mexico), Manila mixed, Fremantle diurnal and small (southern hemisphere).",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/gravtides",
+    "tools/internal/tide",
+    "src/tabs/grav/tides-logic.js",
+    "src/tabs/grav/tides.js"
+  ],
+  "sections": [
+    "grav/gv-h7",
+    "grav/gv-h7b"
+  ]
+}

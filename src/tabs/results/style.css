@@ -1,0 +1,14 @@
+#tab-results canvas.home-radii { width: 100%; display: block; height: 410px; border: 1px solid var(--line); border-radius: 8px; background: #fdfdfc; }
+@media (max-width: 559px) { #tab-results canvas.home-radii { height: 530px; } }
+#tab-results .home-radii-tab td.num { font-family: var(--mono); white-space: nowrap; text-align: right; }
+#tab-results .home-radii-tab .sub { color: var(--ink-soft); font-size: 11px; }
+#tab-results .home-verdict { border-left: 3px solid var(--globe); padding: 4px 0 4px 12px; margin: 12px 0; max-width: 74ch; font-size: 15px; }
+#tab-results .home-verdict p { margin: 6px 0; }
+#tab-results .home-verdict p.f { color: var(--flat); font-size: 14px; }
+#tab-results details.fold { max-width: 74ch; }
+#tab-results .notes { font-size: 14px; color: var(--ink-2); max-width: 74ch; }
+#tab-results canvas.home-motion { width: 100%; display: block; height: 380px; border: 1px solid var(--line); border-radius: 8px; background: #fdfdfc; }
+@media (max-width: 559px) { #tab-results canvas.home-motion { height: 420px; } }
+/* la vitrine (2026-10-25) : 16:9 sur un écran large, 4:5 sur un téléphone (le texte passe sous le dessin) */
+#tab-results canvas.res-reel { width: 100%; display: block; aspect-ratio: 16 / 9; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fbfaf7; cursor: pointer; }
+@media (max-width: 559px) { #tab-results canvas.res-reel { aspect-ratio: 4 / 5; } }

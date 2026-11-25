@@ -1,0 +1,28 @@
+page,printed,net,k,no,station,deg,min,sec,corr,sph,exc,log,dist,flag
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",1,19,Pilot Peak,6,08,19.196,-0.344,18.852,2.390,4.66630246,46376.98,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",1,19,Promontory,154,41,11.298,+0.712,12.010,2.389,5.26825187,185460.69,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",1,19,Ogden Peak,19,10,35.599,+0.708,36.307,2.390,5.15373484,142473.75,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",2,20,Pilot Peak,14,47,38.925,-0.161,38.764,4.823,4.61324935,41043.97,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",2,20,Promontory,102,47,51.036,+0.828,51.864,4.824,5.19523571,156760.16,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",2,20,Antelope,62,24,43.116,+0.726,43.842,4.823,5.15373481,142473.74,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",3,21,Pilot Peak,39,29,58.950,-0.280,58.670,10.541,4.97644690,94721.14,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",3,21,Promontory,67,25,55.186,-0.282,54.904,10.541,5.13835870,137517.74,"print: log differs from distance by 0.011 m (log gives 137 517.73), tolerance exceeded by 1e-8"
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",3,21,Deseret,73,04,38.915,-0.865,38.050,10.542,5.15373482,142473.74,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",4,22,Pilot Peak,8,39,19.729,+0.183,19.912,3.701,4.58597792,38545.88,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",4,22,Ogden Peak,37,43,57.713,-0.566,57.147,3.701,5.19523569,156760.16,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",4,22,Antelope,133,36,53.978,+0.065,54.043,3.700,5.26825183,185460.67,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",5,23,Pilot Peak,33,21,39.754,+0.062,39.816,11.863,5.01473172,103450.29,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",5,23,Ogden Peak,46,58,07.019,+0.512,07.531,11.863,5.13835867,137517.73,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",5,23,Deseret,99,40,48.563,-0.321,48.242,11.863,5.26825183,185460.67,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",6,24,Pilot Peak,24,42,20.025,-0.119,19.906,7.621,4.81753960,65696.10,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",6,24,Antelope,61,01,28.958,-0.576,28.382,7.621,5.13835869,137517.74,"print: log differs from distance by 0.011 m (log gives 137 517.73), tolerance exceeded by 1e-8"
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",6,24,Deseret,94,16,34.541,+0.034,34.575,7.621,5.19523570,156760.16,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",7,25,Mount Nebo,9,37,16.699,-0.082,16.617,3.455,5.13835869,137517.74,"print: log differs from distance by 0.011 m (log gives 137 517.73), tolerance exceeded by 1e-8"
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",7,25,Pilot Peak,7,10,32.730,+0.104,32.834,3.455,5.01188745,102774.99,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",7,25,Deseret,163,12,20.927,-0.013,20.914,3.455,5.37615810,237770.57,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",8,26,Mount Nebo,51,13,60.600,+0.380,60.980,24.243,5.26825184,185460.68,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",8,26,Pilot Peak,40,32,12.484,+0.166,12.650,24.243,5.18917384,154587.31,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",8,26,Ogden Peak,88,14,58.996,+0.104,59.100,24.244,5.37615809,237770.56,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",9,27,Mount Nebo,41,36,43.901,+0.463,44.364,8.925,5.01473172,103450.29,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",9,27,Deseret,97,06,50.510,+0.333,50.843,8.926,5.18917385,154587.31,
+220,217,"Triangles of the Salt Lake base net, Utah, 1887 to 1897",9,27,Ogden Peak,41,16,51.977,-0.408,51.569,8.925,5.01188745,107274.99,printed distance 107 274.99 misprint for 102 774.99 (log 5.011 887 45)

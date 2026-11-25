@@ -1,0 +1,415 @@
+# The basics: units, derivatives, frames of reference, Newton's laws and the constants
+
+> Tab "Basics" of *Flat plane or Globe?*. Web page: /#tab-phys. Generated from the rendered page: same text, same computed numbers and sources; drawings are replaced by their captions and descriptions, formulas are TeX. Licence: content and data CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), Xyphophor (https://x.com/Xyphophor); source code MIT; third-party data keep the licence of their source, cited in each tab.
+
+*Basics · the physics the other tabs use*
+
+The other tabs use words like *inertial frame*, *angular velocity*, *dθ/dt*, *GM* or *3σ* without stopping to define them. This tab gathers those definitions in one place, each with its formula and a figure, and says where on the site it is used. Nothing here is a measurement, and nothing here takes sides: Newton's laws, the units and the statistics are the same tools for both models, and any model of the Earth has to obey them.
+
+## Quantities, units and orders of magnitude
+
+**A quantity is a number times a unit.** “6,371 km” says how many times the kilometre fits in the Earth's radius; the number alone means nothing. Since 20 May 2019 the seven base units of the International System (SI) are no longer defined by objects (the platinum kilogram in Sèvres) but by fixing the value of seven constants of nature[1]: the second by the frequency of the caesium atom, the metre by the speed of light, the kilogram by Planck's constant, and so on. Large and small numbers are written in scientific notation: 6.371 × 10⁶ m, 7.29 × 10⁻⁵ rad/s. The exponent counts the places the decimal point moves, so its *order of magnitude* is read at a glance.
+
+**The seven SI base units and the constant that fixes each one since 2019[1]; and the prefixes the site uses.**
+
+| Quantity | Unit | Fixed by |
+| --- | --- | --- |
+| time | second (s) | caesium-133 frequency Δν_Cs = 9 192 631 770 Hz |
+| length | metre (m) | speed of light c = 299 792 458 m/s |
+| mass | kilogram (kg) | Planck's constant h |
+| electric current | ampere (A) | elementary charge e |
+| temperature | kelvin (K) | Boltzmann's constant k_B |
+| amount of substance | mole (mol) | Avogadro's number N_A |
+| luminous intensity | candela (cd) | luminous efficacy K_cd = 683 lm/W |
+| **Prefixes: n (nano) 10⁻⁹ · µ (micro) 10⁻⁶ · m (milli) 10⁻³ · k (kilo) 10³ · M (mega) 10⁶ · G (giga) 10⁹** | | |
+
+$${\theta = \frac{s}{r}}\ \text{(rad)},\qquad 2\pi\ \text{rad} = 360^\circ,\qquad 1^\circ = 60' = 3600''$$
+
+**The radian.** An angle θ in radians is the arc s it cuts on a circle divided by the radius r: a full turn is 2π r / r = 2π rad, so 1 rad = 57.30°. Degrees split into 60 minutes of arc (′) and each minute into 60 seconds of arc (″); 1″ = 4.848 millionths of a radian. The elevation, dip and refraction tabs ([Elevation angles](/ai/elev.md), [Dip](/ai/dip.md), [Refraction](/ai/ref.md)) count in minutes and seconds of arc; every formula of the site computes in radians.
+
+$${\tan\theta \approx \sin\theta \approx \theta}\quad (\theta\ \text{small, in rad})$$
+
+**Small angles.** For a thin triangle, the opposite side over the long side is almost the angle itself in radians. The error is 0.010 % at 1°, 0.25 % at 5° and 1.0 % at 10°. That is why an object of height h seen at a distance d spans an angle of about h/d, and why the site can write the dip of the horizon as √(2h/R).
+
+## Position, velocity, acceleration
+
+**Kinematics describes motion without asking what causes it.** A body's position x is measured from an origin chosen by the observer; its velocity v is how fast x changes, its acceleration a how fast v changes. All three are *vectors*: they have a size and a direction, and adding two of them means putting them end to end. A speed of 900 km/h going east and the same speed going west are two different velocities.
+
+$${\bar v = \frac{\Delta x}{\Delta t} = \frac{x_2 - x_1}{t_2 - t_1}},\qquad \bar a = \frac{\Delta v}{\Delta t}$$
+
+Δ (delta) means “the change in”: Δx is the distance covered between two instants, Δt the time between them. Their ratio is the *mean* velocity over that interval: on a graph of x against t, the slope of the straight chord joining the two points.
+
+$${\vec v = (v_x,\ v_y)},\qquad |\vec v| = \sqrt{v_x^2 + v_y^2},\qquad \vec v_{\text{total}} = \vec v_1 + \vec v_2$$
+
+An arrow over a letter marks a vector. It splits into components along the axes, and its length, the *magnitude*, follows from Pythagoras. An airliner's ground speed is its airspeed plus the wind, added as arrows: that is the [Aviation](/ai/avia.md) tab's triangle of velocities.
+
+**Adding vectors: Chasles' relation.** Going from A to B, then from B to C, ends at the same place as going straight from A to C: written with displacement vectors, AB⃗ + BC⃗ = AC⃗. It is named after the French geometer Michel Chasles (1793–1880), and it holds for any number of steps: AB⃗ + BC⃗ + CD⃗ = AD⃗. Only the start and the end count, not the path. That is what “putting the arrows end to end” means, and it works the same for displacements, velocities, accelerations and forces.
+
+*Figure caption:* **Michel Chasles** 1793–1880
+[Photograph, 19th century (Smithsonian Libraries)](https://commons.wikimedia.org/wiki/File:Michel_Chasles.jpg)
+
+$${\vec{AB} + \vec{BC} = \vec{AC}},\qquad \vec{AB} + \vec{BC} + \vec{CD} = \vec{AD},\qquad \vec{AB} + \vec{BA} = \vec 0$$
+
+The detour through B and the direct path land at the same point. A round trip adds up to the zero vector: AB⃗ + BA⃗ = 0⃗, so BA⃗ = −AB⃗, the same arrow turned round. The order of the steps does not matter either: AB⃗ + BC⃗ = BC⃗ + AB⃗, the two other sides of a parallelogram.
+
+$${\vec a + \vec b = (a_x + b_x,\ a_y + b_y)}$$
+
+**With components, it is ordinary addition.** Put the arrows end to end and look at their shadows on each axis: the shadows add up too. To add two vectors, add their x components together and their y components together. That is how a computer adds forces or velocities, and how the [Aviation](/ai/avia.md) tab adds the wind to an airliner's airspeed.
+
+$${\vec a - \vec b = \vec a + (-\vec b)},\qquad \vec b + (\vec a - \vec b) = \vec a$$
+
+**Subtracting is adding the opposite.** −b⃗ is b⃗ turned round. Drawn from a common origin, a⃗ − b⃗ is the arrow that goes from the tip of b⃗ to the tip of a⃗: the step still needed to get from b⃗ to a⃗, which is Chasles' relation again. This tab uses it twice: the change of velocity Δv⃗ = v⃗₂ − v⃗₁ points to the centre on a circle, and the velocity seen from a moving train is v⃗′ = v⃗ − V⃗.
+
+## Derivatives: one idea, several notations
+
+**A derivative is a rate of change at one instant.** Shrink the interval Δt of the mean velocity towards zero: the chord turns into the tangent to the curve, and its slope is the instantaneous velocity. Newton and Leibniz found this independently in the 1660s–1680s and wrote it differently; Lagrange later added a third way[5][6][7]. All three are still in use, often on the same page, and they mean exactly the same thing.
+
+*Figure caption:* **Isaac Newton** 1642–1727
+[After Godfrey Kneller, 1689](https://commons.wikimedia.org/wiki/File:GodfreyKneller-IsaacNewton-1689.jpg)
+
+*Figure caption:* **Gottfried Wilhelm Leibniz** 1646–1716
+[Christoph Bernhard Francke, c. 1695 (Herzog Anton Ulrich-Museum)](https://commons.wikimedia.org/wiki/File:Christoph_Bernhard_Francke_-_Bildnis_des_Philosophen_Leibniz_(ca._1695).jpg)
+
+*Figure caption:* **Joseph-Louis Lagrange** 1736–1813
+[Anonymous, 19th century](https://commons.wikimedia.org/wiki/File:%D0%9B%D0%B0%D0%B3%D1%80%D0%B0%D0%BD%D0%B6.jpg)
+
+$${v(t) = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t} = \frac{dx}{dt} = \dot x = x\prime(t)}$$
+$$a = \frac{dv}{dt} = \frac{d^2x}{dt^2} = \ddot x = x''(t)$$
+
+“lim” reads “the limit as Δt goes to zero”. dx/dt (Leibniz) keeps the memory of a ratio of two tiny changes; ẋ, with a dot (Newton), is used only for derivatives with respect to time; x′ (Lagrange) says “derivative of x” without naming the variable. Two dots, two primes or d²/dt²: the derivative taken twice, the acceleration.
+
+**The notations, how they are read, and where the site uses them.**
+
+| Written | Read | Means | On this site |
+| --- | --- | --- | --- |
+| Δx | delta x | a finite change of x | everywhere |
+| dx/dt | d x d t (Leibniz) | rate of change of x with t | [Rotation](/ai/rot.md), [Orbit](/ai/orb.md) |
+| ẋ, ẍ | x dot, x double dot (Newton) | first, second derivative in time | θ̇ of Kepler in [Orbit](/ai/orb.md) |
+| f′(x), f″(x) | f prime, f second (Lagrange) | derivative of f, whatever the variable | [Horizon curve](/ai/curv.md) |
+| ∂f/∂x | partial f partial x | derivative in x, the other variables held fixed | [Gravity](/ai/grav.md), [Magnetism](/ai/mag.md) |
+| ∇f | nabla f, gradient | the vector of all partial derivatives: steepest slope | [Gravity](/ai/grav.md), [Atmosphere](/ai/atmo.md) |
+| ∫ f dt | integral of f d t | the sum of f dt: the area under f, the reverse of a derivative | [Refraction](/ai/ref.md) (ray tracing) |
+| Σ | sigma, sum | add up the terms | every fit ([Results](/ai/results.md)) |
+
+$${x(t) = x_0 + \int_{0}^{t} v\,dt}\qquad \Leftrightarrow\qquad \frac{dx}{dt} = v$$
+
+**The integral undoes the derivative.** Cut the time into thin slices dt; in each, the body moves v dt. Adding all the slices (the long S, ∫, is a stretched “sum”) gives the distance covered: the area under the curve of v against t. An inertial navigation unit does exactly that, twice, from its accelerometers ([Aviation](/ai/avia.md)).
+
+$${\nabla h = \left(\frac{\partial h}{\partial x},\ \frac{\partial h}{\partial y}\right)}$$
+
+**Partial derivatives.** When a quantity depends on several variables, such as the height h of a hill at each point (x, y) of a map, ∂h/∂x is its slope walking due east, with y held fixed, and ∂h/∂y its slope walking north. Together they form the gradient ∇h, an arrow pointing straight uphill, across the contour lines. Gravity is minus the gradient of the potential; air pressure falls along its gradient with height.
+
+## Frames of reference
+
+**A frame of reference is an observer with axes and a clock.** Positions, velocities and accelerations only have a value relative to one. A frame is *inertial* when a body on which no force acts moves in a straight line at constant speed, or stays at rest: Newton's laws hold there as written. Galileo noticed in 1632 that, in the closed cabin of a ship sailing smoothly, flies, fish in a bowl and dripping water behave exactly as on land: no experiment inside can tell a uniform motion from rest[3]. Any frame moving at constant velocity relative to an inertial frame is itself inertial.
+
+*Figure caption:* **Galileo Galilei** 1564–1642
+[Justus Sustermans, c. 1640 (National Maritime Museum, London)](https://commons.wikimedia.org/wiki/File:Galileo.arp.300pix.jpg)
+
+$${x\prime = x - V t},\qquad v\prime = v - V,\qquad a\prime = a$$
+
+**Galilean change of frame.** A train moves at constant speed V along the platform. Positions and velocities measured on board (primed) differ from those measured on the platform, but accelerations are the same: V is constant, so it vanishes when differentiated. Forces, which give accelerations, are therefore the same in every inertial frame. That is why a smooth motion cannot be felt, and why “I would feel the Earth move” is not an argument: what is felt is acceleration, not speed.
+
+**A rotating frame is not inertial.** On a merry-go-round, a ball rolled straight across seems to curve, and a passenger feels pushed outwards, although no one pushes. Written in the turning frame, Newton's second law only works if *inertial forces* are added: they are not caused by another body, they come from the frame's own acceleration[8]. The ground under our feet turns once a sidereal day, so it is a rotating frame; its rotation is slow enough that these forces are small, but instruments measure them.
+
+$${\vec a\prime = \vec a - 2\,\vec\Omega\times\vec v\prime - \vec\Omega\times(\vec\Omega\times\vec r)}$$
+$$a_\text{Coriolis} = 2\,\Omega\,v\,\sin\varphi,\qquad a_\text{centrifugal} = \Omega^2\,r$$
+
+Ω is the frame's angular velocity, v′ and r the body's velocity and position in that frame, × the vector (cross) product, φ the latitude. The middle term is the Coriolis acceleration: it deviates anything that moves, to the right in the northern hemisphere; for an airliner at 250 m/s at 45° it is 0.0258 m/s², 0.26 % of gravity. The last term is the centrifugal acceleration, outward from the axis: 0.0339 m/s² at the equator. The figure shows the same ball seen from outside (straight line) and from the turning disc (curved).
+
+**The inertial forces of a turning Earth, their size, and the tabs that measure them[8][11].**
+
+| Force | Per unit mass | On the Earth | On this site |
+| --- | --- | --- | --- |
+| centrifugal | Ω² r cos φ, away from the axis | 0.0339 m/s² at the equator, 0 at the poles | [Gravity](/ai/grav.md) |
+| Coriolis | 2 Ω × v, across the motion | ~10⁻⁴ m/s² per m/s of speed | [Foucault](/ai/fou.md), [Aviation](/ai/avia.md), [Rotation](/ai/rot.md) |
+| Eötvös (vertical part of Coriolis) | 2 Ω v cos φ, up for eastward motion | a ship going east is lighter | [Aviation](/ai/avia.md), [Gravity](/ai/grav.md) |
+| Euler | −(dΩ/dt) × r | negligible: Ω barely changes | — |
+
+## Newton's three laws and universal gravitation
+
+**The three laws (Principia, 1687)[4].** First: a body stays at rest or in uniform straight motion unless a force acts on it; this is what defines an inertial frame. Second: the force equals the mass times the acceleration. Third: when a body pushes another, the other pushes back with an equal and opposite force. **Mass is not weight.** Mass (kg) measures how hard a body is to accelerate and is the same everywhere; weight is the force of gravity on it, m g, in newtons (N = kg·m/s²), and changes with g. A bathroom scale measures a force and displays it divided by a standard g.
+
+$${\sum \vec F = m\,\vec a = m\,\frac{d\vec v}{dt}}\qquad (\sum \vec F = 0\ \Leftrightarrow\ \vec v\ \text{constant})$$
+
+Σ F is the sum of all forces on the body, added as arrows. If they cancel, the acceleration is zero and the first law follows: the first law is the second with no net force. On a book lying on a table, its weight and the table's push cancel.
+
+$${\vec F_{A\to B} = -\vec F_{B\to A}}$$
+
+The apple pulls the Earth up exactly as hard as the Earth pulls the apple down. The Earth's acceleration is far too small to see because its mass is 10²⁴ times larger. The two forces act on different bodies, so they never cancel each other.
+
+$${F = \frac{G\,m_1\,m_2}{r^2}},\qquad g = \frac{G M}{R^2}$$
+
+Every pair of masses attracts along the line joining them, with a force that falls as the square of the distance r between their centres; for a sphere, the attraction outside is as if all its mass were at the centre. G is the gravitational constant, first measured in the laboratory by Cavendish in 1798 with lead balls[10]. At the surface of a sphere of mass M and radius R, the acceleration is g = GM/R²: 9.820 m/s² for the Earth's GM and a radius of 6,371 km. The [Gravity](/ai/grav.md) tab compares measured g with this.
+
+*Figure caption:* **Henry Cavendish** 1731–1810
+[After the only likeness, sketched by William Alexander without his knowledge (G. Wilson, 1851)](https://commons.wikimedia.org/wiki/File:Cavendish_Henry_signature.jpg)
+
+$${a_\text{Moon} = \frac{4\pi^2 r}{T^2} \approx g\,\left(\frac{R}{r}\right)^2}$$
+
+**Newton's Moon test.** The Moon, at r = 60 Earth radii, goes round in T = 27.32 days: to bend its path into that circle it must fall towards the Earth by 2.723 mm/s². Gravity at the surface, weakened by (R/r)² = 1/3,600, gives 2.698 mm/s²[4][17]. The two agree to 1.0 %; counting the Moon's own mass (the Earth and the Moon both turn about their common centre, so G(M+m) in place of GM) gives 2.731 mm/s². The same force makes apples fall and keeps the Moon in orbit.
+
+## Adding forces
+
+**A force is an arrow: a size in newtons and a direction.** Several forces on one body act as a single force, their sum, found by putting the arrows end to end (the parallelogram rule, known to Stevin in 1586 and stated by Newton as the first corollary of his laws[20][4]). In practice, one adds them by components: choose two perpendicular axes, project every force on each, and add the numbers. Then the second law applies to the sum: a body whose forces add up to zero stays at rest or keeps its velocity, whatever the individual forces are. Drawing every force acting on a body, and only those, is called a free-body diagram; it is the first step of every mechanics problem.
+
+*Figure caption:* **A force table, seen from above.** A ring is tied to three ropes that run over pulleys at the rim and carry 3, 4 and 5 kg: each rope pulls the ring towards its pulley with the weight it carries, m g. Starting from the centre, the ring slides along the sum of the three forces (black arrow) until that sum is zero; a little friction is added so that it stops. On the right the same three arrows end to end: the gap between start and finish is the sum, and at equilibrium the polygon closes. Click to pause.
+
+$${\sum F_x = 0,\qquad \sum F_y = 0}\qquad F_x = F\cos\theta,\ \ F_y = F\sin\theta$$
+
+**Equilibrium by components.** θ is the angle of each force from the x axis. A force of 10 N at 30° counts as 8.66 N along x and 5 N along y. A body is in equilibrium when both sums vanish, which is two equations for a flat problem and three in space. With 3, 4 and 5 kg the forces are 29.4, 39.2 and 49.1 N; three forces in the ratio 3 : 4 : 5 close a right triangle, so at equilibrium the two smaller ropes are at 90° to each other.
+
+## Ropes and pulleys
+
+**A rope only pulls, along itself, and with the same tension all along** when its mass and the pulleys' friction can be neglected. A pulley turns that pull in another direction without changing it. Two classic set-ups follow. In Atwood's machine (1784), two masses hang on either side of a pulley: the heavier goes down, the lighter up, both with the same acceleration, smaller than g[21]. In a block and tackle, the load hangs on several strands of the same rope: each strand carries the same tension, so n strands share the weight n ways, and the rope must be pulled n times as far as the load rises. The work done, force times distance, is the same either way: pulleys trade force for distance, they do not create energy.
+
+*Figure caption:* **Two pulley systems, in real time.** Left, Atwood's machine with 3 kg against 2 kg, released from rest: on each block, its weight (amber) and the tension of the rope (blue), the same on both sides; their sum (black) is the block's mass times its acceleration, 1.96 m/s² for both. Right, a block and tackle with four strands lifts 40 kg (392 N) with a pull of 98 N; the hand draws four metres of rope for each metre the load rises. Rope and pulleys without mass or friction. Click to pause.
+
+$${a = \frac{m_1 - m_2}{m_1 + m_2}\,g},\qquad T = \frac{2\,m_1 m_2}{m_1 + m_2}\,g$$
+
+**Two free-body diagrams, two equations.** On the heavy block, m₁ a = m₁ g − T; on the light one, m₂ a = T − m₂ g. Adding them removes T and gives a; putting a back gives T. With 3 and 2 kg: a = g/5 = 1.96 m/s² and T = 23.5 N, between the two weights (19.6 and 29.4 N). Atwood built it to slow free fall down enough to time it by hand[21].
+
+$${F = \frac{m\,g}{n}},\qquad d_{\text{rope}} = n\,h$$
+
+**n strands, n times less force, n times more rope.** n is the number of strands that hold the moving block, h the height the load rises. With four strands, 40 kg are held by 98 N, a quarter of their 392 N; raising them by 1 m takes 4 m of rope. F × d_rope = m g × h: the work is the same.
+
+## Inertia, kicks and collisions at an angle
+
+**A moving body needs no force to keep moving.** A puck on ice keeps its speed and direction; only a force changes them (Newton's first law[4]). A short, hard blow is best described by its impulse J, the force multiplied by the time it lasts, in newton-seconds: it changes the velocity by J/m, as an arrow, in the direction of the blow. The new velocity is the old one plus that arrow, which is why a ball struck sideways does not go where it was struck but somewhere between. In a collision, the two bodies give each other equal and opposite impulses (the third law), so their total momentum, mass times velocity added as arrows, is the same before and after.
+
+*[Figure: Animation: a billiard ball moving slightly diagonally hits another at rest; its velocity is split into components; the contact force changes only the component along the line of centres; momentum and energy are conserved; the same collision seen from two moving inertial frames shows the same acceleration]*
+
+*Figure caption:* **A collision, then two changes of frame.** A 170 g ball moving at 2.00 m/s, slightly on a slant, keeps its velocity while nothing pushes it (first law); near the impact its velocity is split along the line of centres and across it; at the impact, the push between the balls acts along the line of their centres, equal and opposite on each (third law), and changes only the component along that line (second law: J = m v_n); momentum is unchanged and kinetic energy comes back after the squeeze; the push peaks near 1,403 N during the 0.3 ms of contact[29]; then the viewpoint glides, the grid showing it, to a frame that moves with the ball's horizontal speed, and later to one that moves with the ball itself (every image is seen from an inertial frame, so the paths stay straight); the three frames side by side show the same acceleration, 8,252 m/s² at the peak, the same curve three times; and a frame that kept following the ball through the impact would need a fictitious force. Slowed down; the contact, a fraction of a millisecond, is stretched; balls at true scale. Click to pause.
+
+*Figure caption:* **Velocities add as arrows.** Left, a 170 g puck sliding at 2 m/s receives a blow of 0.255 N·s at 60° to its path: Δv = J/m = 1.5 m/s in that direction. It leaves at 3.04 m/s, 25.3° from its old path, the sum of the two arrows. Right, a ball A (170 g, 2.00 m/s, slightly on a slant) hits an identical ball B at rest. At the impact its velocity splits along the line joining the centres (violet, v_n = 1.58 m/s) and across it (grey, v_t = 1.23 m/s). The contact force (green) acts along that line only, equal and opposite on the two balls: it removes A's v_n and gives it to B, J = m v_n = 0.268 N·s, and leaves v_t alone, so the balls part at 90°. Billiard balls stay in contact for about 0.3 ms[29]: the push averages 893 N and peaks near 1,403 N, an acceleration of 841 g. Below, the total momentum, unchanged throughout, and the energy: the kinetic part dips during the contact while the balls are squeezed (light green), then comes back. Seen from above, no friction or spin; the contact, a fraction of a millisecond, is stretched. Click to pause.
+
+$${\vec J = \vec F\,\Delta t = m\,\Delta\vec v}\quad\Rightarrow\quad \vec v^{\prime} = \vec v + \frac{\vec J}{m}$$
+
+**The second law over a short time.** F is the force of the blow, Δt its duration, J their product. The kick of the animation, 0.255 N·s on 170 g, adds 1.5 m/s at 60° to 2 m/s: by components, (2 + 1.5 cos 60°, 1.5 sin 60°) = (2.75, 1.30) m/s, that is 3.04 m/s at 25.3°.
+
+*Figure caption:* **One collision, three inertial frames.** The collision of the panel above, watched at once from the table, from a frame that moves with A's horizontal speed (1.95 m/s: there A only goes straight up before the impact), and from a frame that moves with A's whole velocity before the impact (there A is at rest and B comes at it). The table's dots slide by in the moving frames. Velocities, paths and the total momentum differ from one frame to the next; during the contact the acceleration of A (green) is the same arrow in all three, and the same number, up to 8,252 m/s² (841 g); so is its change of velocity. Each frame finds the total momentum and the energy conserved. (The total kinetic energy happens to be the same in these three frames: with two equal balls, one at rest, ½m|v − u|² + ½m|u|² = ½m|v|² for both of these u. In a frame moving another way it would differ.) None of the frames follows A once it is deflected: each keeps its speed, which is what keeps it inertial. Click to pause.
+
+$${\vec v^{\prime} = \vec v - \vec u}\quad\Rightarrow\quad \Delta\vec v^{\prime} = \Delta\vec v,\qquad \vec F^{\prime} = m\,\frac{\Delta\vec v^{\prime}}{\Delta t} = \vec F$$
+
+**Velocities depend on the frame, accelerations and forces do not.** u is the velocity of one inertial frame relative to the other: here A's horizontal speed, (1.95, 0) m/s, or its whole velocity before the impact, (1.95, 0.43) m/s. Every velocity measured in the moving frame is the one measured from the table minus u. Subtracting the same u before and after the impact leaves the change of velocity untouched, so all three observers measure the same acceleration and, with the same mass, the same force: the contact force is a property of the two balls, not of the observer. Momentum and kinetic energy are conserved in each frame; the momentum takes a different value in each. This is Galileo's relativity (Frames of reference, above): no experiment on the balls can tell which frame is “at rest”. A frame that kept following A through the impact would not be inertial: A would never move in it, and a fictitious force equal and opposite to the contact force would be needed to explain that.
+
+*Figure caption:* **The same total push, three ways.** Three 170 g balls roll at 2 m/s into a headwind. The first is slowed by a steady wind of 0.068 N for 2.5 s; the second by two blows of 0.085 N·s; the third by a single blow of 0.17 N·s. Under each lane, the force against time: a long low strip or tall narrow spikes, but the same grey area, 0.17 N·s. On the right, the velocity and the running sum ∫F dt of the three: different paths, the same end, 1.0 m/s and −0.17 N·s. The balls do not end at the same place: the velocity changed at different moments. Slowed down; the blows are lengthened to be seen; the wind is taken as steady, while real drag grows with speed. Click to pause.
+
+$${\vec J = \int \vec F\,dt = \sum_i \vec J_i}\quad\Rightarrow\quad \Delta\vec v = \frac{\vec J}{m}$$
+
+**Only the area counts.** The integral ∫F dt is the area under the curve of the force against time, and the J_i are the impulses of separate blows. A small force for a long time, a big one for an instant, or several blows in a row change the velocity by the same amount if their areas add up to the same total: here 0.17 N·s on 0.17 kg, 1 m/s. The second law in this form, m Δv = ∫F dt, is how a contact force too short to measure is found from the velocities before and after. When the change happens matters for where the body goes, not for its final velocity.
+
+$${m\vec v = m\vec v_1^{\prime} + m\vec v_2^{\prime}},\quad \tfrac12 m v^2 = \tfrac12 m v_1^{\prime 2} + \tfrac12 m v_2^{\prime 2}\ \Rightarrow\ \vec v_1^{\prime} \perp \vec v_2^{\prime}$$
+
+**Why equal balls leave at right angles.** Momentum says the three velocity arrows close a triangle; energy (an elastic collision loses none) says v² = v₁′² + v₂′², Pythagoras: the triangle has a right angle between v₁′ and v₂′. Hit off-centre by one radius, the target leaves at 30° with 1.73 m/s and the striker at 1.00 m/s, from 2 m/s. Real billiard balls also spin and slide on the cloth, which bends these paths a little.
+
+## Magnetic forces
+
+**A magnetic field pushes on moving charges, sideways.** In 1820 Ørsted saw a compass needle turn when a current flowed in a wire beside it: currents make magnetic fields[22]. Lorentz wrote in 1895 the force on a charge q moving at v in a field B: q v × B, perpendicular to both[23]. Because it is always across the motion, it never changes the charge's speed, only its direction: in a uniform field the charge goes round a circle. Fields add as arrows too: a compass needle points along the sum of all the fields at its place, the Earth's and any other. The Earth's field and its direction everywhere are the subject of the Magnetism tab.
+
+*Figure caption:* **Two magnetic forces.** Left, a positive charge in a field that points into the screen: the force (amber) stays at right angles to the velocity (blue) and points to the centre, so the charge circles at constant speed. A proton at 1 km/s in 50 µT, the order of the Earth's field, circles on 21 cm; an electron at the same speed on 0.11 mm. Right, a compass seen from above, with a vertical wire just north of it: when 5 A flow upward in the wire, at 5 cm it adds 20 µT pointing east to the 20 µT of the Earth's horizontal field, and the needle turns by 45° to point along the sum; the current cut, it comes back. Not to scale. Click to pause.
+
+$${\vec F = q\,\vec v \times \vec B},\qquad r = \frac{m\,v}{|q|\,B}$$
+
+**The cross product** v × B is an arrow perpendicular to both v and B, of size v B sin(angle between them); its direction follows the right hand (fingers from v to B, the thumb gives the force for a positive charge). For a velocity across the field the force is q v B, and setting it equal to m v²/r, the centripetal force, gives the radius. The masses and the charge of the proton and of the electron are those of CODATA[2].
+
+$${B_{\text{wire}} = \frac{\mu_0\,I}{2\pi d}},\qquad \tan\delta = \frac{B_{\text{wire}}}{B_H}$$
+
+**The field of a straight wire, and the compass.** I is the current, d the distance from the wire, μ₀ = 1.256 6 × 10⁻⁶ N/A² the magnetic constant[2]. 5 A at 5 cm give 20 µT. The needle settles along the sum of the wire's field and the horizontal part B_H of the Earth's, about 20 µT at mid-latitudes[24]; at right angles to each other, the angle δ from north has tan δ = 20/20, δ = 45°.
+
+## Worked example: how far does a pushed ball go?
+
+**The problem.** A steel ball 10 cm across is pushed from the ground by a force of 1,000 N pointing 30° above the horizontal, for 0.1 s. Where does it land? Every step uses only the rules above: find the mass, add the forces during the push, get the velocity it leaves with, then follow the flight under its weight alone, and then with the air as well. Steel weighs 7,850 kg per cubic metre[25]; the parabola of a thrown body goes back to Galileo[26].
+
+**The ball, step by step. g = 9.81 m/s².**
+
+| Step | Rule | Numbers | Result |
+| --- | --- | --- | --- |
+| 1. Mass | m = ρ · (4/3) π r³ | 7,850 × 4.19 × 0.05³ | m = 4.11 kg, weight W = m g = 40.3 N |
+| 2. The push, by components | F_x = F cos 30°, F_y = F sin 30° | 1,000 × 0.866 ; 1,000 × 0.5 | F_x = 866 N, F_y = 500 N |
+| 3. Sum of the forces during the push | ΣF = F + W (W points down) | (866, 500 − 40.3) N | a = ΣF/m = 239 m/s² at 28.0° |
+| 4. Velocity at the end of the push | v = a Δt | 239 × 0.1 | v₀ = 23.85 m/s at 28.0°, from (1.05 m, 0.56 m) |
+| 5. Flight in a vacuum | x = x₀ + v₀ cos α t, y = y₀ + v₀ sin α t − ½ g t² | y = 0 when t = 2.33 s | lands at 50.1 m; highest point 6.93 m |
+| 6. With the air | drag ½ ρ C_D A v², against the velocity | ½ × 1.225 × 0.47 × 78.5 cm² × v² | 1.29 N at launch (3.2 % of the weight); lands at 49.2 m |
+| Check: forgetting the weight during the push | v = F Δt / m, range v² sin 60° / g | 24.33 m/s at 30° | 52.3 m: 2 m too far |
+
+*Figure caption:* **The ball, at true scale.** Horizontal and vertical distances are drawn at the same scale; only the ball is enlarged. First the push, slowed twenty times: the force F at 30° (blue) and the weight (amber) add to a push at 28.0° (black), which is why the ball leaves lower than 30°. Then the flight, slowed three times: in a vacuum (dashed) and in air (solid), with the weight, the velocity and the drag of the air (green), a tiny arrow at the same scale, 3.2 % of the weight at launch. The air costs 0.9 m: 49.2 m instead of 50.1 m. Click to pause.
+
+$${x = v_0\cos\alpha\;t,\qquad y = v_0\sin\alpha\;t - \tfrac12 g t^2},\qquad R = \frac{v_0^2\sin 2\alpha}{g}$$
+
+**Two independent motions.** With only the weight acting, nothing pushes sideways, so the horizontal velocity v₀ cos α never changes; vertically, the velocity falls by g every second, as for a dropped stone. The path is a parabola. From ground level the range is R = v₀² sin 2α / g, largest at 45°; our ball leaves from 0.56 m up at 28.0°, so the table solves y = 0 for t instead: 2.33 s, 50.1 m.
+
+$${\vec F_D = -\tfrac12\,\rho\,C_D\,A\,|\vec v|\,\vec v},\qquad m\,\frac{d\vec v}{dt} = m\vec g + \vec F_D$$
+
+**Air resistance.** ρ = 1.225 kg/m³ is the density of air at sea level[27], A = π r² the ball's cross-section, C_D ≈ 0.47 the drag coefficient of a smooth sphere at these speeds[28]. The drag points against the velocity and grows with its square. With it the equations have no simple solution: the computer adds the two forces at each millisecond and steps the velocity and the position forward (Runge–Kutta method). For a dense ball the drag is small; for a hollow 50 g ball of the same size it passes the weight above 15 m/s.
+
+**What the example leaves out, said plainly:** the air during the 0.1 s of the push, the ball's spin (which, through the Magnus effect, lifts or drops a spinning ball), wind, and the slight change of C_D with speed. A thrown ball also starts from the hand, about 2 m above the ground, which adds several metres. Each of these is one more force to add to the sum, by the same rule.
+
+## Circular motion and angular velocity
+
+$${\omega = \frac{d\theta}{dt} = \frac{2\pi}{T}},\qquad v = \omega\,r$$
+
+**Angular velocity.** ω (omega) is how fast an angle turns, in radians per second; T is the time for one turn. Every point of a turning body has the same ω, but its speed v grows with its distance r from the axis. For the Earth, ω = 7.292 × 10⁻⁵ rad/s[11]: one turn in 86,164 s. The [Rotation](/ai/rot.md) tab measures ω with ring lasers and gyroscopes, the [Scale](/ai/scale.md) tab shows it as a clock hand.
+
+$${a_c = \frac{v^2}{r} = \omega^2 r},\ \text{towards the centre}$$
+
+**Turning at constant speed is accelerating.** The speed keeps its size but not its direction: between two instants, the difference Δv of the velocity arrows points to the centre. Seen from the inertial frame that is a centripetal acceleration, provided by a force (the string of a sling, gravity for the Moon)[19]; seen from the turning frame it appears as the centrifugal force of the previous section, the same size and the opposite way. At the equator, ω²R = 0.0339 m/s², 0.35 % of g.
+
+$${\frac{1}{T_\text{sid}} = \frac{1}{T_\text{sol}} + \frac{1}{T_\text{year}}}\ \Rightarrow\ T_\text{sid} \approx 86\,164\ \text{s}$$
+
+**Two kinds of day.** The solar day (86,400 s, noon to noon) is a turn relative to the Sun; the sidereal day is a turn relative to the stars. Because the Earth also moves along its orbit, it has to turn a little more than once to face the Sun again: in a year it turns 366.24 times relative to the stars for 365.24 noons. With T_sol = 86,400 s and T_year = 365.2422 days, T_sid = 86,164.1 s. This is why the stars rise four minutes earlier every night ([Star trails](/ai/star.md)).
+
+## Energy, momentum and angular momentum
+
+**Three quantities that do not change.** In an isolated system, three totals stay constant whatever happens inside: the energy, the momentum (mass times velocity) and the angular momentum (the “amount of turning”). They follow from Newton's laws and save solving the motion step by step: knowing what is conserved often gives the answer directly.
+
+$${E = \tfrac12\,m v^2 + m g h = \text{constant}},\qquad E_p = -\frac{G M m}{r}$$
+
+The kinetic energy ½mv² is the energy of motion, the potential energy mgh that of height near the ground (in joules, J = kg·m²/s²). A ball dropped from h trades one for the other and reaches the ground at v = √(2gh), whatever its mass. Far from the ground, where g is no longer constant, the potential energy is −GMm/r: zero at infinity, negative when bound.
+
+$${\vec p = m\,\vec v},\qquad \vec p_1 + \vec p_2 = \text{constant}\ \Rightarrow\ m_1 v_1 = -m_2 v_2$$
+
+Two skaters at rest push each other apart: the total momentum was zero and stays zero, so the lighter one goes faster, the opposite way. A rocket works the same way with its exhaust gases, which is why it needs no air to push against.
+
+$${L = m\,r^2\,\dot\theta = \text{constant}}\ \Leftrightarrow\ \frac{dA}{dt} = \frac{r^2\dot\theta}{2} = \text{constant}$$
+
+**Kepler's second law** (1609): the line from the Sun to a planet sweeps equal areas in equal times[9]. It is the conservation of angular momentum L under a force aimed at the Sun: close in (small r), the planet turns faster (large θ̇). The Earth is fastest in early January, at perihelion, which is one reason the seasons do not have the same length ([Orbit](/ai/orb.md)).
+
+$${T^2 = \frac{4\pi^2}{G(M+m)}\,a^3}$$
+
+**Kepler's third law** (1619), as Newton derived it: the square of the period grows as the cube of the orbit's size a (half the long axis of the ellipse)[9][4]. With the Earth's GM, a GPS satellite at a = 26,560 km goes round in 11.97 h, half a sidereal day ([Satellites](/ai/sat.md)); the Moon, with GM alone, in 27.45 days, and with G(M+m) in 27.28 days, against 27.32 observed.
+
+*Figure caption:* **Johannes Kepler** 1571–1630
+[August Köhler, 1910, after an older portrait (Kepler Museum, Weil der Stadt)](https://commons.wikimedia.org/wiki/File:JKepler.jpg)
+
+## Waves and light
+
+**A wave carries energy without carrying matter.** The sea swell, sound, the seismic waves of the [Seismology](/ai/seis.md) tab, the pressure wave of Hunga Tonga ([Atmosphere](/ai/atmo.md)), radio and light are all waves: a disturbance that travels while each point only oscillates about its place. Light needs no medium and goes at c in vacuum, slower in air, water or glass.
+
+$${v = \lambda\,f = \frac{\lambda}{T}},\qquad t = \frac{d}{v}$$
+
+λ (lambda) is the wavelength, the distance between two crests; f the frequency, the number of crests passing per second (hertz, Hz), and T = 1/f the period. In one period the wave advances one wavelength. The travel time over a distance d is d/v: the seismology and Tonga tabs read distances from such times.
+
+$${n_1 \sin\theta_1 = n_2 \sin\theta_2},\qquad n = \frac{c}{v}$$
+
+**Refraction.** When light passes into a medium where it is slower (higher index n), it bends towards the perpendicular[15]. Air gets thinner with height, so its index slowly decreases upwards and a ray going nearly level bends gently downward, following the Earth's curve a little: that is atmospheric refraction, the subject of the [Refraction](/ai/ref.md) tab. The site always shows it beside the unrefracted value.
+
+$${\frac{\Delta f}{f} \approx -\frac{v_r}{c}}\quad (v_r \ll c)$$
+
+**The Doppler effect** (1842)[14]. A source moving away (v_r > 0) stretches its waves, so its frequency drops; one coming closer squeezes them, so it rises. That is the change in pitch of a passing siren. Only the speed along the line of sight, v_r, counts. Measured on starlight it gives the Earth's orbital speed ([Orbit](/ai/orb.md)); on satellite radio signals, their orbits ([Satellites](/ai/sat.md)).
+
+## Constants: defined, measured, and local
+
+**Not every “constant” is the same kind of number.** The seven constants of the SI are exact *by definition*: since 2019 the metre is the distance light travels in 1/299,792,458 s, so c cannot be measured any more, only used[1]. The gravitational constant G is a universal constant that is *measured*, and is the least well known of all (2 parts in 100,000)[2]. The Earth's GM, its rotation ω, its radius and the local g are *properties of one planet*, not universal constants: g changes from place to place, and the “standard” g_n = 9.80665 m/s² is a convention adopted in 1901 for weighing, not a value found anywhere in particular[16]. That last distinction is the site's purity rule: a measurement of the radius may never have used the radius ([Results](/ai/results.md)).
+
+**The constants the site uses, and what kind each one is[1][2][11][12][16].**
+
+| Symbol | Name | Value | Unit | Kind |
+| --- | --- | --- | --- | --- |
+| c | speed of light in vacuum[1] | 299 792 458 | m/s | exact, defines a unit |
+| h | Planck constant[1] | 6.626 070 15 × 10⁻³⁴ | J·s | exact, defines a unit |
+| e | elementary charge[1] | 1.602 176 634 × 10⁻¹⁹ | C | exact, defines a unit |
+| k_B | Boltzmann constant[1] | 1.380 649 × 10⁻²³ | J/K | exact, defines a unit |
+| N_A | Avogadro constant[1] | 6.022 140 76 × 10²³ | mol⁻¹ | exact, defines a unit |
+| Δν_Cs | caesium-133 hyperfine frequency[1] | 9 192 631 770 | Hz | exact, defines a unit |
+| K_cd | luminous efficacy of 540 THz light[1] | 683 | lm/W | exact, defines a unit |
+| G | Newtonian constant of gravitation[2] | 6.674 30(15) × 10⁻¹¹ | m³ kg⁻¹ s⁻² | universal, measured |
+| GM⊕ | Earth's gravitational parameter[11] | 3.986 004 418 × 10¹⁴ | m³/s² | property of the Earth |
+| ω⊕ | Earth's mean angular velocity[11] | 7.292 115 × 10⁻⁵ | rad/s | property of the Earth |
+| R_eq | Earth's equatorial radius (GRS80)[12] | 6 378 137 | m | property of the Earth |
+| g_eq | normal gravity at the equator[12] | 9.780 33 | m/s² | property of the Earth |
+| g_pole | normal gravity at the poles[12] | 9.832 19 | m/s² | property of the Earth |
+| g_n | standard gravity[16] | 9.806 65 | m/s² | convention |
+
+$${1\ \text{m} = c \times \frac{1}{299\,792\,458}\ \text{s}},\qquad 1\ \text{s} = \frac{9\,192\,631\,770}{\Delta\nu_\text{Cs}}$$
+
+**A constant defines a unit.** The second is the duration of 9,192,631,770 oscillations of the radiation of the caesium-133 atom, the metre the distance light travels in 1/299,792,458 of that second. Any laboratory can rebuild them without a reference object. GPS clocks count these oscillations ([GPS](/ai/gps.md)).
+
+$${g(\varphi) \approx \frac{G M}{R^2} - \omega^2 R \cos^2\varphi}\quad \text{(sphere, no flattening)}$$
+
+**g is local.** On a turning sphere of radius 6,371 km, the centrifugal term lowers gravity from 9.820 m/s² at the poles to 9.786 m/s² at the equator. Measured, it goes from 9.832 to 9.780 m/s²[12]: the difference is larger because the Earth is also flattened, the equator being 21 km farther from the centre than the poles. Height, the rocks below and the tides change it further, in the fourth decimal and beyond ([Gravity](/ai/grav.md)).
+
+## Measurement, uncertainty and fitting
+
+**A measurement is a value with its uncertainty.** Time the period of a 1 m pendulum twelve times with a stopwatch and you will not get the same number twice: your reaction time adds a random error each time. The mean is the best estimate; the spread around it, the standard deviation σ, says how far one measurement typically falls from it[13]. The numbers in this section are **invented for the example**, not a measurement.
+
+$${\bar x = \frac{1}{N}\sum x_i},\qquad \sigma = \sqrt{\frac{\sum (x_i - \bar x)^2}{N-1}},\qquad \sigma_{\bar x} = \frac{\sigma}{\sqrt N}$$
+
+For the 12 timings in the figure, x̄ = 2.006 s and σ = 0.014 s. The mean is better known than any single timing: its uncertainty is σ/√N = 0.004 s. With the pendulum law T = 2π√(L/g)[19], that gives g = 4π²L/T² = 9.81 ± 0.04 m/s². About two thirds of the measurements fall within ±1σ of the mean, 95 % within ±2σ. A value 3σ away has a 0.3 % chance of being bad luck: that is the threshold the site uses to set an outlier aside, measuring σ on the *other* points, never on a percentage chosen afterwards.
+
+$${\chi^2 = \sum_i \left(\frac{y_i - f(x_i)}{\sigma_i}\right)^2\ \text{minimal}}$$
+
+**Least squares** (Legendre 1805, Gauss 1809)[18]. To fit a model f to measured points, choose its parameters so that the sum of the squared gaps (the *residuals*), each divided by its uncertainty, is as small as possible. Here, T² against L for five pendulum lengths: the best line has a slope of 4.025 ± 0.035 s²/m, and since T² = (4π²/g) L, g = 9.81 ± 0.09 m/s². Almost every result of the site is a fit of this kind, with both models fitted the same way; when the residuals of one model are much larger than the measurement uncertainty, that model does not describe the data.
+
+*Figure caption:* **Carl Friedrich Gauss** 1777–1855
+[Gottlieb Biermann after Christian Albrecht Jensen, 1840](https://commons.wikimedia.org/wiki/File:Carl_Friedrich_Gauss.jpg)
+
+**Random and systematic errors.** Random errors scatter the measurements around the true value and shrink when they are averaged. A systematic error shifts them all the same way, a watch that runs fast, an uncorrected refraction, and averaging does nothing against it. Accuracy is closeness to the true value; precision is the closeness of the measurements to each other. The figure below shows the difference; the site's tabs say, for each result, which systematic errors they checked and which they could not.
+
+*Figure caption:* **Precision and accuracy.** Four sets of shots at a target whose centre is the true value. Left to right: scattered and off-centre; tight but off-centre (precise, with a systematic error); scattered but centred (accurate on average, imprecise); tight and centred.
+
+## Terrain models: LiDAR, elevation grids and smoothing
+
+**Where the ground comes from.** Every horizon, skyline or hidden summit on the site that involves real ground is read from a digital elevation model, a grid of heights, never drawn by hand. In France: the IGN's LiDAR HD, the bare ground measured by airborne laser on a 1 m grid[30]. Where it has no data: the IGN's RGE ALTI, 1 m, assembled from older surveys[31]. In Austria: the BEV's 1 m laser model[32]. Elsewhere, and more than 45 km from a French viewpoint: Copernicus GLO-30, a 30 m grid measured by radar satellites, which is a *surface* model, trees and roofs included[33] (its 90 m version for a few very distant horizons). Each gap is filled by the next model in that order, and where none has a value, by the sea at 0 m.
+
+*Figure caption:* **A terrain model is a mesh.** An invented summit, drawn at true scale. The grid first has a node every 5 m, then every 10, 20 and 40 m: at each step the nodes that go (red) come down onto the surface of the coarser grid, and the summit read on the mesh (blue, on the section through the summit) drops below the real one (black), because the sharp top falls between nodes. Then the nodes come back. Last, a patch of the 5 m grid has no data, like the LiDAR HD on the summit of Mont Agel, and another model fills it (amber): coarser, made another way, and here 8 m higher on average, so it does not meet the first one at the edges and gives yet another summit. Each node takes the height of the ground at its point; the other model, the mean of its cell. The heights are invented for the example.
+
+$${z = (1-u)(1-v)\,z_{00} + u(1-v)\,z_{10} + (1-u)\,v\,z_{01} + u\,v\,z_{11}},\qquad u = \frac{x - x_0}{\Delta},\ \ v = \frac{y - y_0}{\Delta}$$
+
+**How the site reads between nodes.** Δ is the grid step; the point (x, y) lies at fractions u and v of the cell, and its height is the mean of the four corner heights, each weighted by how close it is. The four weights add up to 1, so the result never goes above the highest node: a summit is only as high as the nodes that land on it. That is the smoothing; it is why the summit of a 30 m model can be tens of metres below the real one, and the 1 m LiDAR only centimetres[30][33].
+
+**Why a model's summit often comes out lower than the published height.** Three reasons, which mostly push the same way. *The grid.* A model stores one height per cell, and the site reads between the four nearest cells (bilinear interpolation): a summit sharper than a cell is averaged with its own slopes. That is the smoothing. On a 1 m grid it costs centimetres; on a 30 m grid it can cost tens of metres on a pointed peak. To limit it, the skylines of the French and Austrian viewpoints are read twice: every 25 m along each line of sight on a 30 m grid, then again at 1 m around every point that could make the skyline; the script refuses to write a profile if a fine reading rises above the coarse one by more than the margin it allows for. *What is measured.* A bare-ground model has no cairn, pillar, building or tree, while a published height is usually that of a survey mark, and can be older than the works done on a summit; a surface model has the opposite bias. *The rays.* A profile is a set of lines of sight one step of azimuth apart: a narrow summit can fall between two of them, and it is that step, not the model, that sets the resolution there.
+
+**The rule.** What the site draws and computes uses the model's height, the same reading for the plane and for the globe, so that any difference between the two comes from geometry and never from sampling. A model's value is never replaced by a published one, nor “corrected” by hand. Where the two differ by more than a few metres, the page gives both, names the model, and says what the published height would change; a page that does not is a mistake to report. At 40 km, 15 m of height is about 1.3′, and it moves a summit by the same amount on both models.
+
+**Mont Agel: the height each source gives, around the published summit (43.7708° N, 7.4197° E)[34].**
+
+| Source | Height | What it is |
+| --- | --- | --- |
+| Wikipédia (FR), September 2026 | 1,148 m | published |
+| Wikipédia (FR), November 2026, after the Géoportail | 1,151 m | published |
+| IGN LiDAR HD[30] | 1,127 m | bare ground, highest point outside the gap; 1,120 m at the published point |
+| IGN RGE ALTI[31], inside the gap | 1,133 m | what the site uses |
+| IGN RGE ALTI, around the summit | 1,138 m | 1,137 m at the published point |
+| Copernicus GLO-30[33] | 1,145 m | surface, buildings included, 30 m cells |
+
+**An example: Mont Agel, seen from the plateau de Caussols** ([Dip of the horizon](/ai/dip.md), [Elevation angles](/ai/elev.md)). The LiDAR HD has no data over 0.13 km² of the summit, which carries military air-detection installations[34]; around that gap the RGE ALTI stands up to 30 m above the LiDAR, while elsewhere the two agree within a metre. The data do not say which is right on the summit itself, so the site does not choose by hand: it uses its usual reading, 1,133 m, and says so. Every height in the table gives the same answer: from 1,210 m, on a plane, Mont Agel lies between 5′ (1,151 m) and 8′ (1,119 m) below the horizon, which is at eye level; on the refracted globe, between 45′ and 48′ above the sea horizon. The photograph shows it 42′ above.
+
+**See also**[Rotation](/ai/rot.md)[Gravity](/ai/grav.md)[Foucault](/ai/fou.md)[Orbit](/ai/orb.md)[Satellites](/ai/sat.md)[Refraction](/ai/ref.md)[Results](/ai/results.md)[Dip](/ai/dip.md)[Elevation angles](/ai/elev.md)
+
+## Sources for this tab
+
+1. [1] Bureau International des Poids et Mesures, [*The International System of Units (SI)*](https://www.bipm.org/en/publications/si-brochure), 9th edition (2019, updated 2022): the seven defining constants (Δν_Cs, c, h, e, k, N_A, K_cd) and the base units they fix, in force since 20 May 2019 (26th CGPM, Resolution 1).
+2. [2] NIST, [CODATA Internationally recommended 2022 values of the fundamental physical constants](https://physics.nist.gov/cuu/Constants/): Newtonian constant of gravitation G = 6.674 30(15) × 10⁻¹¹ m³ kg⁻¹ s⁻², relative standard uncertainty 2.2 × 10⁻⁵.
+3. [3] G. Galilei, *Dialogo sopra i due massimi sistemi del mondo* (Florence, 1632), Second Day: Salviati's cabin below decks of a ship moving uniformly, where no experiment shows whether the ship moves or stands still.
+4. [4] I. Newton, *Philosophiæ Naturalis Principia Mathematica* (London, 1687): “Axiomata, sive leges motus” (the three laws); Book III, Proposition IV (the Moon is kept in its orbit by the force of gravity, compared with the fall of bodies at the surface) and Propositions XIII–XV (Kepler's laws from the inverse square).
+5. [5] G. W. Leibniz, “Nova methodus pro maximis et minimis”, *Acta Eruditorum* (October 1684) 467–473: the notation dx, dy and the rules of the differential calculus.
+6. [6] I. Newton, *The Method of Fluxions and Infinite Series* (written 1671, published London, 1736): “fluxions”, the rates of change of “fluents” in time, later written with a dot over the letter.
+7. [7] J.-L. Lagrange, *Théorie des fonctions analytiques* (Paris, 1797): the derived function written f′(x), f″(x).
+8. [8] G. Coriolis, “Mémoire sur les équations du mouvement relatif des systèmes de corps”, *Journal de l'École polytechnique* 15 (1835) 142–154: the compound centrifugal force, now called the Coriolis force, in a rotating frame.
+9. [9] J. Kepler, *Astronomia nova* (Prague, 1609): elliptical orbits and the law of areas; *Harmonices mundi* (Linz, 1619), Book V: the squares of the periods as the cubes of the mean distances.
+10. [10] H. Cavendish, “Experiments to determine the Density of the Earth”, *Philosophical Transactions of the Royal Society* 88 (1798) 469–526: the torsion balance with lead spheres, from which G follows.
+11. [11] G. Petit, B. Luzum (eds.), [*IERS Conventions (2010)*, IERS Technical Note 36](https://www.iers.org/IERS/EN/Publications/TechnicalNotes/tn36.html), table 1.1: GM⊕ = 3.986 004 418 × 10¹⁴ m³/s², nominal mean angular velocity ω = 7.292 115 × 10⁻⁵ rad/s.
+12. [12] H. Moritz, “Geodetic Reference System 1980”, *Journal of Geodesy* 74 (2000) 128–133: equatorial radius 6 378 137 m, polar radius 6 356 752 m, normal gravity 9.780 326 7715 m/s² at the equator and 9.832 186 3685 m/s² at the poles; mean radius 6 371.0088 km.
+13. [13] JCGM 100:2008, [*Evaluation of measurement data — Guide to the expression of uncertainty in measurement*](https://www.bipm.org/en/committees/jc/jcgm/publications) (GUM), BIPM et al.: standard uncertainty, the experimental standard deviation with N − 1, and the standard deviation of the mean s/√N (§ 4.2).
+14. [14] C. Doppler, “Über das farbige Licht der Doppelsterne und einiger anderer Gestirne des Himmels”, *Abhandlungen der königlich böhmischen Gesellschaft der Wissenschaften* 2 (1842) 465–482.
+15. [15] R. Descartes, *La Dioptrique* (Leiden, 1637), Discours second: the law of refraction in sines, found earlier by W. Snellius (about 1621, unpublished) and by Ibn Sahl (984) for lenses.
+16. [16] 3rd Conférence Générale des Poids et Mesures (1901), Declaration on the unit of mass and the definition of weight: standard acceleration of gravity g_n = 980.665 cm/s², “the value already stated in the laws of some countries”.
+17. [17] D. R. Williams, [Moon Fact Sheet](https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html), NASA Goddard (NSSDCA): semi-major axis 384 400 km, sidereal orbit period 27.3217 days, Earth/Moon mass ratio 81.3.
+18. [18] A.-M. Legendre, *Nouvelles méthodes pour la détermination des orbites des comètes* (Paris, 1805), appendix “Sur la méthode des moindres quarrés”; C. F. Gauss, *Theoria motus corporum coelestium* (Hamburg, 1809), Book II, Section III.
+19. [19] C. Huygens, *Horologium oscillatorium* (Paris, 1673): the period of a pendulum and its relation to the fall of bodies, T = 2π√(L/g) for small swings, and (Part V) the theorems on centrifugal force, v²/r, worked out in *De vi centrifuga* (1659, published 1703).
+20. [20] S. Stevin, *De Beghinselen der Weeghconst* (Leiden, 1586): equilibrium of forces on an inclined plane (the “wreath of spheres”), and the triangle of forces.
+21. [21] G. Atwood, *A Treatise on the Rectilinear Motion and Rotation of Bodies* (Cambridge, 1784): the machine of two masses over a pulley, to slow down and time uniformly accelerated motion.
+22. [22] H. C. Ørsted, *Experimenta circa effectum conflictus electrici in acum magneticam* (Copenhagen, 1820): a current in a wire turns a compass needle.
+23. [23] H. A. Lorentz, *Versuch einer Theorie der electrischen und optischen Erscheinungen in bewegten Körpern* (Leiden, 1895): the force on a charge moving in electric and magnetic fields.
+24. [24] P. Alken et al., “International Geomagnetic Reference Field: the thirteenth generation”, *Earth, Planets and Space* 73 (2021) 49: the horizontal intensity of the field, about 15 to 25 µT at mid-latitudes.
+25. [25] EN 1993-1-1 (Eurocode 3), Design of steel structures, § 3.2.6: density of structural steel ρ = 7,850 kg/m³.
+26. [26] G. Galilei, *Discorsi e dimostrazioni matematiche intorno a due nuove scienze* (Leiden, 1638), Fourth Day: a projectile thrown horizontally describes a semi-parabola; the range is largest at 45°.
+27. [27] *U.S. Standard Atmosphere, 1976* (NOAA, NASA, USAF, Washington, 1976): density of air at sea level 1.2250 kg/m³.
+28. [28] S. F. Hoerner, *Fluid-Dynamic Drag* (Hoerner, 1965), chapter 3: drag coefficient of a smooth sphere about 0.47 below the critical Reynolds number (≈ 3 × 10⁵; our ball: 1.6 × 10⁵).
+29. [29] W. C. Marlow, *The Physics of Pocket Billiards* (Marlow Advanced Systems Technologies, 1995): ball-ball contact lasts between 0.1 and 0.6 ms, less at higher speed; measurements of 0.25 to 0.3 ms by Sorokin, quoted by D. Alciatore, [“Ball contact time”](https://drdavepoolinfo.com/FAQ/ball/contact-time/) (Dr. Dave Pool Info).
+30. [30] IGN, [LiDAR HD](https://geoservices.ign.fr/lidarhd), digital terrain model (MNT, bare ground, 1 m grid) from airborne laser, read through the Géoplateforme WMS-Raster service (layer IGNF_LIDAR-HD_MNT_ELEVATION) by this project's `research/lidar_horizon.py`.
+31. [31] IGN, [RGE ALTI](https://geoservices.ign.fr/rgealti), 1 m digital terrain model of France, assembled from airborne LiDAR, photogrammetric correlation and, in places, radar surveys; used only where the LiDAR HD has no data.
+32. [32] BEV (Bundesamt für Eich- und Vermessungswesen), [ALS-Höhenraster](https://www.bev.gv.at/Services/Produkte/Digitales-Gelaendehoehenmodell/ALS-Hoehenraster.html), 1 m airborne-laser terrain model of Austria.
+33. [33] [ESA / Airbus, *Copernicus DEM GLO-30*](https://doi.org/10.5270/ESA-c5d3d65) (and GLO-90): a 1-arc-second (about 30 m) digital surface model of the globe from the TanDEM-X radar mission, vegetation and buildings included.
+34. [34] [Mont Agel (Wikipédia, FR)](https://fr.wikipedia.org/wiki/Mont_Agel): 1,148 m when consulted in September 2026, 1,151 m in November 2026 (reference: Géoportail), at 43°46′15″ N, 7°25′11″ E; military air-detection installations on the summit. Model heights read by this project (`research/lidar_horizon.py` and the Géoplateforme altimetry service), 25 November 2026.

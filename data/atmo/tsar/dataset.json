@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "atmo-tsar",
+  "title": "Pressure wave of the 30 October 1961 Novaya Zemlya explosion: three passages at eight Japanese microbarographs and Showa Base (Murayama 1962, Table 1)",
+  "tab": "atmo",
+  "build": "fog:atmo-tsar",
+  "kind": "transcription",
+  "evidence": "measure",
+  "radius_enters_via": [],
+  "verdict_rule": "Laps that change with the station's position, as any echo would make them, or no third train after the first two.",
+  "license": "other",
+  "license_note": "Journal of the Meteorological Society of Japan, free access on J-STAGE (© Meteorological Society of Japan); only the table's numbers are transcribed.",
+  "sources": [
+    {
+      "cite": "N. Murayama, Pressure Waves Produced by the Nuclear Explosion on October 30, 1961 - Preliminary Report, J. Meteor. Soc. Japan, Ser. II, 40 (1962) 222-231, Table 1 (pp. 226-227)",
+      "url": "https://doi.org/10.2151/jmsj1923.40.4_222"
+    }
+  ],
+  "collected": "2026-11-21",
+  "units": {
+    "A1, A2, A3": "GMT, MM-DD hh:mm (1961) in the CSV; hours after 0 h GMT, 30 Oct 1961 in the preset",
+    "d1, d2, d3": "km, Murayama's distances from his assumed site 74 N 57 E (transcription check only)",
+    "v1, v2, v3": "m/s, Murayama's velocities from his assumed explosion time 08:35 GMT (transcription check only)"
+  },
+  "inputs": [
+    {
+      "path": "transcription/murayama1962_table1.csv",
+      "how": "transcription",
+      "origin": "N. Murayama, J. Meteor. Soc. Japan 40 (1962) 222-231, Table 1, pp. 226-227 (J-STAGE scan); typed by hand by the assistant (Claude) from the scans, under Xyphophor's review.",
+      "checks": "The printed velocities are recomputed from the transcribed times and distances and must agree (the build fails otherwise).",
+      "caveats": "Only the numbers of the table are copied; a digit misread in a time that the velocity check does not cover would go unseen."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/atmo-tsar.js"
+  ],
+  "notes": "Laps are read at one station (third train minus first), so neither the site, the distance nor the explosion time enters. The first and third trains travel the same way round, so the wind along the path is not cancelled as it is for Krakatoa's two directions. The printed distances and velocities used the radius of 1962 and serve only to check the transcription.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/tsar",
+    "src/tabs/atmo/lambpool.js",
+    "src/tabs/atmo/lambfig.js"
+  ],
+  "sections": [
+    "atmo/lp-h1"
+  ]
+}

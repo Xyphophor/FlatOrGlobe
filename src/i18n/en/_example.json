@@ -1,0 +1,6 @@
+{
+  "title": "Tab module contract (demo)",
+  "lead": "This tab exists only to validate the mount/render/teardown contract before real content is ported in epic02.",
+  "counter-label": "Pick a number:",
+  "extra-only-in-english": "This key is deliberately absent from fr/_example.json to prove the fallback works."
+}

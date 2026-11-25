@@ -1,0 +1,58 @@
+# Flight2 15616ft.JPG
+
+Dataset: contrib-flightdip — Horizon dips measured from airliner windows with an iPhone theodolite
+  app (earthlyskeptic, two flights, September 2025): heights from the flights' ADS-B track logs, the
+  air of the day, and the radius they give
+File: data/contrib/flightdip/raw/photos/Flight2 15616ft.JPG
+SHA-256: 0ac411b20572fe878b02a18dad8f4c01017bebd6301b57f2663e5da44a744725 (also in
+  data/contrib/flightdip/inputs.lock; check with: cd data/contrib/flightdip && sha256sum -c
+  inputs.lock)
+In the public repository: no, only this description and the hash: The contributor's screenshots,
+  readings and document are shown on the page with his permission, not republished as files; the
+  track logs are FlightAware's (FlightAware's terms of use do not allow republishing what is read
+  from its pages.) Get it from fog fetch contrib-flightdip, then compare its SHA-256 with the one
+  above.
+Obtained: sent by a contributor (photos, logs).
+From: earthlyskeptic's Theodolite screenshots, Google Drive folder 1xbZ5I3DVk3bWS3jWXljhcXMoKafTnBjE
+  (fog fetch contrib-flightdip).
+Checks: EXIF read in Go (internal/exif) for the time of each screenshot.
+Collected: 2026-10-15
+Licence: CC-BY-4.0 — Screenshots and readings: earthlyskeptic (https://x.com/earthlyskeptic),
+  published with his permission (2026-10-15). Track logs: FlightAware (ADS-B), cited, the few values
+  used. Weather: Open-Meteo (NOAA GFS), CC BY 4.0. Copernicus DEM GLO-90: (c) DLR e.V. 2010-2014 and
+  (c) Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and
+  ESA.
+Sources:
+- earthlyskeptic, eleven Theodolite screenshots (Google Drive folder
+  1xbZ5I3DVk3bWS3jWXljhcXMoKafTnBjE), the table of his readings (Desmos graph) and the document
+  naming the two flights (Flights, Model, Graphs.docx)
+  <https://www.desmos.com/calculator/bkxuurlmlh>
+- FlightAware, track logs of AA 6322 (5 September 2025, KORD-KDSM) and AA 5255 (8 September 2025,
+  KDSM-KDCA), ADS-B
+  <https://www.flightaware.com/live/flight/AAL6322/history/20250905/1210Z/KORD/KDSM/tracklog>
+- Open-Meteo historical forecast API, NOAA GFS (gfs_seamless), pressure levels 1000-100 hPa
+  <https://open-meteo.com/en/docs/historical-forecast-api>
+- Copernicus DEM GLO-90, European Space Agency <https://doi.org/10.5270/ESA-c5d3d65>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- FD_POINTS[].h, FD_POINTS[].zh, FD_POINTS[].zhA, FD_POINTS[].tilt: the heights come from the
+  transponders' pressure altitudes placed in the GFS model's air (geopotential heights), the terrain
+  at the horizon is found along the heading on a 6,371 km sphere, and the accelerations come from
+  ADS-B ground speeds (GNSS)
+What would vindicate the flat model (rule 5): Dips that stay near zero at every height, or that grow
+  linearly with height (a far edge at a fixed distance), would favour the plane; dips growing as the
+  square root of the height above the horizon terrain, with one radius for all, favour the globe.
+Built by: fog build contrib-flightdip
+Generated files:
+- src/data/presets/contrib-flightdip.js
+Code:
+- tools/internal/build/flightdip
+- src/tabs/contrib/flightdip
+Shown on the page:
+- #tab-contrib/fd-h2
+Notes: fog fetch contrib-flightdip downloads everything (Drive, Desmos, FlightAware track logs, GFS
+  air, GLO-90) except the contributor's document (raw/flights-model-graphs.docx, sent by him; it
+  names the flights, which fixes the track log URLs). fog build also writes the resized screenshots
+  public/photos/contrib-flightdip-<n>.jpg.
+
+Written by `fog build explain` from data/contrib/flightdip/dataset.json and data/contrib/flightdip/inputs.lock: edit those, not this file.

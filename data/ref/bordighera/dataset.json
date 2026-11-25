@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "ref-bordighera",
+  "title": "The air of the Bordighera photograph of the hh tab (28 March 2026, 17:34 CET) and the rays traced through it over the globe and a plane",
+  "tab": "ref",
+  "build": "fog:ref-bordighera",
+  "kind": "archive",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "BORD_TRACED[].globe",
+      "how": "the globe's rays are traced over a 6,371 km sphere, to the 49 km great-circle distance of Villa Regina Margherita"
+    }
+  ],
+  "verdict_rule": "The plane would hide the 44.8 m the photograph hides with air the reanalysis allows, while the globe needs implausible air.",
+  "license": "CC-BY-4.0",
+  "license_note": "Weather: Open-Meteo (ERA5, Copernicus; marine), CC BY 4.0.",
+  "sources": [
+    {
+      "cite": "Open-Meteo historical weather API (ERA5) and marine API, 28 March 2026, three sea points at 43.5 N, 7.25/7.5/7.75 E",
+      "url": "https://open-meteo.com/"
+    }
+  ],
+  "collected": "2026-11-13",
+  "units": {
+    "z": "m above the sea",
+    "time": "Europe/Paris (CET)",
+    "dT": "K, air at 2 m minus sea surface",
+    "grad": "K/m, mean between 0.5 m and the eye"
+  },
+  "inputs": [
+    {
+      "glob": "raw/weather.json",
+      "gitignored": true,
+      "how": "api",
+      "origin": "Open-Meteo historical weather (ERA5) and marine APIs, 28 March 2026, three sea points at 43.5 N (fog fetch ref-bordighera)."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/ref-bordighera.js"
+  ],
+  "notes": "The eye and the buildings are read from src/data/presets/hh-bordighera.js and hh-bordighera-photo.js (research/build_bordighera.py, fit_bordighera_photo.py), hashed into the preset's header.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/refbord",
+    "tools/internal/refrac",
+    "src/tabs/ref/bord-air.js",
+    "src/core/air-need.js"
+  ],
+  "sections": [
+    "ref/rf-hair"
+  ]
+}

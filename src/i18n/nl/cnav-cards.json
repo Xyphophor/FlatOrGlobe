@@ -1,0 +1,27 @@
+{
+  "rate.title": "Eén vaste snelheid, of een die steeds verandert",
+  "rate.mini": "Vaar 60 zeemijl naar het punt recht onder een ster en de ster stijgt precies 1°, overal op aarde [1]. Boven een plat vlak stijgt een ster op eindige hoogte met ongelijke hoeken bij gelijke stappen.",
+  "rate.text": "Een sextant meet de hoogte van een ster boven de zeekim. Op een bol is de zenitafstand van de ster de hoek, in het middelpunt van de aarde, tussen de waarnemer en het punt recht onder de ster: θ = d/R. Elke zeemijl die je naar dat punt vaart, laat de ster één boogminuut stijgen, en zo is de zeemijl ook gedefinieerd [1]. Die snelheid is overal gelijk, in elke richting en voor elke ster, en geeft R = 3438 zeemijl ≈ 6371 km. Boven een plat vlak staat een ster op hoogte H op atan(H/x) boven de horizon, en die snelheid verandert met de afstand, welke H je ook kiest: met H = 5000 km zakt ze van 1,27′ per mijl onder de ster naar 0,25′ per mijl op 10 000 km. De afstanden in de tekening zijn schematisch.",
+  "rate.verdict": "Zou het platte vlak gelijk geven: een snelheid die verandert met de afstand tot het punt onder de ster. Zeevaarders meten een constante 1′ per zeemijl [1].",
+
+  "walk.title": "Waarom één boogminuut per zeemijl",
+  "walk.mini": "Sterrenlicht komt in evenwijdige stralen aan. Loop een afstand d naar het punt onder een ster en je verticaal draait d/R in het middelpunt van de aarde, dus de ster stijgt precies die hoek.",
+  "walk.text": "Het punt op aarde recht onder een ster is haar geografische positie. De ster staat zo ver weg dat haar licht de hele aarde in evenwijdige stralen bereikt. Loop een afstand d naar dat punt en je lokale verticaal draait over de hoek d/R in het middelpunt van de aarde, dus de hoogte van de ster neemt met dezelfde hoek toe. Boog en hoek hangen samen via één straal: de snelheid is overal gelijk, in elke richting en voor elke ster [1]. De zeemijl is één boogminuut van die boog, wat R op 3438 zeemijl zet, oftewel 6371 km. De afstand is in de tekening sterk overdreven.",
+  "walk.verdict": "Zou het platte vlak gelijk geven: een ster waarvan de hoogte niet 1′ verandert per zeemijl gelopen naar haar geografische positie, of een snelheid die van ster tot ster verschilt.",
+
+  "fix-globe.title": "Vier waarnemingen, één positie: de bol",
+  "fix-globe.mini": "Vier sterren, vier gemeten hoogten, vier cirkels op de bol. Alle vier snijden elkaar in één punt: het schip.",
+  "fix-globe.text": "Een zeevaarder meet de hoogte van vier sterren. Elke hoogte geeft de afstand tot het punt onder die ster, één zeemijl per boogminuut zenitafstand, dus elke waarneming trekt een positiecirkel op het oppervlak [1]. Op een bol met een straal van 6371 km gaan alle vier cirkels door hetzelfde punt: de positie van het schip. Dat is een astronomisch bestek, op zee gebruikt sinds Thomas Sumner in 1837 de hoogtelijn vond [2]. De sterren in de tekening zijn verzonnen, gekozen voor de leesbaarheid.",
+  "fix-globe.verdict": "Zou het platte vlak gelijk geven: waarnemingen vanaf één plek waarvan de cirkels op de bol elkaar niet binnen de meetfout ontmoeten.",
+
+  "fix-flat.title": "Vier waarnemingen, geen positie: het platte vlak",
+  "fix-flat.mini": "Dezelfde vier waarnemingen op een plat vlak, met de sterhoogte zo afgesteld dat de eerste cirkel klopt. De andere drie missen het schip met 186, 549 en 1078 km.",
+  "fix-flat.text": "Dezelfde vier hoogten en dezelfde vier geografische posities, op een plat vlak met de sterren op een hoogte H. Het platte model krijgt elk voordeel: H wordt zo gekozen dat de eerste cirkel precies door het schip gaat. De andere drie missen het dan met 186, 549 en 1078 km, omdat de hoogte op een vlak atan(H/r) is, en die is niet evenredig met de afstand. Geen enkele hoogte sluit alle vier cirkels: stel H bij om er één te herstellen en een andere gaat open. De sterren in de tekening zijn verzonnen, gekozen voor de leesbaarheid.",
+  "fix-flat.verdict": "Zou het platte vlak gelijk geven: één sterhoogte waarbij alle vier cirkels elkaar bij het schip ontmoeten. Die bestaat niet.",
+
+  "fix.title": "Astronavigatie sluit alleen op een bol",
+  "fix.labels": "Bol|Plat vlak",
+  "fix.mini": "Vier sterwaarnemingen. Op de bol ontmoeten hun cirkels elkaar bij het schip. Op een plat vlak, zelfs met de sterhoogte in zijn voordeel afgesteld, missen er drie met tot 1078 km.",
+  "fix.text": "Een zeevaarder meet de hoogte van vier sterren en maakt van elke hoogte een positiecirkel rond het punt onder die ster, één zeemijl per boogminuut [1]. Op de bol, met een straal van 6371 km, snijden alle vier cirkels elkaar in één punt: het schip. Op het platte vlak, met de sterren op een hoogte die zo gekozen is dat de eerste cirkel klopt, missen de andere drie met 186, 549 en 1078 km. De bol heeft één getal nodig, R, hetzelfde voor elke ster; het vlak zou voor elke ster een andere hoogte nodig hebben. De reductietafels die de Amerikaanse en Britse overheid voor dagelijks gebruik uitgeven, zijn precies deze bolrekening [2]. De getekende sterren zijn verzonnen; de onlinedienst van het U.S. Naval Observatory geeft echte, voor elke plaats en tijd [3].",
+  "fix.verdict": "Zou het platte vlak gelijk geven: één sterhoogte waarbij alle vier cirkels elkaar ontmoeten. Die bestaat niet, welke hoogte ook."
+}

@@ -1,0 +1,25 @@
+# Garage, un seul nœud (replication_factor = 1). Les secrets (rpc_secret, admin_token) viennent
+# des variables GARAGE_RPC_SECRET et GARAGE_ADMIN_TOKEN, tirées du Secret garage-secrets
+# (créé par deploy/media.sh init, jamais versionné).
+metadata_dir = "/var/lib/garage/meta"
+data_dir = "/var/lib/garage/data"
+db_engine = "lmdb"
+replication_factor = 1
+
+rpc_bind_addr = "[::]:3901"
+rpc_public_addr = "127.0.0.1:3901"
+
+[s3_api]
+s3_region = "garage"
+api_bind_addr = "[::]:3900"
+root_domain = ".s3.garage.localhost"
+
+# point d'accès « web » : lecture anonyme des buckets autorisés (garage bucket website --allow),
+# le bucket étant choisi par l'en-tête Host. Le nginx du site y envoie /video/ avec Host: media.
+[s3_web]
+bind_addr = "[::]:3902"
+root_domain = ".web.garage.localhost"
+index = "index.html"
+
+[admin]
+api_bind_addr = "[::]:3903"

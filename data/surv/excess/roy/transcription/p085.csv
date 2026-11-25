@@ -1,0 +1,4 @@
+page,printed,net,k,no,station,deg,min,sec,derived,adj_sec,log,dist,sum_deg,sum_min,sum_sec,exc,flag
+85,79,French,1,XLV,"N.D. at Calais",,,,*,33.2,,236273.7,,,,2.42,
+85,79,French,1,XLV,Dover Castle,,,,*,37.3,,114413.4,,,,,
+85,79,French,1,XLV,M near Dunkirk,,,,*,49.5,,137449.9,,,,,

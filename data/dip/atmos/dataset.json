@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "id": "dip-atmos",
+  "title": "The air at both ends of the ray grazing the sea in the Caussols photo (13 June 2026, 15:23:05 CEST): ERA5, sea surface, AROME",
+  "tab": "dip",
+  "build": "fog:dip-atmos",
+  "kind": "api",
+  "evidence": "model",
+  "radius_enters_via": [],
+  "verdict_rule": "",
+  "license": "CC-BY-4.0",
+  "sources": [
+    {
+      "cite": "Open-Meteo historical weather API (ERA5 reanalysis, Copernicus Climate Change Service), marine API, historical forecast API (Météo-France AROME)",
+      "url": "https://open-meteo.com/"
+    }
+  ],
+  "collected": "2026-09-29/2026-10-14",
+  "units": {
+    "T": "°C",
+    "P": "hPa",
+    "RH": "%",
+    "time": "Europe/Paris, interpolated between 15:00 and 16:00"
+  },
+  "inputs": [
+    {
+      "path": "raw/eye.json",
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=43.7222&longitude=6.9385&elevation=1210&hourly=temperature_2m,surface_pressure,relative_humidity_2m&models=era5&start_date=2026-06-13&end_date=2026-06-13&timezone=Europe%2FParis",
+      "how": "api",
+      "origin": "Open-Meteo APIs (ERA5 archive, marine, Météo-France AROME historical forecast), the requests in the URLs, fetched 2026-10-14.",
+      "checks": "The answers give exactly the values the earlier script used on 2026-09-29."
+    },
+    {
+      "path": "raw/sea.json",
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=43.5&longitude=8.5&hourly=temperature_2m,surface_pressure,relative_humidity_2m&models=era5&start_date=2026-06-13&end_date=2026-06-13&timezone=Europe%2FParis",
+      "how": "api",
+      "origin": "Open-Meteo APIs (ERA5 archive, marine, Météo-France AROME historical forecast), the requests in the URLs, fetched 2026-10-14.",
+      "checks": "The answers give exactly the values the earlier script used on 2026-09-29."
+    },
+    {
+      "path": "raw/marine.json",
+      "url": "https://marine-api.open-meteo.com/v1/marine?latitude=43.5&longitude=8.5&hourly=sea_surface_temperature&start_date=2026-06-13&end_date=2026-06-13&timezone=Europe%2FParis",
+      "how": "api",
+      "origin": "Open-Meteo APIs (ERA5 archive, marine, Météo-France AROME historical forecast), the requests in the URLs, fetched 2026-10-14.",
+      "checks": "The answers give exactly the values the earlier script used on 2026-09-29."
+    },
+    {
+      "path": "raw/arome.json",
+      "url": "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=43.5&longitude=8.5&hourly=temperature_900hPa,temperature_850hPa,geopotential_height_900hPa,geopotential_height_850hPa&models=meteofrance_seamless&start_date=2026-06-13&end_date=2026-06-13&timezone=Europe%2FParis",
+      "how": "api",
+      "origin": "Open-Meteo APIs (ERA5 archive, marine, Météo-France AROME historical forecast), the requests in the URLs, fetched 2026-10-14.",
+      "checks": "The answers give exactly the values the earlier script used on 2026-09-29."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/dip-atmos.js"
+  ],
+  "notes": "Weather, not a measurement of the Earth: the dip tab uses it for the refraction of the owner's Caussols photo. The script queried the API at every run and kept nothing; the answers fetched on 2026-10-14 give exactly the values of 2026-09-29.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/dipatmos",
+    "src/tabs/dip/own.js",
+    "src/tabs/ref/caussols-air.js"
+  ],
+  "sections": [
+    "dip/dip-own-h2",
+    "ref/rf-hair"
+  ]
+}

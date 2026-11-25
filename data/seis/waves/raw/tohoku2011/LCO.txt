@@ -1,0 +1,4 @@
+#Network | Station | Location | Channel | Latitude | Longitude | Elevation | Depth | Azimuth | Dip | SensorDescription | Scale | ScaleFreq | ScaleUnits | SampleRate | StartTime | EndTime
+IU|LCO||BHE|-29.011|-70.7004|2300.0|0.0|90.0|0.0|Streckeisen STS-1H/VBB Seismometer|9.5205E8|0.02|m/s|20.0|2009-07-30T00:00:00.0000|2014-08-04T00:00:00.0000
+IU|LCO||BHN|-29.011|-70.7004|2300.0|0.0|0.0|0.0|Streckeisen STS-1H/VBB Seismometer|8.51393E8|0.02|m/s|20.0|2009-07-30T00:00:00.0000|2014-08-04T00:00:00.0000
+IU|LCO||BHZ|-29.011|-70.7004|2300.0|0.0|0.0|-90.0|Streckeisen STS-1V/VBB Seismometer|9.01721E8|0.02|m/s|20.0|2009-07-30T00:00:00.0000|2014-08-04T00:00:00.0000

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "id": "avia-gravd",
+  "title": "NOAA NGS GRAV-D airborne gravity, block EN02 (main data lines)",
+  "tab": "avia",
+  "build": "fog:avia-gravd",
+  "kind": "archive",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "g",
+      "how": "NOAA removed the Eötvös effect with the GRS80 radii; putting it back needs those radii"
+    },
+    {
+      "field": "ve, vn",
+      "how": "velocities from the published positions on the GRS80 ellipsoid (computed by fog)"
+    }
+  ],
+  "verdict_rule": "Uncorrected airborne gravity that agrees between eastbound and westbound lines, or a best fraction of the globe's Eötvös correction of 0 rather than 1.",
+  "license": "public-domain",
+  "sources": [
+    {
+      "cite": "NOAA National Geodetic Survey, GRAV-D (Gravity for the Redefinition of the American Vertical Datum), Block EN02 release BETA2",
+      "url": "https://geodesy.noaa.gov/GRAV-D/"
+    }
+  ],
+  "collected": "2026-09-29",
+  "units": {
+    "t": "s of day (UTC) in the release, 1 Hz",
+    "lat, lon": "degrees, N and E positive (GRS80)",
+    "h": "m, ellipsoidal height",
+    "g": "mGal, full-field gravity at altitude, Eötvös-corrected by NGS, not leveled",
+    "ve, vn": "m/s, east and north velocity"
+  },
+  "inputs": [
+    {
+      "path": "EN02.zip",
+      "url": "https://geodesy.noaa.gov/pub/grav-d/EN02/NGS_GRAVD_Block_EN02_BETA2.zip",
+      "how": "download",
+      "origin": "NOAA NGS GRAV-D, Block EN02 release BETA2."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/avia-gravd.js"
+  ],
+  "notes": "One block = one input zip; adding a block is one more input line with its URL, then fog fetch, fog lock, fog build. Only the main data file of each zip is read (not the supplement: cross lines and transits).",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/aviagravd",
+    "src/tabs/avia/eot.js"
+  ],
+  "sections": [
+    "avia/avia-h2eo"
+  ]
+}

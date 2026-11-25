@@ -1,0 +1,22 @@
+{
+  "aria": "Animatie: dezelfde scène terwijl de kromming van de aarde van 100 % naar een vlak gaat, van opzij en vanuit het oog van de waarnemer",
+  "horizon": "horizon",
+  "horizon-far": "horizon → ver weg",
+  "dip": "kimduiking",
+  "eye": "oog",
+  "side-stamp": "zijaanzicht · hoogten ×{ex}, straal van de planeet ÷{ex}",
+  "side-stamp2": "zelfde schaal in beide richtingen · {km} breed",
+  "eye-stamp": "zicht vanuit het oog · echte hoeken · {f} hoog",
+  "eye-stamp2": "zelfde hoekschaal in de breedte · zonder refractie",
+  "eye-stamp2-elev": "toppen op hun echte hoek · onderlinge afstand schematisch",
+  "eye-level": "ooghoogte",
+  "plane": "vlak — kromming 0 %",
+  "curv": "kromming {pct} % · straal {R}",
+  "globe": "bol",
+  "plane-w": "vlak",
+  "r-dip": "kimduiking nu",
+  "r-hidden": "verborgen op {name} nu",
+  "r-diff": "{b} − {a} nu",
+  "click-pause": "klik: pauze",
+  "click-play": "klik: afspelen"
+}

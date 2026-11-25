@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "id": "ref-igra",
+  "title": "Every 2026 radiosonde sounding of IGRA 2 (NOAA NCEI, ~800 stations, twice daily): the refraction coefficient k of the measured air, day and night",
+  "tab": "ref",
+  "build": "fog:ref-igra",
+  "kind": "archive",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "k",
+      "how": "k = R/ρ is the ray's curvature divided by the Earth's: the radius is its unit (503 = R · 78.8e-6)"
+    }
+  ],
+  "verdict_rule": "Air in which k ≥ 1 (a ray curving as much as the ground, the globe looking flat) in most soundings, in every climate, by day and by night.",
+  "license": "public-domain",
+  "sources": [
+    {
+      "cite": "I. Durre, X. Yin, R. S. Vose, S. Applequist and J. Arnfield, Enhancing the Data Coverage in the Integrated Global Radiosonde Archive, J. Atmos. Oceanic Technol. 35 (2018) 1753-1770; IGRA version 2, NOAA National Centers for Environmental Information",
+      "url": "https://www.ncei.noaa.gov/data/integrated-global-radiosonde-archive/"
+    }
+  ],
+  "collected": "2026-10-28",
+  "units": {
+    "P": "hPa (the archive: Pa)",
+    "T": "K (the archive: tenths of °C)",
+    "z": "m, geopotential height",
+    "k": "dimensionless, 503 P/T² (0.0342 + dT/dh)"
+  },
+  "inputs": [
+    {
+      "path": "raw/igra2-station-list.txt",
+      "url": "https://www.ncei.noaa.gov/data/integrated-global-radiosonde-archive/doc/igra2-station-list.txt",
+      "gitignored": true,
+      "how": "download",
+      "origin": "NOAA NCEI, IGRA 2 station list."
+    },
+    {
+      "glob": "raw/*-data-beg2026.txt.zip",
+      "gitignored": true,
+      "how": "download",
+      "origin": "NOAA NCEI, IGRA 2 current-year file of each station (data-y2d), downloaded once (fog fetch ref-igra)."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/ref-igra.js"
+  ],
+  "notes": "fog fetch ref-igra downloads the current-year files once (data-y2d, ~500 MB); the lock freezes them as collected. Method and references: go doc -all ./internal/build/igra.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/igra",
+    "src/tabs/ref/values.js",
+    "src/tabs/ref/formfigs.js"
+  ],
+  "sections": [
+    "ref/rf-higra"
+  ]
+}

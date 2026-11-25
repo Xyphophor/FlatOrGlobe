@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "map-ptolemy",
+  "title": "Ptolemy's Geography: the 6,372 coordinates of the catalogue (books 2-7) and the modern positions of 56 identified towns",
+  "tab": "map",
+  "build": "fog:map-ptolemy",
+  "kind": "archive",
+  "evidence": "model",
+  "radius_enters_via": [],
+  "verdict_rule": "",
+  "license": "CC-BY-4.0",
+  "sources": [
+    {
+      "cite": "G. Graßhoff & O. Defaux, Catalog of Ptolemy's Geography, main books (Humboldt University Berlin / Max Planck Institute for the History of Science, 2019), after A. Stückelberger & G. Graßhoff, Klaudios Ptolemaios, Handbuch der Geographie (Schwabe, Basel, 2006); CC BY 4.0",
+      "url": "https://zenodo.org/record/3585758"
+    },
+    {
+      "cite": "Wikidata, coordinate location (P625) of the modern site of each identified town, CC0; the identifications are those of the catalogue (column Modern_location)",
+      "url": "https://www.wikidata.org/"
+    }
+  ],
+  "collected": "2026-10-26",
+  "units": {
+    "lonP": "Ptolemy's longitude, degrees east of the Fortunate Isles (his prime meridian); Omega recension, Xi where Omega gives none",
+    "latP": "Ptolemy's latitude, degrees, N positive",
+    "lat": "modern latitude of the site, degrees N positive (Wikidata P625, rounded to 0.001)",
+    "lon": "modern longitude of the site, degrees E positive (Wikidata P625, rounded to 0.001)"
+  },
+  "inputs": [
+    {
+      "path": "raw/PtolemyCatalogue.xlsx",
+      "url": "https://zenodo.org/api/records/3585758/files/PtolemyCatalogue.xlsx/content",
+      "how": "download",
+      "origin": "Graßhoff & Defaux, Catalog of Ptolemy's Geography (Zenodo 3585758).",
+      "caveats": "Five cells typed with truncated decimals (37.33333) move by less than a minute."
+    },
+    {
+      "path": "modern.csv",
+      "how": "ours",
+      "origin": "Made once with Wikidata's API (wbgetentities by English Wikipedia title) for 56 towns identified by the catalogue.",
+      "caveats": "Panticapaeum left out (no coordinates under that title)."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/map-ptolemy.js"
+  ],
+  "notes": "History, not evidence: the map tab carries no badge. Coordinates are rounded to 1/12 degree (5 minutes), Ptolemy's own finest step; five catalogue cells typed with truncated decimals (37.33333) move by less than a minute. modern.csv was made once with Wikidata's API (wbgetentities by English Wikipedia title) for 56 towns whose identification the catalogue gives and the literature does not dispute; Panticapaeum was left out (no coordinates under that title).",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/ptolemy",
+    "src/tabs/map/maps.js"
+  ],
+  "sections": [
+    "map/map-h2ptol"
+  ]
+}

@@ -1,0 +1,47 @@
+/* star : le style commun vient de src/core/legacy.css ; ci-dessous les
+   règles propres au panneau star du legacy (bloc <style> L6403 sq. :
+   .ctlrow, .reads, .figopen, button.mini) si elles n'y sont pas déjà. */
+#tab-star .ctlrow { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin: 10px 0; font-size: 13px; }
+#tab-star .ctlrow label { display: inline-flex; gap: 6px; align-items: center; }
+#tab-star .ctlrow select { font: inherit; padding: 4px 6px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+#tab-star button.mini { font: 600 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 5px 10px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); cursor: pointer; margin: 4px 0 10px; }
+#tab-star .figopen svg, #tab-star .figsym svg { display: block; width: 100%; height: auto; max-width: 520px; margin: 0 auto; }
+#tab-star table td.num { text-align: right; font-family: var(--mono); }
+/* sections « sky-* » (2026-11-11) : animations de nuit, tables */
+#tab-star canvas[id^="stAnim"] { display: block; width: 100%; border-radius: 8px; }
+#tab-star td.skynever { color: var(--flat); font-weight: 600; }
+#tab-star td.skyalways { color: var(--globe); }
+#tab-star #st-tabVis th, #tab-star #st-tabPM th { font-size: 12px; }
+/* ciel de nuit (2026-11-11) : figure d'ouverture et figure des traînées en grand format ; deux panneaux côte à côte, l'un sous l'autre au téléphone */
+#tab-star canvas.st-night { display: block; width: 100%; max-width: 980px; margin: 0 auto; aspect-ratio: 2 / 1.02; border-radius: 10px; }
+#tab-star #st-figOpen, #tab-star #st-figSky { max-width: none; }
+@media (max-width: 600px) { #tab-star canvas.st-night { aspect-ratio: 1 / 1.5; } }
+/* les trois figures SVG du moteur (photo, rythme, saisons) dans le même habit de nuit, en plus grand (2026-11-11).
+   Seule la page est concernée : l'export sérialise le SVG sans ces règles et reste clair, comme les autres exports. */
+#tab-star #st-figProj, #tab-star #st-figRate, #tab-star #st-figSeason {
+  --mute: #9fb0cc; --line: #2c3a5e; --globe: #5eead4; --flat: #fcd34d; --horizon: #7f93bd;
+  background: linear-gradient(#070b1a, #141f3d); border-radius: 10px; padding: 10px 6px; color: #e6ecf7;
+}
+#tab-star #st-figProj svg, #tab-star #st-figRate svg, #tab-star #st-figSeason svg { max-width: 760px; }
+#tab-star :is(#st-figProj, #st-figRate, #st-figSeason) svg text:not([fill]) { fill: #e6ecf7; }
+#tab-star :is(#st-figProj, #st-figRate, #st-figSeason) svg text[fill="#b45309"] { fill: #fbbf24; }
+#tab-star :is(#st-figProj, #st-figRate, #st-figSeason) svg [fill="#fbfbfd"] { fill: #0a122c; }
+#tab-star :is(#st-figProj, #st-figRate, #st-figSeason) svg [stroke="#111827"] { stroke: #e6ecf7; }
+#tab-star :is(#st-figProj, #st-figRate) svg [fill="#111827"] { fill: #e6ecf7; }
+#tab-star :is(#st-figProj, #st-figRate, #st-figSeason) svg [stroke="#6b7280"] { stroke: #9fb0cc; }
+#tab-star :is(#st-figProj, #st-figRate, #st-figSeason) svg [fill="#6b7280"] { fill: #9fb0cc; }
+#tab-star :is(#st-figProj, #st-figRate, #st-figSeason) svg [stroke="#c8ccd6"] { stroke: #3a4a75; }
+#tab-star :is(#st-figProj, #st-figRate, #st-figSeason) svg [stroke="#1d4ed8"] { stroke: #5eead4; }
+#tab-star :is(#st-figProj, #st-figRate, #st-figSeason) svg [fill="#1d4ed8"] { fill: #5eead4; }
+#tab-star :is(#st-figProj, #st-figRate, #st-figSeason) svg [stroke="#c2410c"] { stroke: #fcd34d; }
+#tab-star :is(#st-figProj, #st-figRate, #st-figSeason) svg [fill="#c2410c"] { fill: #fcd34d; }
+/* saisons : toujours levée = sarcelle, jamais levée = rouge, comme l'animation des latitudes */
+#tab-star #st-figSeason svg path[fill="var(--globe)"] { opacity: 0.3; }
+#tab-star #st-figSeason svg path[fill="#111827"] { fill: #f87171; opacity: 0.28; }
+#tab-star #st-figSeason svg text[fill="#111827"] { fill: #e6ecf7; }
+#tab-star #st-seasonKey span[style*="#1d4ed8"] { background: #2dd4bf !important; opacity: 0.8 !important; }
+#tab-star #st-seasonKey span[style*="#111827"] { background: #f87171 !important; opacity: 0.8 !important; }
+#tab-star #st-rateKey span[style*="#1d4ed8"] { border-top-color: #2dd4bf !important; }
+#tab-star #st-rateKey span[style*="#c2410c"] { border-top-color: #f59e0b !important; }
+#tab-star #st-projKey svg [stroke="#1d4ed8"] { stroke: #2dd4bf; }
+#tab-star #st-projKey svg [stroke="#c2410c"] { stroke: #f59e0b; }

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flat plane or Globe?</title>
+  <meta name="description" content="The flat-plane and globe models of the Earth compared against measured evidence, tab by tab, with real data, numbered sources and the result that would refute each model stated in advance." />
+  <link rel="alternate" type="text/markdown" href="/llms.txt" title="Plain-text knowledge base for AI assistants" />
+  <meta name="color-scheme" content="light dark" />
+  <script>try{var t=localStorage.getItem("fog-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link rel="stylesheet" href="/src/core/theme.css" />
+  <link rel="stylesheet" href="/src/core/layout.css" />
+</head>
+<body>
+  <header class="masthead">
+    <p class="eyebrow">A single-radius comparison</p>
+    <h1 id="app-title">Flat plane or Globe?</h1>
+    <div class="langbar">
+      <label for="langsel">🌐</label>
+      <select id="langsel" aria-label="Language"><option value="en">English</option></select>
+      <label for="themesel" aria-hidden="true">◐</label>
+      <select id="themesel" aria-label="Theme"><option value="auto">Auto</option><option value="light">Light</option><option value="dark">Dark</option></select>
+      <span id="langnote" class="langnote" hidden></span>
+    </div>
+    <p class="ai-note" id="ai-note">For AI assistants: every tab is also published as plain Markdown, with the same text, computed numbers, sources and evidence classes. Start at <a href="/llms.txt">/llms.txt</a>.</p>
+  </header>
+  <nav id="tabbar" class="tabbar" aria-label="Evidence tabs"></nav>
+  <div class="layout">
+    <nav id="toc" class="toc" aria-label="Contents" hidden></nav>
+    <main id="tabpanels">
+      <!-- animation de chargement (2026-10-25) : pendant le chargement de la page, puis au premier affichage de chaque onglet (src/main.js) -->
+      <div id="tabloader" class="tabloader" role="status"><span class="tl-shape" aria-hidden="true"><i class="tl-g"></i><i class="tl-f"></i></span><span class="tl-txt">Loading…</span></div>
+      <noscript><style>#tabloader { display: none; }</style></noscript>
+      <!-- lu par les lecteurs sans JavaScript (assistants IA, robots) ; retiré par src/main.js -->
+      <div id="static-summary">
+        <p>This site compares the flat-plane and globe models of the Earth against measurable evidence: horizon dip, hidden heights, elevation angles, refraction, star trails, seismic travel times, gravity, magnetism, eclipses, GPS, aviation and more. Every tab states in advance what result would vindicate each model, gives the flat model its best case, and shows real data with numbered sources.</p>
+        <p>The pages are drawn by JavaScript. The same content is published as plain text: <a href="/llms.txt">llms.txt</a> (index and method), <a href="/llms-full.txt">llms-full.txt</a> (everything in one file), and one Markdown file per tab under <a href="/ai/index.md">/ai/</a>, for example <a href="/ai/results.md">results</a> and <a href="/ai/falsify.md">what would refute each model</a>.</p>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

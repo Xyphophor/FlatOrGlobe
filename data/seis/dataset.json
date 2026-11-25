@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "id": "seis-radius",
+  "title": "Great earthquakes in the ISC bulletin: nine named ones (Rayleigh arrivals for the radius, P / first arrivals for our relocation, the P shadow zone) and every shallow Mw >= 7.0 of 2000-2023 for the pooled syntheses",
+  "tab": "seis",
+  "build": "fog:seis-radius fog:seis-relocate fog:seis-shadow fog:seis-bulk fog:seis-mesh",
+  "kind": "api",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "distance_deg",
+      "how": "angles from the published epicentre and station coordinates, then the surface-wave speeds the tab uses were established with distances measured on the globe"
+    },
+    {
+      "field": "ocean_frac",
+      "how": "Natural Earth land polygons, drawn in degrees on the globe"
+    }
+  ],
+  "verdict_rule": "A reconstructed radius 60-100% off, the error a flat map's distances would need; the real arrivals land within a few percent. Pooled: one flat map, with the same free parameters, fitting the pooled P times or the pooled shadow as well as the globe.",
+  "license": "other",
+  "license_note": "ISC On-line Bulletin: free with the citation International Seismological Centre, On-line Bulletin, https://doi.org/10.31905/D808B830. Natural Earth: public domain.",
+  "sources": [
+    {
+      "cite": "International Seismological Centre, On-line Bulletin (ISF2 phase data)",
+      "url": "https://doi.org/10.31905/D808B830"
+    },
+    {
+      "cite": "Natural Earth, 1:50m land polygons (ne_50m_land), public domain",
+      "url": "https://www.naturalearthdata.com/"
+    }
+  ],
+  "collected": "2026-09-19",
+  "units": {
+    "otime, arrival": "UTC (h:mm:ss.ss)",
+    "lat, lon": "degrees, N and E positive",
+    "distance_deg": "degrees of arc (great circle from the published coordinates)",
+    "travel_time_s": "s, arrival minus origin, median across agencies",
+    "ocean_frac": "fraction of the great-circle path over sea (0..1)"
+  },
+  "inputs": [
+    {
+      "path": "events.json",
+      "how": "ours",
+      "origin": "Our list of the nine named earthquakes (one entry each)."
+    },
+    {
+      "glob": "raw/*.isf",
+      "how": "api",
+      "origin": "ISC On-line Bulletin, ISF2 phase data of each named earthquake (fog fetch seis-radius).",
+      "caveats": "Phase names (P, Pdif, PKP, LR) are the ISC's, given by comparing with its travel-time tables."
+    },
+    {
+      "path": "raw/ne_50m_land.geojson",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_land.geojson",
+      "how": "download",
+      "origin": "Natural Earth 1:50m land polygons (GitHub mirror)."
+    },
+    {
+      "path": "bulk/raw/catalogue.html",
+      "gitignored": true,
+      "how": "api",
+      "origin": "ISC catalogue query of tools/internal/build/seisbulk/fetch.go: reviewed bulletin, 2000-2023, depth ≤ 70 km, GCMT Mw ≥ 7.0."
+    },
+    {
+      "glob": "bulk/raw/*.isf",
+      "gitignored": true,
+      "how": "api",
+      "origin": "ISC On-line Bulletin, ISF2 of each earthquake of the catalogue query, fetched one by one."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/seis-radius.js",
+    "src/data/presets/seis-relocate.js",
+    "data/seis/lr_arrivals.json",
+    "data/seis/lr_arrivals.csv",
+    "src/data/presets/seis-bulk.js",
+    "src/data/presets/seis-mesh.js"
+  ],
+  "notes": "Edit events.json only (one entry per earthquake), then fog fetch seis-radius (ISC query; Natural Earth once), fog lock seis-radius, fog build seis-radius. Until 2026-10-14 the land polygons were downloaded afresh at every run, from the branch head; they are now an input with a hash. The same bulletins feed fog build seis-relocate: earthquakes relocated from arrival times and station angles only (epic18). The pooled syntheses (fog build seis-bulk, 2026-10-29) use every earthquake the ISC catalogue query of tools/internal/build/seisbulk/fetch.go returns: reviewed ISC Bulletin, 2000-01-01 to 2023-12-31, depth <= 70 km, GCMT Mw >= 7.0 (264 events), then at least 50 P stations 25-95 degrees from our own centre; bulletins by event id in bulk/raw/ (gitignored, fog fetch seis-radius). The nine named earthquakes that meet the rule are counted there again, processed like the others.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/seisradius",
+    "tools/internal/build/seisreloc",
+    "tools/internal/build/seisshadow",
+    "tools/internal/build/seisbulk",
+    "tools/internal/build/seismesh",
+    "src/tabs/seis/logic.js",
+    "src/tabs/seis/relocate.js",
+    "src/tabs/seis/bulkfig.js",
+    "src/tabs/seis/meshfig.js"
+  ],
+  "sections": [
+    "seis/sq-h7",
+    "seis/sq-h8",
+    "seis/sq-h9",
+    "seis/sq-h10",
+    "seis/rl-h1",
+    "seis/rl-h2",
+    "seis/sh-h1",
+    "seis/ms-h2"
+  ]
+}

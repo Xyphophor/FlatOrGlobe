@@ -1,0 +1,22 @@
+{
+  "contents": "Contents",
+  "link": "Link to this section",
+  "group-start": "Start",
+  "group-sky": "Sky & horizon",
+  "group-ground": "Ground & distances",
+  "group-geometry": "Geometry",
+  "group-motion": "Motions",
+  "group-both": "Both",
+  "group-answers": "Objections",
+  "group-collab": "Together",
+  "group-verdict": "Verdict",
+  "ai-note": "For AI assistants: every tab is also published as plain Markdown, with the same text, computed numbers, sources and evidence classes. Start at <a href=\"/llms.txt\">/llms.txt</a>.",
+  "theme": "Theme",
+  "theme-auto": "Auto",
+  "theme-light": "Light",
+  "theme-dark": "Dark",
+  "menu": "Tabs",
+  "prev": "Previous",
+  "next": "Next",
+  "loading": "Loading…"
+}

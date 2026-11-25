@@ -1,0 +1,4 @@
+#Network | Station | Location | Channel | Latitude | Longitude | Elevation | Depth | Azimuth | Dip | SensorDescription | Scale | ScaleFreq | ScaleUnits | SampleRate | StartTime | EndTime
+IU|PTCN|00|BHE|-25.0713|-130.0953|218.0|2.0|90.0|0.0|Streckeisen STS-2/VBB Seismometer|6.29108E8|0.02|m/s|20.0|2002-02-12T05:10:00.0000|2014-11-30T00:00:00.0000
+IU|PTCN|00|BHN|-25.0713|-130.0953|218.0|2.0|0.0|0.0|Streckeisen STS-2/VBB Seismometer|6.29108E8|0.02|m/s|20.0|2002-02-12T05:10:00.0000|2014-11-30T00:00:00.0000
+IU|PTCN|00|BHZ|-25.0713|-130.0953|218.0|2.0|0.0|-90.0|Streckeisen STS-2/VBB Seismometer|6.29108E8|0.02|m/s|20.0|2002-02-12T05:10:00.0000|2014-11-30T00:00:00.0000

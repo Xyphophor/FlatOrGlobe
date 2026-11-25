@@ -1,0 +1,4 @@
+#Network | Station | Location | Channel | Latitude | Longitude | Elevation | Depth | Azimuth | Dip | SensorDescription | Scale | ScaleFreq | ScaleUnits | SampleRate | StartTime | EndTime
+IU|COLA|00|BH1|64.873599|-147.8616|80.0|120.0|127.0|0.0|Geotech KS-54000 Borehole Seismometer|7.92843E8|0.02|m/s|20.0|1999-02-05T00:00:00.0000|2005-09-27T00:00:00.0000
+IU|COLA|00|BH2|64.873599|-147.8616|80.0|120.0|217.0|0.0|Geotech KS-54000 Borehole Seismometer|7.9205E8|0.02|m/s|20.0|1999-02-05T00:00:00.0000|2005-09-27T00:00:00.0000
+IU|COLA|00|BHZ|64.873599|-147.8616|80.0|120.0|0.0|-90.0|Geotech KS-54000 Borehole Seismometer|8.06558E8|0.02|m/s|20.0|1999-02-05T00:00:00.0000|2005-09-27T00:00:00.0000

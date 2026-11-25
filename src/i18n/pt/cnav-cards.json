@@ -1,0 +1,27 @@
+{
+  "rate.title": "Uma só taxa, ou uma taxa que não para de mudar",
+  "rate.mini": "Navegue 60 milhas náuticas em direção ao ponto por baixo de uma estrela e ela sobe exatamente 1°, em qualquer lugar da Terra [1]. Sobre um plano, uma estrela a altura finita sobe ângulos desiguais para passos iguais.",
+  "rate.text": "Um sextante mede a altura de uma estrela acima do horizonte do mar. Num globo, a distância zenital da estrela é o ângulo, no centro da Terra, entre o observador e o ponto mesmo por baixo da estrela: θ = d/R. Cada milha náutica navegada em direção a esse ponto faz subir a estrela um minuto de arco, e foi assim que a milha náutica foi definida [1]. A taxa é a mesma em toda a parte, em todas as direções e para todas as estrelas, e dá R = 3438 milhas náuticas ≈ 6371 km. Sobre um plano, uma estrela à altura H fica a atan(H/x) acima do horizonte, e essa taxa muda com a distância seja qual for H: com H = 5000 km passa de 1,27′ por milha por baixo da estrela a 0,25′ por milha a 10 000 km. As distâncias do desenho são esquemáticas.",
+  "rate.verdict": "Daria razão ao plano: uma taxa que mude com a distância ao ponto por baixo da estrela. Os navegadores medem uma constante de 1′ por milha náutica [1].",
+
+  "walk.title": "Porquê um minuto de arco por milha náutica",
+  "walk.mini": "A luz das estrelas chega em raios paralelos. Caminhe uma distância d em direção ao ponto por baixo de uma estrela: a sua vertical roda d/R no centro da Terra, e a estrela sobe exatamente esse ângulo.",
+  "walk.text": "O ponto da Terra mesmo por baixo de uma estrela é a sua posição geográfica. A estrela está tão longe que a sua luz chega a toda a Terra em raios paralelos. Caminhe uma distância d em direção a esse ponto e a sua vertical local roda o ângulo d/R no centro da Terra, pelo que a altura da estrela aumenta o mesmo ângulo. Arco e ângulo estão ligados por um só raio: a taxa é a mesma em toda a parte, em todas as direções e para todas as estrelas [1]. A milha náutica é um minuto de arco desse arco, o que põe R em 3438 milhas náuticas, ou 6371 km. O afastamento está muito exagerado no desenho.",
+  "walk.verdict": "Daria razão ao plano: uma estrela cuja altura não mude 1′ por milha náutica percorrida em direção à sua posição geográfica, ou uma taxa que difira de uma estrela para outra.",
+
+  "fix-globe.title": "Quatro observações, uma posição: o globo",
+  "fix-globe.mini": "Quatro estrelas, quatro alturas medidas, quatro círculos no globo. Os quatro cruzam-se num só ponto: o navio.",
+  "fix-globe.text": "Um navegador mede a altura de quatro estrelas. Cada altura dá a distância ao ponto por baixo dessa estrela, uma milha náutica por minuto de arco de distância zenital, pelo que cada observação traça um círculo de posição à superfície [1]. Numa esfera de 6371 km de raio, os quatro círculos passam pelo mesmo ponto: a posição do navio. É um ponto astronómico, praticado no mar desde que Thomas Sumner encontrou a reta de altura em 1837 [2]. As estrelas do desenho são fictícias, escolhidas pela legibilidade.",
+  "fix-globe.verdict": "Daria razão ao plano: observações feitas de um mesmo lugar cujos círculos no globo não se encontrem dentro do erro de medida.",
+
+  "fix-flat.title": "Quatro observações, nenhuma posição: o plano",
+  "fix-flat.mini": "As mesmas quatro observações num plano, com a altura das estrelas ajustada para que o primeiro círculo seja exato. Os outros três falham o navio por 186, 549 e 1078 km.",
+  "fix-flat.text": "As mesmas quatro alturas e as mesmas quatro posições geográficas, num plano com as estrelas a uma altura H. O modelo plano recebe todas as vantagens: H é escolhida para que o primeiro círculo passe exatamente pelo navio. Os outros três falham-no então por 186, 549 e 1078 km, porque num plano a altura vale atan(H/r), que não é proporcional à distância. Nenhuma altura única fecha os quatro círculos: ajuste H para corrigir um e outro abre-se. As estrelas do desenho são fictícias, escolhidas pela legibilidade.",
+  "fix-flat.verdict": "Daria razão ao plano: uma única altura de estrela que faça os quatro círculos encontrarem-se no navio. Não há nenhuma.",
+
+  "fix.title": "A navegação astronómica só fecha num globo",
+  "fix.labels": "Globo|Plano",
+  "fix.mini": "Quatro observações de estrelas. No globo, os seus círculos encontram-se no navio. Num plano, mesmo com a altura das estrelas ajustada a seu favor, três deles falham por até 1078 km.",
+  "fix.text": "Um navegador mede a altura de quatro estrelas e converte cada uma num círculo de posição à volta do ponto por baixo da estrela, uma milha náutica por minuto de arco [1]. No globo, uma esfera de 6371 km de raio, os quatro círculos cruzam-se num ponto: o navio. No plano, com as estrelas a uma altura escolhida para que o primeiro círculo seja exato, os outros três falham por 186, 549 e 1078 km. O globo precisa de um só número, R, o mesmo para todas as estrelas; o plano precisaria de uma altura diferente para cada estrela. As tábuas de redução de observações impressas pelos governos dos EUA e do Reino Unido para uso diário são este cálculo esférico [2]. As estrelas desenhadas são fictícias; o serviço em linha do U.S. Naval Observatory dá as reais para qualquer lugar e hora [3].",
+  "fix.verdict": "Daria razão ao plano: uma única altura de estrela que faça os quatro círculos encontrarem-se. Não há nenhuma, seja qual for a altura."
+}

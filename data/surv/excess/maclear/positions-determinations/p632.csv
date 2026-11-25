@@ -1,0 +1,9 @@
+page,printed,state,station,alias,lat_d,lat_m,lat_s,lon_d,lon_m,lon_s,flag
+632,583,Cape Colony,Keibiskow,,-30,-50,-2.662,-0,-52,-38.099,from Kamies-Sector Berg
+632,583,Cape Colony,Boschluis,,-29,-59,-29.152,-0,-30,-46.401,from Kamies-Sector Berg
+632,583,Cape Colony,Koeberg,Koe Berg,-29,-43,-54.937,-0,-0,-16.479,from Kamies-Sector Berg
+632,583,Cape Colony,Vogel Klip,,-29,-46,-9.998,0,37,5.675,from Kamies-Sector Berg
+632,583,Cape Colony,North End,North-end Sector Station,-29,-44,-17.323,-0,-5,-2.411,from Kamies-Sector Berg
+632,583,Cape Colony,Koeberg,Koe Berg,-29,-43,-54.936,-0,-0,-16.486,from Vogel Klip
+632,583,Cape Colony,North End,North-end Sector Station,-29,-44,-17.323,-0,-5,-2.404,from Vogel Klip
+632,583,Cape Colony,Koeberg,Koe Berg,-29,-43,-54.936,-0,-0,-16.491,from Boschluis

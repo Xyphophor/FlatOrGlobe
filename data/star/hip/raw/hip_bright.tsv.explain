@@ -1,0 +1,45 @@
+# hip_bright.tsv
+
+Dataset: star-hip — Hipparcos main catalogue: the 960 stars brighter than V = 4.55 that have a
+  position and six fast-moving stars, positions (ICRS, epoch J1991.25) and proper motions
+File: data/star/hip/raw/hip_bright.tsv
+SHA-256: 9ca0b2df5f5129d70b7fcbf48eb03b3afffdce4121d69c8587b3a810b8b1593f (also in
+  data/star/hip/inputs.lock; check with: cd data/star/hip && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: CDS/VizieR distributes it free for
+  scientific use with citation; its terms do not say that a copy may be republished, so only the
+  hash and the request are given. Get it from
+  https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I/239/hip_main&-out=HIP,Vmag,RAICRS,DEICRS,Plx,pmRA,pmDE,B-V&Vmag=%3C4.55&-out.max=3000&-sort=HIP
+  (or fog fetch star-hip), then compare its SHA-256 with the one above.
+Obtained: the answer of a public web API to the request given.
+From: VizieR I/239 (Hipparcos main catalogue), Harvard mirror, the request in the URL; the file's
+  header carries the request and its date.
+URL:
+  https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I/239/hip_main&-out=HIP,Vmag,RAICRS,DEICRS,Plx,pmRA,pmDE,B-V&Vmag=%3C4.55&-out.max=3000&-sort=HIP
+Collected: 2026-11-11
+Licence: other — The Hipparcos and Tycho Catalogues (ESA 1997), distributed by the CDS (VizieR
+  I/239), free for scientific use with citation.
+Sources:
+- ESA, The Hipparcos and Tycho Catalogues, ESA SP-1200 (1997); VizieR I/239, table hip_main
+  <https://cdsarc.cds.unistra.fr/viz-bin/cat/I/239>
+Evidence class (rule 10): measure
+What would vindicate the flat model (rule 5): Angles between the same stars that change with the
+  observer's place or with the hour of the night, as lights on a dome a few thousand kilometres up
+  would show.
+Built by: fog build star-hip
+Generated files:
+- src/data/presets/star-hip.js
+Code:
+- tools/internal/build/starhip
+- src/tabs/star/radec-logic.js
+Shown on the page:
+- #tab-star/sky-h2a
+- #tab-star/sky-h2b
+- #tab-star/sky-h2c
+Notes: Two of the 962 bright entries (HIP 55203 and 78727, close binaries) have no astrometric
+  solution in the main catalogue and are left out. Nothing is computed by the build: the rows are
+  copied as published, rounded to 1e-5 deg and 0.1 mas/yr. The page moves the stars itself
+  (src/tabs/star/radec-logic.js): proper motion along a straight line with no radial velocity,
+  precession as a rotation about the pole of the ecliptic. The two files are VizieR answers (Harvard
+  mirror; the CDS server was down on the day), their headers carry the request and its date.
+
+Written by `fog build explain` from data/star/hip/dataset.json and data/star/hip/inputs.lock: edit those, not this file.

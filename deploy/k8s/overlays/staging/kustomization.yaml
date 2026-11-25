@@ -1,0 +1,21 @@
+# Préproduction PRIVÉE : aucun Ingress public, accessible seulement depuis le tailnet
+# (opérateur Tailscale, voir deploy/README.md). Une réplique, SITE_ENV=staging :
+# bandeau « staging · <commit> », noindex, robots.txt fermé.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: flatorglobe-staging
+resources:
+  - namespace.yaml
+  - ../../base
+  - ingress-tailscale.yaml
+configMapGenerator:
+  - name: site-env
+    literals:
+      - SITE_ENV=staging
+      # vidéos : bucket « media » de Garage (deploy/k8s/media), nom complet obligatoire (résolu à la demande)
+      - MEDIA_UPSTREAM=http://garage.flatorglobe-media.svc.cluster.local:3902
+      - MEDIA_BUCKET=media
+images:
+  - name: flat-or-globe
+    newName: registry.example.org/flat-or-globe   # À ADAPTER : le registre
+    newTag: dev                                   # mis à jour par deploy/deploy.sh staging <tag>

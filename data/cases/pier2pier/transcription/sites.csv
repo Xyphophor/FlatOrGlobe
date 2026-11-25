@@ -1,0 +1,6 @@
+# Lieux : bout sud de Worthing Pier (sable à marée basse, côté est) et plage au pied des ruines de la West Pier de Brighton (d'après leur carte),
+# repérés sur OpenStreetMap (Nominatim) ; incertitude de l'ordre de 50 m. L'i360 : sa position OSM, hauteur 162 m.
+# name,lat,lon,note
+worthing,50.8070,-0.3688,"P900 camera and green laser, south end of Worthing Pier"
+brighton,50.8197,-0.1530,"B700 camera and red laser, beach NW of the West Pier ruin"
+i360,50.82135,-0.15092,"British Airways i360, 162 m"

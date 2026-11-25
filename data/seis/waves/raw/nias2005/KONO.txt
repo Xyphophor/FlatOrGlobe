@@ -1,0 +1,4 @@
+#Network | Station | Location | Channel | Latitude | Longitude | Elevation | Depth | Azimuth | Dip | SensorDescription | Scale | ScaleFreq | ScaleUnits | SampleRate | StartTime | EndTime
+IU|KONO|00|BHE|59.6491|9.5982|-124.0|340.0|90.0|0.0|Streckeisen STS-1H/VBB Seismometer|9.54268E8|0.05|m/s|20.0|2005-02-28T22:45:00.0000|2006-03-22T22:28:00.0000
+IU|KONO|00|BHN|59.6491|9.5982|-124.0|340.0|0.0|0.0|Streckeisen STS-1H/VBB Seismometer|9.26596E8|0.05|m/s|20.0|2005-02-28T22:45:00.0000|2006-03-22T22:28:00.0000
+IU|KONO|00|BHZ|59.6491|9.5982|-124.0|340.0|0.0|-90.0|Streckeisen STS-1V/VBB Seismometer|9.45043E8|0.05|m/s|20.0|2005-02-28T22:45:00.0000|2006-03-22T22:28:00.0000

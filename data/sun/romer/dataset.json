@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "id": "sun-romer",
+  "title": "Eclipses of Jupiter's Galilean satellites timed from 1652 to 1983 (J. H. Lieske's compilation, 16,802 timings from 426 observatories, IMCCE Natural Satellites Data Center): Rømer reversed, the astronomical unit from Io's 8,822 with laboratory c",
+  "tab": "sun",
+  "build": "fog:sun-romer",
+  "kind": "archive",
+  "evidence": "measure",
+  "radius_enters_via": [],
+  "verdict_rule": "Io's eclipses keeping time with no delay that follows the Earth-Jupiter distance (Io's clock alone fitting as well as the light time), or a delay whose free curve does not land on the numbers one astronomical unit predicts (its swing over the synodic cycle, its second harmonic and its change with Jupiter's distance from the Sun).",
+  "license": "other",
+  "license_note": "IMCCE Natural Satellites Data Center (NSDC), raw data of the eclipses of the Galilean satellites, public; J. H. Lieske's compilation, cited.",
+  "sources": [
+    {
+      "cite": "J. H. Lieske, Astron. Astrophys. Suppl. 63 (1986) 143-202 and Astron. Astrophys. 154 (1986) 61-76 (the compilation); the raw file 1652-1983_J1-4_lieske.data.txt of the IMCCE NSDC",
+      "url": "https://ftp.imcce.fr/pub/NSDC/jupiter/raw_data/phenomena/eclips/"
+    },
+    {
+      "cite": "J. H. Lieske, A collection of Galilean satellite eclipses 1652-1982, in Dynamical Trapping and Evolution in the Solar System (Reidel, 1983) 51-59",
+      "url": "https://doi.org/10.1017/S0252921100096925"
+    },
+    {
+      "cite": "E. M. Standish, Keplerian Elements for Approximate Positions of the Major Planets, JPL Solar System Dynamics, Table 2a",
+      "url": "https://ssd.jpl.nasa.gov/planets/approx_pos.html"
+    },
+    {
+      "cite": "F. Espenak and J. Meeus, Five Millennium Canon of Solar Eclipses, NASA/TP-2006-214141, section 2.6 (ΔT)",
+      "url": "https://eclipse.gsfc.nasa.gov/SEhelp/deltatpoly2004.html"
+    }
+  ],
+  "collected": "2026-11-25",
+  "units": {
+    "jd": "UT Julian date of the mid-event (half brightness), as compiled by Lieske",
+    "sigma": "s, Lieske's a priori uncertainty (weights)",
+    "As": "s, light time over one astronomical unit (A/c); A = As × 299,792.458 km"
+  },
+  "inputs": [
+    {
+      "path": "raw/1652-1983_J1-4_lieske.data.txt",
+      "url": "https://ftp.imcce.fr/pub/NSDC/jupiter/raw_data/phenomena/eclips/1652-1983_J1-4_lieske.data.txt",
+      "how": "download",
+      "origin": "IMCCE NSDC raw data of the eclipses of the Galilean satellites (J. H. Lieske's compilation), downloaded 2026-11-25.",
+      "checks": "The build reads every record and fails on an unreadable one; 16,802 records, 8,822 of Io.",
+      "caveats": "Lieske reduced local apparent times to UT and sometimes corrected a site's longitude from ephemeris residuals: a constant per site, absorbed by the fit's free offset per site."
+    },
+    {
+      "path": "raw/1652-1983_J1-4_lieske.readme.txt",
+      "url": "https://ftp.imcce.fr/pub/NSDC/jupiter/raw_data/phenomena/eclips/1652-1983_J1-4_lieske.readme.txt",
+      "how": "download",
+      "origin": "IMCCE NSDC, the file's description (format)."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/sun-romer.js"
+  ],
+  "notes": "Only Io (satellite 1) is fitted. The raw file is used, not the standard file whose O-C come from a satellite theory. Lieske reduced local apparent times to UT with each site's longitude, which he sometimes corrected from the residuals of an ephemeris (the 1983 paper, Hoai-Ngan); a wrong longitude shifts a site's timings by a constant, and every site with 30 timings or more gets its own free offset in each era, so no such correction can reach the light time. The DE440 variant (data/moon/eclcraters/raw/de440.bsp, fog fetch moon-eclcraters) is a check of the orbits' shape; without that file it is skipped. Method and references: go doc -all ./internal/build/romer.",
+  "public_raw": "no",
+  "public_raw_why": "The IMCCE Natural Satellites Data Center gives the file freely but does not state whether it may be republished; only the hash and the URL are given.",
+  "code": [
+    "tools/internal/build/romer",
+    "tools/internal/spk",
+    "src/tabs/sun/romer-data.js",
+    "src/tabs/sun/romer-reel.js"
+  ],
+  "sections": [
+    "sun/romer-m-h2",
+    "sun/romer-f-h2"
+  ]
+}

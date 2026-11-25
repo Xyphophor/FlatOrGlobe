@@ -1,0 +1,12 @@
+page,printed,state,station,alias,lat_d,lat_m,lat_s,lon_d,lon_m,lon_s,flag
+629,580,Cape Colony,Eland's Berg,,-32,-19,-44.383,0,7,55.304,from Piket Berg
+629,580,Cape Colony,Heerenlogement's Berg,,-31,-58,-9.649,-0,-5,-51.004,from Piket Berg
+629,580,Cape Colony,Lambert's Hoek Berg,Lambert's Hoek,-32,-18,-37.758,-0,-18,-11.020,from Piket Berg; latitude last digit blotted in scan (read 37.758)
+629,580,Cape Colony,Ceder Berg,,-32,-21,-14.233,-0,-40,-59.964,from Piket Berg
+629,580,Cape Colony,Kapoc Berg,,-33,-25,-5.874,0,4,47.807,from Kapitein's Kloof
+629,580,Cape Colony,Patrys Berg,,-32,-50,-24.871,0,25,50.705,from Kapitein's Kloof
+629,580,Cape Colony,Winter Berg,,-33,-6,-21.001,-0,-40,-7.157,from Kapitein's Kloof
+629,580,Cape Colony,Ceder Berg,,-32,-21,-14.218,-0,-40,-59.955,from Kapitein's Kloof
+629,580,Cape Colony,Heerenlogement's Berg,,-31,-58,-9.634,-0,-5,-50.989,from Kapitein's Kloof; longitude last digits blotted in scan (read 50.989)
+629,580,Cape Colony,Kapoc Berg,,-33,-25,-5.875,0,4,47.805,from Winter Berg; longitude last digit blotted in scan (read 47.805)
+629,580,Cape Colony,Kapitein's Kloof,,-32,-42,-54.319,-0,-5,-37.026,from Winter Berg

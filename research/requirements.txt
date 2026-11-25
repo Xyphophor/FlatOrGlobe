@@ -1,0 +1,8 @@
+# Exploratory Python of FlatOrGlobe (research/, epic24/UC06). Versions in use on 2026-10-14.
+# The data chain is Go (tools/, fog); nothing here is needed to build the site.
+#   python3 -m venv .venv && .venv/bin/pip install -r research/requirements.txt
+numpy==2.2.4        # the parity oracles of epic24 were written with this one (Debian python3-numpy)
+pillow==12.3.0      # align_photo, argentera2
+laspy==2.7.0        # build_adelaide (LAZ point clouds)
+lazrs==0.8.2        # laspy's LAZ backend
+pyproj==3.8.0       # build_adelaide (MGA2020 <-> WGS84, Karney geodesics)

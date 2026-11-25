@@ -1,0 +1,27 @@
+{
+  "rate.title": "One rate, or a rate that keeps changing",
+  "rate.mini": "Sail 60 nautical miles toward the point beneath a star and the star climbs exactly 1°, anywhere on Earth [1]. Over a flat plane, a star at any finite height climbs by unequal angles for equal steps.",
+  "rate.text": "A sextant measures a star's altitude above the sea horizon. On a globe, the star's zenith distance is the angle at the Earth's centre between the observer and the point directly beneath the star: θ = d/R. Every nautical mile sailed toward that point raises the star by one arcminute, which is how the nautical mile was defined [1]. The rate is the same everywhere, in every direction, for every star, and it gives R = 3438 nautical miles ≈ 6371 km. Over a flat plane, a star at height H stands atan(H/x) above the horizon, and that rate changes with distance whatever H is: with H = 5000 km it falls from 1.27′ per mile beneath the star to 0.25′ per mile 10,000 km away. Distances in the drawing are schematic.",
+  "rate.verdict": "Would favour the flat plane: an altitude rate that changes with distance from the point beneath the star. Navigators measure a constant 1′ per nautical mile [1].",
+
+  "walk.title": "Why one arcminute per nautical mile",
+  "walk.mini": "Starlight arrives in parallel rays. Walk a distance d toward the point beneath a star and your vertical turns by d/R at the Earth's centre, so the star climbs by exactly that angle.",
+  "walk.text": "The point on Earth directly beneath a star is its ground position. The star is so far away that its light reaches the whole Earth in parallel rays. Walk a distance d over the ground toward that point and your local vertical turns through the angle d/R at the Earth's centre, so the star's altitude rises by the same angle. Arc and angle are locked together by one radius, so the rate is the same everywhere, in every direction, for every star [1]. The nautical mile is one arcminute of that arc, which puts R at 3438 nautical miles, or 6371 km. The separation in the drawing is greatly exaggerated.",
+  "walk.verdict": "Would favour the flat plane: a star whose altitude does not change by 1′ per nautical mile walked toward its ground position, or a rate that differs from one star to another.",
+
+  "fix-globe.title": "Four sights, one position: the globe",
+  "fix-globe.mini": "Four stars, four measured altitudes, four circles on the globe. All four cross at a single point: the ship.",
+  "fix-globe.text": "A navigator measures the altitudes of four stars. Each altitude gives the distance to the point beneath that star, one nautical mile per arcminute of zenith distance, so each sight draws a circle of position on the surface [1]. On a sphere of radius 6371 km, all four circles pass through the same point: the ship's position. This is a celestial fix, worked at sea since Thomas Sumner found the line of position in 1837 [2]. The stars in this drawing are synthetic, chosen for legibility.",
+  "fix-globe.verdict": "Would favour the flat plane: sights taken from one place whose circles on the globe fail to meet by more than the measurement error.",
+
+  "fix-flat.title": "Four sights, no position: the flat plane",
+  "fix-flat.mini": "The same four star sights on a flat plane, with the star height tuned so that the first circle is exact. The other three miss the ship by 186, 549 and 1078 km.",
+  "fix-flat.text": "The same four altitudes and the same four ground points, on a flat plane with the stars at a height H. The flat model gets every advantage: H is chosen so that the first circle passes exactly through the ship. The other three then miss it by 186, 549 and 1078 km, because on a plane the altitude is atan(H/r), which is not proportional to distance. No single height closes all four circles: retune H to fix one and another opens. The stars in this drawing are synthetic, chosen for legibility.",
+  "fix-flat.verdict": "Would favour the flat plane: one star height that makes all four circles meet at the ship. There is none.",
+
+  "fix.title": "Celestial navigation only closes on a globe",
+  "fix.labels": "Globe|Flat plane",
+  "fix.mini": "Four star sights. On the globe, their circles meet at the ship. On a flat plane, even with the star height tuned in its favour, three of them miss by up to 1078 km.",
+  "fix.text": "A navigator measures the altitudes of four stars and turns each into a circle of position around the point beneath that star, one nautical mile per arcminute [1]. On the globe, a sphere of radius 6371 km, all four circles cross at one point: the ship. On the flat plane, with the stars at a height chosen so that the first circle is exact, the other three miss by 186, 549 and 1078 km. The globe needs one number, R, the same for every star; the plane would need a different height for every star. The sight-reduction tables printed by the US and UK governments for daily use are this spherical arithmetic [2]. The stars drawn are synthetic; the US Naval Observatory's online service gives real ones for any place and time [3].",
+  "fix.verdict": "Would favour the flat plane: a single star height that makes all four circles meet. There is none, whatever the height."
+}

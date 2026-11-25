@@ -1,0 +1,48 @@
+# h762a.csv
+
+Dataset: grav-tides — Hourly sea level at five tide gauges (Brest, Marseille, Pensacola, Manila,
+  Fremantle), UHSLC research-quality data, year 2018
+File: data/grav/tides/raw/h762a.csv
+SHA-256: c8e96a4b3b5231a67064eb6a47670a100a31ff877e44714b57df1acfe495b338 (also in
+  data/grav/tides/inputs.lock; check with: cd data/grav/tides && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: the file may be shared but is kept
+  out of git for its size. Get it from
+  https://uhslc.soest.hawaii.edu/data/csv/rqds/atlantic/hourly/h762a.csv (or fog fetch grav-tides),
+  then compare its SHA-256 with the one above.
+Obtained: downloaded as published (fog fetch or by hand).
+From: UHSLC research-quality hourly sea level, the station file given in the URL.
+URL: https://uhslc.soest.hawaii.edu/data/csv/rqds/atlantic/hourly/h762a.csv
+Collected: 2026-11-13
+Licence: other — University of Hawaii Sea Level Center data are freely available for research and
+  education, with citation of Caldwell, Merrifield & Thompson (2015) and the UHSLC.
+Sources:
+- P. C. Caldwell, M. A. Merrifield, P. R. Thompson, Sea level measured by tide gauges from global
+  oceans — the Joint Archive for Sea Level holdings (NCEI Accession 0019568), Version 5.5, NOAA
+  National Centers for Environmental Information (2015), doi:10.7289/V5V40S7W
+  <https://uhslc.soest.hawaii.edu/datainfo/>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- frequencies of the harmonic lines: not the radius: the harmonic fit takes the frequency of each
+  tidal line from the mean motions of the Moon and the Sun (Meeus); the periods read off the
+  spectrum and the spring-neap cycle use the clock alone
+What would vindicate the flat model (rule 5): A tide gauge whose record has one high water per lunar
+  day and no semidiurnal line at 12 h 25 min anywhere, or a fortnightly spring-neap cycle that does
+  not follow the phases of the Moon, would favour a local Moon pulling water under itself over a
+  plane.
+Built by: fog build grav-tides
+Generated files:
+- src/data/presets/grav-tides.js
+Code:
+- tools/internal/build/gravtides
+- tools/internal/tide
+- src/tabs/grav/tides-logic.js
+- src/tabs/grav/tides.js
+Shown on the page:
+- #tab-grav/gv-h7
+- #tab-grav/gv-h7b
+Notes: Each file is the station's whole research-quality hourly record (Brest since 1846); the build
+  reads 2018 only, the last year every station has. Stations chosen for their kinds of tide: Brest
+  semidiurnal and large, Marseille almost none (Mediterranean), Pensacola diurnal (Gulf of Mexico),
+  Manila mixed, Fremantle diurnal and small (southern hemisphere).
+
+Written by `fog build explain` from data/grav/tides/dataset.json and data/grav/tides/inputs.lock: edit those, not this file.

@@ -1,0 +1,15 @@
+page,printed,state,station,alias,lat_d,lat_m,lat_s,lon_d,lon_m,lon_s,flag
+630,581,Cape Colony,Ceder Berg,,-32,-21,-14.219,-0,-40,-59.952,from Winter Berg
+630,581,Cape Colony,Sneeuw Kop,,-34,-2,-8.636,-0,-30,-26.567,from Winter Berg
+630,581,Cape Colony,Ceder Berg,,-32,-21,-14.232,-0,-40,-59.963,from Eland's Berg
+630,581,Cape Colony,Lambert's Hoek Berg,Lambert's Hoek,-32,-18,-37.758,-0,-18,-11.026,from Eland's Berg
+630,581,Cape Colony,Heerenlogement's Berg,,-31,-58,-9.642,-0,-5,-51.001,from Ceder Berg
+630,581,Cape Colony,Klip Rug,,-31,-37,-48.020,-0,-53,-52.256,from Ceder Berg
+630,581,Cape Colony,Ceder Berg,,-32,-21,-14.225,-0,-40,-59.955,from Heerenlogement's Berg
+630,581,Cape Colony,Klip Rug,,-31,-37,-48.020,-0,-53,-52.254,from Heerenlogement's Berg
+630,581,Cape Colony,Bokkeveld Berg,,-31,-8,-41.913,-0,-28,-55.150,from Heerenlogement's Berg
+630,581,Cape Colony,Eland's Hoogte,,-31,-10,-29.144,0,10,1.893,from Heerenlogement's Berg
+630,581,Cape Colony,Louis Fontein,,-31,-1,-37.403,0,28,58.745,from Heerenlogement's Berg
+630,581,Cape Colony,Bokkeveld Berg,,-31,-8,-41.912,-0,-28,-55.150,from Klip Rug
+630,581,Cape Colony,Eland's Hoogte,,-31,-10,-29.145,0,10,1.885,from Bokkeveld Berg
+630,581,Cape Colony,Louis Fontein,,-31,-1,-37.403,0,28,58.778,from Bokkeveld Berg

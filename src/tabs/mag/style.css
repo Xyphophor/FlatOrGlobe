@@ -1,0 +1,46 @@
+#tab-mag .formula { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--globe); border-radius: 10px; padding: 14px 16px; margin: 14px 0; }
+#tab-mag .callout { background: var(--globe-tint); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; margin: 14px 0; font-size: 14px; }
+#tab-mag .callout.flatc { background: var(--flat-tint); }
+#tab-mag .cnav-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 13px; }
+#tab-mag .cnav-table th, #tab-mag .cnav-table td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; }
+#tab-mag td.g { color: var(--globe); font-weight: 600; }
+#tab-mag td.f { color: var(--flat); }
+#tab-mag .mini-form { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end; margin: 12px 0; }
+#tab-mag .cnav-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+#tab-mag canvas { width: 100%; height: 240px; display: block; background: #fdfdfc; border: 1px solid var(--line); border-radius: 8px; }
+#tab-mag .figtitle { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; }
+#tab-mag .fcap { font-size: 12px; color: var(--ink-soft); margin-top: 6px; }
+#tab-mag .swapbtn { appearance: none; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); padding: 8px 14px; cursor: pointer; font-family: var(--mono); font-size: 12px; }
+#tab-mag .swapbtn[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+#tab-mag .exp { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--ink); border-radius: 10px; padding: 16px 18px; margin: 22px 0; }
+#tab-mag .exp-h { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); }
+#tab-mag .exp-t { font-size: 16px; font-weight: 800; margin: 4px 0 8px; }
+#tab-mag .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+#tab-mag .exp-var { border-radius: 8px; padding: 11px 13px; font-size: 13.5px; }
+#tab-mag .exp-var.iv { background: var(--blue-bg); border: 1px solid var(--blue-line); }
+#tab-mag .exp-var.dv { background: var(--amber-bg); border: 1px solid var(--amber-line); }
+#tab-mag .vartag { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; font-weight: 700; }
+#tab-mag .exp-out { margin-top: 12px; font-family: var(--mono); font-size: 13px; line-height: 1.85; }
+#tab-mag .exp-out .g { color: var(--globe); font-weight: 700; }
+#tab-mag .exp-out .f { color: var(--flat); font-weight: 700; }
+#tab-mag .notes { font-size: 14px; color: var(--ink-2); max-width: 74ch; }
+@media (max-width: 620px) { #tab-mag .cnav-grid, #tab-mag .exp-grid { grid-template-columns: 1fr; } }
+
+/* trois modèles côte à côte, puis la rangée de cadrans (2026-09-24) */
+#tab-mag .mag-trio { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 16px 0 8px; }
+@media (min-width: 620px) { #tab-mag .mag-trio { grid-template-columns: 1fr 1fr 1fr; } }
+#tab-mag .mag-h { margin: 2px 2px 8px; font-size: 13px; }
+#tab-mag .mag-trio canvas { height: 230px; }
+#tab-mag #magDials { height: 200px; }
+/* lignes de champ en 3D des trois modèles (2026-09-30) : on les tourne en glissant */
+#tab-mag .mag-f3d-grid canvas { height: 300px; cursor: grab; touch-action: none; }
+#tab-mag .mag-f3d-grid canvas:active { cursor: grabbing; }
+/* epic12 : la liste de lecture est numérotée depuis que la section des observatoires cite [n] */
+#tab-mag .srcs.reading ol { margin: 6px 0 0 22px; padding: 0; }
+/* epic12 : la liste des 176 observatoires défile dans son propre cadre */
+#tab-mag .mag-obs-scroll { max-height: 420px; overflow: auto; margin-top: 8px; }
+#tab-mag .mag-obs-scroll .cnav-table { font-size: 12px; margin: 0; }
+#tab-mag .mag-obs-scroll th { position: sticky; top: 0; background: var(--paper, #fdfdfc); }
+#tab-mag .mag-obs-dl { margin: 8px 0 0; font-size: 13px; }
+#tab-mag .mag-obs-filter { margin: 14px 0 6px; font-size: 13px; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+#tab-mag .mag-obs-filter select { font: inherit; padding: 4px 6px; border: 1px solid var(--line-strong); border-radius: 6px; background: var(--surface); max-width: 100%; }

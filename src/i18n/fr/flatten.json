@@ -1,0 +1,22 @@
+{
+  "aria": "Animation : la même scène tandis que la courbure de la Terre passe de 100 % à un plan, vue de côté et depuis l'œil de l'observateur",
+  "horizon": "horizon",
+  "horizon-far": "horizon → au loin",
+  "dip": "dépression",
+  "eye": "œil",
+  "side-stamp": "vue de côté · hauteurs ×{ex}, rayon de la planète ÷{ex}",
+  "side-stamp2": "même échelle dans les deux sens · {km} de large",
+  "eye-stamp": "vue de l'œil · angles vrais · {f} de haut",
+  "eye-stamp2": "même échelle angulaire en largeur · sans réfraction",
+  "eye-stamp2-elev": "sommets à leur vrai angle · écartement schématique",
+  "eye-level": "niveau de l'œil",
+  "plane": "plan — courbure 0 %",
+  "curv": "courbure {pct} % · rayon {R}",
+  "globe": "globe",
+  "plane-w": "plan",
+  "r-dip": "dépression actuelle",
+  "r-hidden": "caché sur {name} actuellement",
+  "r-diff": "{b} − {a} actuellement",
+  "click-pause": "clic : pause",
+  "click-play": "clic : lecture"
+}

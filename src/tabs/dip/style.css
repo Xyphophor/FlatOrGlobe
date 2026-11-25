@@ -1,0 +1,10 @@
+/* dip : tout le style commun vient de src/core/legacy.css. */
+
+/* Caussols (2026-09-27) : le paysage qu'on courbe -- même format que les paysages d'elev */
+#tab-dip .dip-caus canvas { width: 100%; height: auto; aspect-ratio: 16 / 7; display: block; border-radius: 6px; }
+#tab-dip .dip-own canvas { width: 100%; display: block; border: 1px solid var(--line); border-radius: 8px; margin: 0 0 8px; }
+#tab-dip .dip-own canvas.dip-own-all { aspect-ratio: 8 / 1; min-height: 110px; }
+#tab-dip .dip-own canvas.dip-own-zoom { aspect-ratio: 2 / 1; min-height: 180px; }
+#tab-dip .dip-own td.num { font-family: var(--mono); white-space: nowrap; text-align: right; }
+#tab-dip .dip-mlo canvas { width: 100%; height: auto; aspect-ratio: 4 / 5; display: block; border: 1px solid var(--line); border-radius: 8px; }
+@media (min-width: 640px) { #tab-dip .dip-mlo canvas { aspect-ratio: 4 / 3; } }

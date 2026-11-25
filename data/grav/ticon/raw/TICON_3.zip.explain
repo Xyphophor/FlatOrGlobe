@@ -1,0 +1,43 @@
+# TICON_3.zip
+
+Dataset: grav-ticon — TICON-3: tidal constants of 3,471 tide gauges from GESLA-3 sea-level records
+  (amplitude and Greenwich phase lag of 40 constituents)
+File: data/grav/ticon/raw/TICON_3.zip
+SHA-256: 6680aaa9a9bfbfc1e124554f03f6ea0e97c21ef320b4ed9973aa9c193e9dcabd (also in
+  data/grav/ticon/inputs.lock; check with: cd data/grav/ticon && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: the file may be shared but is kept
+  out of git for its size. Get it from https://download.pangaea.de/dataset/951610/files/TICON_3.zip
+  (or fog fetch grav-ticon), then compare its SHA-256 with the one above.
+Obtained: downloaded as published (fog fetch or by hand).
+From: TICON-3 on PANGAEA (doi:10.1594/PANGAEA.951610).
+URL: https://download.pangaea.de/dataset/951610/files/TICON_3.zip
+Checks: Rows with one number missing (four Great Lakes stations) are skipped and counted.
+Collected: 2026-11-14
+Licence: CC-BY-4.0
+Sources:
+- M. G. Hart-Davis, D. Dettmering, F. Seitz, TICON-3: Tidal Constants based on GESLA-3 sea-level
+  records from globally distributed tide gauges including gauge type information (data), PANGAEA
+  (2022), doi:10.1594/PANGAEA.951610 <https://doi.pangaea.de/10.1594/PANGAEA.951610>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- frequencies and equilibrium arguments of the constituents: not the radius: each gauge's constants
+  were fitted with the frequencies of the Moon's and Sun's motions; the page predicts the tide from
+  them with the same arguments
+What would vindicate the flat model (rule 5): Gauges whose constants show no twice-daily line at the
+  Moon's frequency along a whole coast, or tides in small closed seas as large as on the open ocean,
+  would favour a local Moon lifting water under itself.
+Built by: fog build grav-ticon
+Generated files:
+- src/data/presets/grav-ticon.js
+Code:
+- tools/internal/build/gravticon
+- src/tabs/grav/tideglobe.js
+- src/tabs/grav/tides-logic.js
+Shown on the page:
+- #tab-grav/gv-h7c
+- #tab-grav/gv-h7d
+Notes: Four NOAA stations of the Great Lakes have rows with only one of the five numbers after the
+  constituent name; they are skipped and counted. The gauge type 'Lake' also covers tidal lagoons
+  and estuaries (M2 up to 3 m), so the page does not use it to stand for lakes.
+
+Written by `fog build explain` from data/grav/ticon/dataset.json and data/grav/ticon/inputs.lock: edit those, not this file.

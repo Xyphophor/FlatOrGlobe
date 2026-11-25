@@ -1,0 +1,73 @@
+#tab-seis .formula { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--globe); border-radius: 10px; padding: 14px 16px; margin: 14px 0; }
+#tab-seis .callout { background: var(--globe-tint); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; margin: 14px 0; font-size: 14px; }
+#tab-seis .callout.flatc { background: var(--flat-tint); }
+#tab-seis .cnav-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 13px; }
+#tab-seis .cnav-table th, #tab-seis .cnav-table td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; }
+#tab-seis td.g { color: var(--globe); font-weight: 600; }
+#tab-seis td.f { color: var(--flat); }
+#tab-seis .mini-form { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end; margin: 12px 0; }
+#tab-seis .cnav-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+#tab-seis canvas { width: 100%; height: 240px; display: block; background: #fdfdfc; border: 1px solid var(--line); border-radius: 8px; }
+#tab-seis .figtitle { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; }
+#tab-seis .fcap { font-size: 12px; color: var(--ink-soft); margin-top: 6px; }
+#tab-seis .swapbtn { appearance: none; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); padding: 8px 14px; cursor: pointer; font-family: var(--mono); font-size: 12px; }
+#tab-seis .swapbtn[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+#tab-seis .exp { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--ink); border-radius: 10px; padding: 16px 18px; margin: 22px 0; }
+#tab-seis .exp-h { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); }
+#tab-seis .exp-t { font-size: 16px; font-weight: 800; margin: 4px 0 8px; }
+#tab-seis .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+#tab-seis .exp-var { border-radius: 8px; padding: 11px 13px; font-size: 13.5px; }
+#tab-seis .exp-var.iv { background: var(--blue-bg); border: 1px solid var(--blue-line); }
+#tab-seis .exp-var.dv { background: var(--amber-bg); border: 1px solid var(--amber-line); }
+#tab-seis .vartag { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; font-weight: 700; }
+#tab-seis .exp-out { margin-top: 12px; font-family: var(--mono); font-size: 13px; line-height: 1.85; }
+#tab-seis .exp-out .g { color: var(--globe); font-weight: 700; }
+#tab-seis .exp-out .f { color: var(--flat); font-weight: 700; }
+#tab-seis .notes { font-size: 14px; color: var(--ink-2); max-width: 74ch; }
+@media (max-width: 620px) { #tab-seis .cnav-grid, #tab-seis .exp-grid { grid-template-columns: 1fr; } }
+#tab-seis .sub { font-size: 11px; color: var(--ink-soft); }
+#tab-seis td.hot { color: var(--globe); font-weight: 600; } #tab-seis td.cold { color: var(--flat); }
+#tab-seis .fig canvas { height: 220px; }
+#tab-seis details.fold.q summary { cursor: pointer; font-weight: 600; }
+#tab-seis .figkey { font-size: 12px; color: var(--ink-soft); }
+#tab-seis .exp-inputs { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+#tab-seis .exp-inputs .field { min-width: 150px; }
+#tab-seis #seisAnimCanvas, #tab-seis #seisCoreCanvas { height: 300px; }
+
+/* le globe et la carte plate, même instant (2026-09-24) */
+#tab-seis .seis-anim-pair { display: grid; grid-template-columns: 1fr; gap: 10px; }
+#tab-seis #seisGlobeCanvas { height: 300px; }
+@media (min-width: 760px) { #tab-seis .seis-anim-pair { grid-template-columns: 1fr 1fr; } }
+/* epic05/UC05 : le résultat de l'onde de pression du Hunga Tonga, en évidence */
+#tab-seis .tg-result { background: var(--surface); border: 2px solid var(--globe); border-radius: 12px; padding: 14px 16px 10px; margin: 16px 0; }
+#tab-seis .tg-result .tg-big { font-family: var(--mono); font-size: 26px; font-weight: 800; color: var(--globe); line-height: 1.2; }
+#tab-seis .tg-result .tg-sub { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+#tab-seis .tg-result .tg-sub.f { color: var(--flat); }
+@media (max-width: 420px) { #tab-seis .tg-result .tg-big { font-size: 21px; } }
+#tab-seis canvas.reloc-resid { width: 100%; height: 340px; display: block; }
+#tab-seis canvas.reloc-map { width: 100%; aspect-ratio: 1 / 1.08; max-width: 620px; display: block; margin: 0 auto; cursor: pointer; }
+#tab-seis canvas.reloc-heat { width: 100%; aspect-ratio: 2.1 / 1; display: block; }
+#tab-seis .reloc-row { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; margin-bottom: 6px; }
+#tab-seis .reloc-row select { max-width: 100%; }
+/* la zone d'ombre des ondes P (2026-10-25) : une carte carrée, statique */
+#tab-seis .sh-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: center; }
+/* height: auto -- sinon « .fig canvas { height: 220px } » plus haut écrase les canvas carrés */
+#tab-seis canvas.shadow-map, #tab-seis canvas.shadow-globe { width: 100%; height: auto; aspect-ratio: 1 / 1; display: block; }
+/* le globe idéal, à côté de la coupe : même hauteur qu'elle */
+#tab-seis #seisCoreCanvas, #tab-seis canvas.shadow-ideal { height: 300px; }
+#tab-seis canvas.shadow-ideal { width: 100%; display: block; cursor: pointer; }
+@media (max-width: 559px) { #tab-seis .sh-pair { grid-template-columns: 1fr; } }
+/* les synthèses sur tous les grands séismes peu profonds (seis-bulk, 2026-10-29) */
+#tab-seis canvas.bulk-hist { width: 100%; height: 260px; display: block; }
+#tab-seis canvas.bulk-dens { width: 100%; height: 340px; display: block; }
+#tab-seis canvas.bulk-quakes { width: 100%; max-width: 560px; height: 380px; display: block; margin: 0 auto; }
+#tab-seis canvas.bulk-shadow { width: 100%; height: 320px; display: block; }
+/* la vitrine de l'onglet (2026-10-29), comme celle de rocket */
+#tab-seis canvas.seis-reel { width: 100%; display: block; aspect-ratio: 16 / 9; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fbfaf7; cursor: pointer; }
+@media (max-width: 559px) { #tab-seis canvas.seis-reel { aspect-ratio: 3 / 4; } }
+/* distinguer les ondes par leur mouvement (2026-10-30) */
+#tab-seis canvas.wv-traces { width: 100%; height: 360px; display: block; }
+#tab-seis canvas.wv-hodo { width: 100%; height: 230px; display: block; }
+@media (max-width: 499px) { #tab-seis canvas.wv-hodo { height: 420px; } }
+#tab-seis canvas.wv-dirs { width: 100%; height: 300px; display: block; }
+#tab-seis ul.seis-waves-list li { margin: 4px 0; }

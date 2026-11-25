@@ -1,0 +1,4 @@
+#Network | Station | Location | Channel | Latitude | Longitude | Elevation | Depth | Azimuth | Dip | SensorDescription | Scale | ScaleFreq | ScaleUnits | SampleRate | StartTime | EndTime
+IU|KONO|00|BH1|59.6491|9.5982|-124.0|340.0|0.0|0.0|Streckeisen STS-1VBB w/E300|4.36675E9|0.05|m/s|20.0|2009-09-12T15:02:42.0000|2011-01-10T20:14:59.0000
+IU|KONO|00|BH2|59.6491|9.5982|-124.0|340.0|90.0|0.0|Streckeisen STS-1VBB w/E300|4.5226E9|0.05|m/s|20.0|2009-09-12T15:02:42.0000|2011-01-10T20:14:59.0000
+IU|KONO|00|BHZ|59.6491|9.5982|-124.0|340.0|0.0|-90.0|Streckeisen STS-1VBB w/E300|5.40004E9|0.05|m/s|20.0|2009-09-12T15:02:42.0000|2011-01-10T20:14:59.0000

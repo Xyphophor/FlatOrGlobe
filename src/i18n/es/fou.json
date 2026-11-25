@@ -1,0 +1,13 @@
+{
+  "fp-cv-axis": "eje",
+  "fp-cv-phi": "φ = {p}°",
+  "fp-cv-omega-sinphi": "Ω sin φ = {v} °/h",
+  "fp-cv-black-omega": "negro = Ω, idéntico en cada sitio",
+  "fp-cv-teal-vertical": "verde azulado = la parte a lo largo de la vertical de tu suelo",
+  "fp-cv-phi-sweep": "φ = 48,85°  ·  {rate} °/h  ·  {sweep}° en {hours} h",
+  "fp-cv-swings-note": "oscilaciones reducidas ~30× · elipse exagerada · ángulo barrido exacto",
+  "fp-cv-latitude": "latitud",
+  "fp-cv-precession-unit": "precesión, °/h",
+  "fp-cv-time-note": "tiempo ×{x} · tasa de oscilación no a escala · ángulo barrido exacto",
+  "fp-cv-sin0": "sin 0 = 0 — nada gira, en ninguno de los dos marcos"
+}

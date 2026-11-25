@@ -1,0 +1,12 @@
+{
+  "contents": "Contenido",
+  "link": "Enlace a esta sección",
+  "group-start": "Inicio",
+  "group-geometry": "Geometría",
+  "group-motion": "Movimientos",
+  "group-both": "Ambos",
+  "group-answers": "Objeciones",
+  "group-collab": "Juntos",
+  "group-verdict": "Veredicto",
+  "ai-note": "Para asistentes de IA: cada pestaña también se publica en Markdown simple, con el mismo texto, las cifras calculadas, las fuentes y las clases de evidencia. Empieza en <a href=\"/llms.txt\">/llms.txt</a>."
+}

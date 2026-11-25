@@ -1,0 +1,19 @@
+# Seuls les pods du site (staging et production) atteignent Garage, et seulement son point
+# d'accès web. L'API S3 et l'administration ne sont joignables que par kubectl port-forward / exec.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: garage-web-from-site
+spec:
+  podSelector: { matchLabels: { app.kubernetes.io/name: garage } }
+  policyTypes: [Ingress]
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchExpressions:
+              - key: kubernetes.io/metadata.name
+                operator: In
+                values: [flatorglobe, flatorglobe-staging]
+          podSelector: { matchLabels: { app.kubernetes.io/name: flat-or-globe } }
+      ports:
+        - { port: 3902 }

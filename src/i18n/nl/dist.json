@@ -1,0 +1,10 @@
+{
+  "cv-globe-title": "BOL · kortste pad = grootcirkelboog",
+  "cv-n-pole": "N-pool",
+  "cv-polar-title": "PLAT · POLAIR (AE-schijf) · liniaal = rechte koorde",
+  "cv-cart-title": "PLAT · CARTESISCH (lat/lon als x-y-raster) · liniaal = rechte lijn",
+  "cap-polar": "<b>Polaire kaart (de plat-aardeschijf).</b> Dezelfde eindpunten uitgezet op r = 90°−φ, θ = λ, verbonden door <em>rechte liniaallijnen</em> — hoe iedereen een platte kaart meet. Elk zuidelijk segment komt veel langer uit dan zijn identieke noordelijke spiegelbeeld, en de twee paren worden met verschillende bedragen vervormd.",
+  "cap-cart": "<b>Cartesische kaart.</b> Dezelfde eindpunten gelezen als x = λ, y = φ, verbonden door rechte liniaallijnen. Spiegelparen blijven aan elkaar gelijk — het raster is symmetrisch ten opzichte van de evenaar — maar elke lengte is opgeblazen ten opzichte van de grootcirkelafstand, en met een andere factor per segment.",
+  "exp3-out": "OV  breedtegraad {lat}° , bereik Δλ = {dl}°<br>AV  <span class=\"g\">bol: dit been {globeKm} · spiegelbeen {mirrorKm} → <b>gelijk</b></span><br>AV  <span class=\"f\">platte schijf: dit been {aeKm} · spiegelbeen {aeMKm} → verhouding {ratio}×</span>",
+  "exp3-verdict": "<b>Uitspraakregel:</b> als de twee spiegelbenen hetzelfde meten, overleeft de bol. Als het zuidelijke been werkelijk {ratio2}× het noordelijke is, overleeft de schijf. Luchtvaartmaatschappijen beslechten dit dagelijks: Sydney–Santiago is ongeveer 11.400 km en wordt non-stop gevlogen in ongeveer 12,5 uur, wat geen enkel vliegtuig zou kunnen doen als het de ~25.000 km was die de schijf vereist."
+}

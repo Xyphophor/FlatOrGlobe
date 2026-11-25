@@ -1,0 +1,5 @@
+{
+  "title": "Contrat de module d'onglet (démo)",
+  "lead": "Cet onglet ne sert qu'à valider le contrat mount/render/teardown avant le portage du vrai contenu en epic02.",
+  "counter-label": "Choisissez un nombre :"
+}

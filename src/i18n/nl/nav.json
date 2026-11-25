@@ -1,0 +1,12 @@
+{
+  "contents": "Inhoud",
+  "link": "Link naar deze sectie",
+  "group-start": "Begin",
+  "group-geometry": "Meetkunde",
+  "group-motion": "Bewegingen",
+  "group-both": "Beide",
+  "group-answers": "Bezwaren",
+  "group-collab": "Samen",
+  "group-verdict": "Oordeel",
+  "ai-note": "Voor AI-assistenten: elk tabblad wordt ook als gewone Markdown gepubliceerd, met dezelfde tekst, berekende getallen, bronnen en bewijsklassen. Begin bij <a href=\"/llms.txt\">/llms.txt</a>."
+}

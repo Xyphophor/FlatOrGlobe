@@ -1,0 +1,4 @@
+#Network | Station | Location | Channel | Latitude | Longitude | Elevation | Depth | Azimuth | Dip | SensorDescription | Scale | ScaleFreq | ScaleUnits | SampleRate | StartTime | EndTime
+IU|KEV|00|BH1|69.7565|27.0035|85.0|15.0|354.0|0.0|Velocity Sensor|3.69774E9|0.02|m/s|20.0|2009-12-09T15:40:00.0000|2012-06-18T00:00:00.0000
+IU|KEV|00|BH2|69.7565|27.0035|85.0|15.0|84.0|0.0|Velocity Sensor|3.76485E9|0.02|m/s|20.0|2009-12-09T15:40:00.0000|2012-06-18T00:00:00.0000
+IU|KEV|00|BHZ|69.7565|27.0035|85.0|15.0|0.0|-90.0|Velocity Sensor|3.88229E9|0.02|m/s|20.0|2009-12-09T15:40:00.0000|2012-06-18T00:00:00.0000

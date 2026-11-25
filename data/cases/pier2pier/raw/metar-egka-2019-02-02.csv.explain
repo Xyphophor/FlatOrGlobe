@@ -1,0 +1,52 @@
+# metar-egka-2019-02-02.csv
+
+Dataset: cases-pier2pier — The Worthing–Brighton laser test of 2 and 23 February 2019 (PIER2PIER
+  2, Dr John D.): their thermometer tables and trials, our transcription; the evenings' air, sea and
+  tide
+File: data/cases/pier2pier/raw/metar-egka-2019-02-02.csv
+SHA-256: 3082ae7792ca91b7d081a348e3757e84732a30564d7834aca7e1abaacb1a8217 (also in
+  data/cases/pier2pier/inputs.lock; check with: cd data/cases/pier2pier && sha256sum -c inputs.lock)
+In the public repository: yes, beside this description.
+Obtained: the answer of a public web API to the request given.
+From: Iowa Environmental Mesonet METAR archive, Shoreham Airport (EGKA), the request in the URL.
+URL:
+  https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=EGKA&data=tmpc&data=dwpc&data=sknt&data=drct&data=metar&year1=2019&month1=2&day1=2&hour1=8&year2=2019&month2=2&day2=2&hour2=23&tz=Etc/UTC&format=onlycomma&latlon=yes&missing=M&trace=T&direct=no&report_type=3&report_type=4
+Collected: 2026-10-31
+Licence: other — The readings are facts transcribed from a public YouTube presentation (Dr John
+  D.), cited; the API answers carry their providers' terms (ERA5 via Open-Meteo CC-BY-4.0, IEM, IOC
+  SLSMF, NOAA OISST public domain).
+Sources:
+- Dr John D., PIER2PIER 2 – Results & Observations (YouTube, 2019): sites, heights, trials,
+  thermometer tables, tide predictions <https://www.youtube.com/watch?v=uJ3TLdcVNfA>
+- Open-Meteo historical weather API (ERA5 reanalysis, Copernicus Climate Change Service), sea cell
+  50.75° N 0.25° W <https://open-meteo.com/>
+- Iowa Environmental Mesonet, ASOS/METAR archive: EGKA Shoreham Airport
+  <https://mesonet.agron.iastate.edu/request/download.phtml>
+- IOC Sea Level Station Monitoring Facility: Newhaven (nhav)
+  <https://www.ioc-sealevelmonitoring.org/station.php?code=nhav>
+- NOAA OISST v2.1 daily sea surface temperature (ERDDAP, NOAA CoastWatch)
+  <https://coastwatch.pfeg.noaa.gov/erddap/griddap/ncdcOisst21Agg_LonPM180.html>
+- OpenStreetMap (Nominatim): Worthing Pier, West Pier Brighton, British Airways i360
+  <https://www.openstreetmap.org/>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- lat, lon (sites): the 15.3 km between the sites is a distance computed on a sphere of radius R
+  from their coordinates
+What would vindicate the flat model (rule 5): A laser 1 m or less above the sea seen from 1 m at
+  15.3 km while thermometers precise enough to see 0.1 °C per metre show no warming with height
+  along the path, again and again, by day and by night, would favour the plane; the same beam hidden
+  under such air would favour the globe.
+Built by: fog build cases-pier2pier
+Generated files:
+- src/data/presets/cases-pier2pier.js
+Code:
+- tools/internal/build/casep2p
+- src/tabs/cases/logic.js
+- src/tabs/ref/laser.js
+Shown on the page:
+- #tab-cases/p2p-h
+Notes: Case study, not a measurement of the Earth: the operators' own readings, recomputed. Their
+  two 'thermometers' are read from the doubled values of each cell ('7.5 / <7.0'). The time of the 2
+  February attempt is not given; the evening hours are kept.
+
+Written by `fog build explain` from data/cases/pier2pier/dataset.json and data/cases/pier2pier/inputs.lock: edit those, not this file.

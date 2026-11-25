@@ -1,0 +1,3 @@
+#tab-atmo td { vertical-align: top; }
+#tab-atmo canvas.atmo-reel { width: 100%; display: block; aspect-ratio: 16 / 9; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fbfaf7; cursor: pointer; }
+@media (max-width: 559px) { #tab-atmo canvas.atmo-reel { aspect-ratio: 3 / 4; } }

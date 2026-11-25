@@ -1,0 +1,16 @@
+# Liste blanche : le site ne se construit qu'avec ceci. Surtout pas data/ (3,8 Go de données
+# brutes), legacy/, node_modules/ ni tasks/. Podman lit aussi ce fichier.
+*
+!index.html
+!vite.config.js
+!scripts/contrib-build.mjs
+!package.json
+!package-lock.json
+!src/
+!public/
+!deploy/nginx/
+# les vidéos vivent dans le stockage du cluster (deploy/k8s/media), pas dans l'image
+public/video/
+
+# videos pre-rendues (epic25) : servies depuis le stockage de médias, jamais dans l image
+public/video/cards

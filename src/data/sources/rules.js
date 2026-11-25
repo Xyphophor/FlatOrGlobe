@@ -1,0 +1,6 @@
+// Sources de l'onglet rules (2026-11-25). L'ordre EST la numérotation [n].
+export const SOURCES = [
+  { id: "n1", html: "<a href=\"https://doi.org/10.1029/2010JD014067\">C. Hirt, S. Guillaume, A. Wisbar, B. Bürki, H. Sternberg, “Monitoring of the refraction coefficient in the lower atmosphere using a controlled setup of simultaneous reciprocal vertical angle measurements”</a>, <em>Journal of Geophysical Research</em> 115 (2010) D21102: the refraction coefficient k ≈ 0.13 on average, from Gauss's Hanover reciprocal observations to modern data, and how strongly it varies with the weather near the ground." },
+  { id: "n2", html: "JCGM 100:2008, <a href=\"https://www.bipm.org/en/committees/jc/jcgm/publications\"><em>Evaluation of measurement data — Guide to the expression of uncertainty in measurement</em></a> (GUM), BIPM et al.: standard uncertainty, combination of uncertainties; for a normal distribution, 99.7 % of values lie within ±3σ." },
+  { id: "n3", html: "R. T. Birge, “The calculation of errors by the method of least squares”, <em>Physical Review</em> 40 (1932) 207–227: the ratio √(χ²/(N − 1)) that tests whether results agree within their stated errors, and enlarges the error of their mean when they do not." },
+];

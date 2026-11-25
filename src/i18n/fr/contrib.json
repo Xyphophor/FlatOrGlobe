@@ -1,0 +1,19 @@
+{
+  "ad-side-flat": "coupe · mer plate · hauteurs et courbures ×{ex} · {km} km",
+  "ad-side-globe": "coupe · mer de rayon R · hauteurs et courbures ×{ex} · {km} km",
+  "ad-st-std": "réfraction standard, k = 0,13 : la lumière courbe vers le bas",
+  "ad-st-back": "retour à la lumière droite",
+  "ad-r-photo": "photo",
+  "ad-r-flat": "plan",
+  "ad-r-globe": "globe",
+  "ad-pause": "clic : pause",
+  "ad-play": "clic : lecture",
+  "ad-fx-st": "courbures exagérées",
+  "fx-nts": "pas à l'échelle",
+  "ad-plane": "PLAN",
+  "ad-globe": "GLOBE",
+  "ad-g-need": "il faut",
+  "ad-pp-play": "Lecture",
+  "ad-pp-pause": "Pause",
+  "fx-axes": "à l'échelle de ses axes"
+}

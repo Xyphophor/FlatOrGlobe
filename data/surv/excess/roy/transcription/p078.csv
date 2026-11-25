@@ -1,0 +1,10 @@
+page,printed,net,k,no,station,deg,min,sec,derived,adj_sec,log,dist,sum_deg,sum_min,sum_sec,exc,flag
+78,72,Roy,1,XXXIII,Dover Castle,,,,*,29.58,,245777.5,,,,7.4,
+78,72,Roy,1,XXXIII,Fairlight Down,,,,*,58.52,,168821.07,,,,,
+78,72,Roy,1,XXXIII,Montlambert,,,,*,31.9,,,,,,,
+78,72,Roy,2,XXXIV,Fairlight Down,,,,*,55.02,,116655.93,,,,4.78,sine rule on the printed corrected angles and the two printed sides disagrees by 1.1e-4 (252469.9/sin 110 55 29.83 = 270296 vs 116655.93/sin 25 33 55.02 = 270325); digits checked at 300 dpi
+78,72,Roy,2,XXXIV,Dover Castle,,,,*,29.83,,252469.9,,,,,
+78,72,Roy,2,XXXIV,Blancnez,,,,*,35.15,,,,,,,
+78,72,Roy,3,XXXV,Dover Castle,23,25,0.25,,0.25,,77235.0,,,,1.84,
+78,72,Roy,3,XXXV,Montlambert,,,,*,18.11,,,,,,,
+78,72,Roy,3,XXXV,Blancnez,,,,*,41.64,,,,,,,

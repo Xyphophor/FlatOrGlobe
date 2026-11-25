@@ -1,0 +1,18 @@
+# N. Murayama (1962), "Pressure Waves Produced by the Nuclear Explosion on October 30, 1961 - Preliminary Report",
+# J. Meteor. Soc. Japan, Ser. II, 40(4), 222-231, Table 1 (pp. 226-227), transcribed by hand 2026-11-21 from the scanned print.
+# One row per station, as printed. Times GMT, "MM-DD hh:mm" (1961). Train 1 = shortest path, train 2 = antipodal path,
+# train 3 = train 1 returned after a complete global passage. Times printed in parentheses ("values uncertain because of
+# complicated records") carry the flag "?". Empty = not given ("not clear" or blank in the print).
+# d1, d2, d3 = Murayama's distances (km) from his assumed site 74 N 57 E; v1, v2, v3 = his wave velocities (m/s) from an assumed
+# explosion time of 08:35 GMT. Neither is used for the radius: they only check this transcription (v = d / (t - 08:35)).
+# instrument: P58 / 56 / barograph (Showa Base, values from the barograph record, "**" in the print).
+station,lat,lon,instrument,d1,A1,v1,d2,A2,v2,d3,A3,v3
+Wakkanai,42 25 N,141 41 E,56,5044,10-30 13:00,317,34980,10-31 16:13?,307,45068,11-01 00:14?,316
+Kushiro,42 59 N,144 24 E,56,5376,10-30 13:14,321,34648,10-31 15:58?,307,45400,11-01 00:32?,316
+Akita,39 43 N,140 06 E,P58,5585,10-30 13:28,318,34439,10-31 15:44,307,45609,11-01 00:35,317
+Wajima,37 23 N,136 54 E,56,5729,10-30 13:35,318,34295,10-31 15:33,308,45753,11-01 00:43,317
+Tokyo,35 41 N,139 46 E,P58,5995,10-30 13:51,316,34029,10-31 15:24,307,46019,11-01 00:56,317
+Yonago,35 26 N,133 21 E,56,5824,10-30 13:41,317,34200,10-31 15:50,304,45848,,
+Murotomisaki,33 15 N,134 11 E,56,6079,10-30 13:58,314,33945,10-31 15:38,304,46103,11-01 00:54,318
+Kagoshima,31 34 N,130 33 E,P58,6145,10-30 13:56,319,33879,10-31 15:37,303,46169,11-01 01:01,317
+Showa Base,69 00 S,39 35 E,barograph,15957,10-30 22:40,315,,,,,,

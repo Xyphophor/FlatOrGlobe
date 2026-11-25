@@ -1,0 +1,51 @@
+# rvbank_HD10700.tsv
+
+Dataset: orb — Earth's orbit from public data: HARPS-N solar radial velocity 2015-2018, tau Ceti
+  (HARPS RVBank), SDO/HMI apparent solar radius 2023
+File: data/orb/raw/rvbank_HD10700.tsv
+SHA-256: c3b915f1e854079b8147537ece77602c468477e130e6cc481901759f5a06d99a (also in
+  data/orb/inputs.lock; check with: cd data/orb && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: CDS/VizieR distributes it free for
+  scientific use with citation; its terms do not say that a copy may be republished, so only the
+  hash and the request are given. Get it from
+  https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=J/A%2BA/636/A74/rvbank&Name=HD10700&-out=Name,BJD,RVdrs,BERV,BERVDRS&-out.max=20000
+  (or fog fetch orb), then compare its SHA-256 with the one above.
+Obtained: the answer of a public web API to the request given.
+From: VizieR J/A+A/636/A74 (HARPS RVBank, Trifonov et al. 2020), tau Ceti, the request in the URL.
+URL:
+  https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=J/A%2BA/636/A74/rvbank&Name=HD10700&-out=Name,BJD,RVdrs,BERV,BERVDRS&-out.max=20000
+Collected: 2026-10-04
+Licence: other — DACE (Univ. Geneva) HARPS-N solar release: public, cite Dumusque et al. 2021;
+  VizieR J/A+A/636/A74 (Trifonov et al. 2020); SDO/HMI data courtesy of NASA/SDO and the HMI science
+  team (JSOC), public.
+Sources:
+- Dumusque et al. 2021, HARPS-N solar telescope, first public release 2015-2018 (DACE)
+  <https://dace.unige.ch/>
+- Trifonov et al. 2020, HARPS RVBank, VizieR J/A+A/636/A74 (HD 10700, tau Ceti)
+  <https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=J/A%2BA/636/A74>
+- SDO/HMI, hmi.Ic_720s keyword RSUN_OBS, JSOC <http://jsoc.stanford.edu/>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- SUN_DAYS, TAU_CETI velocities: rebuilt as RV - BERV: the barycentric correction added back is
+  computed from ephemerides, with the Earth's radius
+- SDO_RSUN: the apparent radius is computed by the SDO pipeline from the spacecraft-Sun distance, an
+  ephemeris
+What would vindicate the flat model (rule 5): Doppler residuals at the level of the instrument,
+  about 1 m/s, for some height of the flat model's Sun; a zenith star that stays put through the
+  year to better than a second of arc.
+Built by: fog build orb
+Generated files:
+- src/data/presets/orb-sun.js
+- src/data/presets/orb-star.js
+- src/data/presets/orb-sdo.js
+Code:
+- tools/internal/build/orb
+- src/tabs/orb/data.js
+Shown on the page:
+- #tab-orb/orb-h2sun
+- #tab-orb/orb-h2dop
+- #tab-orb/orb-h2star
+Notes: One dataset, three sources: the class is the most cautious of the three (check). The parallax
+  and aberration sections that are measures use star catalogues, not these files.
+
+Written by `fog build explain` from data/orb/dataset.json and data/orb/inputs.lock: edit those, not this file.

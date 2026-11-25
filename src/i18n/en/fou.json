@@ -1,0 +1,13 @@
+{
+  "fp-cv-axis": "axis",
+  "fp-cv-phi": "φ = {p}°",
+  "fp-cv-omega-sinphi": "Ω sin φ = {v} °/h",
+  "fp-cv-black-omega": "black = Ω, identical at every site",
+  "fp-cv-teal-vertical": "teal = the part along your floor's vertical",
+  "fp-cv-phi-sweep": "φ = 48.85°  ·  {rate} °/h  ·  {sweep}° in {hours} h",
+  "fp-cv-swings-note": "swings thinned ~30× · ellipse exaggerated · swept angle exact",
+  "fp-cv-latitude": "latitude",
+  "fp-cv-precession-unit": "precession, °/h",
+  "fp-cv-time-note": "time ×{x} · swing rate not to scale · swept angle exact",
+  "fp-cv-sin0": "sin 0 = 0 — nothing turns, in either frame"
+}

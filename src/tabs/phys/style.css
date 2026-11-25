@@ -1,0 +1,8 @@
+/* Onglet phys : des tableaux de texte (définitions), alignés à gauche ; les valeurs en chasse fixe. */
+#tab-phys .cnav-table th, #tab-phys .cnav-table td { text-align: left; }
+#tab-phys td.num { font-family: var(--mono); }
+#tab-phys td.phys-defined { color: var(--globe); }
+#tab-phys td.phys-earth, #tab-phys td.phys-convention { color: var(--ink-2); }
+/* la vitrine du choc (2026-10-27) : 16:9, 3:4 sur téléphone */
+#tab-phys canvas.phys-reel { width: 100%; display: block; aspect-ratio: 16 / 9; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fbfaf7; cursor: pointer; }
+@media (max-width: 559px) { #tab-phys canvas.phys-reel { aspect-ratio: 3 / 4; } }

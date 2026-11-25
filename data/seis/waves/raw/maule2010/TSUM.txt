@@ -1,0 +1,4 @@
+#Network | Station | Location | Channel | Latitude | Longitude | Elevation | Depth | Azimuth | Dip | SensorDescription | Scale | ScaleFreq | ScaleUnits | SampleRate | StartTime | EndTime
+IU|TSUM|00|BH1|-19.20227|17.58376|1229.0|0.0|0.0|0.0|Streckeisen STS-1H/VBB Seismometer|3.70063E9|0.05|m/s|20.0|2009-12-09T18:40:00.0000|2011-08-08T20:00:00.0000
+IU|TSUM|00|BH2|-19.20227|17.58376|1229.0|0.0|90.0|0.0|Streckeisen STS-1H/VBB Seismometer|3.70315E9|0.05|m/s|20.0|2009-12-09T18:40:00.0000|2011-08-08T20:00:00.0000
+IU|TSUM|00|BHZ|-19.20227|17.58376|1229.0|0.0|0.0|-90.0|Streckeisen STS-1H/VBB Seismometer|4.12395E9|0.05|m/s|20.0|2008-09-16T10:00:00.0000|2010-07-22T18:59:59.0000

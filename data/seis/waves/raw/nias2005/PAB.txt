@@ -1,0 +1,4 @@
+#Network | Station | Location | Channel | Latitude | Longitude | Elevation | Depth | Azimuth | Dip | SensorDescription | Scale | ScaleFreq | ScaleUnits | SampleRate | StartTime | EndTime
+IU|PAB|00|BHE|39.5446|-4.3499|950.0|0.0|90.0|0.0|Streckeisen STS-1H/VBB Seismometer|9.67225E8|0.02|m/s|20.0|1999-02-18T10:00:00.0000|2009-08-13T19:00:00.0000
+IU|PAB|00|BHN|39.5446|-4.3499|950.0|0.0|0.0|0.0|Streckeisen STS-1H/VBB Seismometer|9.43736E8|0.02|m/s|20.0|1999-02-18T10:00:00.0000|2009-08-13T19:00:00.0000
+IU|PAB|00|BHZ|39.5446|-4.3499|950.0|0.0|0.0|-90.0|Streckeisen STS-1V/VBB Seismometer|9.84002E8|0.02|m/s|20.0|1999-02-18T10:00:00.0000|2009-08-13T19:00:00.0000

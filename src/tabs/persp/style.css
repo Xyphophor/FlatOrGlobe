@@ -1,0 +1,5 @@
+/* Onglet persp : la vitrine en 16:9 (3:4 sur téléphone), comme celle de rocket ; tableau aligné à gauche. */
+#tab-persp canvas.persp-reel { width: 100%; display: block; aspect-ratio: 16 / 9; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fbfaf7; cursor: pointer; }
+#tab-persp .cnav-table th, #tab-persp .cnav-table td { text-align: left; }
+@media (max-width: 559px) { #tab-persp canvas.persp-reel { aspect-ratio: 3 / 4; } }
+@media (max-width: 420px) { #tab-persp .pe-sum th, #tab-persp .pe-sum td { font-size: 12.5px; padding: 4px 5px; } }

@@ -1,0 +1,18 @@
+# Stockage des médias (vidéos) dans le cluster : Garage, compatible S3, un seul nœud.
+# Partagé par staging et production (lecture seule pour eux, par son point d'accès « web »).
+# Déployé une fois, indépendamment du site : kubectl apply -k deploy/k8s/media
+# puis deploy/media.sh init (secret, disposition du nœud, bucket, clé d'envoi).
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: flatorglobe-media
+# (pas de `labels:` commun ici : kustomize le recopierait dans le sélecteur « from » de la
+# NetworkPolicy et couperait l'accès du site ; les étiquettes sont écrites à la main)
+resources:
+  - namespace.yaml
+  - statefulset.yaml
+  - service.yaml
+  - networkpolicy.yaml
+configMapGenerator:
+  - name: garage-config
+    files:
+      - garage.toml

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "id": "surv-zenith",
+  "title": "Reciprocal zenith distances of the USC&GS Transcontinental Triangulation (Schott, Special Publication No. 4, 1900, Part II): Colorado, the California coast, Mount Hamilton, and Round Top-Jackson Butte hour by hour in 1879; our transcription",
+  "tab": "ref",
+  "build": "fog:surv-zenith",
+  "kind": "transcription",
+  "evidence": "measure",
+  "radius_enters_via": [],
+  "verdict_rule": "Reciprocal zenith distances whose sums stay at or below 180°, whatever the length of the line (a plane with straight or downward-bent light).",
+  "license": "public-domain",
+  "sources": [
+    {
+      "cite": "C. A. Schott, The Transcontinental Triangulation and the American Arc of the Parallel, U.S. Coast and Geodetic Survey Special Publication No. 4 (Washington, 1900), Part II, Determination of heights: pp. 257-262, 269-277, 280-292, 300-302 of the print (pdf pp. 261-307)",
+      "url": "https://geodesy.noaa.gov/library/pdfs/Special_Publication_No_4.pdf"
+    }
+  ],
+  "collected": "2026-10-28",
+  "units": {
+    "deg, min, sec": "zenith distance as printed",
+    "red_level, red_ecc": "arcsec, Schott's reductions to the station mark and for eccentricity",
+    "P_mm, T_C": "the abstracts' rough pressure (mm of mercury) and air temperature (°C)",
+    "log_s": "log10 of the distance in metres, as printed",
+    "T_F": "hourly mean dry-bulb temperature, °F (Schott's columns)"
+  },
+  "inputs": [
+    {
+      "glob": "sp4/transcription/*.csv",
+      "how": "transcription",
+      "origin": "Schott, USC&GS Special Publication No. 4 (1900), Part II (determination of heights), the pages named in the file name; typed by hand by the assistant (Claude) from the scans, under Xyphophor's review.",
+      "checks": "The build checks observed + reductions = reduced, the means, and log s."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/ref-zenith.js"
+  ],
+  "notes": "The PDF is the one of surv-excess (data/surv/excess/sp4/raw/). 'component' rows are the years a 'mean' row combines; pairs use the mean. s/E = R/(1−k) is a measure (s from the triangulation, E from two angles); k needs R (check). Method: go doc -all ./internal/build/survzenith.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/survzenith",
+    "src/tabs/ref/values.js"
+  ],
+  "sections": [
+    "ref/rf-hsp4"
+  ]
+}

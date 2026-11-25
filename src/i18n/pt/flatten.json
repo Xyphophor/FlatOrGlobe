@@ -1,0 +1,22 @@
+{
+  "aria": "Animação: a mesma cena enquanto a curvatura da Terra passa de 100 % a um plano, vista de lado e a partir do olho do observador",
+  "horizon": "horizonte",
+  "horizon-far": "horizonte → ao longe",
+  "dip": "depressão",
+  "eye": "olho",
+  "side-stamp": "vista lateral · alturas ×{ex}, raio do planeta ÷{ex}",
+  "side-stamp2": "mesma escala nos dois sentidos · {km} de largura",
+  "eye-stamp": "vista do olho · ângulos reais · {f} de altura",
+  "eye-stamp2": "mesma escala angular na largura · sem refração",
+  "eye-stamp2-elev": "cumes no seu ângulo real · espaçamento esquemático",
+  "eye-level": "nível do olho",
+  "plane": "plano — curvatura 0 %",
+  "curv": "curvatura {pct} % · raio {R}",
+  "globe": "globo",
+  "plane-w": "plano",
+  "r-dip": "depressão agora",
+  "r-hidden": "escondido em {name} agora",
+  "r-diff": "{b} − {a} agora",
+  "click-pause": "clique: pausa",
+  "click-play": "clique: reproduzir"
+}

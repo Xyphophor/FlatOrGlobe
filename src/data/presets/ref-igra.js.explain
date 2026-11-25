@@ -1,0 +1,36 @@
+# ref-igra.js
+
+File: src/data/presets/ref-igra.js (generated: never edited by hand)
+
+From the dataset: ref-igra — Every 2026 radiosonde sounding of IGRA 2 (NOAA NCEI, ~800 stations,
+  twice daily): the refraction coefficient k of the measured air, day and night (data/ref/igra/,
+  every input with its own .explain)
+Inputs:
+- data/ref/igra/raw/igra2-station-list.txt — download
+- data/ref/igra/raw/*-data-beg2026.txt.zip — download
+Collected: 2026-10-28
+Licence: public-domain
+Sources:
+- I. Durre, X. Yin, R. S. Vose, S. Applequist and J. Arnfield, Enhancing the Data Coverage in the
+  Integrated Global Radiosonde Archive, J. Atmos. Oceanic Technol. 35 (2018) 1753-1770; IGRA version
+  2, NOAA National Centers for Environmental Information
+  <https://www.ncei.noaa.gov/data/integrated-global-radiosonde-archive/>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- k: k = R/ρ is the ray's curvature divided by the Earth's: the radius is its unit (503 = R ·
+  78.8e-6)
+What would vindicate the flat model (rule 5): Air in which k ≥ 1 (a ray curving as much as the
+  ground, the globe looking flat) in most soundings, in every climate, by day and by night.
+Built by: fog build ref-igra
+Generated files:
+- src/data/presets/ref-igra.js
+Code:
+- tools/internal/build/igra
+- src/tabs/ref/values.js
+- src/tabs/ref/formfigs.js
+Shown on the page:
+- #tab-ref/rf-higra
+Notes: fog fetch ref-igra downloads the current-year files once (data-y2d, ~500 MB); the lock
+  freezes them as collected. Method and references: go doc -all ./internal/build/igra.
+
+Written by `fog build explain` from data/ref/igra/dataset.json and the lock files: edit those, not this file.

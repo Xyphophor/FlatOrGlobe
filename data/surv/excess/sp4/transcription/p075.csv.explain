@@ -1,0 +1,68 @@
+# p075.csv
+
+Dataset: surv-excess — Observed angle sums of survey triangles: Schott (USC&GS SP 4 and 7),
+  Delambre & Méchain, Maclear, Roy, Struve; our transcription
+File: data/surv/excess/sp4/transcription/p075.csv
+SHA-256: 07f3f4ecd38145b01d0cd68aec3e801209784fa4776f69307c902f33d3f6e0ee (also in
+  data/surv/excess/inputs.lock; check with: cd data/surv/excess && sha256sum -c inputs.lock)
+In the public repository: yes, beside this description.
+Obtained: typed by hand (or OCR checked by hand) from a printed or scanned source.
+From: The printed tables of Schott (USC&GS SP 4, 1900, and SP 7, 1902), Delambre & Méchain,
+  Maclear, Roy and Struve (pages named in the file name and in the sources), read off the page
+  images by Sonnet subagents, one line per printed angle.
+Checks: research/surv_excess_check.py, then the build: observed + correction = spherical, triangle
+  closure, log/distance, sine rule; the build fails on a disagreement that is not flagged.
+What could still be wrong: A misread digit in an angle that no check covers could pass; flagged rows
+  say why they are kept.
+Collected: 2026-10-28
+Licence: public-domain
+Sources:
+- C. A. Schott, The Transcontinental Triangulation and the American Arc of the Parallel, U.S. Coast
+  and Geodetic Survey Special Publication No. 4 (Washington, 1900): triangles of the base nets and
+  adjusted triangles of the main triangulation; resulting geographic positions
+  <https://geodesy.noaa.gov/library/pdfs/Special_Publication_No_4.pdf>
+- C. A. Schott, The Eastern Oblique Arc of the United States and Osculating Spheroid, U.S. Coast and
+  Geodetic Survey Special Publication No. 7 (Washington, 1902): resulting angles and sides; synopsis
+  of the base lines (p. 100); resulting geographic positions
+  <https://geodesy.noaa.gov/library/pdfs/Special_Publication_No_7.pdf>
+- J.-B. Delambre and P. Méchain, Base du système métrique décimal (Paris, 1806-1810): t. 1 pp.
+  513-542 (Tableau général des triangles), t. 2 p. 56 (the bases) and pp. 800-841 (Tableau complet
+  des triangles), t. 3 Table V (positions); ETH-Bibliothek Zürich copy
+  <https://doi.org/10.3931/e-rara-11803>
+- T. Maclear, Verification and Extension of La Caille's Arc of Meridian at the Cape of Good Hope
+  (London, 1866), pp. 533-558 (principal and secondary triangles) and 589 (positions); Cornell copy
+  <https://archive.org/details/cu31924012313437>
+- W. Roy, An account of the trigonometrical operation whereby the distance between the meridians of
+  the Royal Observatories of Greenwich and Paris has been determined, Phil. Trans. 80 (1790)
+  111-270, pp. 64-79 of the offprint (calculation of the triangles)
+  <https://archive.org/details/b28763324>
+- F. G. W. Struve, Arc du méridien de 25° 20′ entre le Danube et la mer Glaciale, vol. 1 (St
+  Petersburg, 1860): p. 76 (the six bases), tableaux A (pp. 96-102), C, D, E (pp. 111-143)
+  <https://archive.org/details/dli.pahar.0518>
+Evidence class (rule 10): measure
+What would vindicate the flat model (rule 5): Observed angle sums that stay at 180° whatever the
+  size of the triangle, or an excess that does not grow with the area (a constant offset fitting as
+  well as the line through zero).
+Built by: fog build surv-excess
+Generated files:
+- src/data/presets/surv-excess.js
+Code:
+- tools/internal/build/survexcess
+- research/surv_excess_check.py
+- research/surv_positions_check.py
+- src/tabs/surv/excess.js
+Shown on the page:
+- #tab-surv/11ef0793
+- #tab-surv/sv-h2tri
+Notes: Every row was read off the page images (the PDFs' OCR is unusable) by Sonnet subagents and
+  checked by research/surv_excess_check.py and by the build (observed+correction=spherical, closure,
+  log/distance, sine rule; positions against the printed sides on Clarke 1866). Areas come from the
+  measured bases through the observed angles only; the bases are printed reduced to sea level, the
+  one place a radius enters (~1e-6 of the lengths). Delambre, Maclear, Roy and Struve (2026-10-28):
+  same rules; a triangle whose only fault is a misprinted side keeps its angles (sides are not
+  used); a concluded or misprinted angle can still carry lengths as 180° minus the two others,
+  never entering the fit; sides two triangles imply through a shared ray (quadrilaterals, Roy) are
+  closed by the law of cosines. Roy's 1790 angles cannot resolve the excess on his small triangles
+  (shown, bound only).
+
+Written by `fog build explain` from data/surv/excess/dataset.json and data/surv/excess/inputs.lock: edit those, not this file.

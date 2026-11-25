@@ -1,0 +1,10 @@
+page,printed,net,k,no,station,deg,min,sec,derived,adj_sec,log,dist,sum_deg,sum_min,sum_sec,exc,flag
+70,64,Roy,1,I,Hanger-hill Tower,42,2,32,,34,,27404.7,179,59,59,0.29,
+70,64,Roy,1,I,Hampton Poor-house,67,55,39,,39,,37922.57,,,,,
+70,64,Roy,1,I,King's Arbour,70,1,48,,47,,38461.12,,,,,
+70,64,Roy,2,II,St. Ann's Hill,44,18,51.5,,51.5,,,179,59,59.6,0.21,
+70,64,Roy,2,II,Hampton Poor-house,61,26,33.1,,33.5,,34455.8,,,,,
+70,64,Roy,2,II,King's Arbour,74,14,35,,35,,37754.25,,,,,
+70,64,Roy,3,III,Wardrobe Tower of Windsor Castle,,,,*,58.5,,,,,,0.25,printed adjusted angle 58 9 58.5 does not complete 180 degrees: the three adjusted angles sum to 179 59 40 (sine rule gives about 58 10 18.5); digits checked at 300 dpi
+70,64,Roy,3,III,King's Arbour,62,40,27.5,,27.5,,36032.37,,,,,
+70,64,Roy,3,III,St. Ann's Hill,59,9,14,,14,,34819.4,,,,,

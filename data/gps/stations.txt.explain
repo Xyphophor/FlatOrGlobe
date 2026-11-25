@@ -1,0 +1,40 @@
+# stations.txt
+
+Dataset: gps-raw — Raw GPS pseudoranges of 34 IGS stations on 2025-04-10 (BKG open archive):
+  positions solved from the origin, satellites tracked
+File: data/gps/stations.txt
+SHA-256: e2bb57aad22d9b0587a9be23d41dcb155ccaf7200db53ec3dc89195a30266a77 (also in
+  data/gps/inputs.lock; check with: cd data/gps && sha256sum -c inputs.lock)
+In the public repository: yes, beside this description.
+Obtained: written by us (lists, choices, positions), not measured.
+From: Our fixed list of 80 IGS stations, picked from the BKG archive's index.
+Collected: 2026-10-02
+Licence: other — IGS data, BKG open archive (https://igs.bkg.bund.de): free, cite the IGS
+  (Johnston et al. 2017). RNXCMP (crx2rnx): GSI terms, cite Hatanaka (2008).
+Sources:
+- IGS / BKG GNSS data centre, daily RINEX 3 observation files (30 s) and broadcast ephemeris
+  BRDC00IGS, 2025 day 100 <https://igs.bkg.bund.de/root_ftp/IGS/>
+- Hatanaka, Y. (2008), A Compression Format and Tools for GNSS Observation Data, Bulletin of the
+  Geospatial Information Authority of Japan, 55, 21-30 (RNXCMP)
+  <https://terras.gsi.go.jp/ja/crx2rnx.html>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- xyz, lat, lon, h, resid: satellite orbits broadcast in the WGS84 frame, whose scale was fixed by
+  stations on the ellipsoid; lat/lon/h on the WGS84 ellipsoid
+What would vindicate the flat model (rule 5): Station positions that only solve with kilometre
+  residuals, or that fit a plane better than a sphere; pairs of stations that share satellites well
+  beyond the geometric separation limit.
+Built by: fog build gps-raw
+Generated files:
+- src/data/presets/gps-raw.js
+Code:
+- tools/internal/build/gpsraw
+- src/tabs/gps/rawfig.js
+Shown on the page:
+- #tab-gps/gps-raw-h2
+Notes: stations.txt fixes the 34 stations: the script picked them from the archive's index page,
+  read live at every run, and the archive has listed more since (DGAR, POL2, DARW by 2026-10-14).
+  The observation files are decompressed by RNXCMP's crx2rnx (tools/third_party/rnxcmp, make
+  crx2rnx).
+
+Written by `fog build explain` from data/gps/dataset.json and data/gps/inputs.lock: edit those, not this file.

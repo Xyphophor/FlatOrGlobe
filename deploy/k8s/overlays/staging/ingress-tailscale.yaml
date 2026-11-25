@@ -1,0 +1,15 @@
+# Exposé UNIQUEMENT sur le tailnet par l'opérateur Tailscale : https://flatorglobe-staging.<tailnet>.ts.net
+# (certificat fourni par Tailscale ; MagicDNS et HTTPS activés dans la console du tailnet).
+# Qui y accède se règle dans les ACL du tailnet (tag:k8s par défaut pour l'opérateur).
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: site
+spec:
+  ingressClassName: tailscale
+  defaultBackend:
+    service:
+      name: site
+      port: { number: 80 }
+  tls:
+    - hosts: [flatorglobe-staging]

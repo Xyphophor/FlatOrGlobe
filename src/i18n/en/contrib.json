@@ -1,0 +1,19 @@
+{
+  "ad-side-flat": "cross-section · flat sea · heights and curvatures ×{ex} · {km} km",
+  "ad-side-globe": "cross-section · sea of radius R · heights and curvatures ×{ex} · {km} km",
+  "ad-st-std": "standard refraction, k = 0.13: light bends down",
+  "ad-st-back": "back to straight light",
+  "ad-r-photo": "photo",
+  "ad-r-flat": "plane",
+  "ad-r-globe": "globe",
+  "ad-pause": "click: pause",
+  "ad-play": "click: play",
+  "ad-fx-st": "curvatures exaggerated",
+  "fx-nts": "not to scale",
+  "ad-plane": "PLANE",
+  "ad-globe": "GLOBE",
+  "ad-g-need": "need",
+  "ad-pp-play": "Play",
+  "ad-pp-pause": "Pause",
+  "fx-axes": "to scale of its axes"
+}

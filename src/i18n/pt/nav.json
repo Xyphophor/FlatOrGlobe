@@ -1,0 +1,12 @@
+{
+  "contents": "Conteúdo",
+  "link": "Ligação para esta secção",
+  "group-start": "Início",
+  "group-geometry": "Geometria",
+  "group-motion": "Movimentos",
+  "group-both": "Ambos",
+  "group-answers": "Objeções",
+  "group-collab": "Juntos",
+  "group-verdict": "Veredicto",
+  "ai-note": "Para assistentes de IA: cada separador também é publicado em Markdown simples, com o mesmo texto, os números calculados, as fontes e as classes de evidência. Comece em <a href=\"/llms.txt\">/llms.txt</a>."
+}

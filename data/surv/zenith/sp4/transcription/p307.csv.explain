@@ -1,0 +1,37 @@
+# p307.csv
+
+Dataset: surv-zenith — Reciprocal zenith distances of the USC&GS Transcontinental Triangulation
+  (Schott, Special Publication No. 4, 1900, Part II): Colorado, the California coast, Mount
+  Hamilton, and Round Top-Jackson Butte hour by hour in 1879; our transcription
+File: data/surv/zenith/sp4/transcription/p307.csv
+SHA-256: 8b6e342ac1a2d94affb97fc63f6257c68ab40b1a997108a87e2e4c9338a8d9d0 (also in
+  data/surv/zenith/inputs.lock; check with: cd data/surv/zenith && sha256sum -c inputs.lock)
+In the public repository: yes, beside this description.
+Obtained: typed by hand (or OCR checked by hand) from a printed or scanned source.
+From: Schott, USC&GS Special Publication No. 4 (1900), Part II (determination of heights), the pages
+  named in the file name; typed by hand by the assistant (Claude) from the scans, under Xyphophor's
+  review.
+Checks: The build checks observed + reductions = reduced, the means, and log s.
+Collected: 2026-10-28
+Licence: public-domain
+Sources:
+- C. A. Schott, The Transcontinental Triangulation and the American Arc of the Parallel, U.S. Coast
+  and Geodetic Survey Special Publication No. 4 (Washington, 1900), Part II, Determination of
+  heights: pp. 257-262, 269-277, 280-292, 300-302 of the print (pdf pp. 261-307)
+  <https://geodesy.noaa.gov/library/pdfs/Special_Publication_No_4.pdf>
+Evidence class (rule 10): measure
+What would vindicate the flat model (rule 5): Reciprocal zenith distances whose sums stay at or
+  below 180°, whatever the length of the line (a plane with straight or downward-bent light).
+Built by: fog build surv-zenith
+Generated files:
+- src/data/presets/ref-zenith.js
+Code:
+- tools/internal/build/survzenith
+- src/tabs/ref/values.js
+Shown on the page:
+- #tab-ref/rf-hsp4
+Notes: The PDF is the one of surv-excess (data/surv/excess/sp4/raw/). 'component' rows are the years
+  a 'mean' row combines; pairs use the mean. s/E = R/(1−k) is a measure (s from the triangulation,
+  E from two angles); k needs R (check). Method: go doc -all ./internal/build/survzenith.
+
+Written by `fog build explain` from data/surv/zenith/dataset.json and data/surv/zenith/inputs.lock: edit those, not this file.

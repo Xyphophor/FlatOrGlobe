@@ -1,0 +1,31 @@
+/* Onglet rx (epic16/UC06) : bloc « votre téléphone » et « à plusieurs ». */
+#tab-rx canvas { width: 100%; display: block; background: #fdfdfc; border: 1px solid var(--line); border-radius: 8px; }
+#tab-rx .formula { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--globe); border-radius: 10px; padding: 14px 16px; margin: 14px 0; }
+#tab-rx .fcap { font-size: 12px; color: var(--ink-soft); margin-top: 6px; }
+#tab-rx .notes { font-size: 14px; color: var(--ink-2); max-width: 74ch; }
+#tab-rx .cnav-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 13px; }
+#tab-rx .cnav-table th, #tab-rx .cnav-table td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+#tab-rx .swapbtn { appearance: none; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); padding: 8px 14px; cursor: pointer; font-family: var(--mono); font-size: 12px; }
+#tab-rx .swapbtn:disabled { opacity: .5; cursor: default; }
+#tab-rx .rx-you { margin: 12px 0; }
+#tab-rx .rx-pick { display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; font-weight: 600; max-width: 74ch; }
+#tab-rx .rx-pick input { font: inherit; font-weight: 400; max-width: 100%; }
+#tab-rx .rx-status { font-size: 13px; color: var(--ink-2); max-width: 74ch; overflow-wrap: anywhere; }
+#tab-rx .rx-group { margin: 12px 0; display: flex; flex-direction: column; gap: 10px; }
+#tab-rx .rx-code { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: flex-end; }
+#tab-rx .rx-group label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600; }
+#tab-rx .rx-group label.wide { flex-basis: 100%; }
+#tab-rx .rx-group select, #tab-rx .rx-group input, #tab-rx .rx-group textarea { font: 13px var(--mono); font-weight: 400; padding: 6px 8px; border: 1px solid var(--line-strong); border-radius: 6px; background: var(--surface); max-width: 100%; box-sizing: border-box; }
+#tab-rx .rx-group textarea { width: 100%; resize: vertical; overflow-wrap: anywhere; }
+#tab-rx .rx-group .rx-status { flex-basis: 100%; margin: 0; }
+#tab-rx #rxGroupTable { overflow-x: auto; }
+#tab-rx #rxGroupTable tr.own td { color: var(--flat); font-weight: 600; }
+#tab-rx canvas#rxYouCanvas, #tab-rx canvas#rxGroupCanvas { height: 380px; }
+@media (max-width: 559px) { #tab-rx canvas#rxYouCanvas { height: 600px; } #tab-rx canvas#rxGroupCanvas { height: 620px; } }
+/* Extraits de code sous chaque formule (un langage visible, choisi par #rxLang). */
+#tab-rx .rx-lang { margin: 10px 0; }
+#tab-rx .rx-lang label { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; }
+#tab-rx .rx-lang select { font: 13px var(--mono); padding: 4px 8px; border: 1px solid var(--line-strong); border-radius: 6px; background: var(--surface); }
+#tab-rx .rx-snip { margin-top: 12px; }
+#tab-rx pre.rx-code-snip { margin: 0; padding: 10px 12px; background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px; overflow-x: auto; font: 12px/1.45 var(--mono); color: var(--code-ink); tab-size: 4; max-width: 100%; box-sizing: border-box; }
+#tab-rx pre.rx-code-snip:focus-visible { outline: 2px solid var(--globe); outline-offset: 2px; }

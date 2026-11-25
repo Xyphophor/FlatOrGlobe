@@ -1,0 +1,10 @@
+page,printed,net,k,no,station,deg,min,sec,derived,adj_sec,log,dist,sum_deg,sum_min,sum_sec,exc,flag
+77,71,Roy,1,XXX,Swingfield,48,38,15,,15,,,180,0,0,0.06,
+77,71,Roy,1,XXX,Padlesworth,70,54,5.5,,5.5,,18525.15,,,,,
+77,71,Roy,1,XXX,Folkstone Turnpike,60,27,39.5,,39.5,,17056.06,,,,,
+77,71,Roy,2,XXXI,"Dover Castle, North Turret",34,39,26.5,,26.5,,,180,0,0,0.13,
+77,71,Roy,2,XXXI,Swingfield,75,36,40,,40,,31554.58,,,,,
+77,71,Roy,2,XXXI,Folkstone,69,43,53.5,,53.5,,30559.32,,,,,
+77,71,Roy,3,XXXII,Dover Castle,,,,*,55.42,,,,,,0.69,
+77,71,Roy,3,XXXII,Padlesworth,152,15,25.5,,25.15,,186113.0,,,,,
+77,71,Roy,3,XXXII,Fairlight Down,,,,*,39.43,,,,,,,

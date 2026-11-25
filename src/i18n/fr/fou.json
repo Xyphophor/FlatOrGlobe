@@ -1,0 +1,13 @@
+{
+  "fp-cv-axis": "axe",
+  "fp-cv-phi": "φ = {p}°",
+  "fp-cv-omega-sinphi": "Ω sin φ = {v} °/h",
+  "fp-cv-black-omega": "noir = Ω, identique en tout lieu",
+  "fp-cv-teal-vertical": "sarcelle = la part le long de la verticale de votre sol",
+  "fp-cv-phi-sweep": "φ = 48,85°  ·  {rate} °/h  ·  {sweep}° en {hours} h",
+  "fp-cv-swings-note": "oscillations réduites ~30× · ellipse exagérée · angle balayé exact",
+  "fp-cv-latitude": "latitude",
+  "fp-cv-precession-unit": "précession, °/h",
+  "fp-cv-time-note": "temps ×{x} · taux d'oscillation non à l'échelle · angle balayé exact",
+  "fp-cv-sin0": "sin 0 = 0 — rien ne tourne, dans aucun des deux référentiels"
+}

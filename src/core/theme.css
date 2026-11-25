@@ -1,0 +1,51 @@
+/* Thèmes (2026-10-16) : clair et sombre, sur la palette Solarized (Ethan Schoonover) en variante à CONTRASTE ÉLEVÉ (le texte prend
+   base03 sur base3, ou base3 sur base03, au lieu de base00/base0 ; les accents sont assombris ou éclaircis pour tenir 4,5:1).
+   Choix : html[data-theme="light"|"dark"] (src/core/theme.js, mémorisé), sinon prefers-color-scheme.
+   LES FIGURES RESTENT CLAIRES dans les deux thèmes : leurs ~1 800 couleurs sont écrites dans le JS des canvas, pensées pour un fond
+   clair, et les images exportées (cartes, vidéos) sont claires aussi. Les blocs de figure redéclarent donc la palette d'origine
+   (celle du legacy, ci-dessous « palette des figures »), de sorte que tout ce qu'ils contiennent en HTML garde son aspect.
+   Ces noms de variable ne changent pas de sens (voir tasks/epic01/UC04.org). */
+:root {
+  color-scheme: light;
+  --paper: #fdf6e3; --surface: #eee8d5; --muted-bg: #e6dfc8;
+  --ink: #002b36; --ink-2: #073642; --ink-soft: #3d5660; --ink-3: #4f656c; --on-ink: #fdf6e3;
+  --line: #d3cbb2; --line-strong: #93a1a1;
+  --flat: #9a4208; --flat-tint: #f4e2bd; --globe: #0b6b64; --globe-tint: #d6ebe2;
+  --obj1: #1a46c4; --obj2: #b03a0a; --obj3: #5b21b6; --ground: #6b5b40; --warn: #a31515;
+  --amber-bg: #f7e6c4; --amber-line: #e2c98f; --blue-bg: #dfe9ef; --blue-line: #a7c0d3; --hl-bg: #f6e7a8; --hl-line: #b58900;
+  --code-bg: #f3ecd6; --code-ink: #002b36;
+  --tok-kw: #566300; --tok-str: #15665f; --tok-com: #586e75; --tok-num: #b02a6c; --tok-fn: #1a68a8; --tok-type: #8a6500; --tok-builtin: #b03a0a;
+  --mono: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark;
+    --paper: #002b36; --surface: #073642; --muted-bg: #0c3f4c;
+    --ink: #fdf6e3; --ink-2: #eee8d5; --ink-soft: #b0bcbc; --ink-3: #a0afaf; --on-ink: #002b36;
+    --line: #0f4a58; --line-strong: #586e75;
+    --flat: #f2a04a; --flat-tint: #3e3418; --globe: #3ec9bb; --globe-tint: #0b4a4a;
+    --obj1: #6ea8ff; --obj2: #ff9166; --obj3: #b9a0ff; --ground: #bfa87e; --warn: #ff8a80;
+    --amber-bg: #3b3216; --amber-line: #6b5a1e; --blue-bg: #0a3a52; --blue-line: #1c5f84; --hl-bg: #4a4210; --hl-line: #b58900;
+    --code-bg: #001f27; --code-ink: #eee8d5;
+    --tok-kw: #a6bf1a; --tok-str: #3ec9bb; --tok-com: #8aa0a2; --tok-num: #ec6aa9; --tok-fn: #5fb0f0; --tok-type: #e0b430; --tok-builtin: #f0804a; } }
+:root[data-theme="dark"] { color-scheme: dark;
+    --paper: #002b36; --surface: #073642; --muted-bg: #0c3f4c;
+    --ink: #fdf6e3; --ink-2: #eee8d5; --ink-soft: #b0bcbc; --ink-3: #a0afaf; --on-ink: #002b36;
+    --line: #0f4a58; --line-strong: #586e75;
+    --flat: #f2a04a; --flat-tint: #3e3418; --globe: #3ec9bb; --globe-tint: #0b4a4a;
+    --obj1: #6ea8ff; --obj2: #ff9166; --obj3: #b9a0ff; --ground: #bfa87e; --warn: #ff8a80;
+    --amber-bg: #3b3216; --amber-line: #6b5a1e; --blue-bg: #0a3a52; --blue-line: #1c5f84; --hl-bg: #4a4210; --hl-line: #b58900;
+    --code-bg: #001f27; --code-ink: #eee8d5;
+    --tok-kw: #a6bf1a; --tok-str: #3ec9bb; --tok-com: #8aa0a2; --tok-num: #ec6aa9; --tok-fn: #5fb0f0; --tok-type: #e0b430; --tok-builtin: #f0804a; }
+
+/* palette des figures : celle d'origine, dans les deux thèmes ; les blocs de formule aussi (Xyphophor, 2026-10-17 : « toutes
+   les sections avec des formules restent claires quelle que soit la sélection ») -- leur fond, leurs traits et leur MathML ;
+   les vignettes de l'accueil aussi (2026-10-25 : en sombre, leurs traits en dur tombaient sur le fond sombre de la carte) */
+.fig, .figopen, .figsym, [data-xp-block], .demo-video, .xp-menu, .formula, .homefig {
+  color-scheme: light; color: #151a21;
+  --paper: #fbfaf7; --surface: #fff; --muted-bg: #f2f0ea;
+  --ink: #151a21; --ink-2: #39414c; --ink-soft: #5b6470; --ink-3: #697381; --on-ink: #fff;
+  --line: #d7d3c8; --line-strong: #b7b1a2;
+  --flat: #b45309; --flat-tint: #f6ecdc; --globe: #0f766e; --globe-tint: #dcefec;
+  --obj1: #1d4ed8; --obj2: #c2410c; --obj3: #6d28d9; --ground: #7a6a4f; --warn: #b91c1c;
+  --amber-bg: #fdf0e6; --amber-line: #f0dcc4; --blue-bg: #eef2ff; --blue-line: #c9d4f7; --hl-bg: #fff7dc; --hl-line: #e3c96e;
+}

@@ -1,0 +1,5 @@
+/* ecl : le style commun vient de src/core/legacy.css ; ici seulement ce qui est propre à l'onglet. */
+#tab-ecl canvas { width: 100%; display: block; background: #fdfdfc; border: 1px solid var(--line); border-radius: 8px; }
+#tab-ecl .ecl-local .mini-form { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 8px 0; }
+#tab-ecl .ecl-local .preset-row { display: flex; flex-wrap: wrap; gap: 4px; }
+#tab-ecl td.num { font-family: var(--mono); }

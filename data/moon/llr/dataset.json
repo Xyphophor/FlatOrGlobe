@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "moon-llr",
+  "title": "Lunar laser ranging to the Apollo 15 reflector, 2015-2025: passes of 6 h or more (EDC/DGFI normal points)",
+  "tab": "moon",
+  "build": "fog:moon-llr",
+  "kind": "archive",
+  "evidence": "measure",
+  "radius_enters_via": [],
+  "verdict_rule": "Passes whose ranges are as smooth with R = 0 as with any other value.",
+  "license": "other",
+  "license_note": "EDC (DGFI-TUM) open archive of ILRS normal points: free, cite ILRS / EDC.",
+  "sources": [
+    {
+      "cite": "EUROLAS Data Center (DGFI-TUM), ILRS lunar laser ranging normal points (CRD), Apollo 15 reflector",
+      "url": "https://edc.dgfi.tum.de/pub/slr/data/npt_crd/apollo15/"
+    }
+  ],
+  "collected": "2026-10-04",
+  "units": {
+    "t": "UTC; pts[0] = seconds since t0",
+    "tof": "s, two-way time of flight (record type 11)"
+  },
+  "inputs": [
+    {
+      "glob": "raw/a15_*.npt",
+      "gitignored": true,
+      "how": "download",
+      "origin": "EDC (DGFI-TUM) ILRS normal points, Apollo 15 reflector, monthly files 2015-2025 (fog fetch moon-llr)."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/moon-llr.js"
+  ],
+  "notes": "Only times and times of flight are kept: nothing about the Earth's shape. The section that fits the radius is a check because of what the page adds (the Moon's direction from a lunar theory, the ellipsoid's flattening), not because of these data. fog fetch moon-llr gets the monthly files of 2015-2025 (Years in tools/internal/build/llr).",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/llr",
+    "src/tabs/moon/formfigs.js"
+  ],
+  "sections": [
+    "moon/moon-h2llr"
+  ]
+}

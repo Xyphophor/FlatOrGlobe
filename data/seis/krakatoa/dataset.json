@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "id": "seis-krakatoa",
+  "title": "Krakatoa 1883 air wave: passage times I-VII at 47 barographs (Strachey 1888)",
+  "tab": "seis",
+  "build": "fog:krakatoa",
+  "kind": "transcription",
+  "evidence": "measure",
+  "radius_enters_via": [],
+  "verdict_rule": "Laps that change with the station's position, as any echo would make them, or no regular passages after the first two.",
+  "license": "public-domain",
+  "sources": [
+    {
+      "cite": "G. J. Symons (ed.), The Eruption of Krakatoa and Subsequent Phenomena, Report of the Krakatoa Committee of the Royal Society (London: Trübner, 1888), Part II: R. Strachey, \"On the air waves and sounds caused by the eruption of Krakatoa in August, 1883\", pp. 57-88; Tables II-IV (pp. 62, 65-67) and VIII (pp. 75-76)",
+      "url": "https://archive.org/details/eruptionofkrakat00roya"
+    }
+  ],
+  "collected": "2026-10-03",
+  "units": {
+    "t": "hours after 0 h GMT, 27 August 1883 (h:mm in the CSV)",
+    "lat": "degrees, N positive (deg min hemisphere in the CSV)",
+    "lon": "degrees, E positive (deg min hemisphere in the CSV)",
+    "flags": "? queried by Strachey; * time from Prof. Ragona (Modena); + Palermo"
+  },
+  "inputs": [
+    {
+      "path": "tables_3_4.csv",
+      "how": "transcription",
+      "origin": "R. Strachey in Symons (ed.), The Eruption of Krakatoa (Royal Society, 1888), Part II, tables III, IV and VIII, Internet Archive scan.",
+      "checks": "The build checks the 175 intervals of table VIII against the transcribed times.",
+      "caveats": "Strachey's velocities and degrees are not taken (they used the radius of his day)."
+    },
+    {
+      "path": "table_8.csv",
+      "how": "transcription",
+      "origin": "R. Strachey in Symons (ed.), The Eruption of Krakatoa (Royal Society, 1888), Part II, tables III, IV and VIII, Internet Archive scan.",
+      "checks": "The build checks the 175 intervals of table VIII against the transcribed times.",
+      "caveats": "Strachey's velocities and degrees are not taken (they used the radius of his day)."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/seis-krakatoa.js"
+  ],
+  "notes": "Positions serve only to draw stations and to test the flat model; the radius uses lap times at one station. Strachey's velocities and distances in degrees are not taken (they used the radius of his day).",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/krakatoa",
+    "src/tabs/atmo/krakatoalogic.js",
+    "src/tabs/atmo/lambpool.js"
+  ],
+  "sections": [
+    "atmo/kr-h1",
+    "atmo/lp-h1"
+  ]
+}

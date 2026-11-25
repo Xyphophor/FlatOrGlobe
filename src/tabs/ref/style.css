@@ -1,0 +1,10 @@
+/* ref : tout le style commun vient de src/core/legacy.css (.formula, .fold,
+   .reads, .presetbtn pour les boutons courbé/droit/lecture...). */
+/* section laser (2026-10-31) : le faisceau tracé, globe en haut, plan en bas */
+#tab-ref canvas.ref-laser { width: 100%; display: block; aspect-ratio: 16 / 10; height: auto; cursor: pointer; }
+@media (max-width: 559px) { #tab-ref canvas.ref-laser { aspect-ratio: 4 / 5; } }
+/* la vitrine (2026-10-31), comme celle de seis */
+#tab-ref canvas.ref-reel { width: 100%; display: block; aspect-ratio: 16 / 9; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fbfaf7; cursor: pointer; }
+@media (max-width: 559px) { #tab-ref canvas.ref-reel { aspect-ratio: 3 / 4; } }
+/* l'air qu'il faut, photo par photo (2026-11-13) : les valeurs des avions décalés, en retrait */
+#tab-ref .rs-off { color: var(--ink-soft); font-size: .9em; white-space: nowrap; }

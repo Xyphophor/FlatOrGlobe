@@ -1,0 +1,22 @@
+page,printed,net,k,no,station,deg,min,sec,corr,sph,exc,log,dist,flag
+237,225,first section of the triangulation west of Dauphin Island base net,1,13,Horn Island West,42,18,49.0,+1.4,50.4,0.2,4.1356001,13664.70,
+237,225,first section of the triangulation west of Dauphin Island base net,1,13,East Pascagoula,64,47,04.8,+0.4,05.2,0.2,4.2639719,18364.19,
+237,225,first section of the triangulation west of Dauphin Island base net,1,13,Horn Island East 1855,72,54,04.0,+1.0,05.0,0.2,4.2878277,19401.16,
+237,225,first section of the triangulation west of Dauphin Island base net,2,14,Horn Island West,96,06,14.3,+0.6,14.9,0.2,4.3376005,21757.07,
+237,225,first section of the triangulation west of Dauphin Island base net,2,14,Belle Fontaine,57,03,48.2,-0.4,47.8,0.2,4.2639724,18364.22,
+237,225,first section of the triangulation west of Dauphin Island base net,2,14,Horn Island East 1855,26,49,57.0,+0.8,57.8,0.1,3.9946189,9876.86,
+237,225,first section of the triangulation west of Dauphin Island base net,3,15,Horn Island West,53,47,25.3,-0.8,24.5,0.1,4.1968380,15733.96,
+237,225,first section of the triangulation west of Dauphin Island base net,3,15,Belle Fontaine,95,46,44.0,+0.7,44.7,0.2,4.2878278,19401.17,
+237,225,first section of the triangulation west of Dauphin Island base net,3,15,East Pascagoula,30,25,51.2,0.0,51.2,0.1,3.9946187,9876.85,
+237,225,first section of the triangulation west of Dauphin Island base net,4,16,Deer Island 1,38,49,05.7,0.0,05.7,0.1,3.9946188,9876.86,
+237,225,first section of the triangulation west of Dauphin Island base net,4,16,Belle Fontaine,95,52,55.1,+0.4,55.5,0.1,4.1951614,15673.34,
+237,225,first section of the triangulation west of Dauphin Island base net,4,16,Horn Island West,45,17,58.1,+1.0,59.1,0.1,4.0491990,11199.50,print: log 4.0491990 vs dist 11199.50 differ by 4e-7 (checked on image by lead)
+237,225,first section of the triangulation west of Dauphin Island base net,5,17,Ship Island 1855,28,14,00.5,+1.5,02.0,0.2,3.9946188,9876.86,
+237,225,first section of the triangulation west of Dauphin Island base net,5,17,Belle Fontaine,51,39,23.2,0.0,23.2,0.1,4.2141772,16374.84,
+237,225,first section of the triangulation west of Dauphin Island base net,5,17,Horn Island West,100,06,34.9,+0.3,35.2,0.1,4.3128964,20554.00,
+237,225,first section of the triangulation west of Dauphin Island base net,6,18,Ship Island 1855,31,56,38.5,-1.5,37.0,0.1,4.0491990,11199.50,print: log 4.0491990 vs dist 11199.50 differ by 4e-7 (checked on image by lead)
+237,225,first section of the triangulation west of Dauphin Island base net,6,18,Deer Island 1,103,49,51.4,-0.2,51.2,0.2,4.3128962,20553.99,
+237,225,first section of the triangulation west of Dauphin Island base net,6,18,Belle Fontaine,44,13,31.9,+0.3,32.2,0.1,4.1692094,14764.18,
+237,225,first section of the triangulation west of Dauphin Island base net,7,19,Ship Island 1855,60,10,39.0,-0.1,38.9,0.1,4.1951614,15673.34,
+237,225,first section of the triangulation west of Dauphin Island base net,7,19,Deer Island 1,65,00,45.7,-0.2,45.5,0.2,4.2141773,16374.85,
+237,225,first section of the triangulation west of Dauphin Island base net,7,19,Horn Island West,54,48,36.8,-0.7,36.1,0.2,4.1692095,14764.19,

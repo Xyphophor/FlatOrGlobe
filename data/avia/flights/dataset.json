@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "avia-flights",
+  "title": "Airborne times of 127 long-haul routes, both directions, with filed flight plans (FlightAware)",
+  "tab": "avia",
+  "build": "fog:avia-flights fog:avia-mesh",
+  "kind": "scrape",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "plan.nm",
+      "how": "planned distance filed by the airline, computed on the WGS84 ellipsoid (stored, not used for the radius)"
+    }
+  ],
+  "verdict_rule": "Southern round trips that take about twice as long as equally long northern ones, as the flat map's distances require; or times that fit the flat map's distances better than the globe's.",
+  "license": "other",
+  "license_note": "FlightAware public flight pages (https://www.flightaware.com), read 2026-09-28, 2026-11-06 and 2026-11-25 (three windows of about two weeks, kept together); check FlightAware's terms of use before re-fetching on a large scale.",
+  "sources": [
+    {
+      "cite": "FlightAware, public flight pages (actual wheels-off / wheels-on times, filed flight plans, airport reference coordinates)",
+      "url": "https://www.flightaware.com"
+    }
+  ],
+  "collected": "2026-11-25",
+  "units": {
+    "off, onT": "Unix time, s (UTC), actual wheels-off / wheels-on",
+    "ab, ba": "hours airborne, one value per kept flight",
+    "oc, dc": "[lon, lat] degrees, E and N positive (FlightAware reference point)",
+    "plan.tas": "knots (filed)",
+    "plan.nm": "nautical miles (filed)",
+    "plan.fuelLb": "pounds (filed)",
+    "plan.wpt": "[lat, lon] degrees of the filed lat/lon waypoints"
+  },
+  "inputs": [
+    {
+      "path": "routes.json",
+      "how": "ours",
+      "origin": "Our list of airport pairs and callsigns (one entry per route), chosen for long routes in every direction.",
+      "public_raw": "yes"
+    },
+    {
+      "glob": "raw/*.json",
+      "how": "scrape",
+      "origin": "FlightAware public flight pages of each callsign, read 2026-09-28, 2026-11-06 and 2026-11-25 (fog fetch avia-flights): wheels-off and wheels-on times, filed flight plan, airport coordinates.",
+      "checks": "Flights without both times or with a diversion are dropped and counted by the build.",
+      "caveats": "FlightAware's times come from ADS-B and airline messages; a mislabelled leg or a wrong time zone on their page would pass through."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/avia-flights.js",
+    "src/data/presets/avia-mesh.js"
+  ],
+  "notes": "Edit routes.json only (one entry per airport pair, ICAO callsigns each way), then fog fetch avia-flights, fog lock avia-flights, fog build avia-flights. The times, the airports' coordinates (angles), the waypoints and the filed true airspeed (a speed through the air, from Mach and temperature, not over the ground) carry no radius: the radius of the avia tab uses only those, so it is a measure. The filed distances do carry one and are flagged above, which is why the dataset as a whole is a check.",
+  "public_raw": "no",
+  "public_raw_why": "FlightAware's terms of use do not allow republishing what is read from its pages.",
+  "code": [
+    "tools/internal/build/aviaflights",
+    "tools/internal/build/aviamesh",
+    "src/tabs/avia/values.js",
+    "src/tabs/avia/radius.js",
+    "src/tabs/avia/meshfig.js"
+  ],
+  "sections": [
+    "avia/avia-h2g",
+    "avia/avia-h2rf",
+    "avia/avia-h2m"
+  ]
+}

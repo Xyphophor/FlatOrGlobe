@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "id": "orb",
+  "title": "Earth's orbit from public data: HARPS-N solar radial velocity 2015-2018, tau Ceti (HARPS RVBank), SDO/HMI apparent solar radius 2023",
+  "tab": "orb",
+  "build": "fog:orb",
+  "kind": "archive",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "SUN_DAYS, TAU_CETI velocities",
+      "how": "rebuilt as RV - BERV: the barycentric correction added back is computed from ephemerides, with the Earth's radius"
+    },
+    {
+      "field": "SDO_RSUN",
+      "how": "the apparent radius is computed by the SDO pipeline from the spacecraft-Sun distance, an ephemeris"
+    }
+  ],
+  "verdict_rule": "Doppler residuals at the level of the instrument, about 1 m/s, for some height of the flat model's Sun; a zenith star that stays put through the year to better than a second of arc.",
+  "license": "other",
+  "license_note": "DACE (Univ. Geneva) HARPS-N solar release: public, cite Dumusque et al. 2021; VizieR J/A+A/636/A74 (Trifonov et al. 2020); SDO/HMI data courtesy of NASA/SDO and the HMI science team (JSOC), public.",
+  "sources": [
+    {
+      "cite": "Dumusque et al. 2021, HARPS-N solar telescope, first public release 2015-2018 (DACE)",
+      "url": "https://dace.unige.ch/"
+    },
+    {
+      "cite": "Trifonov et al. 2020, HARPS RVBank, VizieR J/A+A/636/A74 (HD 10700, tau Ceti)",
+      "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=J/A%2BA/636/A74"
+    },
+    {
+      "cite": "SDO/HMI, hmi.Ic_720s keyword RSUN_OBS, JSOC",
+      "url": "http://jsoc.stanford.edu/"
+    }
+  ],
+  "collected": "2026-10-04",
+  "units": {
+    "SUN_DAYS": "t0 UTC; pts [s since t0, m/s] (rv_raw - berv)",
+    "TAU_CETI": "[BJD, m/s], one mean per night (RVdrs - BERV)",
+    "SDO_RSUN": "[date, arcsec]"
+  },
+  "inputs": [
+    {
+      "path": "raw/harpn_sun_2015_2018.tar.gz",
+      "url": "https://dace.unige.ch/downloads/sun_release_2015_2018/harpn_sun_release_timeseries_2015-2018.tar.gz",
+      "gitignored": true,
+      "how": "download",
+      "origin": "DACE (Univ. Geneva), HARPS-N solar release 2015-2018."
+    },
+    {
+      "path": "raw/rvbank_HD10700.tsv",
+      "url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=J/A%2BA/636/A74/rvbank&Name=HD10700&-out=Name,BJD,RVdrs,BERV,BERVDRS&-out.max=20000",
+      "gitignored": true,
+      "how": "api",
+      "origin": "VizieR J/A+A/636/A74 (HARPS RVBank, Trifonov et al. 2020), tau Ceti, the request in the URL.",
+      "public_raw": "no",
+      "public_raw_why": "CDS/VizieR distributes it free for scientific use with citation; its terms do not say that a copy may be republished, so only the hash and the request are given."
+    },
+    {
+      "path": "raw/sdo_rsun_2023.json",
+      "url": "http://jsoc.stanford.edu/cgi-bin/ajax/jsoc_info?ds=hmi.Ic_720s%5B2023.01.03_00:00:00_TAI/365d@7d%5D&op=rs_list&key=T_REC,RSUN_OBS",
+      "gitignored": true,
+      "how": "api",
+      "origin": "JSOC, hmi.Ic_720s keyword RSUN_OBS, 2023 weekly, the request in the URL."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/orb-sun.js",
+    "src/data/presets/orb-star.js",
+    "src/data/presets/orb-sdo.js"
+  ],
+  "notes": "One dataset, three sources: the class is the most cautious of the three (check). The parallax and aberration sections that are measures use star catalogues, not these files.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/orb",
+    "src/tabs/orb/data.js"
+  ],
+  "sections": [
+    "orb/orb-h2sun",
+    "orb/orb-h2dop",
+    "orb/orb-h2star"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "grav-ticon",
+  "title": "TICON-3: tidal constants of 3,471 tide gauges from GESLA-3 sea-level records (amplitude and Greenwich phase lag of 40 constituents)",
+  "tab": "grav",
+  "build": "fog:grav-ticon",
+  "kind": "archive",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "frequencies and equilibrium arguments of the constituents",
+      "how": "not the radius: each gauge's constants were fitted with the frequencies of the Moon's and Sun's motions; the page predicts the tide from them with the same arguments"
+    }
+  ],
+  "verdict_rule": "Gauges whose constants show no twice-daily line at the Moon's frequency along a whole coast, or tides in small closed seas as large as on the open ocean, would favour a local Moon lifting water under itself.",
+  "license": "CC-BY-4.0",
+  "sources": [
+    {
+      "cite": "M. G. Hart-Davis, D. Dettmering, F. Seitz, TICON-3: Tidal Constants based on GESLA-3 sea-level records from globally distributed tide gauges including gauge type information (data), PANGAEA (2022), doi:10.1594/PANGAEA.951610",
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.951610"
+    }
+  ],
+  "collected": "2026-11-14",
+  "units": {
+    "lat, lon": "deg, lon 0-360 E as published",
+    "amplitude": "cm",
+    "phase lag": "deg, Greenwich lag, 0-360 (Foreman's convention: diurnal constituents carry a quarter-cycle constant)"
+  },
+  "inputs": [
+    {
+      "path": "raw/TICON_3.zip",
+      "url": "https://download.pangaea.de/dataset/951610/files/TICON_3.zip",
+      "gitignored": true,
+      "how": "download",
+      "origin": "TICON-3 on PANGAEA (doi:10.1594/PANGAEA.951610).",
+      "checks": "Rows with one number missing (four Great Lakes stations) are skipped and counted."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/grav-ticon.js"
+  ],
+  "notes": "Four NOAA stations of the Great Lakes have rows with only one of the five numbers after the constituent name; they are skipped and counted. The gauge type 'Lake' also covers tidal lagoons and estuaries (M2 up to 3 m), so the page does not use it to stand for lakes.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/gravticon",
+    "src/tabs/grav/tideglobe.js",
+    "src/tabs/grav/tides-logic.js"
+  ],
+  "sections": [
+    "grav/gv-h7c",
+    "grav/gv-h7d"
+  ]
+}

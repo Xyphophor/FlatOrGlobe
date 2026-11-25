@@ -1,0 +1,40 @@
+# star-hip.js
+
+File: src/data/presets/star-hip.js (generated: never edited by hand)
+
+From the dataset: star-hip — Hipparcos main catalogue: the 960 stars brighter than V = 4.55 that
+  have a position and six fast-moving stars, positions (ICRS, epoch J1991.25) and proper motions
+  (data/star/hip/, every input with its own .explain)
+Inputs:
+- data/star/hip/raw/hip_bright.tsv — api, not in the public repository (hash and source in its
+  .explain)
+- data/star/hip/raw/hip_fast.tsv — api, not in the public repository (hash and source in its
+  .explain)
+Collected: 2026-11-11
+Licence: other — The Hipparcos and Tycho Catalogues (ESA 1997), distributed by the CDS (VizieR
+  I/239), free for scientific use with citation.
+Sources:
+- ESA, The Hipparcos and Tycho Catalogues, ESA SP-1200 (1997); VizieR I/239, table hip_main
+  <https://cdsarc.cds.unistra.fr/viz-bin/cat/I/239>
+Evidence class (rule 10): measure
+What would vindicate the flat model (rule 5): Angles between the same stars that change with the
+  observer's place or with the hour of the night, as lights on a dome a few thousand kilometres up
+  would show.
+Built by: fog build star-hip
+Generated files:
+- src/data/presets/star-hip.js
+Code:
+- tools/internal/build/starhip
+- src/tabs/star/radec-logic.js
+Shown on the page:
+- #tab-star/sky-h2a
+- #tab-star/sky-h2b
+- #tab-star/sky-h2c
+Notes: Two of the 962 bright entries (HIP 55203 and 78727, close binaries) have no astrometric
+  solution in the main catalogue and are left out. Nothing is computed by the build: the rows are
+  copied as published, rounded to 1e-5 deg and 0.1 mas/yr. The page moves the stars itself
+  (src/tabs/star/radec-logic.js): proper motion along a straight line with no radial velocity,
+  precession as a rotation about the pole of the ecliptic. The two files are VizieR answers (Harvard
+  mirror; the CDS server was down on the day), their headers carry the request and its date.
+
+Written by `fog build explain` from data/star/hip/dataset.json and the lock files: edit those, not this file.

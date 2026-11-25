@@ -1,0 +1,8 @@
+/* onglet cases (2026-10-31) */
+#tab-cases .p2p-table { font-size: 0.9em; }
+#tab-cases .p2p-table td, #tab-cases .p2p-table th { padding: 4px 8px; vertical-align: top; }
+#tab-cases .p2p-yes, #tab-cases .p2p-direct { color: var(--globe); font-weight: 600; }
+#tab-cases .p2p-no, #tab-cases .p2p-hidden { color: var(--ink-2); }
+#tab-cases .p2p-reflect { color: var(--flat); }
+#tab-cases canvas.p2p-anim { width: 100%; display: block; aspect-ratio: 16 / 10; height: auto; cursor: pointer; }
+@media (max-width: 559px) { #tab-cases canvas.p2p-anim { aspect-ratio: 4 / 5; } }

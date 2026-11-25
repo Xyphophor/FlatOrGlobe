@@ -1,0 +1,24 @@
+# Production publique : Ingress Traefik (celui de k3s), deux répliques, SITE_ENV=production.
+# Le tag est celui qui a été validé en staging (deploy/deploy.sh promote).
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: flatorglobe
+resources:
+  - namespace.yaml
+  - ../../base
+  - ingress.yaml
+  - pdb.yaml
+configMapGenerator:
+  - name: site-env
+    literals:
+      - SITE_ENV=production
+      # vidéos : bucket « media » de Garage (deploy/k8s/media), nom complet obligatoire (résolu à la demande)
+      - MEDIA_UPSTREAM=http://garage.flatorglobe-media.svc.cluster.local:3902
+      - MEDIA_BUCKET=media
+replicas:
+  - name: site
+    count: 2
+images:
+  - name: flat-or-globe
+    newName: registry.example.org/flat-or-globe   # À ADAPTER : le registre
+    newTag: dev                                   # mis à jour par deploy/deploy.sh promote

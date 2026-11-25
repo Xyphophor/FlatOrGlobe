@@ -1,0 +1,235 @@
+# S. Newcomb (1891), Astronomical Papers II part V, chapter VI, "Tabular summary of observations", pp. 357-364 (1761), our transcription
+# from the scan (archive.org 02aAstronomicalPapersPreparedForTheUse, pdf pp. 391-397), as printed. Same columns and conventions as
+# newcomb1891-1769.csv (local mean time: astronomical reckoning, June 5, 1761); flag * = "time suspected to be erroneous" (Newcomb);
+# flag res = the printed residual disagrees with observed − tabular as printed (contact IV: Madras/Hirst −157 for −137, Tornea by
+# 10-20 s, Stockholm by 2 s, as if its tabular time were 34 22): Newcomb's print, transcribed as it is; the build uses the observed times.
+contact,station,observer,lmt,gmt_obs,gmt_tab,resid,phase,class,telescope,alt,flag
+I,Madras,Hirst,19:29:16,14:08:07,14:07:27,40,,III,"R, 2",28,
+I,Petersburg,Braun,16:07:26,14:06:12,14:06:42,-30,,II,"N, 8",7,
+I,Do.,Krasilnicow,16:08:07,14:06:53,,11,,II,"N, 6",,
+I,Do.,Kurganoff,16:07:48,14:06:34,,-8,,II,"R, 2½",,
+I,Cajaneborg,Planmann,15:58:02,14:07:06,14:06:20,46,,I,"N, 21",8,
+I,Stockholm,Wargentin,15:19:43,14:07:27,14:06:27,60,,I,"N, 19",1.4,
+I,Upsala,Mallet,15:18:51,14:08:19,14:06:24,115,,I,"R, 1½",1.8,
+I,Calmar,Wickström,15:17:22,14:11:57,14:06:37,320,,II,"N, 21",-0.4,
+II,Pekin,Dollier,22:08:33,14:23:00,14:23:14,-14,N,III,(?),61,
+II,Calcutta,Magee,20:18:54,14:25:33,14:25:18,15,N,IV,(?),39,
+II,Madras,Hirst,19:46:02,14:24:53,14:25:42,-49,N,III,"R, 2",29,
+II,Tobolsk,Chappe,18:58:37,14:25:31,14:25:27,4,L1,I,"N, 19",27,
+II,Petersburg,Braun,16:24:26,14:23:12,14:25:34,-142,N,II,"N, 8",9,
+II,Do.,Krasilnikow,16:24:46,14:23:32,,-122,N,II,"N, 6",,
+II,Do.,Kurganoff,16:24:47,14:23:33,,-121,N,II,"R, 2½",,
+II,Cajaneborg,Planmann,16:16:11,14:25:15,14:25:12,3,L1,I,"N, 21",10,
+II,Tornea,Hellant,16:02:00,14:25:25,14:25:02,23,L,III,"N, 20",10,*
+II,Do.,Lagerbohm,16:02:08,14:25:33,,31,L,III,"N, 32",,*
+II,Abo,Justander,15:53:56,14:24:50,14:25:24,-34,N,II,"N, 20",6,
+II,Do.,Wallerius,15:54:02,14:24:56,,-28,N,II,(?),,
+II,Stockholm,Wargentin,15:37:30,14:25:14,14:25:23,-9,L,I,"N, 19",3,
+II,Do.,Klingenstierna,15:37:35,14:25:19,,-4,L,I,"A, 10",,
+II,Hernosand,Gissler,15:36:32,14:24:46,14:25:09,-23,G,,"N, 21",5,
+II,Do.,do,15:37:29,14:25:43,,34,L2,III,,,
+II,Do.,Ström,15:36:42,14:24:56,,-13,G,III,"N, 20",,
+II,Upsala,Mallet,15:36:02,14:25:30,14:25:21,9,L1,I,"R, 1½",4,
+II,Do.,Strömer,15:36:12,14:25:40,,19,L1,II,"N, 20",,
+II,Do.,Melander,15:35:15,14:24:43,,-38,G,II,"N, 16",,
+II,Do.,do,15:36:08,14:25:36,,15,L2,II,,,
+II,Do.,Bergmann,15:35:50,14:25:18,,-3,L1,I,"N, 21",,
+II,Calmar,Wickström,15:30:52,14:25:27,14:25:31,-4,G,,"N, 21",1.0,
+II,Do.,do,15:31:07,14:25:42,,11,L1,II,,,
+III,Pekin,Dollier,3:58:08,20:12:35,20:12:48,-13,N,III,(?),37,
+III,Selenginsk,Rumovsky,3:19:44,20:13:19,20:12:55,24,L,II,"N, 15",42,
+III,Calcutta,Magee,2:09:42,20:16:21,20:15:43,38,N,IV,(?),59,
+III,Madras,The Jesuits,1:35:10,20:14:01,20:17:07,-186,N,III,(?),65,
+III,Do.,Hirst,1:37:47,20:16:38,,-29,N,III,"R, 2",,
+III,Tobolsk,Chappe,0:47:32,20:14:26,20:14:20,6,L,I,"N, 19",53,
+III,Rodrigues,Pingré,0:34:58,20:21:16,20:21:08,8,N,II,"N, 18",47,
+III,Petersburg,Braun,22:17:09,20:15:55,20:15:28,27,,,"N, 8",49,
+III,Do.,Krasilnikow,22:17:13,20:15:59,,31,,,"N, 6",,
+III,Do.,Kurganoff,22:17:10,20:15:56,,28,,,"R, 2½",,
+III,Cajaneborg,Planmann,22:07:08,20:16:12,20:15:06,66,L,II,"N, 21",44,
+III,Do.,Frosterus,22:06:28,20:15:32,,26,L,IV,(?),,
+III,Tornea,Hellant,21:52:16,20:15:41,20:14:58,43,L,III,"N, 20",42,*
+III,Do.,Häggmann,21:52:27,20:15:52,,54,N,III,,,*
+III,Do.,Lagerbohm,21:52:29,20:15:54,,56,N,III,"N, 32",,*
+III,Abo,Justander,21:45:08,20:16:02,20:15:35,27,N,III,"N, 20",46,
+III,Cape Town,Mason,21:38:04,20:24:22,20:24:24,-2,N,II,"R, 2",24,
+III,Do.,Dixon,21:37:59,20:24:17,,-7,N,II,,,
+III,Stockholm,Wargentin,21:28:17,20:16:01,20:15:48,13,L,I,"N, 19",45,
+III,Do.,Wilken,21:27:49,20:15:33,,-15,L,IV,,,
+III,Do.,Klingenstierna,21:28:20,20:16:04,,16,L,I,"A, 10",,
+III,Hernosand,Gissler,21:27:01,20:15:15,20:15:26,-11,(?),,"N, 21",43,
+III,Do.,do,21:27:30,20:15:44,,18,L,III,,,
+III,Upsala,Mallet,21:26:09,20:15:37,20:15:45,-8,L,I,"R, 1½",44,
+III,Do.,Strömer,21:26:09,20:15:37,,-8,L,II,"N, 20",44,
+III,Do.,do,21:26:16,20:15:44,,-1,G(?),II,,,
+III,Do.,Bergmann,21:26:18,20:15:46,,1,L,II,"N, 21",,
+III,Tyrnau,Weiss,21:27:18,20:16:56,20:17:03,-7,N,III,"R, 4",50,
+III,Calmar,Wickström,21:21:49,20:16:24,20:16:08,16,L,II,"N, 21",46,
+III,Do.,do,21:22:42,20:17:17,,69,G,I,,,
+III,Carlscrona,Bergström,21:18:09,20:15:48,20:16:13,-25,L,II,"R, 3",46,
+III,Do.,Zegollström,21:18:15,20:15:54,,-19,L,II,"N, 21",,
+III,Wetzlas,Von Schlug,21:18:57,20:17:19,20:17:04,15,N,II,"R, 4",49,
+III,Laibach,Schöttl,21:16:24,20:18:21,20:17:24,57,N,III,"N, 16",50,*
+III,Lund,Schenmark,21:08:53,20:16:08,20:16:18,-10,N,IV,"N, 21",45,
+III,Landscrona,Bremer,21:07:30,20:16:10,20:16:13,-3,L,IV,"N, 10",44,
+III,Do.,Landberg,21:07:57,20:16:37,,24,L,IV,"N, 21",,
+III,Copenhagen,Horrebow,21:03:45,20:13:26,20:16:16,-170,N,II,"N, 22",44,*
+III,Rome,Audifredi,21:07:45,20:17:50,20:17:56,-6,N,III,,50,
+III,Leipzig,Heinsius,21:06:11,20:16:43,20:16:49,-6,N,II,,46,
+III,Munich,Anon.,21:03:55,20:17:38,20:17:12,26,N,II,"N, 3½",47,
+III,Ingolstadt,Kratz,21:03:08,20:17:27,20:17:07,20,N,II,"R, 7",47,
+III,Do.,Anon.,21:03:05,20:17:24,,17,N,III,"N, 13",,
+III,Do.,do,21:03:06,20:17:25,,18,N,III,"N, 11",,
+III,Bologna,Zanotti,21:02:43,20:17:20,20:17:38,-18,N,IV,"N, 2½",48,
+III,Do.,Marinus,21:03:07,20:17:44,,6,N,III,"N, 10",,
+III,Do.,Matheucius,21:03:07,20:17:44,,6,N,III,"N, 22",,
+III,Do.,Frisi,21:03:03,20:17:40,,2,N,III,"N, 6",,
+III,Do.,Cassali,21:03:09,20:17:46,,8,N,III,"N, 8",48,
+III,Do.,Canterzani,21:03:05,20:17:42,,4,N,III,"N, 11",,
+III,Florence,Ximenes,21:02:37,20:17:35,20:17:44,-9,N,III,"R, 4½",48,
+III,Dillingen,Hauser,20:58:29,20:16:30,20:17:10,-40,N,III,"N, 18",46,*
+III,Drontheim,Bugge,21:01:36,20:19:59,20:15:26,273,N,II,,40,*
+III,Göttingen,T. Mayer,20:56:35,20:16:49,20:16:49,0,N,I,(?),45,
+III,Würzburg,Hubert,20:59:21,20:19:37,20:17:02,155,N,III,,46,*
+III,Do.,do,20:59:52,20:20:08,,186,N,IV,,,*
+III,Schwetzingen,Ch. Mayer,20:51:29,20:17:11,20:17:06,5,L,II,"A, 10",45,
+III,Lyons,Beraud,20:36:53,20:17:36,20:17:35,1,N,III,"N, 19",43,
+III,Leiden,Luloss,20:34:59,20:17:03,20:16:49,14,N,II,"R, 7",42,
+III,Montpellier,Tandon,20:33:03,20:17:32,20:17:51,-19,N,III,"N, 18",43,
+III,Do.,Romieu,20:33:09,20:17:38,,-13,N,III,"N, 10",,
+III,Do.,De Raite,20:33:23,20:17:52,,1,N,III,"N, 14",,
+III,Beziers,De Manse,20:30:54,20:18:03,20:17:53,10,N,III,"N, 3½",43,
+III,Vincennes,Prolange,20:26:58,20:17:13,20:17:13,0,N,III,,41,
+III,Conflans-Sous-Carrière,La Caille,20:27:03,20:17:25,20:17:14,11,N,II,"A, 4½",41,
+III,Do.,Turgot,20:27:10,20:17:32,,18,N,III,"N, 12",,
+III,Paris (Hôtel de Clugny),Messier,20:26:39,20:17:16,20:17:14,2,N,II,"R, —",41,
+III,Do.,Bandouin,20:26:36,20:17:13,,-1,N,II,"N, 25",,
+III,Do.,Libour,20:26:40,20:17:17,,3,N,III,"R, 4½",,
+III,Paris (Collège),Merville,20:26:49,20:17:26,,12,N,III,"R, 6",,
+III,Do.,Clouet,20:26:35,20:17:12,,-2,N,III,"R, 2½",,
+III,St. Généviève,De Barros,20:26:54,20:17:30,,16,N,III,(?),,
+III,Luxemburg,Lalande,20:26:35,20:17:14,20:17:14,0,L1,I,"N, 18",41,
+III,Do.,do,20:26:39,20:17:18,,4,L2,I,,,
+III,Royal Observatory,Maraldi,20:26:51,20:17:30,20:17:14,16,N,I,"N, 15",41,
+III,Do.,Belleri,20:26:23,20:17:02,,-12,N,III,"N, 6",,
+III,Do.,Zanoni,20:26:45,20:17:24,,10,N,III,"N, 3½",,
+III,Passy,Ferner and Noël,20:26:24,20:17:17,20:17:14,3,N,III,"R, 2½",41,
+III,St. Hubert,Le Monnier,20:24:32,20:17:07,20:17:14,-7,N,I,"N, 18",41,
+III,Do.,La Condamine,20:24:58,20:17:33,,19,N,IV,"R, 1½",,
+III,Greenwich,Bliss,20:17:09,20:17:09,20:16:56,13,N,II,"N, 15",39,
+III,Do.,Green,20:17:09,20:17:09,,13,N,II,"R, 2",,
+III,Do.,Bird,20:17:09,20:17:09,,13,N,II,"R, 1½",,
+III,Hackney,Ellicot,20:16:54,20:17:05,20:16:55,10,N,III,"R, 2",39,
+III,Spital Square,Canton,20:16:50,20:17:07,20:16:56,11,N,II,"R, 1½",39,
+III,Clerkenwell,Heberden,20:16:38,20:17:05,20:16:56,9,N,III,"R, 2",39,
+III,Savile House,Short,20:16:31,20:17:01,20:16:55,6,N,II,"R, 2",39,
+III,Chelsea,Dunn,20:16:12,20:16:53,20:16:55,-2,L,I,"R, 6",39,
+III,Bayeux,Outhier,20:15:14,20:18:03,20:17:12,51,N,III,"N, 6",39,*
+III,Shirburn Castle,Hornsby,20:13:19,20:17:15,20:16:54,21,N,II,"N, 12",38,*
+III,Do.,Phelps,20:13:23,20:17:19,,25,N,III,"N, 14",,*
+III,Madrid,Benevent,20:05:02,20:19:52,20:18:19,93,N,III,"R, 2½",38,*
+III,Do.,Ximenes,20:05:05,20:19:55,,96,N,III,(?),,*
+III,Do.,Rieger,20:05:05,20:19:55,,96,N,III,"N, 8",,*
+III,Oporto,Almeida,19:42:14,20:16:40,20:18:14,-94,N,III,"R, 2",34,*
+III,Lisbon,Ciera,19:42:35,20:19:09,20:18:32,37,,,(?),34,*
+III,St. John's,Winthrop,16:45:29,20:16:19,20:16:25,-6,N,II,(?),5,
+IV,Pekin,Dollier,4:16:06,20:30:34,20:31:05,-31,,,,33,
+IV,Selenginsk,Rumovsky,3:37:50,20:31:25,20:31:20,5,,,"N, 15",39,
+IV,Calcutta,Magee,2:25:47,20:32:26,20:33:42,-76,,,,57,
+IV,Madras,The Jesuits,1:51:16,20:30:07,20:35:01,-294,,,,60,
+IV,Do.,Hirst,1:53:53,20:32:44,,-157,,,"R, 2",,res
+IV,Tobolsk,Chappe,1:05:51,20:32:45,20:32:40,5,,,"N, 19",52,
+IV,Petersburg,Braun,22:35:13,20:33:59,20:34:00,-1,,,"N, 8",50,
+IV,Do.,Krasilnikow,22:35:09,20:33:55,,-5,,,"N, 6",,
+IV,Do.,Kurganoff,22:35:11,20:33:57,,-3,,,"R, 2½",,
+IV,Cajaneborg,Planmann,22:24:31,20:33:35,20:33:39,-4,,,"N, 21",46,
+IV,Tornea,Hellant,22:10:31,20:33:56,20:33:36,40,,,"N, 20",43,*;res
+IV,Do.,Lagerbohm,22:10:23,20:33:48,,22,,,"N, 32",,*;res
+IV,Do.,Häggmann,22:10:07,20:33:32,,6,,,,,*;res
+IV,Abo,Justander,22:02:51,20:33:45,20:34:10,-25,,,"N, 20",47,
+IV,Cape Town,Mason,21:55:34,20:41:52,20:42:21,-29,,,"R, 2",26,
+IV,Do.,Dixon,21:55:32,20:41:50,,-31,,,,,
+IV,Stockholm,Wargentin,21:46:18,20:34:02,20:34:20,-20,,,"N, 19",46,res
+IV,Do.,Wilken,21:46:08,20:33:52,,-30,,,,,res
+IV,Do.,Klingenstierna,21:46:17,20:34:01,,-21,,,"A, 10",,res
+IV,Hernosand,Gissler,21:44:44,20:32:58,20:33:59,-61,,,"N, 21",44,
+IV,Do.,Ström,21:44:56,20:33:10,,-49,,,"N, 20",,
+IV,Upsala,Mallet,21:44:38,20:34:06,20:34:20,-14,,,"R, 1½",46,
+IV,Do.,Strömer,21:44:22,20:33:50,,-30,,,"N, 20",,
+IV,Do.,Melander,21:44:39,20:34:07,,-13,,,"N, 16",,
+IV,Do.,Bergmann,21:44:39,20:34:07,,-13,,,"N, 21",46,
+IV,Tyrnau,Weiss,21:45:45,20:35:23,20:35:33,-10,,,"R, 4",53,
+IV,Vienna,Hell,21:41:19,20:35:47,20:35:36,11,,,"R, 4½",53,
+IV,Do.,Herberth,21:40:53,20:35:21,,-15,,,"N, 12",,
+IV,Do.,Rain,21:40:58,20:35:26,,-10,,,"N, 9",,
+IV,Do.,Lyfogorsky,21:41:08,20:35:36,,0,,,"R, 3",,
+IV,Do.,Scherfer,21:40:44,20:35:12,,-24,,,"R, 4",,
+IV,Do.,Cassini,21:40:58,20:35:26,,-10,,,"N, 9",,
+IV,Do.,Steinkellner,21:40:23,20:34:51,,-45,,,"N, 16",,
+IV,Do.,Liesganigg,21:41:00,20:35:28,,-8,,,"N, 11",,
+IV,Do.,Mastalier,21:40:22,20:34:50,,-46,,,"N, 5½",,
+IV,Calmar,Wickström,21:39:24,20:33:59,20:34:41,-42,,,"N, 21",48,
+IV,Carlscrona,Bergström,21:37:25,20:35:04,20:34:45,19,,,"R, 3",48,
+IV,Do.,Zegollström,21:37:30,20:35:09,,24,,,"N, 21",,
+IV,Wetzlas,Von Schlug,21:36:59,20:35:21,20:35:35,-14,,,"R, 4",52,
+IV,Do.,Von Schlug jr,21:36:38,20:35:00,,-35,,,,,
+IV,Laibach,Schöttl,21:34:29,20:36:26,20:35:53,33,,,"N, 16",52,*
+IV,Lund,Burmester,21:27:25,20:34:40,20:34:52,-12,,,,46,
+IV,Lund,Schenmark,21:27:21,20:34:36,20:34:52,-16,,,"N, 21",,
+IV,Rome,Audifredi,21:26:16,20:36:21,20:36:25,-4,,,,51,
+IV,Landscrona,Landberg,21:25:32,20:34:12,20:34:45,-33,,IV,"N, 21",46,
+IV,Copenhagen,Horrebow,21:21:12,20:30:53,20:34:52,-239,,,"N, 22",47,*
+IV,Munich,(not named),21:21:57,20:35:40,20:35:45,-5,,,"N, 3½",50,
+IV,Ingolstadt,Kratz,21:21:13,20:35:32,20:35:39,-7,,,"R, 7",49,
+IV,Do.,Anon.,21:20:31,20:34:50,,-49,,,"N, 13",49,
+IV,Do.,do,21:20:38,20:34:57,,-42,,,"N, 11",,
+IV,Bologna,Zanotti,21:20:39,20:35:16,20:36:10,-54,,,"N, 2½",51,
+IV,Do.,Marinus,21:21:09,20:35:46,,-24,,,"N, 10",,
+IV,Do.,Matheucius,21:21:16,20:35:53,,-17,,,"N, 22",,
+IV,Do.,Frisi,21:21:03,20:35:40,,-30,,,"N, 6",,
+IV,Do.,Cassali,21:20:59,20:35:36,,-34,,,"N, 8",,
+IV,Do.,Canterzani,21:21:08,20:35:45,,-25,,,"N, 11",,
+IV,Florence,Ximenes,21:21:05,20:36:03,20:36:16,-13,,,"R, 4½",50,
+IV,Dillingen,Hauser,21:16:29,20:34:30,20:35:45,-75,,,"N, 18",49,*
+IV,Drontheim,Bugge,21:18:24,20:36:47,20:34:05,162,,,"N, 8",41,*
+IV,Göttingen,T. Mayer,21:15:03,20:35:17,20:35:24,-7,,,"N, 6",47,
+IV,Würzburg,Hubert,21:16:58,20:37:14,20:35:36,98,,,"R, 1½",48,*
+IV,Do.,Anon.,21:16:09,20:36:25,,49,,,,,*
+IV,Do.,do,21:16:44,20:37:00,,84,,,,,*
+IV,Lyons,Béraud,20:55:05,20:35:48,20:36:10,-22,,,"N, 19",45,
+IV,Montpellier,Tandon,20:50:17,20:34:46,20:36:25,-99,,,"N, 18",46,
+IV,Do.,Three observers,20:51:30,20:35:59,,-26,,,,,
+IV,Beziers,Clauzade,20:49:14,20:36:23,20:36:32,-9,,,"N, 7",46,
+IV,Vincennes,Prolange,20:45:21,20:35:36,20:35:50,-14,,,"N, 19",43,
+IV,Conflans-Sous-Carrière,La Caille,20:45:15,20:35:37,20:35:50,-13,,,"A, 4½",44,
+IV,Do.,Turgot,20:44:55,20:35:17,,-33,,,"N, 12",,
+IV,Do.,Bailly,20:45:20,20:35:42,,-8,,,"N, 6",44,
+IV,Paris (Hôtel de Clugny),Bandouin,20:44:52,20:35:29,20:35:50,-21,,,"N, 25",44,
+IV,Do.,Messier,20:44:46,20:35:23,,-27,,,(?),,
+IV,Paris (Coll. L. le Grand),Merville,20:45:13,20:35:50,,0,,,"R, 6",,
+IV,Do.,Clouet,20:45:04,20:35:41,,-9,,,"R, 2½",,
+IV,Paris (Luxemburg),Lalande,20:44:59,20:35:38,,-12,,,"N, 18",,
+IV,Paris (Royal Obs.),Maraldi,20:45:03,20:35:42,,-8,,,"N, 15",,
+IV,Do.,Belléri,20:44:49,20:35:28,,-22,,,"N, 6",,
+IV,Do.,Zannoni,20:45:05,20:35:44,,-6,,,"N, 3½",,
+IV,Passy,Fouchy,20:44:35,20:35:28,,-22,,,"R, 4",,
+IV,Do.,Ferner,20:44:36,20:35:29,,-21,,,"R, 2½",,
+IV,Paris (Ecole Militaire),Jeaurat,20:44:55,20:35:42,,-8,,,"N, 18",,
+IV,St. Hubert,Le Monnier,20:43:01,20:35:36,20:35:49,-13,,,"N, 18",44,
+IV,Do.,La Condamine,20:43:02,20:35:37,,-12,,,"R, 1½",,
+IV,Rouen,Bouin and Dulague,20:39:44,20:35:21,20:35:46,-25,,,"N, 16",43,
+IV,Greenwich,Bliss,20:35:18,20:35:18,20:35:33,-15,,,"N, 15",42,
+IV,Hackney,Ellicot,20:35:12,20:35:23,20:35:33,-10,,,"R, 2",,
+IV,London (Spital Square),Canton,20:35:13,20:35:30,20:35:33,-3,,,"R, 1½",,
+IV,London (Savil House),Short,20:35:14,20:35:44,20:35:33,11,,,"R, 2",,
+IV,Do.,Blair,20:34:22,20:34:52,,-41,,,"R, 1½",,
+IV,Chelsea,Dunn,20:34:30,20:35:11,20:35:33,-22,,,"R, 6",,
+IV,Bayeux,Outhier,20:33:24,20:36:13,20:35:48,25,,,"N, 6",42,*
+IV,Shirburn Castle,Hornsby,20:31:34,20:35:30,20:35:32,-2,,,"N, 12",,*
+IV,Madrid,Anon.,20:22:44,20:37:34,20:36:54,40,,,,41,*
+IV,Do.,Anon.,20:22:41,20:37:31,,37,,,,,*
+IV,Do.,Anon.,20:22:42,20:37:32,,38,,,,,*
+IV,Do.,Rieger,20:23:02,20:37:52,,58,,,,,*
+IV,Oporto,Almeida,20:00:48,20:35:14,20:36:50,-96,,,"R, 2",37,*
+IV,Lisbon,Ciera,20:00:42,20:37:16,20:37:08,8,,,,36,*
+IV,St. John's,Winthrop,17:03:58,20:34:48,20:35:23,-35,,,,8,

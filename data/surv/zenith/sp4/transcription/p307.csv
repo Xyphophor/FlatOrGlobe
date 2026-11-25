@@ -1,0 +1,7 @@
+page,printed,station,when,object,year,days,obs_d,obs_m,obs_s,red_level,red_ecc,red_d,red_m,red_s,P_mm,T_C,log_s,flag
+307,302,Rocky Mound,1885-06,Mount Tamalpais,1885,4,89,27,33.2,-2.6,0.0,89,27,30.6,,,4.49810,
+307,302,Rocky Mound,1885-06,Red Hill,1885,4,90,41,36.0,-3.2,0.0,90,41,32.8,,,4.59091,
+307,302,Rocky Mound,1885-06,Sierra Morena,1885,1,89,51,23.7,-1.2,0.0,89,51,22.5,,,4.72183,
+307,302,Red Hill,1885-06,Sierra Morena,1885,3,88,29,45.4,-2.4,0.0,88,29,43.0,,,4.38869,
+307,302,Red Hill,1885-06,Rocky Mound,1885,2,89,36,08.9,-2.6,0.0,89,36,06.3,,,4.59091,
+307,302,Red Hill,1885-06,Mount Tamalpais,1885,2,89,31,27.0,-1.3,0.0,89,31,25.7,,,4.78206,

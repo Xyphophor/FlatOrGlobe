@@ -1,0 +1,59 @@
+# 1652-1983_J1-4_lieske.data.txt
+
+Dataset: sun-romer — Eclipses of Jupiter's Galilean satellites timed from 1652 to 1983 (J. H.
+  Lieske's compilation, 16,802 timings from 426 observatories, IMCCE Natural Satellites Data
+  Center): Rømer reversed, the astronomical unit from Io's 8,822 with laboratory c
+File: data/sun/romer/raw/1652-1983_J1-4_lieske.data.txt
+SHA-256: e8ac77ec5f7bbdce069a831cb86d447ab8e867f8c66cad655084a39ab7358dd2 (also in
+  data/sun/romer/inputs.lock; check with: cd data/sun/romer && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: The IMCCE Natural Satellites Data
+  Center gives the file freely but does not state whether it may be republished; only the hash and
+  the URL are given. Get it from
+  https://ftp.imcce.fr/pub/NSDC/jupiter/raw_data/phenomena/eclips/1652-1983_J1-4_lieske.data.txt (or
+  fog fetch sun-romer), then compare its SHA-256 with the one above.
+Obtained: downloaded as published (fog fetch or by hand).
+From: IMCCE NSDC raw data of the eclipses of the Galilean satellites (J. H. Lieske's compilation),
+  downloaded 2026-11-25.
+URL: https://ftp.imcce.fr/pub/NSDC/jupiter/raw_data/phenomena/eclips/1652-1983_J1-4_lieske.data.txt
+Checks: The build reads every record and fails on an unreadable one; 16,802 records, 8,822 of Io.
+What could still be wrong: Lieske reduced local apparent times to UT and sometimes corrected a
+  site's longitude from ephemeris residuals: a constant per site, absorbed by the fit's free offset
+  per site.
+Collected: 2026-11-25
+Licence: other — IMCCE Natural Satellites Data Center (NSDC), raw data of the eclipses of the
+  Galilean satellites, public; J. H. Lieske's compilation, cited.
+Sources:
+- J. H. Lieske, Astron. Astrophys. Suppl. 63 (1986) 143-202 and Astron. Astrophys. 154 (1986) 61-76
+  (the compilation); the raw file 1652-1983_J1-4_lieske.data.txt of the IMCCE NSDC
+  <https://ftp.imcce.fr/pub/NSDC/jupiter/raw_data/phenomena/eclips/>
+- J. H. Lieske, A collection of Galilean satellite eclipses 1652-1982, in Dynamical Trapping and
+  Evolution in the Solar System (Reidel, 1983) 51-59 <https://doi.org/10.1017/S0252921100096925>
+- E. M. Standish, Keplerian Elements for Approximate Positions of the Major Planets, JPL Solar
+  System Dynamics, Table 2a <https://ssd.jpl.nasa.gov/planets/approx_pos.html>
+- F. Espenak and J. Meeus, Five Millennium Canon of Solar Eclipses, NASA/TP-2006-214141, section 2.6
+  (ΔT) <https://eclipse.gsfc.nasa.gov/SEhelp/deltatpoly2004.html>
+Evidence class (rule 10): measure
+What would vindicate the flat model (rule 5): Io's eclipses keeping time with no delay that follows
+  the Earth-Jupiter distance (Io's clock alone fitting as well as the light time), or a delay whose
+  free curve does not land on the numbers one astronomical unit predicts (its swing over the synodic
+  cycle, its second harmonic and its change with Jupiter's distance from the Sun).
+Built by: fog build sun-romer
+Generated files:
+- src/data/presets/sun-romer.js
+Code:
+- tools/internal/build/romer
+- tools/internal/spk
+- src/tabs/sun/romer-data.js
+- src/tabs/sun/romer-reel.js
+Shown on the page:
+- #tab-sun/romer-m-h2
+- #tab-sun/romer-f-h2
+Notes: Only Io (satellite 1) is fitted. The raw file is used, not the standard file whose O-C come
+  from a satellite theory. Lieske reduced local apparent times to UT with each site's longitude,
+  which he sometimes corrected from the residuals of an ephemeris (the 1983 paper, Hoai-Ngan); a
+  wrong longitude shifts a site's timings by a constant, and every site with 30 timings or more gets
+  its own free offset in each era, so no such correction can reach the light time. The DE440 variant
+  (data/moon/eclcraters/raw/de440.bsp, fog fetch moon-eclcraters) is a check of the orbits' shape;
+  without that file it is skipped. Method and references: go doc -all ./internal/build/romer.
+
+Written by `fog build explain` from data/sun/romer/dataset.json and data/sun/romer/inputs.lock: edit those, not this file.

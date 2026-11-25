@@ -1,0 +1,7 @@
+# G. H. Pettengill et al., Astron. J. 67 (1962) 181, Table III p. 186: comparison of the 1961 Venus radar determinations of the a.u., as printed (err empty where none is printed).
+facility,reference,freq_mhz,au_km,err_km
+Millstone (MIT),Present paper 1961,440,149597850,400
+Goldstone (JPL),Victor et al. 1961b,2388,149598500,500
+Jodrell Bank (U. of Man.),Thomson et al. 1961,408,149601000,5000
+Moorestown (RCA),Maron et al. 1961,,149596000,
+U.S.S.R.,Kotelnikov 1961,700,149599500,800

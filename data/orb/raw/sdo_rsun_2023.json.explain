@@ -1,0 +1,50 @@
+# sdo_rsun_2023.json
+
+Dataset: orb — Earth's orbit from public data: HARPS-N solar radial velocity 2015-2018, tau Ceti
+  (HARPS RVBank), SDO/HMI apparent solar radius 2023
+File: data/orb/raw/sdo_rsun_2023.json
+SHA-256: 78f2b111a21b28ddd60befc32ef5197f109a9abb6aa76164278d23c8247e4ec0 (also in
+  data/orb/inputs.lock; check with: cd data/orb && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: the file may be shared but is kept
+  out of git for its size. Get it from
+  http://jsoc.stanford.edu/cgi-bin/ajax/jsoc_info?ds=hmi.Ic_720s%5B2023.01.03_00:00:00_TAI/365d@7d%5D&op=rs_list&key=T_REC,RSUN_OBS
+  (or fog fetch orb), then compare its SHA-256 with the one above.
+Obtained: the answer of a public web API to the request given.
+From: JSOC, hmi.Ic_720s keyword RSUN_OBS, 2023 weekly, the request in the URL.
+URL:
+  http://jsoc.stanford.edu/cgi-bin/ajax/jsoc_info?ds=hmi.Ic_720s%5B2023.01.03_00:00:00_TAI/365d@7d%5D&op=rs_list&key=T_REC,RSUN_OBS
+Collected: 2026-10-04
+Licence: other — DACE (Univ. Geneva) HARPS-N solar release: public, cite Dumusque et al. 2021;
+  VizieR J/A+A/636/A74 (Trifonov et al. 2020); SDO/HMI data courtesy of NASA/SDO and the HMI science
+  team (JSOC), public.
+Sources:
+- Dumusque et al. 2021, HARPS-N solar telescope, first public release 2015-2018 (DACE)
+  <https://dace.unige.ch/>
+- Trifonov et al. 2020, HARPS RVBank, VizieR J/A+A/636/A74 (HD 10700, tau Ceti)
+  <https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=J/A%2BA/636/A74>
+- SDO/HMI, hmi.Ic_720s keyword RSUN_OBS, JSOC <http://jsoc.stanford.edu/>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- SUN_DAYS, TAU_CETI velocities: rebuilt as RV - BERV: the barycentric correction added back is
+  computed from ephemerides, with the Earth's radius
+- SDO_RSUN: the apparent radius is computed by the SDO pipeline from the spacecraft-Sun distance, an
+  ephemeris
+What would vindicate the flat model (rule 5): Doppler residuals at the level of the instrument,
+  about 1 m/s, for some height of the flat model's Sun; a zenith star that stays put through the
+  year to better than a second of arc.
+Built by: fog build orb
+Generated files:
+- src/data/presets/orb-sun.js
+- src/data/presets/orb-star.js
+- src/data/presets/orb-sdo.js
+Code:
+- tools/internal/build/orb
+- src/tabs/orb/data.js
+Shown on the page:
+- #tab-orb/orb-h2sun
+- #tab-orb/orb-h2dop
+- #tab-orb/orb-h2star
+Notes: One dataset, three sources: the class is the most cautious of the three (check). The parallax
+  and aberration sections that are measures use star catalogues, not these files.
+
+Written by `fog build explain` from data/orb/dataset.json and data/orb/inputs.lock: edit those, not this file.

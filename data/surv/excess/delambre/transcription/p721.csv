@@ -1,0 +1,10 @@
+page,printed,k,no,station,reg,deg,min,sec,exc,sph_deg,sph_min,sph_sec,cord_sec,log,dist,t2page,flag
+721,528,1,58,Vouzon,184,94,40,25.41,0.39,94,40,24.01,23.62,4.1379500976,13738.8410,848,
+721,528,1,58,Chaumont,189,58,19,4.89,0.15,58,19,3.49,3.34,4.0693117659,11730.3715,848,
+721,528,1,58,Soême,191,27,0,34.61,0.17,27,0,33.21,33.04,,,848,
+721,528,2,59,Vouzon,185,89,3,17.2,,,,,,4.3878043415,24423.5248,848,log10(dist) differs from printed log by 4.0e-6 (print; verified 300 dpi); excess and spherical and chord angles not printed (left empty)
+721,528,2,59,Oison,196,34,37,43.6,,,,,,,,848,excess and spherical and chord angles not printed (left empty)
+721,528,2,59,Châteauneuf,*,56,18,59.2,,,,,,4.3080486805,20325.8483,848,excess and spherical and chord angles not printed (left empty)
+721,528,3,60,Vouzon,185,40,53,7.5,,,,,,4.1396274192,13792.0542,850,log10(dist) differs from printed log by 1.5e-6 (print; verified 300 dpi); excess and spherical and chord angles not printed (left empty)
+721,528,3,60,Oison,197,32,49,51.9,,,,,,4.0693419078,11731.1857,850,excess and spherical and chord angles not printed (left empty)
+721,528,3,60,Soême,*,105,17,0.6,,,,,,,,850,observed angles as printed (105 deg) sum to 179 deg not 180 (print; verified 300 dpi); excess and spherical and chord angles not printed (left empty)

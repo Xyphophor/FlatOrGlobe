@@ -1,0 +1,54 @@
+#tab-sun .cnav-lead { font-size: 15.5px; max-width: 74ch; }
+#tab-sun .notes { font-size: 14px; color: var(--ink-2); max-width: 74ch; margin-top: 0; }
+#tab-sun .rate-note { font-size: 13px; color: var(--ink-soft); max-width: 74ch; }
+#tab-sun .cnav-h2 { margin-top: 26px; }
+#tab-sun .formula { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--globe); border-radius: 10px; padding: 14px 16px; margin: 14px 0; }
+#tab-sun .formula .ln { margin: 3px 0; }
+#tab-sun .formula .gloss { font-size: 13.5px; color: var(--ink-2); margin-top: 8px; }
+#tab-sun .formula b.f { color: var(--flat); }
+#tab-sun .callout { background: var(--globe-tint); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; margin: 14px 0; font-size: 14px; }
+#tab-sun .callout.flatc { background: var(--flat-tint); }
+#tab-sun .cnav-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 13px; }
+#tab-sun .cnav-table th, #tab-sun .cnav-table td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; }
+#tab-sun .cnav-table td.hot { color: var(--globe); font-weight: 600; }
+#tab-sun .cnav-table td.cold { color: var(--flat); }
+#tab-sun .mini-form { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; margin: 12px 0; }
+#tab-sun .field.grow { flex: 1; min-width: 220px; }
+#tab-sun .field input[type="range"] { width: 100%; accent-color: var(--obj3); }
+#tab-sun .unit { color: var(--ink-soft); font-family: var(--mono); font-size: 12px; margin-left: 6px; }
+#tab-sun .cnav-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+#tab-sun canvas { width: 100%; height: 240px; display: block; background: #fdfdfc; border: 1px solid var(--line); border-radius: 8px; }
+#tab-sun canvas.wide { height: 300px; }
+#tab-sun canvas.orbit { touch-action: none; cursor: grab; }
+#tab-sun .dial-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(126px, 1fr)); gap: 10px; margin-top: 10px; }
+#tab-sun canvas.mini { height: 150px; }
+#tab-sun .fcap { font-size: 12px; color: var(--ink-soft); margin-top: 6px; }
+#tab-sun .figkey { list-style: none; padding: 0; margin: 8px 0 0; font-size: 12px; color: var(--ink-soft); }
+#tab-sun .figkey li { display: flex; gap: 8px; align-items: center; margin: 2px 0; }
+#tab-sun .sw { display: inline-block; width: 18px; height: 0; border-top: 2px solid var(--ink); flex: none; }
+#tab-sun .sw-dash { border-top-style: dashed; }
+#tab-sun .sw-violet { border-top: 3px solid var(--obj3); }
+#tab-sun .sw-term { border-top: 1px dashed var(--ink-3); }
+#tab-sun .sw-face { width: 12px; height: 12px; border: 1px solid var(--line-strong); border-radius: 50%; background: var(--surface); }
+#tab-sun .swapbtn { appearance: none; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); padding: 6px 12px; cursor: pointer; font-family: var(--mono); font-size: 11px; margin-left: 10px; vertical-align: middle; }
+#tab-sun .exp { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--ink); border-radius: 10px; padding: 16px 18px; margin: 22px 0; }
+#tab-sun .exp-h { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); }
+#tab-sun .exp-t { font-size: 16px; font-weight: 800; margin: 4px 0 8px; }
+#tab-sun .exp-lead, #tab-sun .exp-meta { font-size: 13.5px; color: var(--ink-2); }
+#tab-sun .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+#tab-sun .exp-var { border-radius: 8px; padding: 11px 13px; font-size: 13.5px; }
+#tab-sun .exp-var.iv { background: var(--blue-bg); border: 1px solid var(--blue-line); }
+#tab-sun .exp-var.dv { background: var(--amber-bg); border: 1px solid var(--amber-line); }
+#tab-sun .vartag { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; font-weight: 700; }
+#tab-sun .exp-out { margin-top: 12px; font-family: var(--mono); font-size: 13px; line-height: 1.85; }
+#tab-sun .exp-out .g { color: var(--globe); font-weight: 700; }
+#tab-sun .exp-out .f { color: var(--flat); font-weight: 700; }
+#tab-sun .exp-verdict { margin-top: 10px; font-size: 13.5px; }
+#tab-sun .srcs.reading .note { font-size: 12.5px; color: var(--ink-soft); margin-bottom: 8px; }
+@media (max-width: 620px) { #tab-sun .cnav-grid, #tab-sun .exp-grid { grid-template-columns: 1fr; } }
+#tab-sun .tscroll{overflow-x:auto;}  /* tableau des époques de Rømer : défile sous 380 px */
+/* Rømer refait (2026-11-25) : le système et le médaillon à gauche, la courbe à droite ; empilés au téléphone */
+#tab-sun canvas#sunRomer { height: 340px; }
+@media (max-width: 559px) { #tab-sun canvas#sunRomer { height: 480px; } }
+#tab-sun canvas.romer-reel { width: 100%; display: block; aspect-ratio: 16 / 9; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fbfaf7; cursor: pointer; }
+@media (max-width: 559px) { #tab-sun canvas.romer-reel { aspect-ratio: 3 / 4; } }

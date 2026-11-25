@@ -1,0 +1,11 @@
+{
+  "cv-in-view": "{n} in view · el > {mask}°",
+  "cv-true-scale-a": "true scale · a = 4.17 R",
+  "cv-you": "you",
+  "cv-mirror-rejected": "mirror, in deep space, rejected",
+  "cv-triple-verified": "triple points verified: {status} · true scale",
+  "cv-status-both": "both",
+  "cv-status-check": "check",
+  "cv-dashed-inflated": "dashed: ranges inflated by c·δt",
+  "cv-schematic": "schematic, not to scale"
+}

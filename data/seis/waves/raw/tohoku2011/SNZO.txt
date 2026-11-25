@@ -1,0 +1,4 @@
+#Network | Station | Location | Channel | Latitude | Longitude | Elevation | Depth | Azimuth | Dip | SensorDescription | Scale | ScaleFreq | ScaleUnits | SampleRate | StartTime | EndTime
+IU|SNZO|00|BH1|-41.3087|174.7043|23.0|96.9|272.0|0.0|Geotech KS-54000 Borehole Seismometer|3.41185E9|0.02|m/s|20.0|2010-12-10T00:00:00.0000|2018-03-21T00:00:00.0000
+IU|SNZO|00|BH2|-41.3087|174.7043|23.0|96.9|2.0|0.0|Geotech KS-54000 Borehole Seismometer|3.38618E9|0.02|m/s|20.0|2010-12-10T00:00:00.0000|2018-03-21T00:00:00.0000
+IU|SNZO|00|BHZ|-41.3087|174.7043|23.0|96.9|0.0|-90.0|Geotech KS-54000 Borehole Seismometer|3.41302E9|0.02|m/s|20.0|2010-12-10T00:00:00.0000|2018-03-21T00:00:00.0000

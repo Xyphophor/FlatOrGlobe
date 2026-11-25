@@ -1,0 +1,45 @@
+# pettengill1962-site.csv
+
+Dataset: orb-radar — Radar echoes from Venus, Millstone, spring 1961 (Pettengill et al. 1962,
+  Tables I-III, our transcription), reduced again with JPL DE440 into the astronomical unit
+File: data/orb/radar/transcription/pettengill1962-site.csv
+SHA-256: da17466b8ef47846fc5b5968dfd05e95cc373e164044ec1a65adeff9a520fd96 (also in
+  data/orb/radar/inputs.lock; check with: cd data/orb/radar && sha256sum -c inputs.lock)
+In the public repository: yes, beside this description.
+Obtained: typed by hand (or OCR checked by hand) from a printed or scanned source.
+From: Pettengill et al., Astron. J. 67 (1962) 181-190, Tables I (p. 182), II (p. 183) and III (p.
+  186), NASA ADS scan; typed by hand by the assistant (Claude) from the scans, under Xyphophor's
+  review.
+Checks: The build recomputes the printed astronomical units from the transcribed flight times and
+  fails on a disagreement.
+Collected: 2026-11-18
+Licence: other — The 1962 article (Astron. J., NASA ADS scan) is cited and its tables transcribed
+  as data; JPL DE440, public.
+Sources:
+- G. H. Pettengill, H. W. Briscoe, J. V. Evans, E. Gehrels, G. M. Hyde, L. G. Kraft, R. Price and W.
+  B. Smith, A Radar Investigation of Venus, Astron. J. 67 (1962) 181-190, Tables I (p. 182), II (p.
+  183) and III (p. 186) <https://adsabs.harvard.edu/full/1962AJ.....67..181P>
+- R. S. Park, W. M. Folkner, J. G. Williams and D. H. Boggs, The JPL Planetary and Lunar Ephemerides
+  DE440 and DE441, Astron. J. 161 (2021) 105
+  <https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- RADAR_ECHOES[].a, a1962, station: the antenna's offset from the Earth's centre on the
+  International Ellipsoid (up to 6,378 km on 42-67 million km)
+- RADAR_ECHOES[].a, a1962, dAU: JPL DE440, whose orbits rest in part on later radar ranging
+What would vindicate the flat model (rule 5): Echoes coming back in a fraction of a second (a Venus
+  a few thousand km away), or flight times that no single astronomical unit fits over the two months
+  (the orbits' shape in AU wrong).
+Built by: fog build orb-radar
+Generated files:
+- src/data/presets/orb-radar.js
+Code:
+- tools/internal/build/orbradar
+- src/tabs/orb/radar-logic.js
+Shown on the page:
+- #tab-orb/orb-h2radar
+Notes: DE440 is the file of moon-eclcraters (data/moon/eclcraters/raw/de440.bsp, fog fetch
+  moon-eclcraters), not downloaded twice. Method and references: go doc -all
+  ./internal/build/orbradar.
+
+Written by `fog build explain` from data/orb/radar/dataset.json and data/orb/radar/inputs.lock: edit those, not this file.

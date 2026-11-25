@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "id": "orb-radar",
+  "title": "Radar echoes from Venus, Millstone, spring 1961 (Pettengill et al. 1962, Tables I-III, our transcription), reduced again with JPL DE440 into the astronomical unit",
+  "tab": "orb",
+  "build": "fog:orb-radar",
+  "kind": "transcription",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "RADAR_ECHOES[].a, a1962, station",
+      "how": "the antenna's offset from the Earth's centre on the International Ellipsoid (up to 6,378 km on 42-67 million km)"
+    },
+    {
+      "field": "RADAR_ECHOES[].a, a1962, dAU",
+      "how": "JPL DE440, whose orbits rest in part on later radar ranging"
+    }
+  ],
+  "verdict_rule": "Echoes coming back in a fraction of a second (a Venus a few thousand km away), or flight times that no single astronomical unit fits over the two months (the orbits' shape in AU wrong).",
+  "license": "other",
+  "license_note": "The 1962 article (Astron. J., NASA ADS scan) is cited and its tables transcribed as data; JPL DE440, public.",
+  "sources": [
+    {
+      "cite": "G. H. Pettengill, H. W. Briscoe, J. V. Evans, E. Gehrels, G. M. Hyde, L. G. Kraft, R. Price and W. B. Smith, A Radar Investigation of Venus, Astron. J. 67 (1962) 181-190, Tables I (p. 182), II (p. 183) and III (p. 186)",
+      "url": "https://adsabs.harvard.edu/full/1962AJ.....67..181P"
+    },
+    {
+      "cite": "R. S. Park, W. M. Folkner, J. G. Williams and D. H. Boggs, The JPL Planetary and Lunar Ephemerides DE440 and DE441, Astron. J. 161 (2021) 105",
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/"
+    }
+  ],
+  "collected": "2026-11-18",
+  "units": {
+    "ut": "UT of the instant of reflection at Venus, as printed",
+    "delay": "s, observed two-way echo flight time, as printed",
+    "au_newcomb, au_duncombe, err": "km, the authors' reductions and measurement error, as printed (the leading 149 restored)"
+  },
+  "inputs": [
+    {
+      "glob": "transcription/*.csv",
+      "how": "transcription",
+      "origin": "Pettengill et al., Astron. J. 67 (1962) 181-190, Tables I (p. 182), II (p. 183) and III (p. 186), NASA ADS scan; typed by hand by the assistant (Claude) from the scans, under Xyphophor's review.",
+      "checks": "The build recomputes the printed astronomical units from the transcribed flight times and fails on a disagreement."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/orb-radar.js"
+  ],
+  "notes": "DE440 is the file of moon-eclcraters (data/moon/eclcraters/raw/de440.bsp, fog fetch moon-eclcraters), not downloaded twice. Method and references: go doc -all ./internal/build/orbradar.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/orbradar",
+    "src/tabs/orb/radar-logic.js"
+  ],
+  "sections": [
+    "orb/orb-h2radar"
+  ]
+}

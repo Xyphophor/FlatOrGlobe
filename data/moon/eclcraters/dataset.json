@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "id": "moon-eclcraters",
+  "title": "Lunar eclipse crater timings, 94 eclipses 1842-2011 (Herald & Sinnott, VizieR VI/140), reduced with DE440 into the radius and shape of the Earth's shadow",
+  "tab": "moon",
+  "build": "fog:moon-eclcraters",
+  "kind": "archive",
+  "evidence": "measure",
+  "radius_enters_via": [],
+  "verdict_rule": "A shadow whose radius changes with the direction around its centre as a disc's would (its polar semi-axis |sin δ☉| of the equatorial one), or no shadow edge at all.",
+  "license": "other",
+  "license_note": "VizieR catalogue VI/140 (CDS), free for scientific use with citation; IAU Gazetteer of Planetary Nomenclature (USGS), public domain; JPL DE440, public.",
+  "sources": [
+    {
+      "cite": "D. Herald and R. Sinnott, Catalogue of Lunar Eclipse Crater Timings, J. Brit. Astron. Assoc. 124 (2014) 247-253; VizieR VI/140",
+      "url": "https://vizier.cfa.harvard.edu/ftp/cats/6/140/"
+    },
+    {
+      "cite": "IAU Working Group for Planetary System Nomenclature, Gazetteer of Planetary Nomenclature, Moon (USGS Astrogeology), feature centre points",
+      "url": "https://planetarynames.wr.usgs.gov/"
+    },
+    {
+      "cite": "R. S. Park, W. M. Folkner, J. G. Williams and D. H. Boggs, The JPL Planetary and Lunar Ephemerides DE440 and DE441, Astron. J. 161 (2021) 105",
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/"
+    }
+  ],
+  "collected": "2026-10-28",
+  "units": {
+    "time": "UT as printed (Ephemeris Time already converted by the catalogue's authors); TDB = UT + ΔT (Espenak & Meeus)",
+    "sigma": "arcmin, angular radius of the shadow at the Moon seen from the Earth's centre",
+    "beta": "deg, latitude on the shadow, north towards the Earth's pole of date",
+    "ratio": "sigma divided by the median sigma of its eclipse",
+    "rs": "km, radius of the body casting the umbra's edge, (σ + s☉)/(1/D☾ + 1/D☉) (check)"
+  },
+  "inputs": [
+    {
+      "path": "raw/crater_t.dat",
+      "url": "https://vizier.cfa.harvard.edu/ftp/cats/6/140/crater_t.dat",
+      "how": "download",
+      "origin": "VizieR VI/140 (Herald & Sinnott 2014), file crater_t.dat.",
+      "caveats": "Schmidt's clocks (1842-1879) were corrected by Soulsby against modern ephemerides (doc.txt 4.5)."
+    },
+    {
+      "path": "raw/doc.txt",
+      "url": "https://vizier.cfa.harvard.edu/ftp/cats/6/140/doc.txt",
+      "how": "download",
+      "origin": "VizieR VI/140, documentation."
+    },
+    {
+      "path": "raw/ReadMe",
+      "url": "https://vizier.cfa.harvard.edu/ftp/cats/6/140/ReadMe",
+      "how": "download",
+      "origin": "VizieR VI/140, ReadMe."
+    },
+    {
+      "path": "raw/MOON_nomenclature_center_pts.zip",
+      "url": "https://planetarynames.wr.usgs.gov/shapefiles/MOON_nomenclature_center_pts.zip",
+      "gitignored": true,
+      "how": "download",
+      "origin": "IAU Gazetteer of Planetary Nomenclature (USGS), Moon feature centres.",
+      "public_raw": "yes"
+    },
+    {
+      "path": "raw/de440.bsp",
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440.bsp",
+      "gitignored": true,
+      "how": "download",
+      "origin": "JPL DE440 (NAIF generic kernels).",
+      "public_raw": "yes"
+    }
+  ],
+  "outputs": [
+    "src/data/presets/moon-eclcraters.js"
+  ],
+  "notes": "The shape (σ against the latitude on the shadow, each eclipse divided by its own median) uses angles only: a measure. The radius R_s uses the DE440 distances and a catalogue that kept only timings whose layer height, computed from the Earth's radius, lies between -50 and +250 km: a check. Schmidt's clocks (1842-1879) were corrected by Soulsby against modern ephemerides (doc.txt 4.5). Method and references: go doc -all ./internal/build/eclcrater.",
+  "public_raw": "no",
+  "public_raw_why": "CDS/VizieR distributes it free for scientific use with citation; its terms do not say that a copy may be republished, so only the hash and the request are given.",
+  "code": [
+    "tools/internal/build/eclcrater",
+    "tools/internal/spk",
+    "src/tabs/moon/formfigs.js"
+  ],
+  "sections": [
+    "moon/moon-h2ecl",
+    "moon/moon-h2shape"
+  ]
+}

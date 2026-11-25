@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "atmo-tonga-laps",
+  "title": "Hunga Tonga 2022 pressure wave: every passage over seven days at the 102 US ASOS barometers of seis-tonga (IEM one-minute pressure)",
+  "tab": "atmo",
+  "build": "fog:atmo-tonga-laps",
+  "kind": "api",
+  "evidence": "measure",
+  "radius_enters_via": [],
+  "verdict_rule": "Laps that change with the station's position, as any echo would make them, or no regular passages after the first two.",
+  "license": "other",
+  "license_note": "Iowa Environmental Mesonet (Iowa State University) archive of NWS/FAA ASOS one-minute data: open, no account; credit IEM.",
+  "sources": [
+    {
+      "cite": "Iowa Environmental Mesonet, ASOS one-minute data (pres1), 2022-01-15 to 2022-01-22",
+      "url": "https://mesonet.agron.iastate.edu/request/asos/1min.phtml"
+    },
+    {
+      "cite": "R. S. Matoza et al., Atmospheric waves and global seismoacoustic observations of the January 2022 Hunga eruption, Tonga, Science 377 (2022) 95-100 (four outbound and three antipodal passages over six days)",
+      "url": "https://doi.org/10.1126/science.abo7063"
+    }
+  ],
+  "collected": "2026-11-21",
+  "units": {
+    "pres1": "inHg in the raw files (x 33.8639 = hPa)",
+    "a": "hours after 04:14:45 UTC",
+    "amp, noise": "hPa (band-passed)",
+    "theta": "degrees, great-circle angle from the vent (computed after picking; drawing only)"
+  },
+  "inputs": [
+    {
+      "glob": "raw/*.csv",
+      "gitignored": true,
+      "how": "api",
+      "origin": "Iowa Environmental Mesonet, ASOS one-minute pressure (pres1), one request per station for 2022-01-15 to 2022-01-22 (fog fetch atmo-tonga-laps).",
+      "caveats": "Station barometers report to 0.01 inHg-class precision and some minutes are missing; gaps are skipped, not filled."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/atmo-tonga-laps.js"
+  ],
+  "notes": "Same stations as seis-tonga (its raw station lists choose them). Picks use no Earth model: each passage is the largest band-passed peak 6 to 30 h after the previous one. A lap is read at one station, so neither the position nor the explosion time enters.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/tongalaps",
+    "src/tabs/atmo/lambpool.js"
+  ],
+  "sections": [
+    "atmo/lp-h1"
+  ]
+}

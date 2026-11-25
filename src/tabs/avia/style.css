@@ -1,0 +1,26 @@
+/* avia : le style commun vient de src/core/legacy.css ; ici seulement ce qui est propre à l'onglet. */
+#tab-avia canvas { width: 100%; display: block; border: 1px solid var(--line); border-radius: 8px; background: #fdfdfc; }
+#tab-avia canvas.avia-wide { aspect-ratio: 16 / 8; min-height: 300px; }
+#tab-avia canvas.avia-dark { background: #0e1726; }
+#tab-avia canvas.avia-mid { aspect-ratio: 16 / 8; min-height: 280px; }
+#tab-avia canvas.avia-race { aspect-ratio: 2 / 1; min-height: 520px; }
+@media (min-width: 560px) { #tab-avia canvas.avia-race { min-height: 300px; } }
+@media (max-width: 559px) { #tab-avia canvas.avia-wide, #tab-avia canvas.avia-mid { aspect-ratio: auto; height: 380px; } }
+@media (max-width: 559px) { #tab-avia canvas#aviaRadius { height: 560px; } }
+#tab-avia .avia-ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 8px 0 4px; font-size: 13px; }
+#tab-avia .avia-ctl input[type=range] { flex: 1 1 140px; min-width: 0; }
+#tab-avia .avia-ctl select { max-width: 100%; }
+#tab-avia .avia-play { font-size: 12px; margin-left: auto; }
+#tab-avia .exp-out { font-size: 13px; line-height: 1.55; }
+#tab-avia .exp-out .g { color: var(--globe); }
+#tab-avia .exp-out .f { color: var(--flat); }
+#tab-avia td.num { font-family: var(--mono); white-space: nowrap; text-align: right; }
+#tab-avia td.g, #tab-avia th.g { color: var(--globe); }
+#tab-avia td.f, #tab-avia th.f { color: var(--flat); }
+#tab-avia tr.south td:first-child { font-weight: 600; }
+/* 2026-10-01 : la pierre sur une corde prend une rangée de plus sous la Terre en étroit */
+@media (max-width: 559px) { #tab-avia #aviaLevel { height: 480px; } }
+#tab-avia #aviaWorld { aspect-ratio: 2 / 1; min-height: 520px; }
+@media (min-width: 560px) { #tab-avia #aviaWorld { min-height: 300px; } }
+#tab-avia canvas.avia-reel { width: 100%; display: block; aspect-ratio: 16 / 9; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fbfaf7; cursor: pointer; }
+@media (max-width: 559px) { #tab-avia canvas.avia-reel { aspect-ratio: 3 / 4; } }

@@ -1,0 +1,52 @@
+# UAL839.json
+
+Dataset: avia-flights — Airborne times of 127 long-haul routes, both directions, with filed flight
+  plans (FlightAware)
+File: data/avia/flights/raw/UAL839.json
+SHA-256: 08833265f6ed1c80d6f4f83471482ef732f24a0e64052220324267a7409c727e (also in
+  data/avia/flights/inputs.lock; check with: cd data/avia/flights && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: FlightAware's terms of use do not
+  allow republishing what is read from its pages. Get it from fog fetch avia-flights, then compare
+  its SHA-256 with the one above.
+Obtained: values extracted from web pages.
+From: FlightAware public flight pages of each callsign, read 2026-09-28, 2026-11-06 and 2026-11-25
+  (fog fetch avia-flights): wheels-off and wheels-on times, filed flight plan, airport coordinates.
+Checks: Flights without both times or with a diversion are dropped and counted by the build.
+What could still be wrong: FlightAware's times come from ADS-B and airline messages; a mislabelled
+  leg or a wrong time zone on their page would pass through.
+Collected: 2026-11-25
+Licence: other — FlightAware public flight pages (https://www.flightaware.com), read 2026-09-28,
+  2026-11-06 and 2026-11-25 (three windows of about two weeks, kept together); check FlightAware's
+  terms of use before re-fetching on a large scale.
+Sources:
+- FlightAware, public flight pages (actual wheels-off / wheels-on times, filed flight plans, airport
+  reference coordinates) <https://www.flightaware.com>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- plan.nm: planned distance filed by the airline, computed on the WGS84 ellipsoid (stored, not used
+  for the radius)
+What would vindicate the flat model (rule 5): Southern round trips that take about twice as long as
+  equally long northern ones, as the flat map's distances require; or times that fit the flat map's
+  distances better than the globe's.
+Built by: fog build avia-flights, fog build avia-mesh
+Generated files:
+- src/data/presets/avia-flights.js
+- src/data/presets/avia-mesh.js
+Code:
+- tools/internal/build/aviaflights
+- tools/internal/build/aviamesh
+- src/tabs/avia/values.js
+- src/tabs/avia/radius.js
+- src/tabs/avia/meshfig.js
+Shown on the page:
+- #tab-avia/avia-h2g
+- #tab-avia/avia-h2rf
+- #tab-avia/avia-h2m
+Notes: Edit routes.json only (one entry per airport pair, ICAO callsigns each way), then fog fetch
+  avia-flights, fog lock avia-flights, fog build avia-flights. The times, the airports' coordinates
+  (angles), the waypoints and the filed true airspeed (a speed through the air, from Mach and
+  temperature, not over the ground) carry no radius: the radius of the avia tab uses only those, so
+  it is a measure. The filed distances do carry one and are flagged above, which is why the dataset
+  as a whole is a check.
+
+Written by `fog build explain` from data/avia/flights/dataset.json and data/avia/flights/inputs.lock: edit those, not this file.

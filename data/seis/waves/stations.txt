@@ -1,0 +1,16 @@
+# GSN stations (network IU) for the Tohoku 2011 three-component records: one per line, network station location.
+# Chosen for directions all around the epicentre at teleseismic distances, before looking at any record.
+IU ANMO 00
+IU KONO 00
+IU CTAO 00
+IU HRV 00
+IU PAB 00
+IU TSUM 00
+IU LCO --
+IU COLA 00
+IU SBA 00
+IU KMBO 00
+IU PTCN 00
+IU SNZO 00
+IU KEV 00
+IU RAR 00

@@ -1,0 +1,34 @@
+# SE2027Aug02Tpath.html
+
+Dataset: ecl-nasa — NASA eclipse predictions (Fred Espenak): 2027 Besselian elements,
+  2009/2027/2045 paths, Saros 136, lunar months
+File: data/ecl/raw/SE2027Aug02Tpath.html
+SHA-256: fb85185e64efdbd6c3cb0b7267d087cbe90e955509f3e008fe22ee2dd06f8b64 (also in
+  data/ecl/inputs.lock; check with: cd data/ecl && sha256sum -c inputs.lock)
+In the public repository: yes, beside this description.
+Obtained: downloaded as published (fog fetch or by hand).
+From: NASA eclipse web site (Fred Espenak, GSFC), the page given in the URL.
+URL: https://eclipse.gsfc.nasa.gov/SEpath/SEpath2001/SE2027Aug02Tpath.html
+Checks: Besselian elements reproduce the central line (data/ecl/README.md, 2026-09-24).
+Collected: 2026-09-24
+Licence: other — Eclipse Predictions by Fred Espenak, NASA's GSFC: free use with this credit
+  (eclipse.gsfc.nasa.gov).
+Sources:
+- Eclipse Predictions by Fred Espenak, NASA's GSFC; ephemerides VSOP87/ELP2000-85
+  <https://eclipse.gsfc.nasa.gov/>
+Evidence class (rule 10): model
+Built by: fog build ecl
+Generated files:
+- src/data/presets/ecl.js
+Code:
+- tools/internal/build/ecl
+- src/tabs/ecl/local.js
+- src/tabs/ecl/flat.js
+- src/tabs/ecl/saros.js
+Shown on the page:
+- #tab-ecl/ecl-h22
+- #tab-ecl/ecl-h23
+Notes: Predictions, not measurements: the ecl tab compares them with the two models. Checks of
+  2026-09-24 (Besselian elements reproduce the central line) are in data/ecl/README.md.
+
+Written by `fog build explain` from data/ecl/dataset.json and data/ecl/inputs.lock: edit those, not this file.

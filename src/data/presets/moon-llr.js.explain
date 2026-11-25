@@ -1,0 +1,30 @@
+# moon-llr.js
+
+File: src/data/presets/moon-llr.js (generated: never edited by hand)
+
+From the dataset: moon-llr — Lunar laser ranging to the Apollo 15 reflector, 2015-2025: passes of
+  6 h or more (EDC/DGFI normal points) (data/moon/llr/, every input with its own .explain)
+Inputs:
+- data/moon/llr/raw/a15_*.npt — download
+Collected: 2026-10-04
+Licence: other — EDC (DGFI-TUM) open archive of ILRS normal points: free, cite ILRS / EDC.
+Sources:
+- EUROLAS Data Center (DGFI-TUM), ILRS lunar laser ranging normal points (CRD), Apollo 15 reflector
+  <https://edc.dgfi.tum.de/pub/slr/data/npt_crd/apollo15/>
+Evidence class (rule 10): measure
+What would vindicate the flat model (rule 5): Passes whose ranges are as smooth with R = 0 as with
+  any other value.
+Built by: fog build moon-llr
+Generated files:
+- src/data/presets/moon-llr.js
+Code:
+- tools/internal/build/llr
+- src/tabs/moon/formfigs.js
+Shown on the page:
+- #tab-moon/moon-h2llr
+Notes: Only times and times of flight are kept: nothing about the Earth's shape. The section that
+  fits the radius is a check because of what the page adds (the Moon's direction from a lunar
+  theory, the ellipsoid's flattening), not because of these data. fog fetch moon-llr gets the
+  monthly files of 2015-2025 (Years in tools/internal/build/llr).
+
+Written by `fog build explain` from data/moon/llr/dataset.json and the lock files: edit those, not this file.

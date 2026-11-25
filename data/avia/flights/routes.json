@@ -1,0 +1,1411 @@
+{
+  "_comment": "Manifest of the flights read for the avia tab (epic14). One entry per airport pair: the two callsigns (ICAO ident, as FlightAware lists them) flying it in each direction. Only the legs between a and b are kept (multi-leg idents are filtered). Then: fog fetch avia-flights [--refresh], fog lock avia-flights, fog build avia-flights (see data/avia/README.md)",
+  "routes": [
+    {
+      "a": "SYD",
+      "b": "SCL",
+      "ab": [
+        "QFA27"
+      ],
+      "ba": [
+        "QFA28"
+      ],
+      "south": true
+    },
+    {
+      "a": "AKL",
+      "b": "SCL",
+      "ab": [
+        "LAN800"
+      ],
+      "ba": [
+        "LAN801"
+      ],
+      "south": true
+    },
+    {
+      "a": "MEL",
+      "b": "SCL",
+      "ab": [
+        "LAN804"
+      ],
+      "ba": [
+        "LAN805"
+      ],
+      "south": true
+    },
+    {
+      "a": "SYD",
+      "b": "JNB",
+      "ab": [
+        "QFA63"
+      ],
+      "ba": [
+        "QFA64"
+      ],
+      "south": true
+    },
+    {
+      "a": "PER",
+      "b": "JNB",
+      "ab": [
+        "SAA281",
+        "QFA65"
+      ],
+      "ba": [
+        "SAA280",
+        "QFA66"
+      ],
+      "south": true
+    },
+    {
+      "a": "JNB",
+      "b": "GRU",
+      "ab": [
+        "SAA222"
+      ],
+      "ba": [
+        "SAA223"
+      ],
+      "south": true
+    },
+    {
+      "a": "AKL",
+      "b": "PER",
+      "ab": [
+        "ANZ175"
+      ],
+      "ba": [
+        "ANZ176"
+      ],
+      "south": true
+    },
+    {
+      "a": "SYD",
+      "b": "PER",
+      "ab": [
+        "QFA643"
+      ],
+      "ba": [
+        "QFA650"
+      ],
+      "south": true
+    },
+    {
+      "a": "SYD",
+      "b": "AKL",
+      "ab": [
+        "ANZ102",
+        "ANZ104"
+      ],
+      "ba": [
+        "ANZ103"
+      ],
+      "south": true
+    },
+    {
+      "a": "SCL",
+      "b": "IPC",
+      "ab": [
+        "LAN841",
+        "LAN843"
+      ],
+      "ba": [
+        "LAN842",
+        "LAN844"
+      ],
+      "south": true
+    },
+    {
+      "a": "SCL",
+      "b": "GRU",
+      "ab": [
+        "LAN750"
+      ],
+      "ba": [
+        "LAN751"
+      ],
+      "south": true
+    },
+    {
+      "a": "JNB",
+      "b": "CPT",
+      "ab": [
+        "SIA478"
+      ],
+      "ba": [
+        "SIA479"
+      ],
+      "south": true
+    },
+    {
+      "a": "SIN",
+      "b": "SYD",
+      "ab": [
+        "SIA231",
+        "SIA221",
+        "QFA2"
+      ],
+      "ba": [
+        "SIA232",
+        "SIA222",
+        "QFA1"
+      ]
+    },
+    {
+      "a": "SIN",
+      "b": "AKL",
+      "ab": [
+        "SIA285"
+      ],
+      "ba": [
+        "SIA286"
+      ]
+    },
+    {
+      "a": "SIN",
+      "b": "JNB",
+      "ab": [
+        "SIA478"
+      ],
+      "ba": [
+        "SIA479"
+      ]
+    },
+    {
+      "a": "DXB",
+      "b": "PER",
+      "ab": [
+        "UAE420"
+      ],
+      "ba": [
+        "UAE421"
+      ]
+    },
+    {
+      "a": "LHR",
+      "b": "JNB",
+      "ab": [
+        "BAW55"
+      ],
+      "ba": [
+        "BAW56"
+      ]
+    },
+    {
+      "a": "LHR",
+      "b": "GRU",
+      "ab": [
+        "BAW247",
+        "LAN8085"
+      ],
+      "ba": [
+        "BAW246",
+        "LAN8084"
+      ]
+    },
+    {
+      "a": "FRA",
+      "b": "GRU",
+      "ab": [
+        "LAN8071"
+      ],
+      "ba": [
+        "LAN8070"
+      ]
+    },
+    {
+      "a": "SCL",
+      "b": "LAX",
+      "ab": [
+        "LAN602"
+      ],
+      "ba": [
+        "LAN603"
+      ]
+    },
+    {
+      "a": "LAX",
+      "b": "AKL",
+      "ab": [
+        "ANZ5"
+      ],
+      "ba": [
+        "ANZ6"
+      ]
+    },
+    {
+      "a": "SYD",
+      "b": "LAX",
+      "ab": [
+        "QFA11",
+        "DAL40",
+        "UAL842"
+      ],
+      "ba": [
+        "QFA12",
+        "DAL41",
+        "UAL839"
+      ]
+    },
+    {
+      "a": "SYD",
+      "b": "DFW",
+      "ab": [
+        "QFA7"
+      ],
+      "ba": [
+        "QFA8"
+      ]
+    },
+    {
+      "a": "JFK",
+      "b": "AKL",
+      "ab": [
+        "ANZ1"
+      ],
+      "ba": [
+        "ANZ2"
+      ]
+    },
+    {
+      "a": "LHR",
+      "b": "SIN",
+      "ab": [
+        "SIA321",
+        "SIA317",
+        "SIA305",
+        "BAW11"
+      ],
+      "ba": [
+        "SIA322",
+        "SIA318",
+        "SIA308",
+        "BAW12"
+      ]
+    },
+    {
+      "a": "JFK",
+      "b": "SIN",
+      "ab": [
+        "SIA23"
+      ],
+      "ba": [
+        "SIA24"
+      ]
+    },
+    {
+      "a": "LHR",
+      "b": "JFK",
+      "ab": [
+        "BAW117",
+        "VIR3",
+        "AAL101"
+      ],
+      "ba": [
+        "BAW112",
+        "VIR4",
+        "AAL100"
+      ]
+    },
+    {
+      "a": "HND",
+      "b": "JFK",
+      "ab": [
+        "JAL6"
+      ],
+      "ba": [
+        "JAL5"
+      ]
+    },
+    {
+      "a": "DXB",
+      "b": "SYD",
+      "ab": [
+        "UAE414"
+      ],
+      "ba": [
+        "UAE415"
+      ]
+    },
+    {
+      "a": "DXB",
+      "b": "MEL",
+      "ab": [
+        "UAE408"
+      ],
+      "ba": [
+        "UAE409"
+      ]
+    },
+    {
+      "a": "DXB",
+      "b": "AKL",
+      "ab": [
+        "UAE448"
+      ],
+      "ba": [
+        "UAE449"
+      ]
+    },
+    {
+      "a": "DXB",
+      "b": "JNB",
+      "ab": [
+        "UAE761"
+      ],
+      "ba": [
+        "UAE762"
+      ]
+    },
+    {
+      "a": "DXB",
+      "b": "GRU",
+      "ab": [
+        "UAE261"
+      ],
+      "ba": [
+        "UAE262"
+      ]
+    },
+    {
+      "a": "DXB",
+      "b": "SIN",
+      "ab": [
+        "UAE354"
+      ],
+      "ba": [
+        "UAE355"
+      ]
+    },
+    {
+      "a": "DXB",
+      "b": "LHR",
+      "ab": [
+        "UAE1"
+      ],
+      "ba": [
+        "UAE2"
+      ]
+    },
+    {
+      "a": "DXB",
+      "b": "JFK",
+      "ab": [
+        "UAE201"
+      ],
+      "ba": [
+        "UAE202"
+      ]
+    },
+    {
+      "a": "DXB",
+      "b": "LAX",
+      "ab": [
+        "UAE215"
+      ],
+      "ba": [
+        "UAE216"
+      ]
+    },
+    {
+      "a": "SIN",
+      "b": "MEL",
+      "ab": [
+        "SIA217"
+      ],
+      "ba": [
+        "SIA218"
+      ]
+    },
+    {
+      "a": "SIN",
+      "b": "PER",
+      "ab": [
+        "SIA213"
+      ],
+      "ba": [
+        "SIA214"
+      ]
+    },
+    {
+      "a": "LAX",
+      "b": "SIN",
+      "ab": [
+        "SIA37"
+      ],
+      "ba": [
+        "SIA38"
+      ]
+    },
+    {
+      "a": "SCL",
+      "b": "JFK",
+      "ab": [
+        "LAN532"
+      ],
+      "ba": [
+        "LAN533"
+      ]
+    },
+    {
+      "a": "GRU",
+      "b": "JFK",
+      "ab": [
+        "AAL950"
+      ],
+      "ba": [
+        "AAL951"
+      ]
+    },
+    {
+      "a": "HND",
+      "b": "SYD",
+      "ab": [
+        "JAL51"
+      ],
+      "ba": [
+        "JAL52"
+      ]
+    },
+    {
+      "a": "HND",
+      "b": "LHR",
+      "ab": [
+        "JAL43"
+      ],
+      "ba": [
+        "JAL44"
+      ]
+    },
+    {
+      "a": "HND",
+      "b": "SIN",
+      "ab": [
+        "JAL35"
+      ],
+      "ba": [
+        "JAL36"
+      ]
+    },
+    {
+      "a": "HND",
+      "b": "LAX",
+      "ab": [
+        "JAL16"
+      ],
+      "ba": [
+        "JAL15"
+      ]
+    },
+    {
+      "a": "LHR",
+      "b": "LAX",
+      "ab": [
+        "BAW283"
+      ],
+      "ba": [
+        "BAW282"
+      ]
+    },
+    {
+      "a": "LHR",
+      "b": "DFW",
+      "ab": [
+        "BAW193"
+      ],
+      "ba": [
+        "BAW192",
+        "BAW193"
+      ]
+    },
+    {
+      "a": "FRA",
+      "b": "JNB",
+      "ab": [
+        "DLH572"
+      ],
+      "ba": [
+        "DLH573"
+      ]
+    },
+    {
+      "a": "FRA",
+      "b": "SIN",
+      "ab": [
+        "SIA325"
+      ],
+      "ba": [
+        "SIA326"
+      ]
+    },
+    {
+      "a": "DXB",
+      "b": "FRA",
+      "ab": [
+        "UAE45"
+      ],
+      "ba": [
+        "UAE46"
+      ]
+    },
+    {
+      "a": "DXB",
+      "b": "HND",
+      "ab": [
+        "UAE312"
+      ],
+      "ba": [
+        "UAE313"
+      ]
+    },
+    {
+      "a": "DXB",
+      "b": "DFW",
+      "ab": [
+        "UAE221"
+      ],
+      "ba": [
+        "UAE222"
+      ]
+    },
+    {
+      "a": "HND",
+      "b": "DFW",
+      "ab": [
+        "JAL12"
+      ],
+      "ba": [
+        "JAL11"
+      ]
+    },
+    {
+      "a": "JFK",
+      "b": "LAX",
+      "ab": [
+        "AAL1",
+        "AAL3"
+      ],
+      "ba": [
+        "AAL2",
+        "AAL4"
+      ]
+    },
+    {
+      "a": "AKL",
+      "b": "PPT",
+      "ab": [
+        "THT102"
+      ],
+      "ba": [
+        "THT101"
+      ],
+      "south": true
+    },
+    {
+      "a": "NAN",
+      "b": "SYD",
+      "ab": [
+        "FJI911"
+      ],
+      "ba": [
+        "FJI910"
+      ],
+      "south": true
+    },
+    {
+      "a": "NAN",
+      "b": "AKL",
+      "ab": [
+        "FJI411"
+      ],
+      "ba": [
+        "FJI410"
+      ],
+      "south": true
+    },
+    {
+      "a": "MRU",
+      "b": "PER",
+      "ab": [
+        "MAU440"
+      ],
+      "ba": [
+        "MAU441"
+      ],
+      "south": true
+    },
+    {
+      "a": "MRU",
+      "b": "JNB",
+      "ab": [
+        "MAU851",
+        "SAA191"
+      ],
+      "ba": [
+        "MAU852",
+        "SAA190"
+      ],
+      "south": true
+    },
+    {
+      "a": "MEL",
+      "b": "PER",
+      "ab": [
+        "QFA771",
+        "QFA773"
+      ],
+      "ba": [
+        "QFA772",
+        "QFA774"
+      ],
+      "south": true
+    },
+    {
+      "a": "MEL",
+      "b": "DFW",
+      "ab": [
+        "QFA21"
+      ],
+      "ba": [
+        "QFA22"
+      ]
+    },
+    {
+      "a": "MEL",
+      "b": "LAX",
+      "ab": [
+        "QFA93"
+      ],
+      "ba": [
+        "QFA94"
+      ]
+    },
+    {
+      "a": "BNE",
+      "b": "LAX",
+      "ab": [
+        "QFA15"
+      ],
+      "ba": [
+        "QFA16"
+      ]
+    },
+    {
+      "a": "SYD",
+      "b": "SFO",
+      "ab": [
+        "UAL870",
+        "QFA73"
+      ],
+      "ba": [
+        "UAL863",
+        "QFA74"
+      ]
+    },
+    {
+      "a": "SYD",
+      "b": "IAH",
+      "ab": [
+        "UAL100"
+      ],
+      "ba": [
+        "UAL101"
+      ]
+    },
+    {
+      "a": "AKL",
+      "b": "SFO",
+      "ab": [
+        "ANZ8"
+      ],
+      "ba": [
+        "ANZ7"
+      ]
+    },
+    {
+      "a": "AKL",
+      "b": "IAH",
+      "ab": [
+        "ANZ28"
+      ],
+      "ba": [
+        "ANZ29"
+      ]
+    },
+    {
+      "a": "SYD",
+      "b": "AUH",
+      "ab": [
+        "ETD451"
+      ],
+      "ba": [
+        "ETD450"
+      ]
+    },
+    {
+      "a": "SYD",
+      "b": "DOH",
+      "ab": [
+        "QTR909"
+      ],
+      "ba": [
+        "QTR908"
+      ]
+    },
+    {
+      "a": "GRU",
+      "b": "DOH",
+      "ab": [
+        "QTR774"
+      ],
+      "ba": [
+        "QTR773"
+      ]
+    },
+    {
+      "a": "JNB",
+      "b": "CDG",
+      "ab": [
+        "AFR995"
+      ],
+      "ba": [
+        "AFR990"
+      ]
+    },
+    {
+      "a": "JNB",
+      "b": "AMS",
+      "ab": [
+        "KLM592"
+      ],
+      "ba": [
+        "KLM591"
+      ]
+    },
+    {
+      "a": "CPT",
+      "b": "AMS",
+      "ab": [
+        "KLM598"
+      ],
+      "ba": [
+        "KLM597"
+      ]
+    },
+    {
+      "a": "CPT",
+      "b": "LHR",
+      "ab": [
+        "BAW58"
+      ],
+      "ba": [
+        "BAW59"
+      ]
+    },
+    {
+      "a": "EZE",
+      "b": "FRA",
+      "ab": [
+        "DLH511"
+      ],
+      "ba": [
+        "DLH510"
+      ]
+    },
+    {
+      "a": "HKG",
+      "b": "JFK",
+      "ab": [
+        "CPA840",
+        "CPA830"
+      ],
+      "ba": [
+        "CPA841",
+        "CPA831"
+      ]
+    },
+    {
+      "a": "HKG",
+      "b": "SYD",
+      "ab": [
+        "CPA111"
+      ],
+      "ba": [
+        "CPA100",
+        "CPA110"
+      ]
+    },
+    {
+      "a": "HKG",
+      "b": "JNB",
+      "ab": [
+        "CPA749"
+      ],
+      "ba": [
+        "CPA748"
+      ]
+    },
+    {
+      "a": "SIN",
+      "b": "EWR",
+      "ab": [
+        "SIA22"
+      ],
+      "ba": [
+        "SIA21"
+      ]
+    },
+    {
+      "a": "SIN",
+      "b": "SFO",
+      "ab": [
+        "SIA32",
+        "SIA34"
+      ],
+      "ba": [
+        "SIA31",
+        "SIA33"
+      ]
+    },
+    {
+      "a": "JNB",
+      "b": "ATL",
+      "ab": [
+        "DAL201"
+      ],
+      "ba": [
+        "DAL200"
+      ]
+    },
+    {
+      "a": "GRU",
+      "b": "ATL",
+      "ab": [
+        "DAL104"
+      ],
+      "ba": [
+        "DAL105"
+      ]
+    },
+    {
+      "a": "SYD",
+      "b": "YVR",
+      "ab": [
+        "ACA34"
+      ],
+      "ba": [
+        "ACA33"
+      ]
+    },
+    {
+      "a": "SCL",
+      "b": "IAH",
+      "ab": [
+        "UAL846"
+      ],
+      "ba": [
+        "UAL847"
+      ]
+    },
+    {
+      "a": "CDG",
+      "b": "DXB",
+      "ab": [
+        "UAE74",
+        "UAE76"
+      ],
+      "ba": [
+        "UAE73",
+        "UAE75"
+      ],
+      "south": false
+    },
+    {
+      "a": "CDG",
+      "b": "HND",
+      "ab": [
+        "JAL46",
+        "AFR274"
+      ],
+      "ba": [
+        "JAL45",
+        "AFR279"
+      ],
+      "south": false
+    },
+    {
+      "a": "CDG",
+      "b": "SIN",
+      "ab": [
+        "AFR256"
+      ],
+      "ba": [
+        "AFR257"
+      ],
+      "south": false
+    },
+    {
+      "a": "CDG",
+      "b": "GRU",
+      "ab": [
+        "AFR454"
+      ],
+      "ba": [
+        "AFR459"
+      ],
+      "south": false
+    },
+    {
+      "a": "CDG",
+      "b": "JFK",
+      "ab": [
+        "AFR6",
+        "AFR8"
+      ],
+      "ba": [
+        "AFR7"
+      ],
+      "south": false
+    },
+    {
+      "a": "EZE",
+      "b": "AMS",
+      "ab": [
+        "KLM702"
+      ],
+      "ba": [
+        "KLM701"
+      ],
+      "south": false
+    },
+    {
+      "a": "EZE",
+      "b": "ATL",
+      "ab": [
+        "DAL110"
+      ],
+      "ba": [
+        "DAL101"
+      ],
+      "south": false
+    },
+    {
+      "a": "EWR",
+      "b": "LHR",
+      "ab": [
+        "BAW184",
+        "BAW188"
+      ],
+      "ba": [
+        "BAW185",
+        "BAW189"
+      ],
+      "south": false
+    },
+    {
+      "a": "EWR",
+      "b": "FRA",
+      "ab": [
+        "DLH403"
+      ],
+      "ba": [
+        "DLH402"
+      ],
+      "south": false
+    },
+    {
+      "a": "EWR",
+      "b": "GRU",
+      "ab": [
+        "UAL149"
+      ],
+      "ba": [
+        "UAL148"
+      ],
+      "south": false
+    },
+    {
+      "a": "YVR",
+      "b": "LHR",
+      "ab": [
+        "BAW84"
+      ],
+      "ba": [
+        "BAW85"
+      ],
+      "south": false
+    },
+    {
+      "a": "YVR",
+      "b": "HKG",
+      "ab": [
+        "CPA865"
+      ],
+      "ba": [
+        "CPA888"
+      ],
+      "south": false
+    },
+    {
+      "a": "YVR",
+      "b": "HND",
+      "ab": [
+        "ANA115"
+      ],
+      "ba": [
+        "ANA116"
+      ],
+      "south": false
+    },
+    {
+      "a": "BNE",
+      "b": "SIN",
+      "ab": [
+        "SIA236",
+        "SIA246",
+        "QFA51"
+      ],
+      "ba": [
+        "SIA235",
+        "SIA245",
+        "QFA52"
+      ],
+      "south": false
+    },
+    {
+      "a": "BNE",
+      "b": "DXB",
+      "ab": [
+        "UAE431",
+        "UAE435"
+      ],
+      "ba": [
+        "UAE430",
+        "UAE434"
+      ],
+      "south": false
+    },
+    {
+      "a": "BNE",
+      "b": "HKG",
+      "ab": [
+        "CPA156"
+      ],
+      "ba": [
+        "CPA157"
+      ],
+      "south": false
+    },
+    {
+      "a": "DOH",
+      "b": "LHR",
+      "ab": [
+        "QTR3",
+        "QTR5",
+        "QTR7"
+      ],
+      "ba": [
+        "QTR4",
+        "QTR6",
+        "QTR8",
+        "QTR10"
+      ],
+      "south": false
+    },
+    {
+      "a": "DOH",
+      "b": "JFK",
+      "ab": [
+        "QTR701",
+        "QTR703"
+      ],
+      "ba": [
+        "QTR702",
+        "QTR704"
+      ],
+      "south": false
+    },
+    {
+      "a": "DOH",
+      "b": "PER",
+      "ab": [
+        "QTR900"
+      ],
+      "ba": [
+        "QTR901"
+      ],
+      "south": false
+    },
+    {
+      "a": "DOH",
+      "b": "MEL",
+      "ab": [
+        "QTR904"
+      ],
+      "ba": [
+        "QTR905"
+      ],
+      "south": false
+    },
+    {
+      "a": "DOH",
+      "b": "SIN",
+      "ab": [
+        "QTR944"
+      ],
+      "ba": [
+        "QTR945",
+        "QTR947"
+      ],
+      "south": false
+    },
+    {
+      "a": "AMS",
+      "b": "JFK",
+      "ab": [
+        "KLM641",
+        "KLM643"
+      ],
+      "ba": [
+        "KLM642",
+        "KLM644"
+      ],
+      "south": false
+    },
+    {
+      "a": "AMS",
+      "b": "LAX",
+      "ab": [
+        "KLM601"
+      ],
+      "ba": [
+        "KLM602"
+      ],
+      "south": false
+    },
+    {
+      "a": "AMS",
+      "b": "SIN",
+      "ab": [
+        "KLM835"
+      ],
+      "ba": [
+        "KLM836"
+      ],
+      "south": false
+    },
+    {
+      "a": "AMS",
+      "b": "GRU",
+      "ab": [
+        "KLM791"
+      ],
+      "ba": [
+        "KLM792"
+      ],
+      "south": false
+    },
+    {
+      "a": "ATL",
+      "b": "LHR",
+      "ab": [
+        "DAL30",
+        "DAL32"
+      ],
+      "ba": [
+        "DAL31",
+        "DAL33"
+      ],
+      "south": false
+    },
+    {
+      "a": "MRU",
+      "b": "CDG",
+      "ab": [
+        "MAU14"
+      ],
+      "ba": [
+        "MAU15"
+      ],
+      "south": false
+    },
+    {
+      "a": "MRU",
+      "b": "DXB",
+      "ab": [
+        "UAE704",
+        "UAE702"
+      ],
+      "ba": [
+        "UAE703",
+        "UAE701"
+      ],
+      "south": false
+    },
+    {
+      "a": "NAN",
+      "b": "LAX",
+      "ab": [
+        "FJI810"
+      ],
+      "ba": [
+        "FJI811"
+      ],
+      "south": false
+    },
+    {
+      "a": "NAN",
+      "b": "SFO",
+      "ab": [
+        "FJI870"
+      ],
+      "ba": [
+        "FJI871"
+      ],
+      "south": false
+    },
+    {
+      "a": "PPT",
+      "b": "LAX",
+      "ab": [
+        "THT8",
+        "THT2"
+      ],
+      "ba": [
+        "THT7"
+      ],
+      "south": false
+    },
+    {
+      "a": "HKG",
+      "b": "LHR",
+      "ab": [
+        "CPA251",
+        "CPA253",
+        "CPA255"
+      ],
+      "ba": [
+        "CPA250",
+        "CPA252",
+        "CPA254"
+      ],
+      "south": false
+    },
+    {
+      "a": "HKG",
+      "b": "SFO",
+      "ab": [
+        "CPA872",
+        "CPA870"
+      ],
+      "ba": [
+        "CPA873"
+      ],
+      "south": false
+    },
+    {
+      "a": "HKG",
+      "b": "DXB",
+      "ab": [
+        "UAE381"
+      ],
+      "ba": [
+        "UAE380"
+      ],
+      "south": false
+    },
+    {
+      "a": "SFO",
+      "b": "LHR",
+      "ab": [
+        "BAW284",
+        "BAW286"
+      ],
+      "ba": [
+        "BAW285",
+        "BAW287"
+      ],
+      "south": false
+    },
+    {
+      "a": "SFO",
+      "b": "FRA",
+      "ab": [
+        "DLH455"
+      ],
+      "ba": [
+        "DLH454"
+      ],
+      "south": false
+    },
+    {
+      "a": "SFO",
+      "b": "DXB",
+      "ab": [
+        "UAE226"
+      ],
+      "ba": [
+        "UAE225"
+      ],
+      "south": false
+    },
+    {
+      "a": "CPT",
+      "b": "DXB",
+      "ab": [
+        "UAE773",
+        "UAE771"
+      ],
+      "ba": [
+        "UAE772",
+        "UAE770"
+      ],
+      "south": false
+    },
+    {
+      "a": "CPT",
+      "b": "FRA",
+      "ab": [
+        "DLH577"
+      ],
+      "ba": [
+        "DLH576"
+      ],
+      "south": false
+    },
+    {
+      "a": "IAH",
+      "b": "LHR",
+      "ab": [
+        "BAW194"
+      ],
+      "ba": [
+        "BAW195"
+      ],
+      "south": false
+    },
+    {
+      "a": "IAH",
+      "b": "FRA",
+      "ab": [
+        "DLH441"
+      ],
+      "ba": [
+        "DLH440"
+      ],
+      "south": false
+    },
+    {
+      "a": "IAH",
+      "b": "DXB",
+      "ab": [
+        "UAE212"
+      ],
+      "ba": [
+        "UAE211"
+      ],
+      "south": false
+    }
+  ]
+}

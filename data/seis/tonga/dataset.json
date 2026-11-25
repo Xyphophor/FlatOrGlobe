@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "id": "seis-tonga",
+  "title": "Hunga Tonga 2022 pressure wave (Lamb wave) at 102 US ASOS stations, one-minute pressure (IEM)",
+  "tab": "seis",
+  "build": "fog:seis-tonga",
+  "kind": "api",
+  "evidence": "measure",
+  "radius_enters_via": [],
+  "verdict_rule": "No second arrival sloping the opposite way: the V of the outbound (A1) and antipodal (A2) passages is what needs no speed at all (tg-call2).",
+  "license": "other",
+  "license_note": "Iowa Environmental Mesonet (Iowa State University) archive of NWS/FAA ASOS one-minute data: open, no account; credit IEM.",
+  "sources": [
+    {
+      "cite": "Iowa Environmental Mesonet, ASOS one-minute data (pres1), 2022-01-15 to 2022-01-18",
+      "url": "https://mesonet.agron.iastate.edu/request/asos/1min.phtml"
+    },
+    {
+      "cite": "USGS event page: Hunga Tonga-Hunga Ha'apai, 2022-01-15 04:14:45 UTC, 20.546 S 175.390 W",
+      "url": "https://earthquake.usgs.gov/"
+    }
+  ],
+  "collected": "2026-10-03",
+  "units": {
+    "pres1": "inHg in the raw files (x 33.8639 = hPa)",
+    "a1, a2": "hours after 04:14:45 UTC",
+    "amp, noise": "hPa",
+    "trace": "band-passed pressure, 0.01 hPa, every 10 min from -2 h",
+    "theta": "degrees, great-circle angle from the vent (computed after picking)"
+  },
+  "inputs": [
+    {
+      "glob": "raw/net_*.json",
+      "gitignored": true,
+      "how": "api",
+      "origin": "Iowa Environmental Mesonet, list of the ASOS stations of each state network."
+    },
+    {
+      "glob": "raw/*.csv",
+      "gitignored": true,
+      "how": "api",
+      "origin": "Iowa Environmental Mesonet, ASOS one-minute pressure (pres1), 2022-01-15 to 2022-01-18, one request per station."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/seis-tonga.js",
+    "data/seis/tonga/picks.json",
+    "data/seis/tonga/picks.csv"
+  ],
+  "notes": "The picks use no Earth model (wide windows that do not encode the answer); the angle from the vent comes after. Two stations per state, the first online ones with an archive begun before 2000, in IEM's order. The verdict rule is paraphrased from the page's callout tg-call2.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/tonga",
+    "src/tabs/atmo/tongalogic.js",
+    "src/tabs/atmo/lambpool.js"
+  ],
+  "sections": [
+    "atmo/tg-h1",
+    "atmo/lp-h1"
+  ]
+}

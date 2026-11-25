@@ -1,0 +1,36 @@
+# 2019-06_943064.tab
+
+Dataset: sun-bsrn — One-minute global irradiance of the Baseline Surface Radiation Network (BSRN,
+  ~40 stations, PANGAEA), March, June and December 2019: the length of the day measured
+File: data/sun/bsrn/raw/2019-06_943064.tab
+SHA-256: 88b261f49aefbf82cab14b160c3c527b6b0c475a1f06902469ac62660f5bfc62 (also in
+  data/sun/bsrn/inputs.lock; check with: cd data/sun/bsrn && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: The BSRN conditions of data
+  release ask users not to pass the data on to third parties; get them from PANGAEA. Get it from fog
+  fetch sun-bsrn, then compare its SHA-256 with the one above.
+Obtained: the answer of a public web API to the request given.
+From: PANGAEA, BSRN station-month datasets of March, June and December 2019, found by PANGAEA's
+  search and downloaded as text (fog fetch sun-bsrn).
+Collected: 2026-10-28
+Licence: CC-BY-4.0
+Sources:
+- A. Driemel et al., Baseline Surface Radiation Network (BSRN): structure and data description
+  (1992-2017), Earth Syst. Sci. Data 10 (2018) 1491-1501; station-month datasets on PANGAEA
+  <https://doi.org/10.1594/PANGAEA.880000>
+Evidence class (rule 10): measure
+What would vindicate the flat model (rule 5): Days of the same length north and south of the equator
+  at the solstices, or day lengths that a spotlight on the azimuthal-equidistant map reproduces as
+  well as the globe.
+Built by: fog build sun-bsrn
+Generated files:
+- src/data/presets/sun-daylen.js
+Code:
+- tools/internal/build/daylen
+- src/tabs/sun/daylen.js
+Shown on the page:
+- #tab-sun/dl-h2
+Notes: fog fetch sun-bsrn queries PANGAEA's search for the station-months of March, June and
+  December 2019 and downloads each as text. BSRN conditions of data release apply (bsrn.awi.de).
+  Method: go doc -all ./internal/build/daylen.
+
+Written by `fog build explain` from data/sun/bsrn/dataset.json and data/sun/bsrn/inputs.lock: edit those, not this file.

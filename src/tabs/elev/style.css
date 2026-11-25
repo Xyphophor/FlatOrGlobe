@@ -1,0 +1,20 @@
+/* sim : le style commun (form, .panel, .reads, .persp-zoom, .exp, .why,
+   .ivdv-key, .legend-chips...) vient de src/core/legacy.css. Ne reste ici
+   que ce que le legacy avait spécifiquement pour cet onglet. */
+#tab-elev #o3fields.off { opacity: .4; }
+
+/* paysage LiDAR vu du Sommet de Viériou (src/core/landscape.js), grand ; la photo dessous, même format */
+#tab-elev .elev-land canvas, #tab-elev .elev-land-photo { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; border-radius: 8px; }
+#tab-elev .elev-land canvas { cursor: default; }
+#tab-elev .elev-land-models { margin-bottom: 8px; }
+#tab-elev .elev-land-photo { box-sizing: border-box; margin-top: 10px; border: 1.5px dashed var(--line-strong); background: var(--muted-bg); display: flex; align-items: center; justify-content: center; text-align: center; }
+#tab-elev .elev-land-photo p { margin: 0; padding: 12px 16px; font-size: 13px; line-height: 1.45; color: var(--ink-soft); max-width: 46ch; }
+#tab-elev .elev-land-models { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+#tab-elev .elev-land-op { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; font-size: 12px; color: var(--ink-soft); }
+#tab-elev .elev-land-op input { width: 140px; }
+#tab-elev .elev-land-photo.has-photo { display: block; aspect-ratio: auto; border: 0; background: none; }
+#tab-elev .elev-land-photo.has-photo img { width: 100%; height: auto; display: block; border-radius: 8px; image-rendering: auto; }
+#tab-elev .elev-land-photo.has-photo .cap { max-width: none; padding: 4px 0 0; text-align: left; font-size: 12px; }
+
+/* taille : ~1,5 × la définition de la photo (27 px/° sur 16°) plutôt que pleine largeur -- demande du propriétaire */
+#tab-elev .elev-land { max-width: 640px; margin-left: auto; margin-right: auto; }

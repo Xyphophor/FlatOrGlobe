@@ -1,0 +1,8 @@
+# Pettengill et al. 1962, Table I p. 182: the Millstone site, as printed; and the constants of their reduction (pp. 184-186).
+key,value
+lat_geodetic,42 37 03 N
+lon,71 29 32 W
+alt_msl_m,156
+c_km_s,299792.5
+venus_radius_km,6123
+earth_equatorial_radius_km,6378.388

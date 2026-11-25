@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "gps-raw",
+  "title": "Raw GPS pseudoranges of 34 IGS stations on 2025-04-10 (BKG open archive): positions solved from the origin, satellites tracked",
+  "tab": "gps",
+  "build": "fog:gps-raw",
+  "kind": "archive",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "xyz, lat, lon, h, resid",
+      "how": "satellite orbits broadcast in the WGS84 frame, whose scale was fixed by stations on the ellipsoid; lat/lon/h on the WGS84 ellipsoid"
+    }
+  ],
+  "verdict_rule": "Station positions that only solve with kilometre residuals, or that fit a plane better than a sphere; pairs of stations that share satellites well beyond the geometric separation limit.",
+  "license": "other",
+  "license_note": "IGS data, BKG open archive (https://igs.bkg.bund.de): free, cite the IGS (Johnston et al. 2017). RNXCMP (crx2rnx): GSI terms, cite Hatanaka (2008).",
+  "sources": [
+    {
+      "cite": "IGS / BKG GNSS data centre, daily RINEX 3 observation files (30 s) and broadcast ephemeris BRDC00IGS, 2025 day 100",
+      "url": "https://igs.bkg.bund.de/root_ftp/IGS/"
+    },
+    {
+      "cite": "Hatanaka, Y. (2008), A Compression Format and Tools for GNSS Observation Data, Bulletin of the Geospatial Information Authority of Japan, 55, 21-30 (RNXCMP)",
+      "url": "https://terras.gsi.go.jp/ja/crx2rnx.html"
+    }
+  ],
+  "collected": "2026-10-02",
+  "units": {
+    "xyz": "m, ECEF",
+    "lat, lon": "degrees (WGS84)",
+    "h": "m (ellipsoidal)",
+    "sd, rms, resid": "m",
+    "seen": "5-minute bin index from 00:00 GPS time -> GPS PRNs"
+  },
+  "inputs": [
+    {
+      "path": "stations.txt",
+      "how": "ours",
+      "origin": "Our fixed list of 80 IGS stations, picked from the BKG archive's index."
+    },
+    {
+      "path": "raw/BRDC.rnx.gz",
+      "url": "https://igs.bkg.bund.de/root_ftp/IGS/BRDC/2025/100/BRDC00IGS_R_20251000000_01D_MN.rnx.gz",
+      "gitignored": true,
+      "how": "download",
+      "origin": "IGS broadcast ephemeris BRDC00IGS, 2025 day 100, BKG open archive."
+    },
+    {
+      "glob": "raw/*.crx.gz",
+      "gitignored": true,
+      "how": "download",
+      "origin": "IGS daily RINEX 3 observation files (30 s), 2025 day 100, BKG open archive (fog fetch gps-raw)."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/gps-raw.js"
+  ],
+  "notes": "stations.txt fixes the 34 stations: the script picked them from the archive's index page, read live at every run, and the archive has listed more since (DGAR, POL2, DARW by 2026-10-14). The observation files are decompressed by RNXCMP's crx2rnx (tools/third_party/rnxcmp, make crx2rnx).",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/gpsraw",
+    "src/tabs/gps/rawfig.js"
+  ],
+  "sections": [
+    "gps/gps-raw-h2"
+  ]
+}

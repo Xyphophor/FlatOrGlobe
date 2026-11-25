@@ -1,0 +1,49 @@
+# ADIS00ETH_R_20251000000_01D_30S_MO.crx.gz
+
+Dataset: sat-doppler — Carrier-phase Doppler of 79 GPS, Galileo and GLONASS satellites at 34 IGS
+  stations on 2025-04-10: orbits, station positions, GM and Ω fitted to the Doppler alone
+File: data/sat/raw/ADIS00ETH_R_20251000000_01D_30S_MO.crx.gz
+SHA-256: 1806f79e271cbe99bc8cd767c34d509a735b876456928d0c83b6e7d6f53e2eea (also in
+  data/sat/inputs.lock; check with: cd data/sat && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: the file may be shared but is kept
+  out of git for its size. Get it from fog fetch sat-doppler, then compare its SHA-256 with the one
+  above.
+Obtained: downloaded as published (fog fetch or by hand).
+From: IGS daily RINEX 3 observation files, 2025 day 100, BKG open archive (the same files as
+  gps-raw).
+Collected: 2026-10-02
+Licence: other — IGS data, BKG open archive (https://igs.bkg.bund.de): free, cite the IGS
+  (Johnston et al. 2017). RNXCMP (crx2rnx): GSI terms, cite Hatanaka (2008).
+Sources:
+- IGS / BKG GNSS data centre, daily RINEX 3 observation files (30 s) and broadcast ephemeris
+  BRDC00IGS, 2025 day 100 <https://igs.bkg.bund.de/root_ftp/IGS/>
+- Johnston, G., Riddell, A., Hausler, G. (2017), The International GNSS Service, in Springer
+  Handbook of Global Navigation Satellite Systems, 967-982
+- Hatanaka, Y. (2008), A Compression Format and Tools for GNSS Observation Data, Bulletin of the
+  Geospatial Information Authority of Japan, 55, 21-30 (RNXCMP)
+  <https://terras.gsi.go.jp/ja/crx2rnx.html>
+- Montenbruck, O., Gill, E. (2000), Satellite Orbits: Models, Methods and Applications, Springer,
+  §3.2-3.3 (J2 and third-body accelerations, low-precision Sun and Moon)
+Evidence class (rule 10): measure
+What would vindicate the flat model (rule 5): The stations held on one plane (tilt, height and
+  positions free, everything else as free as on the globe) fitting the Doppler as well as the free
+  solution; or the satellites needing different GM for their periods (Kepler's third law failing).
+Built by: fog build sat-doppler
+Generated files:
+- src/data/presets/sat-doppler.js
+Code:
+- tools/internal/build/satdop
+- src/tabs/sat/values.js
+- src/tabs/sat/formfigs.js
+Shown on the page:
+- #tab-sat/sat-h2res
+- #tab-sat/sat-h2fit
+- #tab-sat/sat-h2ball
+- #tab-sat/sat-h2kep
+Notes: The broadcast navigation file is read only to START the satellites' orbits; the stations
+  start on a plane and GM 25 % low, and fog checks that restarts from other starts land on the same
+  solution (restarts in the output). raw/ is the same set of files as data/gps/raw: fog fetch
+  sat-doppler links to it when it is there, else downloads. The target is slow (about half an hour
+  on four cores): fog build all skips it, make ci-full runs it.
+
+Written by `fog build explain` from data/sat/dataset.json and data/sat/inputs.lock: edit those, not this file.

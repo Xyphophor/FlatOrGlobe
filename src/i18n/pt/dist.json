@@ -1,0 +1,10 @@
+{
+  "cv-globe-title": "GLOBO · caminho mais curto = arco de círculo máximo",
+  "cv-n-pole": "polo N",
+  "cv-polar-title": "PLANO · POLAR (disco AE) · régua = corda reta",
+  "cv-cart-title": "PLANO · CARTESIANO (lat/lon em grelha x-y) · régua = linha reta",
+  "cap-polar": "<b>Mapa polar (o disco da terra plana).</b> Os mesmos pontos traçados em r = 90°−φ, θ = λ, ligados por <em>linhas de régua retas</em> — como qualquer pessoa mede um mapa plano. Cada segmento sul sai muito mais longo do que o seu espelho norte idêntico, e os dois pares distorcem-se em quantidades diferentes.",
+  "cap-cart": "<b>Mapa cartesiano.</b> Os mesmos pontos lidos como x = λ, y = φ, ligados por linhas de régua retas. Os pares espelho mantêm-se iguais entre si — a grelha é simétrica de ambos os lados do equador — mas cada comprimento é inflacionado em relação à distância de círculo máximo, e por um fator diferente em cada segmento.",
+  "exp3-out": "VI  latitude {lat}° , amplitude Δλ = {dl}°<br>VD  <span class=\"g\">globo: este troço {globeKm} · troço espelho {mirrorKm} → <b>iguais</b></span><br>VD  <span class=\"f\">disco plano: este troço {aeKm} · troço espelho {aeMKm} → razão {ratio}×</span>",
+  "exp3-verdict": "<b>Regra de veredito:</b> se os dois troços espelho medem o mesmo, o globo sobrevive. Se o do sul for realmente {ratio2}× o do norte, o disco sobrevive. As companhias aéreas resolvem isto todos os dias: Sydney–Santiago são cerca de 11 400 km e é voado sem escalas em cerca de 12 horas e meia, algo que nenhum avião conseguiria fazer se fossem os ~25 000 km que o disco exige."
+}

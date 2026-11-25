@@ -1,0 +1,5 @@
+/* Onglet aether : tableaux de texte alignés à gauche ; coches colorées dans le tableau des hypothèses. */
+#tab-aether .cnav-table th, #tab-aether .cnav-table td { text-align: left; }
+#tab-aether .ae-hyp td.ae-y { color: var(--globe); text-align: center; font-weight: 700; }
+#tab-aether .ae-hyp td.ae-n { color: var(--flat); text-align: center; font-weight: 700; }
+#tab-aether .ae-hyp th:not(:first-child) { text-align: center; }

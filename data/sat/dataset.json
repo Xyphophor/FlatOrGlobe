@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "id": "sat-doppler",
+  "title": "Carrier-phase Doppler of 79 GPS, Galileo and GLONASS satellites at 34 IGS stations on 2025-04-10: orbits, station positions, GM and Ω fitted to the Doppler alone",
+  "tab": "sat",
+  "build": "fog:sat-doppler",
+  "kind": "archive",
+  "evidence": "measure",
+  "radius_enters_via": [],
+  "verdict_rule": "The stations held on one plane (tilt, height and positions free, everything else as free as on the globe) fitting the Doppler as well as the free solution; or the satellites needing different GM for their periods (Kepler's third law failing).",
+  "license": "other",
+  "license_note": "IGS data, BKG open archive (https://igs.bkg.bund.de): free, cite the IGS (Johnston et al. 2017). RNXCMP (crx2rnx): GSI terms, cite Hatanaka (2008).",
+  "sources": [
+    {
+      "cite": "IGS / BKG GNSS data centre, daily RINEX 3 observation files (30 s) and broadcast ephemeris BRDC00IGS, 2025 day 100",
+      "url": "https://igs.bkg.bund.de/root_ftp/IGS/"
+    },
+    {
+      "cite": "Johnston, G., Riddell, A., Hausler, G. (2017), The International GNSS Service, in Springer Handbook of Global Navigation Satellite Systems, 967-982"
+    },
+    {
+      "cite": "Hatanaka, Y. (2008), A Compression Format and Tools for GNSS Observation Data, Bulletin of the Geospatial Information Authority of Japan, 55, 21-30 (RNXCMP)",
+      "url": "https://terras.gsi.go.jp/ja/crx2rnx.html"
+    },
+    {
+      "cite": "Montenbruck, O., Gill, E. (2000), Satellite Orbits: Models, Methods and Applications, Springer, §3.2-3.3 (J2 and third-body accelerations, low-precision Sun and Moon)"
+    }
+  ],
+  "collected": "2026-10-02",
+  "units": {
+    "r": "km, distance of a station from the force centre the orbits fit",
+    "lat": "deg, geocentric, from the fitted position",
+    "lon": "deg east, frame turned by the first station's catalogue longitude (an angle)",
+    "dcat": "m, distance to the RINEX header position (comparison only, never used)",
+    "gm": "1e14 m^3/s^2",
+    "om": "1e-5 rad/s",
+    "muj": "1e25 m^5/s^2 (GM J2 a^2)",
+    "rms, hist": "mm/s (range rate)",
+    "flatRms, flatQ": "m/s",
+    "passes": "[hour after 00:00 GPS time, observed range rate minus the receiver clock (m/s), globe model, flat model]"
+  },
+  "inputs": [
+    {
+      "path": "stations.txt",
+      "how": "ours",
+      "origin": "Our fixed list of IGS stations (the same as gps-raw)."
+    },
+    {
+      "path": "raw/BRDC.rnx.gz",
+      "url": "https://igs.bkg.bund.de/root_ftp/IGS/BRDC/2025/100/BRDC00IGS_R_20251000000_01D_MN.rnx.gz",
+      "gitignored": true,
+      "how": "download",
+      "origin": "IGS broadcast ephemeris BRDC00IGS, 2025 day 100, BKG open archive (read only to start the orbits)."
+    },
+    {
+      "glob": "raw/*.crx.gz",
+      "gitignored": true,
+      "how": "download",
+      "origin": "IGS daily RINEX 3 observation files, 2025 day 100, BKG open archive (the same files as gps-raw)."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/sat-doppler.js"
+  ],
+  "notes": "The broadcast navigation file is read only to START the satellites' orbits; the stations start on a plane and GM 25 % low, and fog checks that restarts from other starts land on the same solution (restarts in the output). raw/ is the same set of files as data/gps/raw: fog fetch sat-doppler links to it when it is there, else downloads. The target is slow (about half an hour on four cores): fog build all skips it, make ci-full runs it.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/satdop",
+    "src/tabs/sat/values.js",
+    "src/tabs/sat/formfigs.js"
+  ],
+  "sections": [
+    "sat/sat-h2res",
+    "sat/sat-h2fit",
+    "sat/sat-h2ball",
+    "sat/sat-h2kep"
+  ]
+}

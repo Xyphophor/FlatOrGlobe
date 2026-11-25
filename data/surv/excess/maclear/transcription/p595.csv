@@ -1,0 +1,13 @@
+page,printed,net,k,no,station,deg,min,sec,derived,adj_sec,log,dist,sum_deg,sum_min,sum_sec,exc,flag
+595,546,Principal triangles,1,61,Meridian Mark,55,28,34.51,,33.520,5.1991310,158172.51,180,0,3.580,2.483,
+595,546,Principal triangles,1,61,Royal Observatory,103,38,51.57,,50.589,5.2708243,186562.49,,,,,
+595,546,Principal triangles,1,61,Sneeuw Kop,20,52,37.50,,35.891,4.8351478,68414.44,,,,,
+595,546,Principal triangles,2,62,Meridian Mark,61,36,22.89,,21.295,5.2167396,164717.45,180,0,5.190,2.894,
+595,546,Principal triangles,2,62,King's Battery,94,53,16.71,,15.635,5.2708241,186562.40,,,,,
+595,546,Principal triangles,2,62,Sneeuw Kop,23,30,25.59,,23.070,4.8732175,74682.27,,,,,
+595,546,Principal triangles,3,63,Meridian Mark,57,38,15.53,,12.365,5.2417112,174466.14,180,0,9.280,6.503,
+595,546,Principal triangles,3,63,Zwart Kop,64,35,14.39,,11.753,5.2708241,186562.40,,,,,
+595,546,Principal triangles,3,63,Sneeuw Kop,57,46,39.36,,35.882,5.2423812,174735.52,,,,,
+595,546,Principal triangles,4,64,Meridian Mark,54,33,53.43,,50.021,5.2763846,188966.39,180,0,9.170,7.913,
+595,546,Principal triangles,4,64,Cape Point,53,33,9.38,,7.530,5.2708241,186562.40,,,,,
+595,546,Principal triangles,4,64,Sneeuw Kop,71,53,6.36,,2.449,5.3432732,220431.27,,,,,

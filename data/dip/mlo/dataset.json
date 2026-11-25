@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "id": "dip-mlo",
+  "title": "Mauna Loa Observatory: last direct sunlight of every evening of 2016 (NOAA GML) and the horizon towards the setting Sun (Copernicus DEM)",
+  "tab": "dip",
+  "build": "fog:dip-mlo",
+  "kind": "archive",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "MLO_HORIZON, MLO_SEA, MLO_PROFILE",
+      "how": "the horizon and the sea dip are computed on a sphere of radius 6,371 km from the Copernicus DEM (heights over the WGS84/EGM2008 geoid)"
+    }
+  ],
+  "verdict_rule": "Last light at the times a flat Sun at the model's height would give, or a sea horizon that never dips below the observatory's eye level.",
+  "license": "other",
+  "license_note": "NOAA GML baseline radiation data: public domain (US government). Copernicus DEM GLO-30: (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA; free licence.",
+  "sources": [
+    {
+      "cite": "NOAA Global Monitoring Laboratory, baseline surface radiation, Mauna Loa (MLO), one-minute means, 2016",
+      "url": "https://gml.noaa.gov/aftp/data/radiation/baseline/mlo/"
+    },
+    {
+      "cite": "Copernicus DEM GLO-30 (ESA / Airbus), open bucket",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/"
+    }
+  ],
+  "collected": "2026-10-03",
+  "units": {
+    "t": "minutes after 0 h UTC of the date (the Hawaii evening of the previous day)",
+    "dni": "W/m2, direct normal irradiance",
+    "angles": "degrees",
+    "dist": "km",
+    "z": "m"
+  },
+  "inputs": [
+    {
+      "glob": "raw/mlo16*.dat",
+      "gitignored": true,
+      "how": "download",
+      "origin": "NOAA GML baseline radiation, Mauna Loa, one-minute means, 2016 (gml.noaa.gov/aftp/data/radiation/baseline/mlo/)."
+    },
+    {
+      "path": "raw/cop/Copernicus_DSM_COG_10_N19_00_W156_00_DEM.tif",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N19_00_W156_00_DEM/Copernicus_DSM_COG_10_N19_00_W156_00_DEM.tif",
+      "gitignored": true,
+      "how": "download",
+      "origin": "Copernicus DEM GLO-30 tiles (copied from data/dem/cache/cop/ on 2026-10-14); a .none marker means open sea."
+    },
+    {
+      "path": "raw/cop/Copernicus_DSM_COG_10_N19_00_W157_00_DEM.tif",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N19_00_W157_00_DEM/Copernicus_DSM_COG_10_N19_00_W157_00_DEM.tif",
+      "gitignored": true,
+      "how": "download",
+      "origin": "Copernicus DEM GLO-30 tiles (copied from data/dem/cache/cop/ on 2026-10-14); a .none marker means open sea."
+    },
+    {
+      "path": "raw/cop/Copernicus_DSM_COG_10_N20_00_W157_00_DEM.tif",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N20_00_W157_00_DEM/Copernicus_DSM_COG_10_N20_00_W157_00_DEM.tif",
+      "gitignored": true,
+      "how": "download",
+      "origin": "Copernicus DEM GLO-30 tiles (copied from data/dem/cache/cop/ on 2026-10-14); a .none marker means open sea."
+    },
+    {
+      "glob": "raw/cop/*.none",
+      "gitignored": true,
+      "how": "download",
+      "origin": "Copernicus DEM GLO-30 tiles (copied from data/dem/cache/cop/ on 2026-10-14); a .none marker means open sea."
+    }
+  ],
+  "outputs": [
+    "src/data/presets/dip-mlo.js",
+    "src/data/presets/dip-mlo-profile.js"
+  ],
+  "notes": "Every clear evening is kept; the featured one is chosen by a rule fixed in advance (closest to the median solar altitude among the clear sea-horizon evenings). The tiles live in raw/cop/ (copied from data/dem/cache/cop/ on 2026-10-14); a .none marker means no tile, open sea.",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/mlo",
+    "tools/internal/dem",
+    "src/tabs/dip/mlo.js",
+    "src/tabs/dip/mlo-anim.js"
+  ],
+  "sections": [
+    "dip/ml-h1"
+  ]
+}

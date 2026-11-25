@@ -1,0 +1,6 @@
+page,printed,station,when,object,year,days,obs_d,obs_m,obs_s,red_level,red_ecc,red_d,red_m,red_s,P_mm,T_C,log_s,flag
+273,269,Southeast Yolo Base,1880-08,Northwest Yolo Base,1880,8,89,59,56.7,+14.6,-0.7,90,00,10.6,750,32.2,4.24270,
+273,269,Southeast Yolo Base,1880-08,Mount Diablo,1880,7,89,21,53.7,-4.6,+1.1,89,21,50.2,750,33.2,4.85991,
+273,269,Southeast Yolo Base,1880-08,Marysville Butte,1880,6,89,49,20.4,-4.0,-0.8,89,49,15.6,751,32.4,4.87660,
+273,269,Southeast Yolo Base,1880-08,Vaca,1880,8,88,46,02.0,-11.9,-0.1,88,45,50.0,751,33.4,4.47755,
+273,269,Southeast Yolo Base,1880-08,Monticello,1880,8,88,44,35.0,-10.4,-3.0,88,44,21.6,750,32.7,4.57008,

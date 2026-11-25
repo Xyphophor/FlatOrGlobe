@@ -1,0 +1,25 @@
+# Ingress public par Traefik (installé avec k3s). À ADAPTER : le nom de domaine.
+# Certificat : avec cert-manager, décommenter l'annotation (ClusterIssuer à créer) ; sinon
+# créer à la main le secret TLS flatorglobe-tls.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: site
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    # cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts: [flatorglobe.example.org]
+      secretName: flatorglobe-tls
+  rules:
+    - host: flatorglobe.example.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: site
+                port: { number: 80 }

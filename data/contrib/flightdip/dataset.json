@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "id": "contrib-flightdip",
+  "title": "Horizon dips measured from airliner windows with an iPhone theodolite app (earthlyskeptic, two flights, September 2025): heights from the flights' ADS-B track logs, the air of the day, and the radius they give",
+  "tab": "contrib",
+  "build": "fog:contrib-flightdip",
+  "kind": "archive",
+  "evidence": "check",
+  "radius_enters_via": [
+    {
+      "field": "FD_POINTS[].h, FD_POINTS[].zh, FD_POINTS[].zhA, FD_POINTS[].tilt",
+      "how": "the heights come from the transponders' pressure altitudes placed in the GFS model's air (geopotential heights), the terrain at the horizon is found along the heading on a 6,371 km sphere, and the accelerations come from ADS-B ground speeds (GNSS)"
+    }
+  ],
+  "verdict_rule": "Dips that stay near zero at every height, or that grow linearly with height (a far edge at a fixed distance), would favour the plane; dips growing as the square root of the height above the horizon terrain, with one radius for all, favour the globe.",
+  "license": "CC-BY-4.0",
+  "license_note": "Screenshots and readings: earthlyskeptic (https://x.com/earthlyskeptic), published with his permission (2026-10-15). Track logs: FlightAware (ADS-B), cited, the few values used. Weather: Open-Meteo (NOAA GFS), CC BY 4.0. Copernicus DEM GLO-90: (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA.",
+  "sources": [
+    {
+      "cite": "earthlyskeptic, eleven Theodolite screenshots (Google Drive folder 1xbZ5I3DVk3bWS3jWXljhcXMoKafTnBjE), the table of his readings (Desmos graph) and the document naming the two flights (Flights, Model, Graphs.docx)",
+      "url": "https://www.desmos.com/calculator/bkxuurlmlh"
+    },
+    {
+      "cite": "FlightAware, track logs of AA 6322 (5 September 2025, KORD-KDSM) and AA 5255 (8 September 2025, KDSM-KDCA), ADS-B",
+      "url": "https://www.flightaware.com/live/flight/AAL6322/history/20250905/1210Z/KORD/KDSM/tracklog"
+    },
+    {
+      "cite": "Open-Meteo historical forecast API, NOAA GFS (gfs_seamless), pressure levels 1000-100 hPa",
+      "url": "https://open-meteo.com/en/docs/historical-forecast-api"
+    },
+    {
+      "cite": "Copernicus DEM GLO-90, European Space Agency",
+      "url": "https://doi.org/10.5270/ESA-c5d3d65"
+    }
+  ],
+  "collected": "2026-10-15",
+  "units": {
+    "h": "m above mean sea level: the transponder's pressure altitude placed in the GFS column",
+    "hGps": "m, the phone's GPS altitude",
+    "dip": "degrees below level",
+    "tilt": "degrees, added to a reading to remove the aircraft's acceleration",
+    "R": "km",
+    "utc": "UTC"
+  },
+  "inputs": [
+    {
+      "glob": "raw/photos/*",
+      "gitignored": true,
+      "how": "contributor",
+      "origin": "earthlyskeptic's Theodolite screenshots, Google Drive folder 1xbZ5I3DVk3bWS3jWXljhcXMoKafTnBjE (fog fetch contrib-flightdip).",
+      "checks": "EXIF read in Go (internal/exif) for the time of each screenshot."
+    },
+    {
+      "glob": "raw/desmos.json",
+      "gitignored": true,
+      "how": "contributor",
+      "origin": "earthlyskeptic's table of readings, Desmos graph bkxuurlmlh (fog fetch)."
+    },
+    {
+      "glob": "raw/flights-model-graphs.docx",
+      "gitignored": true,
+      "how": "contributor",
+      "origin": "Document sent by earthlyskeptic naming the two flights."
+    },
+    {
+      "glob": "raw/tracklog-*.html",
+      "gitignored": true,
+      "how": "scrape",
+      "origin": "FlightAware track logs of AA 6322 (5 Sept 2025) and AA 5255 (8 Sept 2025), ADS-B."
+    },
+    {
+      "glob": "raw/gfs-*.json",
+      "gitignored": true,
+      "how": "api",
+      "origin": "Open-Meteo historical forecast API, NOAA GFS pressure levels (fog fetch).",
+      "public_raw": "yes"
+    },
+    {
+      "glob": "raw/glo90/*",
+      "gitignored": true,
+      "how": "download",
+      "origin": "Copernicus DEM GLO-90 tiles along each heading (fog fetch).",
+      "public_raw": "yes"
+    }
+  ],
+  "outputs": [
+    "src/data/presets/contrib-flightdip.js"
+  ],
+  "notes": "fog fetch contrib-flightdip downloads everything (Drive, Desmos, FlightAware track logs, GFS air, GLO-90) except the contributor's document (raw/flights-model-graphs.docx, sent by him; it names the flights, which fixes the track log URLs). fog build also writes the resized screenshots public/photos/contrib-flightdip-<n>.jpg.",
+  "public_raw": "no",
+  "public_raw_why": "The contributor's screenshots, readings and document are shown on the page with his permission, not republished as files; the track logs are FlightAware's (FlightAware's terms of use do not allow republishing what is read from its pages.)",
+  "code": [
+    "tools/internal/build/flightdip",
+    "src/tabs/contrib/flightdip"
+  ],
+  "sections": [
+    "contrib/fd-h2"
+  ]
+}

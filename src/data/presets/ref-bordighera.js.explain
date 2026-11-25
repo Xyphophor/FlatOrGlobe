@@ -1,0 +1,35 @@
+# ref-bordighera.js
+
+File: src/data/presets/ref-bordighera.js (generated: never edited by hand)
+
+From the dataset: ref-bordighera — The air of the Bordighera photograph of the hh tab (28 March
+  2026, 17:34 CET) and the rays traced through it over the globe and a plane (data/ref/bordighera/,
+  every input with its own .explain)
+Inputs:
+- data/ref/bordighera/raw/weather.json — api
+Collected: 2026-11-13
+Licence: CC-BY-4.0 — Weather: Open-Meteo (ERA5, Copernicus; marine), CC BY 4.0.
+Sources:
+- Open-Meteo historical weather API (ERA5) and marine API, 28 March 2026, three sea points at 43.5
+  N, 7.25/7.5/7.75 E <https://open-meteo.com/>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- BORD_TRACED[].globe: the globe's rays are traced over a 6,371 km sphere, to the 49 km great-circle
+  distance of Villa Regina Margherita
+What would vindicate the flat model (rule 5): The plane would hide the 44.8 m the photograph hides
+  with air the reanalysis allows, while the globe needs implausible air.
+Built by: fog build ref-bordighera
+Generated files:
+- src/data/presets/ref-bordighera.js
+Code:
+- tools/internal/build/refbord
+- tools/internal/refrac
+- src/tabs/ref/bord-air.js
+- src/core/air-need.js
+Shown on the page:
+- #tab-ref/rf-hair
+Notes: The eye and the buildings are read from src/data/presets/hh-bordighera.js and
+  hh-bordighera-photo.js (research/build_bordighera.py, fit_bordighera_photo.py), hashed into the
+  preset's header.
+
+Written by `fog build explain` from data/ref/bordighera/dataset.json and the lock files: edit those, not this file.

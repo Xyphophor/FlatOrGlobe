@@ -1,0 +1,75 @@
+{
+ "ident": "QFA27",
+ "fetched": "2026-10-14",
+ "legs": [
+  {
+   "o": "SYD",
+   "d": "SCL",
+   "oc": [
+    151.1772,
+    -33.9461
+   ],
+   "dc": [
+    -70.7858,
+    -33.393
+   ],
+   "on": "Sydney, Australia",
+   "dn": "Santiago, Chile",
+   "off": 1790000000,
+   "onT": 1790043200,
+   "cancelled": false,
+   "diverted": false,
+   "type": "B789",
+   "tas": 488,
+   "nm": 6115,
+   "fuelLb": 157000.0,
+   "route": "DCT 3706S15803E 59S150W"
+  },
+  {
+   "o": "SYD",
+   "d": "SCL",
+   "oc": [
+    151.1772,
+    -33.9461
+   ],
+   "dc": [
+    -70.7858,
+    -33.393
+   ],
+   "on": "Sydney, Australia",
+   "dn": "Santiago, Chile",
+   "off": null,
+   "onT": null,
+   "cancelled": true,
+   "diverted": false,
+   "type": null,
+   "tas": null,
+   "nm": null,
+   "fuelLb": null,
+   "route": null
+  },
+  {
+   "o": "MEL",
+   "d": "SYD",
+   "oc": [
+    144.8433,
+    -37.6733
+   ],
+   "dc": [
+    151.1772,
+    -33.9461
+   ],
+   "on": "Melbourne, Australia",
+   "dn": "Sydney, Australia",
+   "off": 1790100000,
+   "onT": 1790104800,
+   "cancelled": false,
+   "diverted": true,
+   "type": "A333",
+   "tas": null,
+   "nm": null,
+   "fuelLb": null,
+   "route": ""
+  }
+ ]
+}

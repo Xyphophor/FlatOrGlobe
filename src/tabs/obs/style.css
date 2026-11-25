@@ -1,0 +1,36 @@
+/* obs : le style des panneaux (.panel, .reads, .obsctl, .obsrow, .obschk,
+   .wipbar) vient de src/core/legacy.css. Seul le bloc « crossing » a
+   des règles propres (legacy L26398 sq., inline dans le legacy). */
+#tab-obs #obsCross { display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--mono); font-size: 12px; margin: 6px 0 4px; }
+#tab-obs #obsCross .f { color: var(--flat); }
+#tab-obs #obsCross .g { color: var(--globe); }
+
+/* contrôles compacts, juste sous la vue caméra (2026-09-24, demande du propriétaire) */
+#tab-obs .obsctl.compact { grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 6px 10px; margin: 8px 0 6px; padding: 8px 10px; }
+#tab-obs .obsctl.compact label.f { font-size: 9.5px; margin-bottom: 2px; display: flex; justify-content: space-between; gap: 4px; }
+#tab-obs .obsctl.compact input[type=date], #tab-obs .obsctl.compact input[type=time], #tab-obs .obsctl.compact select { padding: 2px 4px; font-size: 12px; }
+#tab-obs .obsctl.compact input[type=range] { height: 16px; margin: 0; }
+#tab-obs .obsctl.compact .obsrow { gap: 4px; }
+#tab-obs .obsctl.compact button { padding: 2px 7px; font-size: 11.5px; }
+#tab-obs .obsctl.compact .obschk { font-size: 11.5px; gap: 3px; }
+#tab-obs .obsctl.compact .obschk select { font-size: 11.5px; padding: 1px 2px; }
+#tab-obs .obsctl.compact > div:last-child { grid-column: 1 / -1; }   /* options : une ligne pleine */
+#tab-obs .obsctl.compact > div:last-child { grid-column: auto; }
+#tab-obs .obsctl.compact > .obsopts, #tab-obs .obsctl.compact > .obsatm { grid-column: 1 / -1; }
+#tab-obs .obsctl.compact > .obsopts .obsrow { flex-direction: row; flex-wrap: wrap; gap: 4px 14px; }
+#tab-obs .obsatm input[type=range] { width: 90px; }
+
+/* 10 janvier 2026, grille 2 × 2 (src/tabs/obs/jan10.js) ; une colonne sous 520 px */
+#tab-obs .obs-jan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@media (max-width: 520px) { #tab-obs .obs-jan-grid { grid-template-columns: 1fr; } }
+#tab-obs .obs-jan-grid canvas, #tab-obs .obs-jan-video { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; border-radius: 6px; }
+#tab-obs .obs-jan-video { box-sizing: border-box; border: 1.5px dashed var(--line-strong); background: var(--muted-bg); display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+#tab-obs .obs-jan-video p { margin: 0; padding: 10px 14px; font-size: 12px; line-height: 1.4; color: var(--ink-soft); }
+#tab-obs .obs-jan-video video { width: 100%; height: 100%; object-fit: contain; background: #000; }
+
+/* 10 janvier : les photos avec l'horloge NTP (2026-09-27) -- images simples, hors du bouton d'export */
+#tab-obs .obs-ntp { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0 6px; }
+#tab-obs .obs-ntp figure { margin: 0; }
+#tab-obs .obs-ntp img { width: 100%; height: auto; display: block; border-radius: 6px; }
+#tab-obs .obs-ntp figcaption { font: 12px ui-monospace, Menlo, monospace; color: var(--ink-soft); margin-top: 3px; text-align: center; }
+@media (max-width: 520px) { #tab-obs .obs-ntp { grid-template-columns: 1fr; } }

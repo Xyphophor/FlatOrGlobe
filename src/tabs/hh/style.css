@@ -1,0 +1,8 @@
+/* hh : tout le style commun (.formula, .panel, .exp, .mini-form,
+   .persp-zoom, .exagg-note...) vient de src/core/legacy.css. */
+
+/* Bordighera (2026-10-06) : la réglette d'opacité de la photo sous l'animation */
+#tab-hh .hh-bord-ctl { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 6px; font-size: 13px; }
+#tab-hh .hh-bord-ctl input[type="range"] { width: min(240px, 60vw); }
+#tab-hh .hh-bord-scene { display: inline-flex; gap: 6px; align-items: center; margin-right: 12px; max-width: 100%; }
+#tab-hh .hh-bord-scene select { max-width: min(360px, 80vw); }

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "land",
+  "title": "Natural Earth 1:110m land polygons, rasterised as the 0.5-degree land mask of every map",
+  "tab": "core",
+  "build": "fog:land",
+  "kind": "archive",
+  "evidence": "model",
+  "radius_enters_via": [],
+  "verdict_rule": "",
+  "license": "public-domain",
+  "sources": [
+    {
+      "cite": "Natural Earth, 1:110m physical vectors, land (ne_110m_land), public domain",
+      "url": "https://www.naturalearthdata.com/"
+    }
+  ],
+  "collected": "2026-10-03",
+  "units": {
+    "coordinates": "degrees, lon E positive, lat N positive",
+    "mask": "1 bit per 0.5-degree cell, rows north to south, columns west to east"
+  },
+  "inputs": [
+    {
+      "path": "raw/ne_110m_land.geojson",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_land.geojson",
+      "how": "download",
+      "origin": "Natural Earth 1:110m land polygons (GitHub mirror nvkelso/natural-earth-vector).",
+      "caveats": "Decorative only: no number of the site depends on it."
+    }
+  ],
+  "outputs": [
+    "src/data/land.js"
+  ],
+  "notes": "Decorative only: maps use it to fill the land; no number on the site depends on it. Until 2026-10-14 the file lived in the gitignored data/dem/cache/ne/; it is now kept here (138 KB, public domain).",
+  "public_raw": "yes",
+  "code": [
+    "tools/internal/build/land"
+  ],
+  "sections": []
+}

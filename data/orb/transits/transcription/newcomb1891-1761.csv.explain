@@ -1,0 +1,51 @@
+# newcomb1891-1761.csv
+
+Dataset: orb-transit — Transits of Venus, 1761, 1769 and 2012: every contact timing in Newcomb's
+  tabular summary (1891) and the adopted positions of the stations, our transcription, and the
+  contact III timings of the venus2012.de project, reduced into the astronomical unit with DE440
+File: data/orb/transits/transcription/newcomb1891-1761.csv
+SHA-256: 52024eb32683c8a8a380045c740f333ecbfbdc39a785cb910fc168ead00832eb (also in
+  data/orb/transits/inputs.lock; check with: cd data/orb/transits && sha256sum -c inputs.lock)
+In the public repository: yes, beside this description.
+Obtained: typed by hand (or OCR checked by hand) from a printed or scanned source.
+From: S. Newcomb, Astronomical Papers II part V (Washington, 1891), chapter VI pp. 357-371 and
+  chapter IV (stations), Internet Archive scan; typed by hand by the assistant (Claude) from the
+  scans, under Xyphophor's review.
+Checks: Every printed residual equals observed − tabular, and every local − Greenwich time
+  equals the station's printed longitude (the build fails otherwise); seven lines of 1761 contact IV
+  whose printed residuals disagree with Newcomb's own times are flagged 'res'.
+Collected: 2026-11-18
+Licence: other — Newcomb 1891 (US government publication, public domain); the venus2012.de timings
+  were published openly by the project for evaluation (archived copy, cited); JPL DE440, public.
+Sources:
+- S. Newcomb, Discussion of observations of the transits of Venus in 1761 and 1769, Astronomical
+  Papers prepared for the use of the American Ephemeris and Nautical Almanac, vol. II, part V
+  (Washington, 1891), chapter IV (table of adopted positions, pp. 343-345) and chapter VI (tabular
+  summary, pp. 364-371) <https://archive.org/details/02aAstronomicalPapersPreparedForTheUse>
+- U. Backhaus (Universität Duisburg-Essen), Transit of Venus 2012, project "Contact times"
+  (www.venus2012.de): the contact III timings sent by participants, file participants/daten3.txt as
+  archived by the Internet Archive on 2024-05-19
+  <http://web.archive.org/web/20240519220217/http://www.venus2012.de/participants/daten3.txt>
+- R. S. Park, W. M. Folkner, J. G. Williams and D. H. Boggs, The JPL Planetary and Lunar Ephemerides
+  DE440 and DE441, Astron. J. 161 (2021) 105
+  <https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- TRANSIT_FIT.a: the baseline between stations is in Earth radii (Newcomb's log ρ sin φ′, log ρ
+  cos φ′); the unit comes out in Earth radii and is turned into km with a⊕ = 6378.137 km
+- TRANSIT_ROWS, TRANSIT_FIT: JPL DE440 gives the shape of the orbits in astronomical units
+What would vindicate the flat model (rule 5): Contact times that do not depend on the station's
+  place on the Earth the way a distant Sun requires, or that no single unit fits across the
+  stations.
+Built by: fog build orb-transit
+Generated files:
+- src/data/presets/orb-transit.js
+Code:
+- tools/internal/build/orbtransit
+- src/tabs/orb/transit-logic.js
+Shown on the page:
+- #tab-orb/orb-h2transit
+Notes: DE440 is the file of moon-eclcraters. Checks: printed residual = observed − tabular, local
+  − Greenwich = −longitude. Method and references: go doc -all ./internal/build/orbtransit.
+
+Written by `fog build explain` from data/orb/transits/dataset.json and data/orb/transits/inputs.lock: edit those, not this file.

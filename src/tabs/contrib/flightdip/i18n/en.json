@@ -1,0 +1,12 @@
+{
+  "contrib": {},
+  "contrib-cards": {
+    "fd.title": "Horizon dips from airliner windows: eleven phone readings and the radius",
+    "fd.mini": "earthlyskeptic read the horizon's dip on two flights with a phone theodolite app, 1 to 3.5°. With the true heights and the day's air they give a radius a quarter too small; with the phone's constant zero error free, 6,371 km fits. A plane needs a haze edge and a larger error.",
+    "fd.text": "earthlyskeptic (x.com/earthlyskeptic) measured the dip of the horizon from airliner windows on two flights in September 2025 (AA 6322 and AA 5255) with the Theodolite app on an iPhone [1]. The heights come from the flights' ADS-B track logs [2], the transponder's pressure altitude placed in the GFS model's air [3]: on the second flight the phone's GPS had frozen, and the 32,173 ft reading was taken at 6,300 m. From a plane over land the horizon is the ground: the height that counts is the height above the terrain at the horizon, taken along each heading on Copernicus GLO-90 [4]. On a sphere the dip is δ = arccos(R/(R + h′)); through the day's air, traced, the globe's horizon rises by 0.05 to 0.18°. As they are, with straight light, the readings give R ≈ 4,800 km: most are deeper than the globe's, by about half a degree in the median, which the aircraft's accelerations do not explain. With a constant zero error left free, the fit gives about 5,900 km and 6,371 km fits. On a plane the dip is zero, and in the day's air the horizon would stand about 1° above level; its best case, a far edge lost in haze at a fixed distance plus an offset, fits nearly as well but needs three times the zero error.",
+    "fd.verdict": "Would favour the plane: readings with the instrument's zero removed (two faces) that stay at zero or grow in proportion to the height. Favours the globe: the same readings growing as the square root of the height above the horizon, with one radius."
+  },
+  "evidence": {
+    "enters-contrib-fd": "the heights (transponder pressure altitudes placed in the GFS model's geopotential heights), the terrain at the horizon, found along each heading on a sphere of radius R, and the ground speeds (GNSS) behind the accelerations."
+  }
+}

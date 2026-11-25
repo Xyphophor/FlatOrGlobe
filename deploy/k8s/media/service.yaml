@@ -1,0 +1,10 @@
+# web (3902) : lu par le nginx du site. s3 (3900) : envois, par kubectl port-forward seulement.
+apiVersion: v1
+kind: Service
+metadata:
+  name: garage
+spec:
+  selector: { app.kubernetes.io/name: garage }
+  ports:
+    - { name: web, port: 3902, targetPort: web }
+    - { name: s3, port: 3900, targetPort: s3 }

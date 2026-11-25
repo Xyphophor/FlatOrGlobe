@@ -1,0 +1,70 @@
+# 611079453.isf
+
+Dataset: seis-radius — Great earthquakes in the ISC bulletin: nine named ones (Rayleigh arrivals
+  for the radius, P / first arrivals for our relocation, the P shadow zone) and every shallow Mw >=
+  7.0 of 2000-2023 for the pooled syntheses
+File: data/seis/bulk/raw/611079453.isf
+SHA-256: bbbb9ae4c874b099e987484ff48949562ebe0bc1f457618ab6b307ced3eb095a (also in
+  data/seis/inputs.lock; check with: cd data/seis && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: the file may be shared but is kept
+  out of git for its size. Get it from fog fetch seis-radius, then compare its SHA-256 with the one
+  above.
+Obtained: the answer of a public web API to the request given.
+From: ISC On-line Bulletin, ISF2 of each earthquake of the catalogue query, fetched one by one.
+Collected: 2026-09-19
+Licence: other — ISC On-line Bulletin: free with the citation International Seismological Centre,
+  On-line Bulletin, https://doi.org/10.31905/D808B830. Natural Earth: public domain.
+Sources:
+- International Seismological Centre, On-line Bulletin (ISF2 phase data)
+  <https://doi.org/10.31905/D808B830>
+- Natural Earth, 1:50m land polygons (ne_50m_land), public domain
+  <https://www.naturalearthdata.com/>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- distance_deg: angles from the published epicentre and station coordinates, then the surface-wave
+  speeds the tab uses were established with distances measured on the globe
+- ocean_frac: Natural Earth land polygons, drawn in degrees on the globe
+What would vindicate the flat model (rule 5): A reconstructed radius 60-100% off, the error a flat
+  map's distances would need; the real arrivals land within a few percent. Pooled: one flat map,
+  with the same free parameters, fitting the pooled P times or the pooled shadow as well as the
+  globe.
+Built by: fog build seis-radius, fog build seis-relocate, fog build seis-shadow, fog build
+  seis-bulk, fog build seis-mesh
+Generated files:
+- src/data/presets/seis-radius.js
+- src/data/presets/seis-relocate.js
+- data/seis/lr_arrivals.json
+- data/seis/lr_arrivals.csv
+- src/data/presets/seis-bulk.js
+- src/data/presets/seis-mesh.js
+Code:
+- tools/internal/build/seisradius
+- tools/internal/build/seisreloc
+- tools/internal/build/seisshadow
+- tools/internal/build/seisbulk
+- tools/internal/build/seismesh
+- src/tabs/seis/logic.js
+- src/tabs/seis/relocate.js
+- src/tabs/seis/bulkfig.js
+- src/tabs/seis/meshfig.js
+Shown on the page:
+- #tab-seis/sq-h7
+- #tab-seis/sq-h8
+- #tab-seis/sq-h9
+- #tab-seis/sq-h10
+- #tab-seis/rl-h1
+- #tab-seis/rl-h2
+- #tab-seis/sh-h1
+- #tab-seis/ms-h2
+Notes: Edit events.json only (one entry per earthquake), then fog fetch seis-radius (ISC query;
+  Natural Earth once), fog lock seis-radius, fog build seis-radius. Until 2026-10-14 the land
+  polygons were downloaded afresh at every run, from the branch head; they are now an input with a
+  hash. The same bulletins feed fog build seis-relocate: earthquakes relocated from arrival times
+  and station angles only (epic18). The pooled syntheses (fog build seis-bulk, 2026-10-29) use every
+  earthquake the ISC catalogue query of tools/internal/build/seisbulk/fetch.go returns: reviewed ISC
+  Bulletin, 2000-01-01 to 2023-12-31, depth <= 70 km, GCMT Mw >= 7.0 (264 events), then at least 50
+  P stations 25-95 degrees from our own centre; bulletins by event id in bulk/raw/ (gitignored, fog
+  fetch seis-radius). The nine named earthquakes that meet the rule are counted there again,
+  processed like the others.
+
+Written by `fog build explain` from data/seis/dataset.json and data/seis/inputs.lock: edit those, not this file.

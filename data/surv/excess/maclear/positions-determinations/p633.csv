@@ -1,0 +1,12 @@
+page,printed,state,station,alias,lat_d,lat_m,lat_s,lon_d,lon_m,lon_s,flag
+633,584,Cape Colony,Tygerberg,Tyger Berg,-33,-51,-12.79,-0,-6,-40.63,from Royal Observatory
+633,584,Cape Colony,Kogel Berg,,-34,-13,-54.13,-0,-24,-34.50,from Royal Observatory
+633,584,Cape Colony,"Robben Island, ch. tower",,-33,-48,-39.17,0,5,54.00,from Royal Observatory
+633,584,Cape Colony,Muizenberg,,-34,-6,-0.58,0,1,5.39,from Royal Observatory
+633,584,Cape Colony,Tygerberg,Tyger Berg,-33,-51,-12.79,-0,-6,-40.63,from Sneeuwkop
+633,584,Cape Colony,Kogel Berg,,-34,-13,-54.12,-0,-24,-34.49,from Sneeuwkop
+633,584,Cape Colony,Table Mountain,"Table Mountain, pile",-33,-58,-0.00,0,3,6.25,from Sneeuwkop
+633,584,Cape Colony,"Noah's Ark, Simon's Bay",Noah's Ark,-34,-11,-31.38,0,1,23.90,from Sneeuwkop
+633,584,Cape Colony,"Naval Yard, Simon's Tn.",,-34,-11,-28.83,0,2,56.99,from Sneeuwkop
+633,584,Cape Colony,Mudge Point,,-34,-23,-53.011,-0,-40,-17.93,from Sneeuwkop; latitude printed with three decimals (53.011) where the neighbours have two
+633,584,Cape Colony,Danger Point,,-34,-35,-31.586,-0,-54,-7.64,from Sneeuwkop; latitude printed with three decimals (31.586) where the neighbours have two

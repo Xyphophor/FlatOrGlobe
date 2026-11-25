@@ -1,0 +1,33 @@
+# avia-gravd.js
+
+File: src/data/presets/avia-gravd.js (generated: never edited by hand)
+
+From the dataset: avia-gravd — NOAA NGS GRAV-D airborne gravity, block EN02 (main data lines)
+  (data/avia/gravd/, every input with its own .explain)
+Inputs:
+- data/avia/gravd/EN02.zip — download
+Collected: 2026-09-29
+Licence: public-domain
+Sources:
+- NOAA National Geodetic Survey, GRAV-D (Gravity for the Redefinition of the American Vertical
+  Datum), Block EN02 release BETA2 <https://geodesy.noaa.gov/GRAV-D/>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- g: NOAA removed the Eötvös effect with the GRS80 radii; putting it back needs those radii
+- ve, vn: velocities from the published positions on the GRS80 ellipsoid (computed by fog)
+What would vindicate the flat model (rule 5): Uncorrected airborne gravity that agrees between
+  eastbound and westbound lines, or a best fraction of the globe's Eötvös correction of 0 rather
+  than 1.
+Built by: fog build avia-gravd
+Generated files:
+- src/data/presets/avia-gravd.js
+Code:
+- tools/internal/build/aviagravd
+- src/tabs/avia/eot.js
+Shown on the page:
+- #tab-avia/avia-h2eo
+Notes: One block = one input zip; adding a block is one more input line with its URL, then fog
+  fetch, fog lock, fog build. Only the main data file of each zip is read (not the supplement: cross
+  lines and transits).
+
+Written by `fog build explain` from data/avia/gravd/dataset.json and the lock files: edit those, not this file.

@@ -1,0 +1,39 @@
+{
+  "contrib": {
+    "lm-pb": "9 Aug 2023",
+    "lm-prog-aria": "Animation time: click or drag to move; the date's name jumps to the photograph",
+    "lm-water": "water {w} m",
+    "lm-tide-low": "low",
+    "lm-tide-high": "high water · Leith, m from mean level",
+    "lm-r-need-sa": "air − sea this needs",
+    "lm-r-airsea": "air − sea",
+    "lm-r-none": "none",
+    "lm-horline": "horizon on the photo",
+    "lm-rock": "Bass Rock · {h} m · {km} km",
+    "lm-g-day": "GFS",
+    "lm-g-unit": "K/100 m",
+    "lm-st-straight": "straight light: on the globe the horizon crosses the rock, on the plane it stands above it",
+    "lm-st-need": "the refraction each model needs to put the horizon where the photograph shows it",
+    "lm-eye-stamp": "eye view · true angles both ways · {w} wide · relief Copernicus GLO-30",
+    "lm-r-f": "horizon at",
+    "lm-r-need": "dT/dz this needs",
+    "lm-date": "9 August 2023, 5:28 am BST",
+    "lm-cam": "camera {e} m above the water · Leith gauge {w} m",
+    "lm-fx-alt": "A cross-section: a camera high on a hill at the left, a rock standing in the sea in the middle, the curved sea beyond it. The ray from the camera that grazes the sea at the horizon, beyond the rock, passes in front of the rock at a height f times the rock's height: from the camera, that part of the rock is below the horizon.",
+    "lm-fx-t": "the ray that grazes the sea passes the rock at f·H",
+    "lm-fk-alt": "A straight line: the refraction coefficient k against the temperature gradient, in kelvin per 100 m. k is zero at −3.4 K per 100 m, about 0.17 in the standard atmosphere at −0.65, and negative to the left. The globe's k for the photograph sits near the standard atmosphere; the plane's lies far to the left, beyond the autoconvective gradient.",
+    "lm-fk-auto": "autoconvective",
+    "lm-fk-std": "standard air",
+    "lm-fk-g": "globe, this photo",
+    "lm-fk-f": "plane, this photo"
+  },
+  "contrib-cards": {
+    "lom.title": "Bass Rock from East Lomond, 40 km: where the horizon cuts the rock",
+    "lom.mini": "From 337 m in Fife, the sea horizon crosses Bass Rock 65% of the way up, its summit against the sky though 230 m below the camera. The globe gets there with the sea about 1 K warmer than the air; the plane needs the air 43 K colder at the camera than at the sea.",
+    "lom.text": "KenRDKAB's annotated photograph (x.com/KenRDKAB, published with his permission), 9 August 2023 at 5:28 am, from East Lomond Hill, Fife, to Bass Rock 39.5 km away. The camera is placed on the Copernicus elevation model [1] by parallax: the angle between Bass Rock and St Abb's Head on the photograph puts it 466 m left of where the contributor's distances would, on the hill's eastern flank, its eye at 337 m (he wrote 345 m); Bass Rock rises to 107 m. The horizon cuts the rock at f = 0.65 of its height from the foot: a ratio on the same picture, needing no scale. The Leith gauge gives the tide [2]. The globe and the plane, side by side, get straight light, then standard refraction, then the refraction each needs for the photograph: the same picture in both, k = +0.18 on the globe, k = −0.82 on the plane. The gauges compare the mean temperature gradient each needs, from rays traced through the morning's air [3], with the GFS model's, about 0 K per 100 m, with the same margin for both (the models' air − sea differences). The globe needs +0.8 to +2.5 K per 100 m, or the air at 2 m only 1 K colder than the sea where the models say 4 to 6 K; the plane needs −14 to −12 K per 100 m, still −12 with the air − sea difference most favourable to it, air denser at the top than at the bottom over 337 m. No original file; the camera and rock heights are known to ±5 m.",
+    "lom.verdict": "Would favour the plane: the horizon at or above the rock's summit from 337 m with the air cooling by the usual 0.65 K per 100 m. Favours the globe: the horizon crossing the rock half to two thirds up in that ordinary air, as here."
+  },
+  "evidence": {
+    "enters-contrib-lom": "the 39.9 km from the camera to Bass Rock, computed from coordinates (the camera placed on the Copernicus elevation model) on a sphere of radius R."
+  }
+}

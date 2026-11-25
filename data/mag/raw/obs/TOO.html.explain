@@ -1,0 +1,54 @@
+# TOO.html
+
+Dataset: mag-obs — Measured magnetic inclination and total field: 186 observatories (annual means)
+  and 2,147 survey stations, with IGRF-14
+File: data/mag/raw/obs/TOO.html
+SHA-256: 07b9e4470ccab19a05c3e742f7ea94df43688045e1b97ae3dc825c133db53978 (also in
+  data/mag/inputs.lock; check with: cd data/mag && sha256sum -c inputs.lock)
+In the public repository: no, only this description and the hash: The BGS World Data Centre allows
+  scientific use with acknowledgement but does not say that its pages and answers may be
+  republished; only the hash and the source are given. Get it from fog fetch mag-obs, then compare
+  its SHA-256 with the one above.
+Obtained: values extracted from web pages.
+From: BGS WDC annual-means page of each observatory (fog fetch mag-obs).
+What could still be wrong: Values are supplied by the observatory operators; a few years are flagged
+  provisional on the pages.
+Collected: 2026-09-27/2026-10-14
+Licence: other — BGS World Data Centre for Geomagnetism (Edinburgh): data free for scientific use
+  with acknowledgement of the WDC and the observatory operators / survey institutes; IGRF-14 (IAGA)
+  public.
+Sources:
+- BGS World Data Centre for Geomagnetism (Edinburgh), Worldwide Observatory Annual Means; values
+  supplied by the observatory operators
+  <https://geomag.bgs.ac.uk/data_service/data/annual_means.shtml>
+- BGS World Data Centre for Geomagnetism (Edinburgh), Global Survey Data (repeat stations and
+  one-off stations), via the WDC API; values supplied by national survey institutes
+  <https://wdcapi.bgs.ac.uk/global-geomagnetic-survey>
+- IAGA, International Geomagnetic Reference Field, 14th generation (IGRF-14) coefficients
+  <https://www.ngdc.noaa.gov/IAGA/vmod/coeffs/igrf14coeffs.txt>
+Evidence class (rule 10): check
+Where the Earth's radius enters:
+- IGRF-14 (igrf14coeffs.txt): magnetic latitude from the IGRF pole, a model fitted on the globe; the
+  measured I and F themselves carry no radius
+What would vindicate the flat model (rule 5): A flat residual box centred on zero and as narrow as
+  the globe's, with the same median north and south of the magnetic equator; or a field-strength box
+  narrower than every globe box.
+Built by: fog build mag-obs
+Generated files:
+- src/data/presets/mag-obs.js
+- src/data/presets/igrf14.js
+- data/mag/measurements.csv
+Code:
+- tools/internal/build/mag
+- scripts/fit_mag_obs.mjs
+- src/tabs/mag/obs-logic.js
+- src/tabs/mag/obs-figs.js
+Shown on the page:
+- #tab-mag/mg-obs-h
+- #tab-mag/mg-obs-hF
+Notes: Edit sources.json only (adapters: wdc-annual-means, wdc-survey, csv), then fog fetch mag-obs,
+  fog lock mag-obs, fog build mag-obs, node scripts/fit_mag_obs.mjs. raw/annual_means.html is the
+  WDC form (the list of observatories) as fetched on 2026-10-14; it reproduces the 2026-09-28 build
+  exactly (KLI listed but not fetched, HON fetched but no longer listed).
+
+Written by `fog build explain` from data/mag/dataset.json and data/mag/inputs.lock: edit those, not this file.

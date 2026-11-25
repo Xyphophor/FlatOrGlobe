@@ -1,0 +1,7 @@
+page,printed,net,k,no,station,deg,min,sec,derived,adj_sec,log,dist,sum_deg,sum_min,sum_sec,exc,flag
+258,102,A.VI,1,T.496,TASCHBUNAR II,75,8,20.35,,20.521,3.44251836,2770.24614,180,0,-0.31,0.047,
+258,102,A.VI,1,T.496,WAISSAL,46,15,55.15,,55.254,3.31616096,,,,,,
+258,102,A.VI,1,T.496,TASCHBUNAR I,58,35,44.19,,44.225,3.38850264,,,,,,
+258,102,A.VI,2,T.497,KATLABUCH,52,46,17.19,,17.379,3.44251836,,180,0,-0.34,0.075,printed log 3.5034786.3 (side Katlabuch-Waissal) contradicts the sine rule on the printed plane angles (about 3.5022); verified at 350 dpi
+258,102,A.VI,2,T.497,WAISSAL,61,8,55.89,,56.091,3.48392336,,,,,,
+258,102,A.VI,2,T.497,TASCHBUNAR I,66,4,46.58,,46.530,3.50347863,,,,,,

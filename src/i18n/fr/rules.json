@@ -1,0 +1,17 @@
+{
+  "fx-sch": "schéma",
+  "fx-nts": "pas à l'échelle",
+  "fx-refr-alt": "Trois surfaces vues de profil : la courbe de la Terre, de rayon R, une courbe plus plate de rayon R prime égal à R sur un moins k, qui est la Terre vue à travers l'air qui réfracte, et une droite, le plan ; la courbe réfractée reste entre les deux, sans jamais atteindre la droite",
+  "fx-refr-1": "plan : il faudrait k = 1",
+  "fx-refr-2": "k = 0,13 : R′ ≈ 1,15 R, plus plate, toujours courbe",
+  "fx-refr-3": "les deux valeurs sont toujours écrites côte à côte",
+  "fx-refr-4": "trait plein : la Terre ; tirets : la même Terre vue à travers l'air standard",
+  "fx-excl-alt": "Des valeurs sur une droite : un groupe de points dont la moyenne et l'écart-type sont calculés sans la valeur testée ; une bande grisée à trois écarts-types de part et d'autre ; la valeur testée est hors de la bande et elle est écartée",
+  "fx-excl-1": "écartée",
+  "fx-excl-2": "la bande est mesurée sur les autres seulement, sans xᵢ",
+  "fx-wmean-alt": "Cinq résultats avec leurs barres d'erreur, l'un sous l'autre ; la moyenne pondérée est une ligne verticale, plus proche des résultats aux barres les plus courtes ; une bande plus large montre son incertitude agrandie par le rapport de Birge quand les résultats s'écartent",
+  "fx-wmean-1": "barre courte :",
+  "fx-wmean-2": "grand poids",
+  "fx-wmean-3": "bande claire : σ × B",
+  "fx-wmean-4": "chaque résultat pèse 1/σ² ; le désaccord agrandit l'erreur"
+}
