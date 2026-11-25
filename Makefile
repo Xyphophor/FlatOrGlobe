@@ -11,10 +11,11 @@ SMOKE := node --import ./scripts/smoke-register.mjs
 
 GO_SRC := $(shell find tools -name '*.go' -not -path '*/testdata/*') tools/go.mod
 
-.PHONY: help ci ci-full videos-check audit audit-tex fog crx2rnx laz2pts doc test test-go test-go-full test-js validate data data-check data-check-full smoke ai-check doctor clean run-dev
+.PHONY: help public-sync ci ci-full videos-check audit audit-tex fog crx2rnx laz2pts doc test test-go test-go-full test-js validate data data-check data-check-full smoke ai-check doctor clean run-dev
 
 help:
 	@echo "make ci          everything below except data/doctor (the local CI, fast targets)"
+	@echo "make public-sync rewrite the clone of the public repository ($(PUBLIC)), then commit and push there"
 	@echo "make ci-full     the same with the slow targets and tests (seis-relocate: ~7 min)"
 	@echo "make test        Go + JS unit tests"
 	@echo "make test-go     gofmt, go vet, go test (tools/)"
@@ -118,3 +119,11 @@ doctor: $(FOG)
 
 clean:
 	rm -rf tools/bin
+
+# Le dépôt public (2026-11-25, github.com/Xyphophor/FlatOrGlobe) : un clone à côté de celui-ci, réécrit par fog public
+# (tools/internal/public, public.json : sans les fichiers non republiables, la contribution non publiée, les notes de
+# travail ; refuse sur un canari ou une chaîne privée). Commit et push se font ensuite dans $(PUBLIC).
+PUBLIC ?= ../FlatOrGlobe-public
+public-sync: fog
+	$(FOG) public --into $(PUBLIC)
+	git -C $(PUBLIC) status --short | wc -l | xargs echo "changed files in $(PUBLIC):"

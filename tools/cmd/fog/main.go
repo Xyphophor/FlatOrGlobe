@@ -10,6 +10,7 @@
 //	fog audit [structure|tex|prose|all]  static audits of the site's sources
 //	fog doctor                  outside tools the repository uses
 //	fog public <dir>            write the tree of the public repository into a new directory
+//	fog public --into <clone>   rewrite an existing clone of the public repository from that tree
 //
 // fog finds the repository root from the current directory (-root to
 // override). Only fetch touches the network.
@@ -46,7 +47,7 @@ commands:
   fetch [--refresh] <id>… | all     download missing inputs (URL or dataset fetcher)
   audit [structure|tex|prose|all]   static audits of the site's sources (no JS executed)
   doctor                            check the outside tools the repository uses
-  public <new dir>                  write the public repository's tree (no git, no network)
+  public <new dir> | --into <clone> write the public repository's tree (no git, no network)
 `)
 }
 
@@ -100,11 +101,21 @@ func run(args []string, stdout, stderr io.Writer) int {
 		}
 	case "public":
 		root, err := findRoot(*rootFlag)
-		if err != nil || len(rest) != 1 {
-			fmt.Fprintln(stderr, "fog: public <new directory>")
+		into := len(rest) == 2 && rest[0] == "--into"
+		if err != nil || (len(rest) != 1 && !into) {
+			fmt.Fprintln(stderr, "fog: public <new directory> | public --into <clone of the public repository>")
 			return 2
 		}
-		r, err := public.Export(root, rest[0])
+		var r *public.Report
+		removed := 0
+		if into {
+			r, removed, err = public.Into(root, rest[1])
+		} else {
+			r, err = public.Export(root, rest[0])
+		}
+		if into && err == nil && len(r.Hits) == 0 {
+			fmt.Fprintf(stdout, "%d file(s) removed from the clone\n", removed)
+		}
 		if err != nil {
 			fmt.Fprintln(stderr, "fog:", err)
 			return 1

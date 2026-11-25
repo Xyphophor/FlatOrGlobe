@@ -278,3 +278,67 @@ func copyOne(root, out, f string, hidden []string) error {
 	_, err = io.Copy(o, in)
 	return err
 }
+
+// Into writes the public tree into an existing clone of the public repository: files that the tree no longer has are
+// removed (never .git), the others replaced. The tree is first written to a temporary directory (os.MkdirTemp), which is
+// removed afterwards. It returns the report and the number of files removed from the clone.
+func Into(root, clone string) (*Report, int, error) {
+	if fi, err := os.Stat(filepath.Join(clone, ".git")); err != nil || !fi.IsDir() {
+		return nil, 0, fmt.Errorf("%s is not a git clone", clone)
+	}
+	tmp, err := os.MkdirTemp("", "fog-public-")
+	if err != nil {
+		return nil, 0, err
+	}
+	defer os.RemoveAll(tmp)
+	tree := filepath.Join(tmp, "tree")
+	r, err := Export(root, tree)
+	if err != nil || len(r.Hits) > 0 {
+		return r, 0, err
+	}
+	removed := 0
+	err = filepath.Walk(clone, func(p string, fi os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		rel, _ := filepath.Rel(clone, p)
+		if rel == ".git" {
+			return filepath.SkipDir
+		}
+		if fi.IsDir() {
+			return nil
+		}
+		if _, err := os.Lstat(filepath.Join(tree, rel)); os.IsNotExist(err) {
+			removed++
+			return os.Remove(p)
+		}
+		return nil
+	})
+	if err != nil {
+		return r, removed, err
+	}
+	err = filepath.Walk(tree, func(p string, fi os.FileInfo, err error) error {
+		if err != nil || fi.IsDir() {
+			return err
+		}
+		rel, _ := filepath.Rel(tree, p)
+		dst := filepath.Join(clone, rel)
+		if err := os.MkdirAll(filepath.Dir(dst), 0o755); err != nil {
+			return err
+		}
+		os.Remove(dst)
+		if fi.Mode()&os.ModeSymlink != 0 {
+			t, err := os.Readlink(p)
+			if err != nil {
+				return err
+			}
+			return os.Symlink(t, dst)
+		}
+		b, err := os.ReadFile(p)
+		if err != nil {
+			return err
+		}
+		return os.WriteFile(dst, b, fi.Mode().Perm())
+	})
+	return r, removed, err
+}
