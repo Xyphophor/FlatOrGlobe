@@ -1,0 +1,36 @@
+# obs.js
+
+What it is: Observation guide: the viewpoint and its targets
+File: src/data/presets/obs.js
+SHA-256: 782b2e227dd880ffe72e7db6cb3bf5d3faeb3a154d6b8f9a5631e76b7f35d21b
+Obtained: ported verbatim from the legacy page (legacy/flat-or-globe-2.20.0.html), which typed it
+  from the sources named in the file.
+Made by: ported verbatim from the legacy page
+From: Positions and heights of the 'Globe spot' viewpoint and of four summits (maps and published
+  heights; Mourre Frey located in the terrain model at its published bearing and distance, flagged);
+  distances and azimuths computed by great circle.
+Licence: CC-BY-4.0 (the site's content licence, LICENSE)
+What could still be wrong: The distances come from coordinates on a sphere: the radius enters there
+  (a check, rule 10).
+Used by:
+- src/data/cards/index.js
+- src/data/provenance.js
+- src/tabs/ct/ct-legacy.js
+- src/tabs/mag/obs-figs.js
+- src/tabs/mag/obs-logic.js
+- src/tabs/mag/obs-logic.test.js
+- src/tabs/obs/exp.js
+- src/tabs/obs/homefig.js
+- src/tabs/obs/index.js
+- src/tabs/obs/jan10.js
+- src/tabs/obs/jan10.test.js
+- src/tabs/obs/logic.test.js
+- src/tabs/obs/t.js
+
+What the file says about itself:
+  Point de vue et cibles de l'onglet obs, portés VERBATIM du legacy
+  (flat-or-globe-2.20.0.html L26398-26412). Partagés avec l'onglet ct
+  (figure du tir du 24 novembre). Distances et azimuts DÉRIVÉS par grand
+  cercle, jamais copiés d'une appli.
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

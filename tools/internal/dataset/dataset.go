@@ -121,6 +121,10 @@ var Hows = map[string]string{
 	"transcription": "typed by hand (or OCR checked by hand) from a printed or scanned source",
 	"ours":          "written by us (lists, choices, positions), not measured",
 	"contributor":   "sent by a contributor (photos, logs)",
+	// for the files of data/other.json (not compiled from a dataset)
+	"legacy": "ported verbatim from the legacy page (legacy/flat-or-globe-2.20.0.html), which typed it from the sources named in the file",
+	"photo":  "a photograph",
+	"script": "computed once by a script outside fog (research/ or scripts/)",
 }
 
 // Kinds of raw material.

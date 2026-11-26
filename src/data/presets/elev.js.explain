@@ -1,0 +1,42 @@
+# elev.js
+
+What it is: Elevation angles: documented sightlines and the photographs measured
+File: src/data/presets/elev.js
+SHA-256: cbfd30193145ec3243ed38c12550ec2cc5e4ad4f4379752a760ef0c3da9c785d
+Obtained: ported verbatim from the legacy page (legacy/flat-or-globe-2.20.0.html), which typed it
+  from the sources named in the file.
+Made by: ported verbatim from the legacy page (PRESETS), then extended by hand
+From: Published summit heights and positions for each sightline; the photographs
+  (public/photos/elev-*.jpg) and their camera fits come from research/align_photo.py and
+  research/fit_camera_caussols.py.
+Inputs:
+- public/photos/elev-caussols.jpg
+- public/photos/elev-vieriou.jpg
+- public/photos/elev-argentera.jpg
+- public/photos/elev-schneeberg.jpg
+- src/data/dem/*-view.json
+Licence: CC-BY-4.0 (the site's content licence, LICENSE)
+Used by:
+- src/data/cards/index.js
+- src/tabs/dip/index.js
+- src/tabs/dip/own.js
+- src/tabs/elev/elev-legacy.js
+- src/tabs/elev/exp.js
+- src/tabs/elev/index.js
+- src/tabs/elev/logic.test.js
+
+What the file says about itself:
+  PRESETS de l'onglet "elev" (ex-"sim") (angles d'élévation), portés à l'identique du
+  legacy (flat-or-globe-2.20.0.html, PRESETS ~L24688, applyPreset ~L24879).
+  
+  label/note/why sont l'anglais canonique -- comme dans le legacy, où ce
+  sont des chaînes JS et non du DOM, elles restent la source de vérité.
+  Les traductions vivent dans src/i18n/<lang>/sim.json sous les clés
+  "preset-<key>-label" / "-note" / "-why" (voir presetText() dans
+  index.js) ; une clé absente retombe automatiquement sur ce texte anglais
+  -- jamais de duplication de l'anglais dans un dictionnaire i18n.
+  
+  `names`/`obs` sont des noms propres et ne sont volontairement PAS
+  traduits : le legacy ne les fait pas non plus passer par presetText().
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

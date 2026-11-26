@@ -1,0 +1,26 @@
+# curv.js
+
+What it is: Horizon curvature: the documented cases of Lynch (2008)
+File: src/data/presets/curv.js
+SHA-256: 59ecc1869fedb1a98976b7f4b580ce09cafec87a7129cf06807580d0a98870de
+Obtained: typed by hand (or OCR checked by hand) from a printed or scanned source.
+Made by: by hand
+From: D. K. Lynch, Visually discerning the curvature of the Earth, Applied Optics 47(34) (2008)
+  H39-H43; heights given in feet there, converted (1 ft = 0.3048 m).
+Licence: other: facts from a cited article
+Used by:
+- src/data/cards/index.js
+- src/tabs/curv/calc.js
+- src/tabs/curv/cameras.js
+- src/tabs/curv/cameras.test.js
+- src/tabs/curv/depth.js
+- src/tabs/curv/index.js
+- src/tabs/curv/logic.test.js
+- src/tabs/curv/values.js
+
+What the file says about itself:
+  Onglet curv (epic13) -- cas documentés, tous tirés de Lynch (2008),
+  Applied Optics 47(34) H39-H43 (source [1] de l'onglet). Hauteurs en pieds
+  dans l'article, converties ici (1 ft = 0,3048 m, comme Lynch).
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

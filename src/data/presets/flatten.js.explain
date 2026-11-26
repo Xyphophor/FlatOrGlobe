@@ -1,0 +1,26 @@
+# flatten.js
+
+What it is: The cases of the 'flatten the Earth' figure
+File: src/data/presets/flatten.js
+SHA-256: f56bb8537b3b6df98a478e8d2518d8ef108975685d0ed52cc6ca540e1b6762c2
+Obtained: written by us (lists, choices, positions), not measured.
+Made by: by hand
+From: One case per tab, taken from the cases that tab already cites (dip, hh, elev).
+Licence: CC-BY-4.0 (the site's content licence, LICENSE)
+Used by:
+- src/core/flatten.test.js
+- src/tabs/dip/index.js
+- src/tabs/elev/index.js
+- src/tabs/hh/bordighera-anim.js
+- src/tabs/hh/bordighera.js
+- src/tabs/hh/index.js
+
+What the file says about itself:
+  Cas documentés de la figure « aplatir la Terre » (src/core/flatten.js,
+  epic06/UC04). Un cas par onglet, repris des cas que l'onglet cite déjà :
+  - dip : l'œil au Sommet de Viériou, 1 395 m (DIP_VANTAGE, et l'observation de sim) ;
+  - hh  : Indiana Dunes → Willis Tower, 53 km, toit à 447 m (HH_PRESETS["chicago-dunes"]) ;
+  - sim : Viériou → Castellaras / Cime de Barbin (PRESETS.vieriou, cibles ① et ②).
+  Distances en mètres. k = 0,13 pour la lecture réfractée (règle 3).
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

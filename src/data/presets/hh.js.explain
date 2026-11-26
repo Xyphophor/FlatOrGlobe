@@ -1,0 +1,32 @@
+# hh.js
+
+What it is: Hidden height: documented sightlines, cases and records
+File: src/data/presets/hh.js
+SHA-256: 7fedfa7ab4c3795b684abb2f0e11307d8d998ef07f0d95c8dfc0daef58c73e07
+Obtained: ported verbatim from the legacy page (legacy/flat-or-globe-2.20.0.html), which typed it
+  from the sources named in the file.
+Made by: ported verbatim from the legacy page (HH_PRESETS, HH_CASES, HH_RECORDS)
+From: Published heights and distances of each sightline or record, with its source in the hh tab.
+Licence: other: facts with their sources
+Used by:
+- src/data/cards/index.js
+- src/data/sources/elev.js
+- src/tabs/hh/exp.js
+- src/tabs/hh/hh-legacy.js
+- src/tabs/hh/index.js
+
+What the file says about itself:
+  HH_PRESETS + HH_CASES + HH_RECORDS de l'onglet "hh" (hauteur cachée),
+  portés à l'identique du legacy (flat-or-globe-2.20.0.html, HH_PRESETS
+  ~L15492, HH_CASES ~L15546, HH_RECORDS ~L15565).
+  
+  label/note sont l'anglais canonique ; les traductions vivent dans
+  src/i18n/<lang>/hh.json sous "preset-<key>-label" / "-note" (voir
+  presetText() dans index.js). Le legacy lui-même n'a PAS de traduction FR
+  complète pour ces 17 presets -- seuls 12 des 17 ont une entrée dans
+  PRESET_TEXT.fr (canigou-allauch, chicago-dunes, chicago-newbuffalo,
+  chicago-towerhill et chicago-grandmere n'en ont pas). Ce fichier ne porte
+  donc PAS de FR pour ces 5-là non plus : ils retombent sur l'anglais dans
+  les deux versions, fidèlement.
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

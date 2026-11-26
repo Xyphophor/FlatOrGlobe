@@ -1,0 +1,29 @@
+# ct.js
+
+What it is: Celestial theodolite: every complete case of the project's data table
+File: src/data/presets/ct.js
+SHA-256: f4619111fe2669d806709dbd76a32ce197048085e8c57b91d33fe45a876d7702
+Obtained: ported verbatim from the legacy page (legacy/flat-or-globe-2.20.0.html), which typed it
+  from the sources named in the file.
+Made by: ported verbatim from legacy/flat-or-globe-2.20.0.html (CT_PEAKS, CT_LATS, CT_CASES)
+From: The data_table of the Celestial Theodolite project (heights, distance, geometric and apparent
+  star altitudes at both ends), as the legacy page typed it; nothing fitted.
+Licence: other: the project's published table, cited in the ct tab
+What could still be wrong: Typed by hand in the legacy page; the ct tab recomputes every case from
+  these seven numbers, which shows a mistyped one as an outlier.
+Used by:
+- src/data/cards/index.js
+- src/tabs/ct/ct-legacy.js
+- src/tabs/ct/exp.js
+- src/tabs/ct/index.js
+- src/tabs/ct/logic.js
+- src/tabs/ct/logic.test.js
+
+What the file says about itself:
+  Données de l'onglet ct (théodolite céleste), portées VERBATIM du legacy
+  (CT_PEAKS ~L28185, CT_LATS ~L28193, CT_CASES ~L28727 : toutes les lignes
+  de la feuille data_table du projet Celestial Theodolite qui portent les
+  sept nombres -- hauteurs, distance, altitudes d'étoile géométriques et
+  apparentes aux deux bouts). Rien n'est ajusté ici.
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

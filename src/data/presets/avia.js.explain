@@ -1,0 +1,35 @@
+# avia.js
+
+What it is: Aviation tab: the numbers that do not come from the flight records
+File: src/data/presets/avia.js
+SHA-256: 46c71af389410fc4ee2e0857a6651fe39f7b1d9d4ea30fd0fe8160effcb0bc1f
+Obtained: typed by hand (or OCR checked by hand) from a printed or scanned source.
+Made by: by hand
+From: The cruise speed chosen for the level-flight figures (250 m/s at 10,668 m); the two aircraft
+  of the force figure; three airports for the heading indicators; EI-GJT (Boeing 737-800, 9 October
+  2018): its inertial ground speed read by eye off figure 3 of AAIB Bulletin 12/2019 (a PDF), and
+  its track off figure 4; One More Orbit (Gulfstream G650ER, 9-11 July 2019): times from the FAI
+  record and the mission's site; the airports' short names are ours.
+Licence: other: facts with their sources (each in the file)
+What could still be wrong: The EI-GJT speeds are read off a printed figure, about ±2 % on each
+  point; the start and heading of its track are decoration, not data.
+Used by:
+- src/data/cards/index.js
+- src/tabs/avia/forces.js
+- src/tabs/avia/gjt.js
+- src/tabs/avia/gyro.js
+- src/tabs/avia/index.js
+- src/tabs/avia/level.js
+- src/tabs/avia/logic.test.js
+- src/tabs/avia/race.js
+- src/tabs/avia/reel.js
+- src/tabs/avia/schuler.js
+- src/tabs/avia/table.js
+- src/tabs/avia/values.js
+- src/tabs/avia/world.js
+
+What the file says about itself:
+  Données de l'onglet avia (epic14) qui ne viennent pas du pipeline de vols
+  (celles-là : avia-flights.js, GÉNÉRÉ). Chaque nombre porte sa source.
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

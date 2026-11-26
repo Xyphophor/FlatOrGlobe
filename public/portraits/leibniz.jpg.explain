@@ -1,0 +1,12 @@
+# leibniz.jpg
+
+What it is: Portraits of the people block (map and phys tabs)
+File: public/portraits/leibniz.jpg
+SHA-256: 591e4297743c320122416e03648f2e4739c5fcf56b26bd62cc961ef216ff7fb2
+Obtained: downloaded as published (fog fetch or by hand).
+Made by: Wikimedia Commons
+From: Each file's Commons page and credit are in src/core/people.js (works in the public domain; an
+  imagined likeness is marked as such).
+Licence: public-domain
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

@@ -1,0 +1,30 @@
+# globespot.js
+
+What it is: Horizon profile of the 'Globe spot' viewpoint (obs tab)
+File: src/data/dem/globespot.js
+SHA-256: c94c16c016aa63033f24ca9ed6fdfe386f4e005e9e94f619c65a58532c4c808e
+Obtained: computed once by a script outside fog (research/ or scripts/).
+Made by: research/lidar_horizon.py (2026-09-24)
+From: IGN LiDAR HD terrain (about 1 m); three curves from one reading of the terrain.
+Licence: CC-BY-4.0 (derived from IGN LiDAR HD, Licence Ouverte)
+Used by:
+- src/tabs/ct/ct-legacy.js
+- src/tabs/obs/homefig.js
+- src/tabs/obs/index.js
+- src/tabs/obs/jan10.js
+- src/tabs/obs/jan10.test.js
+- src/tabs/obs/logic.test.js
+
+What the file says about itself:
+  Profil d'horizon du point de vue « Globe spot » (onglet obs). Recuit le
+  2026-09-24 par research/lidar_horizon.py depuis le MNT LiDAR HD de l'IGN
+  (~1 m ; le legacy, L26332-26339, l'avait cuit par make_horizon.py depuis
+  des tuiles SRTM). Trois courbes d'un seul relief -- plan, globe rayons
+  droits, globe à k = 0,13 ; azimut 200 à 285 par 0,1 ; dist = distance du
+  point qui fait l'horizon sur la courbe globe k, en km. `detail` : les mêmes
+  trois courbes au pas de 0,01° entre 236 et 244° (couchers filmés de ct et
+  obs), fondues au profil par src/core/horizon.js. La silhouette est
+  un DÉCOR (dit dans la page) : le test, ce sont les sommets nommés.
+  NE PAS ÉDITER À LA MAIN : relancer le générateur (--write).
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

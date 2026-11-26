@@ -36,6 +36,7 @@ Built by: fog build seis-radius, fog build seis-relocate, fog build seis-shadow,
 Generated files:
 - src/data/presets/seis-radius.js
 - src/data/presets/seis-relocate.js
+- src/data/presets/seis-shadow.js
 - data/seis/lr_arrivals.json
 - data/seis/lr_arrivals.csv
 - src/data/presets/seis-bulk.js

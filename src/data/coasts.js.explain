@@ -1,0 +1,32 @@
+# coasts.js
+
+What it is: Coastlines of the flat-map panels
+File: src/data/coasts.js
+SHA-256: 1131a2fe8ebed899802f61acdf41b496af7fdc14f2f5eb9538620f0fa6486813
+Obtained: ported verbatim from the legacy page (legacy/flat-or-globe-2.20.0.html), which typed it
+  from the sources named in the file.
+Made by: the legacy page's make_coastlines.py (not kept)
+From: Natural Earth 1:110m, simplified (Douglas-Peucker 0.55 degree), quantised to 0.1 degree,
+  delta-encoded.
+Licence: public-domain
+Notes: Decorative only.
+Used by:
+- src/core/globe25d.js
+- src/data/presets/seis-radius.js
+- src/data/sources/seis.js
+- src/render3d/shared/scene.js
+- src/tabs/azim/azim-legacy.js
+- src/tabs/grav/tideglobe.js
+- src/tabs/seis/seis-legacy.js
+- src/tabs/twi/index.js
+
+What the file says about itself:
+  Côtes pour les panneaux "carte" (twi : les deux modèles côte à côte ;
+  obs/azim : carte plate). Natural Earth 1:110m, simplifié par le
+  make_coastlines.py du legacy : Douglas-Peucker à 0,55°, quantifié à 0,1°
+  (~11 km à l'équateur), delta-encodé en dixièmes de degré :
+  [lon0, lat0, dlon, dlat, ...]. 5128 points -> 1494 en 103 lignes.
+  Référence DÉCORATIVE uniquement : aucune affirmation de la page ne repose
+  sur un trait de côte. Porté tel quel du legacy (~L25525).
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

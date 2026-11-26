@@ -1,0 +1,22 @@
+# stations.js
+
+What it is: Global Seismographic Network stations used as observation sites
+File: src/data/presets/stations.js
+SHA-256: 62a52cb40cce1ce998be222f4a1880275a492eb95d6a1b7e952cdc4c80205b21
+Obtained: ported verbatim from the legacy page (legacy/flat-or-globe-2.20.0.html), which typed it
+  from the sources named in the file.
+Made by: ported verbatim from the legacy page (SEIS_STATIONS)
+From: Nominal positions of GSN stations (EarthScope / NSF SAGE), rounded to 0.01 degree.
+Licence: other: public station metadata
+Used by:
+- src/tabs/azim/logic.js
+
+What the file says about itself:
+  Stations du Global Seismographic Network utilisées comme sites d'observation
+  (onglet azim ; le futur onglet seis les réutilise -- une seule liste, aucun
+  lieu choisi pour arranger une réponse). Portées à l'identique du legacy
+  (flat-or-globe-2.20.0.html, ~L19285 `SEIS_STATIONS`). Positions nominales
+  arrondies à 0,01° (EarthScope / NSF SAGE) : un centième de degré est ~1 km,
+  les désaccords mesurés se chiffrent en milliers.
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

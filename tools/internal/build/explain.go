@@ -239,6 +239,15 @@ func init() {
 					outputs[o] = append(outputs[o], d)
 				}
 			}
+			described := map[string]bool{}
+			for o := range outputs {
+				described[o] = true
+			}
+			others, nOther, err := otherExplains(root, described)
+			if err != nil {
+				return nil, "", err
+			}
+			files = append(files, others...)
 			var outs []string
 			for o := range outputs {
 				outs = append(outs, o)
@@ -288,7 +297,7 @@ func init() {
 			b.WriteString("};\n")
 			files = append(files, preset.File{Out: "src/data/provenance.js", Command: "build explain", Inputs: kept,
 				Notes: []string{"Provenance of the datasets (data/**/dataset.json): sources, files, public or not and why, code, sections."}, Body: b.String()})
-			return files, fmt.Sprintf("%d .explain for data files, %d for generated files, provenance of %d datasets", nIn, len(outs), len(kept)), nil
+			return files, fmt.Sprintf("%d .explain for data files, %d for generated files, %d for files compiled from no dataset (%s), provenance of %d datasets", nIn, len(outs), nOther, OtherName, len(kept)), nil
 		},
 	})
 }

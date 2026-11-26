@@ -1,0 +1,12 @@
+# aristotle.jpg
+
+What it is: Portraits of the people block (map and phys tabs)
+File: public/portraits/aristotle.jpg
+SHA-256: b2d74e4587d4bcf2908856ed5c3be9d84d74aca33748c52ee7497d8e4371b12a
+Obtained: downloaded as published (fog fetch or by hand).
+Made by: Wikimedia Commons
+From: Each file's Commons page and credit are in src/core/people.js (works in the public domain; an
+  imagined likeness is marked as such).
+Licence: public-domain
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

@@ -1,0 +1,22 @@
+# atmo-ussa.js
+
+What it is: The U.S. Standard Atmosphere 1976, SI tables 1 and 2
+File: src/data/presets/atmo-ussa.js
+SHA-256: 6da7258f1bf8db42124d79ed305c594940e5ff35cd782d496b9c365b5c9e36d9
+Obtained: typed by hand (or OCR checked by hand) from a printed or scanned source.
+Made by: by hand
+From: NOAA/NASA/USAF, U.S. Standard Atmosphere 1976 (NOAA-S/T 76-1562), tables as published by
+  Public Domain Aeronautical Software (https://www.pdas.com/bigtables.html, read 2026-10-17), copied
+  unchanged.
+Licence: public-domain
+Used by:
+- src/tabs/atmo/formfigs.js
+- src/tabs/atmo/logic.js
+
+What the file says about itself:
+  The U.S. Standard Atmosphere, 1976 (NOAA/NASA/USAF, NOAA-S/T 76-1562), SI tables 1 and 2 as published by Public Domain
+  Aeronautical Software (https://www.pdas.com/bigtables.html, read 2026-10-17), transcribed unchanged.
+  Columns: geometric altitude Z (km), temperature T (K), pressure p (Pa), density rho (kg/m3), number density n (1/m3),
+  mean particle speed (m/s).
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

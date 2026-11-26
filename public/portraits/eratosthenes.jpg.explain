@@ -1,0 +1,12 @@
+# eratosthenes.jpg
+
+What it is: Portraits of the people block (map and phys tabs)
+File: public/portraits/eratosthenes.jpg
+SHA-256: 91331ffa3e24c618af9feeb261745af835a82d69646d537f66e42de185f2ff50
+Obtained: downloaded as published (fog fetch or by hand).
+Made by: Wikimedia Commons
+From: Each file's Commons page and credit are in src/core/people.js (works in the public domain; an
+  imagined likeness is marked as such).
+Licence: public-domain
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

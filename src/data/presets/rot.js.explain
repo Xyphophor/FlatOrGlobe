@@ -1,0 +1,27 @@
+# rot.js
+
+What it is: Rotation: ring lasers and falling bodies, as published
+File: src/data/presets/rot.js
+SHA-256: 47438a758b0e173b2b43a9e284327cf95b570eee8eaa17174a92e0fd6d243bc4
+Obtained: typed by hand (or OCR checked by hand) from a printed or scanned source.
+Made by: by hand
+From: Stedman, Hurst & Schreiber 2007 (arXiv:0707.1377) tables 1 and 2, Schreiber et al. 2004
+  (arXiv:physics/0406156), and the falling-body experiments named in the file.
+Licence: other: facts from cited articles
+Used by:
+- src/data/cards/index.js
+- src/tabs/rot/exp.js
+- src/tabs/rot/index.js
+- src/tabs/rot/logic.js
+
+What the file says about itself:
+  Onglet rot (epic19). Données publiées, recopiées telles quelles.
+  
+  RINGS : lasers en anneau horizontaux. Dimensions, aires, périmètres : Stedman, Hurst &
+  Schreiber 2007 (arXiv:0707.1377), tableau 1 ; fréquences Sagnac : même article,
+  tableau 2 (kHz, valeurs observées), sauf G : 348,643 Hz (Schreiber et al. 2004,
+  arXiv:physics/0406156) et C-II : 79,4 Hz (Stedman et al., article de photonics.com et
+  tableau 2). Latitudes des laboratoires : 43,57694° S (Cashmere) et 49,14441° N (Wettzell),
+  même article. λ = 632,8 nm (hélium-néon).
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

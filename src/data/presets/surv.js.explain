@@ -1,0 +1,29 @@
+# surv.js
+
+What it is: Surveying: levelling cases, triangles, zenith lines
+File: src/data/presets/surv.js
+SHA-256: 5fdbd0f29959cad5cd97a4982ce24cd0bd80dcc0a8cf608cf62b1f4a9cfa5825
+Obtained: ported verbatim from the legacy page (legacy/flat-or-globe-2.20.0.html), which typed it
+  from the sources named in the file.
+Made by: ported verbatim from the legacy page (SURV_LVL, SURV_TRI, SV_ZEN, SV_TRI)
+From: Seven NGS lines of 1977 and 25 lines of the 1900 transcontinental triangulation as transcribed
+  by W. Bislin, and documented levelling cases.
+Licence: other: facts with their sources
+Used by:
+- src/data/cards/index.js
+- src/tabs/home/radii.js
+- src/tabs/surv/exp.js
+- src/tabs/surv/index.js
+- src/tabs/surv/logic.test.js
+- src/tabs/surv/surv-legacy.js
+
+What the file says about itself:
+  Données de l'onglet surv (nivellement / géodésie), portées VERBATIM du
+  legacy (flat-or-globe-2.20.0.html : SURV_LVL ~L17785, SURV_TRI ~L17817,
+  SV_ZEN ~L28599 -- sept lignes NGS de 1977 --, SV_TRI ~L28647 -- 25 lignes
+  de la triangulation transcontinentale de 1900 transcrites par Bislin).
+  Aucun curseur utilisateur : cas documentés seulement (directive du
+  propriétaire). Les légendes (`cap`) sont du texte EN du legacy, non
+  traduit ici (comme les notes de presets de sim).
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

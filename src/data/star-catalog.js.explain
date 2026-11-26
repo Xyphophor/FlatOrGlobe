@@ -1,0 +1,22 @@
+# star-catalog.js
+
+What it is: 49 bright stars (Yale Bright Star Catalogue)
+File: src/data/star-catalog.js
+SHA-256: 2580419056c0eb17072d430388497ca3c9850eaddb68db7c004713b97a938c2b
+Obtained: ported verbatim from the legacy page (legacy/flat-or-globe-2.20.0.html), which typed it
+  from the sources named in the file.
+Made by: ported verbatim from the legacy page (STAR)
+From: Yale Bright Star Catalogue, 5th edition, J2000, as published.
+Licence: other: catalogue values, cited
+Used by:
+- src/tabs/avia/sky.js
+- src/tabs/star/logic.js
+- src/tabs/star/logic.test.js
+- src/tabs/star/radec-logic.test.js
+
+What the file says about itself:
+  Données du legacy (flat-or-globe-2.20.0.html, IIFE STAR, ~L26914-27053),
+  portées à l'identique. Ne pas "arrondir" ou "simplifier" ces tableaux --
+  voir tasks/epic02/UC02.org et le commentaire d'origine ci-dessous.
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

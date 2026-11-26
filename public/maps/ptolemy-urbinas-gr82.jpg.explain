@@ -1,0 +1,14 @@
+# ptolemy-urbinas-gr82.jpg
+
+What it is: Ptolemy's world map in the Urbinas graecus 82 manuscript
+File: public/maps/ptolemy-urbinas-gr82.jpg
+SHA-256: 4c924ff62e7b37960d84b84fa93260f49259fc106b3ff11ae2771ffa9d7c8ae9
+Obtained: downloaded as published (fog fetch or by hand).
+Made by: Wikimedia Commons
+From: Codex Vaticanus Urbinas graecus 82, ff. 60v-61r (Biblioteca Apostolica Vaticana), image from
+  Wikimedia Commons (source [18] of the map tab).
+Licence: public-domain (the manuscript, about 1300)
+Used by:
+- src/tabs/map/maps.js
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

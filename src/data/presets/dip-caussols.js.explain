@@ -1,0 +1,24 @@
+# dip-caussols.js
+
+What it is: The sea-horizon dip measured on the Caussols photograph (13 June 2026)
+File: src/data/presets/dip-caussols.js
+SHA-256: e7420c83a2d941c905b9fb43d15a3c129dffec0bca2070820e1e017a5149bc6c
+Obtained: computed once by a script outside fog (research/ or scripts/).
+Made by: research/measure_dip_caussols.py (run once, 2026-09-29)
+From: The photograph data/elev/caussols-2026-06-13-original.jpg by Xyphophor
+  (https://x.com/Xyphophor), the site's author: camera fitted (EXIF focal length, heading, tilt,
+  roll) on the two near summits, then the horizon's altitude; the tab recomputes R from the dip.
+Inputs:
+- data/elev/caussols-2026-06-13-original.jpg
+- src/data/dem/caussols-view.json
+Licence: CC-BY-4.0 (the site's content licence, LICENSE)
+Used by:
+- src/tabs/dip/own.js
+- src/tabs/ref/caussols-air.js
+
+What the file says about itself:
+  The sea-horizon dip MEASURED on the owner's Caussols photo (13 June 2026): joint fit of the camera
+  (EXIF focal, heading, tilt, roll) and of the horizon's altitude, the level set by the two near summits.
+  fits[0] = central measurement; the others change one decision each. The tab recomputes R from dipArcmin.
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

@@ -1,0 +1,12 @@
+# ptolemy.jpg
+
+What it is: Portraits of the people block (map and phys tabs)
+File: public/portraits/ptolemy.jpg
+SHA-256: 47c638fd2d04058e9304dfe94b6428e92f0e8fbe878630ba083b105d8f4c121f
+Obtained: downloaded as published (fog fetch or by hand).
+Made by: Wikimedia Commons
+From: Each file's Commons page and credit are in src/core/people.js (works in the public domain; an
+  imagined likeness is marked as such).
+Licence: public-domain
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

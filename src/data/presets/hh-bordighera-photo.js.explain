@@ -1,0 +1,28 @@
+# hh-bordighera-photo.js
+
+What it is: The Bordighera photograph DSCN7496 placed on the hh scene
+File: src/data/presets/hh-bordighera-photo.js
+SHA-256: 9c503481b6576fa7d7bff2df6716e07ef1c3c554e83916a8286ca45277ea9f87
+Obtained: computed once by a script outside fog (research/ or scripts/).
+Made by: research/fit_bordighera_photo.py (run once, 2026-10-06)
+From: The photograph by Xyphophor (https://x.com/Xyphophor), the site's author (Nikon P900, 28 March
+  2026, 17:34), its scale from the EXIF, levelled on its sea horizon; the azimuth is its only free
+  parameter.
+Inputs:
+- public/photos/hh-bordighera-zoom.jpg
+Licence: CC-BY-4.0 (the site's content licence, LICENSE)
+Used by:
+- src/data/presets/ref-bordighera.js
+- src/tabs/hh/bordighera-anim.js
+- src/tabs/hh/bordighera.test.js
+
+What the file says about itself:
+  The owner's P900 photo DSCN7496 (28 March 2026, 17:34), levelled on its sea horizon (already rotated by
+  roll), contrast corrected, w x h px. Scale s (px/rad) from the EXIF focal length, the same for every model.
+  Placed ON THE HORIZON: photo row `horizon` = the model's sea top, in every state c (apparent curvature).
+  az: azimuth of the photo centre (rad, relative to BORD_SITE.az), the only free parameter, one for all models
+  (a direction does not depend on the shape): that of the best-matching state. states[]: each model's OWN best
+  azimuth and its match of the buildings (score = correlation; steel-man for the plane). meas: named roofs above the photo's
+  sea line (px at full resolution, mrad, m at their distance) and the curvature c / refraction k they imply.
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

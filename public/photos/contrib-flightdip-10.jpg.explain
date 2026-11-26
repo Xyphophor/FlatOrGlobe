@@ -1,0 +1,14 @@
+# contrib-flightdip-10.jpg
+
+What it is: Horizon-dip screenshots of earthlyskeptic, reduced
+File: public/photos/contrib-flightdip-10.jpg
+SHA-256: 457d72704e603d7d879e5e16c1a40557fea9ded61b6ba1b1e23e4046cfb7160b
+Obtained: sent by a contributor (photos, logs).
+Made by: fog build contrib-flightdip (resized from data/contrib/flightdip/raw/photos/)
+From: earthlyskeptic's Theodolite screenshots (https://x.com/earthlyskeptic).
+Licence: CC-BY-NC-SA-4.0 (his agreement of 2026-11-26,
+  data/contrib/flightdip/licence-2026-11-26.jpg)
+Used by:
+- src/data/presets/contrib-flightdip.js
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

@@ -1,0 +1,14 @@
+# hh-bordighera-zoom.jpg
+
+What it is: The Bordighera photograph DSCN7496 (served)
+File: public/photos/hh-bordighera-zoom.jpg
+SHA-256: 0b13c3f739b2676cba5574fe36301b41721340b4330e35d9adf3f31dce17c85b
+Obtained: a photograph.
+Made by: taken by Xyphophor (https://x.com/Xyphophor), the site's author
+From: Nikon P900, 28 March 2026, 17:34, from a balcony near Antibes; contrast corrected and levelled
+  (research/fit_bordighera_photo.py).
+Licence: CC-BY-4.0 (the site's content licence, LICENSE)
+Used by:
+- src/data/presets/hh-bordighera-photo.js
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

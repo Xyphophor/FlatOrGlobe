@@ -1,0 +1,13 @@
+# elev-schneeberg.jpg
+
+What it is: The Schneeberg photograph (served)
+File: public/photos/elev-schneeberg.jpg
+SHA-256: 01ecd7a2d7744299efe4e1f764ac404d8305fcc53173658af2548bed0e9dfff7
+Obtained: a photograph.
+Made by: taken by deprojected (https://x.com/deprojected)
+From: data/elev/schneeberg-lecteur-2048x477.jpg, used with his permission (2026-10-06).
+Licence: other: used with the photographer's permission, not under the site's licence
+Used by:
+- src/data/presets/elev.js
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

@@ -1,0 +1,12 @@
+# argentera2-vpscan.json
+
+What it is: Argentera: the viewpoint scan
+File: data/elev/argentera2-vpscan.json
+SHA-256: 44b32e56d4bd152bf4958ad52d4bd6d11225554a0f655c8632162d0ad58c0f5f
+Obtained: computed once by a script outside fog (research/ or scripts/).
+Made by: research/argentera2/vpscan.py
+From: The fit of the photograph repeated for camera positions around the stated viewpoint (every 25
+  m across, 100 m along the sight).
+Licence: CC-BY-4.0 (the site's content licence, LICENSE)
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

@@ -1,0 +1,22 @@
+# mag-obs-fit.js
+
+What it is: Magnetism: the flat models' free parameters fitted to the measured dips
+File: src/data/presets/mag-obs-fit.js
+SHA-256: baa0c62e55d53556a4a34b5b142264b9fdf847ae42b48314acc8399ea61f6e3b
+Obtained: computed once by a script outside fog (research/ or scripts/).
+Made by: scripts/fit_mag_obs.mjs
+From: Least squares on the inclination only, over src/data/presets/mag-obs.js (fog build mag-obs).
+Inputs:
+- src/data/presets/mag-obs.js
+Licence: CC-BY-4.0 (the site's content licence, LICENSE)
+Used by:
+- src/tabs/mag/obs-figs.js
+- src/tabs/mag/obs-logic.test.js
+
+What the file says about itself:
+  Free parameters fitted (least squares on I only, degrees) to MAG_OBS.
+  flat1.d = magnet depth, km; flat2.d2 = burial depth, km (ring = equal and opposite
+  charge to the centre pole: net magnetic charge zero, div B = 0 -- 2026-09-30).
+  flat2bal = flat2 fitted with both hemispheres weighted equally (quoted in the text only).
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

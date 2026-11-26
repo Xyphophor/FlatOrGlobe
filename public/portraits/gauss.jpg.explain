@@ -1,0 +1,12 @@
+# gauss.jpg
+
+What it is: Portraits of the people block (map and phys tabs)
+File: public/portraits/gauss.jpg
+SHA-256: cde20916da0a9c5ff82e411f3be93c5e671cb0a736271beb262c45310465fe83
+Obtained: downloaded as published (fog fetch or by hand).
+Made by: Wikimedia Commons
+From: Each file's Commons page and credit are in src/core/people.js (works in the public domain; an
+  imagined likeness is marked as such).
+Licence: public-domain
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

@@ -1,0 +1,37 @@
+# dip.js
+
+What it is: Horizon dip: documented viewpoints
+File: src/data/presets/dip.js
+SHA-256: 58b6781be5d034db132569a199eeb0127f7468a681398538ed9e75167149dfeb
+Obtained: ported verbatim from the legacy page (legacy/flat-or-globe-2.20.0.html), which typed it
+  from the sources named in the file.
+Made by: ported verbatim from the legacy page (DIP_SPOTS, VANTAGE)
+From: Published heights of each viewpoint (summits, towers, aircraft cruise levels), as typed by the
+  legacy page.
+Licence: other: facts with their sources
+Used by:
+- src/data/cards/index.js
+- src/tabs/contrib/flightdip/air.js
+- src/tabs/contrib/flightdip/contribution.js
+- src/tabs/contrib/flightdip/logic.test.js
+- src/tabs/contrib/flightdip/prose.js
+- src/tabs/dip/exp.js
+- src/tabs/dip/index.js
+- src/tabs/dip/logic.js
+- src/tabs/dip/logic.test.js
+
+What the file says about itself:
+  Points de vue documentés de l'onglet dip, portés à l'identique du legacy
+  (flat-or-globe-2.20.0.html, ~L16120 `DIP_SPOTS` et ~L16431 `VANTAGE`).
+  La formule du dip n'a aucun paramètre libre, donc cette liste sert
+  d'échelle de falsification : chaque échelon a une hauteur publiée et une
+  distance d'horizon vérifiable sur une carte ou une photo.
+  
+  PIÈGE DOCUMENTÉ (CLAUDE.md, tasks/epic02/UC03.org) : la plage est
+  PLAFONNÉE à 20 000 m. Ne pas ajouter d'échelon au-delà de ce plafond --
+  le contrôle numérique (voir dip/logic.js `clampHeight`) le bloquerait
+  silencieusement, exactement comme dans le legacy (`Math.min(20000, ...)`
+  aux trois points d'entrée : sélection d'un preset, saisie manuelle,
+  glisser-déposer sur les figures).
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

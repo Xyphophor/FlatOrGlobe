@@ -1,0 +1,18 @@
+# caussols-view-layers.json
+
+What it is: Horizon profiles of the viewpoints (plane, straight-ray globe, refracted globe)
+File: src/data/dem/caussols-view-layers.json
+SHA-256: 9004d77674e991c2ca84e70c14e70e6923ca167562027079a1f97aa02648d17e
+Obtained: computed once by a script outside fog (research/ or scripts/).
+Made by: research/lidar_horizon.py (with research/cop_dem.py and research/bev_dem.py)
+From: Terrain read along each azimuth from IGN LiDAR HD (France, Licence Ouverte), Copernicus GLO-30
+  (outside France) and the BEV ALS terrain model (Austria, CC BY 4.0); three curves from one reading
+  of the terrain.
+Licence: CC-BY-4.0 (derived from the terrain models named)
+What could still be wrong: Distances along the ground come from the terrain models' coordinates: the
+  radius enters there (a check, rule 10).
+Used by:
+- src/tabs/dip/index.js
+- src/tabs/elev/index.js
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

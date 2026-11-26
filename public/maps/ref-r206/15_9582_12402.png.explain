@@ -1,0 +1,12 @@
+# 15_9582_12402.png
+
+What it is: OpenStreetMap tiles of the Route 206 line (Kozlowski)
+File: public/maps/ref-r206/15_9582_12402.png
+SHA-256: 70e1be985a34a3f08d9b63758c52e19ab76bd47d9102950050ae513d0a941935
+Obtained: downloaded as published (fog fetch or by hand).
+Made by: research/build_r206_map.py (run once)
+From: 16 OpenStreetMap tiles at zoom 15 (tile.openstreetmap.org), downloaded once so that the page
+  requests nothing from OSM.
+Licence: ODbL-1.0 / CC BY-SA 2.0 (© OpenStreetMap contributors)
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

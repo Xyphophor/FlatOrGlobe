@@ -1,0 +1,12 @@
+# newton.jpg
+
+What it is: Portraits of the people block (map and phys tabs)
+File: public/portraits/newton.jpg
+SHA-256: 0901a4e3ac589ebab3f38cbe4c27c9ed5ebf70d8dfc079f111bab6d61aee782e
+Obtained: downloaded as published (fog fetch or by hand).
+Made by: Wikimedia Commons
+From: Each file's Commons page and credit are in src/core/people.js (works in the public domain; an
+  imagined likeness is marked as such).
+Licence: public-domain
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

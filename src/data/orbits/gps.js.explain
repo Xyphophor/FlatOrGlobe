@@ -1,0 +1,30 @@
+# gps.js
+
+What it is: GPS constellation constants
+File: src/data/orbits/gps.js
+SHA-256: 2b48ab79898e8b852108511a246ba9e3018328a1bf2c352119839f5cf1b22219
+Obtained: ported verbatim from the legacy page (legacy/flat-or-globe-2.20.0.html), which typed it
+  from the sources named in the file.
+Made by: ported verbatim from the legacy page (gpsSat, GPS_A)
+From: Published semi-major axis and inclination of the GPS orbits (sources [1]-[3] of the gps tab).
+Licence: other: published constants
+Used by:
+- src/data/cards/index.js
+- src/render3d/scene-gps.js
+- src/tabs/gps/exp.js
+- src/tabs/gps/index.js
+- src/tabs/gps/logic.js
+- src/tabs/gps/rawvalues.js
+- src/tabs/rx/userlogic.js
+
+What the file says about itself:
+  Constantes orbitales de la constellation GPS, portées à l'identique du
+  legacy (flat-or-globe-2.20.0.html, ~L18052-18065 `gpsSat`/`GPS_A`, et le
+  bloc .srcs de tab-gps ~L13659). Le demi-grand axe et l'inclinaison sont
+  des valeurs publiées (sources [1][2][3] ci-dessous, voir
+  src/data/sources/gps.js) ; GM et c sont les constantes physiques
+  standard. Rien de tout cela n'est un réglage utilisateur -- tasks/epic02/
+  UC08.org : "boîte de Kepler calculée, pas codée en dur" s'applique à
+  toute la géométrie de cet onglet.
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

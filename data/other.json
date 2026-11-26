@@ -1,0 +1,359 @@
+{
+  "about": "Files that fog does not compile from a dataset (typed by hand, ported from the legacy page, computed once by a script, photographs, maps, portraits). fog build explain writes a .explain beside each, with the file's own header comment and the code that uses it. Globs: * (no /), ** (any path).",
+  "files": [
+    {
+      "path": "src/data/presets/atmo-ussa.js",
+      "title": "The U.S. Standard Atmosphere 1976, SI tables 1 and 2",
+      "how": "transcription",
+      "made_by": "by hand",
+      "origin": "NOAA/NASA/USAF, U.S. Standard Atmosphere 1976 (NOAA-S/T 76-1562), tables as published by Public Domain Aeronautical Software (https://www.pdas.com/bigtables.html, read 2026-10-17), copied unchanged.",
+      "license": "public-domain"
+    },
+    {
+      "path": "src/data/presets/avia.js",
+      "title": "Aviation tab: the numbers that do not come from the flight records",
+      "how": "transcription",
+      "made_by": "by hand",
+      "origin": "The cruise speed chosen for the level-flight figures (250 m/s at 10,668 m); the two aircraft of the force figure; three airports for the heading indicators; EI-GJT (Boeing 737-800, 9 October 2018): its inertial ground speed read by eye off figure 3 of AAIB Bulletin 12/2019 (a PDF), and its track off figure 4; One More Orbit (Gulfstream G650ER, 9-11 July 2019): times from the FAI record and the mission's site; the airports' short names are ours.",
+      "license": "other: facts with their sources (each in the file)",
+      "caveats": "The EI-GJT speeds are read off a printed figure, about ±2 % on each point; the start and heading of its track are decoration, not data."
+    },
+    {
+      "path": "src/data/presets/ct.js",
+      "title": "Celestial theodolite: every complete case of the project's data table",
+      "how": "legacy",
+      "made_by": "ported verbatim from legacy/flat-or-globe-2.20.0.html (CT_PEAKS, CT_LATS, CT_CASES)",
+      "origin": "The data_table of the Celestial Theodolite project (heights, distance, geometric and apparent star altitudes at both ends), as the legacy page typed it; nothing fitted.",
+      "license": "other: the project's published table, cited in the ct tab",
+      "caveats": "Typed by hand in the legacy page; the ct tab recomputes every case from these seven numbers, which shows a mistyped one as an outlier."
+    },
+    {
+      "path": "src/data/presets/curv.js",
+      "title": "Horizon curvature: the documented cases of Lynch (2008)",
+      "how": "transcription",
+      "made_by": "by hand",
+      "origin": "D. K. Lynch, Visually discerning the curvature of the Earth, Applied Optics 47(34) (2008) H39-H43; heights given in feet there, converted (1 ft = 0.3048 m).",
+      "license": "other: facts from a cited article"
+    },
+    {
+      "path": "src/data/presets/dip.js",
+      "title": "Horizon dip: documented viewpoints",
+      "how": "legacy",
+      "made_by": "ported verbatim from the legacy page (DIP_SPOTS, VANTAGE)",
+      "origin": "Published heights of each viewpoint (summits, towers, aircraft cruise levels), as typed by the legacy page.",
+      "license": "other: facts with their sources"
+    },
+    {
+      "path": "src/data/presets/elev.js",
+      "title": "Elevation angles: documented sightlines and the photographs measured",
+      "how": "legacy",
+      "made_by": "ported verbatim from the legacy page (PRESETS), then extended by hand",
+      "origin": "Published summit heights and positions for each sightline; the photographs (public/photos/elev-*.jpg) and their camera fits come from research/align_photo.py and research/fit_camera_caussols.py.",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)",
+      "inputs": [
+        "public/photos/elev-caussols.jpg",
+        "public/photos/elev-vieriou.jpg",
+        "public/photos/elev-argentera.jpg",
+        "public/photos/elev-schneeberg.jpg",
+        "src/data/dem/*-view.json"
+      ]
+    },
+    {
+      "path": "src/data/presets/flatten.js",
+      "title": "The cases of the 'flatten the Earth' figure",
+      "how": "ours",
+      "made_by": "by hand",
+      "origin": "One case per tab, taken from the cases that tab already cites (dip, hh, elev).",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)"
+    },
+    {
+      "path": "src/data/presets/hh.js",
+      "title": "Hidden height: documented sightlines, cases and records",
+      "how": "legacy",
+      "made_by": "ported verbatim from the legacy page (HH_PRESETS, HH_CASES, HH_RECORDS)",
+      "origin": "Published heights and distances of each sightline or record, with its source in the hh tab.",
+      "license": "other: facts with their sources"
+    },
+    {
+      "path": "src/data/presets/obs.js",
+      "title": "Observation guide: the viewpoint and its targets",
+      "how": "legacy",
+      "made_by": "ported verbatim from the legacy page",
+      "origin": "Positions and heights of the 'Globe spot' viewpoint and of four summits (maps and published heights; Mourre Frey located in the terrain model at its published bearing and distance, flagged); distances and azimuths computed by great circle.",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)",
+      "caveats": "The distances come from coordinates on a sphere: the radius enters there (a check, rule 10)."
+    },
+    {
+      "path": "src/data/presets/rot.js",
+      "title": "Rotation: ring lasers and falling bodies, as published",
+      "how": "transcription",
+      "made_by": "by hand",
+      "origin": "Stedman, Hurst & Schreiber 2007 (arXiv:0707.1377) tables 1 and 2, Schreiber et al. 2004 (arXiv:physics/0406156), and the falling-body experiments named in the file.",
+      "license": "other: facts from cited articles"
+    },
+    {
+      "path": "src/data/presets/stations.js",
+      "title": "Global Seismographic Network stations used as observation sites",
+      "how": "legacy",
+      "made_by": "ported verbatim from the legacy page (SEIS_STATIONS)",
+      "origin": "Nominal positions of GSN stations (EarthScope / NSF SAGE), rounded to 0.01 degree.",
+      "license": "other: public station metadata"
+    },
+    {
+      "path": "src/data/presets/surv.js",
+      "title": "Surveying: levelling cases, triangles, zenith lines",
+      "how": "legacy",
+      "made_by": "ported verbatim from the legacy page (SURV_LVL, SURV_TRI, SV_ZEN, SV_TRI)",
+      "origin": "Seven NGS lines of 1977 and 25 lines of the 1900 transcontinental triangulation as transcribed by W. Bislin, and documented levelling cases.",
+      "license": "other: facts with their sources"
+    },
+    {
+      "path": "src/data/presets/surv-recip.js",
+      "title": "Reciprocal zenith angles and EDM distances (Kozlowski)",
+      "how": "transcription",
+      "made_by": "by hand, 2026-10-04",
+      "origin": "J. Kozlowski, Zenith Angle Projects (4-page PDF hosted by W. Bislin, 2004-04): the EDM slope distances measured by the instrument (the DELTA XYZ chords, which saw the ellipsoid, are not kept).",
+      "license": "other: facts from a cited document"
+    },
+    {
+      "path": "src/data/orbits/gps.js",
+      "title": "GPS constellation constants",
+      "how": "legacy",
+      "made_by": "ported verbatim from the legacy page (gpsSat, GPS_A)",
+      "origin": "Published semi-major axis and inclination of the GPS orbits (sources [1]-[3] of the gps tab).",
+      "license": "other: published constants"
+    },
+    {
+      "path": "src/data/coasts.js",
+      "title": "Coastlines of the flat-map panels",
+      "how": "legacy",
+      "made_by": "the legacy page's make_coastlines.py (not kept)",
+      "origin": "Natural Earth 1:110m, simplified (Douglas-Peucker 0.55 degree), quantised to 0.1 degree, delta-encoded.",
+      "license": "public-domain",
+      "notes": "Decorative only."
+    },
+    {
+      "path": "src/data/star-catalog.js",
+      "title": "49 bright stars (Yale Bright Star Catalogue)",
+      "how": "legacy",
+      "made_by": "ported verbatim from the legacy page (STAR)",
+      "origin": "Yale Bright Star Catalogue, 5th edition, J2000, as published.",
+      "license": "other: catalogue values, cited"
+    },
+    {
+      "path": "src/data/presets/dip-caussols.js",
+      "title": "The sea-horizon dip measured on the Caussols photograph (13 June 2026)",
+      "how": "script",
+      "made_by": "research/measure_dip_caussols.py (run once, 2026-09-29)",
+      "origin": "The photograph data/elev/caussols-2026-06-13-original.jpg by Xyphophor (https://x.com/Xyphophor), the site's author: camera fitted (EXIF focal length, heading, tilt, roll) on the two near summits, then the horizon's altitude; the tab recomputes R from the dip.",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)",
+      "inputs": [
+        "data/elev/caussols-2026-06-13-original.jpg",
+        "src/data/dem/caussols-view.json"
+      ]
+    },
+    {
+      "path": "src/data/presets/hh-bordighera.js",
+      "title": "Bordighera seen from a balcony near Antibes: the buildings and the hills",
+      "how": "script",
+      "made_by": "research/build_bordighera.py (run once, 2026-10-06/14)",
+      "origin": "IGN LiDAR HD (the eye's ground), OpenStreetMap building footprints (ODbL), Copernicus DSM and TINITALY 1.1 (INGV, CC BY 4.0) for heights; the eye's position is private (data/hh/bordighera/raw/eye.json, never in git).",
+      "license": "ODbL-1.0 for the buildings (derived from OpenStreetMap); CC-BY-4.0 for the rest",
+      "caveats": "Positions are given relative to the eye, to the metre; the eye itself is not published."
+    },
+    {
+      "path": "src/data/presets/hh-bordighera-photo.js",
+      "title": "The Bordighera photograph DSCN7496 placed on the hh scene",
+      "how": "script",
+      "made_by": "research/fit_bordighera_photo.py (run once, 2026-10-06)",
+      "origin": "The photograph by Xyphophor (https://x.com/Xyphophor), the site's author (Nikon P900, 28 March 2026, 17:34), its scale from the EXIF, levelled on its sea horizon; the azimuth is its only free parameter.",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)",
+      "inputs": [
+        "public/photos/hh-bordighera-zoom.jpg"
+      ]
+    },
+    {
+      "path": "src/data/presets/mag-obs-fit.js",
+      "title": "Magnetism: the flat models' free parameters fitted to the measured dips",
+      "how": "script",
+      "made_by": "scripts/fit_mag_obs.mjs",
+      "origin": "Least squares on the inclination only, over src/data/presets/mag-obs.js (fog build mag-obs).",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)",
+      "inputs": [
+        "src/data/presets/mag-obs.js"
+      ]
+    },
+    {
+      "path": "src/data/presets/avia-flat-fit.js",
+      "title": "Aviation: the best layout of the airports on a plane",
+      "how": "script",
+      "made_by": "scripts/fit_avia_flat.mjs",
+      "origin": "Fitted to the measured flight times of src/data/presets/avia-flights.js (fog build avia-flights).",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)",
+      "inputs": [
+        "src/data/presets/avia-flights.js"
+      ]
+    },
+    {
+      "path": "src/data/dem/*.json",
+      "title": "Horizon profiles of the viewpoints (plane, straight-ray globe, refracted globe)",
+      "how": "script",
+      "made_by": "research/lidar_horizon.py (with research/cop_dem.py and research/bev_dem.py)",
+      "origin": "Terrain read along each azimuth from IGN LiDAR HD (France, Licence Ouverte), Copernicus GLO-30 (outside France) and the BEV ALS terrain model (Austria, CC BY 4.0); three curves from one reading of the terrain.",
+      "license": "CC-BY-4.0 (derived from the terrain models named)",
+      "caveats": "Distances along the ground come from the terrain models' coordinates: the radius enters there (a check, rule 10)."
+    },
+    {
+      "path": "src/data/dem/globespot.js",
+      "title": "Horizon profile of the 'Globe spot' viewpoint (obs tab)",
+      "how": "script",
+      "made_by": "research/lidar_horizon.py (2026-09-24)",
+      "origin": "IGN LiDAR HD terrain (about 1 m); three curves from one reading of the terrain.",
+      "license": "CC-BY-4.0 (derived from IGN LiDAR HD, Licence Ouverte)"
+    },
+    {
+      "path": "data/elev/caussols-2026-06-13-original.jpg",
+      "title": "The Caussols photograph, original file (13 June 2026)",
+      "how": "photo",
+      "made_by": "taken by Xyphophor (https://x.com/Xyphophor), the site's author",
+      "origin": "Redmi Note 13 Pro, 4,080 × 3,060, EXIF kept (focal length used by the dip measurement).",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)"
+    },
+    {
+      "path": "data/elev/caussols-2026-06-13.jpg",
+      "title": "The Caussols photograph, reduced",
+      "how": "photo",
+      "made_by": "taken by Xyphophor (https://x.com/Xyphophor), the site's author",
+      "origin": "The same photograph, resized for work.",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)"
+    },
+    {
+      "path": "data/elev/argentera2-owner.jpg",
+      "title": "The Argentera photograph",
+      "how": "photo",
+      "made_by": "taken by Xyphophor (https://x.com/Xyphophor), the site's author",
+      "origin": "The photograph fitted by research/argentera2/ and research/align_photo.py.",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)"
+    },
+    {
+      "path": "data/elev/argentera2-*.png",
+      "title": "Argentera: overlays of the photograph and the models",
+      "how": "script",
+      "made_by": "research/argentera2/overlay.py",
+      "origin": "The photograph data/elev/argentera2-owner.jpg with each model's skyline drawn over it.",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)"
+    },
+    {
+      "path": "data/elev/argentera2-vpscan.json",
+      "title": "Argentera: the viewpoint scan",
+      "how": "script",
+      "made_by": "research/argentera2/vpscan.py",
+      "origin": "The fit of the photograph repeated for camera positions around the stated viewpoint (every 25 m across, 100 m along the sight).",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)"
+    },
+    {
+      "path": "data/elev/Panorama360vieriou zoom2.jpg",
+      "title": "The Vieriou panorama, zoomed",
+      "how": "photo",
+      "made_by": "taken by Xyphophor (https://x.com/Xyphophor), the site's author",
+      "origin": "Original of public/photos/elev-vieriou-zoom2.jpg.",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)"
+    },
+    {
+      "path": "data/elev/schneeberg-lecteur-2048x477.jpg",
+      "title": "The Schneeberg photograph",
+      "how": "photo",
+      "made_by": "taken by deprojected (https://x.com/deprojected)",
+      "origin": "Used with his permission (2026-10-06); original of public/photos/elev-schneeberg.jpg.",
+      "license": "other: used with the photographer's permission, not under the site's licence"
+    },
+    {
+      "path": "public/photos/elev-caussols.jpg",
+      "title": "The Caussols photograph (served)",
+      "how": "photo",
+      "made_by": "taken by Xyphophor (https://x.com/Xyphophor), the site's author",
+      "origin": "Reduced from data/elev/caussols-2026-06-13-original.jpg.",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)"
+    },
+    {
+      "path": "public/photos/elev-argentera.jpg",
+      "title": "The Argentera photograph (served)",
+      "how": "photo",
+      "made_by": "taken by Xyphophor (https://x.com/Xyphophor), the site's author",
+      "origin": "Reduced from data/elev/argentera2-owner.jpg.",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)"
+    },
+    {
+      "path": "public/photos/elev-vieriou*.jpg",
+      "title": "The Vieriou photographs (served)",
+      "how": "photo",
+      "made_by": "taken by Xyphophor (https://x.com/Xyphophor), the site's author",
+      "origin": "The panorama and its zoom (original: data/elev/Panorama360vieriou zoom2.jpg).",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)"
+    },
+    {
+      "path": "public/photos/elev-schneeberg.jpg",
+      "title": "The Schneeberg photograph (served)",
+      "how": "photo",
+      "made_by": "taken by deprojected (https://x.com/deprojected)",
+      "origin": "data/elev/schneeberg-lecteur-2048x477.jpg, used with his permission (2026-10-06).",
+      "license": "other: used with the photographer's permission, not under the site's licence"
+    },
+    {
+      "path": "public/photos/hh-bordighera-zoom.jpg",
+      "title": "The Bordighera photograph DSCN7496 (served)",
+      "how": "photo",
+      "made_by": "taken by Xyphophor (https://x.com/Xyphophor), the site's author",
+      "origin": "Nikon P900, 28 March 2026, 17:34, from a balcony near Antibes; contrast corrected and levelled (research/fit_bordighera_photo.py).",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)"
+    },
+    {
+      "path": "public/photos/obs-2026-01-10-ntp-*.jpg",
+      "title": "The camera's clock beside a network (NTP) clock, 10 January 2026",
+      "how": "photo",
+      "made_by": "taken by Xyphophor (https://x.com/Xyphophor), the site's author",
+      "origin": "Three photographs that check the clock of the camera of the 10 January sunset recording (obs tab).",
+      "license": "CC-BY-4.0 (the site's content licence, LICENSE)"
+    },
+    {
+      "path": "public/photos/contrib-lomond-*.jpg",
+      "title": "Bass Rock from East Lomond: the contributor's annotated slide",
+      "how": "contributor",
+      "made_by": "KenRDKAB (https://x.com/KenRDKAB)",
+      "origin": "Published with his permission (2026-10-15); read by fog build contrib-lomond.",
+      "license": "other: used with the contributor's permission, not under the site's licence"
+    },
+    {
+      "path": "public/photos/contrib-flightdip-*.jpg",
+      "title": "Horizon-dip screenshots of earthlyskeptic, reduced",
+      "how": "contributor",
+      "made_by": "fog build contrib-flightdip (resized from data/contrib/flightdip/raw/photos/)",
+      "origin": "earthlyskeptic's Theodolite screenshots (https://x.com/earthlyskeptic).",
+      "license": "CC-BY-NC-SA-4.0 (his agreement of 2026-11-26, data/contrib/flightdip/licence-2026-11-26.jpg)"
+    },
+    {
+      "path": "public/maps/ptolemy-urbinas-gr82.jpg",
+      "title": "Ptolemy's world map in the Urbinas graecus 82 manuscript",
+      "how": "download",
+      "made_by": "Wikimedia Commons",
+      "origin": "Codex Vaticanus Urbinas graecus 82, ff. 60v-61r (Biblioteca Apostolica Vaticana), image from Wikimedia Commons (source [18] of the map tab).",
+      "license": "public-domain (the manuscript, about 1300)"
+    },
+    {
+      "path": "public/maps/ref-r206/*",
+      "title": "OpenStreetMap tiles of the Route 206 line (Kozlowski)",
+      "how": "download",
+      "made_by": "research/build_r206_map.py (run once)",
+      "origin": "16 OpenStreetMap tiles at zoom 15 (tile.openstreetmap.org), downloaded once so that the page requests nothing from OSM.",
+      "license": "ODbL-1.0 / CC BY-SA 2.0 (© OpenStreetMap contributors)"
+    },
+    {
+      "path": "public/portraits/*",
+      "title": "Portraits of the people block (map and phys tabs)",
+      "how": "download",
+      "made_by": "Wikimedia Commons",
+      "origin": "Each file's Commons page and credit are in src/core/people.js (works in the public domain; an imagined likeness is marked as such).",
+      "license": "public-domain"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+# hh-bordighera.js
+
+What it is: Bordighera seen from a balcony near Antibes: the buildings and the hills
+File: src/data/presets/hh-bordighera.js
+SHA-256: 7bfbe5087f7294ba341d0132abc9a3f5852722cf3e31e3ffa4db4c7872119996
+Obtained: computed once by a script outside fog (research/ or scripts/).
+Made by: research/build_bordighera.py (run once, 2026-10-06/14)
+From: IGN LiDAR HD (the eye's ground), OpenStreetMap building footprints (ODbL), Copernicus DSM and
+  TINITALY 1.1 (INGV, CC BY 4.0) for heights; the eye's position is private
+  (data/hh/bordighera/raw/eye.json, never in git).
+Licence: ODbL-1.0 for the buildings (derived from OpenStreetMap); CC-BY-4.0 for the rest
+What could still be wrong: Positions are given relative to the eye, to the metre; the eye itself is
+  not published.
+Used by:
+- src/data/presets/ref-bordighera.js
+- src/tabs/hh/bordighera-anim.js
+- src/tabs/hh/bordighera.test.js
+
+What the file says about itself:
+  Bordighera from a balcony near Antibes (hh tab). Eye ground: IGN LiDAR HD (MNT). Buildings:
+  OpenStreetMap (ODbL), height from building:levels x levelM, else Copernicus DSM - ground, else 3 levels.
+  Ground under them and hills: TINITALY 1.1 (INGV, CC BY 4.0). Positions: [azimuth from the eye minus
+  BORD_SITE.az (micro-degrees), great-circle distance on a 6,371 km sphere (m), ground (m)].
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

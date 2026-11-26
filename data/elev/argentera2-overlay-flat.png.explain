@@ -1,0 +1,11 @@
+# argentera2-overlay-flat.png
+
+What it is: Argentera: overlays of the photograph and the models
+File: data/elev/argentera2-overlay-flat.png
+SHA-256: e4ad2a4e361acd655bfa0750691f2a96ad1e7a07ce4dadbe8f3a9c3ba4926815
+Obtained: computed once by a script outside fog (research/ or scripts/).
+Made by: research/argentera2/overlay.py
+From: The photograph data/elev/argentera2-owner.jpg with each model's skyline drawn over it.
+Licence: CC-BY-4.0 (the site's content licence, LICENSE)
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

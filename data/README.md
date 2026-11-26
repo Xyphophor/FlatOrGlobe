@@ -69,6 +69,11 @@ repository does not carry are the ones the site was computed from.
 
 ## .explain files
 
+Files that no dataset produces (typed by hand, ported from the legacy page, computed once by a script, photographs,
+maps, portraits) are described in `data/other.json` instead; `fog build explain` fails on a file of the watched
+places (`Watched` in tools/internal/build/other.go) that nothing describes.
+
+
 `fog build explain` (a meta target, part of `fog build all`) writes, beside every file of every
 `inputs.lock`, a plain-text `<file>.explain`: what it is, its SHA-256, whether it is in the public
 repository (and if not, why and where to get it), how it was obtained, its checks and caveats, the

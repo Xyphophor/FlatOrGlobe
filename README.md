@@ -22,6 +22,8 @@ Every number traces back to its files and its code.
 
 ## Layout
 
+`STRUCTURE.md` describes the tree in full, and how to follow a number of the site back to its files.
+
 - `data/` — the raw material and the datasets (`data/README.md`).
 - `tools/` — `fog`, the Go data compiler: `fog fetch`, `fog build`, `fog validate`
   (`go doc -all ./internal/build/<package>` gives each method with its formulas and references).

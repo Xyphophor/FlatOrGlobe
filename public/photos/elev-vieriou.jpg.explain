@@ -1,0 +1,13 @@
+# elev-vieriou.jpg
+
+What it is: The Vieriou photographs (served)
+File: public/photos/elev-vieriou.jpg
+SHA-256: 92baa90195d341d35486bb581ef3e64b179ea0df10a15cab2949e69df2771a01
+Obtained: a photograph.
+Made by: taken by Xyphophor (https://x.com/Xyphophor), the site's author
+From: The panorama and its zoom (original: data/elev/Panorama360vieriou zoom2.jpg).
+Licence: CC-BY-4.0 (the site's content licence, LICENSE)
+Used by:
+- src/data/presets/elev.js
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

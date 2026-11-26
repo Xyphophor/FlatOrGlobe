@@ -1,0 +1,21 @@
+# avia-flat-fit.js
+
+What it is: Aviation: the best layout of the airports on a plane
+File: src/data/presets/avia-flat-fit.js
+SHA-256: 788fd15a087f316e157125d88f75365387213c8b718df0cbd34a169d0a368ddc
+Obtained: computed once by a script outside fog (research/ or scripts/).
+Made by: scripts/fit_avia_flat.mjs
+From: Fitted to the measured flight times of src/data/presets/avia-flights.js (fog build
+  avia-flights).
+Inputs:
+- src/data/presets/avia-flights.js
+Licence: CC-BY-4.0 (the site's content licence, LICENSE)
+Used by:
+- src/tabs/avia/logic.test.js
+- src/tabs/avia/springs.js
+
+What the file says about itself:
+  Best layout of the airports on a plane for the measured flight times (km), and the
+  starting layout that leads to it (replayed by the tab's springs figure).
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

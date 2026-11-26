@@ -1,0 +1,47 @@
+# surv-recip.js
+
+What it is: Reciprocal zenith angles and EDM distances (Kozlowski)
+File: src/data/presets/surv-recip.js
+SHA-256: 1c93a4b7cd2e75c18806d3c5457d63a76d087de567d882989e1bb1e07f6fe991
+Obtained: typed by hand (or OCR checked by hand) from a printed or scanned source.
+Made by: by hand, 2026-10-04
+From: J. Kozlowski, Zenith Angle Projects (4-page PDF hosted by W. Bislin, 2004-04): the EDM slope
+  distances measured by the instrument (the DELTA XYZ chords, which saw the ellipsoid, are not
+  kept).
+Licence: other: facts from a cited document
+Used by:
+- src/tabs/ref/formfigs.js
+- src/tabs/ref/index.js
+- src/tabs/ref/logic.test.js
+- src/tabs/surv/formfigs.js
+- src/tabs/surv/logic.test.js
+- src/tabs/surv/recip.js
+
+What the file says about itself:
+  Angles zénithaux réciproques ET distances EDM, telles que J. Kozlowski les
+  tabule dans « Zenith Angle Projects » (PDF hébergé par W. Bislin,
+  2004-04 Zenith Angle Projects Jesse Kozlowski.pdf, 4 pages ; saisie
+  2026-10-04). Colonnes du PDF : DELTA XYZ (corde tirée des coordonnées)
+  puis EDM SLOPE (distance inclinée MESURÉE par l'instrument) ; on ne garde
+  que la seconde -- la première a vu l'ellipsoïde.
+  
+  MCD : les sept lignes NGS de 1977 autour de l'observatoire McDonald
+  (station BALDY, 8 380,889 ft), les mêmes que SV_ZEN, avec la distance EDM
+  au millimètre, la corde des coordonnées (pour montrer qu'elle n'est pas
+  réduite au niveau de la mer : les deux concordent au centimètre) et
+  l'altitude orthométrique de l'autre extrémité (pieds).
+  
+  KOZ : les lignes de Kozlowski où l'instrument a MESURÉ la distance
+  (stations totales Trimble S7/S8 ; bases d'étalonnage EDM du NGS, Crows
+  Woods, Route 206 au quart de mille, N40 W75). Visées à 1,4-1,8 m du sol.
+  u = 1 (mètres) ou FT (pied US). Les projets sans distance EDM (Route 206
+  2015-2016, Hainesport, Union Lake, Cooper River : distance GNSS seulement)
+  ne sont pas ici.
+  
+  R206 : la ligne Route 206 MP 27-28 (1,54 km), sessions répétées sur les
+  mêmes repères ; coordonnées GNSS ajustées (NAD83) du billet « One mile
+  level line » (2016) ; moyennes à 0,01″ du tableau image du billet pour
+  2015-11-09 et 2016-11-17, PDF ailleurs. 2018 : repères refaits, autres
+  coordonnées, distance EDM 5 270,409 ft.
+
+Written by `fog build explain` from data/other.json: edit that, not this file.

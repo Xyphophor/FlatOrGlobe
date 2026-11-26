@@ -1,0 +1,14 @@
+# obs-2026-01-10-ntp-171240.jpg
+
+What it is: The camera's clock beside a network (NTP) clock, 10 January 2026
+File: public/photos/obs-2026-01-10-ntp-171240.jpg
+SHA-256: 3ef1684cf7268feec0606681e62e9b87612c2c3ad320aca6b510cf8c9b28029b
+Obtained: a photograph.
+Made by: taken by Xyphophor (https://x.com/Xyphophor), the site's author
+From: Three photographs that check the clock of the camera of the 10 January sunset recording (obs
+  tab).
+Licence: CC-BY-4.0 (the site's content licence, LICENSE)
+Used by:
+- src/data/prose/obs.js
+
+Written by `fog build explain` from data/other.json: edit that, not this file.
