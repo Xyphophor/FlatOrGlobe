@@ -54,7 +54,8 @@
       "how": "api",
       "origin": "VizieR J/A+A/636/A74 (HARPS RVBank, Trifonov et al. 2020), tau Ceti, the request in the URL.",
       "public_raw": "no",
-      "public_raw_why": "CDS/VizieR distributes it free for scientific use with citation; its terms do not say that a copy may be republished, so only the hash and the request are given."
+      "public_raw_why": "CDS/VizieR distributes it free for scientific use with citation; its terms do not say that a copy may be republished, so only the hash and the request are given.",
+      "verify_skip": "^#"
     },
     {
       "path": "raw/sdo_rsun_2023.json",

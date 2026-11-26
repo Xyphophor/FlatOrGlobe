@@ -11,6 +11,8 @@ Obtained: typed by hand (or OCR checked by hand) from a printed or scanned sourc
 From: Dr John D., PIER2PIER 2 – Results & Observations (YouTube, 2019): the thermometer tables and
   trials shown on screen; typed by hand by the assistant (Claude) from the scans, under Xyphophor's
   review.
+Check it yourself: fog verify cases-pier2pier (tools/) downloads it again into a temporary directory
+  and compares it with this hash.
 Checks: Each thermometer cell shows two readings ('7.5 / <7.0'); both are kept as printed.
 What could still be wrong: Read off video frames: a digit can be misread where the frame is blurred;
   the time of the 2 February attempt is not given.

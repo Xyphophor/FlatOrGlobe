@@ -10,6 +10,8 @@ Obtained: typed by hand (or OCR checked by hand) from a printed or scanned sourc
 From: The printed tables of Schott (USC&GS SP 4, 1900, and SP 7, 1902), Delambre & Méchain,
   Maclear, Roy and Struve (pages named in the file name and in the sources), read off the page
   images by Sonnet subagents, one line per printed angle.
+Check it yourself: fog verify surv-excess (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Checks: research/surv_excess_check.py, then the build: observed + correction = spherical, triangle
   closure, log/distance, sine rule; the build fails on a disagreement that is not flagged.
 What could still be wrong: A misread digit in an angle that no check covers could pass; flagged rows

@@ -11,6 +11,8 @@ In the public repository: no, only this description and the hash: The BGS World 
   its SHA-256 with the one above.
 Obtained: values extracted from web pages.
 From: BGS WDC annual-means page of each observatory (fog fetch mag-obs).
+Check it yourself: fog verify mag-obs (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 What could still be wrong: Values are supplied by the observatory operators; a few years are flagged
   provisional on the pages.
 Collected: 2026-09-27/2026-10-14

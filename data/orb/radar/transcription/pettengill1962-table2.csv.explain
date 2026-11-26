@@ -10,6 +10,8 @@ Obtained: typed by hand (or OCR checked by hand) from a printed or scanned sourc
 From: Pettengill et al., Astron. J. 67 (1962) 181-190, Tables I (p. 182), II (p. 183) and III (p.
   186), NASA ADS scan; typed by hand by the assistant (Claude) from the scans, under Xyphophor's
   review.
+Check it yourself: fog verify orb-radar (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Checks: The build recomputes the printed astronomical units from the transcribed flight times and
   fails on a disagreement.
 Collected: 2026-11-18

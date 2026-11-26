@@ -12,6 +12,8 @@ In the public repository: no, only this description and the hash: the file may b
 Obtained: downloaded as published (fog fetch or by hand).
 From: UHSLC research-quality hourly sea level, the station file given in the URL.
 URL: https://uhslc.soest.hawaii.edu/data/csv/rqds/atlantic/hourly/h822a.csv
+Check it yourself: fog verify grav-tides (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-11-13
 Licence: other — University of Hawaii Sea Level Center data are freely available for research and
   education, with citation of Caldwell, Merrifield & Thompson (2015) and the UHSLC.

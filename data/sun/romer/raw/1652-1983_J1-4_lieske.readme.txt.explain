@@ -15,6 +15,8 @@ Obtained: downloaded as published (fog fetch or by hand).
 From: IMCCE NSDC, the file's description (format).
 URL:
   https://ftp.imcce.fr/pub/NSDC/jupiter/raw_data/phenomena/eclips/1652-1983_J1-4_lieske.readme.txt
+Check it yourself: fog verify sun-romer (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-11-25
 Licence: other — IMCCE Natural Satellites Data Center (NSDC), raw data of the eclipses of the
   Galilean satellites, public; J. H. Lieske's compilation, cited.

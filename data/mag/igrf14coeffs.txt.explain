@@ -9,6 +9,8 @@ In the public repository: yes, beside this description.
 Obtained: downloaded as published (fog fetch or by hand).
 From: IAGA IGRF-14 coefficients (NOAA NCEI).
 URL: https://www.ngdc.noaa.gov/IAGA/vmod/coeffs/igrf14coeffs.txt
+Check it yourself: fog verify mag-obs (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-09-27/2026-10-14
 Licence: other — BGS World Data Centre for Geomagnetism (Edinburgh): data free for scientific use
   with acknowledgement of the WDC and the observatory operators / survey institutes; IGRF-14 (IAGA)

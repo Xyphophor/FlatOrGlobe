@@ -11,6 +11,8 @@ In the public repository: no, only this description and the hash: the file may b
 Obtained: downloaded as published (fog fetch or by hand).
 From: TICON-3 on PANGAEA (doi:10.1594/PANGAEA.951610).
 URL: https://download.pangaea.de/dataset/951610/files/TICON_3.zip
+Check it yourself: fog verify grav-ticon (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Checks: Rows with one number missing (four Great Lakes stations) are skipped and counted.
 Collected: 2026-11-14
 Licence: CC-BY-4.0

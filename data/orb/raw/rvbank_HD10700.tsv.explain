@@ -14,6 +14,10 @@ Obtained: the answer of a public web API to the request given.
 From: VizieR J/A+A/636/A74 (HARPS RVBank, Trifonov et al. 2020), tau Ceti, the request in the URL.
 URL:
   https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=J/A%2BA/636/A74/rvbank&Name=HD10700&-out=Name,BJD,RVdrs,BERV,BERVDRS&-out.max=20000
+Check it yourself: fog verify orb (tools/) downloads it again into a temporary directory and
+  compares it with this hash; the lines matching ^# change at every download (the date of the
+  request), so it also compares the rest: SHA-256 without them
+  e6403a4c4ff5113204052ecde7902c579d9e6ad494ac67a44b3b2773611ef306.
 Collected: 2026-10-04
 Licence: other — DACE (Univ. Geneva) HARPS-N solar release: public, cite Dumusque et al. 2021;
   VizieR J/A+A/636/A74 (Trifonov et al. 2020); SDO/HMI data courtesy of NASA/SDO and the HMI science

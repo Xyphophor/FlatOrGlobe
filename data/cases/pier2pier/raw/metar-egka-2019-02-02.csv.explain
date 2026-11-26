@@ -11,6 +11,8 @@ Obtained: the answer of a public web API to the request given.
 From: Iowa Environmental Mesonet METAR archive, Shoreham Airport (EGKA), the request in the URL.
 URL:
   https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=EGKA&data=tmpc&data=dwpc&data=sknt&data=drct&data=metar&year1=2019&month1=2&day1=2&hour1=8&year2=2019&month2=2&day2=2&hour2=23&tz=Etc/UTC&format=onlycomma&latlon=yes&missing=M&trace=T&direct=no&report_type=3&report_type=4
+Check it yourself: fog verify cases-pier2pier (tools/) downloads it again into a temporary directory
+  and compares it with this hash.
 Collected: 2026-10-31
 Licence: other — The readings are facts transcribed from a public YouTube presentation (Dr John
   D.), cited; the API answers carry their providers' terms (ERA5 via Open-Meteo CC-BY-4.0, IEM, IOC

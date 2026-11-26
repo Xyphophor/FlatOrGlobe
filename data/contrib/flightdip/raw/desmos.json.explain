@@ -10,6 +10,8 @@ SHA-256: 2e258354d79e84e98dd051b240adf37f6fbe7a88529430f429477eefe8b6b1ad (also 
 In the public repository: yes, beside this description.
 Obtained: sent by a contributor (photos, logs).
 From: earthlyskeptic's table of readings, Desmos graph bkxuurlmlh (fog fetch).
+Check it yourself: fog verify contrib-flightdip (tools/) downloads it again into a temporary
+  directory and compares it with this hash.
 Collected: 2026-10-15
 Licence: CC-BY-NC-SA-4.0 — Screenshots, readings and document: earthlyskeptic
   (https://x.com/earthlyskeptic), under CC BY-NC-SA 4.0

@@ -10,6 +10,8 @@ Obtained: downloaded as published (fog fetch or by hand).
 From: Natural Earth 1:110m land polygons (GitHub mirror nvkelso/natural-earth-vector).
 URL:
   https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_land.geojson
+Check it yourself: fog verify land (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 What could still be wrong: Decorative only: no number of the site depends on it.
 Collected: 2026-10-03
 Licence: public-domain

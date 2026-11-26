@@ -10,6 +10,8 @@ In the public repository: no, only this description and the hash: the file may b
   above.
 Obtained: downloaded as published (fog fetch or by hand).
 From: The scans of the publications (NOAA geodesy library, e-rara, Internet Archive).
+Check it yourself: fog verify surv-excess (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-10-28
 Licence: public-domain
 Sources:

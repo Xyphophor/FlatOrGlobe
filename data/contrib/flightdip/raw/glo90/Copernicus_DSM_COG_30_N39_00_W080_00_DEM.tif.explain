@@ -12,6 +12,8 @@ In the public repository: no, only this description and the hash: the file may b
   the one above.
 Obtained: downloaded as published (fog fetch or by hand).
 From: Copernicus DEM GLO-90 tiles along each heading (fog fetch).
+Check it yourself: fog verify contrib-flightdip (tools/) downloads it again into a temporary
+  directory and compares it with this hash.
 Collected: 2026-10-15
 Licence: CC-BY-NC-SA-4.0 — Screenshots, readings and document: earthlyskeptic
   (https://x.com/earthlyskeptic), under CC BY-NC-SA 4.0

@@ -9,6 +9,8 @@ In the public repository: yes, beside this description.
 Obtained: typed by hand (or OCR checked by hand) from a printed or scanned source.
 From: Station positions printed in the same publications (for drawing only), read off the page
   images.
+Check it yourself: fog verify surv-excess (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Checks: Checked against the printed sides on Clarke 1866 (research/surv_positions_check.py).
 What could still be wrong: Positions draw the network; they do not enter the fit.
 Collected: 2026-10-28

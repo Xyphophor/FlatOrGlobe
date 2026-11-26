@@ -12,6 +12,8 @@ From: Open-Meteo historical weather API (ERA5, Copernicus), sea cell 50.75 N 0.2
   the URL.
 URL:
   https://archive-api.open-meteo.com/v1/archive?latitude=50.75&longitude=-0.25&hourly=temperature_2m,dew_point_2m,surface_pressure,wind_speed_10m,wind_direction_10m,cloud_cover&models=era5&cell_selection=sea&start_date=2019-02-23&end_date=2019-02-23&timezone=UTC
+Check it yourself: fog verify cases-pier2pier (tools/) downloads it again into a temporary directory
+  and compares it with this hash.
 Collected: 2026-10-31
 Licence: other — The readings are facts transcribed from a public YouTube presentation (Dr John
   D.), cited; the API answers carry their providers' terms (ERA5 via Open-Meteo CC-BY-4.0, IEM, IOC

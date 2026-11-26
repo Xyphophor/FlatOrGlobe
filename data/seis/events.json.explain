@@ -9,6 +9,8 @@ SHA-256: 8342ea2a2572b52ab42e268d0f6a9fbfb82ec0875bc753b52fbd839e51a4c90f (also 
 In the public repository: yes, beside this description.
 Obtained: written by us (lists, choices, positions), not measured.
 From: Our list of the nine named earthquakes (one entry each).
+Check it yourself: fog verify seis-radius (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-09-19
 Licence: other — ISC On-line Bulletin: free with the citation International Seismological Centre,
   On-line Bulletin, https://doi.org/10.31905/D808B830. Natural Earth: public domain.

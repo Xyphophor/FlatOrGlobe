@@ -9,6 +9,8 @@ In the public repository: yes, beside this description.
 Obtained: typed by hand (or OCR checked by hand) from a printed or scanned source.
 From: R. Strachey in Symons (ed.), The Eruption of Krakatoa (Royal Society, 1888), Part II, tables
   III, IV and VIII, Internet Archive scan.
+Check it yourself: fog verify seis-krakatoa (tools/) downloads it again into a temporary directory
+  and compares it with this hash.
 Checks: The build checks the 175 intervals of table VIII against the transcribed times.
 What could still be wrong: Strachey's velocities and degrees are not taken (they used the radius of
   his day).

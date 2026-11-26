@@ -12,6 +12,8 @@ In the public repository: no, only this description and the hash: the file may b
 Obtained: downloaded as published (fog fetch or by hand).
 From: EPTA DR2 on Zenodo (record 8300645), CC BY 4.0.
 URL: https://zenodo.org/api/records/8300645/files/EPTA-DR2.zip/content
+Check it yourself: fog verify orb-pulsar (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-11-18
 Licence: other — EPTA DR2 (Zenodo 8300645), CC BY 4.0; Ding et al. 2023 table transcribed as data,
   cited.

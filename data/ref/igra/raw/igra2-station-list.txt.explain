@@ -12,6 +12,8 @@ In the public repository: no, only this description and the hash: the file may b
 Obtained: downloaded as published (fog fetch or by hand).
 From: NOAA NCEI, IGRA 2 station list.
 URL: https://www.ncei.noaa.gov/data/integrated-global-radiosonde-archive/doc/igra2-station-list.txt
+Check it yourself: fog verify ref-igra (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-10-28
 Licence: public-domain
 Sources:

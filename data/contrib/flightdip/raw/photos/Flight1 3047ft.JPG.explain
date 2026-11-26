@@ -11,6 +11,8 @@ In the public repository: yes, beside this description.
 Obtained: sent by a contributor (photos, logs).
 From: earthlyskeptic's Theodolite screenshots, Google Drive folder 1xbZ5I3DVk3bWS3jWXljhcXMoKafTnBjE
   (fog fetch contrib-flightdip).
+Check it yourself: fog verify contrib-flightdip (tools/) downloads it again into a temporary
+  directory and compares it with this hash.
 Checks: EXIF read in Go (internal/exif) for the time of each screenshot.
 Collected: 2026-10-15
 Licence: CC-BY-NC-SA-4.0 — Screenshots, readings and document: earthlyskeptic

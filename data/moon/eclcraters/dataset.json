@@ -58,7 +58,9 @@
       "gitignored": true,
       "how": "download",
       "origin": "IAU Gazetteer of Planetary Nomenclature (USGS), Moon feature centres.",
-      "public_raw": "yes"
+      "public_raw": "yes",
+      "refetch": "no",
+      "refetch_why": "the Gazetteer of Planetary Nomenclature is updated as the IAU approves names, so a new download is a newer version (fog verify, 2026-11-27: different). The build reads only the centre of each crater named in the timings; whether a newer version moves any of them has not been checked. The positions used are in src/data/presets/moon-eclcraters.js."
     },
     {
       "path": "raw/de440.bsp",

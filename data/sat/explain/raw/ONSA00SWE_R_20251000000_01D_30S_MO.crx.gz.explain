@@ -11,6 +11,8 @@ In the public repository: no, only this description and the hash: the file may b
 Obtained: downloaded as published (fog fetch or by hand).
 From: IGS daily RINEX 3 observation files, 2025 day 100, BKG open archive (the same files as
   gps-raw).
+Check it yourself: fog verify sat-doppler (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-10-02
 Licence: other — IGS data, BKG open archive (https://igs.bkg.bund.de): free, cite the IGS
   (Johnston et al. 2017). RNXCMP (crx2rnx): GSI terms, cite Hatanaka (2008).

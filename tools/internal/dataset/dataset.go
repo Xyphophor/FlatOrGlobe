@@ -103,6 +103,14 @@ type Input struct {
 	// PublicRaw overrides the dataset's for this input ("yes"/"no"), with its reason.
 	PublicRaw    string `json:"public_raw,omitempty"`
 	PublicRawWhy string `json:"public_raw_why,omitempty"`
+	// Refetch "no": the source cannot give the same file again (FlightAware keeps a flight's history for a while
+	// only), with the reason and where the values used can still be read (2026-11-27). fog verify skips it.
+	Refetch    string `json:"refetch,omitempty"`
+	RefetchWhy string `json:"refetch_why,omitempty"`
+	// VerifySkip: a regular expression of the lines that change at every download without changing the data (the
+	// date a VizieR answer was made); fog lock also writes the hash without them (inputs.norm), and fog verify
+	// compares that one when the raw hash differs.
+	VerifySkip string `json:"verify_skip,omitempty"`
 }
 
 // Hows: how one input file was obtained.
@@ -387,6 +395,20 @@ func (d *Dataset) Validate(env Env) []Problem {
 		}
 		if strings.TrimSpace(in.Origin) == "" {
 			add(Error, f+".origin", "missing: where exactly the file comes from (URL, publication and pages)")
+		}
+		switch in.Refetch {
+		case "":
+		case "no":
+			if strings.TrimSpace(in.RefetchWhy) == "" {
+				add(Error, f+".refetch_why", "required with refetch \"no\": why the file cannot be fetched again, and where its values are")
+			}
+		default:
+			add(Error, f+".refetch", "%q: only \"no\" (leave it out when the file can be fetched again)", in.Refetch)
+		}
+		if in.VerifySkip != "" {
+			if _, err := regexp.Compile(in.VerifySkip); err != nil {
+				add(Error, f+".verify_skip", "%v", err)
+			}
 		}
 		switch in.PublicRaw {
 		case "", "yes":

@@ -8,6 +8,8 @@ SHA-256: 039c6abeaaea4733a6d548a1f1857a0cd4cc2eed6e77526ef59fdb3532f13f7d (also 
 In the public repository: yes, beside this description.
 Obtained: written by us (lists, choices, positions), not measured.
 From: Our fixed list of IGS stations (the same as gps-raw).
+Check it yourself: fog verify sat-doppler (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-10-02
 Licence: other — IGS data, BKG open archive (https://igs.bkg.bund.de): free, cite the IGS
   (Johnston et al. 2017). RNXCMP (crx2rnx): GSI terms, cite Hatanaka (2008).

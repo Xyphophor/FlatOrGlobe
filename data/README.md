@@ -59,6 +59,13 @@ Every input also says how it was obtained (2026-11-25, rule of transparency):
 | `checks` | no | the checks the file went through (by the build or by a script) |
 | `caveats` | no | what could still be wrong in it |
 | `public_raw`, `public_raw_why` | no | override the dataset's for this input |
+| `refetch`, `refetch_why` | for a source that no longer gives the same file | `"no"`, why, and where the values used can still be read |
+| `verify_skip` | no | a regular expression of the lines that change at every download (a VizieR answer's date); `fog lock` then also writes `inputs.norm`, the hashes without them |
+
+`fog verify <id>…` downloads the inputs again into a temporary directory (never into data/), runs the dataset's
+fetcher there when it has one, and compares every file with the lock (and with `inputs.norm` when only the dated
+lines differ); `refetch: "no"` inputs are skipped with their reason. It lets anyone check that the files the public
+repository does not carry are the ones the site was computed from.
 
 ## .explain files
 

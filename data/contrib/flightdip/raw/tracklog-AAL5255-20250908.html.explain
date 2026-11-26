@@ -12,6 +12,8 @@ In the public repository: no, only this description and the hash: FlightAware's 
   compare its SHA-256 with the one above.
 Obtained: values extracted from web pages.
 From: FlightAware track logs of AA 6322 (5 Sept 2025) and AA 5255 (8 Sept 2025), ADS-B.
+Check it yourself: fog verify contrib-flightdip (tools/) downloads it again into a temporary
+  directory and compares it with this hash.
 Collected: 2026-10-15
 Licence: CC-BY-NC-SA-4.0 — Screenshots, readings and document: earthlyskeptic
   (https://x.com/earthlyskeptic), under CC BY-NC-SA 4.0

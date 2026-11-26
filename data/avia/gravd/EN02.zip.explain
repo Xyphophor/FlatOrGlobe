@@ -8,6 +8,8 @@ In the public repository: yes, beside this description.
 Obtained: downloaded as published (fog fetch or by hand).
 From: NOAA NGS GRAV-D, Block EN02 release BETA2.
 URL: https://geodesy.noaa.gov/pub/grav-d/EN02/NGS_GRAVD_Block_EN02_BETA2.zip
+Check it yourself: fog verify avia-gravd (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-09-29
 Licence: public-domain
 Sources:

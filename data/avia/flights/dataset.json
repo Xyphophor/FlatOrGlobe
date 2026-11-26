@@ -43,7 +43,9 @@
       "how": "scrape",
       "origin": "FlightAware public flight pages of each callsign, read 2026-09-28, 2026-11-06 and 2026-11-25 (fog fetch avia-flights): wheels-off and wheels-on times, filed flight plan, airport coordinates.",
       "checks": "Flights without both times or with a diversion are dropped and counted by the build.",
-      "caveats": "FlightAware's times come from ADS-B and airline messages; a mislabelled leg or a wrong time zone on their page would pass through."
+      "caveats": "FlightAware's times come from ADS-B and airline messages; a mislabelled leg or a wrong time zone on their page would pass through.",
+      "refetch": "no",
+      "refetch_why": "FlightAware shows a flight's history for a limited time, so fetching again gives other flights, on other days. The values used (wheels-off and wheels-on times, filed routes and speeds, airports) are in src/data/presets/avia-flights.js, generated from these files, with this file's hash in its header."
     }
   ],
   "outputs": [

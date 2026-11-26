@@ -12,6 +12,10 @@ In the public repository: no, only this description and the hash: the file may b
 Obtained: downloaded as published (fog fetch or by hand).
 From: IAU Gazetteer of Planetary Nomenclature (USGS), Moon feature centres.
 URL: https://planetarynames.wr.usgs.gov/shapefiles/MOON_nomenclature_center_pts.zip
+Fetching it again: not possible: the Gazetteer of Planetary Nomenclature is updated as the IAU
+  approves names, so a new download is a newer version (fog verify, 2026-11-27: different). The
+  build reads only the centre of each crater named in the timings; whether a newer version moves any
+  of them has not been checked. The positions used are in src/data/presets/moon-eclcraters.js.
 Collected: 2026-10-28
 Licence: other — VizieR catalogue VI/140 (CDS), free for scientific use with citation; IAU
   Gazetteer of Planetary Nomenclature (USGS), public domain; JPL DE440, public.

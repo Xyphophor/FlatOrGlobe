@@ -15,6 +15,10 @@ From: VizieR I/239 (Hipparcos main catalogue), Harvard mirror, the request in th
   header carries the request and its date.
 URL:
   https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I/239/hip_main&-out=HIP,Vmag,RAICRS,DEICRS,Plx,pmRA,pmDE,B-V&HIP=87937,57939,24186,104214,104217,439&-out.max=3000&-sort=HIP
+Check it yourself: fog verify star-hip (tools/) downloads it again into a temporary directory and
+  compares it with this hash; the lines matching ^# change at every download (the date of the
+  request), so it also compares the rest: SHA-256 without them
+  a581a2e0116d394628e6a72278e82a71bd8d2554cfa27c335450fffbab93db3f.
 Collected: 2026-11-11
 Licence: other — The Hipparcos and Tycho Catalogues (ESA 1997), distributed by the CDS (VizieR
   I/239), free for scientific use with citation.

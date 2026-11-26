@@ -14,6 +14,8 @@ From: Copernicus DEM GLO-30 tiles (copied from data/dem/cache/cop/ on 2026-10-14
   means open sea.
 URL:
   https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N20_00_W157_00_DEM/Copernicus_DSM_COG_10_N20_00_W157_00_DEM.tif
+Check it yourself: fog verify dip-mlo (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-10-03
 Licence: other — NOAA GML baseline radiation data: public domain (US government). Copernicus DEM
   GLO-30: (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space GmbH 2014-2018, provided under

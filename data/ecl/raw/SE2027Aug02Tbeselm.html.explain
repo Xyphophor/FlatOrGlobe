@@ -9,6 +9,8 @@ In the public repository: yes, beside this description.
 Obtained: downloaded as published (fog fetch or by hand).
 From: NASA eclipse web site (Fred Espenak, GSFC), the page given in the URL.
 URL: https://eclipse.gsfc.nasa.gov/SEbeselm/SEbeselm2001/SE2027Aug02Tbeselm.html
+Check it yourself: fog verify ecl-nasa (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Checks: Besselian elements reproduce the central line (data/ecl/README.md, 2026-09-24).
 Collected: 2026-09-24
 Licence: other — Eclipse Predictions by Fred Espenak, NASA's GSFC: free use with this credit

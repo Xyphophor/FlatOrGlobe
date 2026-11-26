@@ -11,6 +11,8 @@ In the public repository: no, only this description and the hash: The BSRN condi
 Obtained: the answer of a public web API to the request given.
 From: PANGAEA, BSRN station-month datasets of March, June and December 2019, found by PANGAEA's
   search and downloaded as text (fog fetch sun-bsrn).
+Check it yourself: fog verify sun-bsrn (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-10-28
 Licence: CC-BY-4.0
 Sources:

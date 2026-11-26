@@ -9,6 +9,8 @@ In the public repository: yes, beside this description.
 Obtained: written by us (lists, choices, positions), not measured.
 From: Made once with Wikidata's API (wbgetentities by English Wikipedia title) for 56 towns
   identified by the catalogue.
+Check it yourself: fog verify map-ptolemy (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 What could still be wrong: Panticapaeum left out (no coordinates under that title).
 Collected: 2026-10-26
 Licence: CC-BY-4.0

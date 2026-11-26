@@ -11,6 +11,8 @@ In the public repository: no, only this description and the hash: the file may b
 Obtained: the answer of a public web API to the request given.
 From: EarthScope FDSN dataselect, three components, 2011-03-11 05:41-08:16 UTC (and the other
   events' windows).
+Check it yourself: fog verify seis-waves (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-10-30
 Licence: other — GSN (network IU, Albuquerque Seismological Laboratory/USGS), open data from the
   EarthScope (ex-IRIS) data centre; cite the network DOI 10.7914/SN/IU.

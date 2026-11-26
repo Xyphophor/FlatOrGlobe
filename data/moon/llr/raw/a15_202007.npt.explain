@@ -11,6 +11,8 @@ In the public repository: no, only this description and the hash: the file may b
 Obtained: downloaded as published (fog fetch or by hand).
 From: EDC (DGFI-TUM) ILRS normal points, Apollo 15 reflector, monthly files 2015-2025 (fog fetch
   moon-llr).
+Check it yourself: fog verify moon-llr (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-10-04
 Licence: other — EDC (DGFI-TUM) open archive of ILRS normal points: free, cite ILRS / EDC.
 Sources:

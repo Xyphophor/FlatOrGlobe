@@ -12,6 +12,8 @@ From: NOAA OISST v2.1 daily sea surface temperature through ERDDAP (NOAA CoastWa
   the URL.
 URL:
   https://coastwatch.pfeg.noaa.gov/erddap/griddap/ncdcOisst21Agg_LonPM180.csv?sst%5B(2019-02-02T12:00:00Z):(2019-02-23T12:00:00Z)%5D%5B(0.0)%5D%5B(50.625):(50.625)%5D%5B(-0.375):(-0.125)%5D
+Check it yourself: fog verify cases-pier2pier (tools/) downloads it again into a temporary directory
+  and compares it with this hash.
 Collected: 2026-10-31
 Licence: other — The readings are facts transcribed from a public YouTube presentation (Dr John
   D.), cited; the API answers carry their providers' terms (ERA5 via Open-Meteo CC-BY-4.0, IEM, IOC

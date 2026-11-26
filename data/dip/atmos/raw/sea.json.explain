@@ -11,6 +11,8 @@ From: Open-Meteo APIs (ERA5 archive, marine, Météo-France AROME historical for
   in the URLs, fetched 2026-10-14.
 URL:
   https://archive-api.open-meteo.com/v1/archive?latitude=43.5&longitude=8.5&hourly=temperature_2m,surface_pressure,relative_humidity_2m&models=era5&start_date=2026-06-13&end_date=2026-06-13&timezone=Europe%2FParis
+Check it yourself: fog verify dip-atmos (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Checks: The answers give exactly the values the earlier script used on 2026-09-29.
 Collected: 2026-09-29/2026-10-14
 Licence: CC-BY-4.0

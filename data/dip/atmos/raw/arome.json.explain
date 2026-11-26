@@ -11,6 +11,8 @@ From: Open-Meteo APIs (ERA5 archive, marine, Météo-France AROME historical for
   in the URLs, fetched 2026-10-14.
 URL:
   https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=43.5&longitude=8.5&hourly=temperature_900hPa,temperature_850hPa,geopotential_height_900hPa,geopotential_height_850hPa&models=meteofrance_seamless&start_date=2026-06-13&end_date=2026-06-13&timezone=Europe%2FParis
+Check it yourself: fog verify dip-atmos (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Checks: The answers give exactly the values the earlier script used on 2026-09-29.
 Collected: 2026-09-29/2026-10-14
 Licence: CC-BY-4.0

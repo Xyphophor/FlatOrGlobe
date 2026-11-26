@@ -15,6 +15,8 @@ Obtained: downloaded as published (fog fetch or by hand).
 From: IMCCE NSDC raw data of the eclipses of the Galilean satellites (J. H. Lieske's compilation),
   downloaded 2026-11-25.
 URL: https://ftp.imcce.fr/pub/NSDC/jupiter/raw_data/phenomena/eclips/1652-1983_J1-4_lieske.data.txt
+Check it yourself: fog verify sun-romer (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Checks: The build reads every record and fails on an unreadable one; 16,802 records, 8,822 of Io.
 What could still be wrong: Lieske reduced local apparent times to UT and sometimes corrected a
   site's longitude from ephemeris residuals: a constant per site, absorbed by the fit's free offset

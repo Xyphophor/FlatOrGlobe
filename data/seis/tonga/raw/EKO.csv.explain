@@ -11,6 +11,8 @@ In the public repository: no, only this description and the hash: the file may b
 Obtained: the answer of a public web API to the request given.
 From: Iowa Environmental Mesonet, ASOS one-minute pressure (pres1), 2022-01-15 to 2022-01-18, one
   request per station.
+Check it yourself: fog verify seis-tonga (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-10-03
 Licence: other — Iowa Environmental Mesonet (Iowa State University) archive of NWS/FAA ASOS
   one-minute data: open, no account; credit IEM.

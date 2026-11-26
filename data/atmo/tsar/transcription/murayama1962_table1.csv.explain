@@ -9,6 +9,8 @@ In the public repository: yes, beside this description.
 Obtained: typed by hand (or OCR checked by hand) from a printed or scanned source.
 From: N. Murayama, J. Meteor. Soc. Japan 40 (1962) 222-231, Table 1, pp. 226-227 (J-STAGE scan);
   typed by hand by the assistant (Claude) from the scans, under Xyphophor's review.
+Check it yourself: fog verify atmo-tsar (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Checks: The printed velocities are recomputed from the transcribed times and distances and must
   agree (the build fails otherwise).
 What could still be wrong: Only the numbers of the table are copied; a digit misread in a time that

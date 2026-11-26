@@ -9,6 +9,8 @@ In the public repository: yes, beside this description.
 Obtained: typed by hand (or OCR checked by hand) from a printed or scanned source.
 From: H. Ding et al., MNRAS 519 (2023) 4982, Table 5 (arXiv:2212.06351); typed by hand by the
   assistant (Claude) from the scans, under Xyphophor's review.
+Check it yourself: fog verify orb-pulsar (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Checks: The build checks the transcribed positions against the timing positions within the printed
   errors.
 Collected: 2026-11-18

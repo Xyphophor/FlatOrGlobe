@@ -29,6 +29,9 @@ type File struct {
 	NoHeader bool
 }
 
+// SHA returns the hex SHA-256 of b.
+func SHA(b []byte) string { h := sha256.Sum256(b); return hex.EncodeToString(h[:]) }
+
 // SHA256File returns the hex SHA-256 of a file.
 func SHA256File(path string) (string, error) {
 	f, err := os.Open(path)

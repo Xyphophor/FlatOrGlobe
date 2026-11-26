@@ -13,6 +13,8 @@ Obtained: the answer of a public web API to the request given.
 From: JSOC, hmi.Ic_720s keyword RSUN_OBS, 2023 weekly, the request in the URL.
 URL:
   http://jsoc.stanford.edu/cgi-bin/ajax/jsoc_info?ds=hmi.Ic_720s%5B2023.01.03_00:00:00_TAI/365d@7d%5D&op=rs_list&key=T_REC,RSUN_OBS
+Check it yourself: fog verify orb (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-10-04
 Licence: other — DACE (Univ. Geneva) HARPS-N solar release: public, cite Dumusque et al. 2021;
   VizieR J/A+A/636/A74 (Trifonov et al. 2020); SDO/HMI data courtesy of NASA/SDO and the HMI science

@@ -9,6 +9,8 @@ In the public repository: yes, beside this description.
 Obtained: downloaded as published (fog fetch or by hand).
 From: Graßhoff & Defaux, Catalog of Ptolemy's Geography (Zenodo 3585758).
 URL: https://zenodo.org/api/records/3585758/files/PtolemyCatalogue.xlsx/content
+Check it yourself: fog verify map-ptolemy (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 What could still be wrong: Five cells typed with truncated decimals (37.33333) move by less than a
   minute.
 Collected: 2026-10-26

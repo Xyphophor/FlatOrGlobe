@@ -12,6 +12,8 @@ In the public repository: no, only this description and the hash: CDS/VizieR dis
 Obtained: downloaded as published (fog fetch or by hand).
 From: VizieR VI/140, ReadMe.
 URL: https://vizier.cfa.harvard.edu/ftp/cats/6/140/ReadMe
+Check it yourself: fog verify moon-eclcraters (tools/) downloads it again into a temporary directory
+  and compares it with this hash.
 Collected: 2026-10-28
 Licence: other — VizieR catalogue VI/140 (CDS), free for scientific use with citation; IAU
   Gazetteer of Planetary Nomenclature (USGS), public domain; JPL DE440, public.

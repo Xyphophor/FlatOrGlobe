@@ -13,6 +13,8 @@ In the public repository: no, only this description and the hash: CDS/VizieR dis
 Obtained: downloaded as published (fog fetch or by hand).
 From: VizieR VI/140 (Herald & Sinnott 2014), file crater_t.dat.
 URL: https://vizier.cfa.harvard.edu/ftp/cats/6/140/crater_t.dat
+Check it yourself: fog verify moon-eclcraters (tools/) downloads it again into a temporary directory
+  and compares it with this hash.
 What could still be wrong: Schmidt's clocks (1842-1879) were corrected by Soulsby against modern
   ephemerides (doc.txt 4.5).
 Collected: 2026-10-28

@@ -11,6 +11,8 @@ In the public repository: no, only this description and the hash: the file may b
 Obtained: the answer of a public web API to the request given.
 From: Iowa Environmental Mesonet, ASOS one-minute pressure (pres1), one request per station for
   2022-01-15 to 2022-01-22 (fog fetch atmo-tonga-laps).
+Check it yourself: fog verify atmo-tonga-laps (tools/) downloads it again into a temporary directory
+  and compares it with this hash.
 What could still be wrong: Station barometers report to 0.01 inHg-class precision and some minutes
   are missing; gaps are skipped, not filled.
 Collected: 2026-11-21

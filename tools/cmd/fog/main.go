@@ -7,6 +7,7 @@
 //	fog validate [id…]          check data/**/dataset.json and their files
 //	fog lock <id>… | all        (re)write a dataset's inputs.lock
 //	fog fetch <id>… | all       download missing inputs that have a URL
+//	fog verify <id>…            fetch again into a temporary directory and compare with the lock
 //	fog audit [structure|tex|prose|all]  static audits of the site's sources
 //	fog doctor                  outside tools the repository uses
 //	fog public <dir>            write the tree of the public repository into a new directory
@@ -45,6 +46,7 @@ commands:
   validate [<dataset id>…]          check data/**/dataset.json and their files
   lock <dataset id>… | all          (re)write inputs.lock from the files on disk
   fetch [--refresh] <id>… | all     download missing inputs (URL or dataset fetcher)
+  verify <id>…                      fetch again into a temporary directory, compare with the lock (data/ untouched)
   audit [structure|tex|prose|all]   static audits of the site's sources (no JS executed)
   doctor                            check the outside tools the repository uses
   public <new dir> | --into <clone> write the public repository's tree (no git, no network)
@@ -83,7 +85,7 @@ func run(args []string, stdout, stderr io.Writer) int {
 			return 1
 		}
 		return runAudit(rest, root, stdout, stderr)
-	case "build", "validate", "lock", "fetch":
+	case "build", "validate", "lock", "fetch", "verify":
 		root, err := findRoot(*rootFlag)
 		if err != nil {
 			fmt.Fprintln(stderr, "fog:", err)
@@ -96,6 +98,8 @@ func run(args []string, stdout, stderr io.Writer) int {
 			return runValidate(rest, root, stdout, stderr)
 		case "lock":
 			return runLock(rest, root, stdout, stderr)
+		case "verify":
+			return runVerify(rest, root, stdout, stderr)
 		default:
 			return runFetch(rest, root, stdout, stderr)
 		}

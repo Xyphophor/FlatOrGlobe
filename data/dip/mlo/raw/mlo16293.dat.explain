@@ -11,6 +11,8 @@ In the public repository: no, only this description and the hash: the file may b
 Obtained: downloaded as published (fog fetch or by hand).
 From: NOAA GML baseline radiation, Mauna Loa, one-minute means, 2016
   (gml.noaa.gov/aftp/data/radiation/baseline/mlo/).
+Check it yourself: fog verify dip-mlo (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-10-03
 Licence: other — NOAA GML baseline radiation data: public domain (US government). Copernicus DEM
   GLO-30: (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space GmbH 2014-2018, provided under

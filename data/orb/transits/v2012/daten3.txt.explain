@@ -14,6 +14,8 @@ In the public repository: no, only this description and the hash: The file names
 Obtained: downloaded as published (fog fetch or by hand).
 From: venus2012.de project, participants/daten3.txt, Internet Archive copy of 19 May 2024.
 URL: http://web.archive.org/web/20240519220217id_/http://www.venus2012.de/participants/daten3.txt
+Check it yourself: fog verify orb-transit (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 What could still be wrong: One line has latitude and longitude swapped; nothing is corrected.
 Collected: 2026-11-18
 Licence: other — Newcomb 1891 (US government publication, public domain); the venus2012.de timings

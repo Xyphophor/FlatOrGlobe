@@ -10,6 +10,8 @@ SHA-256: b5e6e5d794d16ff8dcfdf2e9a937865b46b5afa03bb6d879cd6c35303608b44d (also 
 In the public repository: yes, beside this description.
 Obtained: the answer of a public web API to the request given.
 From: Open-Meteo historical forecast API, NOAA GFS pressure levels (fog fetch).
+Check it yourself: fog verify contrib-flightdip (tools/) downloads it again into a temporary
+  directory and compares it with this hash.
 Collected: 2026-10-15
 Licence: CC-BY-NC-SA-4.0 — Screenshots, readings and document: earthlyskeptic
   (https://x.com/earthlyskeptic), under CC BY-NC-SA 4.0

@@ -11,6 +11,8 @@ In the public repository: no, only this description and the hash: the file may b
 Obtained: the answer of a public web API to the request given.
 From: Open-Meteo historical weather (ERA5) and marine APIs, 28 March 2026, three sea points at 43.5
   N (fog fetch ref-bordighera).
+Check it yourself: fog verify ref-bordighera (tools/) downloads it again into a temporary directory
+  and compares it with this hash.
 Collected: 2026-11-13
 Licence: CC-BY-4.0 — Weather: Open-Meteo (ERA5, Copernicus; marine), CC BY 4.0.
 Sources:

@@ -9,6 +9,8 @@ In the public repository: yes, beside this description.
 Obtained: written by us (lists, choices, positions), not measured.
 From: Our list of airport pairs and callsigns (one entry per route), chosen for long routes in every
   direction.
+Check it yourself: fog verify avia-flights (tools/) downloads it again into a temporary directory
+  and compares it with this hash.
 Collected: 2026-11-25
 Licence: other — FlightAware public flight pages (https://www.flightaware.com), read 2026-09-28,
   2026-11-06 and 2026-11-25 (three windows of about two weeks, kept together); check FlightAware's

@@ -8,6 +8,8 @@ SHA-256: 85d3cc36d17ef286f887f3136f497c380e76a030af6a7b9bbb9226d94534a72b (also 
 In the public repository: yes, beside this description.
 Obtained: written by us (lists, choices, positions), not measured.
 From: Our list of the sources and their adapters.
+Check it yourself: fog verify mag-obs (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-09-27/2026-10-14
 Licence: other — BGS World Data Centre for Geomagnetism (Edinburgh): data free for scientific use
   with acknowledgement of the WDC and the observatory operators / survey institutes; IGRF-14 (IAGA)

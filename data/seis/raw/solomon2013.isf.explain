@@ -9,6 +9,8 @@ SHA-256: 770bccd6b1803d8c406087138c0842a3fd7a1db9e5794c5ba35c11825f92cd49 (also 
 In the public repository: yes, beside this description.
 Obtained: the answer of a public web API to the request given.
 From: ISC On-line Bulletin, ISF2 phase data of each named earthquake (fog fetch seis-radius).
+Check it yourself: fog verify seis-radius (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 What could still be wrong: Phase names (P, Pdif, PKP, LR) are the ISC's, given by comparing with its
   travel-time tables.
 Collected: 2026-09-19

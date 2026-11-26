@@ -8,6 +8,8 @@ SHA-256: e2bb57aad22d9b0587a9be23d41dcb155ccaf7200db53ec3dc89195a30266a77 (also 
 In the public repository: yes, beside this description.
 Obtained: written by us (lists, choices, positions), not measured.
 From: Our fixed list of 80 IGS stations, picked from the BKG archive's index.
+Check it yourself: fog verify gps-raw (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-10-02
 Licence: other — IGS data, BKG open archive (https://igs.bkg.bund.de): free, cite the IGS
   (Johnston et al. 2017). RNXCMP (crx2rnx): GSI terms, cite Hatanaka (2008).

@@ -12,6 +12,8 @@ In the public repository: no, only this description and the hash: The BGS World 
 Obtained: values extracted from web pages.
 From: BGS WDC Worldwide Observatory Annual Means form (the list of observatories), as fetched on
   2026-10-14.
+Check it yourself: fog verify mag-obs (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-09-27/2026-10-14
 Licence: other — BGS World Data Centre for Geomagnetism (Edinburgh): data free for scientific use
   with acknowledgement of the WDC and the observatory operators / survey institutes; IGRF-14 (IAGA)

@@ -11,6 +11,8 @@ Obtained: the answer of a public web API to the request given.
 From: IOC Sea Level Station Monitoring Facility, Newhaven (nhav), the request in the URL.
 URL:
   https://www.ioc-sealevelmonitoring.org/service.php?query=data&code=nhav&timestart=2019-02-02T12:00&timestop=2019-02-02T23:59&format=json
+Check it yourself: fog verify cases-pier2pier (tools/) downloads it again into a temporary directory
+  and compares it with this hash.
 Collected: 2026-10-31
 Licence: other — The readings are facts transcribed from a public YouTube presentation (Dr John
   D.), cited; the API answers carry their providers' terms (ERA5 via Open-Meteo CC-BY-4.0, IEM, IOC

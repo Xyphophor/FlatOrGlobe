@@ -8,6 +8,8 @@ SHA-256: d96dfd9be91de23c72a144fee4f10ba97e12f59e6f5e65347822ad6bf14d8d74 (also 
 In the public repository: yes, beside this description.
 Obtained: the answer of a public web API to the request given.
 From: EarthScope FDSN station service, channel metadata (orientation) of each station.
+Check it yourself: fog verify seis-waves (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-10-30
 Licence: other — GSN (network IU, Albuquerque Seismological Laboratory/USGS), open data from the
   EarthScope (ex-IRIS) data centre; cite the network DOI 10.7914/SN/IU.

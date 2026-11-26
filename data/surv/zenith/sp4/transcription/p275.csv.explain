@@ -11,6 +11,8 @@ Obtained: typed by hand (or OCR checked by hand) from a printed or scanned sourc
 From: Schott, USC&GS Special Publication No. 4 (1900), Part II (determination of heights), the pages
   named in the file name; typed by hand by the assistant (Claude) from the scans, under Xyphophor's
   review.
+Check it yourself: fog verify surv-zenith (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Checks: The build checks observed + reductions = reduced, the means, and log s.
 Collected: 2026-10-28
 Licence: public-domain

@@ -11,6 +11,8 @@ In the public repository: no, only this description and the hash: the file may b
 Obtained: downloaded as published (fog fetch or by hand).
 From: NOAA NCEI, IGRA 2 current-year file of each station (data-y2d), downloaded once (fog fetch
   ref-igra).
+Check it yourself: fog verify ref-igra (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-10-28
 Licence: public-domain
 Sources:

@@ -29,13 +29,15 @@
       "path": "raw/hip_bright.tsv",
       "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I/239/hip_main&-out=HIP,Vmag,RAICRS,DEICRS,Plx,pmRA,pmDE,B-V&Vmag=%3C4.55&-out.max=3000&-sort=HIP",
       "how": "api",
-      "origin": "VizieR I/239 (Hipparcos main catalogue), Harvard mirror, the request in the URL; the file's header carries the request and its date."
+      "origin": "VizieR I/239 (Hipparcos main catalogue), Harvard mirror, the request in the URL; the file's header carries the request and its date.",
+      "verify_skip": "^#"
     },
     {
       "path": "raw/hip_fast.tsv",
       "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I/239/hip_main&-out=HIP,Vmag,RAICRS,DEICRS,Plx,pmRA,pmDE,B-V&HIP=87937,57939,24186,104214,104217,439&-out.max=3000&-sort=HIP",
       "how": "api",
-      "origin": "VizieR I/239 (Hipparcos main catalogue), Harvard mirror, the request in the URL; the file's header carries the request and its date."
+      "origin": "VizieR I/239 (Hipparcos main catalogue), Harvard mirror, the request in the URL; the file's header carries the request and its date.",
+      "verify_skip": "^#"
     }
   ],
   "outputs": [

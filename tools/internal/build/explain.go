@@ -111,7 +111,7 @@ func sectionsURL(secs []string) []string {
 	return out
 }
 
-func explainInput(d *dataset.Dataset, f, sum string) string {
+func explainInput(d *dataset.Dataset, f, sum, norm string) string {
 	in, _ := d.InputOf(f)
 	pub, why := d.Public(in)
 	var b strings.Builder
@@ -135,6 +135,14 @@ func explainInput(d *dataset.Dataset, f, sum string) string {
 	field(&b, "From", in.Origin)
 	if in.URL != "" && !strings.Contains(in.Origin, in.URL) {
 		field(&b, "URL", in.URL)
+	}
+	switch {
+	case in.Refetch == "no":
+		field(&b, "Fetching it again", "not possible: "+in.RefetchWhy)
+	case in.VerifySkip != "" && norm != "":
+		field(&b, "Check it yourself", "fog verify "+d.ID+" (tools/) downloads it again into a temporary directory and compares it with this hash; the lines matching "+in.VerifySkip+" change at every download (the date of the request), so it also compares the rest: SHA-256 without them "+norm+".")
+	default:
+		field(&b, "Check it yourself", "fog verify "+d.ID+" (tools/) downloads it again into a temporary directory and compares it with this hash.")
 	}
 	field(&b, "Checks", in.Checks)
 	field(&b, "What could still be wrong", in.Caveats)
@@ -222,8 +230,9 @@ func init() {
 					fs = append(fs, f)
 				}
 				sort.Strings(fs)
+				norm, _ := dataset.ReadNorm(root, d)
 				for _, f := range fs {
-					files = append(files, preset.File{Out: explainPath(root, d, f), NoHeader: true, Body: explainInput(d, f, lock[f])})
+					files = append(files, preset.File{Out: explainPath(root, d, f), NoHeader: true, Body: explainInput(d, f, lock[f], norm[f])})
 					nIn++
 				}
 				for _, o := range d.Outputs {

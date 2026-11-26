@@ -11,6 +11,8 @@ In the public repository: no, only this description and the hash: the file may b
 Obtained: the answer of a public web API to the request given.
 From: IOC Sea Level Station Monitoring Facility, Leith (leit), 15-minute readings 26 July - 23
   August 2023 (fog fetch).
+Check it yourself: fog verify contrib-lomond (tools/) downloads it again into a temporary directory
+  and compares it with this hash.
 What could still be wrong: A gap at the time of the photo is filled by 12 fitted constituents
   (internal/tide), not by a reading.
 Collected: 2026-10-14

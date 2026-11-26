@@ -11,6 +11,8 @@ Obtained: typed by hand (or OCR checked by hand) from a printed or scanned sourc
 From: S. Newcomb, Astronomical Papers II part V (Washington, 1891), chapter VI pp. 357-371 and
   chapter IV (stations), Internet Archive scan; typed by hand by the assistant (Claude) from the
   scans, under Xyphophor's review.
+Check it yourself: fog verify orb-transit (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Checks: Every printed residual equals observed − tabular, and every local − Greenwich time
   equals the station's printed longitude (the build fails otherwise); seven lines of 1761 contact IV
   whose printed residuals disagree with Newcomb's own times are flagged 'res'.

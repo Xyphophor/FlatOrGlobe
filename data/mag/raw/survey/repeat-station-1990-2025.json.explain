@@ -11,6 +11,8 @@ In the public repository: no, only this description and the hash: The BGS World 
   its SHA-256 with the one above.
 Obtained: the answer of a public web API to the request given.
 From: BGS WDC API, global geomagnetic survey (repeat and one-off stations).
+Check it yourself: fog verify mag-obs (tools/) downloads it again into a temporary directory and
+  compares it with this hash.
 Collected: 2026-09-27/2026-10-14
 Licence: other — BGS World Data Centre for Geomagnetism (Edinburgh): data free for scientific use
   with acknowledgement of the WDC and the observatory operators / survey institutes; IGRF-14 (IAGA)

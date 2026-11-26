@@ -10,6 +10,8 @@ In the public repository: no, only this description and the hash: the file may b
   one above.
 Obtained: downloaded as published (fog fetch or by hand).
 From: Copernicus DEM GLO-30 tiles, open bucket copernicus-dem-30m (fog fetch contrib-lomond).
+Check it yourself: fog verify contrib-lomond (tools/) downloads it again into a temporary directory
+  and compares it with this hash.
 Collected: 2026-10-14
 Licence: CC-BY-4.0 — Photograph: KenRDKAB (https://x.com/KenRDKAB), published with his permission
   (2026-10-15). Copernicus DEM GLO-30: (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space GmbH

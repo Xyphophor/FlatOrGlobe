@@ -10,6 +10,8 @@ SHA-256: bfa4dfe5128d2bcabe1d7c59ed9e32f7b996728f2607d30909846bfcee2411c9 (also 
 In the public repository: yes, beside this description.
 Obtained: sent by a contributor (photos, logs).
 From: Document sent by earthlyskeptic naming the two flights.
+Check it yourself: fog verify contrib-flightdip (tools/) downloads it again into a temporary
+  directory and compares it with this hash.
 Collected: 2026-10-15
 Licence: CC-BY-NC-SA-4.0 — Screenshots, readings and document: earthlyskeptic
   (https://x.com/earthlyskeptic), under CC BY-NC-SA 4.0
