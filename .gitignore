@@ -30,7 +30,8 @@ __pycache__/
 
 # contribution Bass Rock (onglet contrib) : tuiles GLO-30, marégraphe, météo, retéléchargeables par fog fetch contrib-lomond
 /data/contrib/lomond/raw/**
-/data/contrib/flightdip/raw/**
+/data/contrib/flightdip/raw/glo90/**
+/data/contrib/flightdip/raw/tracklog-*.html
 
 # binaire Go de la chaîne de données (make fog)
 /tools/bin/

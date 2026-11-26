@@ -128,7 +128,7 @@ var Kinds = map[string]string{
 // Licenses fog accepts; "other" needs a license_note.
 var Licenses = map[string]bool{
 	"public-domain": true, "CC0-1.0": true, "CC-BY-4.0": true, "CC-BY-SA-4.0": true,
-	"ODbL-1.0": true, "other": true,
+	"ODbL-1.0": true, "CC-BY-NC-SA-4.0": true, "other": true,
 }
 
 // Evidence classes (src/data/evidence.js, EV_CLASSES).

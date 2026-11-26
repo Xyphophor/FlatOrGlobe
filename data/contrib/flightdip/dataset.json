@@ -13,8 +13,8 @@
     }
   ],
   "verdict_rule": "Dips that stay near zero at every height, or that grow linearly with height (a far edge at a fixed distance), would favour the plane; dips growing as the square root of the height above the horizon terrain, with one radius for all, favour the globe.",
-  "license": "CC-BY-4.0",
-  "license_note": "Screenshots and readings: earthlyskeptic (https://x.com/earthlyskeptic), published with his permission (2026-10-15). Track logs: FlightAware (ADS-B), cited, the few values used. Weather: Open-Meteo (NOAA GFS), CC BY 4.0. Copernicus DEM GLO-90: (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA.",
+  "license": "CC-BY-NC-SA-4.0",
+  "license_note": "Screenshots, readings and document: earthlyskeptic (https://x.com/earthlyskeptic), under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/): he agreed on X on 2026-11-26 to their being hosted in the repository, asking that the source be mentioned, and to that licence (the exchange: licence-2026-11-26.jpg in this directory). What is made from them (src/data/presets/contrib-flightdip.js, public/photos/contrib-flightdip-*.jpg) is under the same licence. Track logs: FlightAware (ADS-B), cited, the few values used. Weather: Open-Meteo (NOAA GFS), CC BY 4.0. Copernicus DEM GLO-90: (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA.",
   "sources": [
     {
       "cite": "earthlyskeptic, eleven Theodolite screenshots (Google Drive folder 1xbZ5I3DVk3bWS3jWXljhcXMoKafTnBjE), the table of his readings (Desmos graph) and the document naming the two flights (Flights, Model, Graphs.docx)",
@@ -45,20 +45,17 @@
   "inputs": [
     {
       "glob": "raw/photos/*",
-      "gitignored": true,
       "how": "contributor",
       "origin": "earthlyskeptic's Theodolite screenshots, Google Drive folder 1xbZ5I3DVk3bWS3jWXljhcXMoKafTnBjE (fog fetch contrib-flightdip).",
       "checks": "EXIF read in Go (internal/exif) for the time of each screenshot."
     },
     {
       "glob": "raw/desmos.json",
-      "gitignored": true,
       "how": "contributor",
       "origin": "earthlyskeptic's table of readings, Desmos graph bkxuurlmlh (fog fetch)."
     },
     {
       "glob": "raw/flights-model-graphs.docx",
-      "gitignored": true,
       "how": "contributor",
       "origin": "Document sent by earthlyskeptic naming the two flights."
     },
@@ -66,29 +63,27 @@
       "glob": "raw/tracklog-*.html",
       "gitignored": true,
       "how": "scrape",
-      "origin": "FlightAware track logs of AA 6322 (5 Sept 2025) and AA 5255 (8 Sept 2025), ADS-B."
+      "origin": "FlightAware track logs of AA 6322 (5 Sept 2025) and AA 5255 (8 Sept 2025), ADS-B.",
+      "public_raw": "no",
+      "public_raw_why": "FlightAware's terms of use do not allow republishing what is read from its pages."
     },
     {
       "glob": "raw/gfs-*.json",
-      "gitignored": true,
       "how": "api",
-      "origin": "Open-Meteo historical forecast API, NOAA GFS pressure levels (fog fetch).",
-      "public_raw": "yes"
+      "origin": "Open-Meteo historical forecast API, NOAA GFS pressure levels (fog fetch)."
     },
     {
       "glob": "raw/glo90/*",
       "gitignored": true,
       "how": "download",
-      "origin": "Copernicus DEM GLO-90 tiles along each heading (fog fetch).",
-      "public_raw": "yes"
+      "origin": "Copernicus DEM GLO-90 tiles along each heading (fog fetch)."
     }
   ],
   "outputs": [
     "src/data/presets/contrib-flightdip.js"
   ],
   "notes": "fog fetch contrib-flightdip downloads everything (Drive, Desmos, FlightAware track logs, GFS air, GLO-90) except the contributor's document (raw/flights-model-graphs.docx, sent by him; it names the flights, which fixes the track log URLs). fog build also writes the resized screenshots public/photos/contrib-flightdip-<n>.jpg.",
-  "public_raw": "no",
-  "public_raw_why": "The contributor's screenshots, readings and document are shown on the page with his permission, not republished as files; the track logs are FlightAware's (FlightAware's terms of use do not allow republishing what is read from its pages.)",
+  "public_raw": "yes",
   "code": [
     "tools/internal/build/flightdip",
     "src/tabs/contrib/flightdip"

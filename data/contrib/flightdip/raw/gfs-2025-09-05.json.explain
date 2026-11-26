@@ -7,17 +7,19 @@ File: data/contrib/flightdip/raw/gfs-2025-09-05.json
 SHA-256: b5e6e5d794d16ff8dcfdf2e9a937865b46b5afa03bb6d879cd6c35303608b44d (also in
   data/contrib/flightdip/inputs.lock; check with: cd data/contrib/flightdip && sha256sum -c
   inputs.lock)
-In the public repository: no, only this description and the hash: the file may be shared but is kept
-  out of git for its size. Get it from fog fetch contrib-flightdip, then compare its SHA-256 with
-  the one above.
+In the public repository: yes, beside this description.
 Obtained: the answer of a public web API to the request given.
 From: Open-Meteo historical forecast API, NOAA GFS pressure levels (fog fetch).
 Collected: 2026-10-15
-Licence: CC-BY-4.0 — Screenshots and readings: earthlyskeptic (https://x.com/earthlyskeptic),
-  published with his permission (2026-10-15). Track logs: FlightAware (ADS-B), cited, the few values
-  used. Weather: Open-Meteo (NOAA GFS), CC BY 4.0. Copernicus DEM GLO-90: (c) DLR e.V. 2010-2014 and
-  (c) Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and
-  ESA.
+Licence: CC-BY-NC-SA-4.0 — Screenshots, readings and document: earthlyskeptic
+  (https://x.com/earthlyskeptic), under CC BY-NC-SA 4.0
+  (https://creativecommons.org/licenses/by-nc-sa/4.0/): he agreed on X on 2026-11-26 to their being
+  hosted in the repository, asking that the source be mentioned, and to that licence (the exchange:
+  licence-2026-11-26.jpg in this directory). What is made from them
+  (src/data/presets/contrib-flightdip.js, public/photos/contrib-flightdip-*.jpg) is under the same
+  licence. Track logs: FlightAware (ADS-B), cited, the few values used. Weather: Open-Meteo (NOAA
+  GFS), CC BY 4.0. Copernicus DEM GLO-90: (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space
+  GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA.
 Sources:
 - earthlyskeptic, eleven Theodolite screenshots (Google Drive folder
   1xbZ5I3DVk3bWS3jWXljhcXMoKafTnBjE), the table of his readings (Desmos graph) and the document

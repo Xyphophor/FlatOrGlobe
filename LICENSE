@@ -38,3 +38,8 @@ Third-party data and documents (observatory records, seismic bulletins, satellit
 products, photographs credited to their authors, quoted publications) keep the licence
 of their source; each is cited in the tab that uses it. Dependencies keep their own
 licences (see node_modules/*/LICENSE).
+
+Exception: the horizon-dip readings of earthlyskeptic (https://x.com/earthlyskeptic) -- his screenshots, table and
+document (data/contrib/flightdip/raw/), and what is made from them (src/data/presets/contrib-flightdip.js,
+public/photos/contrib-flightdip-*.jpg) -- are under Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+International (CC BY-NC-SA 4.0), https://creativecommons.org/licenses/by-nc-sa/4.0/, by his agreement of 2026-11-26.

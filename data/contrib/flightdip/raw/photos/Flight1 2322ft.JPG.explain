@@ -7,21 +7,21 @@ File: data/contrib/flightdip/raw/photos/Flight1 2322ft.JPG
 SHA-256: c27c0d2db1153c0aed76bc110c71289acb16afd0d4be83af5ef34b7e0a5f346f (also in
   data/contrib/flightdip/inputs.lock; check with: cd data/contrib/flightdip && sha256sum -c
   inputs.lock)
-In the public repository: no, only this description and the hash: The contributor's screenshots,
-  readings and document are shown on the page with his permission, not republished as files; the
-  track logs are FlightAware's (FlightAware's terms of use do not allow republishing what is read
-  from its pages.) Get it from fog fetch contrib-flightdip, then compare its SHA-256 with the one
-  above.
+In the public repository: yes, beside this description.
 Obtained: sent by a contributor (photos, logs).
 From: earthlyskeptic's Theodolite screenshots, Google Drive folder 1xbZ5I3DVk3bWS3jWXljhcXMoKafTnBjE
   (fog fetch contrib-flightdip).
 Checks: EXIF read in Go (internal/exif) for the time of each screenshot.
 Collected: 2026-10-15
-Licence: CC-BY-4.0 — Screenshots and readings: earthlyskeptic (https://x.com/earthlyskeptic),
-  published with his permission (2026-10-15). Track logs: FlightAware (ADS-B), cited, the few values
-  used. Weather: Open-Meteo (NOAA GFS), CC BY 4.0. Copernicus DEM GLO-90: (c) DLR e.V. 2010-2014 and
-  (c) Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and
-  ESA.
+Licence: CC-BY-NC-SA-4.0 — Screenshots, readings and document: earthlyskeptic
+  (https://x.com/earthlyskeptic), under CC BY-NC-SA 4.0
+  (https://creativecommons.org/licenses/by-nc-sa/4.0/): he agreed on X on 2026-11-26 to their being
+  hosted in the repository, asking that the source be mentioned, and to that licence (the exchange:
+  licence-2026-11-26.jpg in this directory). What is made from them
+  (src/data/presets/contrib-flightdip.js, public/photos/contrib-flightdip-*.jpg) is under the same
+  licence. Track logs: FlightAware (ADS-B), cited, the few values used. Weather: Open-Meteo (NOAA
+  GFS), CC BY 4.0. Copernicus DEM GLO-90: (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space
+  GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA.
 Sources:
 - earthlyskeptic, eleven Theodolite screenshots (Google Drive folder
   1xbZ5I3DVk3bWS3jWXljhcXMoKafTnBjE), the table of his readings (Desmos graph) and the document
