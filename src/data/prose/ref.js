@@ -851,6 +851,7 @@ export const PROSE = [
   "k": "rf-p22"
  },
  {
+  "away": "xp-ref-1c",
   "t": "exp",
   "h": "Experiment 1c · refraction",
   "title": "Measure k yourself, and let it convict the model of your choice",

@@ -92,16 +92,7 @@ export default {
       `<span class="g">${tr("orb-read-au", "year → a = {v} million km").replace("{v}", nf(D.au / 1e6, 1))}</span>` +
       `<span class="f">${tr("orb-read-flat", "best lamp: {v} m/s off").replace("{v}", nf(D.rmsFlat, 1))}</span>`;
     const q = (id) => container.querySelector("#" + id);
-    const upd = () => {
-      const out = q("orbGnoOut"), v = q("orbGnoV"); if (!out) return;
-      const L = +q("orbGnoL").value, a = +q("orbGnoS").value, b = +q("orbGnoW").value;
-      if (!(L > 0 && a > 0 && b > a)) { out.textContent = ""; v.textContent = ""; return; }
-      const g = gnomon(L, a, b);
-      out.innerHTML = tr("orb-gno-out", "Noon altitudes {a}° and {b}° · tilt <b>ε = {e}°</b>").replace("{a}", nf(g.hj, 2)).replace("{b}", nf(g.hd, 2)).replace("{e}", nf(g.eps, 2));
-      v.innerHTML = tr("orb-gno-v", "latitude φ = {p}° (accepted tilt: 23.44°)").replace("{p}", nf(g.lat, 2));
-    };
-    for (const id of ["orbGnoL", "orbGnoS", "orbGnoW"]) q(id)?.addEventListener("input", upd);
-    upd();
+    // l'expérience de l'ombre de midi est dans falsify (exp.js, 2026-11-26)
     drawFormulaFigs(container, tr, vals);
     fillRadarTables(container, tr, nf);
     // le canon à 400 km (2026-11-11) : schéma, tableau et valeurs de sa glose

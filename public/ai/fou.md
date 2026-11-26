@@ -131,26 +131,7 @@ They did rebuild the apparatus twice, and they say so themselves, in print, in t
 
 All real, all present, and none of them latitude-aware. A draught in Chicago does not know it should produce 10.02°/h while an identical draught in Melbourne produces −9.22°/h and one in Quito produces zero. Systematic errors that happen to reproduce sin φ across a hundred independent buildings, built by people who never met, are not systematic errors. They are the signal.
 
-Experiment 1d · Foucault pendulum
-
-Find a stairwell, and measure the angle between your floor and the axis of the world
-
-This is the rare shape test you can run indoors, alone, at night, with hardware from a builders' merchant. Hang the heaviest compact mass you can from the longest wire your building allows, on a pivot that cannot transmit twist. Draw the bob aside with a thread, wait until it is dead still, burn the thread. Mark the apex of the swing on the floor every twenty minutes. The calculator below tells you before you start whether your stairwell is tall enough for the answer to mean anything.
-
-Independent variable
-**What you change:** your **latitude** — ideally by persuading someone at a very different one to repeat it. A second site is what converts a rotation demo into a shape measurement.
-
-Dependent variable
-**What you measure:** the **angle the swing plane turns** in a measured time, and its **sense**. The sense alone already separates the three models if you can get south of the equator.
-
-Pendulum period T₀ = 2π√(L/g) = **6.95 s** · 1,554 swings in 3 h
-Globe predicts: **11.325 °/h** clockwise · full turn in 31 h 47 m · **34.0°** in 3 h
-Flat disc predicts: 15.041 °/h · **45.1°** in 3 h
-Flat, not rotating: 0.0° in 3 h, and in any other number of hours
-Airy ellipse precession = **2.428 °/h** — 21% of the globe signal
-Ellipse you can tolerate for a 10% error: **0.47 cm** half-width
-
-**This is a viable site.** Airy's term sits at 21% of the signal, so after 3 h the globe says the plane has turned 34.0° clockwise while a disc spinning once a day says 45.1° — a gap of 11°, far larger than anything a chalk mark can blur. Run it twice with opposite ellipses and average, and the residue is the Earth.
+[**Experiment 1d · Foucault pendulum** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-fou-1d)
 
 A caveat this page owes you. The sin φ law is first-order. A full treatment carries small corrections — the pendulum's own amplitude, the fact that the precession is not perfectly uniform through a single swing, the ellipticity of the Earth changing the direction of the local vertical by up to about 11′ between geodetic and geocentric latitude, and, at the level of parts in 10^9, frame dragging. None of them approaches the size of the effect being argued about here: the difference between the globe and the spinning-disc prediction at Paris is 3.7°/h, roughly a quarter of the whole rotation rate, while every correction just listed is smaller than the width of a chalk mark.
 

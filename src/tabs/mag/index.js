@@ -61,8 +61,6 @@ export default {
     this._cityI = q("#magCityIRows");
     this._cityB = q("#magCityBRows");
     this._cityNote = q("#magCityNote");
-    this._expOut = q("#exp5out");
-    this._expV = q("#exp5v");
     if (this._f1Cap) this._f1Cap.innerHTML = t("flatcap-1");
     if (this._f2Cap) this._f2Cap.innerHTML = t("flatcap-2");
     // lignes de champ en 3D des trois modèles (2026-09-30) : boucles fermées, on les
@@ -135,15 +133,7 @@ export default {
     }).join("");
 
     if (this._cityNote) this._cityNote.innerHTML = t("citynote");
-    this._expOut.innerHTML = fill(t("exp5out-tpl"), {
-      lat: lat.toFixed(1), r: (r / 1000).toFixed(1),
-      gI: magSgn(g.I), gB: g.B.toFixed(1), gH: g.H.toFixed(1),
-      f1I: magSgn(f1.I), f1B: f1.B.toFixed(1), f1H: f1.H.toFixed(1),
-      f2I: magSgn(f2.I), f2B: f2.B.toFixed(1), f2H: f2.H.toFixed(1),
-    });
-    // plus de disposition « choisie » : l'écart cité est celui de la disposition
-    // plate LA PLUS PROCHE du globe à cette latitude (règle 2, steel-man)
-    this._expV.innerHTML = fill(t("exp5v-tpl"), { diff: Math.min(Math.abs(g.I - f1.I), Math.abs(g.I - f2.I)).toFixed(0) });
+    // l'expérience 5 est dans falsify (exp.js, 2026-11-26)
 
     drawProfile(this._cP, lat);
     if (!this._walkRender) this._drawF3d();          // pas 4 fois par seconde pendant la marche

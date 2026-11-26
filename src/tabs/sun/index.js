@@ -27,6 +27,7 @@ import {
 } from "./logic.js";
 import { drawSymbols } from "../../core/symbols.js";
 import { xrefsNav } from "../../core/tabs.js";
+import { expAwayLink } from "../../core/prose.js";
 import "./style.css";
 import { reducedMotion, frameStep } from "../../core/motion.js";
 import { evBadge } from "../../core/evidence.js";
@@ -202,26 +203,9 @@ export default {
       <div class="callout flatc">${t("dl-flat")}</div>
       <p class="notes">${t("dl-lim")}</p>
 
-      <div class="exp">
-        <div class="exp-h">${t("exp-h")}</div>
-        <div class="exp-t">${t("exp-t")}</div>
-        <p class="exp-lead">${t("exp-lead")}</p>
-        <div class="exp-grid"><div class="exp-var iv">${t("exp-iv")}</div><div class="exp-var dv">${t("exp-dv")}</div></div>
-        <p class="exp-meta">${t("exp-meta")}</p>
-        <div class="exp-calc"><div class="exp-out" id="exp6out"></div><div class="exp-verdict" id="exp6v"></div></div>
-      </div>
+      ${expAwayLink("xp-sun-6", t("exp-h"))}
 
-      <div class="exp">
-        <div class="exp-h">${t("sn2-h")}</div>
-        <div class="exp-t">${t("sn2-t")}</div>
-        <p class="exp-lead">${t("sn2-lead")}</p>
-        <div class="exp-grid"><div class="exp-var iv">${t("sn2-iv")}</div><div class="exp-var dv">${t("sn2-dv")}</div></div>
-        <p class="exp-meta">${t("sn2-meta")}</p>
-        <p class="exp-meta">${t("sn2-metab")}</p>
-        <p class="exp-meta">${t("sn2-metac")}</p>
-        <p class="exp-meta">${t("sn2-metad")}</p>
-        <p class="exp-meta">${t("sn2-verd")}</p>
-      </div>
+      ${expAwayLink("xp-sun-6b", t("sn2-h"))}
 
       ${xrefsNav(["cnav", "twi", "dist", "obs", "azim"])}
       ${renderSources(KEY)}
@@ -240,7 +224,7 @@ export default {
       lat: q("sunLat"), latRead: q("sunLatRead"), hour: q("sunHour"), hourRead: q("sunHourRead"),
       anG: q("anGlobe"), anF: q("anFlat"), romer: q("sunRomer"), path: q("sunPath"), speed: q("sunSpeed"),
       dial: q("sunDial"), faces: [0, 1, 2, 3, 4].map((i) => q("dialM" + i)),
-      rows: q("sunRows"), note: q("sunNote"), speedNote: q("sunSpeedNote"), exp6out: q("exp6out"), exp6v: q("exp6v"),
+      rows: q("sunRows"), note: q("sunNote"), speedNote: q("sunSpeedNote"),
       romerBtn: q("sunRomerBtn"), spinBtn: q("sunDialSpinBtn"),
     };
     const redraw = () => this._redrawStatic();
@@ -691,7 +675,5 @@ export default {
     this._el.note.innerHTML = fill(t("note-tpl"), { h: (T.hf.h / 1000).toFixed(1), cal, ratio: T.ratio.toFixed(1) });
     const sp = this._speed;
     if (sp) this._el.speedNote.innerHTML = fill(t("speed-note-tpl"), { lat: magSgn(lat), uLo: sp.uLo.toFixed(0), uHi: sp.uHi.toFixed(0), swing: (sp.uHi / Math.max(sp.uLo, .1)).toFixed(1), bLo: sp.bLo.toFixed(0), bHi: sp.bHi.toFixed(0) });
-    this._el.exp6out.innerHTML = fill(t("exp6out-tpl"), { lat: magSgn(lat), gAlt: T.june.globe.toFixed(1), fAlt: T.june.flat.toFixed(1), ratio: T.ratio.toFixed(1), minAlt: T.minAlt.toFixed(1) });
-    this._el.exp6v.innerHTML = t("exp6v");
   },
 };

@@ -683,43 +683,9 @@ function seisAnimStart(){
 }
 
 // ---- experiment 1e: one pair of coordinates, two geometries ----
-function updateExpS(){
-  const out = $("expSout"), vd = $("expSverd"); if(!out) return;
-  const la1 = parseFloat($("expSlat").value), lo1 = parseFloat($("expSlon").value);
-  const la2 = parseFloat($("expTlat").value), lo2 = parseFloat($("expTlon").value);
-  const v = parseFloat($("expSv").value);
-  if(![la1, lo1, la2, lo2, v].every(isFinite) || v <= 0){ out.innerHTML = ""; vd.innerHTML = ""; return; }
-  const dg = seisDelta(la1, lo1, la2, lo2), kmG = dg * SEIS_KM_PER_DEG;
-  const kmF = seisFlatKm(la1, lo1, la2, lo2);
-  const tG = kmG / v, tF = kmF / v, err = kmG > 0 ? kmF / kmG - 1 : 0;
-  out.innerHTML =
-    `Great-circle separation Δ = <b>${dg.toFixed(2)}°</b><br>` +
-    `<span class="g">Globe:</span> <b>${Math.round(kmG).toLocaleString("en-US")} km</b> → surface wave at ` +
-      `<b>${seisHMS(tG)}</b> after origin time<br>` +
-    `<span class="f">Flat map:</span> <b>${Math.round(kmF).toLocaleString("en-US")} km</b> → surface wave at ` +
-      `<b>${seisHMS(tF)}</b><br>` +
-    `Disagreement <b>${err >= 0 ? "+" : "−"}${Math.abs(err * 100).toFixed(0)}%</b> in distance, ` +
-      `<b>${tF >= tG ? "+" : "−"}${seisHMS(Math.abs(tF - tG))}</b> in arrival time`;
-  let msg;
-  if(dg < 5){
-    msg = `<b>Too close to separate the models.</b> At ${dg.toFixed(1)}° the two geometries differ by less than a ` +
-          `minute, which no picking method will resolve. Pick a station on another continent.`;
-  } else if(Math.abs(err) < 0.05){
-    msg = `<b>This pair is nearly blind.</b> The flat map happens to be almost right along this path — which it is, ` +
-          `for anything running roughly radially from the north pole. Not evidence for the flat map, just a path that ` +
-          `does not test it. Add a southern-hemisphere station and the gap opens up immediately.`;
-  } else {
-    msg = `<b>This pair is diagnostic.</b> The two models disagree by ${seisHMS(Math.abs(tF - tG))} on a single ` +
-          `arrival — far beyond any picking error, any dispersion correction and any plausible variation in wave ` +
-          `speed. One trace from this station settles it, and the trace is free. Note which way it goes: the flat map ` +
-          `puts the station ${err > 0 ? "further away" : "closer"} than the sphere does, so it predicts an arrival ` +
-          `${err > 0 ? "late" : "early"} by that much.`;
-  }
-  vd.innerHTML = msg;
-}
 
 function drawSeis(){
-  seisStationTable(); seisLayerTable(); updateExpS();
+  seisStationTable(); seisLayerTable();
   seisRadiusTable(); seisRadiusRead(); seisRadiusTable2(); seisRadiusRead2(); seisRegRead(); seisLatenessRead();
   if($("tab-seis").hidden) return;
   drawSeisTT(); drawSeisCore(); seisRadiusFig(); seisRadiusFig2(); seisRegFig(); seisLatenessFig();
@@ -771,9 +737,7 @@ function wireSeis(){
   }
   on("seisPlay", () => seisSetRunning(!seisAnim.running));
   on("seisReset", () => { seisAnim.t = 0; seisAnim.last = 0; drawSeisAnim(); seisAnimReads(); });
-  ["expSlat", "expSlon", "expTlat", "expTlon", "expSv"].forEach(id => {
-    const el = $(id); if(el) el.addEventListener("input", updateExpS);      // outside <form>
-  });
+  // l'expérience 1e est dans falsify (exp.js, 2026-11-26)
 }
 
 let t = (k) => k;

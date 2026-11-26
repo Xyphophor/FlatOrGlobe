@@ -47,16 +47,7 @@ export default {
     if (rd) rd.innerHTML = `<span>${tr("moon-read-n", "{n} passes, Grasse").replace("{n}", L.q.n)}</span>` +
       `<span class="g">${tr("moon-read-R", "R = {v} km (quartiles {a}–{b})").replace("{v}", nf(L.q.med, 1)).replace("{a}", nf(L.q.q1, 1)).replace("{b}", nf(L.q.q3, 1))}</span>` +
       `<span class="f">${tr("moon-read-flat", "station at rest: {v} km off").replace("{v}", vals.flatRms)}</span>`;
-    const upd = () => {
-      const out = container.querySelector("#moonParOut"), v = container.querySelector("#moonParV"); if (!out) return;
-      const pi = +container.querySelector("#moonPi").value, g = +container.querySelector("#moonG").value;
-      if (!(pi > 0 && g > 0)) { out.textContent = ""; v.textContent = ""; return; }
-      const R = radiusFromParallax(g, pi / 60, 27.321661);
-      out.innerHTML = tr("moon-par-out", "R = <b>{R} km</b>").replace("{R}", nf(R, 0));
-      v.innerHTML = tr("moon-par-v", "1 % on π moves R by 3 %: {lo}–{hi} km for ±1 %").replace("{lo}", nf(radiusFromParallax(g, pi * 0.99 / 60, 27.321661), 0)).replace("{hi}", nf(radiusFromParallax(g, pi * 1.01 / 60, 27.321661), 0));
-    };
-    for (const id of ["moonPi", "moonG"]) container.querySelector("#" + id)?.addEventListener("input", upd);
-    upd();
+    // l'expérience de la parallaxe est dans falsify (exp.js, 2026-11-26)
     drawFormulaFigs(container, tr, vals);
     drawSymbols(KEY);
   },

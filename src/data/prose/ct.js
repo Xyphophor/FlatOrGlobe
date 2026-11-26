@@ -397,11 +397,13 @@ export const PROSE = [
   "k": "ct-jan10"
  },
  {
+  "away": "xp-ct-11",
   "t": "h2",
   "html": "Experiment 11 · time a star onto a ridge",
   "k": "ct-h2e"
  },
  {
+  "away": "xp-ct-11",
   "t": "raw",
   "tag": "div",
   "class": "exp",
@@ -410,6 +412,7 @@ export const PROSE = [
   "k": "x:ct-exp1"
  },
  {
+  "away": "xp-ct-11",
   "t": "notes",
   "html": "Deliberately left out: any claim about what the recordings show, since none has been checked here; the ellipsoid, which is orders of magnitude below the effect; and terrain models, since the argument is about the angle to a named point, not about a silhouette.",
   "k": "ct-p6"

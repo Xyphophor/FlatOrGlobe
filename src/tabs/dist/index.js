@@ -43,13 +43,12 @@ export default {
     container.innerHTML = renderProse(KEY, PROSE, { dict: getProseDict(lang, KEY) });
     const q = (s) => container.querySelector(s);
     this._el = { g: q("#dg3d"), f: q("#df3d"), cap: q("#distFlatCap"), rows: q("#distRows"),
-      lat: q("#exp3lat"), dl: q("#exp3dl"), out: q("#exp3out"), v: q("#exp3v"), swap: q("#distSwap") };
+      swap: q("#distSwap") };   // l'expérience 3 est dans falsify (exp.js, 2026-11-26)
     this._proj = "polar"; // "polar" (AE) | "cartesian"
     this._el.swap.addEventListener("click", () => { this._proj = this._proj === "polar" ? "cartesian" : "polar"; this._draw(); });
     // deux cartes plates au choix : une carte exportée (epic11) les montre toutes les deux
     this._el.f.__variant = { get: () => this._proj, set: (p) => { this._proj = p; this._drawFlat(); } };
     for (const el of [this._el.g, this._el.f]) this._wireOrbit(el);
-    for (const el of [this._el.lat, this._el.dl]) el.addEventListener("input", () => this._exp3());
     drawSymbols(KEY);
   },
 
@@ -64,7 +63,6 @@ export default {
   _spinStop() { this._spin?.stop(); },
 
   _draw() {
-    this._exp3();
     this._drawGlobe(); this._drawFlat(); this._fillTable();
   },
 
@@ -180,17 +178,5 @@ export default {
         `<td class="cold">${Math.round(c).toLocaleString()} km ${pct(c / g)}</td>` +
         `<td class="cold">${Math.round(ae).toLocaleString()} km ${pct(ae / g)}</td></tr>`;
     }).join("");
-  },
-
-  _exp3() {
-    const num = (el, def) => { const v = parseFloat(el.value); return Number.isFinite(v) ? v : def; };
-    const lat = num(this._el.lat, 45), dl = Math.max(0.1, num(this._el.dl, 60));
-    const r = exp3(lat, dl);
-    const fmtk = (v) => Math.round(v).toLocaleString() + " km";
-    this._el.out.innerHTML = this._t("exp3-out")
-      .replace("{lat}", lat).replace("{dl}", dl)
-      .replace("{globeKm}", fmtk(r.globe)).replace("{mirrorKm}", fmtk(r.mirror))
-      .replace("{aeKm}", fmtk(r.ae)).replace("{aeMKm}", fmtk(r.aeM)).replace("{ratio}", r.ratio.toFixed(2));
-    this._el.v.innerHTML = this._t("exp3-verdict").replace("{ratio2}", (r.aeM / r.ae).toFixed(1));
   },
 };

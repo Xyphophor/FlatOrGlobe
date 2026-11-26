@@ -128,5 +128,8 @@
   "seis-waves-what": "La direction d'où arrive la première onde sismique (P) à une station, lue sur les trois composantes de son propre mouvement, pour trois grands séismes.",
   "seis-waves-globe": "Des ondes P qui arrivent de directions qui ne suivent pas le grand cercle vers l'épicentre, station après station.",
   "seis-waves-flat": "Des ondes P qui arrivent selon la ligne droite vers l'épicentre sur une seule carte plate, pour toutes les stations et les trois séismes, aussi bien que selon le grand cercle.",
-  "seis-waves-prec": "Les enregistrements à trois composantes, libres, du réseau mondial et l'orientation de chaque capteur ; la direction sort à quelques degrés près."
+  "seis-waves-prec": "Les enregistrements à trois composantes, libres, du réseau mondial et l'orientation de chaque capteur ; la direction sort à quelques degrés près.",
+  "xp-h2": "À faire soi-même : toutes les expériences du site",
+  "xp-lead": "Des expériences à faire soi-même, regroupées par sujet. Chacune dit d'avance quel résultat donnerait raison à quel modèle.",
+  "xp-from": "De l'onglet"
 }

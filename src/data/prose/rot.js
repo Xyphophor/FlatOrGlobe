@@ -241,6 +241,7 @@ export const PROSE = [
   "gloss": "t₁ and t₂ are the two clock times (civil days included), N the number of turns between them. The star turns 366.24 times a year while the Sun turns 365.24 times: one turn of difference, the Earth's orbit seen from the ground, or on a flat model the Sun's own yearly lag."
  },
  {
+  "away": "xp-rot-sid",
   "t": "exp",
   "h": "Experiment · the sidereal day",
   "title": "Time a star behind a fixed edge, twice",

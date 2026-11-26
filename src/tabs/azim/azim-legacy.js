@@ -682,6 +682,13 @@ function azimExperiment9b(S){
     (down ? t("exp9b-verd-down").replace("{down}", down).replace("{total}", S.rows.length) : ".");
 }
 
+/* Les expériences 9 et 9b sont dans l'onglet falsify depuis le 2026-11-26 (azim/exp.js) : leurs sorties y sont écrites par
+   les mêmes fonctions (ids uniques dans la page), au cas en cours de l'onglet, et suivent son animation quand il tourne. */
+export function azimExperimentsPaint(){
+  if(t("glyph-globe") === "glyph-globe") t = makeT(document.documentElement.lang || "en", "azim");
+  const S = azimState(); azimExperiment(S); azimExperiment9b(S);
+}
+
 function azimPaint(S){
   azimReadsFill(S); drawAzimGlobe(S); drawAzimFlat(S); azimTables(S); azimExperiment(S);
   azimParTables(S); azimExperiment9b(S);

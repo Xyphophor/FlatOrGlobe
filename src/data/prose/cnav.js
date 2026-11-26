@@ -136,6 +136,7 @@ export const PROSE = [
   "html": "<p class=\"rate-note\" id=\"cnavNote\"></p>"
  },
  {
+  "away": "xp-cnav-2",
   "t": "exp",
   "h": "Experiment 2 · celestial navigation",
   "title": "Drive north and watch Polaris climb",

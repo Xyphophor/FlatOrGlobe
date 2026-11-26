@@ -236,10 +236,7 @@ function survTables(){
     .replace("{name}", PRE.name).replace("{ang}", (e.ang/TD).toFixed(4)).replace("{exc}", excStr)
     .replace("{measured}", PRE.measuredKey ? t("tricap-measured-gauss") : ".")
     .replace("{extra}", t(PRE.extraKey));
-  const dists = [0.2, 0.5, 1, 2, 5];
-  $("exp7out").innerHTML = t("exp7-out").replace("{list}",
-    dists.map(d => `${d < 1 ? d*1000 + " m" : d + " km"}: <b>${(survCR(d)*100).toFixed(1)} cm</b>`).join(" · "));
-  $("exp7v").innerHTML = t("exp7-verd");
+  // l'expérience 7 est dans falsify (exp.js, 2026-11-26)
 }
 function drawSurvey(){
   if($("tab-surv").hidden) return;

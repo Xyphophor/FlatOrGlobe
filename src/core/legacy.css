@@ -375,3 +375,8 @@ sup.ref a:hover{text-decoration:underline}
 .people figcaption b{color:var(--ink);font-weight:600;}
 .people figcaption a{color:inherit;}
 @media (max-width:420px){.people{gap:10px 12px;}.people .person,.people .person img{width:104px;}}
+
+/* Une expérience partie dans l'onglet falsify (2026-11-26, core/prose.js expAwayLink) : une ligne de lien à sa place */
+.exp-away { margin: 10px 0 14px; padding: 6px 12px; border-left: 3px solid var(--line-strong); font-size: 13.5px; max-width: 80ch; }
+.exp-away a { color: var(--ink-2); text-decoration: none; }
+.exp-away a:hover b, .exp-away a:focus b { text-decoration: underline; }

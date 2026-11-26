@@ -113,16 +113,7 @@ export default {
       .map(([k, n, p]) => `<tr><td>${n}</td><td>${p}</td><td>±${nf(b.parts[k], 1)} %</td></tr>`).join("") +
       `<tr><td><b>${tr("obs-theo-tot", "together")}</b></td><td></td><td><b>±${nf(b.total, 1)} %</b></td></tr>`;
     const q = (id) => container.querySelector("#" + id);
-    const upd = () => {
-      const out = q("obsThOut"), v = q("obsThV"); if (!out) return;
-      const a = +q("obsThA").value, s = +q("obsThS").value, h = +q("obsThH").value;
-      if (!(s > 0 && h > 0) || !isFinite(a)) { out.textContent = ""; v.textContent = ""; return; }
-      const R = rApp(a, s, h), p = predicted({ s, dh: h, k: 0.13, R: 6371 });
-      out.innerHTML = isFinite(R) ? tr("obs-theo-out", "R/(1 − k) = <b>{R} km</b>").replace("{R}", nf(R, 0)) : tr("obs-theo-inf", "α ≥ Δh/s: no curvature, the plane's answer");
-      v.innerHTML = tr("obs-theo-v", "plane α = {p}′ · globe α (k = 0.13) = {g}′").replace("{p}", nf(p.plane, 1)).replace("{g}", nf(p.globeK, 2));
-    };
-    for (const id of ["obsThA", "obsThS", "obsThH"]) q(id)?.addEventListener("input", upd);
-    upd();
+    // l'expérience du Grand Mourre est dans falsify (exp.js, 2026-11-26)
   },
 
   mount(container) {
@@ -134,7 +125,7 @@ export default {
     this._jan = mountJan10(container);
     const q = (s) => container.querySelector(s);
     const ids = ["obsDate", "obsTime", "obsBody", "obsLamp", "obsLampV", "obsFov", "obsFovV", "obsSpeed", "obsSpeedV", "obsPlay", "obsBack", "obsFwd",
-      "obsTrack", "obsRefr", "obsSky", "obsFilter", "obsFlatSun", "obsCam", "obsMap", "obsReads", "obsReads2", "obsCross", "obsMapReads", "obsTbl", "obsExpOut", "obsExpV"];
+      "obsTrack", "obsRefr", "obsSky", "obsFilter", "obsFlatSun", "obsCam", "obsMap", "obsReads", "obsReads2", "obsCross", "obsMapReads", "obsTbl"];   // l'expérience du changement de signe est dans falsify (exp.js, 2026-11-26)
     this._el = Object.fromEntries(ids.map((id) => [id, q("#" + id)]));
     const e = this._el;
     this._playing = false; this._off = 0; this._raf = null; this._last = 0;
@@ -700,13 +691,6 @@ export default {
       <td style="color:var(--globe)">${obsAm(t.globe)}</td>
       <td>${obsAm(t.flat - t.globe)}</td></tr>`).join("");
 
-    const A = rows[0], disc = Math.abs(A.flat - A.globe) / (2 * B.sd) * 100;
-    const xv = { diff: obsAm(A.flat - A.globe), pct: disc.toFixed(0) };
-    $.obsExpOut.innerHTML = T("x-out", "<b>{name}</b>, {d} km out and {dh} m above eye height: a plane puts it <b style=\"color:var(--flat)\">{flat}</b> above the horizontal, a globe <b style=\"color:var(--globe)\">{globe}</b>{how}. The two differ by <b>{diff}</b>, which is <b>{pct}%</b> of the {body}'s disc as drawn.",
-      { name: A.name, d: A.d.toFixed(2), dh: A.h - OBS_SITE.h, flat: obsAm(A.flat), globe: obsAm(A.globe), how: refrOn ? T("x-atk", " at k = {k}", { k: k.toFixed(2) }) : T("x-straight", " with straight rays"), ...xv, body: isSun ? T("x-sun", "Sun") : T("x-moon", "Moon") });
-    $.obsExpV.innerHTML = (A.flat > 0 && A.globe < 0)
-      ? T("x-v1", "<b>Verdict rule.</b> The models disagree about the <b>sign</b> here, not the size: above eye level on a plane, below it on a globe. Photograph the summit against the disc. Above &rarr; the plane prediction holds and the globe's is refuted. Level or below &rarr; no k on a plane can produce that.")
-      : T("x-v2", "<b>Verdict rule.</b> Both models put this summit on the same side of eye level; the test is the <b>{diff}</b> gap, {pct}% of a disc. The far ridge carries the same gap along 3&deg; of skyline, azimuth 238.1&deg; to 241.2&deg;, and the crossing at 241.29&deg; is where the sign argument lives.", xv);
   },
 
   _crossReads() {

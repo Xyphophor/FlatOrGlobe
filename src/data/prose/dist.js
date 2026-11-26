@@ -248,6 +248,7 @@ export const PROSE = [
   "k": "x:c464baaa"
  },
  {
+  "away": "xp-dist-3",
   "t": "exp",
   "h": "Experiment 3 · distances",
   "title": "The same east–west trip, north and south",

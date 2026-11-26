@@ -47,18 +47,7 @@ export default {
       `<td class="g"><b>${nf(r.d, 2)}${r.e ? " ± " + nf(r.e, 2) : ""} mm</b></td><td>${nf(r.dGlobe, 2)} mm</td><td>${nf(r.omega * 1e5, 2)} × 10⁻⁵</td></tr>`).join("");
     if (q("#rot-readFall")) q("#rot-readFall").innerHTML = `<span>${tr("rot-read-falls", "{n} experiments kept").replace("{n}", st.q.n)}</span>` +
       `<span class="g">${tr("rot-read-fmed", "median ω {v} × 10⁻⁵ rad/s").replace("{v}", nf(st.q.med * 1e5, 2))}</span><span>${tr("rot-read-fref", "stars: {v}").replace("{v}", nf(OMEGA_REF * 1e5, 3))}</span><span class="f">${tr("rot-read-f0", "flat: 0")}</span>`;
-    // expérience : le jour sidéral (les champs sont du texte hh:mm:ss)
-    for (const id of ["rotT1", "rotT2"]) { const el = q("#" + id); if (el) { el.type = "text"; el.inputMode = "numeric"; } }
-    const upd = () => {
-      const out = q("#rotSidOut"), v = q("#rotSidV"); if (!out) return;
-      const t1 = sec(q("#rotT1").value), t2r = sec(q("#rotT2").value), n = Math.round(+q("#rotN").value);
-      if (!isFinite(t1) || !isFinite(t2r) || !(n >= 1)) { out.textContent = ""; v.textContent = ""; return; }
-      const r = siderealDay(t1, t2r + n * 86400, n);
-      out.innerHTML = tr("rot-sid-out", "One turn: <b>{T}</b> · {a} s earlier each night · {y} turns a year").replace("{T}", hms(r.sid)).replace("{a}", nf(r.advance, 1)).replace("{y}", nf(r.turnsPerYear, 2));
-      v.innerHTML = tr("rot-sid-v", "Ω = {w} × 10⁻⁵ rad/s (stars: 7.292)").replace("{w}", nf(r.omega * 1e5, 3));
-    };
-    for (const id of ["rotT1", "rotT2", "rotN"]) q("#" + id)?.addEventListener("input", upd);
-    upd();
+    // l'expérience du jour sidéral est dans falsify (exp.js, 2026-11-26)
     drawFormulaFigs(container, tr, vals);
     drawSymbols(KEY);
     // animations : détecter le mouvement (2026-10-04)

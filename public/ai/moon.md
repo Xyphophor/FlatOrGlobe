@@ -32,23 +32,7 @@ $${R = \frac{g\,\sin^3\pi\,(1+m/M)}{n^2}}$$
 
 g is measured with a pendulum, n = 2π / (27.32 days) is the Moon's motion against the stars, m/M ≈ 1/81 the Moon-to-Earth mass ratio. With π = 57.04′ and g = 9.80 m/s², R ≈ 6,395 km. An error of 1 % in π is 3 % in R.
 
-Experiment · the Moon against the stars
-
-Photograph the Moon among the same stars at moonrise, transit and moonset
-
-A camera on a tripod, a fixed focal length, the same stars in every frame.
-
-**You measure** the Moon's position among catalogue stars at three times
-
-**You get** its parallax π, then R from g and the month
-
-Separate the parallax from the orbital motion with a second night, or by fitting the motion as a straight line across the night.
-
-Prediction: π between 54′ and 61′ depending on the Moon's distance that week.
-
-R = **6,399 km**
-
-1 % on π moves R by 3 %: 6,209–6,593 km for ±1 %
+[**Experiment · the Moon against the stars** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-moon-par)
 
 ## The Earth's shadow on the Moon (Aristarchus) [evidence: check — Where the radius enters: the distances of the Moon and the Sun in km come from an ephemeris (DE440), and the catalogue kept only the timings whose layer height, computed from the Earth's radius, lies between −50 and +250 km.]
 

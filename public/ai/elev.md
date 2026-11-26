@@ -198,24 +198,7 @@ The two readings miss 180° by **28.15′**. That excess is not an error bar —
 
 **How to read these experiment boxes.** An experiment changes one thing and watches what happens to another. The thing **you** deliberately change is the **independent variable (IV)**. The thing you then **measure**, and do not control, is the **dependent variable (DV)**. Everything else must be held constant, or you cannot tell what caused what. A model is testable when it predicts a specific DV for each IV — and it is *refuted* when the measured DV does not match. Both models below make definite predictions, so whichever fails, fails honestly.
 
-Experiment 1 · elevation angles
-
-Two levelled instruments, pointed at each other
-
-Two people stand where they can see each other. Each levels a theodolite with its bubble and measures the zenith angle to the other — the angle down from straight up. Add the two readings together.
-
-Independent variable
-**What you change:** the distance **d** between the two stations. Do it at 1 km, then 10 km, then 50 km. You pick these — that is what makes it the IV.
-
-Dependent variable
-**What you measure:** the sum of the two zenith angles, **z_A + z_B**. You do not get to choose this — the instruments tell you.
-
-IV d = 10 km
-DV flat prediction: z_A + z_B = 180.000000° exactly
-DV globe prediction: z_A + z_B = 180.089932°
-difference = **5.40′**
-
-**Verdict rule:** if the sum comes out at 180.000° at *every* distance, the flat model survives and the globe is dead. If the excess grows in proportion to d, the globe survives — and dividing d by the excess gives you the Earth's radius. At d = 10 km, a 1′ instrument is enough.
+[**Experiment 1 · elevation angles** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-elev-1)
 
 Why this one is hard to argue with. Most curvature tests can be met with “your instrument was off” or “that's refraction” or “your height was wrong.” This one cannot be met with a wrong height: the heights *cancel*. Put a 5 m station and a 3,000 m station 200 km apart and the sum still comes out at 180° + d/R to the last decimal. The flat model does not predict “about 180°” — it predicts 180.000°, always. Any reproducible excess falsifies it, and the size of that excess hands you R.
 

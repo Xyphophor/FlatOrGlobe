@@ -174,13 +174,7 @@ The shot can be placed on these axes before it is taken, and that is worth doing
 
 **A first shot, 10 January 2026.** Before that date the same method was tried from the same viewpoint on a winter sunset, filmed by a camera aimed in advance with a network clock photographed beside its screen. At 17:11:06 the Sun's lower left edge touched the shoulder of the ridge, where the globe puts it at 17:11:05; the plane, with the same Sun over its higher ridge, puts it at 17:10:38, the Sun already three quarters hidden. Used like Eratosthenes' shadow, that single contact gives the Earth's radius: about 5,900 km, 5,000 to 6,500 km across the uncertainties. The last light came about 30 s before the globe's prediction, a gap stated rather than tuned away. The video, the photographs and the calculation are in the [observation tab](/ai/obs.md).
 
-## Experiment 11 · time a star onto a ridge
-
-**Independent variable:** the distance to the peak — the same summit recorded from several places, or several peaks at different ranges. **Dependent:** the second at which the star is cut by the skyline. **Held constant:** one clock discipline (GPS-synchronised), one star, the summit itself as the target rather than a shoulder. **Kit:** a camera that records a timestamp, published coordinates for both ends, and a published altitude for the star[4].
-
-**Verdict rule, announced in advance and symmetric.** The globe fails if the two ends of the same line of sight return the same altitude — difference zero within your error, repeatably, at 9 km and at 131 km alike. The flat model fails if the difference grows in proportion to s, returning one radius near 6,371 km from peaks at three different ranges at once. Either way the refraction setting is stated before the recording and applied the same way at both ends, because a switch worth 15′ cannot be chosen after seeing a 27′ disagreement.
-
-Deliberately left out: any claim about what the recordings show, since none has been checked here; the ellipsoid, which is orders of magnitude below the effect; and terrain models, since the argument is about the angle to a named point, not about a silhouette.
+[**Experiment 11 · time a star onto a ridge** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-ct-11)
 
 **See also**[Elevation angles](/ai/elev.md)[Refraction](/ai/ref.md)[Star trails](/ai/star.md)[Cel. nav.](/ai/cnav.md)[Surveying](/ai/surv.md)[Observation](/ai/obs.md)
 

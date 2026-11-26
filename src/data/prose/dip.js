@@ -270,6 +270,7 @@ export const PROSE = [
   "html": "The measurement is imprecise, and the table shows how much. Changing each decision alone — where the hazy horizon is taken, how the skyline is found, whether the summits are given the globe's geometry, a few metres of scrub on them — moves the dip between <span class=\"cv\" data-v=\"ownDipLo\">…</span> and <span class=\"cv\" data-v=\"ownDipHi\">…</span>; with three states of the air, R runs from <span class=\"cv\" data-v=\"ownRLo\">…</span> to <span class=\"cv\" data-v=\"ownRHi\">…</span>. One pixel is <span class=\"cv\" data-v=\"ownPx\">…</span>, and one minute of dip is <span class=\"cv\" data-v=\"ownPct\">…</span> of the radius. The central dip lies <span class=\"cv\" data-v=\"ownGap\">…</span> (<span class=\"cv\" data-v=\"ownGapPx\">…</span>) deeper than the globe predicts for that day's air. The air cannot explain that — it bent the light more than standard, which raises the horizon — so the difference points at the camera: scrub on the summits, residual lens distortion away from the centre of the frame, or where exactly the hazy horizon lies. Taking the free air above the sea at eye height (<span class=\"cv\" data-v=\"ownTfree\">…</span>) instead of the air of the sunny plateau gives <span class=\"cv\" data-v=\"ownRfree\">…</span>. A plane gives no radius at all: its horizon would lie on the level line, <span class=\"cv\" data-v=\"ownDip\">…</span> above the one photographed."
  },
  {
+  "away": "xp-dip-4",
   "t": "exp",
   "h": "Experiment 4 · horizon dip",
   "title": "Climb, and measure how far the sea horizon falls",
@@ -361,6 +362,7 @@ export const PROSE = [
   "k": "dp-c2"
  },
  {
+  "away": "xp-dip-4b",
   "t": "exp",
   "h": "Experiment 4b · the doubled sunset",
   "title": "Watch the same sunset twice, and get the radius of the Earth out of a stopwatch",

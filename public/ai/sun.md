@@ -162,47 +162,9 @@ Top line, the globe: H₀ is the hour angle at which the Sun's centre is 0.833°
 
 **Limits.** A pyranometer reads 5 W/m² only once the Sun has cleared the horizon by a little, later behind hills, so the measured day is shorter than sunrise to sunset by a few minutes in the tropics and by up to half an hour at high latitude, where the Sun rises slowly; thick cloud can shorten it further. A day counts only when at most an hour of readings is missing, and the stations are those whose data for 2019 are published.
 
-Experiment 6 · the Sun with a pinhole
+[**Experiment 6 · the Sun with a pinhole** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-sun-6)
 
-Measure the Sun's angular size and noon altitude — cardboard, tape measure, stick
-
-A pinhole in foil projects a solar image whose diameter is the projection distance ÷ 107.5 — that ratio *is* the angular size (32′). A vertical stick's shadow at solar noon gives the altitude: alt = atan(stick ÷ shadow). Repeat at different hours and dates.
-
-Independent variable
-**What you change:** the **time of day** and the **date** — morning vs noon vs just before sunset; equinox vs solstices. Set latitude above to see the predictions for your home.
-
-Dependent variable
-**What you measure:** the Sun's **angular diameter** and its **noon altitude**. The sky decides both.
-
-**Hold constant:** the same pinhole and screen distance; never look at the Sun directly — project onto paper. **The tells, stated in advance:** a distant sun keeps the same 32′ disc from sunrise to sunset (±0.005%, far below your pinhole's precision) and its noon altitude follows the almanac column above; a nearby sun must change apparent size by whole factors through the day and can never reach the horizon at all.
-
-At φ = +45°, June solstice:
-globe → noon alt 68.5°, disc 31.5–32.5′ all day, sunset at a sharp time
-flat → noon alt 64.4°, disc shrinking ~1.8× by evening, minimum altitude 15.8° — no sunset, ever
-
-**Verdict rule:** if your pinhole shows the disc shrinking through the afternoon and the Sun gliding toward the horizon without reaching it, the near sun is vindicated. If the disc holds 32′ from morning to evening, noon altitudes match the almanac column, and the Sun is cut by the horizon bottom-first at the predicted minute, the distant sun on a rotating globe stands. The two predictions differ by whole factors, not margins.
-
-Experiment 6b · who has daylight right now
-
-Poll one instant across the world — no instrument at all, and the December version cannot be argued with
-
-This is the cheapest experiment on the page: it needs no equipment, no clear sky and no patience. Pick one instant in UTC. Ask people in half a dozen widely separated places whether the Sun is above their horizon at that instant — a message each, or six public webcams, or six live-streamed city squares. Write down six yes/no answers against one clock reading. Both models predict that set of answers in advance, and they do not predict the same one.
-
-Independent variable
-**What you change:** the **set of longitudes and latitudes** you poll, and the **date**. Spread the places as widely as you can in longitude; then repeat near a solstice, when the two models diverge most.
-
-Dependent variable
-**What you measure:** a single **bit per location** — Sun up, or Sun down — all read at one agreed UTC minute. Not a length, not an angle, not a brightness. Nothing to calibrate and nothing to fudge.
-
-**Hold constant:** the instant. Agree a UTC minute in writing beforehand and have everyone answer for that minute, not "when they get round to it"; an hour of drift is 15° of longitude and will smear the boundary you are trying to find. Take the Sun's *centre* on the horizon as the criterion, and ignore mountains — a valley floor loses several minutes.
-
-**Kit:** none. A group chat, or the webcam pages that Antarctic stations, harbours and ski resorts publish for free. This is the one experiment on this page that a reader with no money, no sky and no daylight can run tonight.
-
-**The tells, stated in advance.** On a sphere the lit region is *exactly half* the surface at every instant, and its boundary is a great circle, so your yes/no answers must sort cleanly on either side of one such line and no other. On the standard flat map — a disc with the north pole at its centre — the lit region is a spot cast by a Sun circling above the tropics, so it must be a compact patch, and places on opposite sides of the disc cannot both be lit.
-
-**Then the December version, which is the one that ends it.** Between late October and mid-February the Sun never sets anywhere inside the Antarctic Circle. On a globe that region is a cap around one pole. On the flat map it is the *entire rim of the disc* — so the flat model must light the whole circumference at once, all 360° of it, while leaving the middle of the disc in darkness. There is no position for a spotlight that does that. Ask two Antarctic stations on opposite sides of the continent — say a Ross Sea station and one on the Atlantic side, some 150° of longitude apart[7] — on any January midnight, and the answers decide between the two geometries without a single number being measured.
-
-**The verdict rule, symmetric.** The globe fails if your polled answers cannot be separated by any great circle — if two places 180° apart in longitude are both in daylight at the same instant while a place between them is dark, or if any Antarctic station reports a genuine night in January. The flat model fails if the lit set is consistently a hemisphere rather than a patch, and if stations spread right around the Antarctic coast all report continuous daylight at once. Both statements are checkable tonight, and only one of them survives.
+[**Experiment 6b · who has daylight right now** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-sun-6b)
 
 **See also**[Cel. nav.](/ai/cnav.md)[Twilight](/ai/twi.md)[Distances](/ai/dist.md)[Observation](/ai/obs.md)[Azimuth](/ai/azim.md)
 

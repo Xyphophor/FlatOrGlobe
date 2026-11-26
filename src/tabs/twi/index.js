@@ -16,6 +16,7 @@
 // (hauteur du plafond, tableau des seuils) et le tableau d'ombre en
 // dépendent tous, comme dans le legacy.
 import { makeT } from "../../core/i18n.js";
+import { expAwayLink } from "../../core/prose.js";
 import { registerSources, renderSources } from "../../core/citations.js";
 import { setupCanvas } from "../../core/canvas.js";
 import { RAD, DEG } from "../../core/math.js";
@@ -178,19 +179,7 @@ export default {
       <p class="cnav-lead">${t("tw-refr")}</p>
       ${fold("tw-p10-q", "tw-p10")}${fold("tw-p11-q", "tw-p11")}${fold("tw-p12-q", "tw-p12")}${fold("tw-p13-q", "tw-p13")}
 
-      <div class="exp">
-        <div class="exp-h">${t("tw-exph")}</div><div class="exp-t">${t("tw-expt")}</div>
-        <p class="exp-lead">${t("tw-explead")}</p>
-        <div class="exp-grid"><div class="exp-var iv">${t("tw-expiv")}</div><div class="exp-var dv">${t("tw-expdv")}</div></div>
-        <p class="exp-meta">${t("tw-expmeta")}</p>
-        <div class="exp-calc">
-          <div class="exp-inputs">
-            <div class="field"><label for="expTwLat">${t("tw-lbl1")}</label><input type="number" id="expTwLat" value="48.86" min="-89" max="89" step="0.01"></div>
-            <div class="field"><label for="expTwDec">${t("tw-lbl2")}</label><input type="number" id="expTwDec" value="23.44" min="-23.44" max="23.44" step="0.01"></div>
-          </div>
-          <div class="exp-out" id="expTwOut"></div><div class="exp-verdict" id="expTwVerd"></div>
-        </div>
-      </div>
+      ${expAwayLink("xp-twi-1", t("tw-exph"))}
 
       <section>
         <h2 class="cnav-h2" data-sec="tw2-h2">${t("tw2-h2")}${evBadge("twi", "tw2-h2")}</h2>
@@ -202,12 +191,7 @@ export default {
         <div class="fcap">${t("tw2-foot")}</div>
       </section>
 
-      <div class="exp">
-        <div class="exp-h">${t("tw2-exph")}</div><div class="exp-t">${t("tw2-expt")}</div>
-        <p class="exp-lead">${t("tw2-explead")}</p>
-        <div class="exp-grid"><div class="exp-var iv">${t("tw2-expiv")}</div><div class="exp-var dv">${t("tw2-expdv")}</div></div>
-        <p class="exp-meta">${t("tw2-expmeta")}</p><p class="exp-meta">${t("tw2-expverd")}</p>
-      </div>
+      ${expAwayLink("xp-twi-2", t("tw2-exph"))}
 
       <div class="notes"><p>${t("tw-n1")}</p><p>${t("tw-n2")}</p></div>
       ${xrefsNav(["sun", "ref", "dip", "azim"])}
@@ -220,7 +204,6 @@ export default {
     this._el = {
       geom: q("twiGeomCanvas"), geomReads: q("twiGeomReads"), fall: q("twiFallCanvas"), world: q("twiWorldCanvas"), worldReads: q("twiWorldReads"),
       dur: q("twiDurCanvas"), arch: q("twiArchCanvas"), ht: q("twiHtRows"), flat: q("twiFlatRows"), durRows: q("twiDurRows"), shadow: q("twiShadowRows"), shadowFoot: q("twiShadowFoot"),
-      lat: q("expTwLat"), dec: q("expTwDec"), out: q("expTwOut"), verd: q("expTwVerd"),
       btns: { jul: q("twiDateJul"), eqx: q("twiDateEqx"), dec: q("twiDateDec"), inv: q("twiModeInv"), fit: q("twiModeFit"), play: q("twiPlay"), reset: q("twiReset") },
     };
     // le <span id="twiShadowFoot"> vit dans la prose traduite : on le retrouve après injection
@@ -229,8 +212,6 @@ export default {
     for (const m of ["inv", "fit"]) this._el.btns[m].addEventListener("click", () => { this._W.mode = m; this._syncButtons(); this._drawWorld(); this._worldReads(); });
     this._el.btns.play.addEventListener("click", () => { this._W.playing = !this._W.playing; this._W.last = 0; this._syncButtons(); });
     this._el.btns.reset.addEventListener("click", () => this._setPreset(this._W.preset));
-    this._el.lat.addEventListener("input", () => this._experiment());
-    this._el.dec.addEventListener("input", () => this._experiment());
     // export (epic10/UC02) : un jour complet (24 h en 24 s), depuis l'heure affichée ;
     // readout : les lectures de la page sous la carte
     let saved = null;
@@ -247,7 +228,6 @@ export default {
   },
 
   render() {
-    this._experiment();
     if (this._root.hidden) return;
     this._tables();
     this._drawGeom(); this._drawFall(); this._drawDur(); this._drawArch();
@@ -307,18 +287,6 @@ export default {
     if (e.shadowFoot) e.shadowFoot.innerHTML = TWI_SHADOW_H.map((H) => `H = ${H} km → <b>θ<sub>z</sub> = ${twiThetaZ(H, R).toFixed(2)}°</b>`).join(" · ");
   },
 
-  _experiment() {
-    const t = this._t, e = this._el;
-    const phi = parseFloat(e.lat.value), dec = parseFloat(e.dec.value);
-    if (!isFinite(phi) || !isFinite(dec)) { e.out.textContent = "—"; return; }
-    const r = twiExperiment(phi, dec);
-    const f = (o) => (o.all ? t("exp-never-ends") : o.none ? t("exp-no-rise") : Math.round(o.min) + " min");
-    const m = r.midnight.toFixed(2).replace("-", "−");
-    e.out.innerHTML = fill(t("exp-out-tpl"), { c: f(r.civil), n: f(r.naut), a: f(r.astro), t: f(r.total), m, thr18: r.thr18.toFixed(1), thr12: r.thr12.toFixed(1), thr6: r.thr6.toFixed(1) });
-    e.verd.innerHTML = r.astro.all
-      ? fill(t("exp-verd-all-tpl"), { phi: Math.abs(phi).toFixed(2), dec: dec.toFixed(2), m })
-      : fill(t("exp-verd-tpl"), { t: f(r.total), c: f(r.civil), dlat: (r.thr18 - Math.abs(phi)).toFixed(1) });
-  },
 
   // ================= figure 1 : le plafond d'ombre, à l'ÉCHELLE VRAIE =================
   _drawGeom() {

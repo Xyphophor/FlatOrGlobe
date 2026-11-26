@@ -19,7 +19,7 @@ import { PROSE } from "../../data/prose/cnav.js";
 import { V3D, rot3, mk3, path3, norm3, addS, sphCirclePts, idleSpin } from "../../core/camera3d.js";
 import { drawGlobe25, drawFlat25 } from "../../core/globe25d.js";
 import {
-  cnavRate, exp2, exp2At, refrArcminBennett, STARS3D, HCAL, starFix,
+  cnavRate, refrArcminBennett, STARS3D, HCAL, starFix,
   impliedRadius, CNAV_DISTS_KM, R3D_KM,
 } from "./logic.js";
 import "./style.css";
@@ -52,10 +52,6 @@ export default {
     this._cnR = container.querySelector("#cnR");
     this._cnavRows = container.querySelector("#cnavRows");
     this._cnavNote = container.querySelector("#cnavNote");
-    this._exp2d = container.querySelector("#exp2d");
-    this._exp2lat = container.querySelector("#exp2lat");
-    this._exp2out = container.querySelector("#exp2out");
-    this._exp2v = container.querySelector("#exp2v");
 
     for (const b of this._refrBtns) b.addEventListener("click", () => {
       this._refr = !this._refr;
@@ -64,8 +60,6 @@ export default {
     });
     this._cnH.addEventListener("input", () => this.render());
     this._cnR.addEventListener("input", () => this.render());
-    this._exp2d.addEventListener("input", () => this.render());
-    this._exp2lat.addEventListener("input", () => this.render());
 
     this._wireOrbit(this._canvasG);
     this._wireOrbit(this._canvasF);
@@ -75,7 +69,6 @@ export default {
   render() {
     this._fillRateTable();
     this._fillFixTable();
-    this._updateExp2();
     this._drawGlobe3D();
     this._drawFlat3D();
     this._updateRefrNote();
@@ -136,20 +129,6 @@ export default {
     }).join("");
   },
 
-  _updateExp2() {
-    const d = Number(this._exp2d.value) || 300;
-    const lat = Number(this._exp2lat.value) || 45;
-    const H_km = Number(this._cnH.value) || 5000;
-    const r = exp2(d, lat, H_km);
-    this._exp2out.innerHTML = this._t("exp2-out")
-      .replace("{d}", d).replace("{lat}", lat)
-      .replace("{flat}", r.flat.toFixed(3)).replace("{globe}", r.globe.toFixed(3))
-      .replace("{diff}", r.diff.toFixed(3)).replace("{diffArcmin}", (r.diff * 60).toFixed(0));
-    const at15 = exp2At(15, d, H_km), at60 = exp2At(60, d, H_km);
-    this._exp2v.innerHTML = this._t("exp2-verdict")
-      .replace("{globe}", r.globe.toFixed(3)).replace("{d}", d)
-      .replace("{at15}", at15.toFixed(3)).replace("{at60}", at60.toFixed(3));
-  },
 
   _updateRefrNote() {
     if (!this._refr) { this._refrNote.textContent = ""; return; }

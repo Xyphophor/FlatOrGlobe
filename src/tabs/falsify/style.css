@@ -6,3 +6,12 @@
 #tab-falsify .pending { color: var(--ink-soft); font-family: var(--mono); font-size: 12px; }
 #tab-falsify .callout { background: var(--globe-tint); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; margin: 14px 0; font-size: 14px; }
 #tab-falsify .notes { font-size: 14px; color: var(--ink-2); max-width: 74ch; }
+/* Les expériences de tous les onglets (2026-11-26) : sommaire par groupe, puis une carte par expérience */
+#tab-falsify .xp-index { font-size: 14px; line-height: 1.6; padding-left: 18px; max-width: 80ch; }
+#tab-falsify .xp-ig { margin: 12px 0 2px; font-size: 14px; }
+#tab-falsify .xp-index { margin: 0; }
+#tab-falsify .xp-index li { margin: 2px 0; }
+#tab-falsify .xp-tab { color: var(--ink-soft); font-size: 12px; }
+#tab-falsify .xp-group { margin: 30px 0 4px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); }
+#tab-falsify .xp-from { margin: 0 0 6px; font-size: 13px; color: var(--ink-soft); }
+#tab-falsify .xp .exp-h { display: none; } /* le titre de la section le dit déjà */

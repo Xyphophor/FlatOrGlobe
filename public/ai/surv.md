@@ -111,22 +111,7 @@ A fair challenge for any flat model: reproduce one row. Write the flat-earth lev
 
 Today the National Geodetic Survey and its counterparts maintain the reference frame with GNSS networks, and heights still come from geodetic levelling tied to the geoid — the level surface itself. Datums are defined on an ellipsoid because centimetre-level measurements leave no other option; "ellipsoid height" vs "orthometric height" is a distinction that only exists on a curved, rotating planet with a gravity field. Surveyors are, in a precise sense, the profession that measures the flat-earth question every working day — and files the answer as routine paperwork.
 
-Experiment 7 · levelling across water
-
-Rent an auto level, find a calm lake or canal, and re-run Wallace yourself
-
-Set a levelled instrument at the shore, sight a graduated staff (or a marked board on a boat) at increasing distances across the water. Water is the level surface; your sightline is the tangent. Record the reading vs distance — or use Wallace's stronger design: three equal-height markers and one sight line.
-
-Independent variable
-**What you change:** the **sight distance d** — 200 m, 500 m, 1 km, 2 km, as far as optics allow.
-
-Dependent variable
-**What you measure:** how far the staff reading sits **above** the instrument's height — the drop of the level surface below the tangent line (or the mid-marker's rise above the end-to-end line).
-
-globe → staff reads high by (refracted): 200 m: **0.3 cm** · 500 m: **1.7 cm** · 1 km: **6.8 cm** · 2 km: **27.3 cm** · 5 km: **170.7 cm**
-flat → 0.0 cm at every distance, forever
-
-**Verdict rule:** plot your readings against d². A flat earth is vindicated by a flat line at zero. The globe requires a straight line of slope 1/2R — about 6.8 cm per km² through changing weather (refraction moves it a few percent, never to zero, never negative on average). Wallace's three-marker variant needs just one observation: does the middle marker stand proud of the end-to-end line, by d²/8R? In 1870 it did, and it still does.
+[**Experiment 7 · levelling across water** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-surv-7)
 
 ## The laser, considered as an instrument [evidence: check — Where the radius enters: the 1900 triangulation sides were reduced to sea level on the spheroid, and the corrected radius uses k = 0.13, a coefficient measured with the radius known. The 1977 EDM distances are raw slope distances; without k they give the measured section below.]
 

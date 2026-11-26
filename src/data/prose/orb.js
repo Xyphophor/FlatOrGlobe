@@ -692,6 +692,7 @@ export const PROSE = [
   "gloss": "L is the stick's height and s the noon shadow's length, h the Sun's noon altitude; E is the equation of time in radians of rotation (× 229.2 for minutes), M the Sun's mean anomaly and λ its longitude. The first term has a period of a year and gives e, the second half a year and gives ε."
  },
  {
+  "away": "xp-orb-gno",
   "t": "exp",
   "k": "orb-exp",
   "h": "Experiment · the noon shadow",

@@ -94,7 +94,6 @@ export default {
     this._tri = container.querySelector("#gpsTri");
     this._range = container.querySelector("#gpsRange");
     this._latRead = container.querySelector("#gpsLatRead");
-    this._exp8out = container.querySelector("#exp8out"); this._exp8v = container.querySelector("#exp8v");
     container.querySelector("#gpsLat").addEventListener("input", (e) => {
       const v = Number(e.target.value);
       if (Number.isFinite(v)) this._lat = Math.max(-89, Math.min(89, v));
@@ -107,7 +106,6 @@ export default {
     container.querySelectorAll("span.cv[data-v]").forEach((s) => { const v = rawVals[s.dataset.v]; if (v != null) s.textContent = v; });
     drawFormulaFigs(container, tr, rawVals);
     this._raw = mountGpsRaw(container, tr);
-    this._gpsTables(null);
     drawSymbols(KEY);
     if (!hasWebGL()) this._init2d();
   },
@@ -133,7 +131,7 @@ export default {
       import("../../render3d/scene-gps.js").then(({ mountGpsSky, mountGpsTri }) => {
         if (gen !== this._gen || !this._active) return;
         if (!this._sky3d) {
-          this._sky3d = mountGpsSky(this._sky, () => ({ lat: this._lat, time: this._time }), (n) => this._liveCount(n));
+          this._sky3d = mountGpsSky(this._sky, () => ({ lat: this._lat, time: this._time }));
           this._sky3d.onTick(() => { this._time += 0.0025; });
         }
         this._sky3d.start();
@@ -171,25 +169,8 @@ export default {
     this._tri3d?.stop();
   },
 
-  _liveCount(count) { this._gpsTables(count); },
 
-  // gpsTables() du legacy (L18270) : la sortie de l'expérience 8 porte le
-  // nombre de satellites en vue à l'instant du rendu.
-  _gpsTables(count) {
-    if (!this._exp8out) return;
-    const sgn = (this._lat >= 0 ? "+" : "−") + Math.abs(this._lat);
-    const inView = count == null ? "8–12" : String(count);
-    this._exp8out.innerHTML =
-      `<span class="g">globe → right now at φ = ${sgn}°: ${inView} satellites above your horizon, ` +
-      `every one rising or setting, ranges pinned to the 20,200–25,800 km window, tomorrow's sky 4 min early</span><br>` +
-      `<span class="f">flat towers → a frozen constellation: fixed azimuths and elevations forever, no sidereal ` +
-      `slip, range window broken open</span>`;
-    this._exp8v.innerHTML =
-      `<b>Verdict rule:</b> if two screenshots an hour apart show the same satellites parked at the same spots, ` +
-      `fixed emitters win. If the sky has turned over — new birds risen, old ones set, the whole pattern shifted ` +
-      `along tracks the almanac predicted days ago — you are watching orbital mechanics around a rotating sphere, ` +
-      `measured with a free app on a device that proves it by knowing where you are.`;
-  },
+  // l'expérience 8 (gpsTables du legacy) est dans falsify (exp.js, 2026-11-26)
 
   _drawAll() { this._drawSky(); this._drawTri(); this._drawRange(); },
 
@@ -249,7 +230,6 @@ export default {
     ctx.fillStyle = ink; ctx.font = "11px ui-monospace, monospace";
     ctx.fillText(this._t("cv-in-view").replace("{n}", v.count).replace("{mask}", GPS_EL_MASK_DEG), 8, 16);
     ctx.fillStyle = soft; ctx.fillText(this._t("cv-true-scale-a"), 8, H - 8);
-    if (v.count !== this._lastCount) { this._lastCount = v.count; this._gpsTables(v.count); }
   },
 
   _drawTri() {

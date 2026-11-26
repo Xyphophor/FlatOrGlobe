@@ -908,24 +908,7 @@ The two readings miss 180° by **28.15′**. That excess is not an error bar —
 
 **How to read these experiment boxes.** An experiment changes one thing and watches what happens to another. The thing **you** deliberately change is the **independent variable (IV)**. The thing you then **measure**, and do not control, is the **dependent variable (DV)**. Everything else must be held constant, or you cannot tell what caused what. A model is testable when it predicts a specific DV for each IV — and it is *refuted* when the measured DV does not match. Both models below make definite predictions, so whichever fails, fails honestly.
 
-Experiment 1 · elevation angles
-
-Two levelled instruments, pointed at each other
-
-Two people stand where they can see each other. Each levels a theodolite with its bubble and measures the zenith angle to the other — the angle down from straight up. Add the two readings together.
-
-Independent variable
-**What you change:** the distance **d** between the two stations. Do it at 1 km, then 10 km, then 50 km. You pick these — that is what makes it the IV.
-
-Dependent variable
-**What you measure:** the sum of the two zenith angles, **z_A + z_B**. You do not get to choose this — the instruments tell you.
-
-IV d = 10 km
-DV flat prediction: z_A + z_B = 180.000000° exactly
-DV globe prediction: z_A + z_B = 180.089932°
-difference = **5.40′**
-
-**Verdict rule:** if the sum comes out at 180.000° at *every* distance, the flat model survives and the globe is dead. If the excess grows in proportion to d, the globe survives — and dividing d by the excess gives you the Earth's radius. At d = 10 km, a 1′ instrument is enough.
+[**Experiment 1 · elevation angles** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-elev-1)
 
 Why this one is hard to argue with. Most curvature tests can be met with “your instrument was off” or “that's refraction” or “your height was wrong.” This one cannot be met with a wrong height: the heights *cancel*. Put a 5 m station and a 3,000 m station 200 km apart and the sum still comes out at 180° + d/R to the last decimal. The flat model does not predict “about 180°” — it predicts 180.000°, always. Any reproducible excess falsifies it, and the size of that excess hands you R.
 
@@ -1183,25 +1166,7 @@ Now put two numbers into both models. Helbronner's own distance from the Coudon 
 
 And the amateur version agrees. Riviera photographers catch Monte Cinto from sea level at about 198 km: from an eye 5 m up, geometry alone hides 2,835 m — more than the mountain — so the sightings need refraction, which is what the observers themselves conclude. Working back, the minimum eye height for a purely geometric sighting of Cinto is about **12 m**, and for the 2,305 m Cima Statoghia at 194 km about **40 m** — the figures an independent observer computed from his own photographs[11]. On a plane there is no minimum eye height for anything, and the whole Corsican coast would be photographable from the beach at Nice on any clear day. It never has been.
 
-Experiment 1b · the height sweep
-
-One target, one morning, three camera heights
-
-Pick a target across water whose waterline you can identify — a buoy, an anchored boat, a marked pole, a quay. Photograph it from as close to the water as you can stand. Then raise the camera, without moving sideways, and photograph it again. Then again, higher. Count how much of the base reappears at each step.
-
-Independent variable
-**What you change:** the eye height **e**. You choose it — a beach, a first-floor window, a hill, a cable car — and you can measure it with a tape or a phone barometer.
-
-Dependent variable
-**What you measure:** the height **H** of the target that is cut off at the bottom, read against the known scale on the target itself. The target tells you; you do not get to choose it.
-
-IV e = 2 m, at d = 37.00 km
-DV flat prediction: 0.0 m hidden — at every height on this list, for ever
-DV globe prediction at your height: 80.1 m hidden (68.1 m with k = 0.13)
-the sweep: 0.5 m → 93.3 m · **2 m → 80.1 m** · 25 m → 28.8 m · 100 m → 0.1 m · 515 m → 0.0 m · 1695 m → 0.0 m
-climbing the whole ladder uncovers **93.3 m** of the far base
-
-**Verdict rule:** the flat model predicts that climbing changes the target's apparent *size and position* and nothing else — the same fraction of the base is visible from the sand and from 1,700 m, namely all of it. The globe predicts a specific slab returning at each step, set by `d₀ = √(2Re)` alone. If the base of a distant target looks identical from three well-separated heights on the same morning, the sphere is dead. If a measurable slab comes back each time you climb, and the amounts match the row above, the plane is — and R falls out of the numbers.
+[**Experiment 1b · the height sweep** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-hh-1b)
 
 Why zoom is the cleanest sub-test. The commonest rescue for a vanished hull is “it is too small to resolve — zoom in and it comes back”. That is testable in the same photograph. What is lost to angular size returns under magnification, top and bottom together. What is behind the bulge does not: the top sharpens and the bottom stays cut at the same waterline, clean and horizontal, whatever the focal length. One frame at 24 mm and one at 600 mm from the same tripod separate the two explanations without arithmetic.
 
@@ -1317,21 +1282,7 @@ A body sits directly over its sub‑point. The globe drops its altitude at a fix
 
 The globe rate holds flat at **0.999 ′/nm** — that is k = 1/R, giving R = 1/k ≈ **3 440 nm ≈ 6 371 km**. The flat-model rate slides from steep near the sub-point to shallow far away, so there is no single k.
 
-Experiment 2 · celestial navigation
-
-Drive north and watch Polaris climb
-
-Measure the altitude of Polaris (or any star) above the horizon. Drive a known distance due north along a straight road. Measure it again. The star has climbed — the question is by how much.
-
-Independent variable
-**What you change:** the distance **d** you travel due north. You choose it — 100 km, 300 km, 500 km.
-
-Dependent variable
-**What you measure:** the **change in the star's altitude**, in degrees. The sky decides this, not you.
-
-IV d = 300 km north, starting at 45°N. Flat prediction: Polaris rises 1.770°. Globe prediction: Polaris rises 2.698°. They differ by 0.928° (56′).
-
-**Verdict rule:** the globe says the rise is always **2.698°** for 300 km — the same everywhere. The flat model cannot hold that: from 15°N it predicts 0.934°, from 60°N 2.445°.
+[**Experiment 2 · celestial navigation** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-cnav-2)
 
 > **Why the plane fails, in one line.** On a flat plane a body at finite height can never reach the horizon (atan(H/x) stays positive), so the Sun would never set; different bodies would need different heights H and return contradictory fixes; and k would change with where you stand. The globe uses a single radius R and one k = 1/R for the Sun, the Moon and every star at once — and from that same geometry it predicts sunset, the “Polaris altitude equals your latitude” rule, and the southern stars a disk cannot show.
 
@@ -1488,24 +1439,7 @@ h = height of the eye above the sea · δ = measured dip · n = refractive index
 
 The measurement is imprecise, and the table shows how much. Changing each decision alone — where the hazy horizon is taken, how the skyline is found, whether the summits are given the globe's geometry, a few metres of scrub on them — moves the dip between 62.2′ and 67.0′; with three states of the air, R runs from 5,355 km to 6,139 km. One pixel is 1.27′, and one minute of dip is 3.1 % of the radius. The central dip lies 4.6′ (3.6 px) deeper than the globe predicts for that day's air. The air cannot explain that — it bent the light more than standard, which raises the horizon — so the difference points at the camera: scrub on the summits, residual lens distortion away from the centre of the frame, or where exactly the hazy horizon lies. Taking the free air above the sea at eye height (19.1 °C) instead of the air of the sunny plateau gives 5,702 km. A plane gives no radius at all: its horizon would lie on the level line, 65.0′ above the one photographed.
 
-Experiment 4 · horizon dip
-
-Climb, and measure how far the sea horizon falls
-
-Stand at the shore with a levelled instrument and measure the angle between true horizontal and the sea horizon. Then climb — a cliff path, a tall building, a hill — and measure again from a known height.
-
-Independent variable
-**What you change:** your **eye height h** above sea level. You choose it by where you stand: 2 m, then 50 m, then 300 m. Set it with the height control at the top of this tab.
-
-Dependent variable
-**What you measure:** the **dip angle** — how far the horizon sits below level. The world decides this.
-
-IV h = 100 m (set above)
-DV flat prediction: dip = 0.0′ = 0.000°
-DV globe prediction: dip = 18.0′ = 0.299° (with refraction)
-geometric, no refraction: 19.3′ · rule of thumb 1.76′×√h = 17.6′
-
-**Verdict rule:** a single non-zero dip, repeated and larger from higher up, refutes the flat model outright — there is no value of any parameter that turns zero into 18.0′. And because the globe predicts dip ∝ √h, plotting your readings against √h should give a straight line whose slope hands you the Earth's radius.
+[**Experiment 4 · horizon dip** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-dip-4)
 
 ## Below eye level and still in the sky — the band the Sun has to cross [evidence: prediction]
 
@@ -1538,25 +1472,7 @@ Times are for the equinox at 45°, where the Sun descends at 10.64° per hour; n
 
 > **Three things that can spoil it, stated in advance.** First, the level has to be a real level: in an aircraft the apparent vertical follows the resultant of gravity and acceleration, so a bank or a climb tilts it — take the reading in steady cruise, and prefer the angle from the Sun *to the horizon*, which no instrument error can manufacture. Second, refraction lifts objects near the horizon by roughly 34′[1] and shrinks the dip by about 8%[2]; both are already in the numbers above, and both work *against* the effect rather than creating it. Third, over land the horizon is terrain, not the geometric horizon, so this is a sea‑horizon measurement. None of the three turns a zero into 3°.
 
-Experiment 4b · the doubled sunset
-
-Watch the same sunset twice, and get the radius of the Earth out of a stopwatch
-
-Sit at the water's edge facing west and watch the Sun's last edge disappear. Then stand up — or run up a dune, or take a lift, or take off — and it comes back. The delay is not an illusion and it is not small: it is δ(h₂) − δ(h₁) divided by the rate at which the Sun sinks. Rawlins proposed this in 1979[3] as a way to measure the planet with a wristwatch and a metre stick, and Minnaert did the six‑metre version by running up a dyke.[2]
-
-Independent variable
-**What you change:** your **eye height**, between the first sunset and the second. Sitting to standing is half a metre; a stairwell is ten; an aircraft is eleven thousand.
-
-Dependent variable
-**What you measure:** the **delay** in seconds between the two disappearances — one number, from a stopwatch.
-
-Dip at 1.2 m: 1.97′ · at 6.0 m: 4.40′ → Δδ = **2.43′**
-
-Globe predicts a delay of 15.8 s at 52.0° · flat plane predicts 0.0 s
-
-Your 16.0 s, inverted: Rₑff = **7,107 km**, i.e. R = **6,183 km** after removing k = 0.13
-
-**Verdict rule.** The flat prediction is that the second sunset never happens: raise your eye and the Sun stays gone, because the vanishing line does not move. Time a delay of **0 s**, repeatably, from a height difference big enough that the globe predicts 16 s, and the globe prediction is refuted. Conversely a delay that tracks √h₂ − √h₁ across several height pairs, and returns the same R each time, is a measurement no flat arrangement reproduces. Expect scatter: coastal air can shift the dip by minutes of arc, so repeat it and take the open sea over a river mouth.
+[**Experiment 4b · the doubled sunset** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-dip-4b)
 
 > **It is measured, not inferred.** A dip meter (or a theodolite levelled with a bubble, or a sextant's artificial horizon) reads the angle between the true horizontal and the sea horizon directly. From a 10 m bridge it is about 5.6′ (0.093°); from a 100 m cliff about 17.6′ (0.293°); from an airliner at 10 km about 3.0°. Those numbers are tabulated, reproducible with hardware costing a few hundred euros, and they track √h exactly as arccos(R/(R+h)) requires. A plane predicts 0.0′ = 0.000° at every one of those heights.
 
@@ -1933,27 +1849,7 @@ Its size is priced above: about 34′ at the horizon, against the 1,080′ that 
 
 Extinction along a long slant path is real too, and it is why the setting Sun is red and dim enough to look at. But extinction is a smooth, monotonic, exponential attenuation with air mass. It gives no threshold, no edge, and no dependence on the *direction* you look — whereas the observed twilight sky is bright in the west and dark in the east by an amount that tracks a single angle. And extinction cannot produce the latitude thresholds of the previous section, because the air mass along the path is a function of the Sun's altitude, and the whole point of that section is that the Sun's altitude at midnight is fixed by φ and δ in a way no atmospheric effect can touch.
 
-Experiment 1f · dawn and twilight
-
-Time first light against the clock, twice a year, from your own doorstep
-
-This one costs nothing and needs no instrument beyond a phone and a clear horizon. Pick a spot with an open view east, go out well before sunrise on a clear morning near an equinox, and write down the clock time at which you can first make out the horizon line and the time the Sun's upper edge appears. Then do it again within a few days of the June solstice from the same spot. The interval is civil dawn, and the calculator below predicts both lengths from your latitude and the date alone, with no fitting and no free parameter. If you are north of about 48.6°, the more dramatic version is available to you: on the June nights the sky never goes properly dark at all, and the almanac will print a dash where the end of astronomical twilight should be.
-
-Independent variable
-**What you change:** the **date**, and therefore the Sun's declination. Two dates two months apart are enough at mid-latitudes; equinox against solstice is the sharpest pair. Changing your **latitude** instead works just as well if you are travelling.
-
-Dependent variable
-**What you measure:** the **number of minutes** between first light and sunrise. A clock and your own eyes. No angles, no instruments, no trust in anyone else's data.
-
-**Hold constant:** the site, the direction you face, and the criterion you use for "first light" — pick one and stick to it, because the criterion is worth several minutes and the effect you are after is tens of minutes. Clear sky both times; cloud on one morning and not the other ruins the comparison.
-**Kit:** a phone. If you want the version with a number in it rather than a judgement call, point the phone's camera east on a tripod, shoot at fixed exposure every thirty seconds, and read the frame brightness afterwards — the curve is the twilight curve and its knee is unmistakable.
-**The tell:** at 45° north the interval grows by roughly a quarter between March and June; at the equator it barely moves at all; north of 48.6° astronomical night vanishes outright in June. A flat Sun that dims by distance has no mechanism that makes the fade take longer in one month than another at the same place.
-
-**Civil** 43 min · **Nautical** 61 min · **Astronomical** never ends
-Total sunset → −18°: **never ends**. Sun's altitude at local midnight: **−17.70°**.
-Astronomical night vanishes above latitude 48.6° · nautical above 54.6° · civil above 60.6°.
-
-**Verdict rule.** At 48.86° with the Sun at 23.44°, the globe says there is **no astronomical night at all** on this date, because the Sun bottoms out at −17.70° and never reaches −18°. Look up the almanac for these coordinates: it should print a dash. If it prints a time — if the sky does go fully dark here on this date — the geometry on this tab is wrong and you should say so.
+[**Experiment 1f · dawn and twilight** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-twi-1)
 
 ## How high the shadow stands — and why it climbs faster than the Sun sinks [evidence: prediction]
 
@@ -1978,24 +1874,7 @@ Only one quantity there has to be supplied from outside: H, the effective top of
 
 *Figure caption:* Depression at which the shadow reaches the zenith and the dark segment covers the sky: H = 10 km → **θ_z = 3.21°** · H = 15 km → **θ_z = 3.93°** · H = 20 km → **θ_z = 4.53°**. Note what that means for an observer: the **angle** is the same everywhere on Earth, in every season — but the **clock time** it takes to get there is not, and runs from about thirteen minutes near the equator to three quarters of an hour at high latitude in spring.
 
-Experiment 1f-b · time the Earth's own shadow
-
-Turn your back on the sunset and photograph the east — a phone, a wall to rest it on, twenty minutes
-
-Ten minutes after sunset there is a dark blue-grey band along the eastern horizon with a pink one above it: the planet's own shadow, cast on its own air, with the Belt of Venus along its top edge.[6] Rest a phone on a wall, frame the eastern horizon with something vertical of known height in shot — a lamp post, a door frame, a distant mast — and shoot one fixed-exposure frame every minute from sunset until the band has climbed out of frame. Afterwards, convert the band's top edge into an angle using the object of known height and its distance. You will have the shadow's altitude against the clock, and the clock converts to the Sun's depression.
-
-Independent variable
-**What you change:** the **time since sunset**, and therefore the Sun's depression θ, which an almanac gives you for your position to the minute.[1] Nothing else moves. If you can repeat it from a very different latitude, or six months later, do — that is where the sharper version lives.
-
-Dependent variable
-**What you measure:** the **altitude of the shadow's upper edge**, in degrees, frame by frame. One angle per photograph, read off against a foreground object whose height and distance you know.
-
-**Hold constant:** the camera position, the focal length and the exposure — an automatic exposure will chase the fading sky and move the very edge you are trying to follow. Pick one criterion for the top edge, the colour boundary rather than the brightness one, and keep it. Face the antisolar azimuth, not simply east: ten minutes after sunset the two differ by several degrees.
-**Kit:** a phone, a wall, and a foreground object. If you want the angle without trigonometry, hold a ruler at arm's length — a centimetre at 57 cm subtends one degree, near enough for a two-degree effect.
-**The tells, stated in advance:** the shadow's top is **never below the antisolar point**, at any moment, which the derivation above gives with no adjustable quantity; it **accelerates**, the ratio in the last column growing from about 1.1 to beyond 5 within twenty minutes; and the sky is fully shadowed at a **depression of three to four and a half degrees** — the same angle in Quito and in Reykjavík, though one takes a quarter of the time the other does.
-
-**What this experiment cannot do, said plainly.** It does not measure R. The single free quantity H is degenerate with the radius here — a bigger planet with a shallower atmosphere gives a similar curve — so anyone claiming a radius from a sunset photograph is claiming too much, and this page will not. Nor is the top edge sharp: air thins gradually, so two careful observers will disagree by something like half a degree, which is a few kilometres of H. What the experiment does settle is *shape*, and shape is what the two models disagree about.
-**The verdict rule, symmetric.** The sphere fails if the shadow's top is ever measured at or below the antisolar point, if it climbs at a constant ratio rather than an accelerating one, or if the depression at which it reaches the zenith turns out to depend on where you stand or on the season. The flat model fails if a boundary it must explain as distance and haze instead behaves as a shadow does: an arc curved about the antisolar point, rising at an accelerating angular rate, closing over the sky at one fixed solar depression that is the same for every observer on the planet while the clock time is not.
+[**Experiment 1f-b · time the Earth's own shadow** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-twi-2)
 
 Caveats this page owes you. Four, and the first is the one that matters. The heights in the first table are the *geometric* ceiling of the shadow; they are not a brightness model. Real twilight brightness involves multiple scattering, ozone absorption in the Chappuis band and aerosol loading, and the classical treatments are Hulburt's and Rozenberg's, not a one-line formula.[3][4][5] Second, the durations here use the mean Sun and a spherical Earth, with sunrise at the conventional −0°50′; published almanacs will differ from them by a minute or two, and a mountain horizon by rather more. Third, the measured 10^8 day-to-night ratio is downwelling irradiance at one dark rural site, and the same study measures a factor of 100 between that site and a city — the number is a scale, not a constant. Fourth, the anti-twilight figure is a schematic, and its colours are drawn rather than computed. None of the four moves an argument that turns on eight orders of magnitude against fewer than two, and on a stage length that goes to infinity at a latitude you can point to on a map.
 
@@ -2213,37 +2092,9 @@ And in 1751 the thing was finally done properly. Lacaille observed the Moon from
 
 **And the projection is a choice**, restated once more because it is the honest weak point: the numbers in the flat column are the azimuthal equidistant map's numbers, not a proof about every conceivable flat map.
 
-Experiment 9 · where is the Sun for you?
+[**Experiment 9 · where is the Sun for you?** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-azim-9)
 
-A stick, its shadow, and one agreed minute — with a friend far away, if you can
-
-Stand a stick vertically on level ground. At an agreed UTC minute, mark the shadow. The Sun's azimuth is the shadow's direction plus 180°. Measure that angle from **true** north — see above for why the compass will not do — with a printed protractor and a piece of string, or by taking a second mark at local solar noon to establish the north–south line first.
-
-Independent variable
-**What you change:** your **place**. The sharp version needs two observers far apart in latitude, ideally one in each hemisphere, at the same UTC minute; the weaker but still decisive version is one observer and the published bearing for their own coordinates.
-
-Dependent variable
-**What you measure:** the Sun's **azimuth** in degrees from true north. One angle. Not a duration, not a brightness, not a horizon.
-
-At **21 Dec 2026, 12:00:00 UTC**, the widest disagreement among these stations is at **Scott Base, Antarctica**: the Sun is **191.9°** from true north, and the flat map says **354.9°** — a gap of **162.9°**. The narrowest is **Sutherland, South Africa**, where the gap is only **2.0°**, which a protractor and a string will not resolve.
-
-**Verdict rule.** At SBA the two models do not differ in size but in **direction**: one sends you 163° round the horizon from the other. Measure the bearing to ±5° and one of them is finished. If it agrees with the flat map, the globe prediction is refuted; if it agrees with the great-circle bearing to the published sub-point, no choice of lamp height rescues the disc, because the disc's bearing has no lamp height in it.
-
-Experiment 9b · the Moon against the stars
-
-One photograph each, two places, one agreed second — and the sky is the ruler
-
-Agree an instant, to the second, with someone far away from you in latitude. At that instant each of you photographs the Moon with a star close beside it in the same frame. Then measure how far the Moon sits from that star, in arcminutes, in each photograph, and take the difference. That difference is the parallax. You are deliberately *not* measuring a height above a horizon: an angle inside a single frame needs no level, no horizon and no calibration, and refraction lifts the Moon and the star beside it by almost the same amount, so most of it cancels instead of having to be modelled.
-
-Independent variable
-**What you change:** your **place**, at a fixed instant. Two observers as far apart in latitude as you can arrange; a few thousand kilometres is already plenty. Without a second observer, the published topocentric position for your own coordinates does the same job rather less convincingly.
-
-Dependent variable
-**What you measure:** the Moon's **angular distance from a nearby star**, in arcminutes. One angle inside one photograph. Not an altitude, not a time, not a horizon.
-
-At **21 Dec 2026, 12:00:00 UTC**, **Kongsberg, Norway** and **Charters Towers, Australia** lie 14,445 km apart and both have the Moon above the horizon. Between those two viewpoints the Moon stands **101.6′** apart against the background stars — 3.1 times its own diameter, so a single photograph from each place settles it. That one angle gives **56.98 Earth radii**, against 57.19 from this page's ephemeris, and it needed no distance, no horizon and no clock beyond the agreed instant. The same two sight lines to the **Sun** open by only 17.5″, which is why this experiment does not work on the Sun.
-
-**Verdict rule.** The globe fails if your measured shift does not put d/R within your own uncertainty of the almanac's, or if the answer changes when you turn the baseline. The flat model fails on the table above: the kindest of the three lamp heights at this instant is 3,000 km, and even that one misses some station's altitude by **53.8°** — and at 5 of these 7 places the Moon is below the horizon right now, where a lamp hung over a plane is above it from everywhere, at every height.
+[**Experiment 9b · the Moon against the stars** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-azim-9b)
 
 **See also**[Sun](/ai/sun.md)[Twilight](/ai/twi.md)[Magnetism](/ai/mag.md)[Cel. nav.](/ai/cnav.md)[Distances](/ai/dist.md)[Surveying](/ai/surv.md)[Observation](/ai/obs.md)
 
@@ -2464,23 +2315,7 @@ $${R = \frac{g\,\sin^3\pi\,(1+m/M)}{n^2}}$$
 
 g is measured with a pendulum, n = 2π / (27.32 days) is the Moon's motion against the stars, m/M ≈ 1/81 the Moon-to-Earth mass ratio. With π = 57.04′ and g = 9.80 m/s², R ≈ 6,395 km. An error of 1 % in π is 3 % in R.
 
-Experiment · the Moon against the stars
-
-Photograph the Moon among the same stars at moonrise, transit and moonset
-
-A camera on a tripod, a fixed focal length, the same stars in every frame.
-
-**You measure** the Moon's position among catalogue stars at three times
-
-**You get** its parallax π, then R from g and the month
-
-Separate the parallax from the orbital motion with a second night, or by fitting the motion as a straight line across the night.
-
-Prediction: π between 54′ and 61′ depending on the Moon's distance that week.
-
-R = **6,399 km**
-
-1 % on π moves R by 3 %: 6,209–6,593 km for ±1 %
+[**Experiment · the Moon against the stars** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-moon-par)
 
 ## The Earth's shadow on the Moon (Aristarchus) [evidence: check — Where the radius enters: the distances of the Moon and the Sun in km come from an ephemeris (DE440), and the catalogue kept only the timings whose layer height, computed from the Earth's radius, lies between −50 and +250 km.]
 
@@ -2617,23 +2452,7 @@ Both equalities are exact, not fitted. For the polar leg, cos σ = sin²60° + c
 | C·N 33°N 71°W → 34°N 151°E | 11 369 km | 15 345 km (+35%) | 11 731 km (+3%) |
 | C·S 33°S 71°W → 34°S 151°E | 11 369 km | 15 345 km (+35%) | 25 641 km (+126%) |
 
-Experiment 3 · distances
-
-The same east–west trip, north and south
-
-Pick an east–west leg spanning a fixed number of degrees of longitude, and measure how long it really is. Then do the mirror-image leg in the other hemisphere. Book the flights, or read the published great-circle distances and flight times.
-
-Independent variable
-**What you change:** the **latitude** of the leg — try +45°, then −45°. You choose which parallel to travel along.
-
-Dependent variable
-**What you measure:** the **ground distance actually covered** — odometer, GPS track, or flight time × cruising speed.
-
-IV latitude 45° , span Δλ = 60°
-DV globe: this leg 4 718 km · mirror leg 4 718 km → **equal**
-DV flat disc: this leg 5 240 km · mirror leg 15 720 km → ratio 3.00×
-
-**Verdict rule:** if the two mirror legs measure the same, the globe survives. If the southern one is really 3.0× the northern one, the disc survives. Airlines settle this daily: Sydney–Santiago is about 11,400 km and is flown non-stop in roughly 12½ hours, which no aircraft could do if it were the ~25,000 km the disc requires.
+[**Experiment 3 · distances** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-dist-3)
 
 > **The confusion, named.** The flat‑earth disk (the “Gleason map”) is the azimuthal equidistant projection of the globe. It preserves distances *only along straight lines through the pole*; every east–west distance is stretched by (90°−φ)/cos φ — a factor of 1.11 at 45° N but **3.33 at 45° S**. Treating that projection as the territory forces the southern hemisphere to be three times wider than it measures. Real ships and aircraft cross it anyway: Sydney–Santiago is ~11,400 km and is flown non‑stop in ~12½ hours; on the disk it would be ~25,000 km, longer than any airliner's range.
 
@@ -2815,27 +2634,7 @@ This is the usual alternative and it deserves a straight answer. Buoyancy is rea
 
 > **Where the accelerating disc dies.** Constant proper acceleration reproduces free fall perfectly — that is Einstein's equivalence principle and it is not a joke. But an accelerating floor accelerates *all* of itself equally: the same 9.8 m/s² at the pole and at the rim, in the cellar and at the top of the Burj Khalifa. It therefore predicts a free‑air gradient of exactly zero and a latitude variation of exactly zero, and both are measured, daily, by people whose surveys would not close if they ignored them. It also has to explain why the whole disc has been accelerating for the age of the universe without arriving anywhere.
 
-Experiment 1f · gravity and level
-
-Weigh the same object in two cities, or time a pendulum in both
-
-Every flat model on the table predicts that g is one number, the same everywhere. The globe predicts a specific difference between any two latitudes, set by rotation and the bulge. Two ways to see it: a pendulum, whose period goes as 1/√g, or a good spring‑type balance carrying a heavy mass. Pick your two places, and the calculator tells you in advance how big the effect is and whether your kit can resolve it.
-
-Independent variable
-**What you change:** the **latitude** at which you make the measurement. Nothing else — same instrument, same mass, same pendulum, carried between the two places.
-
-Dependent variable
-**What you measure:** the **period** of the pendulum, or the **reading** of the balance. Both are proxies for g and the world decides them.
-
-Globe: g = 9.80466 at 43.3° and 9.81124 m/s² at 50.6° → Δg = **657.6 mGal** (0.0671%)
-
-Every flat model: Δg = 0.0 mGal, at both places, exactly
-
-Pendulum of 2.00 m: period 2.83778 s vs 2.83683 s → **0.10 s** apart over 100 swings
-
-10.0 kg on a force-reading balance: **6.7 g** difference
-
-**Verdict rule.** If the two places really do differ, you will see it: 0.10 s over 100 swings is within reach of a phone timing the swings, and 6.7 g is readable on a 0.1 g balance. Measure a *difference of zero*, repeatably, with an instrument that can resolve this much, and the flat models win this test outright — no amount of curvature elsewhere would save the prediction.
+[**Experiment 1f · gravity and level** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-grav-1f)
 
 ## 07 · Two tides a day: what the Moon's pull does to a ball [evidence: prediction]
 
@@ -3091,24 +2890,7 @@ They do vary a little — that variation is an entire discipline called seismic 
 
 This is the objection the tab most wants to lose. Every trace referred to here is free, most of it available within minutes of the event, and the tooling is a Python package.[7] There is a point-and-click route for anyone who would rather not write code.[8] A hundred-euro seismometer in a spare room records earthquakes from the far side of the planet and joins the same open network you are downloading from. The experiment below is not a thought experiment.
 
-Experiment 1e · seismology
-
-Download one earthquake and plot the travel-time curve yourself
-
-Pick any magnitude 7.5 or greater event from the last twenty years. Ask a data centre for the vertical component at ten or twelve stations spread between 20° and 160° away, band-pass between 100 and 200 seconds so that only the long-period surface wave survives, and read off the time of the peak of the wave packet at each. Plot that time against great-circle distance, then against flat-map distance. One of those two plots is a straight line through the origin and the other is a shotgun pattern. You will know which within a minute of the plot appearing, and you will not have taken anybody's word for anything.
-
-Independent variable
-**What you change:** the **station**, and therefore its distance from the epicentre. Spread them over as much of the range as you can, and make sure several are in the southern hemisphere — that is where the two models separate.
-
-Dependent variable
-**What you measure:** the **arrival time** of the filtered surface-wave peak, relative to the origin time in the event catalogue. Nothing else — no amplitudes, no instrument response, no modelling.
-
-Great-circle separation Δ = **116.87°**
-Globe: **12,995 km** → surface wave at **57 min** after origin time
-Flat map: **26,470 km** → surface wave at **1 h 56 m**
-Disagreement **+104%** in distance, **+59 min** in arrival time
-
-**This pair is diagnostic.** The two models disagree by 59 min on a single arrival — far beyond any picking error, any dispersion correction and any plausible variation in wave speed. One trace from this station settles it, and the trace is free. Note which way it goes: the flat map puts the station further away than the sphere does, so it predicts an arrival late by that much.
+[**Experiment 1e · seismology** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-seis-1e)
 
 Experiment 1e-b · the ring of silence
 
@@ -3610,24 +3392,7 @@ A lodestone machined into a small sphere reproduced the whole dip-against-latitu
 
 > William Gilbert machined a lodestone into a small sphere — a *terrella*, "little Earth" — and walked a short compass needle across its surface. The needle stood upright at two opposite points, lay flat along the mid-circle between them, and tilted by the dipole rule everywhere else: the exact dip-vs-latitude pattern navigators were reporting. His conclusion opens the modern subject: *the Earth itself is a great magnet*. You can repeat this tonight with a sphere magnet and a cheap button compass — then try to reproduce the same needle behaviour with any magnet arrangement under a flat plate. The sphere takes one magnet; the plate has no arrangement that works, because the failure is in the shape, not the magnet.
 
-Experiment 5 · the field in your pocket
-
-Read inclination and field strength wherever you are — the sensor is already in your phone
-
-Every smartphone carries a 3-axis magnetometer. A free sensor app reports the total field |B| in μT directly; add a level surface (or the phone's accelerometer, which sensor apps use automatically) and it reports the inclination I too. A ~15€ dip needle, or a magnetised sewing needle floated on a cork disc and then re-balanced on a horizontal pin, does the same with no electronics.
-
-Independent variable
-**What you change:** your **position** — magnetic latitude λ, or on the flat map, distance r from the centre. Travel, or recruit friends and relatives by latitude; the further apart, the sharper the test. Set it with the λ slider above.
-
-Dependent variable
-**What you measure:** two numbers per location — the **dip I** (sign included!) and the **total field |B| in μT**. The world decides both.
-
-At your λ = 45.0° (r = 5.0k km on the map):
-globe → I = +63°, |B| = 47.4 μT, H = 21.2 μT
-flat ① → I = +35°, |B| = 103.9 μT, H = 84.9 μT
-flat ② → I = +38°, |B| = 80.1 μT, H = 63.0 μT
-
-**Verdict rule:** if readings across latitudes follow either amber column — southern dip frozen above −35° with fields collapsing several-fold (①), or a level circle ~3,600 km south of the observed magnetic equator, a south that never dips past −69° and Arctic fields near 200 μT (②) — the flat disc is vindicated and the dipole-sphere refuted. If instead I flips sign at one circle, follows tan I = 2 tan λ to within the stated ~10°, and |B| stays within ~22–67 μT with a single I = −90° point in Antarctica, the sphere stands. At your latitude the two shapes disagree by **25°** of dip — far beyond any instrument error.
+[**Experiment 5 · the field in your pocket** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-mag-5)
 
 ### The escape hatches, pre-empted.
 
@@ -3756,22 +3521,7 @@ Steel-man the disc: forget that nothing orbits a plane (orbits are free fall aro
 
 > **The deepest point is the simplest.** GPS is not a picture of the Earth that could be faked; it is a *live geometry proof* re-run by billions of independent receivers, using public equations, public ephemerides, and raw observables anyone can log. The four ranges close on a point — your point — only if the transmitters are where the globe math says they are. A navigation system is the one kind of evidence that cannot humor a wrong shape and keep working: get the geometry wrong by a kilometre and every landing, harvest and package delivery drifts with it.
 
-Experiment 8 · read the sky with a free app
-
-Any GNSS status app shows the raw constellation — no account, no cost
-
-Install a satellite-status app (most phones expose GPS, Galileo, GLONASS and BeiDou). The sky plot shows each satellite's azimuth and elevation, live.
-
-Independent variable
-**What you change:** the **time** — screenshot the sky plot now and again in 1–2 hours; and if you can, compare with a friend at a different latitude at the same moment.
-
-Dependent variable
-**What you measure:** each satellite's **elevation over time** (rising or setting?), the **count in view**, and where the tracks wheel (north or south).
-
-globe → right now at φ = +45°: 8 satellites above your horizon, every one rising or setting, ranges pinned to the 20,200–25,800 km window, tomorrow's sky 4 min early
-flat towers → a frozen constellation: fixed azimuths and elevations forever, no sidereal slip, range window broken open
-
-**Verdict rule:** if two screenshots an hour apart show the same satellites parked at the same spots, fixed emitters win. If the sky has turned over — new birds risen, old ones set, the whole pattern shifted along tracks the almanac predicted days ago — you are watching orbital mechanics around a rotating sphere, measured with a free app on a device that proves it by knowing where you are.
+[**Experiment 8 · read the sky with a free app** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-gps-8)
 
 **See also**[Distances](/ai/dist.md)[Gravity](/ai/grav.md)[Cel. nav.](/ai/cnav.md)[Surveying](/ai/surv.md)
 
@@ -3880,23 +3630,7 @@ $$\Omega = \frac{2\pi}{T_{s}},\qquad \frac{86\,400\,\text{s}}{\Delta} = 366.24 =
 
 t₁ and t₂ are the two clock times (civil days included), N the number of turns between them. The star turns 366.24 times a year while the Sun turns 365.24 times: one turn of difference, the Earth's orbit seen from the ground, or on a flat model the Sun's own yearly lag.
 
-Experiment · the sidereal day
-
-Time a star behind a fixed edge, twice
-
-Same place, same edge, a few nights apart. Enter the two clock readings and the number of nights.
-
-**You measure** two times of disappearance and the number of nights
-
-**You get** the length of one turn and the daily advance
-
-The clock must be set to a network time source; photograph its screen with the star, as for the 10 January sunset in the observation tab.
-
-Prediction: 23 h 56 min 4.1 s per turn, 3 min 55.9 s earlier each night.
-
-One turn: **23 h 56 min 4.1 s** · 235.9 s earlier each night · 366.26 turns a year
-
-Ω = 7.292 × 10⁻⁵ rad/s (stars: 7.292)
+[**Experiment · the sidereal day** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-rot-sid)
 
 > **This one does not separate the models,** and it is here for that reason. Stars turn once in 23 h 56 min above a plane as above a globe. What the clock gives is the rate Ω the ring lasers read about their verticals, measured with nothing but time, and the extra turn per year. The separation is in the latitude dependence above.
 
@@ -4166,23 +3900,7 @@ $${E(t) \approx 2e\,\sin M - \tan^2(\varepsilon/2)\,\sin 2\lambda}$$
 
 L is the stick's height and s the noon shadow's length, h the Sun's noon altitude; E is the equation of time in radians of rotation (× 229.2 for minutes), M the Sun's mean anomaly and λ its longitude. The first term has a period of a year and gives e, the second half a year and gives ε.
 
-Experiment · the noon shadow
-
-Measure the shortest shadow at both solstices
-
-A stick made vertical with a level, a flat floor, a tape. Mark the shortest shadow around noon on 21 June and 21 December.
-
-**You measure** the stick's height and the two noon shadows
-
-**You get** the axis tilt ε and your latitude φ
-
-Prediction for Marseille (43.3° N): shadows of 0.36 L in June and 2.33 L in December, ε ≈ 23.44°.
-
-A year of noon timings against a network clock gives the equation of time, and from it e.
-
-Noon altitudes 70.15° and 23.26° · tilt **ε = 23.44°**
-
-latitude φ = 43.29° (accepted tilt: 23.44°)
+[**Experiment · the noon shadow** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-orb-gno)
 
 **See also**[Sun](/ai/sun.md)[Rotation](/ai/rot.md)[Satellites](/ai/sat.md)[Star trails](/ai/star.md)[Azimuth](/ai/azim.md)
 
@@ -4615,47 +4333,9 @@ Top line, the globe: H₀ is the hour angle at which the Sun's centre is 0.833°
 
 **Limits.** A pyranometer reads 5 W/m² only once the Sun has cleared the horizon by a little, later behind hills, so the measured day is shorter than sunrise to sunset by a few minutes in the tropics and by up to half an hour at high latitude, where the Sun rises slowly; thick cloud can shorten it further. A day counts only when at most an hour of readings is missing, and the stations are those whose data for 2019 are published.
 
-Experiment 6 · the Sun with a pinhole
+[**Experiment 6 · the Sun with a pinhole** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-sun-6)
 
-Measure the Sun's angular size and noon altitude — cardboard, tape measure, stick
-
-A pinhole in foil projects a solar image whose diameter is the projection distance ÷ 107.5 — that ratio *is* the angular size (32′). A vertical stick's shadow at solar noon gives the altitude: alt = atan(stick ÷ shadow). Repeat at different hours and dates.
-
-Independent variable
-**What you change:** the **time of day** and the **date** — morning vs noon vs just before sunset; equinox vs solstices. Set latitude above to see the predictions for your home.
-
-Dependent variable
-**What you measure:** the Sun's **angular diameter** and its **noon altitude**. The sky decides both.
-
-**Hold constant:** the same pinhole and screen distance; never look at the Sun directly — project onto paper. **The tells, stated in advance:** a distant sun keeps the same 32′ disc from sunrise to sunset (±0.005%, far below your pinhole's precision) and its noon altitude follows the almanac column above; a nearby sun must change apparent size by whole factors through the day and can never reach the horizon at all.
-
-At φ = +45°, June solstice:
-globe → noon alt 68.5°, disc 31.5–32.5′ all day, sunset at a sharp time
-flat → noon alt 64.4°, disc shrinking ~1.8× by evening, minimum altitude 15.8° — no sunset, ever
-
-**Verdict rule:** if your pinhole shows the disc shrinking through the afternoon and the Sun gliding toward the horizon without reaching it, the near sun is vindicated. If the disc holds 32′ from morning to evening, noon altitudes match the almanac column, and the Sun is cut by the horizon bottom-first at the predicted minute, the distant sun on a rotating globe stands. The two predictions differ by whole factors, not margins.
-
-Experiment 6b · who has daylight right now
-
-Poll one instant across the world — no instrument at all, and the December version cannot be argued with
-
-This is the cheapest experiment on the page: it needs no equipment, no clear sky and no patience. Pick one instant in UTC. Ask people in half a dozen widely separated places whether the Sun is above their horizon at that instant — a message each, or six public webcams, or six live-streamed city squares. Write down six yes/no answers against one clock reading. Both models predict that set of answers in advance, and they do not predict the same one.
-
-Independent variable
-**What you change:** the **set of longitudes and latitudes** you poll, and the **date**. Spread the places as widely as you can in longitude; then repeat near a solstice, when the two models diverge most.
-
-Dependent variable
-**What you measure:** a single **bit per location** — Sun up, or Sun down — all read at one agreed UTC minute. Not a length, not an angle, not a brightness. Nothing to calibrate and nothing to fudge.
-
-**Hold constant:** the instant. Agree a UTC minute in writing beforehand and have everyone answer for that minute, not "when they get round to it"; an hour of drift is 15° of longitude and will smear the boundary you are trying to find. Take the Sun's *centre* on the horizon as the criterion, and ignore mountains — a valley floor loses several minutes.
-
-**Kit:** none. A group chat, or the webcam pages that Antarctic stations, harbours and ski resorts publish for free. This is the one experiment on this page that a reader with no money, no sky and no daylight can run tonight.
-
-**The tells, stated in advance.** On a sphere the lit region is *exactly half* the surface at every instant, and its boundary is a great circle, so your yes/no answers must sort cleanly on either side of one such line and no other. On the standard flat map — a disc with the north pole at its centre — the lit region is a spot cast by a Sun circling above the tropics, so it must be a compact patch, and places on opposite sides of the disc cannot both be lit.
-
-**Then the December version, which is the one that ends it.** Between late October and mid-February the Sun never sets anywhere inside the Antarctic Circle. On a globe that region is a cap around one pole. On the flat map it is the *entire rim of the disc* — so the flat model must light the whole circumference at once, all 360° of it, while leaving the middle of the disc in darkness. There is no position for a spotlight that does that. Ask two Antarctic stations on opposite sides of the continent — say a Ross Sea station and one on the Atlantic side, some 150° of longitude apart[7] — on any January midnight, and the answers decide between the two geometries without a single number being measured.
-
-**The verdict rule, symmetric.** The globe fails if your polled answers cannot be separated by any great circle — if two places 180° apart in longitude are both in daylight at the same instant while a place between them is dark, or if any Antarctic station reports a genuine night in January. The flat model fails if the lit set is consistently a hemisphere rather than a patch, and if stations spread right around the Antarctic coast all report continuous daylight at once. Both statements are checkable tonight, and only one of them survives.
+[**Experiment 6b · who has daylight right now** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-sun-6b)
 
 **See also**[Cel. nav.](/ai/cnav.md)[Twilight](/ai/twi.md)[Distances](/ai/dist.md)[Observation](/ai/obs.md)[Azimuth](/ai/azim.md)
 
@@ -4908,13 +4588,7 @@ On a globe a constellation falls into one of three classes and its **declination
 | Centaurus | -60.8° | never rises | — | always up |
 | Octans | -88.8° | never rises | — | always up |
 
-## Experiment 2b · photograph the axis
-
-**Independent variable:** the place — the hemisphere first, the latitude second. **Dependent:** (a) the sense of rotation, one bit; (b) the two culmination altitudes of one circumpolar star. **Held constant:** the same lens, the aim on the fixed point, a fixed foreground for the horizon, a stated exposure. **Kit:** a phone on a wall and thirty minutes of stacking. For (b) a clinometer is enough — no camera at all. Every altitude printed on this tab can be checked against the USNO service[5] before you go outside.
-
-**Verdict rule, announced in advance and symmetric.** The globe fails if a southern observer photographs arcs centred on Polaris, if the sense is the same in both hemispheres, or if the mean of the two culminations does not return the latitude. The flat model fails if the sense reverses between hemispheres, or if that mean does return the latitude instead of missing it by several degrees.
-
-Deliberately left out: differential refraction and extinction near the horizon, which are modelled nowhere else on this page and which the culmination test does not need; aberration, stellar parallax and proper motion, all below anything claimed here; and trail photometry, which is real and predicted differently by the two models but cannot be measured without calibration.
+[**Experiment 2b · photograph the axis** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-star-2b)
 
 **See also**[Cel. nav.](/ai/cnav.md)[Foucault](/ai/fou.md)[Azimuth](/ai/azim.md)[Sun](/ai/sun.md)[GPS](/ai/gps.md)
 
@@ -5083,26 +4757,7 @@ They did rebuild the apparatus twice, and they say so themselves, in print, in t
 
 All real, all present, and none of them latitude-aware. A draught in Chicago does not know it should produce 10.02°/h while an identical draught in Melbourne produces −9.22°/h and one in Quito produces zero. Systematic errors that happen to reproduce sin φ across a hundred independent buildings, built by people who never met, are not systematic errors. They are the signal.
 
-Experiment 1d · Foucault pendulum
-
-Find a stairwell, and measure the angle between your floor and the axis of the world
-
-This is the rare shape test you can run indoors, alone, at night, with hardware from a builders' merchant. Hang the heaviest compact mass you can from the longest wire your building allows, on a pivot that cannot transmit twist. Draw the bob aside with a thread, wait until it is dead still, burn the thread. Mark the apex of the swing on the floor every twenty minutes. The calculator below tells you before you start whether your stairwell is tall enough for the answer to mean anything.
-
-Independent variable
-**What you change:** your **latitude** — ideally by persuading someone at a very different one to repeat it. A second site is what converts a rotation demo into a shape measurement.
-
-Dependent variable
-**What you measure:** the **angle the swing plane turns** in a measured time, and its **sense**. The sense alone already separates the three models if you can get south of the equator.
-
-Pendulum period T₀ = 2π√(L/g) = **6.95 s** · 1,554 swings in 3 h
-Globe predicts: **11.325 °/h** clockwise · full turn in 31 h 47 m · **34.0°** in 3 h
-Flat disc predicts: 15.041 °/h · **45.1°** in 3 h
-Flat, not rotating: 0.0° in 3 h, and in any other number of hours
-Airy ellipse precession = **2.428 °/h** — 21% of the globe signal
-Ellipse you can tolerate for a 10% error: **0.47 cm** half-width
-
-**This is a viable site.** Airy's term sits at 21% of the signal, so after 3 h the globe says the plane has turned 34.0° clockwise while a disc spinning once a day says 45.1° — a gap of 11°, far larger than anything a chalk mark can blur. Run it twice with opposite ellipses and average, and the residue is the Earth.
+[**Experiment 1d · Foucault pendulum** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-fou-1d)
 
 A caveat this page owes you. The sin φ law is first-order. A full treatment carries small corrections — the pendulum's own amplitude, the fact that the precession is not perfectly uniform through a single swing, the ellipticity of the Earth changing the direction of the local vertical by up to about 11′ between geodetic and geocentric latitude, and, at the level of parts in 10^9, frame dragging. None of them approaches the size of the effect being argued about here: the difference between the globe and the spinning-disc prediction at Paris is 3.7°/h, roughly a quarter of the whole rotation rate, while every correction just listed is smaller than the width of a chalk mark.
 
@@ -5889,26 +5544,7 @@ It varies within bounds that are themselves measured, and — decisively — it 
 
 **It cannot survive reciprocal observation.** This is the cleanest test on the page because the station heights cancel and nothing is left to argue about. On a plane the two zenith angles must sum to at most 180°. On a sphere they sum to 180° + γ(1−k), which for a 30 km line is 180° + 14.1′ at k = 0.13. That is a *sign difference*, not a magnitude difference, and no positive k can rescue it.
 
-Experiment 1c · refraction
-
-Measure k yourself, and let it convict the model of your choice
-
-Put a total station or theodolite at each end of a line several kilometres long, ideally with a clear reciprocal view. At an agreed instant, each observer measures the zenith angle to the other instrument's centre. Swap the numbers. You now have everything: the sum tells you which geometry you live on, and its excess over 180° tells you the refraction coefficient of the air you measured in.
-
-Independent variable
-**What you change:** the **line** — its length s, and the time of day you observe it. Try noon and again an hour after sunset.
-
-Dependent variable
-**What you measure:** the two **zenith angles** z_A and z_B, from which the sum and hence k follow with no further assumptions.
-
-Central angle γ = s/R = **0.2698°** (16.19′)
-Measured sum z_A + z_B = **180.2347°**
-Plane predicts: ≤ 180.0000° — exactly 180 with straight rays, less if light bends down
-Globe predicts: 180° + γ(1−k) — an excess that grows with distance
-Excess over 180° = **+0.2347°** (+14.08′)
-⇒ refraction coefficient **k = 0.130** · R_eff = 7,324 km = 1.150 R
-
-**Sum exceeds 180°.** No flat arrangement can do this: on a plane the verticals are parallel, so straight rays give exactly 180.000° and downward-bending rays give *less*. The excess here is 14.08′, and k = 0.130 sits inside the measured range 0.10–0.34, so nothing exotic is being assumed.
+[**Experiment 1c · refraction** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-ref-1c)
 
 The through-line. Every tab on this page offers refraction as a toggle and prints both answers, because the honest position is not "refraction is negligible" — it is not — but "refraction is measured, bounded, and of known sign". The elevation and hidden-height tabs share one k with this one. The surveying tab shows the reciprocal-angle correction being applied in the field. And the horizon-dip tab shows the 12% that k shaves off the dip without ever touching its sign. One radius, one refraction coefficient, and the two are told apart by the fact that only one of them cares what the weather is doing.
 
@@ -6061,22 +5697,7 @@ A fair challenge for any flat model: reproduce one row. Write the flat-earth lev
 
 Today the National Geodetic Survey and its counterparts maintain the reference frame with GNSS networks, and heights still come from geodetic levelling tied to the geoid — the level surface itself. Datums are defined on an ellipsoid because centimetre-level measurements leave no other option; "ellipsoid height" vs "orthometric height" is a distinction that only exists on a curved, rotating planet with a gravity field. Surveyors are, in a precise sense, the profession that measures the flat-earth question every working day — and files the answer as routine paperwork.
 
-Experiment 7 · levelling across water
-
-Rent an auto level, find a calm lake or canal, and re-run Wallace yourself
-
-Set a levelled instrument at the shore, sight a graduated staff (or a marked board on a boat) at increasing distances across the water. Water is the level surface; your sightline is the tangent. Record the reading vs distance — or use Wallace's stronger design: three equal-height markers and one sight line.
-
-Independent variable
-**What you change:** the **sight distance d** — 200 m, 500 m, 1 km, 2 km, as far as optics allow.
-
-Dependent variable
-**What you measure:** how far the staff reading sits **above** the instrument's height — the drop of the level surface below the tangent line (or the mid-marker's rise above the end-to-end line).
-
-globe → staff reads high by (refracted): 200 m: **0.3 cm** · 500 m: **1.7 cm** · 1 km: **6.8 cm** · 2 km: **27.3 cm** · 5 km: **170.7 cm**
-flat → 0.0 cm at every distance, forever
-
-**Verdict rule:** plot your readings against d². A flat earth is vindicated by a flat line at zero. The globe requires a straight line of slope 1/2R — about 6.8 cm per km² through changing weather (refraction moves it a few percent, never to zero, never negative on average). Wallace's three-marker variant needs just one observation: does the middle marker stand proud of the end-to-end line, by d²/8R? In 1870 it did, and it still does.
+[**Experiment 7 · levelling across water** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-surv-7)
 
 ## The laser, considered as an instrument [evidence: check — Where the radius enters: the 1900 triangulation sides were reduced to sea level on the spheroid, and the corrected radius uses k = 0.13, a coefficient measured with the radius known. The 1977 EDM distances are raw slope distances; without k they give the measured section below.]
 
@@ -6300,23 +5921,7 @@ The same kind of dated appointment, at the scale of a continent, is the total ec
 
 Two things the panel refuses to do. It does not treat the drawn skyline as evidence: both curves come from a terrain model, which cannot test the geometry that built it — they show *where* to point the camera. And named summits use their published heights, never the model's, so the terrain model never supplies the number a summit test turns on (the LiDAR happens to read Le Grand Mourre, Mourre de Chanier and Mourre Frey within a metre of them[4]). The crossing is the one exception: its two points have no published height good to a few metres, so both come from the LiDAR.
 
-Experiment · photograph the sign change
-
-One filtered camera, one synchronised clock, six minutes
-
-Stand at the published viewpoint. Point a solar-filtered camera at azimuth 241°, start recording before 16:53 CET and stop after 17:00. Film a network-synchronised clock in shot, or note the timestamps. That is the entire apparatus.
-
-Independent variable
-**What you change:** the **instant**, and nothing else. The viewpoint, the azimuth and the target summit are all fixed and published in advance — you only choose when to read the frame.
-
-Dependent variable
-**What you measure:** the ridge's height above or below the Sun's centre, **in units of the solar disc**, read straight off that frame. The disc is 32.4′ wide, so the frame carries its own scale — you do not get to choose this, the photograph tells you.
-
-**Hold constant:** one tripod, one clock synchronised to network time and filmed in shot. **The tells, stated in advance:** a plane requires Le Grand Mourre to stand **13.2′ above** eye level, a sphere with straight rays **1.4′ below**, a sphere with k = 0.13, **0.5′ above**. The spread between plane and sphere is **12.7′, or 39 % of the solar disc**, and it converts to about **83 seconds** of sunset timing at this latitude. **Read the limb, not the blaze:** a Sun photographed near the horizon is overexposed, and the white blob is wider than the real disc, so judging "half hidden" by eye runs early. Stop the exposure down until the disc has an edge before you time anything.
-
-**Le Grand Mourre**, 54.13 km out and 208 m above eye height: a plane puts it **13.21′** above the horizontal, a globe **-1.40′** with straight rays. The two differ by **14.61′**, which is **45%** of the Sun's disc as drawn.
-
-**Verdict rule.** The models disagree about the **sign** here, not the size: above eye level on a plane, below it on a globe. Photograph the summit against the disc. Above → the plane prediction holds and the globe's is refuted. Level or below → no k on a plane can produce that.
+[**Experiment · photograph the sign change** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-obs-sign)
 
 > **What would settle it for the plane.** If the ridge photographs 13′ above the Sun's centre at the stated minute — two fifths of a disc high, unmistakable at any zoom — the flat prediction holds and the globe's is refuted. If it photographs level with the Sun or below it, no value of k on a plane can produce that, because a plane has no curvature to correct for. The measurement is the same either way; only the answer differs.
 
@@ -6386,23 +5991,7 @@ b is the measured baseline, A and B the horizontal angles at its ends. On a plan
 | height difference Δh | ±5 m | ±2.4 % |
 | **together** |  | **±2.9 %** |
 
-Experiment · the Grand Mourre, measured
-
-Enter your own α, s and Δh
-
-Nothing here comes from a map once these three are yours.
-
-**You measure** α with the theodolite, s by triangulation, Δh with barometers
-
-**You get** the apparent radius R/(1 − k), and the plane's α for the same s and Δh
-
-Prediction before measuring: α ≈ 0.5′ on a globe with standard refraction, 13.2′ on a plane.
-
-Best variant: a second observer on the summit, both theodolites read at the same instant (signal mirror by day, lamp at dusk).
-
-R/(1 − k) = **7,324 km**
-
-plane α = 13.2′ · globe α (k = 0.13) = 0.52′
+[**Experiment · the Grand Mourre, measured** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-obs-th)
 
 > **What would vindicate the plane:** α within a minute of arc of Δh/s, about 13.2′ with today's map values. The globe needs α near 0.5′, and with no k at all, −1.4′. Twelve minutes of arc is forty times the planned uncertainty of the theodolite. This section is a prediction until the measurement is made.
 
@@ -6600,13 +6189,7 @@ The shot can be placed on these axes before it is taken, and that is worth doing
 
 **A first shot, 10 January 2026.** Before that date the same method was tried from the same viewpoint on a winter sunset, filmed by a camera aimed in advance with a network clock photographed beside its screen. At 17:11:06 the Sun's lower left edge touched the shoulder of the ridge, where the globe puts it at 17:11:05; the plane, with the same Sun over its higher ridge, puts it at 17:10:38, the Sun already three quarters hidden. Used like Eratosthenes' shadow, that single contact gives the Earth's radius: about 5,900 km, 5,000 to 6,500 km across the uncertainties. The last light came about 30 s before the globe's prediction, a gap stated rather than tuned away. The video, the photographs and the calculation are in the [observation tab](/ai/obs.md).
 
-## Experiment 11 · time a star onto a ridge
-
-**Independent variable:** the distance to the peak — the same summit recorded from several places, or several peaks at different ranges. **Dependent:** the second at which the star is cut by the skyline. **Held constant:** one clock discipline (GPS-synchronised), one star, the summit itself as the target rather than a shoulder. **Kit:** a camera that records a timestamp, published coordinates for both ends, and a published altitude for the star[4].
-
-**Verdict rule, announced in advance and symmetric.** The globe fails if the two ends of the same line of sight return the same altitude — difference zero within your error, repeatably, at 9 km and at 131 km alike. The flat model fails if the difference grows in proportion to s, returning one radius near 6,371 km from peaks at three different ranges at once. Either way the refraction setting is stated before the recording and applied the same way at both ends, because a switch worth 15′ cannot be chosen after seeing a 27′ disagreement.
-
-Deliberately left out: any claim about what the recordings show, since none has been checked here; the ellipsoid, which is orders of magnitude below the effect; and terrain models, since the argument is about the angle to a named point, not about a silhouette.
+[**Experiment 11 · time a star onto a ridge** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-ct-11)
 
 **See also**[Elevation angles](/ai/elev.md)[Refraction](/ai/ref.md)[Star trails](/ai/star.md)[Cel. nav.](/ai/cnav.md)[Surveying](/ai/surv.md)[Observation](/ai/obs.md)
 
@@ -7865,3 +7448,627 @@ Read a row from the middle out. The centre column is what a flat-earth measureme
 **Anything an official body says.** Not one row of the table above needs you to trust an agency. Every threshold is reachable with a phone, a stopwatch, a protractor or a pendulum, and the two rows that use published data — earthquake arrival times and the star catalogue — name archives that are open, are maintained by rival institutions in different countries, and would have to be falsified in concert.
 
 > **The one that keeps the page honest.** Any single test can be met with “your instrument was off”, and often fairly. That is why the page's real claim is not any one row: it is that one radius, R ≈ 6,371 km, satisfies every row at once. To refute that you do not need to beat one threshold — you need a flat arrangement that beats two of them with the same parameters. None has ever been shown, and the page would print it if one were.
+
+## Do it yourself: every experiment of the site
+
+Experiments you can do yourself, grouped by subject. Each one says beforehand which result would favour which model.
+
+**Sky & horizon** (10)
+
+- [Experiment 1 · elevation angles](/ai/falsify.md#xp-elev-1) Elevation angles
+- [Experiment 1b · the height sweep](/ai/falsify.md#xp-hh-1b) Hidden height
+- [Experiment 2 · celestial navigation](/ai/falsify.md#xp-cnav-2) Cel. nav.
+- [Experiment 4 · horizon dip](/ai/falsify.md#xp-dip-4) Dip
+- [Experiment 4b · the doubled sunset](/ai/falsify.md#xp-dip-4b) Dip
+- [Experiment 1f · dawn and twilight](/ai/falsify.md#xp-twi-1) Twilight
+- [Experiment 1f-b · time the Earth's own shadow](/ai/falsify.md#xp-twi-2) Twilight
+- [Experiment 9 · where is the Sun for you?](/ai/falsify.md#xp-azim-9) Azimuth
+- [Experiment 9b · the Moon against the stars](/ai/falsify.md#xp-azim-9b) Azimuth
+- [Experiment · the Moon against the stars](/ai/falsify.md#xp-moon-par) Moon
+
+**Ground & distances** (5)
+
+- [Experiment 3 · distances](/ai/falsify.md#xp-dist-3) Distances
+- [Experiment 1f · gravity and level](/ai/falsify.md#xp-grav-1f) Gravity
+- [Experiment 1e · seismology](/ai/falsify.md#xp-seis-1e) Seismology
+- [Experiment 5 · the field in your pocket](/ai/falsify.md#xp-mag-5) Magnetism
+- [Experiment 8 · read the sky with a free app](/ai/falsify.md#xp-gps-8) GPS
+
+**Motions** (2)
+
+- [Experiment · the sidereal day](/ai/falsify.md#xp-rot-sid) Rotation
+- [Experiment · the noon shadow](/ai/falsify.md#xp-orb-gno) Orbit
+
+**Both** (4)
+
+- [Experiment 6 · the Sun with a pinhole](/ai/falsify.md#xp-sun-6) Sun
+- [Experiment 6b · who has daylight right now](/ai/falsify.md#xp-sun-6b) Sun
+- [Experiment 2b · photograph the axis](/ai/falsify.md#xp-star-2b) Star trails
+- [Experiment 1d · Foucault pendulum](/ai/falsify.md#xp-fou-1d) Foucault
+
+**Objections** (5)
+
+- [Experiment 1c · refraction](/ai/falsify.md#xp-ref-1c) Refraction
+- [Experiment 7 · levelling across water](/ai/falsify.md#xp-surv-7) Surveying
+- [Experiment · photograph the sign change](/ai/falsify.md#xp-obs-sign) Observation
+- [Experiment · the Grand Mourre, measured](/ai/falsify.md#xp-obs-th) Observation
+- [Experiment 11 · time a star onto a ridge](/ai/falsify.md#xp-ct-11) Theodolite
+
+### Sky & horizon
+
+## Experiment 1 · elevation angles
+
+From the tab [Elevation angles](/ai/elev.md)
+
+Experiment 1 · elevation angles
+
+Two levelled instruments, pointed at each other
+
+Two people stand where they can see each other. Each levels a theodolite with its bubble and measures the zenith angle to the other — the angle down from straight up. Add the two readings together.
+
+Independent variable
+**What you change:** the distance **d** between the two stations. Do it at 1 km, then 10 km, then 50 km. You pick these — that is what makes it the IV.
+
+Dependent variable
+**What you measure:** the sum of the two zenith angles, **z_A + z_B**. You do not get to choose this — the instruments tell you.
+
+IV d = 10 km
+DV flat prediction: z_A + z_B = 180.000000° exactly
+DV globe prediction: z_A + z_B = 180.089932°
+difference = **5.40′**
+
+**Verdict rule:** if the sum comes out at 180.000° at *every* distance, the flat model survives and the globe is dead. If the excess grows in proportion to d, the globe survives — and dividing d by the excess gives you the Earth's radius. At d = 10 km, a 1′ instrument is enough.
+
+## Experiment 1b · the height sweep
+
+From the tab [Hidden height](/ai/hh.md)
+
+Experiment 1b · the height sweep
+
+One target, one morning, three camera heights
+
+Pick a target across water whose waterline you can identify — a buoy, an anchored boat, a marked pole, a quay. Photograph it from as close to the water as you can stand. Then raise the camera, without moving sideways, and photograph it again. Then again, higher. Count how much of the base reappears at each step.
+
+Independent variable
+**What you change:** the eye height **e**. You choose it — a beach, a first-floor window, a hill, a cable car — and you can measure it with a tape or a phone barometer.
+
+Dependent variable
+**What you measure:** the height **H** of the target that is cut off at the bottom, read against the known scale on the target itself. The target tells you; you do not get to choose it.
+
+IV e = 2 m, at d = 37.00 km
+DV flat prediction: 0.0 m hidden — at every height on this list, for ever
+DV globe prediction at your height: 80.1 m hidden (68.1 m with k = 0.13)
+the sweep: 0.5 m → 93.3 m · **2 m → 80.1 m** · 25 m → 28.8 m · 100 m → 0.1 m · 515 m → 0.0 m · 1695 m → 0.0 m
+climbing the whole ladder uncovers **93.3 m** of the far base
+
+**Verdict rule:** the flat model predicts that climbing changes the target's apparent *size and position* and nothing else — the same fraction of the base is visible from the sand and from 1,700 m, namely all of it. The globe predicts a specific slab returning at each step, set by `d₀ = √(2Re)` alone. If the base of a distant target looks identical from three well-separated heights on the same morning, the sphere is dead. If a measurable slab comes back each time you climb, and the amounts match the row above, the plane is — and R falls out of the numbers.
+
+## Experiment 2 · celestial navigation
+
+From the tab [Cel. nav.](/ai/cnav.md)
+
+Experiment 2 · celestial navigation
+
+Drive north and watch Polaris climb
+
+Measure the altitude of Polaris (or any star) above the horizon. Drive a known distance due north along a straight road. Measure it again. The star has climbed — the question is by how much.
+
+Independent variable
+**What you change:** the distance **d** you travel due north. You choose it — 100 km, 300 km, 500 km.
+
+Dependent variable
+**What you measure:** the **change in the star's altitude**, in degrees. The sky decides this, not you.
+
+IV d = 300 km north, starting at 45°N. Flat prediction: Polaris rises 1.770°. Globe prediction: Polaris rises 2.698°. They differ by 0.928° (56′).
+
+**Verdict rule:** the globe says the rise is always **2.698°** for 300 km — the same everywhere. The flat model cannot hold that: from 15°N it predicts 0.934°, from 60°N 2.445°.
+
+## Experiment 4 · horizon dip
+
+From the tab [Dip](/ai/dip.md)
+
+Experiment 4 · horizon dip
+
+Climb, and measure how far the sea horizon falls
+
+Stand at the shore with a levelled instrument and measure the angle between true horizontal and the sea horizon. Then climb — a cliff path, a tall building, a hill — and measure again from a known height.
+
+Independent variable
+**What you change:** your **eye height h** above sea level. You choose it by where you stand: 2 m, then 50 m, then 300 m. Set it with the height control at the top of this tab.
+
+Dependent variable
+**What you measure:** the **dip angle** — how far the horizon sits below level. The world decides this.
+
+IV h = 100 m
+DV flat prediction: dip = 0.0′ = 0.000°
+DV globe prediction: dip = 18.0′ = 0.299° (with refraction)
+geometric, no refraction: 19.3′ · rule of thumb 1.76′×√h = 17.6′
+
+**Verdict rule:** a single non-zero dip, repeated and larger from higher up, refutes the flat model outright — there is no value of any parameter that turns zero into 18.0′. And because the globe predicts dip ∝ √h, plotting your readings against √h should give a straight line whose slope hands you the Earth's radius.
+
+## Experiment 4b · the doubled sunset
+
+From the tab [Dip](/ai/dip.md)
+
+Experiment 4b · the doubled sunset
+
+Watch the same sunset twice, and get the radius of the Earth out of a stopwatch
+
+Sit at the water's edge facing west and watch the Sun's last edge disappear. Then stand up — or run up a dune, or take a lift, or take off — and it comes back. The delay is not an illusion and it is not small: it is δ(h₂) − δ(h₁) divided by the rate at which the Sun sinks. Rawlins proposed this in 1979[3] as a way to measure the planet with a wristwatch and a metre stick, and Minnaert did the six‑metre version by running up a dyke.[2]
+
+Independent variable
+**What you change:** your **eye height**, between the first sunset and the second. Sitting to standing is half a metre; a stairwell is ten; an aircraft is eleven thousand.
+
+Dependent variable
+**What you measure:** the **delay** in seconds between the two disappearances — one number, from a stopwatch.
+
+Dip at 1.2 m: 1.97′ · at 6.0 m: 4.40′ → Δδ = **2.43′**
+
+Globe predicts a delay of 15.8 s at 52.0° · flat plane predicts 0.0 s
+
+Your 16.0 s, inverted: Rₑff = **7,107 km**, i.e. R = **6,183 km** after removing k = 0.13
+
+**Verdict rule.** The flat prediction is that the second sunset never happens: raise your eye and the Sun stays gone, because the vanishing line does not move. Time a delay of **0 s**, repeatably, from a height difference big enough that the globe predicts 16 s, and the globe prediction is refuted. Conversely a delay that tracks √h₂ − √h₁ across several height pairs, and returns the same R each time, is a measurement no flat arrangement reproduces. Expect scatter: coastal air can shift the dip by minutes of arc, so repeat it and take the open sea over a river mouth.
+
+## Experiment 1f · dawn and twilight
+
+From the tab [Twilight](/ai/twi.md)
+
+Experiment 1f · dawn and twilight
+
+Time first light against the clock, twice a year, from your own doorstep
+
+This one costs nothing and needs no instrument beyond a phone and a clear horizon. Pick a spot with an open view east, go out well before sunrise on a clear morning near an equinox, and write down the clock time at which you can first make out the horizon line and the time the Sun's upper edge appears. Then do it again within a few days of the June solstice from the same spot. The interval is civil dawn, and the calculator below predicts both lengths from your latitude and the date alone, with no fitting and no free parameter. If you are north of about 48.6°, the more dramatic version is available to you: on the June nights the sky never goes properly dark at all, and the almanac will print a dash where the end of astronomical twilight should be.
+
+Independent variable
+**What you change:** the **date**, and therefore the Sun's declination. Two dates two months apart are enough at mid-latitudes; equinox against solstice is the sharpest pair. Changing your **latitude** instead works just as well if you are travelling.
+
+Dependent variable
+**What you measure:** the **number of minutes** between first light and sunrise. A clock and your own eyes. No angles, no instruments, no trust in anyone else's data.
+
+**Hold constant:** the site, the direction you face, and the criterion you use for "first light" — pick one and stick to it, because the criterion is worth several minutes and the effect you are after is tens of minutes. Clear sky both times; cloud on one morning and not the other ruins the comparison.
+**Kit:** a phone. If you want the version with a number in it rather than a judgement call, point the phone's camera east on a tripod, shoot at fixed exposure every thirty seconds, and read the frame brightness afterwards — the curve is the twilight curve and its knee is unmistakable.
+**The tell:** at 45° north the interval grows by roughly a quarter between March and June; at the equator it barely moves at all; north of 48.6° astronomical night vanishes outright in June. A flat Sun that dims by distance has no mechanism that makes the fade take longer in one month than another at the same place.
+
+**Civil** 43 min · **Nautical** 61 min · **Astronomical** never ends
+Total sunset → −18°: **never ends**. Sun's altitude at local midnight: **−17.70°**.
+Astronomical night vanishes above latitude 48.6° · nautical above 54.6° · civil above 60.6°.
+
+**Verdict rule.** At 48.86° with the Sun at 23.44°, the globe says there is **no astronomical night at all** on this date, because the Sun bottoms out at −17.70° and never reaches −18°. Look up the almanac for these coordinates: it should print a dash. If it prints a time — if the sky does go fully dark here on this date — the geometry on this tab is wrong and you should say so.
+
+## Experiment 1f-b · time the Earth's own shadow
+
+From the tab [Twilight](/ai/twi.md)
+
+Experiment 1f-b · time the Earth's own shadow
+
+Turn your back on the sunset and photograph the east — a phone, a wall to rest it on, twenty minutes
+
+Ten minutes after sunset there is a dark blue-grey band along the eastern horizon with a pink one above it: the planet's own shadow, cast on its own air, with the Belt of Venus along its top edge.[6] Rest a phone on a wall, frame the eastern horizon with something vertical of known height in shot — a lamp post, a door frame, a distant mast — and shoot one fixed-exposure frame every minute from sunset until the band has climbed out of frame. Afterwards, convert the band's top edge into an angle using the object of known height and its distance. You will have the shadow's altitude against the clock, and the clock converts to the Sun's depression.
+
+Independent variable
+**What you change:** the **time since sunset**, and therefore the Sun's depression θ, which an almanac gives you for your position to the minute.[1] Nothing else moves. If you can repeat it from a very different latitude, or six months later, do — that is where the sharper version lives.
+
+Dependent variable
+**What you measure:** the **altitude of the shadow's upper edge**, in degrees, frame by frame. One angle per photograph, read off against a foreground object whose height and distance you know.
+
+**Hold constant:** the camera position, the focal length and the exposure — an automatic exposure will chase the fading sky and move the very edge you are trying to follow. Pick one criterion for the top edge, the colour boundary rather than the brightness one, and keep it. Face the antisolar azimuth, not simply east: ten minutes after sunset the two differ by several degrees.
+**Kit:** a phone, a wall, and a foreground object. If you want the angle without trigonometry, hold a ruler at arm's length — a centimetre at 57 cm subtends one degree, near enough for a two-degree effect.
+**The tells, stated in advance:** the shadow's top is **never below the antisolar point**, at any moment, which the derivation above gives with no adjustable quantity; it **accelerates**, the ratio in the last column growing from about 1.1 to beyond 5 within twenty minutes; and the sky is fully shadowed at a **depression of three to four and a half degrees** — the same angle in Quito and in Reykjavík, though one takes a quarter of the time the other does.
+
+**What this experiment cannot do, said plainly.** It does not measure R. The single free quantity H is degenerate with the radius here — a bigger planet with a shallower atmosphere gives a similar curve — so anyone claiming a radius from a sunset photograph is claiming too much, and this page will not. Nor is the top edge sharp: air thins gradually, so two careful observers will disagree by something like half a degree, which is a few kilometres of H. What the experiment does settle is *shape*, and shape is what the two models disagree about.
+**The verdict rule, symmetric.** The sphere fails if the shadow's top is ever measured at or below the antisolar point, if it climbs at a constant ratio rather than an accelerating one, or if the depression at which it reaches the zenith turns out to depend on where you stand or on the season. The flat model fails if a boundary it must explain as distance and haze instead behaves as a shadow does: an arc curved about the antisolar point, rising at an accelerating angular rate, closing over the sky at one fixed solar depression that is the same for every observer on the planet while the clock time is not.
+
+## Experiment 9 · where is the Sun for you?
+
+From the tab [Azimuth](/ai/azim.md)
+
+Experiment 9 · where is the Sun for you?
+
+A stick, its shadow, and one agreed minute — with a friend far away, if you can
+
+Stand a stick vertically on level ground. At an agreed UTC minute, mark the shadow. The Sun's azimuth is the shadow's direction plus 180°. Measure that angle from **true** north — see above for why the compass will not do — with a printed protractor and a piece of string, or by taking a second mark at local solar noon to establish the north–south line first.
+
+Independent variable
+**What you change:** your **place**. The sharp version needs two observers far apart in latitude, ideally one in each hemisphere, at the same UTC minute; the weaker but still decisive version is one observer and the published bearing for their own coordinates.
+
+Dependent variable
+**What you measure:** the Sun's **azimuth** in degrees from true north. One angle. Not a duration, not a brightness, not a horizon.
+
+At **21 Dec 2026, 12:00:00 UTC**, the widest disagreement among these stations is at **Scott Base, Antarctica**: the Sun is **191.9°** from true north, and the flat map says **354.9°** — a gap of **162.9°**. The narrowest is **Sutherland, South Africa**, where the gap is only **2.0°**, which a protractor and a string will not resolve.
+
+**Verdict rule.** At SBA the two models do not differ in size but in **direction**: one sends you 163° round the horizon from the other. Measure the bearing to ±5° and one of them is finished. If it agrees with the flat map, the globe prediction is refuted; if it agrees with the great-circle bearing to the published sub-point, no choice of lamp height rescues the disc, because the disc's bearing has no lamp height in it.
+
+## Experiment 9b · the Moon against the stars
+
+From the tab [Azimuth](/ai/azim.md)
+
+Experiment 9b · the Moon against the stars
+
+One photograph each, two places, one agreed second — and the sky is the ruler
+
+Agree an instant, to the second, with someone far away from you in latitude. At that instant each of you photographs the Moon with a star close beside it in the same frame. Then measure how far the Moon sits from that star, in arcminutes, in each photograph, and take the difference. That difference is the parallax. You are deliberately *not* measuring a height above a horizon: an angle inside a single frame needs no level, no horizon and no calibration, and refraction lifts the Moon and the star beside it by almost the same amount, so most of it cancels instead of having to be modelled.
+
+Independent variable
+**What you change:** your **place**, at a fixed instant. Two observers as far apart in latitude as you can arrange; a few thousand kilometres is already plenty. Without a second observer, the published topocentric position for your own coordinates does the same job rather less convincingly.
+
+Dependent variable
+**What you measure:** the Moon's **angular distance from a nearby star**, in arcminutes. One angle inside one photograph. Not an altitude, not a time, not a horizon.
+
+At **21 Dec 2026, 12:00:00 UTC**, **Kongsberg, Norway** and **Charters Towers, Australia** lie 14,445 km apart and both have the Moon above the horizon. Between those two viewpoints the Moon stands **101.6′** apart against the background stars — 3.1 times its own diameter, so a single photograph from each place settles it. That one angle gives **56.98 Earth radii**, against 57.19 from this page's ephemeris, and it needed no distance, no horizon and no clock beyond the agreed instant. The same two sight lines to the **Sun** open by only 17.5″, which is why this experiment does not work on the Sun.
+
+**Verdict rule.** The globe fails if your measured shift does not put d/R within your own uncertainty of the almanac's, or if the answer changes when you turn the baseline. The flat model fails on the table above: the kindest of the three lamp heights at this instant is 3,000 km, and even that one misses some station's altitude by **53.8°** — and at 5 of these 7 places the Moon is below the horizon right now, where a lamp hung over a plane is above it from everywhere, at every height.
+
+## Experiment · the Moon against the stars
+
+From the tab [Moon](/ai/moon.md)
+
+Experiment · the Moon against the stars
+
+Photograph the Moon among the same stars at moonrise, transit and moonset
+
+A camera on a tripod, a fixed focal length, the same stars in every frame.
+
+**You measure** the Moon's position among catalogue stars at three times
+
+**You get** its parallax π, then R from g and the month
+
+Separate the parallax from the orbital motion with a second night, or by fitting the motion as a straight line across the night.
+
+Prediction: π between 54′ and 61′ depending on the Moon's distance that week.
+
+R = **6,399 km**
+
+1 % on π moves R by 3 %: 6,209–6,593 km for ±1 %
+
+### Ground & distances
+
+## Experiment 3 · distances
+
+From the tab [Distances](/ai/dist.md)
+
+Experiment 3 · distances
+
+The same east–west trip, north and south
+
+Pick an east–west leg spanning a fixed number of degrees of longitude, and measure how long it really is. Then do the mirror-image leg in the other hemisphere. Book the flights, or read the published great-circle distances and flight times.
+
+Independent variable
+**What you change:** the **latitude** of the leg — try +45°, then −45°. You choose which parallel to travel along.
+
+Dependent variable
+**What you measure:** the **ground distance actually covered** — odometer, GPS track, or flight time × cruising speed.
+
+IV latitude 45° , span Δλ = 60°
+DV globe: this leg 4,718 km · mirror leg 4,718 km → **equal**
+DV flat disc: this leg 5,240 km · mirror leg 15,720 km → ratio 3.00×
+
+**Verdict rule:** if the two mirror legs measure the same, the globe survives. If the southern one is really 3.0× the northern one, the disc survives. Airlines settle this daily: Sydney–Santiago is about 11,400 km and is flown non-stop in roughly 12½ hours, which no aircraft could do if it were the ~25,000 km the disc requires.
+
+## Experiment 1f · gravity and level
+
+From the tab [Gravity](/ai/grav.md)
+
+Experiment 1f · gravity and level
+
+Weigh the same object in two cities, or time a pendulum in both
+
+Every flat model on the table predicts that g is one number, the same everywhere. The globe predicts a specific difference between any two latitudes, set by rotation and the bulge. Two ways to see it: a pendulum, whose period goes as 1/√g, or a good spring‑type balance carrying a heavy mass. Pick your two places, and the calculator tells you in advance how big the effect is and whether your kit can resolve it.
+
+Independent variable
+**What you change:** the **latitude** at which you make the measurement. Nothing else — same instrument, same mass, same pendulum, carried between the two places.
+
+Dependent variable
+**What you measure:** the **period** of the pendulum, or the **reading** of the balance. Both are proxies for g and the world decides them.
+
+Globe: g = 9.80466 at 43.3° and 9.81124 m/s² at 50.6° → Δg = **657.6 mGal** (0.0671%)
+
+Every flat model: Δg = 0.0 mGal, at both places, exactly
+
+Pendulum of 2.00 m: period 2.83778 s vs 2.83683 s → **0.10 s** apart over 100 swings
+
+10.0 kg on a force-reading balance: **6.7 g** difference
+
+**Verdict rule.** If the two places really do differ, you will see it: 0.10 s over 100 swings is within reach of a phone timing the swings, and 6.7 g is readable on a 0.1 g balance. Measure a *difference of zero*, repeatably, with an instrument that can resolve this much, and the flat models win this test outright — no amount of curvature elsewhere would save the prediction.
+
+## Experiment 1e · seismology
+
+From the tab [Seismology](/ai/seis.md)
+
+Experiment 1e · seismology
+
+Download one earthquake and plot the travel-time curve yourself
+
+Pick any magnitude 7.5 or greater event from the last twenty years. Ask a data centre for the vertical component at ten or twelve stations spread between 20° and 160° away, band-pass between 100 and 200 seconds so that only the long-period surface wave survives, and read off the time of the peak of the wave packet at each. Plot that time against great-circle distance, then against flat-map distance. One of those two plots is a straight line through the origin and the other is a shotgun pattern. You will know which within a minute of the plot appearing, and you will not have taken anybody's word for anything.
+
+Independent variable
+**What you change:** the **station**, and therefore its distance from the epicentre. Spread them over as much of the range as you can, and make sure several are in the southern hemisphere — that is where the two models separate.
+
+Dependent variable
+**What you measure:** the **arrival time** of the filtered surface-wave peak, relative to the origin time in the event catalogue. Nothing else — no amplitudes, no instrument response, no modelling.
+
+Great-circle separation Δ = **116.87°**
+Globe: **12,995 km** → surface wave at **57 min** after origin time
+Flat map: **26,470 km** → surface wave at **1 h 56 m**
+Disagreement **+104%** in distance, **+59 min** in arrival time
+
+**This pair is diagnostic.** The two models disagree by 59 min on a single arrival — far beyond any picking error, any dispersion correction and any plausible variation in wave speed. One trace from this station settles it, and the trace is free. Note which way it goes: the flat map puts the station further away than the sphere does, so it predicts an arrival late by that much.
+
+## Experiment 5 · the field in your pocket
+
+From the tab [Magnetism](/ai/mag.md)
+
+Experiment 5 · the field in your pocket
+
+Read inclination and field strength wherever you are — the sensor is already in your phone
+
+Every smartphone carries a 3-axis magnetometer. A free sensor app reports the total field |B| in μT directly; add a level surface (or the phone's accelerometer, which sensor apps use automatically) and it reports the inclination I too. A ~15€ dip needle, or a magnetised sewing needle floated on a cork disc and then re-balanced on a horizontal pin, does the same with no electronics.
+
+Independent variable
+**What you change:** your **position** — magnetic latitude λ, or on the flat map, distance r from the centre. Travel, or recruit friends and relatives by latitude; the further apart, the sharper the test. Set it with the λ slider above.
+
+Dependent variable
+**What you measure:** two numbers per location — the **dip I** (sign included!) and the **total field |B| in μT**. The world decides both.
+
+At your λ = 45.0° (r = 5.0k km on the map):
+globe → I = +63°, |B| = 47.4 μT, H = 21.2 μT
+flat ① → I = +35°, |B| = 103.9 μT, H = 84.9 μT
+flat ② → I = +38°, |B| = 80.1 μT, H = 63.0 μT
+
+**Verdict rule:** if readings across latitudes follow either amber column — southern dip frozen above −35° with fields collapsing several-fold (①), or a level circle ~3,600 km south of the observed magnetic equator, a south that never dips past −69° and Arctic fields near 200 μT (②) — the flat disc is vindicated and the dipole-sphere refuted. If instead I flips sign at one circle, follows tan I = 2 tan λ to within the stated ~10°, and |B| stays within ~22–67 μT with a single I = −90° point in Antarctica, the sphere stands. At your latitude the two shapes disagree by **25°** of dip — far beyond any instrument error.
+
+## Experiment 8 · read the sky with a free app
+
+From the tab [GPS](/ai/gps.md)
+
+Experiment 8 · read the sky with a free app
+
+Any GNSS status app shows the raw constellation — no account, no cost
+
+Install a satellite-status app (most phones expose GPS, Galileo, GLONASS and BeiDou). The sky plot shows each satellite's azimuth and elevation, live.
+
+Independent variable
+**What you change:** the **time** — screenshot the sky plot now and again in 1–2 hours; and if you can, compare with a friend at a different latitude at the same moment.
+
+Dependent variable
+**What you measure:** each satellite's **elevation over time** (rising or setting?), the **count in view**, and where the tracks wheel (north or south).
+
+globe → at φ = +45°: 8–12 satellites above your horizon, every one rising or setting, ranges pinned to the 20,200–25,800 km window, tomorrow's sky 4 min early
+flat towers → a frozen constellation: fixed azimuths and elevations forever, no sidereal slip, range window broken open
+
+**Verdict rule:** if two screenshots an hour apart show the same satellites parked at the same spots, fixed emitters win. If the sky has turned over — new birds risen, old ones set, the whole pattern shifted along tracks the almanac predicted days ago — you are watching orbital mechanics around a rotating sphere, measured with a free app on a device that proves it by knowing where you are.
+
+### Motions
+
+## Experiment · the sidereal day
+
+From the tab [Rotation](/ai/rot.md)
+
+Experiment · the sidereal day
+
+Time a star behind a fixed edge, twice
+
+Same place, same edge, a few nights apart. Enter the two clock readings and the number of nights.
+
+**You measure** two times of disappearance and the number of nights
+
+**You get** the length of one turn and the daily advance
+
+The clock must be set to a network time source; photograph its screen with the star, as for the 10 January sunset in the observation tab.
+
+Prediction: 23 h 56 min 4.1 s per turn, 3 min 55.9 s earlier each night.
+
+One turn: **23 h 56 min 4.1 s** · 235.9 s earlier each night · 366.26 turns a year
+
+Ω = 7.292 × 10⁻⁵ rad/s (stars: 7.292)
+
+## Experiment · the noon shadow
+
+From the tab [Orbit](/ai/orb.md)
+
+Experiment · the noon shadow
+
+Measure the shortest shadow at both solstices
+
+A stick made vertical with a level, a flat floor, a tape. Mark the shortest shadow around noon on 21 June and 21 December.
+
+**You measure** the stick's height and the two noon shadows
+
+**You get** the axis tilt ε and your latitude φ
+
+Prediction for Marseille (43.3° N): shadows of 0.36 L in June and 2.33 L in December, ε ≈ 23.44°.
+
+A year of noon timings against a network clock gives the equation of time, and from it e.
+
+Noon altitudes 70.15° and 23.26° · tilt **ε = 23.44°**
+
+latitude φ = 43.29° (accepted tilt: 23.44°)
+
+### Both
+
+## Experiment 6 · the Sun with a pinhole
+
+From the tab [Sun](/ai/sun.md)
+
+Experiment 6 · the Sun with a pinhole
+
+Measure the Sun's angular size and noon altitude — cardboard, tape measure, stick
+
+A pinhole in foil projects a solar image whose diameter is the projection distance ÷ 107.5 — that ratio *is* the angular size (32′). A vertical stick's shadow at solar noon gives the altitude: alt = atan(stick ÷ shadow). Repeat at different hours and dates.
+
+Independent variable
+**What you change:** the **time of day** and the **date** — morning vs noon vs just before sunset; equinox vs solstices. Set latitude above to see the predictions for your home.
+
+Dependent variable
+**What you measure:** the Sun's **angular diameter** and its **noon altitude**. The sky decides both.
+
+**Hold constant:** the same pinhole and screen distance; never look at the Sun directly — project onto paper. **The tells, stated in advance:** a distant sun keeps the same 32′ disc from sunrise to sunset (±0.005%, far below your pinhole's precision) and its noon altitude follows the almanac column above; a nearby sun must change apparent size by whole factors through the day and can never reach the horizon at all.
+
+At φ = +45°, June solstice:
+globe → noon alt 68.5°, disc 31.5–32.5′ all day, sunset at a sharp time
+flat → noon alt 64.4°, disc shrinking ~1.8× by evening, minimum altitude 15.8° — no sunset, ever
+
+**Verdict rule:** if your pinhole shows the disc shrinking through the afternoon and the Sun gliding toward the horizon without reaching it, the near sun is vindicated. If the disc holds 32′ from morning to evening, noon altitudes match the almanac column, and the Sun is cut by the horizon bottom-first at the predicted minute, the distant sun on a rotating globe stands. The two predictions differ by whole factors, not margins.
+
+## Experiment 6b · who has daylight right now
+
+From the tab [Sun](/ai/sun.md)
+
+Experiment 6b · who has daylight right now
+
+Poll one instant across the world — no instrument at all, and the December version cannot be argued with
+
+This is the cheapest experiment on the page: it needs no equipment, no clear sky and no patience. Pick one instant in UTC. Ask people in half a dozen widely separated places whether the Sun is above their horizon at that instant — a message each, or six public webcams, or six live-streamed city squares. Write down six yes/no answers against one clock reading. Both models predict that set of answers in advance, and they do not predict the same one.
+
+Independent variable
+**What you change:** the **set of longitudes and latitudes** you poll, and the **date**. Spread the places as widely as you can in longitude; then repeat near a solstice, when the two models diverge most.
+
+Dependent variable
+**What you measure:** a single **bit per location** — Sun up, or Sun down — all read at one agreed UTC minute. Not a length, not an angle, not a brightness. Nothing to calibrate and nothing to fudge.
+
+**Hold constant:** the instant. Agree a UTC minute in writing beforehand and have everyone answer for that minute, not "when they get round to it"; an hour of drift is 15° of longitude and will smear the boundary you are trying to find. Take the Sun's *centre* on the horizon as the criterion, and ignore mountains — a valley floor loses several minutes.
+
+**Kit:** none. A group chat, or the webcam pages that Antarctic stations, harbours and ski resorts publish for free. This is the one experiment on this page that a reader with no money, no sky and no daylight can run tonight.
+
+**The tells, stated in advance.** On a sphere the lit region is *exactly half* the surface at every instant, and its boundary is a great circle, so your yes/no answers must sort cleanly on either side of one such line and no other. On the standard flat map — a disc with the north pole at its centre — the lit region is a spot cast by a Sun circling above the tropics, so it must be a compact patch, and places on opposite sides of the disc cannot both be lit.
+
+**Then the December version, which is the one that ends it.** Between late October and mid-February the Sun never sets anywhere inside the Antarctic Circle. On a globe that region is a cap around one pole. On the flat map it is the *entire rim of the disc* — so the flat model must light the whole circumference at once, all 360° of it, while leaving the middle of the disc in darkness. There is no position for a spotlight that does that. Ask two Antarctic stations on opposite sides of the continent — say a Ross Sea station and one on the Atlantic side, some 150° of longitude apart[7] — on any January midnight, and the answers decide between the two geometries without a single number being measured.
+
+**The verdict rule, symmetric.** The globe fails if your polled answers cannot be separated by any great circle — if two places 180° apart in longitude are both in daylight at the same instant while a place between them is dark, or if any Antarctic station reports a genuine night in January. The flat model fails if the lit set is consistently a hemisphere rather than a patch, and if stations spread right around the Antarctic coast all report continuous daylight at once. Both statements are checkable tonight, and only one of them survives.
+
+## Experiment 2b · photograph the axis
+
+From the tab [Star trails](/ai/star.md)
+
+**Independent variable:** the place — the hemisphere first, the latitude second. **Dependent:** (a) the sense of rotation, one bit; (b) the two culmination altitudes of one circumpolar star. **Held constant:** the same lens, the aim on the fixed point, a fixed foreground for the horizon, a stated exposure. **Kit:** a phone on a wall and thirty minutes of stacking. For (b) a clinometer is enough — no camera at all. Every altitude printed on this tab can be checked against the USNO service[5] before you go outside.
+
+**Verdict rule, announced in advance and symmetric.** The globe fails if a southern observer photographs arcs centred on Polaris, if the sense is the same in both hemispheres, or if the mean of the two culminations does not return the latitude. The flat model fails if the sense reverses between hemispheres, or if that mean does return the latitude instead of missing it by several degrees.
+
+Deliberately left out: differential refraction and extinction near the horizon, which are modelled nowhere else on this page and which the culmination test does not need; aberration, stellar parallax and proper motion, all below anything claimed here; and trail photometry, which is real and predicted differently by the two models but cannot be measured without calibration.
+
+## Experiment 1d · Foucault pendulum
+
+From the tab [Foucault](/ai/fou.md)
+
+Experiment 1d · Foucault pendulum
+
+Find a stairwell, and measure the angle between your floor and the axis of the world
+
+This is the rare shape test you can run indoors, alone, at night, with hardware from a builders' merchant. Hang the heaviest compact mass you can from the longest wire your building allows, on a pivot that cannot transmit twist. Draw the bob aside with a thread, wait until it is dead still, burn the thread. Mark the apex of the swing on the floor every twenty minutes. The calculator below tells you before you start whether your stairwell is tall enough for the answer to mean anything.
+
+Independent variable
+**What you change:** your **latitude** — ideally by persuading someone at a very different one to repeat it. A second site is what converts a rotation demo into a shape measurement.
+
+Dependent variable
+**What you measure:** the **angle the swing plane turns** in a measured time, and its **sense**. The sense alone already separates the three models if you can get south of the equator.
+
+Pendulum period T₀ = 2π√(L/g) = **6.95 s** · 1,554 swings in 3 h
+Globe predicts: **11.325 °/h** clockwise · full turn in 31 h 47 m · **34.0°** in 3 h
+Flat disc predicts: 15.041 °/h · **45.1°** in 3 h
+Flat, not rotating: 0.0° in 3 h, and in any other number of hours
+Airy ellipse precession = **2.428 °/h** — 21% of the globe signal
+Ellipse you can tolerate for a 10% error: **0.47 cm** half-width
+
+**This is a viable site.** Airy's term sits at 21% of the signal, so after 3 h the globe says the plane has turned 34.0° clockwise while a disc spinning once a day says 45.1° — a gap of 11°, far larger than anything a chalk mark can blur. Run it twice with opposite ellipses and average, and the residue is the Earth.
+
+### Objections
+
+## Experiment 1c · refraction
+
+From the tab [Refraction](/ai/ref.md)
+
+Experiment 1c · refraction
+
+Measure k yourself, and let it convict the model of your choice
+
+Put a total station or theodolite at each end of a line several kilometres long, ideally with a clear reciprocal view. At an agreed instant, each observer measures the zenith angle to the other instrument's centre. Swap the numbers. You now have everything: the sum tells you which geometry you live on, and its excess over 180° tells you the refraction coefficient of the air you measured in.
+
+Independent variable
+**What you change:** the **line** — its length s, and the time of day you observe it. Try noon and again an hour after sunset.
+
+Dependent variable
+**What you measure:** the two **zenith angles** z_A and z_B, from which the sum and hence k follow with no further assumptions.
+
+Central angle γ = s/R = **0.2698°** (16.19′)
+Measured sum z_A + z_B = **180.2347°**
+Plane predicts: ≤ 180.0000° — exactly 180 with straight rays, less if light bends down
+Globe predicts: 180° + γ(1−k) — an excess that grows with distance
+Excess over 180° = **+0.2347°** (+14.08′)
+⇒ refraction coefficient **k = 0.130** · R_eff = 7,324 km = 1.150 R
+
+**Sum exceeds 180°.** No flat arrangement can do this: on a plane the verticals are parallel, so straight rays give exactly 180.000° and downward-bending rays give *less*. The excess here is 14.08′, and k = 0.130 sits inside the measured range 0.10–0.34, so nothing exotic is being assumed.
+
+## Experiment 7 · levelling across water
+
+From the tab [Surveying](/ai/surv.md)
+
+Experiment 7 · levelling across water
+
+Rent an auto level, find a calm lake or canal, and re-run Wallace yourself
+
+Set a levelled instrument at the shore, sight a graduated staff (or a marked board on a boat) at increasing distances across the water. Water is the level surface; your sightline is the tangent. Record the reading vs distance — or use Wallace's stronger design: three equal-height markers and one sight line.
+
+Independent variable
+**What you change:** the **sight distance d** — 200 m, 500 m, 1 km, 2 km, as far as optics allow.
+
+Dependent variable
+**What you measure:** how far the staff reading sits **above** the instrument's height — the drop of the level surface below the tangent line (or the mid-marker's rise above the end-to-end line).
+
+globe → staff reads high by (refracted): 200 m: **0.3 cm** · 500 m: **1.7 cm** · 1 km: **6.8 cm** · 2 km: **27.3 cm** · 5 km: **170.7 cm**
+flat → 0.0 cm at every distance, forever
+
+**Verdict rule:** plot your readings against d². A flat earth is vindicated by a flat line at zero. The globe requires a straight line of slope 1/2R — about 6.8 cm per km² through changing weather (refraction moves it a few percent, never to zero, never negative on average). Wallace's three-marker variant needs just one observation: does the middle marker stand proud of the end-to-end line, by d²/8R? In 1870 it did, and it still does.
+
+## Experiment · photograph the sign change
+
+From the tab [Observation](/ai/obs.md)
+
+Experiment · photograph the sign change
+
+One filtered camera, one synchronised clock, six minutes
+
+Stand at the published viewpoint. Point a solar-filtered camera at azimuth 241°, start recording before 16:53 CET and stop after 17:00. Film a network-synchronised clock in shot, or note the timestamps. That is the entire apparatus.
+
+Independent variable
+**What you change:** the **instant**, and nothing else. The viewpoint, the azimuth and the target summit are all fixed and published in advance — you only choose when to read the frame.
+
+Dependent variable
+**What you measure:** the ridge's height above or below the Sun's centre, **in units of the solar disc**, read straight off that frame. The disc is 32.4′ wide, so the frame carries its own scale — you do not get to choose this, the photograph tells you.
+
+**Hold constant:** one tripod, one clock synchronised to network time and filmed in shot. **The tells, stated in advance:** a plane requires Le Grand Mourre to stand **13.2′ above** eye level, a sphere with straight rays **1.4′ below**, a sphere with k = 0.13, **0.5′ above**. The spread between plane and sphere is **12.7′, or 39 % of the solar disc**, and it converts to about **83 seconds** of sunset timing at this latitude. **Read the limb, not the blaze:** a Sun photographed near the horizon is overexposed, and the white blob is wider than the real disc, so judging "half hidden" by eye runs early. Stop the exposure down until the disc has an edge before you time anything.
+
+**Le Grand Mourre**, 54.13 km out and 208 m above eye height: a plane puts it **13.21′** above the horizontal, a globe **0.50′** at k = 0.13. The two differ by **12.71′**, which is **40%** of the Sun's disc as drawn.
+
+**Verdict rule.** Both models put this summit on the same side of eye level; the test is the **12.71′** gap, 40% of a disc. The far ridge carries the same gap along 3° of skyline, azimuth 238.1° to 241.2°, and the crossing at 241.29° is where the sign argument lives.
+
+## Experiment · the Grand Mourre, measured
+
+From the tab [Observation](/ai/obs.md)
+
+Experiment · the Grand Mourre, measured
+
+Enter your own α, s and Δh
+
+Nothing here comes from a map once these three are yours.
+
+**You measure** α with the theodolite, s by triangulation, Δh with barometers
+
+**You get** the apparent radius R/(1 − k), and the plane's α for the same s and Δh
+
+Prediction before measuring: α ≈ 0.5′ on a globe with standard refraction, 13.2′ on a plane.
+
+Best variant: a second observer on the summit, both theodolites read at the same instant (signal mirror by day, lamp at dusk).
+
+R/(1 − k) = **7,324 km**
+
+plane α = 13.2′ · globe α (k = 0.13) = 0.52′
+
+## Experiment 11 · time a star onto a ridge
+
+From the tab [Theodolite](/ai/ct.md)
+
+**Independent variable:** the distance to the peak — the same summit recorded from several places, or several peaks at different ranges. **Dependent:** the second at which the star is cut by the skyline. **Held constant:** one clock discipline (GPS-synchronised), one star, the summit itself as the target rather than a shoulder. **Kit:** a camera that records a timestamp, published coordinates for both ends, and a published altitude for the star[4].
+
+**Verdict rule, announced in advance and symmetric.** The globe fails if the two ends of the same line of sight return the same altitude — difference zero within your error, repeatably, at 9 km and at 131 km alike. The flat model fails if the difference grows in proportion to s, returning one radius near 6,371 km from peaks at three different ranges at once. Either way the refraction setting is stated before the recording and applied the same way at both ends, because a switch worth 15′ cannot be chosen after seeing a 27′ disagreement.
+
+Deliberately left out: any claim about what the recordings show, since none has been checked here; the ellipsoid, which is orders of magnitude below the effect; and terrain models, since the argument is about the angle to a named point, not about a silhouette.

@@ -184,37 +184,9 @@ And in 1751 the thing was finally done properly. Lacaille observed the Moon from
 
 **And the projection is a choice**, restated once more because it is the honest weak point: the numbers in the flat column are the azimuthal equidistant map's numbers, not a proof about every conceivable flat map.
 
-Experiment 9 · where is the Sun for you?
+[**Experiment 9 · where is the Sun for you?** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-azim-9)
 
-A stick, its shadow, and one agreed minute — with a friend far away, if you can
-
-Stand a stick vertically on level ground. At an agreed UTC minute, mark the shadow. The Sun's azimuth is the shadow's direction plus 180°. Measure that angle from **true** north — see above for why the compass will not do — with a printed protractor and a piece of string, or by taking a second mark at local solar noon to establish the north–south line first.
-
-Independent variable
-**What you change:** your **place**. The sharp version needs two observers far apart in latitude, ideally one in each hemisphere, at the same UTC minute; the weaker but still decisive version is one observer and the published bearing for their own coordinates.
-
-Dependent variable
-**What you measure:** the Sun's **azimuth** in degrees from true north. One angle. Not a duration, not a brightness, not a horizon.
-
-At **21 Dec 2026, 12:00:00 UTC**, the widest disagreement among these stations is at **Scott Base, Antarctica**: the Sun is **191.9°** from true north, and the flat map says **354.9°** — a gap of **162.9°**. The narrowest is **Sutherland, South Africa**, where the gap is only **2.0°**, which a protractor and a string will not resolve.
-
-**Verdict rule.** At SBA the two models do not differ in size but in **direction**: one sends you 163° round the horizon from the other. Measure the bearing to ±5° and one of them is finished. If it agrees with the flat map, the globe prediction is refuted; if it agrees with the great-circle bearing to the published sub-point, no choice of lamp height rescues the disc, because the disc's bearing has no lamp height in it.
-
-Experiment 9b · the Moon against the stars
-
-One photograph each, two places, one agreed second — and the sky is the ruler
-
-Agree an instant, to the second, with someone far away from you in latitude. At that instant each of you photographs the Moon with a star close beside it in the same frame. Then measure how far the Moon sits from that star, in arcminutes, in each photograph, and take the difference. That difference is the parallax. You are deliberately *not* measuring a height above a horizon: an angle inside a single frame needs no level, no horizon and no calibration, and refraction lifts the Moon and the star beside it by almost the same amount, so most of it cancels instead of having to be modelled.
-
-Independent variable
-**What you change:** your **place**, at a fixed instant. Two observers as far apart in latitude as you can arrange; a few thousand kilometres is already plenty. Without a second observer, the published topocentric position for your own coordinates does the same job rather less convincingly.
-
-Dependent variable
-**What you measure:** the Moon's **angular distance from a nearby star**, in arcminutes. One angle inside one photograph. Not an altitude, not a time, not a horizon.
-
-At **21 Dec 2026, 12:00:00 UTC**, **Kongsberg, Norway** and **Charters Towers, Australia** lie 14,445 km apart and both have the Moon above the horizon. Between those two viewpoints the Moon stands **101.6′** apart against the background stars — 3.1 times its own diameter, so a single photograph from each place settles it. That one angle gives **56.98 Earth radii**, against 57.19 from this page's ephemeris, and it needed no distance, no horizon and no clock beyond the agreed instant. The same two sight lines to the **Sun** open by only 17.5″, which is why this experiment does not work on the Sun.
-
-**Verdict rule.** The globe fails if your measured shift does not put d/R within your own uncertainty of the almanac's, or if the answer changes when you turn the baseline. The flat model fails on the table above: the kindest of the three lamp heights at this instant is 3,000 km, and even that one misses some station's altitude by **53.8°** — and at 5 of these 7 places the Moon is below the horizon right now, where a lamp hung over a plane is above it from everywhere, at every height.
+[**Experiment 9b · the Moon against the stars** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-azim-9b)
 
 **See also**[Sun](/ai/sun.md)[Twilight](/ai/twi.md)[Magnetism](/ai/mag.md)[Cel. nav.](/ai/cnav.md)[Distances](/ai/dist.md)[Surveying](/ai/surv.md)[Observation](/ai/obs.md)
 

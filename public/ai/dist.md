@@ -88,23 +88,7 @@ Both equalities are exact, not fitted. For the polar leg, cos σ = sin²60° + c
 | C·N 33°N 71°W → 34°N 151°E | 11 369 km | 15 345 km (+35%) | 11 731 km (+3%) |
 | C·S 33°S 71°W → 34°S 151°E | 11 369 km | 15 345 km (+35%) | 25 641 km (+126%) |
 
-Experiment 3 · distances
-
-The same east–west trip, north and south
-
-Pick an east–west leg spanning a fixed number of degrees of longitude, and measure how long it really is. Then do the mirror-image leg in the other hemisphere. Book the flights, or read the published great-circle distances and flight times.
-
-Independent variable
-**What you change:** the **latitude** of the leg — try +45°, then −45°. You choose which parallel to travel along.
-
-Dependent variable
-**What you measure:** the **ground distance actually covered** — odometer, GPS track, or flight time × cruising speed.
-
-IV latitude 45° , span Δλ = 60°
-DV globe: this leg 4 718 km · mirror leg 4 718 km → **equal**
-DV flat disc: this leg 5 240 km · mirror leg 15 720 km → ratio 3.00×
-
-**Verdict rule:** if the two mirror legs measure the same, the globe survives. If the southern one is really 3.0× the northern one, the disc survives. Airlines settle this daily: Sydney–Santiago is about 11,400 km and is flown non-stop in roughly 12½ hours, which no aircraft could do if it were the ~25,000 km the disc requires.
+[**Experiment 3 · distances** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-dist-3)
 
 > **The confusion, named.** The flat‑earth disk (the “Gleason map”) is the azimuthal equidistant projection of the globe. It preserves distances *only along straight lines through the pole*; every east–west distance is stretched by (90°−φ)/cos φ — a factor of 1.11 at 45° N but **3.33 at 45° S**. Treating that projection as the territory forces the southern hemisphere to be three times wider than it measures. Real ships and aircraft cross it anyway: Sydney–Santiago is ~11,400 km and is flown non‑stop in ~12½ hours; on the disk it would be ~25,000 km, longer than any airliner's range.
 

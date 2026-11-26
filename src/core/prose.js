@@ -10,13 +10,44 @@
 // Une couche i18n n'est pas branchée ici : le flux est le texte EN
 // verbatim ; une traduction se fait bloc par bloc (même index) -- voir
 // tasks/epic04/.
-import { xref } from "./tabs.js";
+import { xref, tabLabel } from "./tabs.js";
 import { renderSources } from "./citations.js";
 import { evBadge } from "./evidence.js";
 import { videoHTML } from "./video.js";
 import { peopleHTML } from "./people.js";
 
 const esc = (s) => s.replace(/"/g, "&quot;");
+// Expériences regroupées dans falsify (2026-11-26, Xyphophor : « déménager toutes les expériences dans l'onglet dédié
+// aux contre-arguments, en les remplaçant par des liens ; ça casse le flot de lecture ; un lecteur pourra faire ses
+// courses ») : un bloc marqué `away: "<id>"` n'est plus rendu dans son onglet ; à la place du premier bloc de l'id,
+// une ligne de lien vers #tab-falsify/<id>. falsify rend ces blocs avec { only: "<id>" } (src/core/experiments.js).
+const EXP_AWAY = {
+  en: "to do yourself, with every experiment of the site, in “{tab}”",
+  fr: "à faire soi-même, avec toutes les expériences du site, dans « {tab} »",
+  es: "para hacer uno mismo, con todos los experimentos del sitio, en «{tab}»",
+  pt: "para fazer você mesmo, com todos os experimentos do site, em «{tab}»",
+  nl: "om zelf te doen, met alle experimenten van de site, in „{tab}”",
+};
+/** Le titre d'une expérience : l'en-tête de sa carte (traduite en bloc ou non) ou le titre de sa section. */
+function awayTitle(b, html) {
+  if (b.t === "exp" && b.h) { const m = /<div class="exp-h">([\s\S]*?)<\/div>/.exec(html || ""); return m ? m[1] : b.h; }
+  return (html || b.html || "").replace(/<[^>]+>/g, "").trim();
+}
+/** La ligne de lien qui remplace une expérience dans son onglet. */
+export function expAwayLink(id, title) {
+  const lang = (typeof document !== "undefined" && document.documentElement.lang) || "en";
+  return `<p class="exp-away"><a class="xref" href="#tab-falsify/${esc(id)}" data-xref="falsify" data-sec="${esc(id)}"><b>${title}</b> — ${(EXP_AWAY[lang] || EXP_AWAY.en).replace("{tab}", tabLabel("falsify"))} →</a></p>`;
+}
+/** Les blocs d'une expérience (`away === id`), sections comprises, sans leur marque. */
+export function awayBlocks(blocks, id) {
+  const out = [];
+  for (const b of blocks) {
+    if (b.t === "section") out.push(...awayBlocks(b.blocks, id));
+    else if (b.away === id) { const { away, ...rest } = b; out.push(rest); }
+  }
+  return out;
+}
+
 // « See also » des renvois (epic15/UC06 : restait en anglais dans toutes les langues)
 const SEE_ALSO = { en: "See also", fr: "Voir aussi", es: "Ver también", pt: "Ver também", nl: "Zie ook" };
 
@@ -36,14 +67,23 @@ const SEE_ALSO = { en: "See also", fr: "Voir aussi", es: "Ver también", pt: "Ve
  *   "length mismatch -> English", pour ne jamais rendre un notes-block à
  *   moitié traduit avec des paragraphes qui ne correspondent plus).
  */
-export function renderProse(tab, blocks, { formulaClass = "formula", reading = null, dict = null, _n = { tables: 0, canvases: 0, exps: 0 } } = {}) {
+export function renderProse(tab, blocks, { formulaClass = "formula", reading = null, dict = null, only = null, _n = { tables: 0, canvases: 0, exps: 0 }, _away = new Set() } = {}) {
   // compteurs PARTAGÉS avec les sections imbriquées : sinon chaque section
   // repartait de 0 et sim avait quatre tables id="simTab0" (epic06/UC03)
   const n = _n;
   const tr = (b) => (dict && b.k && typeof dict[b.k] === "string") ? dict[b.k] : b.html;
   const trParas = (b) => (dict && b.k && Array.isArray(dict[b.k]) && dict[b.k].length === b.paras.length) ? dict[b.k] : b.paras;
+  if (only) blocks = awayBlocks(blocks, only);
   const out = [];
   for (const b of blocks) {
+    if (b.away) {   // une expérience partie dans falsify : une ligne de lien, une seule fois par expérience
+      if (!_away.has(b.away)) {
+        _away.add(b.away);
+        const whole = dict && b.k && dict[b.k] && typeof dict[b.k].__html === "string" ? dict[b.k].__html : null;
+        out.push(expAwayLink(b.away, awayTitle(b, whole ?? (b.t === "exp" ? "" : tr(b)))));
+      }
+      continue;
+    }
     // epic15/UC06 (2026-10-01) : un bloc traduit EN ENTIER ({ __html }, rendu anglais
     // traduit nœud texte par nœud texte depuis le I18N_BLOCKS du legacy, ou à la main)
     // remplace le rendu ; les compteurs d'ids avancent comme si le bloc était rendu.
@@ -98,7 +138,7 @@ export function renderProse(tab, blocks, { formulaClass = "formula", reading = n
           const a = attrs ? attrs.replace(/\s*id="[^"]*"/, "").replace(/\s*type="[^"]*"/, "").trim() : 'step="any"';
           return `<div class="field"><label for="${id}">${lab}</label><input type="number" id="${id}" ${a} /></div>`;
         };
-        out.push(`<div class="exp" id="${tab}Exp${i}"><div class="exp-h">${b.h}</div><div class="exp-t">${b.title}</div><p class="exp-lead">${b.lead}</p>` +
+        out.push(`<div class="exp" id="${only ? `${only}-card` : `${tab}Exp${i}`}"><div class="exp-h">${b.h}</div><div class="exp-t">${b.title}</div><p class="exp-lead">${b.lead}</p>` +
           `<div class="exp-grid"><div class="exp-var iv">${b.iv}</div><div class="exp-var dv">${b.dv}</div></div>` +
           b.meta.map((m) => `<p class="exp-meta">${m}</p>`).join("") +
           `<div class="exp-calc">` +
@@ -115,7 +155,7 @@ export function renderProse(tab, blocks, { formulaClass = "formula", reading = n
       // en entier -- le traducteur garde les ids et les balises.
       case "raw": out.push(tr(b)); break;
       case "section":
-        out.push(`<section${b.id ? ` id="${b.id}"` : ""}${b.class ? ` class="${b.class}"` : ""}>${renderProse(tab, b.blocks, { formulaClass, reading, dict, _n: n })}</section>`);
+        out.push(`<section${b.id ? ` id="${b.id}"` : ""}${b.class ? ` class="${b.class}"` : ""}>${renderProse(tab, b.blocks, { formulaClass, reading, dict, _n: n, _away })}</section>`);
         break;
       case "sources": out.push(renderSources(tab)); break;
       case "reading":

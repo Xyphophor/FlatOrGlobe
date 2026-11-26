@@ -375,6 +375,7 @@ export const PROSE = [
   "html": "<div class=\"callout\">William Gilbert machined a lodestone into a small sphere — a <em>terrella</em>, \"little Earth\" — and walked a short compass needle across its surface. The needle stood upright at two opposite points, lay flat along the mid-circle between them, and tilted by the dipole rule everywhere else: the exact dip-vs-latitude pattern navigators were reporting. His conclusion opens the modern subject: <em>the Earth itself is a great magnet</em>. You can repeat this tonight with a sphere magnet and a cheap button compass — then try to reproduce the same needle behaviour with any magnet arrangement under a flat plate. The sphere takes one magnet; the plate has no arrangement that works, because the failure is in the shape, not the magnet.</div>"
  },
  {
+  "away": "xp-mag-5",
   "t": "exp",
   "h": "Experiment 5 · the field in your pocket",
   "title": "Read inclination and field strength wherever you are — the sensor is already in your phone",

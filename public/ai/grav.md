@@ -151,27 +151,7 @@ This is the usual alternative and it deserves a straight answer. Buoyancy is rea
 
 > **Where the accelerating disc dies.** Constant proper acceleration reproduces free fall perfectly — that is Einstein's equivalence principle and it is not a joke. But an accelerating floor accelerates *all* of itself equally: the same 9.8 m/s² at the pole and at the rim, in the cellar and at the top of the Burj Khalifa. It therefore predicts a free‑air gradient of exactly zero and a latitude variation of exactly zero, and both are measured, daily, by people whose surveys would not close if they ignored them. It also has to explain why the whole disc has been accelerating for the age of the universe without arriving anywhere.
 
-Experiment 1f · gravity and level
-
-Weigh the same object in two cities, or time a pendulum in both
-
-Every flat model on the table predicts that g is one number, the same everywhere. The globe predicts a specific difference between any two latitudes, set by rotation and the bulge. Two ways to see it: a pendulum, whose period goes as 1/√g, or a good spring‑type balance carrying a heavy mass. Pick your two places, and the calculator tells you in advance how big the effect is and whether your kit can resolve it.
-
-Independent variable
-**What you change:** the **latitude** at which you make the measurement. Nothing else — same instrument, same mass, same pendulum, carried between the two places.
-
-Dependent variable
-**What you measure:** the **period** of the pendulum, or the **reading** of the balance. Both are proxies for g and the world decides them.
-
-Globe: g = 9.80466 at 43.3° and 9.81124 m/s² at 50.6° → Δg = **657.6 mGal** (0.0671%)
-
-Every flat model: Δg = 0.0 mGal, at both places, exactly
-
-Pendulum of 2.00 m: period 2.83778 s vs 2.83683 s → **0.10 s** apart over 100 swings
-
-10.0 kg on a force-reading balance: **6.7 g** difference
-
-**Verdict rule.** If the two places really do differ, you will see it: 0.10 s over 100 swings is within reach of a phone timing the swings, and 6.7 g is readable on a 0.1 g balance. Measure a *difference of zero*, repeatably, with an instrument that can resolve this much, and the flat models win this test outright — no amount of curvature elsewhere would save the prediction.
+[**Experiment 1f · gravity and level** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-grav-1f)
 
 ## 07 · Two tides a day: what the Moon's pull does to a ball [evidence: prediction]
 

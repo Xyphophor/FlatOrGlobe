@@ -52,21 +52,7 @@ A body sits directly over its sub‑point. The globe drops its altitude at a fix
 
 The globe rate holds flat at **0.999 ′/nm** — that is k = 1/R, giving R = 1/k ≈ **3 440 nm ≈ 6 371 km**. The flat-model rate slides from steep near the sub-point to shallow far away, so there is no single k.
 
-Experiment 2 · celestial navigation
-
-Drive north and watch Polaris climb
-
-Measure the altitude of Polaris (or any star) above the horizon. Drive a known distance due north along a straight road. Measure it again. The star has climbed — the question is by how much.
-
-Independent variable
-**What you change:** the distance **d** you travel due north. You choose it — 100 km, 300 km, 500 km.
-
-Dependent variable
-**What you measure:** the **change in the star's altitude**, in degrees. The sky decides this, not you.
-
-IV d = 300 km north, starting at 45°N. Flat prediction: Polaris rises 1.770°. Globe prediction: Polaris rises 2.698°. They differ by 0.928° (56′).
-
-**Verdict rule:** the globe says the rise is always **2.698°** for 300 km — the same everywhere. The flat model cannot hold that: from 15°N it predicts 0.934°, from 60°N 2.445°.
+[**Experiment 2 · celestial navigation** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-cnav-2)
 
 > **Why the plane fails, in one line.** On a flat plane a body at finite height can never reach the horizon (atan(H/x) stays positive), so the Sun would never set; different bodies would need different heights H and return contradictory fixes; and k would change with where you stand. The globe uses a single radius R and one k = 1/R for the Sun, the Moon and every star at once — and from that same geometry it predicts sunset, the “Polaris altitude equals your latitude” rule, and the southern stars a disk cannot show.
 

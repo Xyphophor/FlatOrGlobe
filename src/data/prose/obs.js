@@ -121,6 +121,7 @@ export const PROSE = [
   "k": "obs-18"
  },
  {
+  "away": "xp-obs-sign",
   "t": "exp",
   "h": "Experiment · photograph the sign change",
   "title": "One filtered camera, one synchronised clock, six minutes",
@@ -300,6 +301,7 @@ export const PROSE = [
   ]
  },
  {
+  "away": "xp-obs-th",
   "t": "exp",
   "h": "Experiment · the Grand Mourre, measured",
   "title": "Enter your own α, s and Δh",

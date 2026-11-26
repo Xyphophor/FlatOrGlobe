@@ -99,6 +99,7 @@ export const PROSE = [
   "gloss": "g is measured with a pendulum, n = 2π / (27.32 days) is the Moon's motion against the stars, m/M ≈ 1/81 the Moon-to-Earth mass ratio. With π = 57.04′ and g = 9.80 m/s², R ≈ <span class=\"cv\" data-v=\"parR\">…</span> km. An error of 1 % in π is 3 % in R."
  },
  {
+  "away": "xp-moon-par",
   "t": "exp",
   "h": "Experiment · the Moon against the stars",
   "title": "Photograph the Moon among the same stars at moonrise, transit and moonset",

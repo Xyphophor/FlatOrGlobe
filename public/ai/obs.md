@@ -75,23 +75,7 @@ The same kind of dated appointment, at the scale of a continent, is the total ec
 
 Two things the panel refuses to do. It does not treat the drawn skyline as evidence: both curves come from a terrain model, which cannot test the geometry that built it — they show *where* to point the camera. And named summits use their published heights, never the model's, so the terrain model never supplies the number a summit test turns on (the LiDAR happens to read Le Grand Mourre, Mourre de Chanier and Mourre Frey within a metre of them[4]). The crossing is the one exception: its two points have no published height good to a few metres, so both come from the LiDAR.
 
-Experiment · photograph the sign change
-
-One filtered camera, one synchronised clock, six minutes
-
-Stand at the published viewpoint. Point a solar-filtered camera at azimuth 241°, start recording before 16:53 CET and stop after 17:00. Film a network-synchronised clock in shot, or note the timestamps. That is the entire apparatus.
-
-Independent variable
-**What you change:** the **instant**, and nothing else. The viewpoint, the azimuth and the target summit are all fixed and published in advance — you only choose when to read the frame.
-
-Dependent variable
-**What you measure:** the ridge's height above or below the Sun's centre, **in units of the solar disc**, read straight off that frame. The disc is 32.4′ wide, so the frame carries its own scale — you do not get to choose this, the photograph tells you.
-
-**Hold constant:** one tripod, one clock synchronised to network time and filmed in shot. **The tells, stated in advance:** a plane requires Le Grand Mourre to stand **13.2′ above** eye level, a sphere with straight rays **1.4′ below**, a sphere with k = 0.13, **0.5′ above**. The spread between plane and sphere is **12.7′, or 39 % of the solar disc**, and it converts to about **83 seconds** of sunset timing at this latitude. **Read the limb, not the blaze:** a Sun photographed near the horizon is overexposed, and the white blob is wider than the real disc, so judging "half hidden" by eye runs early. Stop the exposure down until the disc has an edge before you time anything.
-
-**Le Grand Mourre**, 54.13 km out and 208 m above eye height: a plane puts it **13.21′** above the horizontal, a globe **-1.40′** with straight rays. The two differ by **14.61′**, which is **45%** of the Sun's disc as drawn.
-
-**Verdict rule.** The models disagree about the **sign** here, not the size: above eye level on a plane, below it on a globe. Photograph the summit against the disc. Above → the plane prediction holds and the globe's is refuted. Level or below → no k on a plane can produce that.
+[**Experiment · photograph the sign change** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-obs-sign)
 
 > **What would settle it for the plane.** If the ridge photographs 13′ above the Sun's centre at the stated minute — two fifths of a disc high, unmistakable at any zoom — the flat prediction holds and the globe's is refuted. If it photographs level with the Sun or below it, no value of k on a plane can produce that, because a plane has no curvature to correct for. The measurement is the same either way; only the answer differs.
 
@@ -161,23 +145,7 @@ b is the measured baseline, A and B the horizontal angles at its ends. On a plan
 | height difference Δh | ±5 m | ±2.4 % |
 | **together** |  | **±2.9 %** |
 
-Experiment · the Grand Mourre, measured
-
-Enter your own α, s and Δh
-
-Nothing here comes from a map once these three are yours.
-
-**You measure** α with the theodolite, s by triangulation, Δh with barometers
-
-**You get** the apparent radius R/(1 − k), and the plane's α for the same s and Δh
-
-Prediction before measuring: α ≈ 0.5′ on a globe with standard refraction, 13.2′ on a plane.
-
-Best variant: a second observer on the summit, both theodolites read at the same instant (signal mirror by day, lamp at dusk).
-
-R/(1 − k) = **7,324 km**
-
-plane α = 13.2′ · globe α (k = 0.13) = 0.52′
+[**Experiment · the Grand Mourre, measured** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-obs-th)
 
 > **What would vindicate the plane:** α within a minute of arc of Δh/s, about 13.2′ with today's map values. The globe needs α near 0.5′, and with no k at all, −1.4′. Twelve minutes of arc is forty times the planned uncertainty of the theodolite. This section is a prediction until the measurement is made.
 

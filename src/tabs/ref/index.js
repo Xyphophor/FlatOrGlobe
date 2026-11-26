@@ -62,11 +62,9 @@ export default {
     this._el = { kRows: q("#refKRows"), condRows: q("#refCondRows"), snell: q("#refSnellCanvas"), circles: q("#refCirclesCanvas"),
       cases: q("#refCasesCanvas"), morph: q("#refMorphCanvas"), morphReads: q("#refMorphReads"),
       frCurved: q("#refFrCurved"), frStraight: q("#refFrStraight"), play: q("#refPlay"),
-      r206Map: q("#refR206Map"),
-      zA: q("#expRzA"), zB: q("#expRzB"), s: q("#expRs"), out: q("#expRout"), v: q("#expRv") };
+      r206Map: q("#refR206Map") };   // l'expérience 1c est dans falsify (exp.js, 2026-11-26)
     this._morph = { s: 0, running: false, dir: 1, hold: 0, last: 0, raf: 0, readAt: 0 };
     this._container = container;
-    for (const k of ["zA", "zB", "s"]) this._el[k]?.addEventListener("input", () => this._updateExpR());
     const on = (el, fn) => el && el.addEventListener("click", fn);
     on(this._el.frCurved, () => { this._morphSet(0, false); this._drawMorph(); this._morphReads(); });
     on(this._el.frStraight, () => { this._morphSet(1, false); this._drawMorph(); this._morphReads(); });
@@ -113,7 +111,7 @@ export default {
   },
 
   render() {
-    this._fillTables(); this._updateExpR();
+    this._fillTables();
     this._drawSnell(); this._drawCircles(); this._drawCases(); this._drawR206Map(); this._caus?.(); this._bord?.(); this._stats?.(); this._laser?.start(); this._reel?.start();
     this._morph.last = 0; // timestamp périmé après un changement d'onglet
     this._drawMorph(); this._morphReads(); this._morphStart();
@@ -140,34 +138,6 @@ export default {
   },
 
   // ---- expérience 1c : angles zénithaux réciproques (les hauteurs de station s'annulent) ----
-  _updateExpR() {
-    const e = this._el, t = this._t; if (!e.out) return;
-    const zA = parseFloat(e.zA.value), zB = parseFloat(e.zB.value), sKm = parseFloat(e.s.value);
-    if (!isFinite(zA) || !isFinite(zB) || !isFinite(sKm) || sKm <= 0) { e.out.innerHTML = ""; e.v.innerHTML = ""; return; }
-    const { gammaDeg, sum, exc, k, Reff } = reciprocalK(zA, zB, sKm);
-    const am = (d) => (d * 60).toFixed(2) + "′";
-    const sign = exc >= 0 ? "+" : "−";
-    e.out.innerHTML =
-      t("expR-central-angle").replace("{deg}", gammaDeg.toFixed(4)).replace("{am}", am(gammaDeg)) + "<br>" +
-      t("expR-measured-sum").replace("{sum}", sum.toFixed(4)) + "<br>" +
-      t("expR-plane-predicts") + "<br>" +
-      t("expR-globe-predicts") + "<br>" +
-      t("expR-excess").replace("{sign}", sign).replace("{exc}", Math.abs(exc).toFixed(4)).replace("{sign2}", sign).replace("{am}", am(Math.abs(exc))) + "<br>" +
-      t("expR-coeff").replace("{k}", k.toFixed(3)) +
-      (isFinite(Reff) ? t("expR-reff").replace("{km}", refFmtKm(Reff)).replace("{ratio}", (Reff / REF_R).toFixed(3)) : t("expR-reff-inf"));
-    let v;
-    if (exc > 1e-6) {
-      const plaus = (k > -0.1 && k < 0.6)
-        ? t("expR-plaus-ok").replace("{k}", k.toFixed(3))
-        : t("expR-plaus-bad").replace("{k}", k.toFixed(3));
-      v = t("expR-verd-exceeds").replace("{am}", am(exc)).replace("{plaus}", plaus);
-    } else if (Math.abs(exc) <= 1e-6) {
-      v = t("expR-verd-exact").replace("{am}", am(DEG(100000 / REF_R) * 0.87));
-    } else {
-      v = t("expR-verd-below");
-    }
-    e.v.innerHTML = v;
-  },
 
   // ---- figure 1 : Snell couche par couche (vraie intégration, n_i sin θ_i constant) ----
   _drawSnell() {

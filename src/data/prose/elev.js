@@ -427,6 +427,7 @@ export const PROSE = [
     "html": "<div class=\"ivdv-key\"><b>How to read these experiment boxes.</b> An experiment changes one thing and watches what happens to another. The thing <b>you</b> deliberately change is the <b>independent variable (IV)</b>. The thing you then <b>measure</b>, and do not control, is the <b>dependent variable (DV)</b>. Everything else must be held constant, or you cannot tell what caused what. A model is testable when it predicts a specific DV for each IV — and it is <em>refuted</em> when the measured DV does not match. Both models below make definite predictions, so whichever fails, fails honestly.</div>"
    },
    {
+    "away": "xp-elev-1",
     "t": "exp",
     "h": "Experiment 1 · elevation angles",
     "title": "Two levelled instruments, pointed at each other",

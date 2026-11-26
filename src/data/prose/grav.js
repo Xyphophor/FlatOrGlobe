@@ -361,6 +361,7 @@ export const PROSE = [
   "k": "gv-c6"
  },
  {
+  "away": "xp-grav-1f",
   "t": "exp",
   "h": "Experiment 1f · gravity and level",
   "title": "Weigh the same object in two cities, or time a pendulum in both",

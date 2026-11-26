@@ -87,22 +87,7 @@ Steel-man the disc: forget that nothing orbits a plane (orbits are free fall aro
 
 > **The deepest point is the simplest.** GPS is not a picture of the Earth that could be faked; it is a *live geometry proof* re-run by billions of independent receivers, using public equations, public ephemerides, and raw observables anyone can log. The four ranges close on a point — your point — only if the transmitters are where the globe math says they are. A navigation system is the one kind of evidence that cannot humor a wrong shape and keep working: get the geometry wrong by a kilometre and every landing, harvest and package delivery drifts with it.
 
-Experiment 8 · read the sky with a free app
-
-Any GNSS status app shows the raw constellation — no account, no cost
-
-Install a satellite-status app (most phones expose GPS, Galileo, GLONASS and BeiDou). The sky plot shows each satellite's azimuth and elevation, live.
-
-Independent variable
-**What you change:** the **time** — screenshot the sky plot now and again in 1–2 hours; and if you can, compare with a friend at a different latitude at the same moment.
-
-Dependent variable
-**What you measure:** each satellite's **elevation over time** (rising or setting?), the **count in view**, and where the tracks wheel (north or south).
-
-globe → right now at φ = +45°: 8 satellites above your horizon, every one rising or setting, ranges pinned to the 20,200–25,800 km window, tomorrow's sky 4 min early
-flat towers → a frozen constellation: fixed azimuths and elevations forever, no sidereal slip, range window broken open
-
-**Verdict rule:** if two screenshots an hour apart show the same satellites parked at the same spots, fixed emitters win. If the sky has turned over — new birds risen, old ones set, the whole pattern shifted along tracks the almanac predicted days ago — you are watching orbital mechanics around a rotating sphere, measured with a free app on a device that proves it by knowing where you are.
+[**Experiment 8 · read the sky with a free app** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-gps-8)
 
 **See also**[Distances](/ai/dist.md)[Gravity](/ai/grav.md)[Cel. nav.](/ai/cnav.md)[Surveying](/ai/surv.md)
 

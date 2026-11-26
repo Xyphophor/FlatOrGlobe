@@ -130,24 +130,7 @@ h = height of the eye above the sea · δ = measured dip · n = refractive index
 
 The measurement is imprecise, and the table shows how much. Changing each decision alone — where the hazy horizon is taken, how the skyline is found, whether the summits are given the globe's geometry, a few metres of scrub on them — moves the dip between 62.2′ and 67.0′; with three states of the air, R runs from 5,355 km to 6,139 km. One pixel is 1.27′, and one minute of dip is 3.1 % of the radius. The central dip lies 4.6′ (3.6 px) deeper than the globe predicts for that day's air. The air cannot explain that — it bent the light more than standard, which raises the horizon — so the difference points at the camera: scrub on the summits, residual lens distortion away from the centre of the frame, or where exactly the hazy horizon lies. Taking the free air above the sea at eye height (19.1 °C) instead of the air of the sunny plateau gives 5,702 km. A plane gives no radius at all: its horizon would lie on the level line, 65.0′ above the one photographed.
 
-Experiment 4 · horizon dip
-
-Climb, and measure how far the sea horizon falls
-
-Stand at the shore with a levelled instrument and measure the angle between true horizontal and the sea horizon. Then climb — a cliff path, a tall building, a hill — and measure again from a known height.
-
-Independent variable
-**What you change:** your **eye height h** above sea level. You choose it by where you stand: 2 m, then 50 m, then 300 m. Set it with the height control at the top of this tab.
-
-Dependent variable
-**What you measure:** the **dip angle** — how far the horizon sits below level. The world decides this.
-
-IV h = 100 m (set above)
-DV flat prediction: dip = 0.0′ = 0.000°
-DV globe prediction: dip = 18.0′ = 0.299° (with refraction)
-geometric, no refraction: 19.3′ · rule of thumb 1.76′×√h = 17.6′
-
-**Verdict rule:** a single non-zero dip, repeated and larger from higher up, refutes the flat model outright — there is no value of any parameter that turns zero into 18.0′. And because the globe predicts dip ∝ √h, plotting your readings against √h should give a straight line whose slope hands you the Earth's radius.
+[**Experiment 4 · horizon dip** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-dip-4)
 
 ## Below eye level and still in the sky — the band the Sun has to cross [evidence: prediction]
 
@@ -180,25 +163,7 @@ Times are for the equinox at 45°, where the Sun descends at 10.64° per hour; n
 
 > **Three things that can spoil it, stated in advance.** First, the level has to be a real level: in an aircraft the apparent vertical follows the resultant of gravity and acceleration, so a bank or a climb tilts it — take the reading in steady cruise, and prefer the angle from the Sun *to the horizon*, which no instrument error can manufacture. Second, refraction lifts objects near the horizon by roughly 34′[1] and shrinks the dip by about 8%[2]; both are already in the numbers above, and both work *against* the effect rather than creating it. Third, over land the horizon is terrain, not the geometric horizon, so this is a sea‑horizon measurement. None of the three turns a zero into 3°.
 
-Experiment 4b · the doubled sunset
-
-Watch the same sunset twice, and get the radius of the Earth out of a stopwatch
-
-Sit at the water's edge facing west and watch the Sun's last edge disappear. Then stand up — or run up a dune, or take a lift, or take off — and it comes back. The delay is not an illusion and it is not small: it is δ(h₂) − δ(h₁) divided by the rate at which the Sun sinks. Rawlins proposed this in 1979[3] as a way to measure the planet with a wristwatch and a metre stick, and Minnaert did the six‑metre version by running up a dyke.[2]
-
-Independent variable
-**What you change:** your **eye height**, between the first sunset and the second. Sitting to standing is half a metre; a stairwell is ten; an aircraft is eleven thousand.
-
-Dependent variable
-**What you measure:** the **delay** in seconds between the two disappearances — one number, from a stopwatch.
-
-Dip at 1.2 m: 1.97′ · at 6.0 m: 4.40′ → Δδ = **2.43′**
-
-Globe predicts a delay of 15.8 s at 52.0° · flat plane predicts 0.0 s
-
-Your 16.0 s, inverted: Rₑff = **7,107 km**, i.e. R = **6,183 km** after removing k = 0.13
-
-**Verdict rule.** The flat prediction is that the second sunset never happens: raise your eye and the Sun stays gone, because the vanishing line does not move. Time a delay of **0 s**, repeatably, from a height difference big enough that the globe predicts 16 s, and the globe prediction is refuted. Conversely a delay that tracks √h₂ − √h₁ across several height pairs, and returns the same R each time, is a measurement no flat arrangement reproduces. Expect scatter: coastal air can shift the dip by minutes of arc, so repeat it and take the open sea over a river mouth.
+[**Experiment 4b · the doubled sunset** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-dip-4b)
 
 > **It is measured, not inferred.** A dip meter (or a theodolite levelled with a bubble, or a sextant's artificial horizon) reads the angle between the true horizontal and the sea horizon directly. From a 10 m bridge it is about 5.6′ (0.093°); from a 100 m cliff about 17.6′ (0.293°); from an airliner at 10 km about 3.0°. Those numbers are tabulated, reproducible with hardware costing a few hundred euros, and they track √h exactly as arccos(R/(R+h)) requires. A plane predicts 0.0′ = 0.000° at every one of those heights.
 

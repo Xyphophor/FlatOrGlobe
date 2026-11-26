@@ -386,6 +386,7 @@ export const PROSE = [
   "k": "az-p10d"
  },
  {
+  "away": "xp-azim-9",
   "t": "exp",
   "h": "Experiment 9 · where is the Sun for you?",
   "title": "A stick, its shadow, and one agreed minute — with a friend far away, if you can",
@@ -399,6 +400,7 @@ export const PROSE = [
   "k": "x:az-exph"
  },
  {
+  "away": "xp-azim-9b",
   "t": "exp",
   "h": "Experiment 9b · the Moon against the stars",
   "title": "One photograph each, two places, one agreed second — and the sky is the ruler",

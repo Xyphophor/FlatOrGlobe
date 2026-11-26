@@ -217,13 +217,7 @@ On a globe a constellation falls into one of three classes and its **declination
 | Centaurus | -60.8° | never rises | — | always up |
 | Octans | -88.8° | never rises | — | always up |
 
-## Experiment 2b · photograph the axis
-
-**Independent variable:** the place — the hemisphere first, the latitude second. **Dependent:** (a) the sense of rotation, one bit; (b) the two culmination altitudes of one circumpolar star. **Held constant:** the same lens, the aim on the fixed point, a fixed foreground for the horizon, a stated exposure. **Kit:** a phone on a wall and thirty minutes of stacking. For (b) a clinometer is enough — no camera at all. Every altitude printed on this tab can be checked against the USNO service[5] before you go outside.
-
-**Verdict rule, announced in advance and symmetric.** The globe fails if a southern observer photographs arcs centred on Polaris, if the sense is the same in both hemispheres, or if the mean of the two culminations does not return the latitude. The flat model fails if the sense reverses between hemispheres, or if that mean does return the latitude instead of missing it by several degrees.
-
-Deliberately left out: differential refraction and extinction near the horizon, which are modelled nowhere else on this page and which the culmination test does not need; aberration, stellar parallax and proper motion, all below anything claimed here; and trail photometry, which is real and predicted differently by the two models but cannot be measured without calibration.
+[**Experiment 2b · photograph the axis** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-star-2b)
 
 **See also**[Cel. nav.](/ai/cnav.md)[Foucault](/ai/fou.md)[Azimuth](/ai/azim.md)[Sun](/ai/sun.md)[GPS](/ai/gps.md)
 

@@ -89,7 +89,6 @@ function updateHidden() {
   const tn = $("hhTabNote");
   if (tn) tn.innerHTML = t("tab-note").replace("{R}", (R / 1000).toFixed(0)).replace("{k}", k.toFixed(2));
 
-  updateHiddenSweep();
   updateHiddenRecords();
   drawHiddenViews();
 }
@@ -192,29 +191,6 @@ function drawHiddenViews() {
     : "";
 }
 
-function updateHiddenSweep() {
-  if (!$("hhSweepOut")) return;
-  const { R, k } = hhWorld();
-  const Rg = R / (1 - k);
-  const e = Math.max(0, expNum("hhSweepE", 2));
-  const d = Math.max(1, expNum("hhSweepD", 37) * 1000);
-  const H = hiddenHeight(R, e, d), Hr = hiddenHeight(Rg, e, d);
-  const rungs = [...new Set([0.5, 2, 25, 100, 515, 1695, e])].sort((a, b) => a - b);
-  const ladder = rungs.map((x) => {
-    const hx = hiddenHeight(R, x, d);
-    const cell = `${x} m → ${hhM(hx)}`;
-    return x === e ? `<b>${cell}</b>` : cell;
-  }).join(" &nbsp;·&nbsp; ");
-  const first = hiddenHeight(R, rungs[0], d), last = hiddenHeight(R, rungs[rungs.length - 1], d);
-  $("hhSweepOut").innerHTML =
-    t("sweep-iv").replace("{e}", e).replace("{d}", (d / 1000).toFixed(2)) + "<br>" +
-    `DV&nbsp; <span class="f">` + t("sweep-dv-flat") + `</span><br>` +
-    `DV&nbsp; <span class="g">` + t("sweep-dv-globe").replace("{H}", hhM(H)).replace("{Hr}", hhM(Hr)).replace("{k}", k.toFixed(2)) + `</span><br>` +
-    `&nbsp;&nbsp;&nbsp; ` + t("sweep-ladder-intro").replace("{ladder}", ladder) + `<br>` +
-    `&nbsp;&nbsp;&nbsp; ` + t("sweep-climb").replace("{delta}", hhM(Math.max(0, first - last)));
-  const v = $("hhSweepV");
-  if (v) v.innerHTML = t("sweep-verdict");
-}
 
 function updateHiddenRecords() {
   const tb = $("hhRecRows"); if (!tb) return;
@@ -244,7 +220,6 @@ function hhApplyPreset(key) {
   const p = HH_PRESETS[key]; if (!p) return;
   if ($("hhSel")) $("hhSel").value = key;
   $("hhEye").value = p.e; $("hhD").value = p.d; $("hhH").value = p.h;
-  $("hhSweepE").value = p.e; $("hhSweepD").value = p.d;
   if ($("hhExagg")) $("hhExagg").value = p.ex;
   setRefr(true); setK(p.k); // le k unique de la page (settings.js), pas une copie locale
   const n = $("hhNote"); if (n) n.textContent = p.note || "";
@@ -258,7 +233,6 @@ export function wire() {
   fillPresetSelect("hhSel", HH_PRESETS, "— choose a documented sightline —", (p) => p.label);
   $("hhSel")?.addEventListener("change", (e) => { if (e.target.value) hhApplyPreset(e.target.value); });
   for (const id of ["hhEye", "hhD", "hhH"]) $(id)?.addEventListener("input", () => { if ($("hhSel")) $("hhSel").value = ""; render(); });
-  for (const id of ["hhSweepE", "hhSweepD"]) $(id)?.addEventListener("input", render);
   $("hhExagg")?.addEventListener("input", render);
   $("hhPzoom")?.addEventListener("input", render);
   $("hhRefr")?.addEventListener("change", () => { setRefr($("hhRefr").checked); render(); });

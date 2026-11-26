@@ -314,6 +314,7 @@ export const PROSE = [
   "html": "<p class=\"cnav-lead\">All real, all present, and none of them latitude-aware. A draught in Chicago does not know it should produce 10.02°/h while an identical draught in Melbourne produces −9.22°/h and one in Quito produces zero. Systematic errors that happen to reproduce sin φ across a hundred independent buildings, built by people who never met, are not systematic errors. They are the signal.</p>"
  },
  {
+  "away": "xp-fou-1d",
   "t": "exp",
   "h": "Experiment 1d · Foucault pendulum",
   "title": "Find a stairwell, and measure the angle between your floor and the axis of the world",

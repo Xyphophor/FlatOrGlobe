@@ -251,23 +251,7 @@ $${E(t) \approx 2e\,\sin M - \tan^2(\varepsilon/2)\,\sin 2\lambda}$$
 
 L is the stick's height and s the noon shadow's length, h the Sun's noon altitude; E is the equation of time in radians of rotation (× 229.2 for minutes), M the Sun's mean anomaly and λ its longitude. The first term has a period of a year and gives e, the second half a year and gives ε.
 
-Experiment · the noon shadow
-
-Measure the shortest shadow at both solstices
-
-A stick made vertical with a level, a flat floor, a tape. Mark the shortest shadow around noon on 21 June and 21 December.
-
-**You measure** the stick's height and the two noon shadows
-
-**You get** the axis tilt ε and your latitude φ
-
-Prediction for Marseille (43.3° N): shadows of 0.36 L in June and 2.33 L in December, ε ≈ 23.44°.
-
-A year of noon timings against a network clock gives the equation of time, and from it e.
-
-Noon altitudes 70.15° and 23.26° · tilt **ε = 23.44°**
-
-latitude φ = 43.29° (accepted tilt: 23.44°)
+[**Experiment · the noon shadow** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-orb-gno)
 
 **See also**[Sun](/ai/sun.md)[Rotation](/ai/rot.md)[Satellites](/ai/sat.md)[Star trails](/ai/star.md)[Azimuth](/ai/azim.md)
 

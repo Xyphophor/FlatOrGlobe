@@ -357,6 +357,7 @@ export const PROSE = [
   "html": "<p class=\"cnav-lead\">This is the objection the tab most wants to lose. Every trace referred to here is free, most of it available within minutes of the event, and the tooling is a Python package.<sup class=\"ref\"><a href=\"#s-seis-n7\">[7]</a></sup> There is a point-and-click route for anyone who would rather not write code.<sup class=\"ref\"><a href=\"#s-seis-n8\">[8]</a></sup> A hundred-euro seismometer in a spare room records earthquakes from the far side of the planet and joins the same open network you are downloading from. The experiment below is not a thought experiment.</p>"
  },
  {
+  "away": "xp-seis-1e",
   "t": "exp",
   "h": "Experiment 1e · seismology",
   "title": "Download one earthquake and plot the travel-time curve yourself",

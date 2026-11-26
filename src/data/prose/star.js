@@ -472,11 +472,13 @@ export const PROSE = [
   "k": "x:st-cap4"
  },
  {
+  "away": "xp-star-2b",
   "t": "h2",
   "html": "Experiment 2b · photograph the axis",
   "k": "st-h2g"
  },
  {
+  "away": "xp-star-2b",
   "t": "raw",
   "tag": "div",
   "class": "exp",
@@ -485,6 +487,7 @@ export const PROSE = [
   "k": "x:st-exp1"
  },
  {
+  "away": "xp-star-2b",
   "t": "notes",
   "html": "Deliberately left out: differential refraction and extinction near the horizon, which are modelled nowhere else on this page and which the culmination test does not need; aberration, stellar parallax and proper motion, all below anything claimed here; and trail photometry, which is real and predicted differently by the two models but cannot be measured without calibration.",
   "k": "st-p8"

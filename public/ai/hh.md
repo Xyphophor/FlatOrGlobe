@@ -156,25 +156,7 @@ Now put two numbers into both models. Helbronner's own distance from the Coudon 
 
 And the amateur version agrees. Riviera photographers catch Monte Cinto from sea level at about 198 km: from an eye 5 m up, geometry alone hides 2,835 m — more than the mountain — so the sightings need refraction, which is what the observers themselves conclude. Working back, the minimum eye height for a purely geometric sighting of Cinto is about **12 m**, and for the 2,305 m Cima Statoghia at 194 km about **40 m** — the figures an independent observer computed from his own photographs[11]. On a plane there is no minimum eye height for anything, and the whole Corsican coast would be photographable from the beach at Nice on any clear day. It never has been.
 
-Experiment 1b · the height sweep
-
-One target, one morning, three camera heights
-
-Pick a target across water whose waterline you can identify — a buoy, an anchored boat, a marked pole, a quay. Photograph it from as close to the water as you can stand. Then raise the camera, without moving sideways, and photograph it again. Then again, higher. Count how much of the base reappears at each step.
-
-Independent variable
-**What you change:** the eye height **e**. You choose it — a beach, a first-floor window, a hill, a cable car — and you can measure it with a tape or a phone barometer.
-
-Dependent variable
-**What you measure:** the height **H** of the target that is cut off at the bottom, read against the known scale on the target itself. The target tells you; you do not get to choose it.
-
-IV e = 2 m, at d = 37.00 km
-DV flat prediction: 0.0 m hidden — at every height on this list, for ever
-DV globe prediction at your height: 80.1 m hidden (68.1 m with k = 0.13)
-the sweep: 0.5 m → 93.3 m · **2 m → 80.1 m** · 25 m → 28.8 m · 100 m → 0.1 m · 515 m → 0.0 m · 1695 m → 0.0 m
-climbing the whole ladder uncovers **93.3 m** of the far base
-
-**Verdict rule:** the flat model predicts that climbing changes the target's apparent *size and position* and nothing else — the same fraction of the base is visible from the sand and from 1,700 m, namely all of it. The globe predicts a specific slab returning at each step, set by `d₀ = √(2Re)` alone. If the base of a distant target looks identical from three well-separated heights on the same morning, the sphere is dead. If a measurable slab comes back each time you climb, and the amounts match the row above, the plane is — and R falls out of the numbers.
+[**Experiment 1b · the height sweep** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-hh-1b)
 
 Why zoom is the cleanest sub-test. The commonest rescue for a vanished hull is “it is too small to resolve — zoom in and it comes back”. That is testable in the same photograph. What is lost to angular size returns under magnification, top and bottom together. What is behind the bulge does not: the top sharpens and the bottom stays cut at the same waterline, clean and horizontal, whatever the focal length. One frame at 24 mm and one at 600 mm from the same tripod separate the two explanations without arithmetic.
 

@@ -351,26 +351,7 @@ It varies within bounds that are themselves measured, and — decisively — it 
 
 **It cannot survive reciprocal observation.** This is the cleanest test on the page because the station heights cancel and nothing is left to argue about. On a plane the two zenith angles must sum to at most 180°. On a sphere they sum to 180° + γ(1−k), which for a 30 km line is 180° + 14.1′ at k = 0.13. That is a *sign difference*, not a magnitude difference, and no positive k can rescue it.
 
-Experiment 1c · refraction
-
-Measure k yourself, and let it convict the model of your choice
-
-Put a total station or theodolite at each end of a line several kilometres long, ideally with a clear reciprocal view. At an agreed instant, each observer measures the zenith angle to the other instrument's centre. Swap the numbers. You now have everything: the sum tells you which geometry you live on, and its excess over 180° tells you the refraction coefficient of the air you measured in.
-
-Independent variable
-**What you change:** the **line** — its length s, and the time of day you observe it. Try noon and again an hour after sunset.
-
-Dependent variable
-**What you measure:** the two **zenith angles** z_A and z_B, from which the sum and hence k follow with no further assumptions.
-
-Central angle γ = s/R = **0.2698°** (16.19′)
-Measured sum z_A + z_B = **180.2347°**
-Plane predicts: ≤ 180.0000° — exactly 180 with straight rays, less if light bends down
-Globe predicts: 180° + γ(1−k) — an excess that grows with distance
-Excess over 180° = **+0.2347°** (+14.08′)
-⇒ refraction coefficient **k = 0.130** · R_eff = 7,324 km = 1.150 R
-
-**Sum exceeds 180°.** No flat arrangement can do this: on a plane the verticals are parallel, so straight rays give exactly 180.000° and downward-bending rays give *less*. The excess here is 14.08′, and k = 0.130 sits inside the measured range 0.10–0.34, so nothing exotic is being assumed.
+[**Experiment 1c · refraction** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-ref-1c)
 
 The through-line. Every tab on this page offers refraction as a toggle and prints both answers, because the honest position is not "refraction is negligible" — it is not — but "refraction is measured, bounded, and of known sign". The elevation and hidden-height tabs share one k with this one. The surveying tab shows the reciprocal-angle correction being applied in the field. And the horizon-dip tab shows the 12% that k shaves off the dip without ever touching its sign. One radius, one refraction coefficient, and the two are told apart by the fact that only one of them cares what the weather is doing.
 

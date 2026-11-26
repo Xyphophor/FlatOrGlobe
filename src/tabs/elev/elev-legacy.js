@@ -608,19 +608,6 @@ function updateRefractionUI() {
   read.style.opacity = on ? 1 : 0.45;
 }
 
-function updateExp1() {
-  if (!$("exp1out")) return;
-  const R = 6371, d = Math.max(0.001, expNum("exp1d", 10));
-  const th = (d / R) * (180 / Math.PI);
-  const arcsec = th * 3600, arcmin = th * 60;
-  $("exp1out").innerHTML =
-    t("exp1-iv").replace("{d}", d) + "<br>" +
-    `DV&nbsp; <span class="f">` + t("exp1-dv-flat") + `</span><br>` +
-    `DV&nbsp; <span class="g">` + t("exp1-dv-globe").replace("{v}", (180 + th).toFixed(6)) + `</span><br>` +
-    `&nbsp;&nbsp;&nbsp; ` + t("exp1-diff").replace("{v}", arcmin < 1 ? arcsec.toFixed(1) + "″" : arcmin.toFixed(2) + "′");
-  const detect = arcsec > 60 ? t("exp1-detect-easy") : arcsec > 5 ? t("exp1-detect-hard") : t("exp1-detect-none");
-  const v = $("exp1v"); if (v) v.innerHTML = t("exp1-verd").replace("{d}", d).replace("{detect}", detect);
-}
 
 /* ---- UNE SEULE VUE À LA FOIS (legacy simSwapView, ~L28531). L'onglet a
    deux vues du même regard : le panneau perspective (triangles), et la
@@ -675,7 +662,6 @@ export function render() {
   updateRecip(s, ang);
   updateNameTags();
   updateWhy(s, ang);
-  updateExp1();
   updateSizes(s, ang);
   updateExaggUI(box);
 }
@@ -715,7 +701,6 @@ export function wire() {
   $("pzoom")?.addEventListener("input", render);
   $("perspSwap")?.addEventListener("click", () => { perspSolid = perspSolid === "globe" ? "flat" : "globe"; render(); });
   $("o3on").addEventListener("change", () => { setO3($("o3on").checked); render(); });
-  $("exp1d")?.addEventListener("input", updateExp1);
   // hh peut aussi écrire k/refr (remote control, comme dans le legacy) : si
   // #kcoef/#refr sont déjà à jour, cette resynchronisation est un no-op --
   // elle ne peut donc pas écraser une frappe en cours dans CE formulaire.

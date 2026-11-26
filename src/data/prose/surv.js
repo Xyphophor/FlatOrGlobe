@@ -214,6 +214,7 @@ export const PROSE = [
   "k": "afa9f7a2"
  },
  {
+  "away": "xp-surv-7",
   "t": "exp",
   "h": "Experiment 7 · levelling across water",
   "title": "Rent an auto level, find a calm lake or canal, and re-run Wallace yourself",

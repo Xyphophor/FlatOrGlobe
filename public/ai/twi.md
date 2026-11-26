@@ -171,27 +171,7 @@ Its size is priced above: about 34′ at the horizon, against the 1,080′ that 
 
 Extinction along a long slant path is real too, and it is why the setting Sun is red and dim enough to look at. But extinction is a smooth, monotonic, exponential attenuation with air mass. It gives no threshold, no edge, and no dependence on the *direction* you look — whereas the observed twilight sky is bright in the west and dark in the east by an amount that tracks a single angle. And extinction cannot produce the latitude thresholds of the previous section, because the air mass along the path is a function of the Sun's altitude, and the whole point of that section is that the Sun's altitude at midnight is fixed by φ and δ in a way no atmospheric effect can touch.
 
-Experiment 1f · dawn and twilight
-
-Time first light against the clock, twice a year, from your own doorstep
-
-This one costs nothing and needs no instrument beyond a phone and a clear horizon. Pick a spot with an open view east, go out well before sunrise on a clear morning near an equinox, and write down the clock time at which you can first make out the horizon line and the time the Sun's upper edge appears. Then do it again within a few days of the June solstice from the same spot. The interval is civil dawn, and the calculator below predicts both lengths from your latitude and the date alone, with no fitting and no free parameter. If you are north of about 48.6°, the more dramatic version is available to you: on the June nights the sky never goes properly dark at all, and the almanac will print a dash where the end of astronomical twilight should be.
-
-Independent variable
-**What you change:** the **date**, and therefore the Sun's declination. Two dates two months apart are enough at mid-latitudes; equinox against solstice is the sharpest pair. Changing your **latitude** instead works just as well if you are travelling.
-
-Dependent variable
-**What you measure:** the **number of minutes** between first light and sunrise. A clock and your own eyes. No angles, no instruments, no trust in anyone else's data.
-
-**Hold constant:** the site, the direction you face, and the criterion you use for "first light" — pick one and stick to it, because the criterion is worth several minutes and the effect you are after is tens of minutes. Clear sky both times; cloud on one morning and not the other ruins the comparison.
-**Kit:** a phone. If you want the version with a number in it rather than a judgement call, point the phone's camera east on a tripod, shoot at fixed exposure every thirty seconds, and read the frame brightness afterwards — the curve is the twilight curve and its knee is unmistakable.
-**The tell:** at 45° north the interval grows by roughly a quarter between March and June; at the equator it barely moves at all; north of 48.6° astronomical night vanishes outright in June. A flat Sun that dims by distance has no mechanism that makes the fade take longer in one month than another at the same place.
-
-**Civil** 43 min · **Nautical** 61 min · **Astronomical** never ends
-Total sunset → −18°: **never ends**. Sun's altitude at local midnight: **−17.70°**.
-Astronomical night vanishes above latitude 48.6° · nautical above 54.6° · civil above 60.6°.
-
-**Verdict rule.** At 48.86° with the Sun at 23.44°, the globe says there is **no astronomical night at all** on this date, because the Sun bottoms out at −17.70° and never reaches −18°. Look up the almanac for these coordinates: it should print a dash. If it prints a time — if the sky does go fully dark here on this date — the geometry on this tab is wrong and you should say so.
+[**Experiment 1f · dawn and twilight** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-twi-1)
 
 ## How high the shadow stands — and why it climbs faster than the Sun sinks [evidence: prediction]
 
@@ -216,24 +196,7 @@ Only one quantity there has to be supplied from outside: H, the effective top of
 
 *Figure caption:* Depression at which the shadow reaches the zenith and the dark segment covers the sky: H = 10 km → **θ_z = 3.21°** · H = 15 km → **θ_z = 3.93°** · H = 20 km → **θ_z = 4.53°**. Note what that means for an observer: the **angle** is the same everywhere on Earth, in every season — but the **clock time** it takes to get there is not, and runs from about thirteen minutes near the equator to three quarters of an hour at high latitude in spring.
 
-Experiment 1f-b · time the Earth's own shadow
-
-Turn your back on the sunset and photograph the east — a phone, a wall to rest it on, twenty minutes
-
-Ten minutes after sunset there is a dark blue-grey band along the eastern horizon with a pink one above it: the planet's own shadow, cast on its own air, with the Belt of Venus along its top edge.[6] Rest a phone on a wall, frame the eastern horizon with something vertical of known height in shot — a lamp post, a door frame, a distant mast — and shoot one fixed-exposure frame every minute from sunset until the band has climbed out of frame. Afterwards, convert the band's top edge into an angle using the object of known height and its distance. You will have the shadow's altitude against the clock, and the clock converts to the Sun's depression.
-
-Independent variable
-**What you change:** the **time since sunset**, and therefore the Sun's depression θ, which an almanac gives you for your position to the minute.[1] Nothing else moves. If you can repeat it from a very different latitude, or six months later, do — that is where the sharper version lives.
-
-Dependent variable
-**What you measure:** the **altitude of the shadow's upper edge**, in degrees, frame by frame. One angle per photograph, read off against a foreground object whose height and distance you know.
-
-**Hold constant:** the camera position, the focal length and the exposure — an automatic exposure will chase the fading sky and move the very edge you are trying to follow. Pick one criterion for the top edge, the colour boundary rather than the brightness one, and keep it. Face the antisolar azimuth, not simply east: ten minutes after sunset the two differ by several degrees.
-**Kit:** a phone, a wall, and a foreground object. If you want the angle without trigonometry, hold a ruler at arm's length — a centimetre at 57 cm subtends one degree, near enough for a two-degree effect.
-**The tells, stated in advance:** the shadow's top is **never below the antisolar point**, at any moment, which the derivation above gives with no adjustable quantity; it **accelerates**, the ratio in the last column growing from about 1.1 to beyond 5 within twenty minutes; and the sky is fully shadowed at a **depression of three to four and a half degrees** — the same angle in Quito and in Reykjavík, though one takes a quarter of the time the other does.
-
-**What this experiment cannot do, said plainly.** It does not measure R. The single free quantity H is degenerate with the radius here — a bigger planet with a shallower atmosphere gives a similar curve — so anyone claiming a radius from a sunset photograph is claiming too much, and this page will not. Nor is the top edge sharp: air thins gradually, so two careful observers will disagree by something like half a degree, which is a few kilometres of H. What the experiment does settle is *shape*, and shape is what the two models disagree about.
-**The verdict rule, symmetric.** The sphere fails if the shadow's top is ever measured at or below the antisolar point, if it climbs at a constant ratio rather than an accelerating one, or if the depression at which it reaches the zenith turns out to depend on where you stand or on the season. The flat model fails if a boundary it must explain as distance and haze instead behaves as a shadow does: an arc curved about the antisolar point, rising at an accelerating angular rate, closing over the sky at one fixed solar depression that is the same for every observer on the planet while the clock time is not.
+[**Experiment 1f-b · time the Earth's own shadow** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-twi-2)
 
 Caveats this page owes you. Four, and the first is the one that matters. The heights in the first table are the *geometric* ceiling of the shadow; they are not a brightness model. Real twilight brightness involves multiple scattering, ozone absorption in the Chappuis band and aerosol loading, and the classical treatments are Hulburt's and Rozenberg's, not a one-line formula.[3][4][5] Second, the durations here use the mean Sun and a spherical Earth, with sunrise at the conventional −0°50′; published almanacs will differ from them by a minute or two, and a mountain horizon by rather more. Third, the measured 10^8 day-to-night ratio is downwelling irradiance at one dark rural site, and the same study measures a factor of 100 between that site and a city — the number is a scale, not a constant. Fourth, the anti-twilight figure is a schematic, and its colours are drawn rather than computed. None of the four moves an argument that turns on eight orders of magnitude against fewer than two, and on a stage length that goes to infinity at a latitude you can point to on a map.
 

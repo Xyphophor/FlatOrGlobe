@@ -190,6 +190,7 @@ export const PROSE = [
   "k": "d417c8a3"
  },
  {
+  "away": "xp-gps-8",
   "t": "exp",
   "h": "Experiment 8 · read the sky with a free app",
   "title": "Any GNSS status app shows the raw constellation — no account, no cost",

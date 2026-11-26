@@ -191,24 +191,7 @@ A lodestone machined into a small sphere reproduced the whole dip-against-latitu
 
 > William Gilbert machined a lodestone into a small sphere — a *terrella*, "little Earth" — and walked a short compass needle across its surface. The needle stood upright at two opposite points, lay flat along the mid-circle between them, and tilted by the dipole rule everywhere else: the exact dip-vs-latitude pattern navigators were reporting. His conclusion opens the modern subject: *the Earth itself is a great magnet*. You can repeat this tonight with a sphere magnet and a cheap button compass — then try to reproduce the same needle behaviour with any magnet arrangement under a flat plate. The sphere takes one magnet; the plate has no arrangement that works, because the failure is in the shape, not the magnet.
 
-Experiment 5 · the field in your pocket
-
-Read inclination and field strength wherever you are — the sensor is already in your phone
-
-Every smartphone carries a 3-axis magnetometer. A free sensor app reports the total field |B| in μT directly; add a level surface (or the phone's accelerometer, which sensor apps use automatically) and it reports the inclination I too. A ~15€ dip needle, or a magnetised sewing needle floated on a cork disc and then re-balanced on a horizontal pin, does the same with no electronics.
-
-Independent variable
-**What you change:** your **position** — magnetic latitude λ, or on the flat map, distance r from the centre. Travel, or recruit friends and relatives by latitude; the further apart, the sharper the test. Set it with the λ slider above.
-
-Dependent variable
-**What you measure:** two numbers per location — the **dip I** (sign included!) and the **total field |B| in μT**. The world decides both.
-
-At your λ = 45.0° (r = 5.0k km on the map):
-globe → I = +63°, |B| = 47.4 μT, H = 21.2 μT
-flat ① → I = +35°, |B| = 103.9 μT, H = 84.9 μT
-flat ② → I = +38°, |B| = 80.1 μT, H = 63.0 μT
-
-**Verdict rule:** if readings across latitudes follow either amber column — southern dip frozen above −35° with fields collapsing several-fold (①), or a level circle ~3,600 km south of the observed magnetic equator, a south that never dips past −69° and Arctic fields near 200 μT (②) — the flat disc is vindicated and the dipole-sphere refuted. If instead I flips sign at one circle, follows tan I = 2 tan λ to within the stated ~10°, and |B| stays within ~22–67 μT with a single I = −90° point in Antarctica, the sphere stands. At your latitude the two shapes disagree by **25°** of dip — far beyond any instrument error.
+[**Experiment 5 · the field in your pocket** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-mag-5)
 
 ### The escape hatches, pre-empted.
 

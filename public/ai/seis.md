@@ -163,24 +163,7 @@ They do vary a little — that variation is an entire discipline called seismic 
 
 This is the objection the tab most wants to lose. Every trace referred to here is free, most of it available within minutes of the event, and the tooling is a Python package.[7] There is a point-and-click route for anyone who would rather not write code.[8] A hundred-euro seismometer in a spare room records earthquakes from the far side of the planet and joins the same open network you are downloading from. The experiment below is not a thought experiment.
 
-Experiment 1e · seismology
-
-Download one earthquake and plot the travel-time curve yourself
-
-Pick any magnitude 7.5 or greater event from the last twenty years. Ask a data centre for the vertical component at ten or twelve stations spread between 20° and 160° away, band-pass between 100 and 200 seconds so that only the long-period surface wave survives, and read off the time of the peak of the wave packet at each. Plot that time against great-circle distance, then against flat-map distance. One of those two plots is a straight line through the origin and the other is a shotgun pattern. You will know which within a minute of the plot appearing, and you will not have taken anybody's word for anything.
-
-Independent variable
-**What you change:** the **station**, and therefore its distance from the epicentre. Spread them over as much of the range as you can, and make sure several are in the southern hemisphere — that is where the two models separate.
-
-Dependent variable
-**What you measure:** the **arrival time** of the filtered surface-wave peak, relative to the origin time in the event catalogue. Nothing else — no amplitudes, no instrument response, no modelling.
-
-Great-circle separation Δ = **116.87°**
-Globe: **12,995 km** → surface wave at **57 min** after origin time
-Flat map: **26,470 km** → surface wave at **1 h 56 m**
-Disagreement **+104%** in distance, **+59 min** in arrival time
-
-**This pair is diagnostic.** The two models disagree by 59 min on a single arrival — far beyond any picking error, any dispersion correction and any plausible variation in wave speed. One trace from this station settles it, and the trace is free. Note which way it goes: the flat map puts the station further away than the sphere does, so it predicts an arrival late by that much.
+[**Experiment 1e · seismology** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-seis-1e)
 
 Experiment 1e-b · the ring of silence
 

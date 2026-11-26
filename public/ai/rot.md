@@ -80,23 +80,7 @@ $$\Omega = \frac{2\pi}{T_{s}},\qquad \frac{86\,400\,\text{s}}{\Delta} = 366.24 =
 
 t₁ and t₂ are the two clock times (civil days included), N the number of turns between them. The star turns 366.24 times a year while the Sun turns 365.24 times: one turn of difference, the Earth's orbit seen from the ground, or on a flat model the Sun's own yearly lag.
 
-Experiment · the sidereal day
-
-Time a star behind a fixed edge, twice
-
-Same place, same edge, a few nights apart. Enter the two clock readings and the number of nights.
-
-**You measure** two times of disappearance and the number of nights
-
-**You get** the length of one turn and the daily advance
-
-The clock must be set to a network time source; photograph its screen with the star, as for the 10 January sunset in the observation tab.
-
-Prediction: 23 h 56 min 4.1 s per turn, 3 min 55.9 s earlier each night.
-
-One turn: **23 h 56 min 4.1 s** · 235.9 s earlier each night · 366.26 turns a year
-
-Ω = 7.292 × 10⁻⁵ rad/s (stars: 7.292)
+[**Experiment · the sidereal day** — to do yourself, with every experiment of the site, in “What would refute each model” →](/ai/falsify.md#xp-rot-sid)
 
 > **This one does not separate the models,** and it is here for that reason. Stars turn once in 23 h 56 min above a plane as above a globe. What the clock gives is the rate Ω the ring lasers read about their verticals, measured with nothing but time, and the extra turn per year. The separation is in the latitude dependence above.
 

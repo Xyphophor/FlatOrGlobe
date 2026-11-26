@@ -124,5 +124,8 @@
   "sat-what": "One day of carrier-phase Doppler from 80 receivers on 79 navigation satellites, fitted with the orbits, the receivers, GM and Ω all free.",
   "sat-globe": "Receivers held on one plane fitting the Doppler as well as free ones, or satellites needing different GM for their periods.",
   "sat-flat": "Receivers settling on a ball around the centre the orbits go round, 6,357 to 6,381 km from it, from a start on a flat map; one GM for 79 satellites at three heights; the best plane missing by over a hundred m/s where the ball leaves millimetres.",
-  "sat-prec": "Public RINEX files of the IGS and a least-squares fit of a few hundred unknowns."
+  "sat-prec": "Public RINEX files of the IGS and a least-squares fit of a few hundred unknowns.",
+  "xp-h2": "Do it yourself: every experiment of the site",
+  "xp-lead": "Experiments you can do yourself, grouped by subject. Each one says beforehand which result would favour which model.",
+  "xp-from": "From the tab"
 }
