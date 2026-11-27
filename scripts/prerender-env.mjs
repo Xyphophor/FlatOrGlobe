@@ -168,6 +168,9 @@ globalThis.Image = class {
   }
   get src() { return this._src; }
   decode() { return this._p; }
+  // comme un navigateur (2026-11-27 : maps.js attend le manuscrit de Ptolémée par addEventListener)
+  addEventListener(type, fn) { if (type === "load") { const prev = this.onload; this.onload = () => { prev?.(); fn(); }; } }
+  removeEventListener() {}
 };
 
 // <video> (obs/jan10) : durée et image lues par ffprobe/ffmpeg ; poser currentTime décode l'image voulue (posée sur `_img`, que le
