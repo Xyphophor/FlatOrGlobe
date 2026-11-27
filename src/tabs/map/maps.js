@@ -138,7 +138,13 @@ function urbinas(redraw) {
   if (!URB.img) { URB.img = new Image(); URB.img.src = URB.src; }
   const im = URB.img;
   if (im.complete && im.naturalWidth) return im;
-  if (redraw && !im._wait) { im._wait = true; im.addEventListener("load", () => { im._wait = false; redraw(); }, { once: true }); }
+  if (redraw && !im._wait) {
+    im._wait = true;
+    const done = () => { im._wait = false; redraw(); };
+    // l'image de l'environnement des vidéos (scripts/prerender-env.mjs) n'a qu'onload, pas addEventListener
+    if (typeof im.addEventListener === "function") im.addEventListener("load", done, { once: true });
+    else { const prev = im.onload; im.onload = () => { prev?.(); done(); }; }
+  }
   return null;
 }
 const CAT = "rgba(124,45,18,0.6)", SHIFT = "rgba(124,45,18,0.75)";
