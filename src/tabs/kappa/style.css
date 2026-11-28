@@ -1,0 +1,7 @@
+/* Onglet kappa : la vitrine en 16:9 (3:4 sur téléphone), comme celle de persp. */
+#tab-kappa canvas.kappa-reel { width: 100%; display: block; aspect-ratio: 16 / 9; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fbfaf7; cursor: pointer; }
+@media (max-width: 559px) { #tab-kappa canvas.kappa-reel { aspect-ratio: 3 / 4; } }
+/* Onglet kappa : tableau de synthèse aligné à gauche ; sur téléphone, un peu plus serré. */
+#tab-kappa .cnav-table th, #tab-kappa .cnav-table td { text-align: left; }
+@media (max-width: 420px) { #tab-kappa .ka-sum th, #tab-kappa .ka-sum td { font-size: 12.5px; padding: 4px 5px; } }
+@media (max-width: 559px) { #tab-kappa .ka-sum { display: block; overflow-x: auto; } }

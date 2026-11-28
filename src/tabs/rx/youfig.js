@@ -3,6 +3,8 @@
 // (userlogic.js) et le place parmi les stations. RIEN n'est envoyé ni stocké : les
 // fichiers sont lus par FileReader, le résultat vit dans cette fermeture et disparaît
 // avec la page. La figure n'est pas une carte d'export (la position resterait dans l'image).
+import { drawFitBox, fitBoxHeight } from "../../core/fitbox.js";
+import { heightCorr } from "./grouplogic.js";
 import { setupCanvas } from "../../core/canvas.js";
 import { coastLines } from "../../core/globe25d.js";
 import { GPS_RAW } from "../../data/presets/gps-raw.js";
@@ -44,7 +46,8 @@ export function mountGpsYou(root, tr, onSolved = () => {}) {
     const r = solveLog(nav, log);
     if (!r) { say(`${tr("gu-none", "No epoch could be solved. Is the navigation file of the same day")} (${d.iso}, ${tr("gu-day", "day")} ${d.doy})? <a href="${folder}" target="_blank" rel="noopener">${folder}</a>`); return; }
     const S = GPS_RAW.stations, E = rawData().earth, W = earthFromStations([...S, { id: "you", xyz: r.x }]);
-    res = { r, v: youVsStations(r, E, W, E.c), d };
+    // r de l'encadré : hauteurs au-dessus du meilleur plan contre la flèche de la sphère des stations et vous
+    res = { r, v: youVsStations(r, E, W, E.c), d, rB: heightCorr([...S.map((s) => s.xyz), r.x], W.c, W.R) };
     const g = r.geo, ns = g.lat >= 0 ? "N" : "S", ew = g.lon >= 0 ? "E" : "W";
     say(`${tr("gu-solved", "Solved")}: ${num(r.n)}/${num(r.tried)} ${tr("gu-epochs2", "epochs")} (${r.systems.map((s) => (s === "G" ? "GPS" : "Galileo")).join(" + ")}, ${num(r.sats, 1)} ${tr("gu-sats", "satellites on average")}), `
       + `${num(Math.abs(g.lat), 1)}° ${ns}, ${num(Math.abs(g.lon), 1)}° ${ew} ${tr("gu-rounded", "(rounded to 0.1°)")}. `
@@ -83,12 +86,13 @@ export function mountGpsYou(root, tr, onSolved = () => {}) {
     // tuiles
     const tiles = [
       [`${num(r.dist / 1000, 1)} km`, tr("gu-t1", "your distance to the centre of the coordinates (the origin the solution started from)"), you],
-      [`R = ${num(v.Rwith / 1000, 1)} km`, `${tr("gu-t2", "sphere through the stations and you; without you")} ${num(v.R / 1000, 1)} km`, globe],
+      [null, null, globe, { R: `${num(v.Rwith / 1000, 1)} km`, r: res.rB, rOf: tr("gq-rof", "height, sphere"), scatter: `${tr("gu-t2b", "without you")} ${num(v.R / 1000, 1)} km`, chi2nu: null, title: tr("gu-t2t", "sphere through the stations and you") }],
       [`${num(r.resid.rms, 1)} m rms`, `${tr("gu-t3", "your pseudorange residuals")}${r.fixGap != null ? `; ${num(r.fixGap, 1)} m ${tr("gu-t3b", "from the phone's own fix")}` : ""}`, globe],
     ];
-    const cols = wide ? 3 : 1, tw = (W - 8 - 8 * cols) / cols, th = wide ? 52 : 40;
-    tiles.forEach(([big, small, col], k) => {
+    const cols = wide ? 3 : 1, tw = (W - 8 - 8 * cols) / cols, bsz = wide ? 10 : 9.5, th = Math.max(wide ? 52 : 40, ...tiles.filter((t) => t[3]).map((t) => fitBoxHeight({ ...t[3], size: bsz })));   // l'encadré de la sphère (core/fitbox.js)
+    tiles.forEach(([big, small, col, box], k) => {
       const x = 8 + (k % cols) * (tw + 8), y = 8 + Math.floor(k / cols) * (th + 6);
+      if (box) { drawFitBox(ctx, x, y, { ...box, col, size: bsz, maxW: tw }); return; }
       ctx.fillStyle = "#f3f5f7"; ctx.fillRect(x, y, tw, th);
       label(ctx, big, x + 8, y + 15, { col, font: "600 15px system-ui, sans-serif" });
       wrapLabel(ctx, small, x + 8, y + 30, tw - 12, { col: SOFT, font: FONT, lh: 11 });

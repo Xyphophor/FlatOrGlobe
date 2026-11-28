@@ -10,7 +10,7 @@ The site compares two models of the Earth against the same measurements. A compa
 
 **1. Never exaggerate silently.** Every scene is drawn at true scale by default. When a curve would be invisible at true scale, the planet is drawn smaller, with the factor printed on the figure, and both axes keep the same scale; an axis is never stretched on its own, because that turns a sphere into an ellipse and hides the very tilt the drawing has to show. A figure that is not to scale says so on its stamp. *Why:* stretched axes are the most common trick in videos on both sides; if we used it, nothing else on the page could be trusted.
 
-**2. Numbers come from geometry, never from the drawing.** Every angle, height or distance printed on the site is computed from the true geometry and the data, never measured on a picture, exaggerated or not. The same reading of the terrain, the same air, the same instrument feed both models, so that any difference between them comes from the shape and from nothing else ([Basics](/ai/phys.md#phys-h2dem), terrain models).
+**2. Numbers come from geometry, never from the drawing.** Every angle, height or distance printed on the site is computed from the true geometry and the data, never measured on a picture, exaggerated or not. The same reading of the terrain, the same air, the same instrument feed both models, so that any difference between them comes from the shape and from nothing else ([Math](/ai/math.md#math-h2dem), terrain models).
 
 ## Fairness: the flat model gets its best case
 
@@ -58,7 +58,7 @@ $${\bar x = \frac{\sum x_i/\sigma_i^2}{\sum 1/\sigma_i^2}},\qquad \sigma_{\bar x
 
 **The weighted mean.** xᵢ is the result of method i and σᵢ its uncertainty; a precise method counts more, as 1/σᵢ². χ² is the sum of the squared gaps (xᵢ − x̄)/σᵢ, and N the number of methods. When B is above 1, the methods disagree more than their stated uncertainties allow, and σ_x̄ is multiplied by B[2][3].
 
-**16. Terrain heights: the model's, and the published one beside it.** Horizons and summits are read from terrain models, the same reading for both models. When the model's height differs from the published one, the page gives both and says what the published one would change; it does not swap one for the other by hand ([Basics](/ai/phys.md#phys-h2dem), terrain models).
+**16. Terrain heights: the model's, and the published one beside it.** Horizons and summits are read from terrain models, the same reading for both models. When the model's height differs from the published one, the page gives both and says what the published one would change; it does not swap one for the other by hand ([Math](/ai/math.md#math-h2dem), terrain models).
 
 ## Openness: sources, limits and data
 
@@ -72,7 +72,7 @@ $${\bar x = \frac{\sum x_i/\sigma_i^2}{\sum 1/\sigma_i^2}},\qquad \sigma_{\bar x
 
 **21. Transparency: every number can be traced to its files and its code.** Each section that shows evidence has a “code · data” button. It names the data the section is computed from, the code that turns them into its numbers and the files it generates. Beside every data file, a `.explain` file says where it comes from exactly (the archive and the request, or the publication and its pages), how it was obtained (downloaded, or typed by hand from a scan, by whom), the checks it went through, what could still be wrong in it, and its SHA-256 hash. When a file's terms do not allow republishing it, only its hash and its source are given, with the reason, so that anyone can fetch it and check it is the same. Nothing is hidden, the known errors included.
 
-**See also**[Basics](/ai/phys.md)[What would refute each model](/ai/falsify.md)[Results](/ai/results.md)[Refraction](/ai/ref.md)[Contributions](/ai/contrib.md)
+**See also**[Math](/ai/math.md)[Physics](/ai/phys.md)[What would refute each model](/ai/falsify.md)[Results](/ai/results.md)[Refraction](/ai/ref.md)[Contributions](/ai/contrib.md)
 
 ## Sources for this tab
 

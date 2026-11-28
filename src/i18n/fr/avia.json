@@ -349,5 +349,11 @@
   "fx-mesh-2": "sphère : d = R ω, R libre",
   "fx-mesh-3": "un nombre de plus : R → ∞ redonne le plan",
   "fx-mesh-s": "schéma",
-  "rc-flights": "vols"
+  "rc-flights": "vols",
+  "rd-corr": "routes tombées",
+  "rd-scat": "dispersion",
+  "rd-corr0": "r et la dispersion dès la troisième route",
+  "eo-pairs": "paires de lignes",
+  "amr-routes": "routes",
+  "jf-rof": "multiple, Ω et R"
 }

@@ -12,6 +12,8 @@
 
 ## 01 · Down is a direction, and it is not the same direction twice [evidence: check — Where the radius enters: meridian arcs published after reduction on the spheroid.]
 
+**Eratosthenes' calculation run on many pairs of shadows**, on a sphere and on a plane under the flat model's nearby Sun: [Curvature](/ai/kappa.md#ka-h2erat).
+
 Hang a plumb bob in Marseille and another in Lille and ask the only question that matters: are the two strings **parallel**? On a plane they must be — “down” is one fixed direction for the whole world, so every vertical is a copy of every other. On a sphere they cannot be: each one points at the centre, so two of them separated by **d** along the ground make an angle **d/R** between them, which is 1° for every 111.2 km you travel. Both statements are testable, because the direction of a plumb line can be compared with the stars, and that comparison is exactly what *astronomic latitude* is.
 
 $${\frac{d}{R}}$$

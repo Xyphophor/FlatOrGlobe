@@ -45,7 +45,7 @@ export const PROSE = [
  },
  {
   "t": "fcap",
-  "html": "<b>From the plateau de Caussols, bend the Earth and watch the sea horizon fall.</b> The view east from 1,210 m, drawn from the IGN's LiDAR and, beyond 45 km, the Copernicus model: the Riviera, Mont Agel, Monte Ceppo in Italy, Corsica 222 km out to sea. It starts on a plane, where the sea rises towards eye level and Mont Agel, 77 m lower than the eye, sits 7′ below the horizon. Its height here is the terrain model's, 1,133 m, not the published 1,148 m: the IGN's LiDAR has no data on the summit, a military site, and the models that fill the gap differ by up to 30 m around it (<a class=\"xref\" href=\"#tab-phys/phys-h2dem\" data-xref=\"phys\" data-sec=\"phys-h2dem\">Basics</a>, terrain models). With 1,148 m it would sit 5′ below the plane's horizon instead of 7′, and 48′ above the refracted globe's instead of 47′. The Earth is then curved to its measured radius, 6,371 km: the horizon falls to 67′ below eye level and Mont Agel rises clear of it. Refraction comes last, and it works the other way: bending light along the curve, it acts as a larger radius, R/(1−k) with k = 0.13, and lifts the far scene back by a few arcminutes (horizon 62′ below). The terrain between the three computed models is interpolated for the animation; the horizon and the named summits are computed at every step. Last, once the model has stopped changing, <a href=\"https://x.com/Xyphophor\" target=\"_blank\" rel=\"noopener\">Xyphophor</a>'s photograph from this spot fades in, then blinks fully on and off to show how well it lands on the drawing. It is framed as the refracted globe prefers (focal length from the camera, heading, tilt and roll fitted on the near summits): its sea horizon lies within 0.1° of that model's and about 45′ below a plane's, and Mont Agel stands 42′ above it.",
+  "html": "<b>From the plateau de Caussols, bend the Earth and watch the sea horizon fall.</b> The view east from 1,210 m, drawn from the IGN's LiDAR and, beyond 45 km, the Copernicus model: the Riviera, Mont Agel, Monte Ceppo in Italy, Corsica 222 km out to sea. It starts on a plane, where the sea rises towards eye level and Mont Agel, 77 m lower than the eye, sits 7′ below the horizon. Its height here is the terrain model's, 1,133 m, not the published 1,148 m: the IGN's LiDAR has no data on the summit, a military site, and the models that fill the gap differ by up to 30 m around it (<a class=\"xref\" href=\"#tab-math/math-h2dem\" data-xref=\"math\" data-sec=\"math-h2dem\">Math</a>, terrain models). With 1,148 m it would sit 5′ below the plane's horizon instead of 7′, and 48′ above the refracted globe's instead of 47′. The Earth is then curved to its measured radius, 6,371 km: the horizon falls to 67′ below eye level and Mont Agel rises clear of it. Refraction comes last, and it works the other way: bending light along the curve, it acts as a larger radius, R/(1−k) with k = 0.13, and lifts the far scene back by a few arcminutes (horizon 62′ below). The terrain between the three computed models is interpolated for the animation; the horizon and the named summits are computed at every step. Last, once the model has stopped changing, <a href=\"https://x.com/Xyphophor\" target=\"_blank\" rel=\"noopener\">Xyphophor</a>'s photograph from this spot fades in, then blinks fully on and off to show how well it lands on the drawing. It is framed as the refracted globe prefers (focal length from the camera, heading, tilt and roll fitted on the near summits): its sea horizon lies within 0.1° of that model's and about 45′ below a plane's, and Mont Agel stands 42′ above it.",
   "k": "dip-caus-cap"
  },
  {
@@ -159,6 +159,11 @@ export const PROSE = [
  },
  {
   "t": "notes",
+  "html": "<b>Tangents, osculating circles and what curvature means</b>, from a curve to a surface: <a class=\"xref\" href=\"#tab-kappa/ka-h2def\" data-xref=\"kappa\" data-sec=\"ka-h2def\">Curvature</a>.",
+  "k": "ka-link-dip2"
+ },
+ {
+  "t": "notes",
   "html": "Here is the same measurement with <b>no ground drawn at all</b>. Every line is one sightline to the horizon, taken from a real vantage point on the <em>same vertical</em> — a beach, a ship's bridge, a lighthouse, a cliff, a summit, an airliner — each tipped below horizontal by its own measured dip δ(h). Nothing else is plotted: no circle, no arc, no Earth. Yet the lines cannot enter a certain region, and that forbidden region has a shape. The dip angles alone carve the planet out of the negative space. <b>Click any sightline</b> to see which altitude it came from.",
   "k": "73253bf6"
  },
@@ -180,6 +185,11 @@ export const PROSE = [
   "t": "h2",
   "html": "Measuring the Earth from one dip angle",
   "k": "84acea2b"
+ },
+ {
+  "t": "notes",
+  "html": "<b>The mathematics behind it</b>, curvature as the turn of the vertical between the eye and the horizon, and the same calculation run on readings taken on a plane, which gives no radius: <a class=\"xref\" href=\"#tab-kappa/ka-h2dip\" data-xref=\"kappa\" data-sec=\"ka-h2dip\">Curvature</a>.",
+  "k": "ka-link-dip1"
  },
  {
   "t": "notes",

@@ -2,6 +2,10 @@
 // Tonga A4 − A2 sur sept jours, Krakatoa, la Tsar Bomba), sur une même règle en kilomètres, et le résultat commun.
 // Les nombres viennent tous de lambpool.js ; ici on ne fait que dessiner. Figure SVG (FIG), à l'échelle de son axe.
 import { FIG } from "../../core/fig.js";
+import { figFitBox, pearson } from "../../core/fitbox.js";
+import { TONGA_STATIONS } from "../../data/presets/seis-tonga.js";
+import { tongaTheta, tongaRadii } from "./tongalogic.js";
+import { krakGapFits, krakRadii } from "./krakatoalogic.js";
 import { axesStamp as axes } from "../../core/formfigs.js";
 import { makeT } from "../../core/i18n.js";
 import { lambPool, tsarLaps } from "./lambpool.js";
@@ -41,7 +45,7 @@ export function lambValues(lang = "en") {
 
 /** Une ligne par lot : ses rayons (points), sa médiane (trait), puis le résultat commun et ses bandes. */
 function figPool(t, lang) {
-  const P = lambPool(), W = 380, rowH = 34, top = 40, Ht = top + rowH * (P.sets.length + 1) + 44, pl = 12, pr = 12, r0 = 5900, r1 = 6900;
+  const P = lambPool(), W = 380, rowH = 34, top = 40, Ht = top + rowH * (P.sets.length + 1) + 44 + 82, pl = 12, pr = 12, r0 = 5900, r1 = 6900;
   const X = (R) => pl + ((Math.max(r0, Math.min(r1, R)) - r0) / (r1 - r0)) * (W - pl - pr), km = (x) => fmt(lang, Math.round(x));
   const f = FIG.make({ w: W, h: Ht, alt: t("lp-fig-alt", "Every lap of a pressure wave measured at one station, turned into a radius and placed on a ruler from 5,900 to 6,900 km: one row per set (Hunga Tonga's two passages added, Hunga Tonga's lap after seven days, Krakatoa's laps both ways, the 1961 explosion's lap in Japan). Each set clusters within about 100 km; the sets sit between {lo} and {hi} km. The bottom row is all of them together: {r} km, with bands for its uncertainty, and the mean radius of 6,371 km dashed inside them.", { lo: km(Math.min(...P.sets.map((s) => s.med))), hi: km(Math.max(...P.sets.map((s) => s.med))), r: km(P.med) }) });
   const yA = top + rowH * (P.sets.length + 1) + 6;
@@ -67,6 +71,16 @@ function figPool(t, lang) {
   band(P.lo95, P.hi95, 7, "#e3eafc"); band(P.med - P.sigma, P.med + P.sigma, 7, "#c3d1f6"); band(P.med - P.stat, P.med + P.stat, 3, C.globe);
   f.dot(X(P.med), y, { r: 4.5, c: C.globe });
   axes(f, t, t("lp-fig-s", "blue: both ways · violet: one way"));
+  // l'encadré de l'ajustement (core/fitbox.js, 2026-11-27) : tous les tours ensemble ; pas une droite, dispersion = écart type
+  { const all = P.sets.flatMap((x) => x.R), m = all.reduce((a, b) => a + b, 0) / all.length, sd = Math.sqrt(all.reduce((a, b) => a + (b - m) ** 2, 0) / (all.length - 1));
+    // r : l'intervalle entre passages divisé par le tour de son éruption, contre (2π − 2θ)/2π (Tonga et Krakatoa ; la Tsar
+    // n'a pas les deux passages à chaque station)
+    const med = (v) => { const b = [...v].sort((x, y) => x - y); return b[b.length >> 1]; };
+    const tl = tongaRadii().lap, okT = new Set(tl.rows.filter((_, i) => tl.keep[i]).map((r) => r.id));
+    const TG = TONGA_STATIONS.filter((s) => s.a1 != null && s.a2 != null && okT.has(s.id)), tT = med(TG.map((s) => s.a1 + s.a2));
+    const kg = krakGapFits(), KG = kg.rows.filter((_, i) => kg.globe.keep[i]), kr = krakRadii(), tK = med(kr.rows.filter((_, i) => kr.keep[i]).map((r) => r.T));
+    const gx = [...TG.map((s) => 1 - tongaTheta(s) / Math.PI), ...KG.map((r) => 1 - r.theta / 180)], gy = [...TG.map((s) => (s.a2 - s.a1) / tT), ...KG.map((r) => r.gap / tK)];
+    figFitBox(f, W - pr, yA + 28, { R: P.med, range: `± ${km(P.sigma)} km`, r: pearson(gx, gy), rOf: t("fb-gapn", "gap ÷ lap, Tonga + Krakatoa"), scatter: `${km(sd)} km (${t("fb-sd", "SD")})`, chi2nu: null, title: `${all.length} ${t("fb-laps", "laps")}`, col: C.globe, align: "right" }); }
   return f;
 }
 

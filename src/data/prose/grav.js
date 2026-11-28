@@ -37,6 +37,11 @@ export const PROSE = [
  },
  {
   "t": "notes",
+  "html": "<b>Eratosthenes' calculation run on many pairs of shadows</b>, on a sphere and on a plane under the flat model's nearby Sun: <a class=\"xref\" href=\"#tab-kappa/ka-h2erat\" data-xref=\"kappa\" data-sec=\"ka-h2erat\">Curvature</a>.",
+  "k": "ka-link-grav"
+ },
+ {
+  "t": "notes",
   "html": "Hang a plumb bob in Marseille and another in Lille and ask the only question that matters: are the two strings <b>parallel</b>? On a plane they must be — “down” is one fixed direction for the whole world, so every vertical is a copy of every other. On a sphere they cannot be: each one points at the centre, so two of them separated by <b>d</b> along the ground make an angle <b>d/R</b> between them, which is 1° for every 111.2 km you travel. Both statements are testable, because the direction of a plumb line can be compared with the stars, and that comparison is exactly what <em>astronomic latitude</em> is.",
   "k": "gv-p1"
  },

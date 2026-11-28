@@ -1,5 +1,6 @@
 // Figures de l'onglet sat (epic27, 2026-10-16) : un schéma par formule, et les tracés des données
 // (src/data/presets/sat-doppler.js, fog build sat-doppler).
+import { figFitBox, fbNum, pearson } from "../../core/fitbox.js";
 import { FIG } from "../../core/fig.js";
 import { stamp, axesStamp, drawFormulaFigs as drawAll } from "../../core/formfigs.js";
 import { SAT_DOPPLER as D } from "../../data/presets/sat-doppler.js";
@@ -86,7 +87,7 @@ function figEll(tr) {
 
 // Les distances au centre contre la latitude, et l'ellipse ajustée.
 function figBall(tr) {
-  const f = FIG.make({ w: 380, h: 230, alt: tr("fx-ball-alt", "Each receiver's distance from the centre of the orbits against its latitude: the points follow an ellipse, about 6,378 kilometres at the equator and 6,357 near the poles, a few points higher for receivers on high plateaus") });
+  const f = FIG.make({ w: 380, h: 320, alt: tr("fx-ball-alt", "Each receiver's distance from the centre of the orbits against its latitude: the points follow an ellipse, about 6,378 kilometres at the equator and 6,357 near the poles, a few points higher for receivers on high plateaus") });
   const X0 = 50, X1 = 368, Y0 = 190, Y1 = 26, lo = 6350, hi = 6385;
   const x = (la) => X0 + (la + 90) / 180 * (X1 - X0), y = (r) => Y0 - (r - lo) / (hi - lo) * (Y0 - Y1);
   for (const v of [6350, 6360, 6370, 6380]) { f.dash(X0, y(v), X1, y(v), { c: "#e7e3da" }); f.note(X0 - 4, y(v) + 4, v.toLocaleString("en"), { anchor: "end", size: 9 }); }
@@ -96,6 +97,9 @@ function figBall(tr) {
   f.path(poly(pts), { c: C.globe, w: 1.6 });
   for (const s of D.stations) f.dot(x(s.lat), y(Math.min(hi, s.r)), { r: 3, c: s.drop ? C.faint : C.ink });
   f.note(4, 224, tr("fx-ball-1", "distance from the centre of the orbits (km) against latitude"), { size: 9.5 });
+  // l'encadré de l'ajustement (core/fitbox.js, 2026-11-27) : une ellipse ajustée, pas une droite ; dispersion = rms des distances
+  const kept = keptStations(D), rms = Math.sqrt(kept.reduce((q, s) => q + (s.r - E.a * (1 - E.f * Math.sin(s.lat * Math.PI / 180) ** 2)) ** 2, 0) / kept.length);
+  figFitBox(f, X1, 236, { R: `${fbNum(E.a, 1)} km`, r: pearson(kept.map((s) => Math.sin(s.lat * Math.PI / 180) ** 2), kept.map((s) => s.r)), rOf: "r, sin²φ", scatter: `${fbNum(rms, 2)} km rms`, chi2nu: null, title: `${fbNum(kept.length)} ${tr("fx-ball-2", "receivers")} · a, 1/f = ${fbNum(1 / E.f)}`, col: C.globe, align: "right" });
   axesStamp(f, tr, tr("fx-ball-st", "axis from 6,350 km"));
   return f;
 }

@@ -214,5 +214,10 @@
   "er-set-tonga-lap": "Tonga 2022, A4 − A2",
   "er-set-krak": "Krakatoa 1883",
   "er-set-tsar": "Nouvelle-Zemble 1961",
-  "er-all": "tous ensemble"
+  "er-all": "tous ensemble",
+  "fb-sd": "écart type",
+  "fb-st": "stations",
+  "fb-laps": "tours",
+  "fb-gap": "intervalle, 2π − 2θ",
+  "fb-gapn": "intervalle ÷ tour, Tonga + Krakatoa"
 }

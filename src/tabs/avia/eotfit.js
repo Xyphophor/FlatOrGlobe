@@ -6,6 +6,7 @@
 // l'échelle, donc minuscule) ; la croix tiretée, les valeurs vraies (Ω₀,
 // 6 371 km). En haut, hors cadre : R = ∞ (le terme de rotation du globe posé
 // sur un plan, Ω libre) et l'écart qu'il laisse.
+import { drawFitBox } from "../../core/fitbox.js";
 import { setupCanvas } from "../../core/canvas.js";
 import { eotData } from "./eot.js";
 import { colors, label, wrapLabel, dot, makeLoop, INK, SOFT } from "./draw.js";
@@ -42,6 +43,8 @@ export function mountEotFit(root, tr) {
       for (let t = 0; t <= 64; t++) { const u = Math.cos(t / 32 * Math.PI), v = Math.sin(t / 32 * Math.PI), px = X(J.om + a * u), py = Y(J.km + c * u + d * v); t ? ctx.lineTo(px, py) : ctx.moveTo(px, py); }
       ctx.fill(); ctx.globalAlpha = 1;
       dot(ctx, X(J.om), Y(J.km), 4.5, globe);
+      // l'encadré de l'ajustement (core/fitbox.js, 2026-11-27) : deux paramètres libres (Ω, R), pas une droite ; dispersion = rms
+      drawFitBox(ctx, x1 - 4, y1 - 4, { R: J.km, range: `± ${num(J.seKm)} km`, r: J.multR, rOf: tr("jf-rof", "multiple, Ω and R"), scatter: `${num(J.rms, 1)} mGal rms`, chi2nu: null, title: `Ω = ${num(J.om, 4)} Ω₀`, col: globe, size: W < 480 ? 9 : 10, align: "right", valign: "bottom" });
       label(ctx, tr("jf-best", "all pairs (±1 σ)"), X(J.om) + 8, Y(J.km) + 12, { col: globe, font: "600 10.5px system-ui, sans-serif", halo: true });
       // R = ∞ : hors cadre, en haut
       const fx = X(Math.min(oHi, J.flat.om));

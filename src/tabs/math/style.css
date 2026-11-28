@@ -1,0 +1,3 @@
+/* Onglet math (2026-11-27, sorti de phys) : des tableaux de texte (notations, altitudes), alignés à gauche. */
+#tab-math .cnav-table th, #tab-math .cnav-table td { text-align: left; }
+#tab-math td.num { font-family: var(--mono); }

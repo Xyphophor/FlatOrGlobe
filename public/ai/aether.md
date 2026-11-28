@@ -76,7 +76,7 @@ Shorten the arm along the motion by √(1 − v²/c²) and the two round trips t
 
 ## 1905: Einstein drops the aether
 
-**Einstein started from two rules instead of a medium.** First, the principle of relativity: the laws of physics are the same in every frame moving uniformly, so no experiment inside a smoothly moving cabin can tell its speed; Galileo had said it for ships in 1632 ([Basics](/ai/phys.md)). Second, light in vacuum always goes at c, whatever the speed of its source. Together they seem to contradict each other, until one accepts that time and length depend on the frame. Lorentz's transformations then follow from the two rules, with no aether behind them, and Einstein wrote that the introduction of a “light aether” would prove superfluous[14]. The aether was not disproved by one experiment: it became undetectable by construction, and then unnecessary.
+**Einstein started from two rules instead of a medium.** First, the principle of relativity: the laws of physics are the same in every frame moving uniformly, so no experiment inside a smoothly moving cabin can tell its speed; Galileo had said it for ships in 1632 ([Physics](/ai/phys.md)). Second, light in vacuum always goes at c, whatever the speed of its source. Together they seem to contradict each other, until one accepts that time and length depend on the frame. Lorentz's transformations then follow from the two rules, with no aether behind them, and Einstein wrote that the introduction of a “light aether” would prove superfluous[14]. The aether was not disproved by one experiment: it became undetectable by construction, and then unnecessary.
 
 *Figure caption:* **Two identical light clocks.** Each tick is a round trip of light between two mirrors. The clock on the right passes at 0.6 c: its light, at the same speed c, runs along a longer zigzag, so each tick takes γ = 1.25 times longer. After ten ticks of the clock at rest, the moving one has ticked eight times. Click to pause.
 
@@ -135,7 +135,7 @@ A is the area enclosed by the loop, Ω its rate of turn, λ the wavelength, φ t
 
 > **What the videos say.** “Einstein himself admitted that you cannot tell whether the Earth moves around the Sun or the Sun around the Earth. So the heliocentric model is a choice, not a fact, and the globe with it.”
 
-**The quotation is real.** Einstein and Infeld wrote in 1938, introducing general relativity, that if the laws of physics hold in every coordinate system, “the struggle, so violent in the early days of science, between the views of Ptolemy and Copernicus would then be quite meaningless. Either CS could be used with equal justification”[29]. It means one may *compute* in a frame where the Earth stands still. In that frame, though, the equations contain centrifugal and Coriolis terms, and a far-off universe sweeping round at enormous speeds; the pendulums, the bulge, the gyroscopes, the satellites come out exactly as in the other frame ([Basics](/ai/phys.md), frames of reference). Choosing a frame changes the velocities in the description; it does not change what instruments read.
+**The quotation is real.** Einstein and Infeld wrote in 1938, introducing general relativity, that if the laws of physics hold in every coordinate system, “the struggle, so violent in the early days of science, between the views of Ptolemy and Copernicus would then be quite meaningless. Either CS could be used with equal justification”[29]. It means one may *compute* in a frame where the Earth stands still. In that frame, though, the equations contain centrifugal and Coriolis terms, and a far-off universe sweeping round at enormous speeds; the pendulums, the bulge, the gyroscopes, the satellites come out exactly as in the other frame ([Physics](/ai/phys.md), frames of reference). Choosing a frame changes the velocities in the description; it does not change what instruments read.
 
 $${\Delta D = D\left(1 - \sqrt{1 - \frac{v^2}{c^2}}\right) \approx D\,\frac{v^2}{2c^2}}$$
 
@@ -157,7 +157,7 @@ $${\Delta D = D\left(1 - \sqrt{1 - \frac{v^2}{c^2}}\right) \approx D\,\frac{v^2}
 
 **In one sentence:** the aether was a reasonable idea, tested honestly for a century; the experiments that found nothing found nothing for any Earth, round or flat; the ones that found something found rotation and orbital motion; and relativity, which came out of them, is checked every day by the clocks that position a phone. Where the Earth's shape is actually measured, angles, distances, times and shadows, see the other tabs and [Results](/ai/results.md).
 
-**See also**[Orbit](/ai/orb.md)[Rotation](/ai/rot.md)[Foucault](/ai/fou.md)[GPS](/ai/gps.md)[Basics](/ai/phys.md)[Results](/ai/results.md)
+**See also**[Orbit](/ai/orb.md)[Rotation](/ai/rot.md)[Foucault](/ai/fou.md)[GPS](/ai/gps.md)[Physics](/ai/phys.md)[Results](/ai/results.md)
 
 ## Sources for this tab
 

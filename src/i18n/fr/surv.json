@@ -94,5 +94,8 @@
   "sv-tri-globe-2": "vraie échelle · glisser pour orbiter",
   "sv-tri-flat-1": "carte plate, pôle au centre, meilleure échelle",
   "sv-tri-flat-2": "côté sur la carte ÷ côté mesuré",
-  "sv-tri-all": "tous ensemble"
+  "sv-tri-all": "tous ensemble",
+  "sv-tri-read-c": "corrélation de l'excès avec l'aire r = {c} (un plan : proche de 0)",
+  "fx-trid-6": "dispersion",
+  "fx-trid-7": "triangles"
 }

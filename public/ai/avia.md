@@ -182,6 +182,8 @@ The plane stalls at 56.2 min rms; the sphere settles at 11.2 min, 5 times better
 
 ## The radius of the Earth from a stopwatch and a flight plan [evidence: measurement]
 
+**The same calculation run on trips simulated on a sphere and on the flat-earth map**, where the sphere's formula for the angle does not make the plane fit: [Curvature](/ai/kappa.md#ka-h2trav).
+
 Times alone give a speed, not a size: on a globe twice as large, aircraft twice as fast would keep the same timetable. The [Seismology](/ai/seis.md) tab solves this with a known wave speed; aircraft carry their own. The cruise speed filed in each flight plan is a *true airspeed*, measured through the air, independent of the ground's shape.[10] So fit R:
 
 *Figure caption:* **One radius per route.** Each dot is the radius implied by one route's round-trip time and filed airspeed, against the route's length; teal, the fit over all of them; dashed, the Earth's mean radius. Shortest route first.
@@ -191,7 +193,7 @@ $$\langle t \rangle = \frac{d}{v} \cdot \frac{1}{1 - w^2/v^2} > \frac{d}{v}$$
 
 θ: angle between the two airports at the Earth's centre, from their coordinates · v_TAS: filed true airspeed · ⟨t⟩: mean of the two directions with a wind w along the route, always longer than with no wind
 
-On the 90 round-trip routes with a filed plan: **R = 6,513 km ± 83 km**, t_0 = 17 min, 2.2 % above the Earth's mean radius. Route by route, the long flights give 6,181 km (BNE–SIN) to 7,507 km (CDG–HND), median 6,460 km; Tokyo–London, round by the Arctic, 8,135 km. High, as it should be: every known bias pushes up. Detours from the great circle read as a bigger Earth; the wind does not cancel (about 1% for 100 km/h, the formula above); crosswinds lengthen both legs; a filed airspeed is a plan, not a measurement. On a plane the fit has no radius to find: with the disc's distances, the southern routes would need twice the airspeed.
+On the 90 round-trip routes with a filed plan: **R = 6,513 km ± 83 km**, t_0 = 17 min, 2.2 % above the Earth's mean radius. The times follow the distance over the airspeed with a correlation r = 0.993 (a plane would give no single line: the curvature tab runs the same calculation on a flat map); around the line they scatter by 26 min, and no error is filed for each flight, so no χ²/ν is given. Route by route, the long flights give 6,181 km (BNE–SIN) to 7,507 km (CDG–HND), median 6,460 km; Tokyo–London, round by the Arctic, 8,135 km. High, as it should be: every known bias pushes up. Detours from the great circle read as a bigger Earth; the wind does not cancel (about 1% for 100 km/h, the formula above); crosswinds lengthen both legs; a filed airspeed is a plan, not a measurement. On a plane the fit has no radius to find: with the disc's distances, the southern routes would need twice the airspeed.
 
 ## Around the world: east–west and north–south [evidence: prediction]
 

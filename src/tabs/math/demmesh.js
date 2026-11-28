@@ -1,4 +1,4 @@
-// Animation « maillage » de l'onglet phys (2026-11-25, demande du propriétaire : « un mesh qui gagne et perd des nœuds et des
+// Animation « maillage » de l'onglet math (phys jusqu'au 2026-11-27 ; 2026-11-25, demande du propriétaire : « un mesh qui gagne et perd des nœuds et des
 // trous, et qui affiche la différence ») : à gauche (ou en haut), le relief inventé vu en oblique, maillé à 5, 10, 20 puis 40 m ;
 // les nœuds qui partent descendent sur la surface de la grille plus grossière, puis reviennent ; ensuite un trou dans la grille
 // fine, comblé par un autre modèle (20 m, plus haut). À droite (ou en bas), la coupe par le sommet : le vrai sol, le maillage,

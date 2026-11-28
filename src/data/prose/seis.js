@@ -410,6 +410,11 @@ export const PROSE = [
   "k": "sq-h7"
  },
  {
+  "t": "notes",
+  "html": "<b>Speed × time over angle, run on trips simulated on a sphere and on the flat-earth map</b>: one radius on the sphere, a radius that depends on the route on the plane: <a class=\"xref\" href=\"#tab-kappa/ka-h2trav\" data-xref=\"kappa\" data-sec=\"ka-h2trav\">Curvature</a>.",
+  "k": "ka-link-seis"
+ },
+ {
   "t": "lead",
   "html": "Experiment 1e above is a recipe for redoing this measurement yourself: download one earthquake, keep the surface wave, read off arrival times, and plot them against distance both ways. This section is that recipe already carried out — not on numbers this page computed, but on 479 real Rayleigh-wave (LR) arrivals picked by real seismograph networks for nine real earthquakes between 2004 and 2022, pulled from the same public bulletin Experiment 1e's tooling talks to.<sup class=\"ref\"><a href=\"#s-seis-n13\">[13]</a></sup> Every row is one instrument's own reading of its own trace.",
   "opener": false,
@@ -456,13 +461,15 @@ export const PROSE = [
   "t": "table",
   "id": "",
   "tbody": "seisRadiusRows",
-  "caption": "The same boxes as numbers — median radius, interquartile range, and departure from 6,371 km",
+  "caption": "The same boxes as numbers — median radius, interquartile range, departure from 6,371 km, the correlation r of the arrival times with the distance over the speed (a plane would give no single line), and their scatter around the line through zero; the picks carry no published error, so no χ²/ν",
   "head": [
    "Earthquake",
    "n",
    "Median R",
    "Quartiles",
-   "Off 6,371 km"
+   "Off 6,371 km",
+   "r",
+   "Scatter"
   ],
   "k": "seis-m4"
  },
@@ -524,13 +531,15 @@ export const PROSE = [
   "t": "table",
   "id": "",
   "tbody": "seisRadiusRows2",
-  "caption": "The corrected boxes as numbers — compare each row against the same row in the uncorrected table above",
+  "caption": "The corrected boxes as numbers — compare each row against the same row in the uncorrected table above; r and the scatter as in that table",
   "head": [
    "Earthquake",
    "n",
    "Median R",
    "Quartiles",
-   "Off 6,371 km"
+   "Off 6,371 km",
+   "r",
+   "Scatter"
   ],
   "k": "seis-m7"
  },

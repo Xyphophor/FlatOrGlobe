@@ -84,7 +84,7 @@ function values(lang, D) {
     fdTiltLo: sg(Math.min(...P.map((p) => p.tilt))), fdTiltHi: sg(Math.max(...P.map((p) => p.tilt))),
     fdGapLo: nf(gaps[0], 1), fdGapHi: nf(gaps[gaps.length - 1], 1), fdGapMed: nf(gaps[(gaps.length - 1) >> 1], 1),
     fdR: fit(fFace), fdRa: fit(fAir), fdRgps: fit(fGps), fdRacc: fit(fAccOff), fdBacc: `${sg(fAccOff.b)} (${sg(fAccOff.bLo)} … ${sg(fAccOff.bHi)})`,
-    fdPD: nf(pAcc.param), fdPb: sg(pAcc.b), fdPrms: nf(pAcc.rms, 2), fdGrms: nf(gAcc.rms, 2), fdBratio: nf(pAcc.b / gAcc.b, 0),
+    fdPD: nf(pAcc.param), fdPb: sg(pAcc.b), fdPrms: nf(pAcc.rms, 2), fdGrms: nf(gAcc.rms, 2), fdBratio: nf(pAcc.b / gAcc.b, 0), fdGchi: nf(gAcc.chi2nu, 1), fdPchi: nf(pAcc.chi2nu, 1), fdCorr: nf(fFace.r, 2),   // χ²/ν et r : 2026-11-27 (règle de kappa)
   };
   // le rayon que chaque lecture donne seule, telle quelle puis l'erreur de zéro (lumière droite) retirée
   const pair = (a) => `${nf(Math.min(...a))} ${lang === "fr" ? "et" : "and"} ${nf(Math.max(...a))}`;

@@ -1,6 +1,8 @@
-// Onglet "phys" (2026-10-25, demande du propriétaire) : les bases de physique dont les autres onglets se servent
-// (unités, dérivées, référentiels, Newton, mouvement circulaire, conservation, ondes, constantes, incertitude,
-// et, depuis le 2026-10-27, la mécanique : forces, poulies, chocs, magnétisme, balistique). Explication seulement : aucun h2 ne porte de badge de preuve. Prose : src/data/prose/phys.js.
+// Onglet "phys" (2026-10-25, demande du propriétaire) : la physique dont les autres onglets se servent (unités, mouvement,
+// référentiels, Newton, mouvement circulaire, conservation, ondes, constantes et, depuis le 2026-10-27, la mécanique : forces,
+// poulies, chocs, magnétisme, balistique). « Basics » jusqu'au 2026-11-27, puis coupé en deux (propriétaire) : les angles, vecteurs,
+// dérivées, la mesure et les modèles de terrain sont dans l'onglet math (src/tabs/math/). Explication seulement : aucun h2 ne
+// porte de badge de preuve. Prose : src/data/prose/phys.js.
 import { registerSources } from "../../core/citations.js";
 import { renderProse } from "../../core/prose.js";
 import { getProseDict, makeT } from "../../core/i18n.js";
@@ -11,7 +13,6 @@ import { CONSTANTS, physValues } from "./logic.js";
 import { drawFormulaFigs } from "./formfigs.js";
 import { mechValues } from "./mechanics.js";
 import { mountCollReel } from "./collreel.js";
-import { mountDemMesh } from "./demmesh.js";
 import { mountTable, mountPulley, mountKick, mountFrames, mountImpulseSum, mountMag, mountBallistic } from "./anims.js";
 import "./style.css";
 
@@ -24,7 +25,7 @@ const KINDS = { defined: "exact, defines a unit", measured: "universal, measured
 
 export default {
   key: KEY,
-  label: "Basics",
+  label: "Physics",
 
   mount(container) {
     const lang = document.documentElement.lang || "en";
@@ -43,7 +44,7 @@ export default {
     drawSymbols(KEY);
     // les animations de la mécanique (2026-10-27)
     this._anims = [];
-    for (const [id, mount] of [["physAnimTable", mountTable], ["physAnimPulley", mountPulley], ["physAnimKick", mountKick], ["physAnimFrames", mountFrames], ["physAnimISum", mountImpulseSum], ["physAnimMag", mountMag], ["physAnimBall", mountBallistic], ["physAnimDem", mountDemMesh]]) {
+    for (const [id, mount] of [["physAnimTable", mountTable], ["physAnimPulley", mountPulley], ["physAnimKick", mountKick], ["physAnimFrames", mountFrames], ["physAnimISum", mountImpulseSum], ["physAnimMag", mountMag], ["physAnimBall", mountBallistic]]) {
       const cv = container.querySelector(`#${id}`); if (cv) this._anims.push(mount(cv, tr, lang));
     }
     // la vitrine du choc (2026-10-27)

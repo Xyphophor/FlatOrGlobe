@@ -65,6 +65,7 @@ export const PROSE = [
   { t: "callout", flat: true, k: "map-merc2", html: "<b>The flat model and Mercator.</b> A flat Earth drawn as Mercator's rectangle would need the poles infinitely long and every route straight on it to be the shortest; neither is the case, and no flat-earth proposal uses it. A flat map with straight shortest routes has to be azimuthal, centred somewhere, which is where the rest of this tab goes." },
 
   { t: "h2", k: "map-h2gauss", html: "Gauss, 1827: no flat map can be true everywhere" },
+  { t: "notes", k: "ka-link-map", html: "<b>Gauss's curvature K = κ₁κ₂</b>, the principal curvatures and why a cylinder unrolls and a sphere does not: <a class=\"xref\" href=\"#tab-kappa/ka-h2surf\" data-xref=\"kappa\" data-sec=\"ka-h2surf\">Curvature</a>." },   // renvoi vers kappa (2026-11-27)
   { t: "notes", k: "map-gauss1", html: "<b>Every projection gives something up, and this is a theorem, not a lack of skill.</b> Carl Friedrich Gauss showed in 1827 that the curvature of a surface can be measured from inside it, from lengths alone, and is unchanged by any bending without stretching" + R(12) + ". A sheet of paper has zero curvature and a sphere 1/R²; so no map of any part of a sphere keeps every length. In 1881 Nicolas Auguste Tissot published how to see what each map gives up: draw small equal circles on the globe and look at the ellipses they become" + R(13) + "." },
   { t: "people", ids: ["gauss"] },
   { t: "formula", flat: false, style: "border-left-color:var(--globe)", k: "map-fx-tis", fig: "mapFxTissot",

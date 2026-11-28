@@ -177,7 +177,7 @@ function radiusValues() {
   const hl = per.find((p) => p.key === "HND-LHR");
   const nm = (k) => k.replace("-", "–");
   return {
-    rfR: `${num(F.R)} km`, rfSe: `${num(F.se)} km`, rfN: num(F.n), rfT0: `${num(F.t0 * 60)} min`,
+    rfR: `${num(F.R)} km`, rfSe: `${num(F.se)} km`, rfN: num(F.n), rfT0: `${num(F.t0 * 60)} min`, rfCorr: num(F.r, 3), rfScat: `${num(F.scatter * 60)} min`,
     rfPct: `${num((F.R / 6371 - 1) * 100, 1)} %`,
     rfLo: `${num(long[0].R)} km (${nm(long[0].key)})`, rfHi: `${num(long.at(-1).R)} km (${nm(long.at(-1).key)})`,
     rfMed: `${num(median(per.map((p) => p.R)))} km`, rfHL: `${num(hl.R)} km`,

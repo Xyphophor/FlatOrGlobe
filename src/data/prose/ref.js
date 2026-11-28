@@ -626,7 +626,7 @@ export const PROSE = [
   "t": "callout",
   "flat": true,
   "k": "rf-sp4b",
-  "html": "<b>The flat model, at its best.</b> On a plane both verticals are parallel: with straight light the two angles add to 180°, and with light bent toward the ground, as it is here, to less. Of the <span class=\"cv\" data-v=\"zenN\">…</span> lines, every sum is above 180°; the smallest excess is <span class=\"cv\" data-v=\"zenMinE\">…</span>″, on a line of <span class=\"cv\" data-v=\"zenMinS\">…</span> km, and the excess grows with the length of the line. <b>What would vindicate it:</b> sums at or below 180°, or an excess that does not grow with the distance."
+  "html": "<b>The flat model, at its best.</b> On a plane both verticals are parallel: with straight light the two angles add to 180°, and with light bent toward the ground, as it is here, to less. Of the <span class=\"cv\" data-v=\"zenN\">…</span> lines, every sum is above 180°; the smallest excess is <span class=\"cv\" data-v=\"zenMinE\">…</span>″, on a line of <span class=\"cv\" data-v=\"zenMinS\">…</span> km, and the excess grows with the length of the line: their correlation is r = <span class=\"cv\" data-v=\"zenCorr\">…</span> (a plane gives r near 0), and the line through zero has the slope of an effective radius of <span class=\"cv\" data-v=\"zenFitReff\">…</span> km. Around it the excesses scatter by <span class=\"cv\" data-v=\"zenScat\">…</span>″, mostly the refraction changing from line to line and from year to year; Schott prints no reading error for each line apart from the adjustment, so no χ²/ν is given. <b>What would vindicate it:</b> sums at or below 180°, or an excess that does not grow with the distance."
  },
  {
   "t": "notes",

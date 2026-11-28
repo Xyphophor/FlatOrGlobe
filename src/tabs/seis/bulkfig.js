@@ -4,6 +4,7 @@
 // rayon de toutes les arrivées de Rayleigh. Aucun de ces séismes ne se choisit dans un menu :
 // ils donnent du volume. Nombres : le pré-calcul ; ici on ne fait que dessiner.
 import { setupCanvas } from "../../core/canvas.js";
+import { figFitBox, fbNum } from "../../core/fitbox.js";
 import { FIG } from "../../core/fig.js";
 import { BULK_P, BULK_SHADOW, BULK_RADIUS } from "../../data/presets/seis-bulk.js";
 
@@ -184,7 +185,7 @@ export function drawBulkRadius(host, t) {
   const rows = [[t("rb-r-all", "every arrival"), R.all], [t("rb-r-allc", "every arrival, path-corrected"), R.allc],
     [t("rb-r-med", "one median per earthquake"), R.med], [t("rb-r-medc", "the same, path-corrected"), R.medc]];
   const rowH = 38, topY = 40, n = rows.length, lastY = topY + (n - 1) * rowH;
-  const gridBottom = lastY + 24, tickY = gridBottom + 18, trueLabelY = tickY + 18, H = trueLabelY + 26;
+  const gridBottom = lastY + 24, tickY = gridBottom + 18, trueLabelY = tickY + 18, H = trueLabelY + 26 + (R.fit ? 92 : 0);   // + l'encadré
   const f = FIG.make({ w: 380, h: H, alt: t("rb-r-alt", "Box plots of the Earth's radius from every Rayleigh-wave arrival of {q} large shallow earthquakes, with and without the ocean/continent correction, and of the per-earthquake medians", { q: R.quakes }) });
   const VMAX = 10000, X0 = 150, X1 = 360, bx = (v) => Math.max(X0 - 6, Math.min(X1 + 10, X0 + (v / VMAX) * (X1 - X0)));
   [0, 2500, 5000, 7500, 10000].forEach((v) => { f.dash(bx(v), 22, bx(v), gridBottom, { c: "#e7e3da", dash: "3 3" }); f.note(bx(v), tickY, (v / 1000).toFixed(1), { anchor: "middle" }); });
@@ -200,6 +201,10 @@ export function drawBulkRadius(host, t) {
     f.line(bx(s.med), y - 9, bx(s.med), y + 9, { c: col, w: 2.6 });
   });
   f.note(4, trueLabelY, t("sq-radius-axis", "radius (thousand km)"));
+  // l'encadré de l'ajustement (core/fitbox.js, 2026-11-27) : toutes les arrivées, r des temps contre Δ/v, dispersion autour de
+  // la droite par zéro ; pas de χ²/ν, les pointés LR de l'ISC n'ont pas d'erreur publiée
+  if (R.fit) figFitBox(f, 376, trueLabelY + 14, { R: R.all.med, r: R.fit.r, scatter: `${fbNum(R.fit.scat, 1)} min`, chi2nu: null,
+    title: t("rb-r-n", "{n} arrivals, {q} earthquakes", { n: fbNum(R.all.n), q: R.quakes }), col: C.ink, align: "right" });
   f.notToScale(t("rb-r-stamp", "{q} earthquakes 2000–2023, outliers not drawn", { q: R.quakes }));
   f.mountIn(host);
 }

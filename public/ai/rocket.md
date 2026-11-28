@@ -100,7 +100,7 @@ $${\Delta v = u\,\ln\frac{m_0}{m_1}}$$
 
 **In one sentence:** pressure is molecules hitting walls; a closed chamber cancels its pushes, an opening leaves one push unbalanced, a fire keeps it going, and the gas carries off backwards exactly the momentum the rocket gains forwards. The air adds nothing but a push the wrong way. What rockets have put into orbit is measured in the [Satellites](/ai/sat.md) tab, from the Doppler shift of their signals.
 
-**See also**[Basics](/ai/phys.md)[Atmosphere](/ai/atmo.md)[Orbit](/ai/orb.md)[Satellites](/ai/sat.md)[GPS](/ai/gps.md)[Results](/ai/results.md)
+**See also**[Physics](/ai/phys.md)[Atmosphere](/ai/atmo.md)[Orbit](/ai/orb.md)[Satellites](/ai/sat.md)[GPS](/ai/gps.md)[Results](/ai/results.md)
 
 ## Sources for this tab
 

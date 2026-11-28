@@ -28,6 +28,8 @@ Rowbotham sighted eight inches above the water, deep in the refraction layer; Wa
 
 ## 02 · Triangulation: the angles confess [evidence: check — Where the radius enters: the spherical excess compared with the globe's prediction.]
 
+**Why the excess is the area divided by R²** (Girard, Gauss), and the same angle sums run on triangles simulated on a plane: [Curvature](/ai/kappa.md#ka-h2inside).
+
 Historic mapping was built from chains of triangles between hilltop stations — theodolite angles plus one measured baseline. On a plane, every triangle's angles sum to exactly 180°. On a sphere they sum to more, by the **spherical excess**, proportional to the triangle's area — and surveyors do not debate this, they *budget* for it, triangle by triangle. Pick a documented network:
 
 *Figure caption:* **Gauss 1823 · Brocken–Hohehagen–Inselsberg.** Each angle 60.0014°; the sum exceeds 180° by **14.9″** — and Gauss *measured* 14.85″: the area law and the theodolite agree to a hundredth of an arcsecond. equal-area equilateral shown; real sides 69 / 85 / 107 km. The triangle rotates with the sphere; drag to orbit.
@@ -189,19 +191,19 @@ $$\frac{1}{R^2} = \frac{\sum \varepsilon A}{\sum A^2}$$
 
 α₁, α₂, α₃ are the angles observed at the three stations and ε their excess over 180° (in radians in the second line); A is the triangle's area. The least-squares line through zero gives 1/R². The areas use no radius: each length is carried from a measured base line through the triangles with the observed angles alone, as plane triangles, then Heron's formula. Where a concluded or misprinted angle breaks the chain, 180° minus the two sound angles carries the length on; that triangle never enters the fit.
 
-- 1,458 triangles, 21 misprints set aside, 31 beyond 3σ**R = 6,383 km (16–84 %: 6,375 – 6,393)**with a constant offset of −0.06″: 6,373 kmplane, best offset +3.9″: residuals 8.0″ against 1.30″
+- 1,458 triangles, 21 misprints set aside, 31 beyond 3σ**R = 6,383 km (16–84 %: 6,375 – 6,393)**correlation of excess with area r = 0.987 (a plane: near 0)with a constant offset of −0.06″: 6,373 kmplane, best offset +3.9″: residuals 8.0″ against 1.30″
 
-**The radius survey by survey. Range: 16 to 84 % of a bootstrap over printed pages (∞: a flat surface is not excluded). Plane: how much larger the flat model's residuals are (χ² ratio), with its best constant offset.**
+**The radius survey by survey. Range: 16 to 84 % of a bootstrap over printed pages (∞: a flat surface is not excluded). r: correlation of the excess with the area, which needs no model (a plane gives r near 0, a sphere near 1). Scatter: the residuals around the line, in seconds of arc; the volumes print no reading error independent of their adjustment, so no χ²/ν is given. Plane: how much larger the flat model's residuals are (χ² ratio), with its best constant offset.**
 
-| Survey | Triangles | R | Range | Plane |
-| --- | --- | --- | --- | --- |
-| ● 39th parallel, USA (Schott 1900) | 679 | **6,380 km** | 6,372 – 6,389 | × 75.7 |
-| ● Eastern Oblique Arc, USA (Schott 1902) | 433 | **6,461 km** | 6,413 – 6,513 | × 8.2 |
-| ● Dunkirk–Barcelona (Delambre & Méchain) | 94 | **5,364 km** | 5,123 – 5,596 | × 1.3 |
-| ● Cape of Good Hope (Maclear 1866) | 83 | **6,352 km** | 6,295 – 6,421 | × 7.3 |
-| ● Greenwich–Paris (Roy 1790) | 12 | **24,471 km** | 7,401 – ∞ | × 1.0 |
-| ● Struve arc, Baltic to Danube (1860) | 171 | **6,502 km** | 6,306 – 6,724 | × 1.4 |
-| **all together** | 1,458 | **6,383 km** | 6,375 – 6,393 | × 37.5 |
+| Survey | Triangles | R | Range | r | Scatter | Plane |
+| --- | --- | --- | --- | --- | --- | --- |
+| ● 39th parallel, USA (Schott 1900) | 679 | **6,380 km** | 6,372 – 6,389 | 0.99 | 1.25″ | × 75.7 |
+| ● Eastern Oblique Arc, USA (Schott 1902) | 433 | **6,461 km** | 6,413 – 6,513 | 0.94 | 1.35″ | × 8.2 |
+| ● Dunkirk–Barcelona (Delambre & Méchain) | 94 | **5,364 km** | 5,123 – 5,596 | 0.50 | 1.77″ | × 1.3 |
+| ● Cape of Good Hope (Maclear 1866) | 83 | **6,352 km** | 6,295 – 6,421 | 0.93 | 1.92″ | × 7.3 |
+| ● Greenwich–Paris (Roy 1790) | 12 | **24,471 km** | 7,401 – ∞ | 0.23 | 1.12″ | × 1.0 |
+| ● Struve arc, Baltic to Danube (1860) | 171 | **6,502 km** | 6,306 – 6,724 | 0.54 | 1.12″ | × 1.4 |
+| **all together** | 1,458 | **6,383 km** | 6,375 – 6,393 | **0.99** | 1.30″ | × 37.5 |
 
 *Figure caption:* Each dot is a triangle, coloured by survey: its observed excess against the square root of its area, roughly its side. The globe's curve is the fitted ε = A/R²; the dashed line is the flat model's best case, a constant offset added to every triangle, which cannot follow the size. The largest triangle, Mount Nebo – Tushar – Wheeler Peak in Utah and Nevada, covers 14,524 km² and exceeds 180° by 75.3″.
 

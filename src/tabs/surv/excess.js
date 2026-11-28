@@ -3,6 +3,7 @@
 // surv-excess`).
 // Ici, seulement l'affichage : la lecture, le nuage excès/aire, le schéma de la formule, et les triangles posés
 // sur le globe et sur la carte plate azimutale (positions imprimées, pour le dessin seulement).
+import { figFitBox, fbNum } from "../../core/fitbox.js";
 import { FIG } from "../../core/fig.js";
 import { stamp, axesStamp } from "../../core/formfigs.js";
 import { setupCanvas } from "../../core/canvas.js";
@@ -33,13 +34,14 @@ export function fillTri(root, tr, lang = "en") {
   host.innerHTML =
     `<span>${tr("sv-tri-read-n", "{n} triangles, {m} misprints set aside, {d} beyond 3σ").replace("{n}", nf(f.n)).replace("{m}", X.misprints).replace("{d}", f.dropped)}</span>` +
     `<span class="g"><b>${tr("sv-tri-read-r", "R = {r} km (16–84 %: {lo} – {hi})").replace("{r}", nf(f.R)).replace("{lo}", nf(f.lo)).replace("{hi}", nf(f.hi))}</b></span>` +
+    `<span class="g">${tr("sv-tri-read-c", "correlation of excess with area r = {c} (a plane: near 0)").replace("{c}", nf(f.r, 3))}</span>` +
     `<span class="g">${tr("sv-tri-read-b", "with a constant offset of {b}″: {r} km").replace("{b}", nf(f.bias, 2).replace("-", "−")).replace("{r}", nf(f.Rbias))}</span>` +
     `<span class="f">${tr("sv-tri-read-f", "plane, best offset {o}″: residuals {fs}″ against {gs}″").replace("{o}", "+" + nf(f.flatOffset, 1)).replace("{fs}", nf(f.flatScatter, 1)).replace("{gs}", nf(f.scatter, 2))}</span>`;
   const tb = root.querySelector("#sv-tbTri"); if (!tb) return;
   const R = (x) => (x == null ? "∞" : nf(x));
   tb.innerHTML = X.pubs.map((p, i) => { const q = p.fit; return `<tr><td style="text-align:left"><span style="color:${PUB_COL[i]}">●</span> ${pubName(p.id, lang)}</td>` +
-    `<td>${nf(q.n)}</td><td class="g"><b>${R(q.R)} km</b></td><td>${R(q.lo)} – ${R(q.hi)}</td><td class="f">× ${nf(q.chi2Ratio, 1)}</td></tr>`; }).join("") +
-    `<tr><td style="text-align:left"><b>${tr("sv-tri-all", "all together")}</b></td><td>${nf(f.n)}</td><td class="g"><b>${R(f.R)} km</b></td><td>${R(f.lo)} – ${R(f.hi)}</td><td class="f">× ${nf(f.chi2Ratio, 1)}</td></tr>`;
+    `<td>${nf(q.n)}</td><td class="g"><b>${R(q.R)} km</b></td><td>${R(q.lo)} – ${R(q.hi)}</td><td>${nf(q.r, 2)}</td><td>${nf(q.scatter, 2)}″</td><td class="f">× ${nf(q.chi2Ratio, 1)}</td></tr>`; }).join("") +
+    `<tr><td style="text-align:left"><b>${tr("sv-tri-all", "all together")}</b></td><td>${nf(f.n)}</td><td class="g"><b>${R(f.R)} km</b></td><td>${R(f.lo)} – ${R(f.hi)}</td><td><b>${nf(f.r, 2)}</b></td><td>${nf(f.scatter, 2)}″</td><td class="f">× ${nf(f.chi2Ratio, 1)}</td></tr>`;   // r et dispersion : 2026-11-27 (règle de kappa)
 }
 
 /** Schéma : sur le plan la somme fait 180° ; sur la sphère 180° plus l'aire divisée par R². */
@@ -68,7 +70,7 @@ export function figFxTri(tr) {
 
 /** Les triangles : excès observé contre √aire (à peu près le côté). La courbe du globe ajustée, le meilleur décalage du plan. */
 export function figTriData(tr) {
-  const f = FIG.make({ w: 380, h: 270, alt: tr("fx-trid-alt", "Observed excess of each survey triangle against the square root of its area. The points rise along a parabola, the excess growing with the area as on a sphere; the dashed horizontal line, the flat model's best constant offset, misses both the small and the large triangles") });
+  const f = FIG.make({ w: 380, h: 372, alt: tr("fx-trid-alt", "Observed excess of each survey triangle against the square root of its area. The points rise along a parabola, the excess growing with the area as on a sphere; the dashed horizontal line, the flat model's best constant offset, misses both the small and the large triangles") });
   const X0 = 46, X1 = 364, Y0 = 228, Y1 = 30, XMAX = 125, YMIN = -6, YMAX = 80;
   const px = (s) => X0 + (s / XMAX) * (X1 - X0), py = (e) => Y0 - ((e - YMIN) / (YMAX - YMIN)) * (Y0 - Y1);
   for (const v of [0, 20, 40, 60, 80]) { f.dash(X0, py(v), X1, py(v), { c: "#e7e3da", dash: "3 3" }); f.note(X0 - 5, py(v) + 4, `${v}″`, { anchor: "end" }); }
@@ -83,6 +85,9 @@ export function figTriData(tr) {
   const short = { sp4: tr("fx-trid-3", "39th parallel"), sp7: tr("fx-trid-4", "Eastern Oblique Arc"), delambre: "Delambre", maclear: "Maclear", roy: "Roy", struve: "Struve" };
   X.pubs.forEach((p, i) => { const x = X0 + 8 + (i % 2) * 112, y = Y1 + 4 + Math.floor(i / 2) * 13; f.dot(x, y, { r: 3, c: PUB_COL[i] }); f.note(x + 6, y + 4, short[p.id] ?? p.id, { size: 9.5, c: PUB_COL[i] }); });
   f.note(4, 262, tr("fx-trid-5", "excess ε (″) against √area (km)"), { size: 9.5 });
+  // l'encadré de l'ajustement (core/fitbox.js), sous le graphe : pas de χ²/ν, les volumes n'impriment pas d'erreur indépendante
+  figFitBox(f, X1, 272, { R: X.fit.R, range: `${fbNum(X.fit.lo)}–${fbNum(X.fit.hi)} km`, r: X.fit.r, scatter: `${fbNum(X.fit.scatter, 2)}″`, chi2nu: null,
+    title: `${fbNum(X.fit.n)} ${tr("fx-trid-7", "triangles")}`, col: C.globe, align: "right" });
   axesStamp(f, tr, tr("fx-trid-st", "x = √area"));
   return f;
 }

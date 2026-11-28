@@ -60,6 +60,7 @@ const EN = {
   "msr-law": "speed law", "msr-const": "constant speed", "msr-shift": "curvature shifted by", "msr-fitted": "the fitted law",
   "msr-ring": "the Earth's size, 6,371 km (reference only)", "msr-err": "error after rotation", "msr-median": "median", "msr-max": "largest",
   "msr-units": "units", "msr-zoom": "zoom", "msr-true": "same scale in every direction", "msr-quakes": "× = the 8 earthquakes that read the most stations",
+  "msr-stations": "stations",
   "msr-alt": "Animation: stations placed from earthquake P times alone; first as straight-line distances on a plane, which stalls; then from the same start in space, where they settle on a sphere; the lines then drawn as great-circle arcs; the speed of propagation changed, which only changes the size; other speed laws, which keep a sphere; finally the cloud turned onto the real map, with a red dashed arc from each station to its published position",
 };
 
@@ -170,6 +171,8 @@ function readLines(s, T) {
   if (r.v != null) {
     out.push([`${T("msr-v0")}: ${num(r.v, 1)} km/s → R = ${num(100 * r.v * M.space.R)} km`, REEL_COL.ink, true]);
     out.push([`${T("msr-shape")} · ${T("msr-space")} ${sec(M.space.stress)} · ${T("msr-radial")} ${num(r.rel * 100, 1)} %`, TEAL, false]);
+    // l'encadré de l'ajustement (core/fitbox.js) : une forme ajustée, pas une droite ; dispersion = rms des temps P
+    out.fitBox = { R: 100 * r.v * M.space.R, r: "na", scatter: `${sec(M.space.stress)} rms`, chi2nu: null, title: `${num(NS)} ${T("msr-stations")}`, col: TEAL };
   }
   if (r.law) {
     const w = r.law, name = w.tag === "fit" ? T("msr-fitted") : w.tag === "linear" ? T("msr-const") : `${T("msr-shift")} ${w.tag.replace("-", "−")}`;

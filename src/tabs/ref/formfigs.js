@@ -1,6 +1,8 @@
 // Schémas des formules de l'onglet ref (2026-10-01, revue de toute la page,
 // epic15/UC03). Montés par index.js après drawSymbols, avant renderTexIn.
 // Schématiques, tamponnés « not to scale » (règle 1).
+import { figFitBox, fbNum } from "../../core/fitbox.js";
+import { zenFit } from "./values.js";
 import { FIG, polar } from "../../core/fig.js";
 import { stamp, axesStamp, drawFormulaFigs as drawAll } from "../../core/formfigs.js";
 import { r206Rows } from "./logic.js";
@@ -158,7 +160,7 @@ function figLayer(tr) {
 // zéro du plan (au plus 0 : plan et lumière droite ou courbée vers le sol).
 const ZEN_COL = { Colorado: "#b45309", California: "#1d4ed8", Hamilton: "#0f766e" };
 function figZen(tr) {
-  const f = FIG.make({ w: 380, h: 260, alt: tr("fx-zen-alt", "The excess of the two zenith angles over 180 degrees against the length of the line, for 97 lines in Colorado and California: every point lies above zero and they rise with the distance, along the line of a sphere seen through the air; the flat model's zero runs along the bottom") });
+  const f = FIG.make({ w: 380, h: 342, alt: tr("fx-zen-alt", "The excess of the two zenith angles over 180 degrees against the length of the line, for 97 lines in Colorado and California: every point lies above zero and they rise with the distance, along the line of a sphere seen through the air; the flat model's zero runs along the bottom") });
   const X0 = 50, X1 = 368, Y0 = 210, Y1 = 26, sMax = 130, eMax = 3600;
   const x = (s) => X0 + s / sMax * (X1 - X0), y = (e) => Y0 - e / eMax * (Y0 - Y1);
   for (const e of [0, 1200, 2400, 3600]) { f.dash(X0, y(e), X1, y(e), { c: "#e7e3da" }); f.note(X0 - 4, y(e) + 4, `${e / 60}′`, { anchor: "end", size: 9 }); }
@@ -175,6 +177,10 @@ function figZen(tr) {
   f.note(X0 + 64, Y1 + 4, tr("fx-zen-4", "California"), { size: 9.5, c: ZEN_COL.California });
   f.note(X0 + 132, Y1 + 4, "Mt Hamilton", { size: 9.5, c: ZEN_COL.Hamilton });
   f.note(X1, 250, tr("fx-zen-5", "length of the line s (km) · excess E = ζ₁ + ζ₂ − 180°"), { size: 9.5, anchor: "end" });
+  // l'encadré de l'ajustement (core/fitbox.js), sous le graphe : la droite par zéro donne R/(1 − k) ; pas de χ²/ν (aucune erreur
+  // de lecture par ligne à part de la compensation)
+  const Z = zenFit();
+  figFitBox(f, X1, 262, { R: Z.reff, r: Z.r, scatter: `${fbNum(Z.scatter)}″`, chi2nu: null, title: `${fbNum(ZEN_PAIRS.length)} ${tr("fx-zen-6", "lines")} · R/(1−k)`, col: C.globe, align: "right" });
   axesStamp(f, tr, tr("fx-zen-st", "97 lines, Schott 1900"));
   return f;
 }

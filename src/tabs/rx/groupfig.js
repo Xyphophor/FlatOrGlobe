@@ -5,9 +5,10 @@
 // fermer la page efface tout. Tous les participants, le visiteur compris, entrent dans
 // l'ajustement par leur position ARRONDIE, telle qu'elle est dans leur code : deux pages
 // qui ont les mêmes codes donnent donc exactement les mêmes nombres.
+import { drawFitBox, fitBoxHeight } from "../../core/fitbox.js";
 import { setupCanvas } from "../../core/canvas.js";
 import { coastLines } from "../../core/globe25d.js";
-import { encodeCode, decodeCode, groupFit, bulge } from "./grouplogic.js";
+import { encodeCode, decodeCode, groupFit, bulge, heightCorr } from "./grouplogic.js";
 import { geodetic } from "./userlogic.js";
 import { colors, label, wrapLabel, dot, SOFT } from "../avia/draw.js";
 import { num } from "../curv/fmt.js";
@@ -76,13 +77,14 @@ export function mountGpsGroup(root, tr) {
     const { globe, flat } = colors(cv), { parts, G, B } = state, wide = W > 560;
     ctx.fillStyle = "#fdfdfc"; ctx.fillRect(0, 0, W, H);
     const tiles = [
-      [`R = ${num(G.R / 1000, 1)} ± ${num(G.sigmaR / 1000, 1)} km`, `${tr("gq-t1", "sphere through the group alone")} (${num(G.n)} ${tr("gq-n", "participants")}); ${tr("gq-t1b", "sphere rms")} ${num(G.rms / 1000, 2)} km`, globe],
+      [null, null, globe, { R: `${num(G.R / 1000, 1)} km`, range: `± ${num(G.sigmaR / 1000, 1)} km`, r: heightCorr(state.parts.map((p) => p.x), G.c, G.R), rOf: tr("gq-rof", "height, sphere"), scatter: `${num(G.rms / 1000, 2)} km rms`, chi2nu: null, title: `${tr("gq-t1", "sphere through the group alone")} (${num(G.n)})` }],
       [`${num(G.planeRms / 1000, 1)} km rms`, tr("gq-t2", "left by the best plane through the same points"), flat],
       [`${num(G.spanKm)} km`, `${tr("gq-t3", "largest distance in the group; bulge of the sphere over it")} ${num(G.sagKm)} km`, globe],
     ];
-    const cols = wide ? 3 : 1, tw = (W - 8 - 8 * cols) / cols, th = wide ? 52 : 40;
-    tiles.forEach(([big, small, col], k) => {
+    const cols = wide ? 3 : 1, tw = (W - 8 - 8 * cols) / cols, bsz = wide ? 10 : 9.5, th = Math.max(wide ? 52 : 40, ...tiles.filter((t) => t[3]).map((t) => fitBoxHeight({ ...t[3], size: bsz })));   // l'encadré de la sphère (core/fitbox.js)
+    tiles.forEach(([big, small, col, box], k) => {
       const x = 8 + (k % cols) * (tw + 8), y = 8 + Math.floor(k / cols) * (th + 6);
+      if (box) { drawFitBox(ctx, x, y, { ...box, col, size: bsz, maxW: tw }); return; }
       ctx.fillStyle = "#f3f5f7"; ctx.fillRect(x, y, tw, th);
       label(ctx, big, x + 8, y + 15, { col, font: "600 15px system-ui, sans-serif" });
       wrapLabel(ctx, small, x + 8, y + 30, tw - 12, { col: SOFT, font: FONT, lh: 11 });

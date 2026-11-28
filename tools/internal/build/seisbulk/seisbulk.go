@@ -118,6 +118,9 @@ type Quake struct {
 	FBest *seisreloc.Fit   // the best single map, per-quake curve
 	LR    []float64        // Rayleigh radii, v = 3.5 km/s
 	LRc   []float64        // Rayleigh radii, ocean-weighted speed
+	LRt   []float64        // Rayleigh travel times (s), for r and the scatter (2026-11-27)
+	LRx   []float64        // Δ/v (s/km) at 3.5 km/s
+	LRxc  []float64        // Δ/v (s/km) at the ocean-weighted speed
 	Sh    seisshadow.Quake
 	Named string // the named quake's key when it is one of the nine
 }
@@ -135,6 +138,7 @@ type Result struct {
 	ShBest, ShOwn   seisshadow.Map
 	ShQ             []seisshadow.Quake
 	RadAll, RadAllC boxStats
+	RadFit, RadFitC lineStats // r and scatter of the travel times against Δ/v (2026-11-27)
 	RadMed, RadMedC boxStats
 	Log             []string
 }
@@ -233,6 +237,7 @@ func load(root string, ev Event, land *seisradius.LandIndex) (*Quake, error) {
 		rad := r.Dist * math.Pi / 180
 		q.LR = append(q.LR, V20*r.Travel/rad)
 		q.LRc = append(q.LRc, (of*VOcean+(1-of)*VCont)*r.Travel/rad)
+		q.LRt, q.LRx, q.LRxc = append(q.LRt, r.Travel), append(q.LRx, rad/V20), append(q.LRxc, rad/(of*VOcean+(1-of)*VCont))
 	}
 	P, _ := seisreloc.PicksData(b, HmsSec(se.SearchStart[len(se.SearchStart)-8:]), "P")
 	if len(P) < MinP {
@@ -556,8 +561,39 @@ func (r *Result) radius() {
 		}
 	}
 	r.RadAll, r.RadAllC, r.RadMed, r.RadMedC = box(all), box(allc), box(med), box(medc)
+	var t, x, xc []float64
+	for _, q := range r.Quakes {
+		t, x, xc = append(t, q.LRt...), append(x, q.LRx...), append(xc, q.LRxc...)
+	}
+	r.RadFit, r.RadFitC = lineFit(x, t), lineFit(xc, t)
 	r.Log = append(r.Log, fmt.Sprintf("radius: %d arrivals, median %.0f km (corrected %.0f); %d quake medians %.0f km",
 		r.RadAll.N, r.RadAll.Med, r.RadAllC.Med, r.RadMed.N, r.RadMed.Med))
+}
+
+// lineStats is the curvature tab's pair of checks on t = R·x through zero: Pearson's r of t with x, and the
+// sample SD of the residuals (minutes). No χ²/ν: the ISC prints no error for the LR picks.
+type lineStats struct{ R, Scat float64 }
+
+func lineFit(x, t []float64) lineStats {
+	n := float64(len(x))
+	mx, mt, sxt, sxx := 0.0, 0.0, 0.0, 0.0
+	for i := range x {
+		mx += x[i]
+		mt += t[i]
+		sxt += x[i] * t[i]
+		sxx += x[i] * x[i]
+	}
+	mx, mt = mx/n, mt/n
+	c := sxt / sxx
+	a, b, d, ss := 0.0, 0.0, 0.0, 0.0
+	for i := range x {
+		a += (x[i] - mx) * (t[i] - mt)
+		b += (x[i] - mx) * (x[i] - mx)
+		d += (t[i] - mt) * (t[i] - mt)
+		e := t[i] - c*x[i]
+		ss += e * e
+	}
+	return lineStats{R: a / math.Sqrt(b*d), Scat: math.Sqrt(ss/(n-1)) / 60}
 }
 
 func r1(x float64) float64 { return pyjson.Round(x, 1) }
@@ -629,7 +665,8 @@ func (r *Result) File() preset.File {
 		{K: "pole", V: shMapObj(r.ShPole)}, {K: "common", V: shMapObj(r.ShBest)}, {K: "own", V: shMapObj(r.ShOwn)},
 		{K: "hist", V: r.shHist()}}
 
-	rad := pyjson.Obj{{K: "all", V: boxObj(r.RadAll)}, {K: "allc", V: boxObj(r.RadAllC)}, {K: "med", V: boxObj(r.RadMed)}, {K: "medc", V: boxObj(r.RadMedC)}}
+	rad := pyjson.Obj{{K: "all", V: boxObj(r.RadAll)}, {K: "allc", V: boxObj(r.RadAllC)}, {K: "med", V: boxObj(r.RadMed)}, {K: "medc", V: boxObj(r.RadMedC)},
+		{K: "fit", V: pyjson.Obj{{K: "r", V: r4(r.RadFit.R)}, {K: "scat", V: r2(r.RadFit.Scat)}, {K: "rc", V: r4(r.RadFitC.R)}, {K: "scatc", V: r2(r.RadFitC.Scat)}}}}
 	nq := 0
 	for _, q := range r.Quakes {
 		if len(q.LR) > 0 {

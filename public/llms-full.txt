@@ -18,8 +18,10 @@ Everything in one file: [llms-full.txt](/llms-full.txt).
 ## Start
 
 - [Home: Flat or globe? Measure it yourself.](/ai/home.md): Twenty measurements · one shape, one motion
-- [Basics: The basics: units, derivatives, frames of reference, Newton's laws and the constants](/ai/phys.md): Basics · the physics the other tabs use
 - [Rules: The rules of the comparison](/ai/rules.md): Start · how the comparison is run
+- [Math: The mathematics: angles, vectors, derivatives, uncertainty and terrain grids](/ai/math.md): Math · the tools the other tabs use
+- [Curvature: Curvature: how fast a direction turns](/ai/kappa.md): Curvature · what it is, how it is measured, and what a plane gives
+- [Physics: The physics: units, motion, frames of reference, Newton's laws, waves and the constants](/ai/phys.md): Physics · the physics the other tabs use
 
 ## Sky & horizon
 
@@ -93,9 +95,13 @@ Each card below is one thing you can do, or check, without buying anything. No e
 
 - [Results](/ai/results.md) — The Earth's radius measured some fifteen ways, the rotation and the orbit: every result of the site on one page, measurements and checks kept apart.
 
-- [Basics](/ai/phys.md) — Units, derivatives and their notations, frames of reference, Newton's laws, the constants and uncertainties: the definitions every other tab relies on, each with its formula and a figure.
-
 - [Rules](/ai/rules.md) — Fixed before the results: no silent exaggeration, the flat model at its best, the globe never fitted to our data, the same margins for both, refraction always shown, what is set aside and why. The rules every tab follows.
+
+- [Math](/ai/math.md) — Angles and radians, vectors, derivatives and their notations, uncertainty, least squares, r and χ²/ν, and how a terrain model is read: the mathematics every other tab relies on, each with its formula and a figure.
+
+- [Curvature](/ai/kappa.md) — What curvature is, a direction that turns with distance, from curves to surfaces; how it is measured from inside with angles and lengths; and five radius calculations run on a plane, which give no radius.
+
+- [Physics](/ai/phys.md) — Units, position and velocity, frames of reference, Newton's laws, forces and collisions, circular motion, waves and the constants: the physics every other tab relies on, each with its formula and a figure.
 
 ## How to read the labels
 
@@ -204,425 +210,6 @@ The last tab, “What would refute each model”, collects the mirror of every c
 
 ---
 
-# The basics: units, derivatives, frames of reference, Newton's laws and the constants
-
-> Tab "Basics" of *Flat plane or Globe?*. Web page: /#tab-phys. Generated from the rendered page: same text, same computed numbers and sources; drawings are replaced by their captions and descriptions, formulas are TeX. Licence: content and data CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), Xyphophor (https://x.com/Xyphophor); source code MIT; third-party data keep the licence of their source, cited in each tab.
-
-*Basics · the physics the other tabs use*
-
-The other tabs use words like *inertial frame*, *angular velocity*, *dθ/dt*, *GM* or *3σ* without stopping to define them. This tab gathers those definitions in one place, each with its formula and a figure, and says where on the site it is used. Nothing here is a measurement, and nothing here takes sides: Newton's laws, the units and the statistics are the same tools for both models, and any model of the Earth has to obey them.
-
-## Quantities, units and orders of magnitude
-
-**A quantity is a number times a unit.** “6,371 km” says how many times the kilometre fits in the Earth's radius; the number alone means nothing. Since 20 May 2019 the seven base units of the International System (SI) are no longer defined by objects (the platinum kilogram in Sèvres) but by fixing the value of seven constants of nature[1]: the second by the frequency of the caesium atom, the metre by the speed of light, the kilogram by Planck's constant, and so on. Large and small numbers are written in scientific notation: 6.371 × 10⁶ m, 7.29 × 10⁻⁵ rad/s. The exponent counts the places the decimal point moves, so its *order of magnitude* is read at a glance.
-
-**The seven SI base units and the constant that fixes each one since 2019[1]; and the prefixes the site uses.**
-
-| Quantity | Unit | Fixed by |
-| --- | --- | --- |
-| time | second (s) | caesium-133 frequency Δν_Cs = 9 192 631 770 Hz |
-| length | metre (m) | speed of light c = 299 792 458 m/s |
-| mass | kilogram (kg) | Planck's constant h |
-| electric current | ampere (A) | elementary charge e |
-| temperature | kelvin (K) | Boltzmann's constant k_B |
-| amount of substance | mole (mol) | Avogadro's number N_A |
-| luminous intensity | candela (cd) | luminous efficacy K_cd = 683 lm/W |
-| **Prefixes: n (nano) 10⁻⁹ · µ (micro) 10⁻⁶ · m (milli) 10⁻³ · k (kilo) 10³ · M (mega) 10⁶ · G (giga) 10⁹** | | |
-
-$${\theta = \frac{s}{r}}\ \text{(rad)},\qquad 2\pi\ \text{rad} = 360^\circ,\qquad 1^\circ = 60' = 3600''$$
-
-**The radian.** An angle θ in radians is the arc s it cuts on a circle divided by the radius r: a full turn is 2π r / r = 2π rad, so 1 rad = 57.30°. Degrees split into 60 minutes of arc (′) and each minute into 60 seconds of arc (″); 1″ = 4.848 millionths of a radian. The elevation, dip and refraction tabs ([Elevation angles](/ai/elev.md), [Dip](/ai/dip.md), [Refraction](/ai/ref.md)) count in minutes and seconds of arc; every formula of the site computes in radians.
-
-$${\tan\theta \approx \sin\theta \approx \theta}\quad (\theta\ \text{small, in rad})$$
-
-**Small angles.** For a thin triangle, the opposite side over the long side is almost the angle itself in radians. The error is 0.010 % at 1°, 0.25 % at 5° and 1.0 % at 10°. That is why an object of height h seen at a distance d spans an angle of about h/d, and why the site can write the dip of the horizon as √(2h/R).
-
-## Position, velocity, acceleration
-
-**Kinematics describes motion without asking what causes it.** A body's position x is measured from an origin chosen by the observer; its velocity v is how fast x changes, its acceleration a how fast v changes. All three are *vectors*: they have a size and a direction, and adding two of them means putting them end to end. A speed of 900 km/h going east and the same speed going west are two different velocities.
-
-$${\bar v = \frac{\Delta x}{\Delta t} = \frac{x_2 - x_1}{t_2 - t_1}},\qquad \bar a = \frac{\Delta v}{\Delta t}$$
-
-Δ (delta) means “the change in”: Δx is the distance covered between two instants, Δt the time between them. Their ratio is the *mean* velocity over that interval: on a graph of x against t, the slope of the straight chord joining the two points.
-
-$${\vec v = (v_x,\ v_y)},\qquad |\vec v| = \sqrt{v_x^2 + v_y^2},\qquad \vec v_{\text{total}} = \vec v_1 + \vec v_2$$
-
-An arrow over a letter marks a vector. It splits into components along the axes, and its length, the *magnitude*, follows from Pythagoras. An airliner's ground speed is its airspeed plus the wind, added as arrows: that is the [Aviation](/ai/avia.md) tab's triangle of velocities.
-
-**Adding vectors: Chasles' relation.** Going from A to B, then from B to C, ends at the same place as going straight from A to C: written with displacement vectors, AB⃗ + BC⃗ = AC⃗. It is named after the French geometer Michel Chasles (1793–1880), and it holds for any number of steps: AB⃗ + BC⃗ + CD⃗ = AD⃗. Only the start and the end count, not the path. That is what “putting the arrows end to end” means, and it works the same for displacements, velocities, accelerations and forces.
-
-*Figure caption:* **Michel Chasles** 1793–1880
-[Photograph, 19th century (Smithsonian Libraries)](https://commons.wikimedia.org/wiki/File:Michel_Chasles.jpg)
-
-$${\vec{AB} + \vec{BC} = \vec{AC}},\qquad \vec{AB} + \vec{BC} + \vec{CD} = \vec{AD},\qquad \vec{AB} + \vec{BA} = \vec 0$$
-
-The detour through B and the direct path land at the same point. A round trip adds up to the zero vector: AB⃗ + BA⃗ = 0⃗, so BA⃗ = −AB⃗, the same arrow turned round. The order of the steps does not matter either: AB⃗ + BC⃗ = BC⃗ + AB⃗, the two other sides of a parallelogram.
-
-$${\vec a + \vec b = (a_x + b_x,\ a_y + b_y)}$$
-
-**With components, it is ordinary addition.** Put the arrows end to end and look at their shadows on each axis: the shadows add up too. To add two vectors, add their x components together and their y components together. That is how a computer adds forces or velocities, and how the [Aviation](/ai/avia.md) tab adds the wind to an airliner's airspeed.
-
-$${\vec a - \vec b = \vec a + (-\vec b)},\qquad \vec b + (\vec a - \vec b) = \vec a$$
-
-**Subtracting is adding the opposite.** −b⃗ is b⃗ turned round. Drawn from a common origin, a⃗ − b⃗ is the arrow that goes from the tip of b⃗ to the tip of a⃗: the step still needed to get from b⃗ to a⃗, which is Chasles' relation again. This tab uses it twice: the change of velocity Δv⃗ = v⃗₂ − v⃗₁ points to the centre on a circle, and the velocity seen from a moving train is v⃗′ = v⃗ − V⃗.
-
-## Derivatives: one idea, several notations
-
-**A derivative is a rate of change at one instant.** Shrink the interval Δt of the mean velocity towards zero: the chord turns into the tangent to the curve, and its slope is the instantaneous velocity. Newton and Leibniz found this independently in the 1660s–1680s and wrote it differently; Lagrange later added a third way[5][6][7]. All three are still in use, often on the same page, and they mean exactly the same thing.
-
-*Figure caption:* **Isaac Newton** 1642–1727
-[After Godfrey Kneller, 1689](https://commons.wikimedia.org/wiki/File:GodfreyKneller-IsaacNewton-1689.jpg)
-
-*Figure caption:* **Gottfried Wilhelm Leibniz** 1646–1716
-[Christoph Bernhard Francke, c. 1695 (Herzog Anton Ulrich-Museum)](https://commons.wikimedia.org/wiki/File:Christoph_Bernhard_Francke_-_Bildnis_des_Philosophen_Leibniz_(ca._1695).jpg)
-
-*Figure caption:* **Joseph-Louis Lagrange** 1736–1813
-[Anonymous, 19th century](https://commons.wikimedia.org/wiki/File:%D0%9B%D0%B0%D0%B3%D1%80%D0%B0%D0%BD%D0%B6.jpg)
-
-$${v(t) = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t} = \frac{dx}{dt} = \dot x = x\prime(t)}$$
-$$a = \frac{dv}{dt} = \frac{d^2x}{dt^2} = \ddot x = x''(t)$$
-
-“lim” reads “the limit as Δt goes to zero”. dx/dt (Leibniz) keeps the memory of a ratio of two tiny changes; ẋ, with a dot (Newton), is used only for derivatives with respect to time; x′ (Lagrange) says “derivative of x” without naming the variable. Two dots, two primes or d²/dt²: the derivative taken twice, the acceleration.
-
-**The notations, how they are read, and where the site uses them.**
-
-| Written | Read | Means | On this site |
-| --- | --- | --- | --- |
-| Δx | delta x | a finite change of x | everywhere |
-| dx/dt | d x d t (Leibniz) | rate of change of x with t | [Rotation](/ai/rot.md), [Orbit](/ai/orb.md) |
-| ẋ, ẍ | x dot, x double dot (Newton) | first, second derivative in time | θ̇ of Kepler in [Orbit](/ai/orb.md) |
-| f′(x), f″(x) | f prime, f second (Lagrange) | derivative of f, whatever the variable | [Horizon curve](/ai/curv.md) |
-| ∂f/∂x | partial f partial x | derivative in x, the other variables held fixed | [Gravity](/ai/grav.md), [Magnetism](/ai/mag.md) |
-| ∇f | nabla f, gradient | the vector of all partial derivatives: steepest slope | [Gravity](/ai/grav.md), [Atmosphere](/ai/atmo.md) |
-| ∫ f dt | integral of f d t | the sum of f dt: the area under f, the reverse of a derivative | [Refraction](/ai/ref.md) (ray tracing) |
-| Σ | sigma, sum | add up the terms | every fit ([Results](/ai/results.md)) |
-
-$${x(t) = x_0 + \int_{0}^{t} v\,dt}\qquad \Leftrightarrow\qquad \frac{dx}{dt} = v$$
-
-**The integral undoes the derivative.** Cut the time into thin slices dt; in each, the body moves v dt. Adding all the slices (the long S, ∫, is a stretched “sum”) gives the distance covered: the area under the curve of v against t. An inertial navigation unit does exactly that, twice, from its accelerometers ([Aviation](/ai/avia.md)).
-
-$${\nabla h = \left(\frac{\partial h}{\partial x},\ \frac{\partial h}{\partial y}\right)}$$
-
-**Partial derivatives.** When a quantity depends on several variables, such as the height h of a hill at each point (x, y) of a map, ∂h/∂x is its slope walking due east, with y held fixed, and ∂h/∂y its slope walking north. Together they form the gradient ∇h, an arrow pointing straight uphill, across the contour lines. Gravity is minus the gradient of the potential; air pressure falls along its gradient with height.
-
-## Frames of reference
-
-**A frame of reference is an observer with axes and a clock.** Positions, velocities and accelerations only have a value relative to one. A frame is *inertial* when a body on which no force acts moves in a straight line at constant speed, or stays at rest: Newton's laws hold there as written. Galileo noticed in 1632 that, in the closed cabin of a ship sailing smoothly, flies, fish in a bowl and dripping water behave exactly as on land: no experiment inside can tell a uniform motion from rest[3]. Any frame moving at constant velocity relative to an inertial frame is itself inertial.
-
-*Figure caption:* **Galileo Galilei** 1564–1642
-[Justus Sustermans, c. 1640 (National Maritime Museum, London)](https://commons.wikimedia.org/wiki/File:Galileo.arp.300pix.jpg)
-
-$${x\prime = x - V t},\qquad v\prime = v - V,\qquad a\prime = a$$
-
-**Galilean change of frame.** A train moves at constant speed V along the platform. Positions and velocities measured on board (primed) differ from those measured on the platform, but accelerations are the same: V is constant, so it vanishes when differentiated. Forces, which give accelerations, are therefore the same in every inertial frame. That is why a smooth motion cannot be felt, and why “I would feel the Earth move” is not an argument: what is felt is acceleration, not speed.
-
-**A rotating frame is not inertial.** On a merry-go-round, a ball rolled straight across seems to curve, and a passenger feels pushed outwards, although no one pushes. Written in the turning frame, Newton's second law only works if *inertial forces* are added: they are not caused by another body, they come from the frame's own acceleration[8]. The ground under our feet turns once a sidereal day, so it is a rotating frame; its rotation is slow enough that these forces are small, but instruments measure them.
-
-$${\vec a\prime = \vec a - 2\,\vec\Omega\times\vec v\prime - \vec\Omega\times(\vec\Omega\times\vec r)}$$
-$$a_\text{Coriolis} = 2\,\Omega\,v\,\sin\varphi,\qquad a_\text{centrifugal} = \Omega^2\,r$$
-
-Ω is the frame's angular velocity, v′ and r the body's velocity and position in that frame, × the vector (cross) product, φ the latitude. The middle term is the Coriolis acceleration: it deviates anything that moves, to the right in the northern hemisphere; for an airliner at 250 m/s at 45° it is 0.0258 m/s², 0.26 % of gravity. The last term is the centrifugal acceleration, outward from the axis: 0.0339 m/s² at the equator. The figure shows the same ball seen from outside (straight line) and from the turning disc (curved).
-
-**The inertial forces of a turning Earth, their size, and the tabs that measure them[8][11].**
-
-| Force | Per unit mass | On the Earth | On this site |
-| --- | --- | --- | --- |
-| centrifugal | Ω² r cos φ, away from the axis | 0.0339 m/s² at the equator, 0 at the poles | [Gravity](/ai/grav.md) |
-| Coriolis | 2 Ω × v, across the motion | ~10⁻⁴ m/s² per m/s of speed | [Foucault](/ai/fou.md), [Aviation](/ai/avia.md), [Rotation](/ai/rot.md) |
-| Eötvös (vertical part of Coriolis) | 2 Ω v cos φ, up for eastward motion | a ship going east is lighter | [Aviation](/ai/avia.md), [Gravity](/ai/grav.md) |
-| Euler | −(dΩ/dt) × r | negligible: Ω barely changes | — |
-
-## Newton's three laws and universal gravitation
-
-**The three laws (Principia, 1687)[4].** First: a body stays at rest or in uniform straight motion unless a force acts on it; this is what defines an inertial frame. Second: the force equals the mass times the acceleration. Third: when a body pushes another, the other pushes back with an equal and opposite force. **Mass is not weight.** Mass (kg) measures how hard a body is to accelerate and is the same everywhere; weight is the force of gravity on it, m g, in newtons (N = kg·m/s²), and changes with g. A bathroom scale measures a force and displays it divided by a standard g.
-
-$${\sum \vec F = m\,\vec a = m\,\frac{d\vec v}{dt}}\qquad (\sum \vec F = 0\ \Leftrightarrow\ \vec v\ \text{constant})$$
-
-Σ F is the sum of all forces on the body, added as arrows. If they cancel, the acceleration is zero and the first law follows: the first law is the second with no net force. On a book lying on a table, its weight and the table's push cancel.
-
-$${\vec F_{A\to B} = -\vec F_{B\to A}}$$
-
-The apple pulls the Earth up exactly as hard as the Earth pulls the apple down. The Earth's acceleration is far too small to see because its mass is 10²⁴ times larger. The two forces act on different bodies, so they never cancel each other.
-
-$${F = \frac{G\,m_1\,m_2}{r^2}},\qquad g = \frac{G M}{R^2}$$
-
-Every pair of masses attracts along the line joining them, with a force that falls as the square of the distance r between their centres; for a sphere, the attraction outside is as if all its mass were at the centre. G is the gravitational constant, first measured in the laboratory by Cavendish in 1798 with lead balls[10]. At the surface of a sphere of mass M and radius R, the acceleration is g = GM/R²: 9.820 m/s² for the Earth's GM and a radius of 6,371 km. The [Gravity](/ai/grav.md) tab compares measured g with this.
-
-*Figure caption:* **Henry Cavendish** 1731–1810
-[After the only likeness, sketched by William Alexander without his knowledge (G. Wilson, 1851)](https://commons.wikimedia.org/wiki/File:Cavendish_Henry_signature.jpg)
-
-$${a_\text{Moon} = \frac{4\pi^2 r}{T^2} \approx g\,\left(\frac{R}{r}\right)^2}$$
-
-**Newton's Moon test.** The Moon, at r = 60 Earth radii, goes round in T = 27.32 days: to bend its path into that circle it must fall towards the Earth by 2.723 mm/s². Gravity at the surface, weakened by (R/r)² = 1/3,600, gives 2.698 mm/s²[4][17]. The two agree to 1.0 %; counting the Moon's own mass (the Earth and the Moon both turn about their common centre, so G(M+m) in place of GM) gives 2.731 mm/s². The same force makes apples fall and keeps the Moon in orbit.
-
-## Adding forces
-
-**A force is an arrow: a size in newtons and a direction.** Several forces on one body act as a single force, their sum, found by putting the arrows end to end (the parallelogram rule, known to Stevin in 1586 and stated by Newton as the first corollary of his laws[20][4]). In practice, one adds them by components: choose two perpendicular axes, project every force on each, and add the numbers. Then the second law applies to the sum: a body whose forces add up to zero stays at rest or keeps its velocity, whatever the individual forces are. Drawing every force acting on a body, and only those, is called a free-body diagram; it is the first step of every mechanics problem.
-
-*Figure caption:* **A force table, seen from above.** A ring is tied to three ropes that run over pulleys at the rim and carry 3, 4 and 5 kg: each rope pulls the ring towards its pulley with the weight it carries, m g. Starting from the centre, the ring slides along the sum of the three forces (black arrow) until that sum is zero; a little friction is added so that it stops. On the right the same three arrows end to end: the gap between start and finish is the sum, and at equilibrium the polygon closes. Click to pause.
-
-$${\sum F_x = 0,\qquad \sum F_y = 0}\qquad F_x = F\cos\theta,\ \ F_y = F\sin\theta$$
-
-**Equilibrium by components.** θ is the angle of each force from the x axis. A force of 10 N at 30° counts as 8.66 N along x and 5 N along y. A body is in equilibrium when both sums vanish, which is two equations for a flat problem and three in space. With 3, 4 and 5 kg the forces are 29.4, 39.2 and 49.1 N; three forces in the ratio 3 : 4 : 5 close a right triangle, so at equilibrium the two smaller ropes are at 90° to each other.
-
-## Ropes and pulleys
-
-**A rope only pulls, along itself, and with the same tension all along** when its mass and the pulleys' friction can be neglected. A pulley turns that pull in another direction without changing it. Two classic set-ups follow. In Atwood's machine (1784), two masses hang on either side of a pulley: the heavier goes down, the lighter up, both with the same acceleration, smaller than g[21]. In a block and tackle, the load hangs on several strands of the same rope: each strand carries the same tension, so n strands share the weight n ways, and the rope must be pulled n times as far as the load rises. The work done, force times distance, is the same either way: pulleys trade force for distance, they do not create energy.
-
-*Figure caption:* **Two pulley systems, in real time.** Left, Atwood's machine with 3 kg against 2 kg, released from rest: on each block, its weight (amber) and the tension of the rope (blue), the same on both sides; their sum (black) is the block's mass times its acceleration, 1.96 m/s² for both. Right, a block and tackle with four strands lifts 40 kg (392 N) with a pull of 98 N; the hand draws four metres of rope for each metre the load rises. Rope and pulleys without mass or friction. Click to pause.
-
-$${a = \frac{m_1 - m_2}{m_1 + m_2}\,g},\qquad T = \frac{2\,m_1 m_2}{m_1 + m_2}\,g$$
-
-**Two free-body diagrams, two equations.** On the heavy block, m₁ a = m₁ g − T; on the light one, m₂ a = T − m₂ g. Adding them removes T and gives a; putting a back gives T. With 3 and 2 kg: a = g/5 = 1.96 m/s² and T = 23.5 N, between the two weights (19.6 and 29.4 N). Atwood built it to slow free fall down enough to time it by hand[21].
-
-$${F = \frac{m\,g}{n}},\qquad d_{\text{rope}} = n\,h$$
-
-**n strands, n times less force, n times more rope.** n is the number of strands that hold the moving block, h the height the load rises. With four strands, 40 kg are held by 98 N, a quarter of their 392 N; raising them by 1 m takes 4 m of rope. F × d_rope = m g × h: the work is the same.
-
-## Inertia, kicks and collisions at an angle
-
-**A moving body needs no force to keep moving.** A puck on ice keeps its speed and direction; only a force changes them (Newton's first law[4]). A short, hard blow is best described by its impulse J, the force multiplied by the time it lasts, in newton-seconds: it changes the velocity by J/m, as an arrow, in the direction of the blow. The new velocity is the old one plus that arrow, which is why a ball struck sideways does not go where it was struck but somewhere between. In a collision, the two bodies give each other equal and opposite impulses (the third law), so their total momentum, mass times velocity added as arrows, is the same before and after.
-
-*[Figure: Animation: a billiard ball moving slightly diagonally hits another at rest; its velocity is split into components; the contact force changes only the component along the line of centres; momentum and energy are conserved; the same collision seen from two moving inertial frames shows the same acceleration]*
-
-*Figure caption:* **A collision, then two changes of frame.** A 170 g ball moving at 2.00 m/s, slightly on a slant, keeps its velocity while nothing pushes it (first law); near the impact its velocity is split along the line of centres and across it; at the impact, the push between the balls acts along the line of their centres, equal and opposite on each (third law), and changes only the component along that line (second law: J = m v_n); momentum is unchanged and kinetic energy comes back after the squeeze; the push peaks near 1,403 N during the 0.3 ms of contact[29]; then the viewpoint glides, the grid showing it, to a frame that moves with the ball's horizontal speed, and later to one that moves with the ball itself (every image is seen from an inertial frame, so the paths stay straight); the three frames side by side show the same acceleration, 8,252 m/s² at the peak, the same curve three times; and a frame that kept following the ball through the impact would need a fictitious force. Slowed down; the contact, a fraction of a millisecond, is stretched; balls at true scale. Click to pause.
-
-*Figure caption:* **Velocities add as arrows.** Left, a 170 g puck sliding at 2 m/s receives a blow of 0.255 N·s at 60° to its path: Δv = J/m = 1.5 m/s in that direction. It leaves at 3.04 m/s, 25.3° from its old path, the sum of the two arrows. Right, a ball A (170 g, 2.00 m/s, slightly on a slant) hits an identical ball B at rest. At the impact its velocity splits along the line joining the centres (violet, v_n = 1.58 m/s) and across it (grey, v_t = 1.23 m/s). The contact force (green) acts along that line only, equal and opposite on the two balls: it removes A's v_n and gives it to B, J = m v_n = 0.268 N·s, and leaves v_t alone, so the balls part at 90°. Billiard balls stay in contact for about 0.3 ms[29]: the push averages 893 N and peaks near 1,403 N, an acceleration of 841 g. Below, the total momentum, unchanged throughout, and the energy: the kinetic part dips during the contact while the balls are squeezed (light green), then comes back. Seen from above, no friction or spin; the contact, a fraction of a millisecond, is stretched. Click to pause.
-
-$${\vec J = \vec F\,\Delta t = m\,\Delta\vec v}\quad\Rightarrow\quad \vec v^{\prime} = \vec v + \frac{\vec J}{m}$$
-
-**The second law over a short time.** F is the force of the blow, Δt its duration, J their product. The kick of the animation, 0.255 N·s on 170 g, adds 1.5 m/s at 60° to 2 m/s: by components, (2 + 1.5 cos 60°, 1.5 sin 60°) = (2.75, 1.30) m/s, that is 3.04 m/s at 25.3°.
-
-*Figure caption:* **One collision, three inertial frames.** The collision of the panel above, watched at once from the table, from a frame that moves with A's horizontal speed (1.95 m/s: there A only goes straight up before the impact), and from a frame that moves with A's whole velocity before the impact (there A is at rest and B comes at it). The table's dots slide by in the moving frames. Velocities, paths and the total momentum differ from one frame to the next; during the contact the acceleration of A (green) is the same arrow in all three, and the same number, up to 8,252 m/s² (841 g); so is its change of velocity. Each frame finds the total momentum and the energy conserved. (The total kinetic energy happens to be the same in these three frames: with two equal balls, one at rest, ½m|v − u|² + ½m|u|² = ½m|v|² for both of these u. In a frame moving another way it would differ.) None of the frames follows A once it is deflected: each keeps its speed, which is what keeps it inertial. Click to pause.
-
-$${\vec v^{\prime} = \vec v - \vec u}\quad\Rightarrow\quad \Delta\vec v^{\prime} = \Delta\vec v,\qquad \vec F^{\prime} = m\,\frac{\Delta\vec v^{\prime}}{\Delta t} = \vec F$$
-
-**Velocities depend on the frame, accelerations and forces do not.** u is the velocity of one inertial frame relative to the other: here A's horizontal speed, (1.95, 0) m/s, or its whole velocity before the impact, (1.95, 0.43) m/s. Every velocity measured in the moving frame is the one measured from the table minus u. Subtracting the same u before and after the impact leaves the change of velocity untouched, so all three observers measure the same acceleration and, with the same mass, the same force: the contact force is a property of the two balls, not of the observer. Momentum and kinetic energy are conserved in each frame; the momentum takes a different value in each. This is Galileo's relativity (Frames of reference, above): no experiment on the balls can tell which frame is “at rest”. A frame that kept following A through the impact would not be inertial: A would never move in it, and a fictitious force equal and opposite to the contact force would be needed to explain that.
-
-*Figure caption:* **The same total push, three ways.** Three 170 g balls roll at 2 m/s into a headwind. The first is slowed by a steady wind of 0.068 N for 2.5 s; the second by two blows of 0.085 N·s; the third by a single blow of 0.17 N·s. Under each lane, the force against time: a long low strip or tall narrow spikes, but the same grey area, 0.17 N·s. On the right, the velocity and the running sum ∫F dt of the three: different paths, the same end, 1.0 m/s and −0.17 N·s. The balls do not end at the same place: the velocity changed at different moments. Slowed down; the blows are lengthened to be seen; the wind is taken as steady, while real drag grows with speed. Click to pause.
-
-$${\vec J = \int \vec F\,dt = \sum_i \vec J_i}\quad\Rightarrow\quad \Delta\vec v = \frac{\vec J}{m}$$
-
-**Only the area counts.** The integral ∫F dt is the area under the curve of the force against time, and the J_i are the impulses of separate blows. A small force for a long time, a big one for an instant, or several blows in a row change the velocity by the same amount if their areas add up to the same total: here 0.17 N·s on 0.17 kg, 1 m/s. The second law in this form, m Δv = ∫F dt, is how a contact force too short to measure is found from the velocities before and after. When the change happens matters for where the body goes, not for its final velocity.
-
-$${m\vec v = m\vec v_1^{\prime} + m\vec v_2^{\prime}},\quad \tfrac12 m v^2 = \tfrac12 m v_1^{\prime 2} + \tfrac12 m v_2^{\prime 2}\ \Rightarrow\ \vec v_1^{\prime} \perp \vec v_2^{\prime}$$
-
-**Why equal balls leave at right angles.** Momentum says the three velocity arrows close a triangle; energy (an elastic collision loses none) says v² = v₁′² + v₂′², Pythagoras: the triangle has a right angle between v₁′ and v₂′. Hit off-centre by one radius, the target leaves at 30° with 1.73 m/s and the striker at 1.00 m/s, from 2 m/s. Real billiard balls also spin and slide on the cloth, which bends these paths a little.
-
-## Magnetic forces
-
-**A magnetic field pushes on moving charges, sideways.** In 1820 Ørsted saw a compass needle turn when a current flowed in a wire beside it: currents make magnetic fields[22]. Lorentz wrote in 1895 the force on a charge q moving at v in a field B: q v × B, perpendicular to both[23]. Because it is always across the motion, it never changes the charge's speed, only its direction: in a uniform field the charge goes round a circle. Fields add as arrows too: a compass needle points along the sum of all the fields at its place, the Earth's and any other. The Earth's field and its direction everywhere are the subject of the Magnetism tab.
-
-*Figure caption:* **Two magnetic forces.** Left, a positive charge in a field that points into the screen: the force (amber) stays at right angles to the velocity (blue) and points to the centre, so the charge circles at constant speed. A proton at 1 km/s in 50 µT, the order of the Earth's field, circles on 21 cm; an electron at the same speed on 0.11 mm. Right, a compass seen from above, with a vertical wire just north of it: when 5 A flow upward in the wire, at 5 cm it adds 20 µT pointing east to the 20 µT of the Earth's horizontal field, and the needle turns by 45° to point along the sum; the current cut, it comes back. Not to scale. Click to pause.
-
-$${\vec F = q\,\vec v \times \vec B},\qquad r = \frac{m\,v}{|q|\,B}$$
-
-**The cross product** v × B is an arrow perpendicular to both v and B, of size v B sin(angle between them); its direction follows the right hand (fingers from v to B, the thumb gives the force for a positive charge). For a velocity across the field the force is q v B, and setting it equal to m v²/r, the centripetal force, gives the radius. The masses and the charge of the proton and of the electron are those of CODATA[2].
-
-$${B_{\text{wire}} = \frac{\mu_0\,I}{2\pi d}},\qquad \tan\delta = \frac{B_{\text{wire}}}{B_H}$$
-
-**The field of a straight wire, and the compass.** I is the current, d the distance from the wire, μ₀ = 1.256 6 × 10⁻⁶ N/A² the magnetic constant[2]. 5 A at 5 cm give 20 µT. The needle settles along the sum of the wire's field and the horizontal part B_H of the Earth's, about 20 µT at mid-latitudes[24]; at right angles to each other, the angle δ from north has tan δ = 20/20, δ = 45°.
-
-## Worked example: how far does a pushed ball go?
-
-**The problem.** A steel ball 10 cm across is pushed from the ground by a force of 1,000 N pointing 30° above the horizontal, for 0.1 s. Where does it land? Every step uses only the rules above: find the mass, add the forces during the push, get the velocity it leaves with, then follow the flight under its weight alone, and then with the air as well. Steel weighs 7,850 kg per cubic metre[25]; the parabola of a thrown body goes back to Galileo[26].
-
-**The ball, step by step. g = 9.81 m/s².**
-
-| Step | Rule | Numbers | Result |
-| --- | --- | --- | --- |
-| 1. Mass | m = ρ · (4/3) π r³ | 7,850 × 4.19 × 0.05³ | m = 4.11 kg, weight W = m g = 40.3 N |
-| 2. The push, by components | F_x = F cos 30°, F_y = F sin 30° | 1,000 × 0.866 ; 1,000 × 0.5 | F_x = 866 N, F_y = 500 N |
-| 3. Sum of the forces during the push | ΣF = F + W (W points down) | (866, 500 − 40.3) N | a = ΣF/m = 239 m/s² at 28.0° |
-| 4. Velocity at the end of the push | v = a Δt | 239 × 0.1 | v₀ = 23.85 m/s at 28.0°, from (1.05 m, 0.56 m) |
-| 5. Flight in a vacuum | x = x₀ + v₀ cos α t, y = y₀ + v₀ sin α t − ½ g t² | y = 0 when t = 2.33 s | lands at 50.1 m; highest point 6.93 m |
-| 6. With the air | drag ½ ρ C_D A v², against the velocity | ½ × 1.225 × 0.47 × 78.5 cm² × v² | 1.29 N at launch (3.2 % of the weight); lands at 49.2 m |
-| Check: forgetting the weight during the push | v = F Δt / m, range v² sin 60° / g | 24.33 m/s at 30° | 52.3 m: 2 m too far |
-
-*Figure caption:* **The ball, at true scale.** Horizontal and vertical distances are drawn at the same scale; only the ball is enlarged. First the push, slowed twenty times: the force F at 30° (blue) and the weight (amber) add to a push at 28.0° (black), which is why the ball leaves lower than 30°. Then the flight, slowed three times: in a vacuum (dashed) and in air (solid), with the weight, the velocity and the drag of the air (green), a tiny arrow at the same scale, 3.2 % of the weight at launch. The air costs 0.9 m: 49.2 m instead of 50.1 m. Click to pause.
-
-$${x = v_0\cos\alpha\;t,\qquad y = v_0\sin\alpha\;t - \tfrac12 g t^2},\qquad R = \frac{v_0^2\sin 2\alpha}{g}$$
-
-**Two independent motions.** With only the weight acting, nothing pushes sideways, so the horizontal velocity v₀ cos α never changes; vertically, the velocity falls by g every second, as for a dropped stone. The path is a parabola. From ground level the range is R = v₀² sin 2α / g, largest at 45°; our ball leaves from 0.56 m up at 28.0°, so the table solves y = 0 for t instead: 2.33 s, 50.1 m.
-
-$${\vec F_D = -\tfrac12\,\rho\,C_D\,A\,|\vec v|\,\vec v},\qquad m\,\frac{d\vec v}{dt} = m\vec g + \vec F_D$$
-
-**Air resistance.** ρ = 1.225 kg/m³ is the density of air at sea level[27], A = π r² the ball's cross-section, C_D ≈ 0.47 the drag coefficient of a smooth sphere at these speeds[28]. The drag points against the velocity and grows with its square. With it the equations have no simple solution: the computer adds the two forces at each millisecond and steps the velocity and the position forward (Runge–Kutta method). For a dense ball the drag is small; for a hollow 50 g ball of the same size it passes the weight above 15 m/s.
-
-**What the example leaves out, said plainly:** the air during the 0.1 s of the push, the ball's spin (which, through the Magnus effect, lifts or drops a spinning ball), wind, and the slight change of C_D with speed. A thrown ball also starts from the hand, about 2 m above the ground, which adds several metres. Each of these is one more force to add to the sum, by the same rule.
-
-## Circular motion and angular velocity
-
-$${\omega = \frac{d\theta}{dt} = \frac{2\pi}{T}},\qquad v = \omega\,r$$
-
-**Angular velocity.** ω (omega) is how fast an angle turns, in radians per second; T is the time for one turn. Every point of a turning body has the same ω, but its speed v grows with its distance r from the axis. For the Earth, ω = 7.292 × 10⁻⁵ rad/s[11]: one turn in 86,164 s. The [Rotation](/ai/rot.md) tab measures ω with ring lasers and gyroscopes, the [Scale](/ai/scale.md) tab shows it as a clock hand.
-
-$${a_c = \frac{v^2}{r} = \omega^2 r},\ \text{towards the centre}$$
-
-**Turning at constant speed is accelerating.** The speed keeps its size but not its direction: between two instants, the difference Δv of the velocity arrows points to the centre. Seen from the inertial frame that is a centripetal acceleration, provided by a force (the string of a sling, gravity for the Moon)[19]; seen from the turning frame it appears as the centrifugal force of the previous section, the same size and the opposite way. At the equator, ω²R = 0.0339 m/s², 0.35 % of g.
-
-$${\frac{1}{T_\text{sid}} = \frac{1}{T_\text{sol}} + \frac{1}{T_\text{year}}}\ \Rightarrow\ T_\text{sid} \approx 86\,164\ \text{s}$$
-
-**Two kinds of day.** The solar day (86,400 s, noon to noon) is a turn relative to the Sun; the sidereal day is a turn relative to the stars. Because the Earth also moves along its orbit, it has to turn a little more than once to face the Sun again: in a year it turns 366.24 times relative to the stars for 365.24 noons. With T_sol = 86,400 s and T_year = 365.2422 days, T_sid = 86,164.1 s. This is why the stars rise four minutes earlier every night ([Star trails](/ai/star.md)).
-
-## Energy, momentum and angular momentum
-
-**Three quantities that do not change.** In an isolated system, three totals stay constant whatever happens inside: the energy, the momentum (mass times velocity) and the angular momentum (the “amount of turning”). They follow from Newton's laws and save solving the motion step by step: knowing what is conserved often gives the answer directly.
-
-$${E = \tfrac12\,m v^2 + m g h = \text{constant}},\qquad E_p = -\frac{G M m}{r}$$
-
-The kinetic energy ½mv² is the energy of motion, the potential energy mgh that of height near the ground (in joules, J = kg·m²/s²). A ball dropped from h trades one for the other and reaches the ground at v = √(2gh), whatever its mass. Far from the ground, where g is no longer constant, the potential energy is −GMm/r: zero at infinity, negative when bound.
-
-$${\vec p = m\,\vec v},\qquad \vec p_1 + \vec p_2 = \text{constant}\ \Rightarrow\ m_1 v_1 = -m_2 v_2$$
-
-Two skaters at rest push each other apart: the total momentum was zero and stays zero, so the lighter one goes faster, the opposite way. A rocket works the same way with its exhaust gases, which is why it needs no air to push against.
-
-$${L = m\,r^2\,\dot\theta = \text{constant}}\ \Leftrightarrow\ \frac{dA}{dt} = \frac{r^2\dot\theta}{2} = \text{constant}$$
-
-**Kepler's second law** (1609): the line from the Sun to a planet sweeps equal areas in equal times[9]. It is the conservation of angular momentum L under a force aimed at the Sun: close in (small r), the planet turns faster (large θ̇). The Earth is fastest in early January, at perihelion, which is one reason the seasons do not have the same length ([Orbit](/ai/orb.md)).
-
-$${T^2 = \frac{4\pi^2}{G(M+m)}\,a^3}$$
-
-**Kepler's third law** (1619), as Newton derived it: the square of the period grows as the cube of the orbit's size a (half the long axis of the ellipse)[9][4]. With the Earth's GM, a GPS satellite at a = 26,560 km goes round in 11.97 h, half a sidereal day ([Satellites](/ai/sat.md)); the Moon, with GM alone, in 27.45 days, and with G(M+m) in 27.28 days, against 27.32 observed.
-
-*Figure caption:* **Johannes Kepler** 1571–1630
-[August Köhler, 1910, after an older portrait (Kepler Museum, Weil der Stadt)](https://commons.wikimedia.org/wiki/File:JKepler.jpg)
-
-## Waves and light
-
-**A wave carries energy without carrying matter.** The sea swell, sound, the seismic waves of the [Seismology](/ai/seis.md) tab, the pressure wave of Hunga Tonga ([Atmosphere](/ai/atmo.md)), radio and light are all waves: a disturbance that travels while each point only oscillates about its place. Light needs no medium and goes at c in vacuum, slower in air, water or glass.
-
-$${v = \lambda\,f = \frac{\lambda}{T}},\qquad t = \frac{d}{v}$$
-
-λ (lambda) is the wavelength, the distance between two crests; f the frequency, the number of crests passing per second (hertz, Hz), and T = 1/f the period. In one period the wave advances one wavelength. The travel time over a distance d is d/v: the seismology and Tonga tabs read distances from such times.
-
-$${n_1 \sin\theta_1 = n_2 \sin\theta_2},\qquad n = \frac{c}{v}$$
-
-**Refraction.** When light passes into a medium where it is slower (higher index n), it bends towards the perpendicular[15]. Air gets thinner with height, so its index slowly decreases upwards and a ray going nearly level bends gently downward, following the Earth's curve a little: that is atmospheric refraction, the subject of the [Refraction](/ai/ref.md) tab. The site always shows it beside the unrefracted value.
-
-$${\frac{\Delta f}{f} \approx -\frac{v_r}{c}}\quad (v_r \ll c)$$
-
-**The Doppler effect** (1842)[14]. A source moving away (v_r > 0) stretches its waves, so its frequency drops; one coming closer squeezes them, so it rises. That is the change in pitch of a passing siren. Only the speed along the line of sight, v_r, counts. Measured on starlight it gives the Earth's orbital speed ([Orbit](/ai/orb.md)); on satellite radio signals, their orbits ([Satellites](/ai/sat.md)).
-
-## Constants: defined, measured, and local
-
-**Not every “constant” is the same kind of number.** The seven constants of the SI are exact *by definition*: since 2019 the metre is the distance light travels in 1/299,792,458 s, so c cannot be measured any more, only used[1]. The gravitational constant G is a universal constant that is *measured*, and is the least well known of all (2 parts in 100,000)[2]. The Earth's GM, its rotation ω, its radius and the local g are *properties of one planet*, not universal constants: g changes from place to place, and the “standard” g_n = 9.80665 m/s² is a convention adopted in 1901 for weighing, not a value found anywhere in particular[16]. That last distinction is the site's purity rule: a measurement of the radius may never have used the radius ([Results](/ai/results.md)).
-
-**The constants the site uses, and what kind each one is[1][2][11][12][16].**
-
-| Symbol | Name | Value | Unit | Kind |
-| --- | --- | --- | --- | --- |
-| c | speed of light in vacuum[1] | 299 792 458 | m/s | exact, defines a unit |
-| h | Planck constant[1] | 6.626 070 15 × 10⁻³⁴ | J·s | exact, defines a unit |
-| e | elementary charge[1] | 1.602 176 634 × 10⁻¹⁹ | C | exact, defines a unit |
-| k_B | Boltzmann constant[1] | 1.380 649 × 10⁻²³ | J/K | exact, defines a unit |
-| N_A | Avogadro constant[1] | 6.022 140 76 × 10²³ | mol⁻¹ | exact, defines a unit |
-| Δν_Cs | caesium-133 hyperfine frequency[1] | 9 192 631 770 | Hz | exact, defines a unit |
-| K_cd | luminous efficacy of 540 THz light[1] | 683 | lm/W | exact, defines a unit |
-| G | Newtonian constant of gravitation[2] | 6.674 30(15) × 10⁻¹¹ | m³ kg⁻¹ s⁻² | universal, measured |
-| GM⊕ | Earth's gravitational parameter[11] | 3.986 004 418 × 10¹⁴ | m³/s² | property of the Earth |
-| ω⊕ | Earth's mean angular velocity[11] | 7.292 115 × 10⁻⁵ | rad/s | property of the Earth |
-| R_eq | Earth's equatorial radius (GRS80)[12] | 6 378 137 | m | property of the Earth |
-| g_eq | normal gravity at the equator[12] | 9.780 33 | m/s² | property of the Earth |
-| g_pole | normal gravity at the poles[12] | 9.832 19 | m/s² | property of the Earth |
-| g_n | standard gravity[16] | 9.806 65 | m/s² | convention |
-
-$${1\ \text{m} = c \times \frac{1}{299\,792\,458}\ \text{s}},\qquad 1\ \text{s} = \frac{9\,192\,631\,770}{\Delta\nu_\text{Cs}}$$
-
-**A constant defines a unit.** The second is the duration of 9,192,631,770 oscillations of the radiation of the caesium-133 atom, the metre the distance light travels in 1/299,792,458 of that second. Any laboratory can rebuild them without a reference object. GPS clocks count these oscillations ([GPS](/ai/gps.md)).
-
-$${g(\varphi) \approx \frac{G M}{R^2} - \omega^2 R \cos^2\varphi}\quad \text{(sphere, no flattening)}$$
-
-**g is local.** On a turning sphere of radius 6,371 km, the centrifugal term lowers gravity from 9.820 m/s² at the poles to 9.786 m/s² at the equator. Measured, it goes from 9.832 to 9.780 m/s²[12]: the difference is larger because the Earth is also flattened, the equator being 21 km farther from the centre than the poles. Height, the rocks below and the tides change it further, in the fourth decimal and beyond ([Gravity](/ai/grav.md)).
-
-## Measurement, uncertainty and fitting
-
-**A measurement is a value with its uncertainty.** Time the period of a 1 m pendulum twelve times with a stopwatch and you will not get the same number twice: your reaction time adds a random error each time. The mean is the best estimate; the spread around it, the standard deviation σ, says how far one measurement typically falls from it[13]. The numbers in this section are **invented for the example**, not a measurement.
-
-$${\bar x = \frac{1}{N}\sum x_i},\qquad \sigma = \sqrt{\frac{\sum (x_i - \bar x)^2}{N-1}},\qquad \sigma_{\bar x} = \frac{\sigma}{\sqrt N}$$
-
-For the 12 timings in the figure, x̄ = 2.006 s and σ = 0.014 s. The mean is better known than any single timing: its uncertainty is σ/√N = 0.004 s. With the pendulum law T = 2π√(L/g)[19], that gives g = 4π²L/T² = 9.81 ± 0.04 m/s². About two thirds of the measurements fall within ±1σ of the mean, 95 % within ±2σ. A value 3σ away has a 0.3 % chance of being bad luck: that is the threshold the site uses to set an outlier aside, measuring σ on the *other* points, never on a percentage chosen afterwards.
-
-$${\chi^2 = \sum_i \left(\frac{y_i - f(x_i)}{\sigma_i}\right)^2\ \text{minimal}}$$
-
-**Least squares** (Legendre 1805, Gauss 1809)[18]. To fit a model f to measured points, choose its parameters so that the sum of the squared gaps (the *residuals*), each divided by its uncertainty, is as small as possible. Here, T² against L for five pendulum lengths: the best line has a slope of 4.025 ± 0.035 s²/m, and since T² = (4π²/g) L, g = 9.81 ± 0.09 m/s². Almost every result of the site is a fit of this kind, with both models fitted the same way; when the residuals of one model are much larger than the measurement uncertainty, that model does not describe the data.
-
-*Figure caption:* **Carl Friedrich Gauss** 1777–1855
-[Gottlieb Biermann after Christian Albrecht Jensen, 1840](https://commons.wikimedia.org/wiki/File:Carl_Friedrich_Gauss.jpg)
-
-**Random and systematic errors.** Random errors scatter the measurements around the true value and shrink when they are averaged. A systematic error shifts them all the same way, a watch that runs fast, an uncorrected refraction, and averaging does nothing against it. Accuracy is closeness to the true value; precision is the closeness of the measurements to each other. The figure below shows the difference; the site's tabs say, for each result, which systematic errors they checked and which they could not.
-
-*Figure caption:* **Precision and accuracy.** Four sets of shots at a target whose centre is the true value. Left to right: scattered and off-centre; tight but off-centre (precise, with a systematic error); scattered but centred (accurate on average, imprecise); tight and centred.
-
-## Terrain models: LiDAR, elevation grids and smoothing
-
-**Where the ground comes from.** Every horizon, skyline or hidden summit on the site that involves real ground is read from a digital elevation model, a grid of heights, never drawn by hand. In France: the IGN's LiDAR HD, the bare ground measured by airborne laser on a 1 m grid[30]. Where it has no data: the IGN's RGE ALTI, 1 m, assembled from older surveys[31]. In Austria: the BEV's 1 m laser model[32]. Elsewhere, and more than 45 km from a French viewpoint: Copernicus GLO-30, a 30 m grid measured by radar satellites, which is a *surface* model, trees and roofs included[33] (its 90 m version for a few very distant horizons). Each gap is filled by the next model in that order, and where none has a value, by the sea at 0 m.
-
-*Figure caption:* **A terrain model is a mesh.** An invented summit, drawn at true scale. The grid first has a node every 5 m, then every 10, 20 and 40 m: at each step the nodes that go (red) come down onto the surface of the coarser grid, and the summit read on the mesh (blue, on the section through the summit) drops below the real one (black), because the sharp top falls between nodes. Then the nodes come back. Last, a patch of the 5 m grid has no data, like the LiDAR HD on the summit of Mont Agel, and another model fills it (amber): coarser, made another way, and here 8 m higher on average, so it does not meet the first one at the edges and gives yet another summit. Each node takes the height of the ground at its point; the other model, the mean of its cell. The heights are invented for the example.
-
-$${z = (1-u)(1-v)\,z_{00} + u(1-v)\,z_{10} + (1-u)\,v\,z_{01} + u\,v\,z_{11}},\qquad u = \frac{x - x_0}{\Delta},\ \ v = \frac{y - y_0}{\Delta}$$
-
-**How the site reads between nodes.** Δ is the grid step; the point (x, y) lies at fractions u and v of the cell, and its height is the mean of the four corner heights, each weighted by how close it is. The four weights add up to 1, so the result never goes above the highest node: a summit is only as high as the nodes that land on it. That is the smoothing; it is why the summit of a 30 m model can be tens of metres below the real one, and the 1 m LiDAR only centimetres[30][33].
-
-**Why a model's summit often comes out lower than the published height.** Three reasons, which mostly push the same way. *The grid.* A model stores one height per cell, and the site reads between the four nearest cells (bilinear interpolation): a summit sharper than a cell is averaged with its own slopes. That is the smoothing. On a 1 m grid it costs centimetres; on a 30 m grid it can cost tens of metres on a pointed peak. To limit it, the skylines of the French and Austrian viewpoints are read twice: every 25 m along each line of sight on a 30 m grid, then again at 1 m around every point that could make the skyline; the script refuses to write a profile if a fine reading rises above the coarse one by more than the margin it allows for. *What is measured.* A bare-ground model has no cairn, pillar, building or tree, while a published height is usually that of a survey mark, and can be older than the works done on a summit; a surface model has the opposite bias. *The rays.* A profile is a set of lines of sight one step of azimuth apart: a narrow summit can fall between two of them, and it is that step, not the model, that sets the resolution there.
-
-**The rule.** What the site draws and computes uses the model's height, the same reading for the plane and for the globe, so that any difference between the two comes from geometry and never from sampling. A model's value is never replaced by a published one, nor “corrected” by hand. Where the two differ by more than a few metres, the page gives both, names the model, and says what the published height would change; a page that does not is a mistake to report. At 40 km, 15 m of height is about 1.3′, and it moves a summit by the same amount on both models.
-
-**Mont Agel: the height each source gives, around the published summit (43.7708° N, 7.4197° E)[34].**
-
-| Source | Height | What it is |
-| --- | --- | --- |
-| Wikipédia (FR), September 2026 | 1,148 m | published |
-| Wikipédia (FR), November 2026, after the Géoportail | 1,151 m | published |
-| IGN LiDAR HD[30] | 1,127 m | bare ground, highest point outside the gap; 1,120 m at the published point |
-| IGN RGE ALTI[31], inside the gap | 1,133 m | what the site uses |
-| IGN RGE ALTI, around the summit | 1,138 m | 1,137 m at the published point |
-| Copernicus GLO-30[33] | 1,145 m | surface, buildings included, 30 m cells |
-
-**An example: Mont Agel, seen from the plateau de Caussols** ([Dip of the horizon](/ai/dip.md), [Elevation angles](/ai/elev.md)). The LiDAR HD has no data over 0.13 km² of the summit, which carries military air-detection installations[34]; around that gap the RGE ALTI stands up to 30 m above the LiDAR, while elsewhere the two agree within a metre. The data do not say which is right on the summit itself, so the site does not choose by hand: it uses its usual reading, 1,133 m, and says so. Every height in the table gives the same answer: from 1,210 m, on a plane, Mont Agel lies between 5′ (1,151 m) and 8′ (1,119 m) below the horizon, which is at eye level; on the refracted globe, between 45′ and 48′ above the sea horizon. The photograph shows it 42′ above.
-
-**See also**[Rotation](/ai/rot.md)[Gravity](/ai/grav.md)[Foucault](/ai/fou.md)[Orbit](/ai/orb.md)[Satellites](/ai/sat.md)[Refraction](/ai/ref.md)[Results](/ai/results.md)[Dip](/ai/dip.md)[Elevation angles](/ai/elev.md)
-
-## Sources for this tab
-
-1. [1] Bureau International des Poids et Mesures, [*The International System of Units (SI)*](https://www.bipm.org/en/publications/si-brochure), 9th edition (2019, updated 2022): the seven defining constants (Δν_Cs, c, h, e, k, N_A, K_cd) and the base units they fix, in force since 20 May 2019 (26th CGPM, Resolution 1).
-2. [2] NIST, [CODATA Internationally recommended 2022 values of the fundamental physical constants](https://physics.nist.gov/cuu/Constants/): Newtonian constant of gravitation G = 6.674 30(15) × 10⁻¹¹ m³ kg⁻¹ s⁻², relative standard uncertainty 2.2 × 10⁻⁵.
-3. [3] G. Galilei, *Dialogo sopra i due massimi sistemi del mondo* (Florence, 1632), Second Day: Salviati's cabin below decks of a ship moving uniformly, where no experiment shows whether the ship moves or stands still.
-4. [4] I. Newton, *Philosophiæ Naturalis Principia Mathematica* (London, 1687): “Axiomata, sive leges motus” (the three laws); Book III, Proposition IV (the Moon is kept in its orbit by the force of gravity, compared with the fall of bodies at the surface) and Propositions XIII–XV (Kepler's laws from the inverse square).
-5. [5] G. W. Leibniz, “Nova methodus pro maximis et minimis”, *Acta Eruditorum* (October 1684) 467–473: the notation dx, dy and the rules of the differential calculus.
-6. [6] I. Newton, *The Method of Fluxions and Infinite Series* (written 1671, published London, 1736): “fluxions”, the rates of change of “fluents” in time, later written with a dot over the letter.
-7. [7] J.-L. Lagrange, *Théorie des fonctions analytiques* (Paris, 1797): the derived function written f′(x), f″(x).
-8. [8] G. Coriolis, “Mémoire sur les équations du mouvement relatif des systèmes de corps”, *Journal de l'École polytechnique* 15 (1835) 142–154: the compound centrifugal force, now called the Coriolis force, in a rotating frame.
-9. [9] J. Kepler, *Astronomia nova* (Prague, 1609): elliptical orbits and the law of areas; *Harmonices mundi* (Linz, 1619), Book V: the squares of the periods as the cubes of the mean distances.
-10. [10] H. Cavendish, “Experiments to determine the Density of the Earth”, *Philosophical Transactions of the Royal Society* 88 (1798) 469–526: the torsion balance with lead spheres, from which G follows.
-11. [11] G. Petit, B. Luzum (eds.), [*IERS Conventions (2010)*, IERS Technical Note 36](https://www.iers.org/IERS/EN/Publications/TechnicalNotes/tn36.html), table 1.1: GM⊕ = 3.986 004 418 × 10¹⁴ m³/s², nominal mean angular velocity ω = 7.292 115 × 10⁻⁵ rad/s.
-12. [12] H. Moritz, “Geodetic Reference System 1980”, *Journal of Geodesy* 74 (2000) 128–133: equatorial radius 6 378 137 m, polar radius 6 356 752 m, normal gravity 9.780 326 7715 m/s² at the equator and 9.832 186 3685 m/s² at the poles; mean radius 6 371.0088 km.
-13. [13] JCGM 100:2008, [*Evaluation of measurement data — Guide to the expression of uncertainty in measurement*](https://www.bipm.org/en/committees/jc/jcgm/publications) (GUM), BIPM et al.: standard uncertainty, the experimental standard deviation with N − 1, and the standard deviation of the mean s/√N (§ 4.2).
-14. [14] C. Doppler, “Über das farbige Licht der Doppelsterne und einiger anderer Gestirne des Himmels”, *Abhandlungen der königlich böhmischen Gesellschaft der Wissenschaften* 2 (1842) 465–482.
-15. [15] R. Descartes, *La Dioptrique* (Leiden, 1637), Discours second: the law of refraction in sines, found earlier by W. Snellius (about 1621, unpublished) and by Ibn Sahl (984) for lenses.
-16. [16] 3rd Conférence Générale des Poids et Mesures (1901), Declaration on the unit of mass and the definition of weight: standard acceleration of gravity g_n = 980.665 cm/s², “the value already stated in the laws of some countries”.
-17. [17] D. R. Williams, [Moon Fact Sheet](https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html), NASA Goddard (NSSDCA): semi-major axis 384 400 km, sidereal orbit period 27.3217 days, Earth/Moon mass ratio 81.3.
-18. [18] A.-M. Legendre, *Nouvelles méthodes pour la détermination des orbites des comètes* (Paris, 1805), appendix “Sur la méthode des moindres quarrés”; C. F. Gauss, *Theoria motus corporum coelestium* (Hamburg, 1809), Book II, Section III.
-19. [19] C. Huygens, *Horologium oscillatorium* (Paris, 1673): the period of a pendulum and its relation to the fall of bodies, T = 2π√(L/g) for small swings, and (Part V) the theorems on centrifugal force, v²/r, worked out in *De vi centrifuga* (1659, published 1703).
-20. [20] S. Stevin, *De Beghinselen der Weeghconst* (Leiden, 1586): equilibrium of forces on an inclined plane (the “wreath of spheres”), and the triangle of forces.
-21. [21] G. Atwood, *A Treatise on the Rectilinear Motion and Rotation of Bodies* (Cambridge, 1784): the machine of two masses over a pulley, to slow down and time uniformly accelerated motion.
-22. [22] H. C. Ørsted, *Experimenta circa effectum conflictus electrici in acum magneticam* (Copenhagen, 1820): a current in a wire turns a compass needle.
-23. [23] H. A. Lorentz, *Versuch einer Theorie der electrischen und optischen Erscheinungen in bewegten Körpern* (Leiden, 1895): the force on a charge moving in electric and magnetic fields.
-24. [24] P. Alken et al., “International Geomagnetic Reference Field: the thirteenth generation”, *Earth, Planets and Space* 73 (2021) 49: the horizontal intensity of the field, about 15 to 25 µT at mid-latitudes.
-25. [25] EN 1993-1-1 (Eurocode 3), Design of steel structures, § 3.2.6: density of structural steel ρ = 7,850 kg/m³.
-26. [26] G. Galilei, *Discorsi e dimostrazioni matematiche intorno a due nuove scienze* (Leiden, 1638), Fourth Day: a projectile thrown horizontally describes a semi-parabola; the range is largest at 45°.
-27. [27] *U.S. Standard Atmosphere, 1976* (NOAA, NASA, USAF, Washington, 1976): density of air at sea level 1.2250 kg/m³.
-28. [28] S. F. Hoerner, *Fluid-Dynamic Drag* (Hoerner, 1965), chapter 3: drag coefficient of a smooth sphere about 0.47 below the critical Reynolds number (≈ 3 × 10⁵; our ball: 1.6 × 10⁵).
-29. [29] W. C. Marlow, *The Physics of Pocket Billiards* (Marlow Advanced Systems Technologies, 1995): ball-ball contact lasts between 0.1 and 0.6 ms, less at higher speed; measurements of 0.25 to 0.3 ms by Sorokin, quoted by D. Alciatore, [“Ball contact time”](https://drdavepoolinfo.com/FAQ/ball/contact-time/) (Dr. Dave Pool Info).
-30. [30] IGN, [LiDAR HD](https://geoservices.ign.fr/lidarhd), digital terrain model (MNT, bare ground, 1 m grid) from airborne laser, read through the Géoplateforme WMS-Raster service (layer IGNF_LIDAR-HD_MNT_ELEVATION) by this project's `research/lidar_horizon.py`.
-31. [31] IGN, [RGE ALTI](https://geoservices.ign.fr/rgealti), 1 m digital terrain model of France, assembled from airborne LiDAR, photogrammetric correlation and, in places, radar surveys; used only where the LiDAR HD has no data.
-32. [32] BEV (Bundesamt für Eich- und Vermessungswesen), [ALS-Höhenraster](https://www.bev.gv.at/Services/Produkte/Digitales-Gelaendehoehenmodell/ALS-Hoehenraster.html), 1 m airborne-laser terrain model of Austria.
-33. [33] [ESA / Airbus, *Copernicus DEM GLO-30*](https://doi.org/10.5270/ESA-c5d3d65) (and GLO-90): a 1-arc-second (about 30 m) digital surface model of the globe from the TanDEM-X radar mission, vegetation and buildings included.
-34. [34] [Mont Agel (Wikipédia, FR)](https://fr.wikipedia.org/wiki/Mont_Agel): 1,148 m when consulted in September 2026, 1,151 m in November 2026 (reference: Géoportail), at 43°46′15″ N, 7°25′11″ E; military air-detection installations on the summit. Model heights read by this project (`research/lidar_horizon.py` and the Géoplateforme altimetry service), 25 November 2026.
-
-
----
-
 # The rules of the comparison
 
 > Tab "Rules" of *Flat plane or Globe?*. Web page: /#tab-rules. Generated from the rendered page: same text, same computed numbers and sources; drawings are replaced by their captions and descriptions, formulas are TeX. Licence: content and data CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), Xyphophor (https://x.com/Xyphophor); source code MIT; third-party data keep the licence of their source, cited in each tab.
@@ -635,7 +222,7 @@ The site compares two models of the Earth against the same measurements. A compa
 
 **1. Never exaggerate silently.** Every scene is drawn at true scale by default. When a curve would be invisible at true scale, the planet is drawn smaller, with the factor printed on the figure, and both axes keep the same scale; an axis is never stretched on its own, because that turns a sphere into an ellipse and hides the very tilt the drawing has to show. A figure that is not to scale says so on its stamp. *Why:* stretched axes are the most common trick in videos on both sides; if we used it, nothing else on the page could be trusted.
 
-**2. Numbers come from geometry, never from the drawing.** Every angle, height or distance printed on the site is computed from the true geometry and the data, never measured on a picture, exaggerated or not. The same reading of the terrain, the same air, the same instrument feed both models, so that any difference between them comes from the shape and from nothing else ([Basics](/ai/phys.md#phys-h2dem), terrain models).
+**2. Numbers come from geometry, never from the drawing.** Every angle, height or distance printed on the site is computed from the true geometry and the data, never measured on a picture, exaggerated or not. The same reading of the terrain, the same air, the same instrument feed both models, so that any difference between them comes from the shape and from nothing else ([Math](/ai/math.md#math-h2dem), terrain models).
 
 ## Fairness: the flat model gets its best case
 
@@ -683,7 +270,7 @@ $${\bar x = \frac{\sum x_i/\sigma_i^2}{\sum 1/\sigma_i^2}},\qquad \sigma_{\bar x
 
 **The weighted mean.** xᵢ is the result of method i and σᵢ its uncertainty; a precise method counts more, as 1/σᵢ². χ² is the sum of the squared gaps (xᵢ − x̄)/σᵢ, and N the number of methods. When B is above 1, the methods disagree more than their stated uncertainties allow, and σ_x̄ is multiplied by B[2][3].
 
-**16. Terrain heights: the model's, and the published one beside it.** Horizons and summits are read from terrain models, the same reading for both models. When the model's height differs from the published one, the page gives both and says what the published one would change; it does not swap one for the other by hand ([Basics](/ai/phys.md#phys-h2dem), terrain models).
+**16. Terrain heights: the model's, and the published one beside it.** Horizons and summits are read from terrain models, the same reading for both models. When the model's height differs from the published one, the page gives both and says what the published one would change; it does not swap one for the other by hand ([Math](/ai/math.md#math-h2dem), terrain models).
 
 ## Openness: sources, limits and data
 
@@ -697,13 +284,630 @@ $${\bar x = \frac{\sum x_i/\sigma_i^2}{\sum 1/\sigma_i^2}},\qquad \sigma_{\bar x
 
 **21. Transparency: every number can be traced to its files and its code.** Each section that shows evidence has a “code · data” button. It names the data the section is computed from, the code that turns them into its numbers and the files it generates. Beside every data file, a `.explain` file says where it comes from exactly (the archive and the request, or the publication and its pages), how it was obtained (downloaded, or typed by hand from a scan, by whom), the checks it went through, what could still be wrong in it, and its SHA-256 hash. When a file's terms do not allow republishing it, only its hash and its source are given, with the reason, so that anyone can fetch it and check it is the same. Nothing is hidden, the known errors included.
 
-**See also**[Basics](/ai/phys.md)[What would refute each model](/ai/falsify.md)[Results](/ai/results.md)[Refraction](/ai/ref.md)[Contributions](/ai/contrib.md)
+**See also**[Math](/ai/math.md)[Physics](/ai/phys.md)[What would refute each model](/ai/falsify.md)[Results](/ai/results.md)[Refraction](/ai/ref.md)[Contributions](/ai/contrib.md)
 
 ## Sources for this tab
 
 1. [1] [C. Hirt, S. Guillaume, A. Wisbar, B. Bürki, H. Sternberg, “Monitoring of the refraction coefficient in the lower atmosphere using a controlled setup of simultaneous reciprocal vertical angle measurements”](https://doi.org/10.1029/2010JD014067), *Journal of Geophysical Research* 115 (2010) D21102: the refraction coefficient k ≈ 0.13 on average, from Gauss's Hanover reciprocal observations to modern data, and how strongly it varies with the weather near the ground.
 2. [2] JCGM 100:2008, [*Evaluation of measurement data — Guide to the expression of uncertainty in measurement*](https://www.bipm.org/en/committees/jc/jcgm/publications) (GUM), BIPM et al.: standard uncertainty, combination of uncertainties; for a normal distribution, 99.7 % of values lie within ±3σ.
 3. [3] R. T. Birge, “The calculation of errors by the method of least squares”, *Physical Review* 40 (1932) 207–227: the ratio √(χ²/(N − 1)) that tests whether results agree within their stated errors, and enlarges the error of their mean when they do not.
+
+
+---
+
+# The mathematics: angles, vectors, derivatives, uncertainty and terrain grids
+
+> Tab "Math" of *Flat plane or Globe?*. Web page: /#tab-math. Generated from the rendered page: same text, same computed numbers and sources; drawings are replaced by their captions and descriptions, formulas are TeX. Licence: content and data CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), Xyphophor (https://x.com/Xyphophor); source code MIT; third-party data keep the licence of their source, cited in each tab.
+
+*Math · the tools the other tabs use*
+
+The other tabs measure angles in minutes of arc, add arrows end to end, write *dθ/dt* or *3σ*, fit straight lines and read heights from grids, without stopping to explain how. This tab gathers those tools in one place, each with its formula and a figure, and says where on the site it is used. The physics they serve, units, motion, Newton's laws and the constants, is in the [Physics](/ai/phys.md) tab. Nothing here is a measurement, and nothing here takes sides: the same mathematics serves both models.
+
+## Angles and radians
+
+$${\theta = \frac{s}{r}}\ \text{(rad)},\qquad 2\pi\ \text{rad} = 360^\circ,\qquad 1^\circ = 60' = 3600''$$
+
+**The radian.** An angle θ in radians is the arc s it cuts on a circle divided by the radius r: a full turn is 2π r / r = 2π rad, so 1 rad = 57.30°. Degrees split into 60 minutes of arc (′) and each minute into 60 seconds of arc (″); 1″ = 4.848 millionths of a radian. The elevation, dip and refraction tabs ([Elevation angles](/ai/elev.md), [Dip](/ai/dip.md), [Refraction](/ai/ref.md)) count in minutes and seconds of arc; every formula of the site computes in radians.
+
+$${\tan\theta \approx \sin\theta \approx \theta}\quad (\theta\ \text{small, in rad})$$
+
+**Small angles.** For a thin triangle, the opposite side over the long side is almost the angle itself in radians. The error is 0.010 % at 1°, 0.25 % at 5° and 1.0 % at 10°. That is why an object of height h seen at a distance d spans an angle of about h/d, and why the site can write the dip of the horizon as √(2h/R).
+
+## Vectors: adding arrows
+
+**Adding vectors: Chasles' relation.** Going from A to B, then from B to C, ends at the same place as going straight from A to C: written with displacement vectors, AB⃗ + BC⃗ = AC⃗. It is named after the French geometer Michel Chasles (1793–1880), and it holds for any number of steps: AB⃗ + BC⃗ + CD⃗ = AD⃗. Only the start and the end count, not the path. That is what “putting the arrows end to end” means, and it works the same for displacements, velocities, accelerations and forces.
+
+*Figure caption:* **Michel Chasles** 1793–1880
+[Photograph, 19th century (Smithsonian Libraries)](https://commons.wikimedia.org/wiki/File:Michel_Chasles.jpg)
+
+$${\vec{AB} + \vec{BC} = \vec{AC}},\qquad \vec{AB} + \vec{BC} + \vec{CD} = \vec{AD},\qquad \vec{AB} + \vec{BA} = \vec 0$$
+
+The detour through B and the direct path land at the same point. A round trip adds up to the zero vector: AB⃗ + BA⃗ = 0⃗, so BA⃗ = −AB⃗, the same arrow turned round. The order of the steps does not matter either: AB⃗ + BC⃗ = BC⃗ + AB⃗, the two other sides of a parallelogram.
+
+$${\vec a + \vec b = (a_x + b_x,\ a_y + b_y)}$$
+
+**With components, it is ordinary addition.** Put the arrows end to end and look at their shadows on each axis: the shadows add up too. To add two vectors, add their x components together and their y components together. That is how a computer adds forces or velocities, and how the [Aviation](/ai/avia.md) tab adds the wind to an airliner's airspeed.
+
+$${\vec a - \vec b = \vec a + (-\vec b)},\qquad \vec b + (\vec a - \vec b) = \vec a$$
+
+**Subtracting is adding the opposite.** −b⃗ is b⃗ turned round. Drawn from a common origin, a⃗ − b⃗ is the arrow that goes from the tip of b⃗ to the tip of a⃗: the step still needed to get from b⃗ to a⃗, which is Chasles' relation again. This tab uses it twice: the change of velocity Δv⃗ = v⃗₂ − v⃗₁ points to the centre on a circle, and the velocity seen from a moving train is v⃗′ = v⃗ − V⃗.
+
+## Derivatives: one idea, several notations
+
+**A derivative is a rate of change at one instant.** Shrink the interval Δt of the mean velocity ([Physics](/ai/phys.md#phys-h2kin)) towards zero: the chord turns into the tangent to the curve, and its slope is the instantaneous velocity. Newton and Leibniz found this independently in the 1660s–1680s and wrote it differently; Lagrange later added a third way[1][2][3]. All three are still in use, often on the same page, and they mean exactly the same thing.
+
+*Figure caption:* **Isaac Newton** 1642–1727
+[After Godfrey Kneller, 1689](https://commons.wikimedia.org/wiki/File:GodfreyKneller-IsaacNewton-1689.jpg)
+
+*Figure caption:* **Gottfried Wilhelm Leibniz** 1646–1716
+[Christoph Bernhard Francke, c. 1695 (Herzog Anton Ulrich-Museum)](https://commons.wikimedia.org/wiki/File:Christoph_Bernhard_Francke_-_Bildnis_des_Philosophen_Leibniz_(ca._1695).jpg)
+
+*Figure caption:* **Joseph-Louis Lagrange** 1736–1813
+[Anonymous, 19th century](https://commons.wikimedia.org/wiki/File:%D0%9B%D0%B0%D0%B3%D1%80%D0%B0%D0%BD%D0%B6.jpg)
+
+$${v(t) = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t} = \frac{dx}{dt} = \dot x = x\prime(t)}$$
+$$a = \frac{dv}{dt} = \frac{d^2x}{dt^2} = \ddot x = x''(t)$$
+
+“lim” reads “the limit as Δt goes to zero”. dx/dt (Leibniz) keeps the memory of a ratio of two tiny changes; ẋ, with a dot (Newton), is used only for derivatives with respect to time; x′ (Lagrange) says “derivative of x” without naming the variable. Two dots, two primes or d²/dt²: the derivative taken twice, the acceleration.
+
+**The notations, how they are read, and where the site uses them.**
+
+| Written | Read | Means | On this site |
+| --- | --- | --- | --- |
+| Δx | delta x | a finite change of x | everywhere |
+| dx/dt | d x d t (Leibniz) | rate of change of x with t | [Rotation](/ai/rot.md), [Orbit](/ai/orb.md) |
+| ẋ, ẍ | x dot, x double dot (Newton) | first, second derivative in time | θ̇ of Kepler in [Orbit](/ai/orb.md) |
+| f′(x), f″(x) | f prime, f second (Lagrange) | derivative of f, whatever the variable | [Horizon curve](/ai/curv.md) |
+| ∂f/∂x | partial f partial x | derivative in x, the other variables held fixed | [Gravity](/ai/grav.md), [Magnetism](/ai/mag.md) |
+| ∇f | nabla f, gradient | the vector of all partial derivatives: steepest slope | [Gravity](/ai/grav.md), [Atmosphere](/ai/atmo.md) |
+| ∫ f dt | integral of f d t | the sum of f dt: the area under f, the reverse of a derivative | [Refraction](/ai/ref.md) (ray tracing) |
+| Σ | sigma, sum | add up the terms | every fit ([Results](/ai/results.md)) |
+
+$${x(t) = x_0 + \int_{0}^{t} v\,dt}\qquad \Leftrightarrow\qquad \frac{dx}{dt} = v$$
+
+**The integral undoes the derivative.** Cut the time into thin slices dt; in each, the body moves v dt. Adding all the slices (the long S, ∫, is a stretched “sum”) gives the distance covered: the area under the curve of v against t. An inertial navigation unit does exactly that, twice, from its accelerometers ([Aviation](/ai/avia.md)).
+
+$${\nabla h = \left(\frac{\partial h}{\partial x},\ \frac{\partial h}{\partial y}\right)}$$
+
+**Partial derivatives.** When a quantity depends on several variables, such as the height h of a hill at each point (x, y) of a map, ∂h/∂x is its slope walking due east, with y held fixed, and ∂h/∂y its slope walking north. Together they form the gradient ∇h, an arrow pointing straight uphill, across the contour lines. Gravity is minus the gradient of the potential; air pressure falls along its gradient with height.
+
+## Measurement, uncertainty and fitting
+
+**A measurement is a value with its uncertainty.** Time the period of a 1 m pendulum twelve times with a stopwatch and you will not get the same number twice: your reaction time adds a random error each time. The mean is the best estimate; the spread around it, the standard deviation σ, says how far one measurement typically falls from it[4]. The numbers in this section are **invented for the example**, not a measurement.
+
+$${\bar x = \frac{1}{N}\sum x_i},\qquad \sigma = \sqrt{\frac{\sum (x_i - \bar x)^2}{N-1}},\qquad \sigma_{\bar x} = \frac{\sigma}{\sqrt N}$$
+
+For the 12 timings in the figure, x̄ = 2.006 s and σ = 0.014 s. The mean is better known than any single timing: its uncertainty is σ/√N = 0.004 s. With the pendulum law T = 2π√(L/g)[5], that gives g = 4π²L/T² = 9.81 ± 0.04 m/s². About two thirds of the measurements fall within ±1σ of the mean, 95 % within ±2σ. A value 3σ away has a 0.3 % chance of being bad luck: that is the threshold the site uses to set an outlier aside, measuring σ on the *other* points, never on a percentage chosen afterwards.
+
+$${\chi^2 = \sum_i \left(\frac{y_i - f(x_i)}{\sigma_i}\right)^2\ \text{minimal}}$$
+
+**Least squares** (Legendre 1805, Gauss 1809)[6]. To fit a model f to measured points, choose its parameters so that the sum of the squared gaps (the *residuals*), each divided by its uncertainty, is as small as possible. Here, T² against L for five pendulum lengths: the best line has a slope of 4.025 ± 0.035 s²/m, and since T² = (4π²/g) L, g = 9.81 ± 0.09 m/s². Almost every result of the site is a fit of this kind, with both models fitted the same way; when the residuals of one model are much larger than the measurement uncertainty, that model does not describe the data.
+
+*Figure caption:* **Carl Friedrich Gauss** 1777–1855
+[Gottlieb Biermann after Christian Albrecht Jensen, 1840](https://commons.wikimedia.org/wiki/File:Carl_Friedrich_Gauss.jpg)
+
+**Random and systematic errors.** Random errors scatter the measurements around the true value and shrink when they are averaged. A systematic error shifts them all the same way, a watch that runs fast, an uncorrected refraction, and averaging does nothing against it. Accuracy is closeness to the true value; precision is the closeness of the measurements to each other. The figure below shows the difference; the site's tabs say, for each result, which systematic errors they checked and which they could not.
+
+*Figure caption:* **Precision and accuracy.** Four sets of shots at a target whose centre is the true value. Left to right: scattered and off-centre; tight but off-centre (precise, with a systematic error); scattered but centred (accurate on average, imprecise); tight and centred.
+
+**Two checks on a fit, used across this site.** A fitted line always gives a number, even through points that do not follow it. Two numbers say whether the line deserves it. The correlation r says how closely y follows x along a line, with no model and no unit: near 1 when it does, near 0 when x tells nothing about y. It needs more than two points: through two, any line is perfect and r is ±1.
+
+$${r = \frac{\sum (x_i - \bar x)(y_i - \bar y)}{\sqrt{\sum (x_i - \bar x)^2\,\sum (y_i - \bar y)^2}}}$$
+
+**Pearson's correlation**. xᵢ, yᵢ are the N points, x̄ and ȳ their means; r runs from −1 to 1. It does not depend on the units or on any model of what links x to y; it does not say whether the line passes through zero, nor how large the slope is.
+
+**What each one says.** χ²/ν compares the scatter of the points around the fitted line with their known uncertainty σ. Close to 1, the line is as good as the measurements allow. Much larger, the line does not fit, or something adds errors that σ does not hold. Much smaller, σ was overestimated. It needs σ known apart from the fit: where a survey or a bulletin prints no reading error, this site gives r and the raw scatter, with its unit, and says why there is no χ²/ν. On a flat surface a radius calculation fails in one of two ways: r falls to zero (no curvature to find), or χ²/ν climbs (the flat model's own signal fits no single radius); the [curvature tab](/ai/kappa.md) shows both, reading by reading.
+
+$${\frac{\chi^2}{\nu} = \frac{1}{N - p}\sum_i \left(\frac{y_i - f(x_i)}{\sigma_i}\right)^2}$$
+
+**Chi-squared per degree of freedom**. f is the fitted model, p its number of free parameters, ν = N − p the degrees of freedom, σᵢ the uncertainty of point i, known before the fit. Each residual divided by its σ is typically about 1 if the model is right, so χ²/ν is about 1, give or take √(2/ν).
+
+## Terrain models: LiDAR, elevation grids and smoothing
+
+**Where the ground comes from.** Every horizon, skyline or hidden summit on the site that involves real ground is read from a digital elevation model, a grid of heights, never drawn by hand. In France: the IGN's LiDAR HD, the bare ground measured by airborne laser on a 1 m grid[7]. Where it has no data: the IGN's RGE ALTI, 1 m, assembled from older surveys[8]. In Austria: the BEV's 1 m laser model[9]. Elsewhere, and more than 45 km from a French viewpoint: Copernicus GLO-30, a 30 m grid measured by radar satellites, which is a *surface* model, trees and roofs included[10] (its 90 m version for a few very distant horizons). Each gap is filled by the next model in that order, and where none has a value, by the sea at 0 m.
+
+*Figure caption:* **A terrain model is a mesh.** An invented summit, drawn at true scale. The grid first has a node every 5 m, then every 10, 20 and 40 m: at each step the nodes that go (red) come down onto the surface of the coarser grid, and the summit read on the mesh (blue, on the section through the summit) drops below the real one (black), because the sharp top falls between nodes. Then the nodes come back. Last, a patch of the 5 m grid has no data, like the LiDAR HD on the summit of Mont Agel, and another model fills it (amber): coarser, made another way, and here 8 m higher on average, so it does not meet the first one at the edges and gives yet another summit. Each node takes the height of the ground at its point; the other model, the mean of its cell. The heights are invented for the example.
+
+$${z = (1-u)(1-v)\,z_{00} + u(1-v)\,z_{10} + (1-u)\,v\,z_{01} + u\,v\,z_{11}},\qquad u = \frac{x - x_0}{\Delta},\ \ v = \frac{y - y_0}{\Delta}$$
+
+**How the site reads between nodes.** Δ is the grid step; the point (x, y) lies at fractions u and v of the cell, and its height is the mean of the four corner heights, each weighted by how close it is. The four weights add up to 1, so the result never goes above the highest node: a summit is only as high as the nodes that land on it. That is the smoothing; it is why the summit of a 30 m model can be tens of metres below the real one, and the 1 m LiDAR only centimetres[7][10].
+
+**Why a model's summit often comes out lower than the published height.** Three reasons, which mostly push the same way. *The grid.* A model stores one height per cell, and the site reads between the four nearest cells (bilinear interpolation): a summit sharper than a cell is averaged with its own slopes. That is the smoothing. On a 1 m grid it costs centimetres; on a 30 m grid it can cost tens of metres on a pointed peak. To limit it, the skylines of the French and Austrian viewpoints are read twice: every 25 m along each line of sight on a 30 m grid, then again at 1 m around every point that could make the skyline; the script refuses to write a profile if a fine reading rises above the coarse one by more than the margin it allows for. *What is measured.* A bare-ground model has no cairn, pillar, building or tree, while a published height is usually that of a survey mark, and can be older than the works done on a summit; a surface model has the opposite bias. *The rays.* A profile is a set of lines of sight one step of azimuth apart: a narrow summit can fall between two of them, and it is that step, not the model, that sets the resolution there.
+
+**The rule.** What the site draws and computes uses the model's height, the same reading for the plane and for the globe, so that any difference between the two comes from geometry and never from sampling. A model's value is never replaced by a published one, nor “corrected” by hand. Where the two differ by more than a few metres, the page gives both, names the model, and says what the published height would change; a page that does not is a mistake to report. At 40 km, 15 m of height is about 1.3′, and it moves a summit by the same amount on both models.
+
+**Mont Agel: the height each source gives, around the published summit (43.7708° N, 7.4197° E)[11].**
+
+| Source | Height | What it is |
+| --- | --- | --- |
+| Wikipédia (FR), September 2026 | 1,148 m | published |
+| Wikipédia (FR), November 2026, after the Géoportail | 1,151 m | published |
+| IGN LiDAR HD[7] | 1,127 m | bare ground, highest point outside the gap; 1,120 m at the published point |
+| IGN RGE ALTI[8], inside the gap | 1,133 m | what the site uses |
+| IGN RGE ALTI, around the summit | 1,138 m | 1,137 m at the published point |
+| Copernicus GLO-30[10] | 1,145 m | surface, buildings included, 30 m cells |
+
+**An example: Mont Agel, seen from the plateau de Caussols** ([Dip of the horizon](/ai/dip.md), [Elevation angles](/ai/elev.md)). The LiDAR HD has no data over 0.13 km² of the summit, which carries military air-detection installations[11]; around that gap the RGE ALTI stands up to 30 m above the LiDAR, while elsewhere the two agree within a metre. The data do not say which is right on the summit itself, so the site does not choose by hand: it uses its usual reading, 1,133 m, and says so. Every height in the table gives the same answer: from 1,210 m, on a plane, Mont Agel lies between 5′ (1,151 m) and 8′ (1,119 m) below the horizon, which is at eye level; on the refracted globe, between 45′ and 48′ above the sea horizon. The photograph shows it 42′ above.
+
+**See also**[Physics](/ai/phys.md)[Curvature](/ai/kappa.md)[Results](/ai/results.md)[Dip](/ai/dip.md)[Elevation angles](/ai/elev.md)[Refraction](/ai/ref.md)[Aviation](/ai/avia.md)[Gravity](/ai/grav.md)
+
+## Sources for this tab
+
+1. [1] G. W. Leibniz, “Nova methodus pro maximis et minimis”, *Acta Eruditorum* (October 1684) 467–473: the notation dx, dy and the rules of the differential calculus.
+2. [2] I. Newton, *The Method of Fluxions and Infinite Series* (written 1671, published London, 1736): “fluxions”, the rates of change of “fluents” in time, later written with a dot over the letter.
+3. [3] J.-L. Lagrange, *Théorie des fonctions analytiques* (Paris, 1797): the derived function written f′(x), f″(x).
+4. [4] JCGM 100:2008, [*Evaluation of measurement data — Guide to the expression of uncertainty in measurement*](https://www.bipm.org/en/committees/jc/jcgm/publications) (GUM), BIPM et al.: standard uncertainty, the experimental standard deviation with N − 1, and the standard deviation of the mean s/√N (§ 4.2).
+5. [5] C. Huygens, *Horologium oscillatorium* (Paris, 1673): the period of a pendulum and its relation to the fall of bodies, T = 2π√(L/g) for small swings, and (Part V) the theorems on centrifugal force, v²/r, worked out in *De vi centrifuga* (1659, published 1703).
+6. [6] A.-M. Legendre, *Nouvelles méthodes pour la détermination des orbites des comètes* (Paris, 1805), appendix “Sur la méthode des moindres quarrés”; C. F. Gauss, *Theoria motus corporum coelestium* (Hamburg, 1809), Book II, Section III.
+7. [7] IGN, [LiDAR HD](https://geoservices.ign.fr/lidarhd), digital terrain model (MNT, bare ground, 1 m grid) from airborne laser, read through the Géoplateforme WMS-Raster service (layer IGNF_LIDAR-HD_MNT_ELEVATION) by this project's `research/lidar_horizon.py`.
+8. [8] IGN, [RGE ALTI](https://geoservices.ign.fr/rgealti), 1 m digital terrain model of France, assembled from airborne LiDAR, photogrammetric correlation and, in places, radar surveys; used only where the LiDAR HD has no data.
+9. [9] BEV (Bundesamt für Eich- und Vermessungswesen), [ALS-Höhenraster](https://www.bev.gv.at/Services/Produkte/Digitales-Gelaendehoehenmodell/ALS-Hoehenraster.html), 1 m airborne-laser terrain model of Austria.
+10. [10] [ESA / Airbus, *Copernicus DEM GLO-30*](https://doi.org/10.5270/ESA-c5d3d65) (and GLO-90): a 1-arc-second (about 30 m) digital surface model of the globe from the TanDEM-X radar mission, vegetation and buildings included.
+11. [11] [Mont Agel (Wikipédia, FR)](https://fr.wikipedia.org/wiki/Mont_Agel): 1,148 m when consulted in September 2026, 1,151 m in November 2026 (reference: Géoportail), at 43°46′15″ N, 7°25′11″ E; military air-detection installations on the summit. Model heights read by this project (`research/lidar_horizon.py` and the Géoplateforme altimetry service), 25 November 2026.
+
+
+---
+
+# Curvature: how fast a direction turns
+
+> Tab "Curvature" of *Flat plane or Globe?*. Web page: /#tab-kappa. Generated from the rendered page: same text, same computed numbers and sources; drawings are replaced by their captions and descriptions, formulas are TeX. Licence: content and data CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), Xyphophor (https://x.com/Xyphophor); source code MIT; third-party data keep the licence of their source, cited in each tab.
+
+*Curvature · what it is, how it is measured, and what a plane gives*
+
+Every method on this site that gives the Earth a radius measures one thing: how much a direction turns over a distance. That is the mathematical definition of curvature, and it needs no globe to state: a straight line turns by nothing, a circle by the same angle for every metre, and the radius is what you divide by. This tab defines it, takes it from curves to surfaces, shows how it is detected from inside a surface with angles and lengths only, and then answers the objection that these calculations “assume the globe”: run them on readings taken on a plane, and they do not return a radius.
+
+*[Figure: Animation: a point rolls along a curve with its tangent, the angle between two tangents divided by the distance between them giving the curvature; the curve becomes a line and a circle, then a plane and a sphere; then simulated dips, triangles, Eratosthenes' shadows and trips of known speed on a plane and on a sphere, where only the sphere's readings line up and give a radius; last, the correlation and the scatter as readings are added: on the plane one falls or the other climbs]*
+
+*Figure caption:* **The whole tab in under a minute.** A point rolls along a road with its tangent: the turn between two tangents divided by the distance between them is the curvature. The road becomes a straight line (κ = 0) and a circle (κ = 1/R), then, spun about a vertical axis, a plane (K = 0) and a sphere (K = 1/R²). Then the same naive radius calculation is run on dips, triangles, Eratosthenes' shadows and trips of known speed simulated on a plane and on a sphere with the same instrument: one or two readings always give a number, hundreds give 6,368 km on the sphere and no single radius on the plane. Click to pause.
+
+*Figure caption:* **Curvature in forty seconds.** A road seen from above, drawn at uniform scale in metres. A point rolls along it with its tangent (blue); a second point 8 m further on carries its own tangent (green); the angle Δθ between the two directions, drawn again from one point at the top right, divided by the 8 m between them, is the curvature κ. The dashed circle is the one that hugs the road best at the first point, the osculating circle, of radius 1/κ: small in a tight bend, huge where the road almost runs straight. Then the road is straightened into a line, where the two tangents never differ (κ = 0), and closed up evenly into a circle of 20 m, where they always differ by the same angle (κ = 1/R everywhere). The camera rises without a cut and each is turned about its vertical axis: the line sweeps out a plane, the circle a sphere. On a surface there are two directions at each point; their two curvatures are 0 and 0 on the plane, 1/R and 1/R on the sphere, and their product is Gauss's curvature K. Click to pause.
+
+## A direction that turns with distance
+
+**Walk along a curve and watch your heading.** Over a short stretch Δs it changes by an angle Δθ. The curvature is the ratio, in the limit of short stretches: how many radians the direction turns per metre walked[6]. It is a local number, read at one point, and it uses only a position along the curve, a distance and an angle. Nothing in it refers to a centre, an outside, or a third dimension.
+
+$${\kappa = \frac{d\theta}{ds} = \lim_{\Delta s \to 0} \frac{\Delta\theta}{\Delta s}}$$
+
+**The curvature of a curve.** θ is the direction of the tangent, s the distance walked along the curve, κ the turn per unit length, in radians per metre (or per km). Its sign says which way the curve turns: positive to the left, negative to the right.
+
+**Two curves have the same curvature at every point.** On a straight line the tangent never changes: κ = 0 everywhere. On a circle of radius R, walking an arc Δs turns the radius, and therefore the tangent, which stays at right angles to it, by Δs/R: κ = 1/R everywhere. Any other curve has a curvature that changes from point to point, and at each point the circle of radius 1/κ that hugs it best, the osculating circle[3], gives the curve's local radius.
+
+$${\Delta\theta = \frac{\Delta s}{R} \;\Rightarrow\; \kappa_{\text{circle}} = \frac{1}{R}},\qquad \kappa_{\text{line}} = 0$$
+
+**The circle and the line.** R is the circle's radius. On the Earth, R = 6,371 km: a walk of 1 km turns the vertical by 32.4″, 100 m by 3.24″, and one degree takes 111 km. A straight line is the circle whose radius is infinite.
+
+$${\kappa = \frac{y\prime\prime}{\left(1 + y\prime^{2}\right)^{3/2}}},\qquad \rho = \frac{1}{\kappa}$$
+
+**The same number for a graph.** For a curve drawn as y(x), y′ and y″ are its first and second derivatives ([Math](/ai/math.md#math-h2deriv)) and ρ the radius of the osculating circle, the circle through three points of the curve as they merge. Where the curve is a straight line, y″ = 0 and ρ is infinite.
+
+## On a surface, two directions and one number
+
+**Stand on a surface and cut it with planes through the vertical.** Each cut is a curve with its own curvature, and as the cut turns, the curvature runs between a largest and a smallest value, κ₁ and κ₂, in two directions at right angles: the principal curvatures, found by Euler in 1760[2]. A plane gives 0 in every direction. A sphere gives 1/R in every direction. A cylinder gives 1/R across and 0 along; a saddle bends up one way and down the other.
+
+$${K = \kappa_1\,\kappa_2}:\qquad K_{\text{plane}} = 0,\quad K_{\text{sphere}} = \frac{1}{R^2}$$
+
+**Gauss's curvature.** κ₁ and κ₂ are the principal curvatures at a point, K their product, in 1/m² or 1/km². On the Earth K = 2.46 × 10⁻⁸ /km². The cylinder, curved in one direction only, has K = 0, like the plane: it can be unrolled onto a sheet without stretching, and the sphere cannot.
+
+**Why the product, and not one of the two.** Gauss proved in 1827 that K, unlike κ₁ or κ₂ alone, can be measured by someone who never leaves the surface, from lengths and angles drawn on it, and that no bending without stretching changes it: his theorema egregium[1]. A sheet of paper rolled into a cylinder keeps K = 0, and the triangles drawn on it keep their angles. That is also why no flat map of a sphere keeps every length ([Maps](/ai/map.md#map-h2gauss)). Two consequences follow, and they are the two ways to detect curvature from inside.
+
+## Curvature measured from inside: angles and lengths
+
+**Draw a triangle with straight lines on the surface**, the shortest paths between three points, and add its three angles. On a plane they make 180°, whatever the triangle's size. On a surface of curvature K they make 180° plus K times the area: on a sphere, the area divided by R². Albert Girard gave the sphere's case in 1629[4], Gauss the general one[1].
+
+$${\alpha + \beta + \gamma - 180^\circ = K\,A = \frac{A}{R^2}}$$
+
+**The angle excess of a triangle.** α, β, γ are its three angles, A its area, K the curvature, the excess in radians. On the Earth one second of arc of excess takes 197 km² of triangle; a triangle of 1,000 km² exceeds 180° by 5.08″.
+
+**Or walk a circle.** Keep a fixed distance r from a post, measured along the ground, and walk round it. On a plane the circumference is 2πr. On a sphere it is shorter: the lines that leave the post spread less and less, and meet again at the far side. Bertrand, Diguet and Puiseux showed in 1848 that the shortfall gives K at the post[5]. On the Earth a circle of 100 km is 26 m short of 2πr, one of 10 km 25.8 mm.
+
+$${C = 2\pi R \sin\frac{r}{R} \approx 2\pi r - \frac{\pi}{3}\,K\,r^{3}}$$
+
+**The circumference of a circle drawn on the surface.** r is the radius walked along the ground, C the circumference, R the sphere's radius and K = 1/R². The second form holds on any surface for small r: K = 3(2πr − C)/(π r³).
+
+**Every radius on this site is one of these.** The surveyors' triangles add their angles ([1,458 triangles, Surveying](/ai/surv.md#sv-h2tri)); the reciprocal zenith angles of two stations are the triangle with its third corner at the centre ([Elevation angles](/ai/elev.md#2a51c10f), [97 lines, Refraction](/ai/ref.md#rf-hsp4)); the dip of the horizon is the turn of the vertical between the eye and the horizon ([Dip](/ai/dip.md#84acea2b)); Eratosthenes compared two verticals against the same sunlight ([Gravity](/ai/grav.md#gv-h1)); seismic waves and airliners divide a speed times a time by the angle between two places ([Seismology](/ai/seis.md#sq-h7), [Aviation](/ai/avia.md#avia-h2rf)). Each measures an angle and a length, and divides.
+
+## “It assumes the globe”: run the calculation on a plane
+
+**The objection.** “A radius computed from angles assumes a ball; feed the formula anything and it gives you a ball.” If that were so, readings taken on a flat surface would also come out with a radius. So the next six sections do exactly that. Each simulates one method on two surfaces, a plane and a sphere of 6,371 km, with the same instrument: the same places, the same distances and the same reading errors, drawn from one fixed random sequence. Only the surface differs. Then each set of readings is put through the same naive calculation, without saying which surface it came from.
+
+**The calculation.** Each method gives two numbers per reading, x from distances or heights and y from angles or lengths, such that a sphere of radius R makes y proportional to x. The radius comes from the slope of the line through zero that fits the readings best. With it come two checks that need no model: the correlation r between x and y, and how far the readings scatter around the line compared with the instrument's known error, χ²/ν, which is close to 1 when the line holds and much larger when it does not.
+
+$${c = \frac{\sum x_i y_i/\sigma_i^2}{\sum x_i^2/\sigma_i^2}},\qquad R = c^{-1/p},\qquad \frac{\chi^2}{\nu} = \frac{1}{n-1}\sum \left(\frac{y_i - c\,x_i}{\sigma_i}\right)^2$$
+
+**A line through zero, and the radius it gives.** xᵢ and yᵢ are the n readings, σᵢ the instrument's error on yᵢ, c the slope; p is 1 when the slope is 1/R, 2 when it is 1/R² (triangles, circles), ½ when it is 1/√R (the dip). c ≤ 0 gives no real radius at all. The range shown is the radius for c ± its standard error: when c − σ_c ≤ 0, it runs to infinity, and a flat surface is not excluded. The figure shows the 300 simulated triangles of the section below.
+
+**Under each animation, the two checks as the readings come in**, one point per reading added. They fail in two different ways on the plane. For the dip, the zenith angles, the triangles and the circle, the plane's correlation falls to zero while its scatter stays at 1: its readings are perfectly consistent, with a curvature of zero. For Eratosthenes and speed × time, where the flat model makes a signal of its own (the nearby Sun, the flat map), the correlation stays and the scatter climbs into the hundreds: no single radius fits them. On the sphere both stay where a sphere puts them, r = 1 and χ²/ν close to 1. With only a few readings the scatter is itself poorly known, which is why the curves wander at the start.
+
+*Figure caption:* **Two ways to fail.** The correlation r and the scatter χ²/ν against the number of readings, for the simulated triangles (top) and for Eratosthenes under the flat model's Sun (bottom), on the plane (amber) and on the sphere (blue). The plane's triangles end at r = -0.01 with χ²/ν = 1.14: consistent readings, with no curvature. Its shadows end at r = 0.69 with χ²/ν = 306: a signal, but no single radius. The sphere's stay at r = 1 and χ²/ν close to 1.
+
+**What this is and is not.** These readings are simulated, so this is no evidence about the Earth: it is a test of the calculation. No air bends the light in these simulations; the real readings and their refraction are in the tabs linked from each section. What would vindicate the flat model, stated in advance, is the same in all six: real readings that behave like the plane's column below, and not like the sphere's.
+
+## The dip of the horizon, from 50 m to 12 km
+
+**The reading.** An observer at height h measures how far the horizon lies below eye level, to 1′, from a beach, a hill or an airliner. On a sphere the line of sight to the horizon is tangent to the ground, and the dip is the angle the vertical turns between the eye and the tangent point. On a plane the far ground approaches eye level and never goes below it: the dip read is the instrument's error alone.
+
+*Figure caption:* **200 dips on each surface.** Top: the reading being taken (not to scale); bottom: every dip so far against √(2h), with the line through zero of each surface. With one reading, the plane already gives a radius, 45,804,941 km, from nothing but the instrument's error; with two, their correlation is a perfect 1, as it is for any two readings. Then the readings pile up: on the sphere they rise along one line and the radius settles at 6,393 km (6,382–6,405); on the plane they stay around zero, the correlation falls to -0.13 and the slope comes out below zero: no radius at all. Click to pause.
+
+$${\cos\delta = \frac{R}{R+h}} \;\Rightarrow\; \delta \approx \sqrt{\frac{2h}{R}},\qquad R \approx \frac{2h}{\delta^2}$$
+
+**The dip of the horizon.** h is the height of the eye, δ the dip in radians, R the radius. y = δ and x = √(2h), so the slope is 1/√R. On a plane δ = 0 at every height. The real dips, with refraction, are in the [Dip](/ai/dip.md#84acea2b) tab; al-Bīrūnī measured one about 1018.
+
+## Reciprocal zenith angles, lines of 10 to 120 km
+
+**The reading.** Two stations a distance d apart each measure the angle from straight up to the other, to 10″. If the two verticals are parallel, the two angles add up to exactly 180°, whatever the distance and the heights. If they meet at a centre, the sum exceeds 180° by d/R. It is the triangle of the previous section with one corner at the centre of the Earth.
+
+*Figure caption:* **200 lines on each surface.** The excess of the two zenith angles over 180°, in minutes of arc, against the length of the line. The plane's first reading falls below 180°, so its “radius” is negative, and so is the slope through its first two; later the slope wanders either side of zero, within its errors, and with all the readings the plane's range runs to infinity. The sphere's readings lie on one line: 6,372 km, correlation 1.000. Click to pause.
+
+$${z_A + z_B - 180^\circ = \frac{d}{R}}$$
+
+**Reciprocal zenith angles.** z_A and z_B are the angles from the vertical at each station to the other, d the distance between them, the excess in radians. On a plane the excess is 0 at every distance. With air, light curves down on both surfaces: on the sphere the excess shrinks to d(1 − k)/R, and on a plane the sum falls BELOW 180° by d/ρ, 7.0′ for 100 km with k = 0.13 (ρ = R/k = 49,008 km). The 97 lines surveyed in Colorado and California from 1859 to 1895 all exceed 180°, by 6′ to 56′ ([Refraction](/ai/ref.md#rf-hsp4)).
+
+## Triangles of 50 to 15,000 km²
+
+**The reading.** A surveyor measures the three angles of a triangle between hilltops, each to 0.7″, and its area from a measured base, without any radius. On a plane the angles add up to 180° plus the reading errors; on a sphere the excess grows with the area.
+
+*Figure caption:* **300 triangles on each surface.** The excess over 180° in seconds of arc against the area. The plane's first triangle happens to come out slightly above 180°, and gives a radius of 40,950 km; its second agrees, 59,591 km, and their correlation is a perfect 1. Two readings that do not contradict each other. By thirty triangles the plane's slope has fallen below zero, by three hundred it is back to 215,215 km with a range that runs to infinity, and its correlation is -0.01. The sphere's: 6,368 km, correlation 0.998. Click to pause.
+
+**The formula is the angle excess above**, α + β + γ − 180° = A/R², so y is the excess and x the area, and the slope is 1/R². The surveys of the nineteenth century did exactly this with 1,458 real triangles, and their excess grows with the area along one line, at 6,383 km ([Surveying](/ai/surv.md#sv-h2tri)).
+
+## A circle walked round a post, 20 to 300 km
+
+**The reading.** Lengths only, as Gauss allowed: walk a circle at a fixed distance r from a post, measured on the ground, and measure its circumference to one part in 100,000 (a centimetre per kilometre). On a plane C = 2πr. On a sphere it falls short by πr³/(3R²): y is the shortfall and x = πr³/3, so the slope is 1/R². Nobody has surveyed the Earth this way; the triangles above rest on the same theorem.
+
+*Figure caption:* **200 circles on each surface.** The shortfall 2πr − C in metres against the radius walked (axis drawn as πr³/3). The plane's first circle comes out longer than 2πr, as if the ground were a saddle: no radius. Its readings stay around zero at every size, the slope stays within two standard errors of zero, and with all the readings the range runs to infinity. The sphere's: 6,387 km, correlation 0.998. Click to pause.
+
+## Eratosthenes, with the flat model's nearby Sun
+
+**The reading.** Two sticks on the line that runs towards the point under the Sun, d apart, and the angle of each one's shadow, to 0.1°. On the sphere the Sun is far and its rays parallel, and the angles differ by d/R. On the plane a Sun at infinity would make them equal, and the plane would give no radius, like the four other methods. Flat-earth models put the Sun about 5,000 km up[8]; then the angles differ, and the plane does give a radius.
+
+*Figure caption:* **200 pairs of sticks on each surface**, the first stick anywhere from 0 to 8,000 km from the point under the Sun, the second 200 to 1,500 km further. The plane's first two pairs fall near the point under the Sun and agree: 5,250 and 5,282 km, a plausible radius. Then pairs further away come in, and they give larger radii, up to 17,800 km: the readings no longer lie on any line through zero, and their scatter around the best one is χ²/ν = 306, against 1 for the instrument's error alone. The sphere's lie on one line at 6,380 km, χ²/ν = 0.93. Click to pause.
+
+$${\Delta z = \frac{d}{R}},\qquad \Delta z_{\text{plane}} = \arctan\frac{r_2}{H} - \arctan\frac{r_1}{H}$$
+
+**Two shadows.** Δz is the difference between the two shadows' angles from the vertical, d the distance between the sticks; on the plane, H is the Sun's height and r₁, r₂ the sticks' distances from the point under it. Close to that point the plane gives R ≈ H; at a distance r it gives (H² + r²)/H, 17,800 km at 8,000 km. Any H gives the same pattern, scaled. Readings within 2,000 km of the point under the Sun give 5,616 km on the plane, those beyond 6,000 km give 16,487 km; on the sphere, 6,388 and 6,365 km.
+
+**Two readings are not a test.** Eratosthenes' two cities, a 7.2° difference over about 800 km[7], fit a flat Earth with a Sun about 6,300 km above the southern one as well as they fit a globe, which is what flat-earth videos say, and it is true. What separates the two is the third reading and the hundredth, taken further from the Sun: one radius for all of them, or a radius that depends on where you stand. A real measurement of the Sun's height across many places is in the [Sun](/ai/sun.md) and [Observation](/ai/obs.md) tabs.
+
+## Speed × time over angle: earthquakes and airliners
+
+**The reading.** A seismic wave or an airliner of known speed v goes from one place to another in a time t, so it covers v t. The two places are given by their latitude and longitude, angles read on the sky, and the angle θ between them at the centre comes from those four angles with the sphere's formula: this is the step said to “assume the globe”. Then R = v t / θ. On the sphere, v t = R θ. For the plane, the same coordinates are laid on the flat-earth map, the azimuthal map centred on the North Pole, with a degree of latitude worth πR/180 km as on the globe (its own convention), and v t is the straight distance on that map. Each trip is known to 1.5 % plus 20 km (winds, detours, a speed known to a few per cent).
+
+*Figure caption:* **200 trips on each surface**, 10° to 120° long, between places from 60° S to 75° N. Distance travelled against the angle from the coordinates. The plane's first trip gives 6,301 km, a plausible radius, and its second 7,412 km: the flat map keeps lengths along the meridians, so trips in the north come out close to the globe. Then trips in the south come in, and the map stretches them: 12,853 km for the trips south of 10° S, 6,789 km for those north of 15° N; around the best line, χ²/ν = 253. The sphere's: 6,371 km, 6,380 in the south and 6,368 in the north, χ²/ν = 0.93. Click to pause.
+
+$${v\,t = R\,\theta},\qquad \cos\theta = \sin\varphi_1\sin\varphi_2 + \cos\varphi_1\cos\varphi_2\cos\Delta\lambda$$
+
+**A trip and its angle.** v is the speed of the wave or the aircraft, t the travel time, φ₁, φ₂ the latitudes and Δλ the difference of longitudes of the two places, θ the angle between them at the centre, in radians. The formula for θ is the sphere's, and that is the point: it does not make trips on a plane fit a sphere. On the flat map a trip of 60° along the equator is 1.5 times as long as on the globe, and one of 60° of longitude along 35° S 2.6 times. The real fits: 90 airline routes with their filed airspeeds give 6,513 ± 83 km, every known bias pushing up ([Aviation](/ai/avia.md#avia-h2rf)); the seismic waves, [Seismology](/ai/seis.md#sq-h7).
+
+**No flat map does better.** Any flat map keeps some distances and stretches others, and no choice of scale or centre makes every trip's v t proportional to its angle ([Maps](/ai/map.md#map-h2gauss)). On a flat Earth it would show as speeds that depend on the route: airliners that must fly faster in the south, seismic waves that travel faster east–west. What would vindicate the plane: travel times, with known speeds, that fit straight distances on one flat map at every latitude.
+
+## Six methods, one answer each
+
+**The same naive calculation on simulated readings: the plane's first reading, the plane and the sphere after all of them. ∞: the range reaches infinity, a flat surface is not excluded.**
+
+| Method (real readings) | Plane, 1 reading | Plane, all | Sphere, all |
+| --- | --- | --- | --- |
+| Dip of the horizon ([Dip](/ai/dip.md#84acea2b)) | 45,804,941 km | no radius (r = -0.13) | 6,393 km (r = 1.000) |
+| Reciprocal zenith angles ([Refraction](/ai/ref.md#rf-hsp4)) | negative | no radius (r = 0.10) | 6,372 km (r = 1.000) |
+| Triangles ([Surveying](/ai/surv.md#sv-h2tri)) | 40,950 km | 215,215 km … ∞ (r = -0.01) | 6,368 km (r = 0.998) |
+| Circle round a post | none (C > 2πr) | no radius (r = -0.06) | 6,387 km (r = 0.998) |
+| Speed × time over angle, flat-earth map ([Aviation](/ai/avia.md#avia-h2rf), [Seismology](/ai/seis.md#sq-h7)) | 6,301 km | 7,676 km, χ²/ν = 253 | 6,371 km, χ²/ν = 0.93 |
+| Eratosthenes, flat Sun at 5,000 km ([Sun](/ai/sun.md), [Observation](/ai/obs.md)) | 5,250 km | 8,511 km, χ²/ν = 306 | 6,380 km, χ²/ν = 0.93 |
+
+**So the calculation does not assume the globe.** Given readings from a plane, four of the six methods return what a plane is: a slope compatible with zero, an infinite radius, readings that do not correlate with distance or area. The two others, Eratosthenes under the flat model's nearby Sun and speed × time on the flat-earth map, return a radius that changes with where it is measured. Given readings from a sphere, all six return its radius, and the readings line up. With one or two readings, either surface can give a plausible number: one reading always gives a radius, and any two correlate perfectly. The answer is in the many.
+
+**What the real readings do.** They behave like the sphere's column: the excess of 1,458 triangles grows with their area, the sums of 97 pairs of zenith angles all exceed 180° and grow with the length, the dip grows as the square root of the height, from a beach to an airliner. Each tab linked above shows its readings, its refraction and its flat-model best case. What would have vindicated the plane: readings like the plane's column, with no slope, at every size.
+
+**See also**[Math](/ai/math.md)[Physics](/ai/phys.md)[Surveying](/ai/surv.md)[Dip](/ai/dip.md)[Elevation angles](/ai/elev.md)[Refraction](/ai/ref.md)[Maps](/ai/map.md)[Gravity](/ai/grav.md)[Results](/ai/results.md)
+
+## Sources for this tab
+
+1. [1] C. F. Gauss, *Disquisitiones generales circa superficies curvas* (Göttingen, 1827; read to the Royal Society of Göttingen in 1827, printed 1828): the curvature measure K as the product of the principal curvatures, its invariance under bending without stretching (art. 12, the “theorema egregium”), and the angle excess of a geodesic triangle equal to the integral of K over its area (art. 20); English translation by A. Hiltebeitel and J. Morehead, *General Investigations of Curved Surfaces* (Princeton, 1902).
+2. [2] L. Euler, “Recherches sur la courbure des surfaces”, *Mémoires de l'Académie des sciences de Berlin* 16 (1760, printed 1767) 119–143: the curvature of the sections of a surface through its normal, and its largest and smallest values in two directions at right angles (Opera Omnia I.28, E333).
+3. [3] G. W. Leibniz, “Meditatio nova de natura anguli contactus et osculi”, *Acta Eruditorum* (June 1686) 289–292: the circle that touches a curve most closely at a point, which he named the osculating circle.
+4. [4] A. Girard, *Invention nouvelle en l'algèbre* (Amsterdam, 1629): the area of a spherical triangle is proportional to the excess of its angles over two right angles.
+5. [5] J. Bertrand, C.-F. Diguet and V. Puiseux, three successive notes on Gauss's measure of curvature, *Journal de mathématiques pures et appliquées* 13 (1848) 80–90: the curvature at a point from the circumference (Bertrand, Diguet) or the area (Puiseux) of a small geodesic circle around it, K = 3(2πr − C)/(πr³) in the limit.
+6. [6] M. P. do Carmo, *Differential Geometry of Curves and Surfaces* (Prentice-Hall, 1976; 2nd edition Dover, 2016), chapters 1 (the curvature of a curve), 3 (principal and Gaussian curvatures) and 4 (the theorema egregium and the Gauss–Bonnet theorem).
+7. [7] Cleomedes, *Cleomedes' Lectures on Astronomy* (Caelestia) I.7, translated by A. C. Bowen and R. B. Todd (University of California Press, 2004): Eratosthenes' measurement, the Sun overhead at Syene and a shadow of one fiftieth of a circle at Alexandria, 5,000 stadia to the north.
+8. [8] [“Flat Earth”, *Encyclopædia Britannica*](https://www.britannica.com/topic/flat-Earth): in some modern flat-earth models the Sun and the Moon are about 50 km across and circle above the disc at a height of about 5,500 km.
+
+
+---
+
+# The physics: units, motion, frames of reference, Newton's laws, waves and the constants
+
+> Tab "Physics" of *Flat plane or Globe?*. Web page: /#tab-phys. Generated from the rendered page: same text, same computed numbers and sources; drawings are replaced by their captions and descriptions, formulas are TeX. Licence: content and data CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), Xyphophor (https://x.com/Xyphophor); source code MIT; third-party data keep the licence of their source, cited in each tab.
+
+*Physics · the physics the other tabs use*
+
+The other tabs use words like *inertial frame*, *angular velocity*, *GM* or *Coriolis* without stopping to define them. This tab gathers those definitions in one place, each with its formula and a figure, and says where on the site it is used. The mathematics they rest on, angles, vectors, derivatives, uncertainties and fitting, is in the [Math](/ai/math.md) tab. Nothing here is a measurement, and nothing here takes sides: Newton's laws and the units are the same tools for both models, and any model of the Earth has to obey them.
+
+## Quantities, units and orders of magnitude
+
+**A quantity is a number times a unit.** “6,371 km” says how many times the kilometre fits in the Earth's radius; the number alone means nothing. Since 20 May 2019 the seven base units of the International System (SI) are no longer defined by objects (the platinum kilogram in Sèvres) but by fixing the value of seven constants of nature[1]: the second by the frequency of the caesium atom, the metre by the speed of light, the kilogram by Planck's constant, and so on. Large and small numbers are written in scientific notation: 6.371 × 10⁶ m, 7.29 × 10⁻⁵ rad/s. The exponent counts the places the decimal point moves, so its *order of magnitude* is read at a glance.
+
+**The seven SI base units and the constant that fixes each one since 2019[1]; and the prefixes the site uses.**
+
+| Quantity | Unit | Fixed by |
+| --- | --- | --- |
+| time | second (s) | caesium-133 frequency Δν_Cs = 9 192 631 770 Hz |
+| length | metre (m) | speed of light c = 299 792 458 m/s |
+| mass | kilogram (kg) | Planck's constant h |
+| electric current | ampere (A) | elementary charge e |
+| temperature | kelvin (K) | Boltzmann's constant k_B |
+| amount of substance | mole (mol) | Avogadro's number N_A |
+| luminous intensity | candela (cd) | luminous efficacy K_cd = 683 lm/W |
+| **Prefixes: n (nano) 10⁻⁹ · µ (micro) 10⁻⁶ · m (milli) 10⁻³ · k (kilo) 10³ · M (mega) 10⁶ · G (giga) 10⁹** | | |
+
+## Position, velocity, acceleration
+
+**Kinematics describes motion without asking what causes it.** A body's position x is measured from an origin chosen by the observer; its velocity v is how fast x changes, its acceleration a how fast v changes. All three are *vectors*: they have a size and a direction, and adding two of them means putting them end to end ([Math](/ai/math.md#math-h2vec), vectors). A speed of 900 km/h going east and the same speed going west are two different velocities.
+
+$${\bar v = \frac{\Delta x}{\Delta t} = \frac{x_2 - x_1}{t_2 - t_1}},\qquad \bar a = \frac{\Delta v}{\Delta t}$$
+
+Δ (delta) means “the change in”: Δx is the distance covered between two instants, Δt the time between them. Their ratio is the *mean* velocity over that interval: on a graph of x against t, the slope of the straight chord joining the two points.
+
+$${\vec v = (v_x,\ v_y)},\qquad |\vec v| = \sqrt{v_x^2 + v_y^2},\qquad \vec v_{\text{total}} = \vec v_1 + \vec v_2$$
+
+An arrow over a letter marks a vector. It splits into components along the axes, and its length, the *magnitude*, follows from Pythagoras. An airliner's ground speed is its airspeed plus the wind, added as arrows: that is the [Aviation](/ai/avia.md) tab's triangle of velocities.
+
+## Frames of reference
+
+**A frame of reference is an observer with axes and a clock.** Positions, velocities and accelerations only have a value relative to one. A frame is *inertial* when a body on which no force acts moves in a straight line at constant speed, or stays at rest: Newton's laws hold there as written. Galileo noticed in 1632 that, in the closed cabin of a ship sailing smoothly, flies, fish in a bowl and dripping water behave exactly as on land: no experiment inside can tell a uniform motion from rest[3]. Any frame moving at constant velocity relative to an inertial frame is itself inertial.
+
+*Figure caption:* **Galileo Galilei** 1564–1642
+[Justus Sustermans, c. 1640 (National Maritime Museum, London)](https://commons.wikimedia.org/wiki/File:Galileo.arp.300pix.jpg)
+
+$${x\prime = x - V t},\qquad v\prime = v - V,\qquad a\prime = a$$
+
+**Galilean change of frame.** A train moves at constant speed V along the platform. Positions and velocities measured on board (primed) differ from those measured on the platform, but accelerations are the same: V is constant, so it vanishes when differentiated. Forces, which give accelerations, are therefore the same in every inertial frame. That is why a smooth motion cannot be felt, and why “I would feel the Earth move” is not an argument: what is felt is acceleration, not speed.
+
+**A rotating frame is not inertial.** On a merry-go-round, a ball rolled straight across seems to curve, and a passenger feels pushed outwards, although no one pushes. Written in the turning frame, Newton's second law only works if *inertial forces* are added: they are not caused by another body, they come from the frame's own acceleration[5]. The ground under our feet turns once a sidereal day, so it is a rotating frame; its rotation is slow enough that these forces are small, but instruments measure them.
+
+$${\vec a\prime = \vec a - 2\,\vec\Omega\times\vec v\prime - \vec\Omega\times(\vec\Omega\times\vec r)}$$
+$$a_\text{Coriolis} = 2\,\Omega\,v\,\sin\varphi,\qquad a_\text{centrifugal} = \Omega^2\,r$$
+
+Ω is the frame's angular velocity, v′ and r the body's velocity and position in that frame, × the vector (cross) product, φ the latitude. The middle term is the Coriolis acceleration: it deviates anything that moves, to the right in the northern hemisphere; for an airliner at 250 m/s at 45° it is 0.0258 m/s², 0.26 % of gravity. The last term is the centrifugal acceleration, outward from the axis: 0.0339 m/s² at the equator. The figure shows the same ball seen from outside (straight line) and from the turning disc (curved).
+
+**The inertial forces of a turning Earth, their size, and the tabs that measure them[5][8].**
+
+| Force | Per unit mass | On the Earth | On this site |
+| --- | --- | --- | --- |
+| centrifugal | Ω² r cos φ, away from the axis | 0.0339 m/s² at the equator, 0 at the poles | [Gravity](/ai/grav.md) |
+| Coriolis | 2 Ω × v, across the motion | ~10⁻⁴ m/s² per m/s of speed | [Foucault](/ai/fou.md), [Aviation](/ai/avia.md), [Rotation](/ai/rot.md) |
+| Eötvös (vertical part of Coriolis) | 2 Ω v cos φ, up for eastward motion | a ship going east is lighter | [Aviation](/ai/avia.md), [Gravity](/ai/grav.md) |
+| Euler | −(dΩ/dt) × r | negligible: Ω barely changes | — |
+
+## Newton's three laws and universal gravitation
+
+**The three laws (Principia, 1687)[4].** First: a body stays at rest or in uniform straight motion unless a force acts on it; this is what defines an inertial frame. Second: the force equals the mass times the acceleration. Third: when a body pushes another, the other pushes back with an equal and opposite force. **Mass is not weight.** Mass (kg) measures how hard a body is to accelerate and is the same everywhere; weight is the force of gravity on it, m g, in newtons (N = kg·m/s²), and changes with g. A bathroom scale measures a force and displays it divided by a standard g.
+
+$${\sum \vec F = m\,\vec a = m\,\frac{d\vec v}{dt}}\qquad (\sum \vec F = 0\ \Leftrightarrow\ \vec v\ \text{constant})$$
+
+Σ F is the sum of all forces on the body, added as arrows. If they cancel, the acceleration is zero and the first law follows: the first law is the second with no net force. On a book lying on a table, its weight and the table's push cancel.
+
+$${\vec F_{A\to B} = -\vec F_{B\to A}}$$
+
+The apple pulls the Earth up exactly as hard as the Earth pulls the apple down. The Earth's acceleration is far too small to see because its mass is 10²⁴ times larger. The two forces act on different bodies, so they never cancel each other.
+
+$${F = \frac{G\,m_1\,m_2}{r^2}},\qquad g = \frac{G M}{R^2}$$
+
+Every pair of masses attracts along the line joining them, with a force that falls as the square of the distance r between their centres; for a sphere, the attraction outside is as if all its mass were at the centre. G is the gravitational constant, first measured in the laboratory by Cavendish in 1798 with lead balls[7]. At the surface of a sphere of mass M and radius R, the acceleration is g = GM/R²: 9.820 m/s² for the Earth's GM and a radius of 6,371 km. The [Gravity](/ai/grav.md) tab compares measured g with this.
+
+*Figure caption:* **Henry Cavendish** 1731–1810
+[After the only likeness, sketched by William Alexander without his knowledge (G. Wilson, 1851)](https://commons.wikimedia.org/wiki/File:Cavendish_Henry_signature.jpg)
+
+$${a_\text{Moon} = \frac{4\pi^2 r}{T^2} \approx g\,\left(\frac{R}{r}\right)^2}$$
+
+**Newton's Moon test.** The Moon, at r = 60 Earth radii, goes round in T = 27.32 days: to bend its path into that circle it must fall towards the Earth by 2.723 mm/s². Gravity at the surface, weakened by (R/r)² = 1/3,600, gives 2.698 mm/s²[4][13]. The two agree to 1.0 %; counting the Moon's own mass (the Earth and the Moon both turn about their common centre, so G(M+m) in place of GM) gives 2.731 mm/s². The same force makes apples fall and keeps the Moon in orbit.
+
+## Adding forces
+
+**A force is an arrow: a size in newtons and a direction.** Several forces on one body act as a single force, their sum, found by putting the arrows end to end (the parallelogram rule, known to Stevin in 1586 and stated by Newton as the first corollary of his laws[15][4]). In practice, one adds them by components: choose two perpendicular axes, project every force on each, and add the numbers. Then the second law applies to the sum: a body whose forces add up to zero stays at rest or keeps its velocity, whatever the individual forces are. Drawing every force acting on a body, and only those, is called a free-body diagram; it is the first step of every mechanics problem.
+
+*Figure caption:* **A force table, seen from above.** A ring is tied to three ropes that run over pulleys at the rim and carry 3, 4 and 5 kg: each rope pulls the ring towards its pulley with the weight it carries, m g. Starting from the centre, the ring slides along the sum of the three forces (black arrow) until that sum is zero; a little friction is added so that it stops. On the right the same three arrows end to end: the gap between start and finish is the sum, and at equilibrium the polygon closes. Click to pause.
+
+$${\sum F_x = 0,\qquad \sum F_y = 0}\qquad F_x = F\cos\theta,\ \ F_y = F\sin\theta$$
+
+**Equilibrium by components.** θ is the angle of each force from the x axis. A force of 10 N at 30° counts as 8.66 N along x and 5 N along y. A body is in equilibrium when both sums vanish, which is two equations for a flat problem and three in space. With 3, 4 and 5 kg the forces are 29.4, 39.2 and 49.1 N; three forces in the ratio 3 : 4 : 5 close a right triangle, so at equilibrium the two smaller ropes are at 90° to each other.
+
+## Ropes and pulleys
+
+**A rope only pulls, along itself, and with the same tension all along** when its mass and the pulleys' friction can be neglected. A pulley turns that pull in another direction without changing it. Two classic set-ups follow. In Atwood's machine (1784), two masses hang on either side of a pulley: the heavier goes down, the lighter up, both with the same acceleration, smaller than g[16]. In a block and tackle, the load hangs on several strands of the same rope: each strand carries the same tension, so n strands share the weight n ways, and the rope must be pulled n times as far as the load rises. The work done, force times distance, is the same either way: pulleys trade force for distance, they do not create energy.
+
+*Figure caption:* **Two pulley systems, in real time.** Left, Atwood's machine with 3 kg against 2 kg, released from rest: on each block, its weight (amber) and the tension of the rope (blue), the same on both sides; their sum (black) is the block's mass times its acceleration, 1.96 m/s² for both. Right, a block and tackle with four strands lifts 40 kg (392 N) with a pull of 98 N; the hand draws four metres of rope for each metre the load rises. Rope and pulleys without mass or friction. Click to pause.
+
+$${a = \frac{m_1 - m_2}{m_1 + m_2}\,g},\qquad T = \frac{2\,m_1 m_2}{m_1 + m_2}\,g$$
+
+**Two free-body diagrams, two equations.** On the heavy block, m₁ a = m₁ g − T; on the light one, m₂ a = T − m₂ g. Adding them removes T and gives a; putting a back gives T. With 3 and 2 kg: a = g/5 = 1.96 m/s² and T = 23.5 N, between the two weights (19.6 and 29.4 N). Atwood built it to slow free fall down enough to time it by hand[16].
+
+$${F = \frac{m\,g}{n}},\qquad d_{\text{rope}} = n\,h$$
+
+**n strands, n times less force, n times more rope.** n is the number of strands that hold the moving block, h the height the load rises. With four strands, 40 kg are held by 98 N, a quarter of their 392 N; raising them by 1 m takes 4 m of rope. F × d_rope = m g × h: the work is the same.
+
+## Inertia, kicks and collisions at an angle
+
+**A moving body needs no force to keep moving.** A puck on ice keeps its speed and direction; only a force changes them (Newton's first law[4]). A short, hard blow is best described by its impulse J, the force multiplied by the time it lasts, in newton-seconds: it changes the velocity by J/m, as an arrow, in the direction of the blow. The new velocity is the old one plus that arrow, which is why a ball struck sideways does not go where it was struck but somewhere between. In a collision, the two bodies give each other equal and opposite impulses (the third law), so their total momentum, mass times velocity added as arrows, is the same before and after.
+
+*[Figure: Animation: a billiard ball moving slightly diagonally hits another at rest; its velocity is split into components; the contact force changes only the component along the line of centres; momentum and energy are conserved; the same collision seen from two moving inertial frames shows the same acceleration]*
+
+*Figure caption:* **A collision, then two changes of frame.** A 170 g ball moving at 2.00 m/s, slightly on a slant, keeps its velocity while nothing pushes it (first law); near the impact its velocity is split along the line of centres and across it; at the impact, the push between the balls acts along the line of their centres, equal and opposite on each (third law), and changes only the component along that line (second law: J = m v_n); momentum is unchanged and kinetic energy comes back after the squeeze; the push peaks near 1,403 N during the 0.3 ms of contact[24]; then the viewpoint glides, the grid showing it, to a frame that moves with the ball's horizontal speed, and later to one that moves with the ball itself (every image is seen from an inertial frame, so the paths stay straight); the three frames side by side show the same acceleration, 8,252 m/s² at the peak, the same curve three times; and a frame that kept following the ball through the impact would need a fictitious force. Slowed down; the contact, a fraction of a millisecond, is stretched; balls at true scale. Click to pause.
+
+*Figure caption:* **Velocities add as arrows.** Left, a 170 g puck sliding at 2 m/s receives a blow of 0.255 N·s at 60° to its path: Δv = J/m = 1.5 m/s in that direction. It leaves at 3.04 m/s, 25.3° from its old path, the sum of the two arrows. Right, a ball A (170 g, 2.00 m/s, slightly on a slant) hits an identical ball B at rest. At the impact its velocity splits along the line joining the centres (violet, v_n = 1.58 m/s) and across it (grey, v_t = 1.23 m/s). The contact force (green) acts along that line only, equal and opposite on the two balls: it removes A's v_n and gives it to B, J = m v_n = 0.268 N·s, and leaves v_t alone, so the balls part at 90°. Billiard balls stay in contact for about 0.3 ms[24]: the push averages 893 N and peaks near 1,403 N, an acceleration of 841 g. Below, the total momentum, unchanged throughout, and the energy: the kinetic part dips during the contact while the balls are squeezed (light green), then comes back. Seen from above, no friction or spin; the contact, a fraction of a millisecond, is stretched. Click to pause.
+
+$${\vec J = \vec F\,\Delta t = m\,\Delta\vec v}\quad\Rightarrow\quad \vec v^{\prime} = \vec v + \frac{\vec J}{m}$$
+
+**The second law over a short time.** F is the force of the blow, Δt its duration, J their product. The kick of the animation, 0.255 N·s on 170 g, adds 1.5 m/s at 60° to 2 m/s: by components, (2 + 1.5 cos 60°, 1.5 sin 60°) = (2.75, 1.30) m/s, that is 3.04 m/s at 25.3°.
+
+*Figure caption:* **One collision, three inertial frames.** The collision of the panel above, watched at once from the table, from a frame that moves with A's horizontal speed (1.95 m/s: there A only goes straight up before the impact), and from a frame that moves with A's whole velocity before the impact (there A is at rest and B comes at it). The table's dots slide by in the moving frames. Velocities, paths and the total momentum differ from one frame to the next; during the contact the acceleration of A (green) is the same arrow in all three, and the same number, up to 8,252 m/s² (841 g); so is its change of velocity. Each frame finds the total momentum and the energy conserved. (The total kinetic energy happens to be the same in these three frames: with two equal balls, one at rest, ½m|v − u|² + ½m|u|² = ½m|v|² for both of these u. In a frame moving another way it would differ.) None of the frames follows A once it is deflected: each keeps its speed, which is what keeps it inertial. Click to pause.
+
+$${\vec v^{\prime} = \vec v - \vec u}\quad\Rightarrow\quad \Delta\vec v^{\prime} = \Delta\vec v,\qquad \vec F^{\prime} = m\,\frac{\Delta\vec v^{\prime}}{\Delta t} = \vec F$$
+
+**Velocities depend on the frame, accelerations and forces do not.** u is the velocity of one inertial frame relative to the other: here A's horizontal speed, (1.95, 0) m/s, or its whole velocity before the impact, (1.95, 0.43) m/s. Every velocity measured in the moving frame is the one measured from the table minus u. Subtracting the same u before and after the impact leaves the change of velocity untouched, so all three observers measure the same acceleration and, with the same mass, the same force: the contact force is a property of the two balls, not of the observer. Momentum and kinetic energy are conserved in each frame; the momentum takes a different value in each. This is Galileo's relativity (Frames of reference, above): no experiment on the balls can tell which frame is “at rest”. A frame that kept following A through the impact would not be inertial: A would never move in it, and a fictitious force equal and opposite to the contact force would be needed to explain that.
+
+*Figure caption:* **The same total push, three ways.** Three 170 g balls roll at 2 m/s into a headwind. The first is slowed by a steady wind of 0.068 N for 2.5 s; the second by two blows of 0.085 N·s; the third by a single blow of 0.17 N·s. Under each lane, the force against time: a long low strip or tall narrow spikes, but the same grey area, 0.17 N·s. On the right, the velocity and the running sum ∫F dt of the three: different paths, the same end, 1.0 m/s and −0.17 N·s. The balls do not end at the same place: the velocity changed at different moments. Slowed down; the blows are lengthened to be seen; the wind is taken as steady, while real drag grows with speed. Click to pause.
+
+$${\vec J = \int \vec F\,dt = \sum_i \vec J_i}\quad\Rightarrow\quad \Delta\vec v = \frac{\vec J}{m}$$
+
+**Only the area counts.** The integral ∫F dt is the area under the curve of the force against time, and the J_i are the impulses of separate blows. A small force for a long time, a big one for an instant, or several blows in a row change the velocity by the same amount if their areas add up to the same total: here 0.17 N·s on 0.17 kg, 1 m/s. The second law in this form, m Δv = ∫F dt, is how a contact force too short to measure is found from the velocities before and after. When the change happens matters for where the body goes, not for its final velocity.
+
+$${m\vec v = m\vec v_1^{\prime} + m\vec v_2^{\prime}},\quad \tfrac12 m v^2 = \tfrac12 m v_1^{\prime 2} + \tfrac12 m v_2^{\prime 2}\ \Rightarrow\ \vec v_1^{\prime} \perp \vec v_2^{\prime}$$
+
+**Why equal balls leave at right angles.** Momentum says the three velocity arrows close a triangle; energy (an elastic collision loses none) says v² = v₁′² + v₂′², Pythagoras: the triangle has a right angle between v₁′ and v₂′. Hit off-centre by one radius, the target leaves at 30° with 1.73 m/s and the striker at 1.00 m/s, from 2 m/s. Real billiard balls also spin and slide on the cloth, which bends these paths a little.
+
+## Magnetic forces
+
+**A magnetic field pushes on moving charges, sideways.** In 1820 Ørsted saw a compass needle turn when a current flowed in a wire beside it: currents make magnetic fields[17]. Lorentz wrote in 1895 the force on a charge q moving at v in a field B: q v × B, perpendicular to both[18]. Because it is always across the motion, it never changes the charge's speed, only its direction: in a uniform field the charge goes round a circle. Fields add as arrows too: a compass needle points along the sum of all the fields at its place, the Earth's and any other. The Earth's field and its direction everywhere are the subject of the Magnetism tab.
+
+*Figure caption:* **Two magnetic forces.** Left, a positive charge in a field that points into the screen: the force (amber) stays at right angles to the velocity (blue) and points to the centre, so the charge circles at constant speed. A proton at 1 km/s in 50 µT, the order of the Earth's field, circles on 21 cm; an electron at the same speed on 0.11 mm. Right, a compass seen from above, with a vertical wire just north of it: when 5 A flow upward in the wire, at 5 cm it adds 20 µT pointing east to the 20 µT of the Earth's horizontal field, and the needle turns by 45° to point along the sum; the current cut, it comes back. Not to scale. Click to pause.
+
+$${\vec F = q\,\vec v \times \vec B},\qquad r = \frac{m\,v}{|q|\,B}$$
+
+**The cross product** v × B is an arrow perpendicular to both v and B, of size v B sin(angle between them); its direction follows the right hand (fingers from v to B, the thumb gives the force for a positive charge). For a velocity across the field the force is q v B, and setting it equal to m v²/r, the centripetal force, gives the radius. The masses and the charge of the proton and of the electron are those of CODATA[2].
+
+$${B_{\text{wire}} = \frac{\mu_0\,I}{2\pi d}},\qquad \tan\delta = \frac{B_{\text{wire}}}{B_H}$$
+
+**The field of a straight wire, and the compass.** I is the current, d the distance from the wire, μ₀ = 1.256 6 × 10⁻⁶ N/A² the magnetic constant[2]. 5 A at 5 cm give 20 µT. The needle settles along the sum of the wire's field and the horizontal part B_H of the Earth's, about 20 µT at mid-latitudes[19]; at right angles to each other, the angle δ from north has tan δ = 20/20, δ = 45°.
+
+## Worked example: how far does a pushed ball go?
+
+**The problem.** A steel ball 10 cm across is pushed from the ground by a force of 1,000 N pointing 30° above the horizontal, for 0.1 s. Where does it land? Every step uses only the rules above: find the mass, add the forces during the push, get the velocity it leaves with, then follow the flight under its weight alone, and then with the air as well. Steel weighs 7,850 kg per cubic metre[20]; the parabola of a thrown body goes back to Galileo[21].
+
+**The ball, step by step. g = 9.81 m/s².**
+
+| Step | Rule | Numbers | Result |
+| --- | --- | --- | --- |
+| 1. Mass | m = ρ · (4/3) π r³ | 7,850 × 4.19 × 0.05³ | m = 4.11 kg, weight W = m g = 40.3 N |
+| 2. The push, by components | F_x = F cos 30°, F_y = F sin 30° | 1,000 × 0.866 ; 1,000 × 0.5 | F_x = 866 N, F_y = 500 N |
+| 3. Sum of the forces during the push | ΣF = F + W (W points down) | (866, 500 − 40.3) N | a = ΣF/m = 239 m/s² at 28.0° |
+| 4. Velocity at the end of the push | v = a Δt | 239 × 0.1 | v₀ = 23.85 m/s at 28.0°, from (1.05 m, 0.56 m) |
+| 5. Flight in a vacuum | x = x₀ + v₀ cos α t, y = y₀ + v₀ sin α t − ½ g t² | y = 0 when t = 2.33 s | lands at 50.1 m; highest point 6.93 m |
+| 6. With the air | drag ½ ρ C_D A v², against the velocity | ½ × 1.225 × 0.47 × 78.5 cm² × v² | 1.29 N at launch (3.2 % of the weight); lands at 49.2 m |
+| Check: forgetting the weight during the push | v = F Δt / m, range v² sin 60° / g | 24.33 m/s at 30° | 52.3 m: 2 m too far |
+
+*Figure caption:* **The ball, at true scale.** Horizontal and vertical distances are drawn at the same scale; only the ball is enlarged. First the push, slowed twenty times: the force F at 30° (blue) and the weight (amber) add to a push at 28.0° (black), which is why the ball leaves lower than 30°. Then the flight, slowed three times: in a vacuum (dashed) and in air (solid), with the weight, the velocity and the drag of the air (green), a tiny arrow at the same scale, 3.2 % of the weight at launch. The air costs 0.9 m: 49.2 m instead of 50.1 m. Click to pause.
+
+$${x = v_0\cos\alpha\;t,\qquad y = v_0\sin\alpha\;t - \tfrac12 g t^2},\qquad R = \frac{v_0^2\sin 2\alpha}{g}$$
+
+**Two independent motions.** With only the weight acting, nothing pushes sideways, so the horizontal velocity v₀ cos α never changes; vertically, the velocity falls by g every second, as for a dropped stone. The path is a parabola. From ground level the range is R = v₀² sin 2α / g, largest at 45°; our ball leaves from 0.56 m up at 28.0°, so the table solves y = 0 for t instead: 2.33 s, 50.1 m.
+
+$${\vec F_D = -\tfrac12\,\rho\,C_D\,A\,|\vec v|\,\vec v},\qquad m\,\frac{d\vec v}{dt} = m\vec g + \vec F_D$$
+
+**Air resistance.** ρ = 1.225 kg/m³ is the density of air at sea level[22], A = π r² the ball's cross-section, C_D ≈ 0.47 the drag coefficient of a smooth sphere at these speeds[23]. The drag points against the velocity and grows with its square. With it the equations have no simple solution: the computer adds the two forces at each millisecond and steps the velocity and the position forward (Runge–Kutta method). For a dense ball the drag is small; for a hollow 50 g ball of the same size it passes the weight above 15 m/s.
+
+**What the example leaves out, said plainly:** the air during the 0.1 s of the push, the ball's spin (which, through the Magnus effect, lifts or drops a spinning ball), wind, and the slight change of C_D with speed. A thrown ball also starts from the hand, about 2 m above the ground, which adds several metres. Each of these is one more force to add to the sum, by the same rule.
+
+## Circular motion and angular velocity
+
+$${\omega = \frac{d\theta}{dt} = \frac{2\pi}{T}},\qquad v = \omega\,r$$
+
+**Angular velocity.** ω (omega) is how fast an angle turns, in radians per second; T is the time for one turn. Every point of a turning body has the same ω, but its speed v grows with its distance r from the axis. For the Earth, ω = 7.292 × 10⁻⁵ rad/s[8]: one turn in 86,164 s. The [Rotation](/ai/rot.md) tab measures ω with ring lasers and gyroscopes, the [Scale](/ai/scale.md) tab shows it as a clock hand.
+
+$${a_c = \frac{v^2}{r} = \omega^2 r},\ \text{towards the centre}$$
+
+**Turning at constant speed is accelerating.** The speed keeps its size but not its direction: between two instants, the difference Δv of the velocity arrows points to the centre. Seen from the inertial frame that is a centripetal acceleration, provided by a force (the string of a sling, gravity for the Moon)[14]; seen from the turning frame it appears as the centrifugal force of the previous section, the same size and the opposite way. At the equator, ω²R = 0.0339 m/s², 0.35 % of g.
+
+$${\frac{1}{T_\text{sid}} = \frac{1}{T_\text{sol}} + \frac{1}{T_\text{year}}}\ \Rightarrow\ T_\text{sid} \approx 86\,164\ \text{s}$$
+
+**Two kinds of day.** The solar day (86,400 s, noon to noon) is a turn relative to the Sun; the sidereal day is a turn relative to the stars. Because the Earth also moves along its orbit, it has to turn a little more than once to face the Sun again: in a year it turns 366.24 times relative to the stars for 365.24 noons. With T_sol = 86,400 s and T_year = 365.2422 days, T_sid = 86,164.1 s. This is why the stars rise four minutes earlier every night ([Star trails](/ai/star.md)).
+
+## Energy, momentum and angular momentum
+
+**Three quantities that do not change.** In an isolated system, three totals stay constant whatever happens inside: the energy, the momentum (mass times velocity) and the angular momentum (the “amount of turning”). They follow from Newton's laws and save solving the motion step by step: knowing what is conserved often gives the answer directly.
+
+$${E = \tfrac12\,m v^2 + m g h = \text{constant}},\qquad E_p = -\frac{G M m}{r}$$
+
+The kinetic energy ½mv² is the energy of motion, the potential energy mgh that of height near the ground (in joules, J = kg·m²/s²). A ball dropped from h trades one for the other and reaches the ground at v = √(2gh), whatever its mass. Far from the ground, where g is no longer constant, the potential energy is −GMm/r: zero at infinity, negative when bound.
+
+$${\vec p = m\,\vec v},\qquad \vec p_1 + \vec p_2 = \text{constant}\ \Rightarrow\ m_1 v_1 = -m_2 v_2$$
+
+Two skaters at rest push each other apart: the total momentum was zero and stays zero, so the lighter one goes faster, the opposite way. A rocket works the same way with its exhaust gases, which is why it needs no air to push against.
+
+$${L = m\,r^2\,\dot\theta = \text{constant}}\ \Leftrightarrow\ \frac{dA}{dt} = \frac{r^2\dot\theta}{2} = \text{constant}$$
+
+**Kepler's second law** (1609): the line from the Sun to a planet sweeps equal areas in equal times[6]. It is the conservation of angular momentum L under a force aimed at the Sun: close in (small r), the planet turns faster (large θ̇). The Earth is fastest in early January, at perihelion, which is one reason the seasons do not have the same length ([Orbit](/ai/orb.md)).
+
+$${T^2 = \frac{4\pi^2}{G(M+m)}\,a^3}$$
+
+**Kepler's third law** (1619), as Newton derived it: the square of the period grows as the cube of the orbit's size a (half the long axis of the ellipse)[6][4]. With the Earth's GM, a GPS satellite at a = 26,560 km goes round in 11.97 h, half a sidereal day ([Satellites](/ai/sat.md)); the Moon, with GM alone, in 27.45 days, and with G(M+m) in 27.28 days, against 27.32 observed.
+
+*Figure caption:* **Johannes Kepler** 1571–1630
+[August Köhler, 1910, after an older portrait (Kepler Museum, Weil der Stadt)](https://commons.wikimedia.org/wiki/File:JKepler.jpg)
+
+## Waves and light
+
+**A wave carries energy without carrying matter.** The sea swell, sound, the seismic waves of the [Seismology](/ai/seis.md) tab, the pressure wave of Hunga Tonga ([Atmosphere](/ai/atmo.md)), radio and light are all waves: a disturbance that travels while each point only oscillates about its place. Light needs no medium and goes at c in vacuum, slower in air, water or glass.
+
+$${v = \lambda\,f = \frac{\lambda}{T}},\qquad t = \frac{d}{v}$$
+
+λ (lambda) is the wavelength, the distance between two crests; f the frequency, the number of crests passing per second (hertz, Hz), and T = 1/f the period. In one period the wave advances one wavelength. The travel time over a distance d is d/v: the seismology and Tonga tabs read distances from such times.
+
+$${n_1 \sin\theta_1 = n_2 \sin\theta_2},\qquad n = \frac{c}{v}$$
+
+**Refraction.** When light passes into a medium where it is slower (higher index n), it bends towards the perpendicular[11]. Air gets thinner with height, so its index slowly decreases upwards and a ray going nearly level bends gently downward, following the Earth's curve a little: that is atmospheric refraction, the subject of the [Refraction](/ai/ref.md) tab. The site always shows it beside the unrefracted value.
+
+$${\frac{\Delta f}{f} \approx -\frac{v_r}{c}}\quad (v_r \ll c)$$
+
+**The Doppler effect** (1842)[10]. A source moving away (v_r > 0) stretches its waves, so its frequency drops; one coming closer squeezes them, so it rises. That is the change in pitch of a passing siren. Only the speed along the line of sight, v_r, counts. Measured on starlight it gives the Earth's orbital speed ([Orbit](/ai/orb.md)); on satellite radio signals, their orbits ([Satellites](/ai/sat.md)).
+
+## Constants: defined, measured, and local
+
+**Not every “constant” is the same kind of number.** The seven constants of the SI are exact *by definition*: since 2019 the metre is the distance light travels in 1/299,792,458 s, so c cannot be measured any more, only used[1]. The gravitational constant G is a universal constant that is *measured*, and is the least well known of all (2 parts in 100,000)[2]. The Earth's GM, its rotation ω, its radius and the local g are *properties of one planet*, not universal constants: g changes from place to place, and the “standard” g_n = 9.80665 m/s² is a convention adopted in 1901 for weighing, not a value found anywhere in particular[12]. That last distinction is the site's purity rule: a measurement of the radius may never have used the radius ([Results](/ai/results.md)).
+
+**The constants the site uses, and what kind each one is[1][2][8][9][12].**
+
+| Symbol | Name | Value | Unit | Kind |
+| --- | --- | --- | --- | --- |
+| c | speed of light in vacuum[1] | 299 792 458 | m/s | exact, defines a unit |
+| h | Planck constant[1] | 6.626 070 15 × 10⁻³⁴ | J·s | exact, defines a unit |
+| e | elementary charge[1] | 1.602 176 634 × 10⁻¹⁹ | C | exact, defines a unit |
+| k_B | Boltzmann constant[1] | 1.380 649 × 10⁻²³ | J/K | exact, defines a unit |
+| N_A | Avogadro constant[1] | 6.022 140 76 × 10²³ | mol⁻¹ | exact, defines a unit |
+| Δν_Cs | caesium-133 hyperfine frequency[1] | 9 192 631 770 | Hz | exact, defines a unit |
+| K_cd | luminous efficacy of 540 THz light[1] | 683 | lm/W | exact, defines a unit |
+| G | Newtonian constant of gravitation[2] | 6.674 30(15) × 10⁻¹¹ | m³ kg⁻¹ s⁻² | universal, measured |
+| GM⊕ | Earth's gravitational parameter[8] | 3.986 004 418 × 10¹⁴ | m³/s² | property of the Earth |
+| ω⊕ | Earth's mean angular velocity[8] | 7.292 115 × 10⁻⁵ | rad/s | property of the Earth |
+| R_eq | Earth's equatorial radius (GRS80)[9] | 6 378 137 | m | property of the Earth |
+| g_eq | normal gravity at the equator[9] | 9.780 33 | m/s² | property of the Earth |
+| g_pole | normal gravity at the poles[9] | 9.832 19 | m/s² | property of the Earth |
+| g_n | standard gravity[12] | 9.806 65 | m/s² | convention |
+
+$${1\ \text{m} = c \times \frac{1}{299\,792\,458}\ \text{s}},\qquad 1\ \text{s} = \frac{9\,192\,631\,770}{\Delta\nu_\text{Cs}}$$
+
+**A constant defines a unit.** The second is the duration of 9,192,631,770 oscillations of the radiation of the caesium-133 atom, the metre the distance light travels in 1/299,792,458 of that second. Any laboratory can rebuild them without a reference object. GPS clocks count these oscillations ([GPS](/ai/gps.md)).
+
+$${g(\varphi) \approx \frac{G M}{R^2} - \omega^2 R \cos^2\varphi}\quad \text{(sphere, no flattening)}$$
+
+**g is local.** On a turning sphere of radius 6,371 km, the centrifugal term lowers gravity from 9.820 m/s² at the poles to 9.786 m/s² at the equator. Measured, it goes from 9.832 to 9.780 m/s²[9]: the difference is larger because the Earth is also flattened, the equator being 21 km farther from the centre than the poles. Height, the rocks below and the tides change it further, in the fourth decimal and beyond ([Gravity](/ai/grav.md)).
+
+**See also**[Math](/ai/math.md)[Curvature](/ai/kappa.md)[Rotation](/ai/rot.md)[Gravity](/ai/grav.md)[Foucault](/ai/fou.md)[Orbit](/ai/orb.md)[Satellites](/ai/sat.md)[Refraction](/ai/ref.md)[Results](/ai/results.md)
+
+## Sources for this tab
+
+1. [1] Bureau International des Poids et Mesures, [*The International System of Units (SI)*](https://www.bipm.org/en/publications/si-brochure), 9th edition (2019, updated 2022): the seven defining constants (Δν_Cs, c, h, e, k, N_A, K_cd) and the base units they fix, in force since 20 May 2019 (26th CGPM, Resolution 1).
+2. [2] NIST, [CODATA Internationally recommended 2022 values of the fundamental physical constants](https://physics.nist.gov/cuu/Constants/): Newtonian constant of gravitation G = 6.674 30(15) × 10⁻¹¹ m³ kg⁻¹ s⁻², relative standard uncertainty 2.2 × 10⁻⁵.
+3. [3] G. Galilei, *Dialogo sopra i due massimi sistemi del mondo* (Florence, 1632), Second Day: Salviati's cabin below decks of a ship moving uniformly, where no experiment shows whether the ship moves or stands still.
+4. [4] I. Newton, *Philosophiæ Naturalis Principia Mathematica* (London, 1687): “Axiomata, sive leges motus” (the three laws); Book III, Proposition IV (the Moon is kept in its orbit by the force of gravity, compared with the fall of bodies at the surface) and Propositions XIII–XV (Kepler's laws from the inverse square).
+5. [5] G. Coriolis, “Mémoire sur les équations du mouvement relatif des systèmes de corps”, *Journal de l'École polytechnique* 15 (1835) 142–154: the compound centrifugal force, now called the Coriolis force, in a rotating frame.
+6. [6] J. Kepler, *Astronomia nova* (Prague, 1609): elliptical orbits and the law of areas; *Harmonices mundi* (Linz, 1619), Book V: the squares of the periods as the cubes of the mean distances.
+7. [7] H. Cavendish, “Experiments to determine the Density of the Earth”, *Philosophical Transactions of the Royal Society* 88 (1798) 469–526: the torsion balance with lead spheres, from which G follows.
+8. [8] G. Petit, B. Luzum (eds.), [*IERS Conventions (2010)*, IERS Technical Note 36](https://www.iers.org/IERS/EN/Publications/TechnicalNotes/tn36.html), table 1.1: GM⊕ = 3.986 004 418 × 10¹⁴ m³/s², nominal mean angular velocity ω = 7.292 115 × 10⁻⁵ rad/s.
+9. [9] H. Moritz, “Geodetic Reference System 1980”, *Journal of Geodesy* 74 (2000) 128–133: equatorial radius 6 378 137 m, polar radius 6 356 752 m, normal gravity 9.780 326 7715 m/s² at the equator and 9.832 186 3685 m/s² at the poles; mean radius 6 371.0088 km.
+10. [10] C. Doppler, “Über das farbige Licht der Doppelsterne und einiger anderer Gestirne des Himmels”, *Abhandlungen der königlich böhmischen Gesellschaft der Wissenschaften* 2 (1842) 465–482.
+11. [11] R. Descartes, *La Dioptrique* (Leiden, 1637), Discours second: the law of refraction in sines, found earlier by W. Snellius (about 1621, unpublished) and by Ibn Sahl (984) for lenses.
+12. [12] 3rd Conférence Générale des Poids et Mesures (1901), Declaration on the unit of mass and the definition of weight: standard acceleration of gravity g_n = 980.665 cm/s², “the value already stated in the laws of some countries”.
+13. [13] D. R. Williams, [Moon Fact Sheet](https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html), NASA Goddard (NSSDCA): semi-major axis 384 400 km, sidereal orbit period 27.3217 days, Earth/Moon mass ratio 81.3.
+14. [14] C. Huygens, *Horologium oscillatorium* (Paris, 1673): the period of a pendulum and its relation to the fall of bodies, T = 2π√(L/g) for small swings, and (Part V) the theorems on centrifugal force, v²/r, worked out in *De vi centrifuga* (1659, published 1703).
+15. [15] S. Stevin, *De Beghinselen der Weeghconst* (Leiden, 1586): equilibrium of forces on an inclined plane (the “wreath of spheres”), and the triangle of forces.
+16. [16] G. Atwood, *A Treatise on the Rectilinear Motion and Rotation of Bodies* (Cambridge, 1784): the machine of two masses over a pulley, to slow down and time uniformly accelerated motion.
+17. [17] H. C. Ørsted, *Experimenta circa effectum conflictus electrici in acum magneticam* (Copenhagen, 1820): a current in a wire turns a compass needle.
+18. [18] H. A. Lorentz, *Versuch einer Theorie der electrischen und optischen Erscheinungen in bewegten Körpern* (Leiden, 1895): the force on a charge moving in electric and magnetic fields.
+19. [19] P. Alken et al., “International Geomagnetic Reference Field: the thirteenth generation”, *Earth, Planets and Space* 73 (2021) 49: the horizontal intensity of the field, about 15 to 25 µT at mid-latitudes.
+20. [20] EN 1993-1-1 (Eurocode 3), Design of steel structures, § 3.2.6: density of structural steel ρ = 7,850 kg/m³.
+21. [21] G. Galilei, *Discorsi e dimostrazioni matematiche intorno a due nuove scienze* (Leiden, 1638), Fourth Day: a projectile thrown horizontally describes a semi-parabola; the range is largest at 45°.
+22. [22] *U.S. Standard Atmosphere, 1976* (NOAA, NASA, USAF, Washington, 1976): density of air at sea level 1.2250 kg/m³.
+23. [23] S. F. Hoerner, *Fluid-Dynamic Drag* (Hoerner, 1965), chapter 3: drag coefficient of a smooth sphere about 0.47 below the critical Reynolds number (≈ 3 × 10⁵; our ball: 1.6 × 10⁵).
+24. [24] W. C. Marlow, *The Physics of Pocket Billiards* (Marlow Advanced Systems Technologies, 1995): ball-ball contact lasts between 0.1 and 0.6 ms, less at higher speed; measurements of 0.25 to 0.3 ms by Sorokin, quoted by D. Alciatore, [“Ball contact time”](https://drdavepoolinfo.com/FAQ/ball/contact-time/) (Dr. Dave Pool Info).
 
 
 ---
@@ -781,7 +985,7 @@ The photograph by [deprojected](https://x.com/deprojected), used with his permis
 
 The photograph as taken: 13 June 2026, 15:23, from the plateau at head height, phone at 23 mm equivalent.
 
-*Figure caption:* **The plateau de Caussols: Mont Agel over the sea horizon.** From 1,210 m (43.72218° N, 6.93849° E), looking east over the Riviera: Mont Agel[13], 39 km away and 77 m lower than the eye (1,133 m in the terrain model, 1,148 m published: the IGN's LiDAR has no data on the summit, a military site, and the models that fill the gap differ; [Basics](/ai/phys.md#phys-h2dem)), Monte Ceppo, 70 km away in Italy, and Cap Corse, 222 km out to sea. The terrain is the IGN's LiDAR HD to 45 km and the Copernicus 30 m model beyond[14], a surface model with forests and buildings included. The test is the sea horizon. On a globe it lies **62′ below** eye level at this height, with standard refraction, and Mont Agel stands **47′ above** it. On a plane the sea rises towards eye level with distance, so anything lower than the eye must sit below the horizon: Mont Agel **7′ below** it. [Xyphophor](https://x.com/Xyphophor)'s photograph from this point shows Mont Agel above the sea horizon. Fitted with the camera's own focal length on the near summits alone, it puts the sea horizon within 0.1° of the globe's and about 45′ below the plane's, and Mont Agel 42′ above that horizon (globe 47′, plane 7′ below). Cap Corse would sit on the horizon of a plane and stands 12′ above the globe's.
+*Figure caption:* **The plateau de Caussols: Mont Agel over the sea horizon.** From 1,210 m (43.72218° N, 6.93849° E), looking east over the Riviera: Mont Agel[13], 39 km away and 77 m lower than the eye (1,133 m in the terrain model, 1,148 m published: the IGN's LiDAR has no data on the summit, a military site, and the models that fill the gap differ; [Math](/ai/math.md#math-h2dem)), Monte Ceppo, 70 km away in Italy, and Cap Corse, 222 km out to sea. The terrain is the IGN's LiDAR HD to 45 km and the Copernicus 30 m model beyond[14], a surface model with forests and buildings included. The test is the sea horizon. On a globe it lies **62′ below** eye level at this height, with standard refraction, and Mont Agel stands **47′ above** it. On a plane the sea rises towards eye level with distance, so anything lower than the eye must sit below the horizon: Mont Agel **7′ below** it. [Xyphophor](https://x.com/Xyphophor)'s photograph from this point shows Mont Agel above the sea horizon. Fitted with the camera's own focal length on the near summits alone, it puts the sea horizon within 0.1° of the globe's and about 45′ below the plane's, and Mont Agel 42′ above that horizon (globe 47′, plane 7′ below). Cap Corse would sit on the horizon of a plane and stands 12′ above the globe's.
 
 *Figure caption:* The sightline as a silhouette, swept off the IGN's LiDAR HD terrain (about 1 m), not drawn: one terrain read, two models, 6.2° of azimuth centred on the Castellaras. **True angular scale on both axes, no exaggeration** — 372′ wide against 52′ of relief, so the panorama is a low band, as a photograph from the summit shows it. The filled outline is the globe at k = 0.13; the dashed line is the same terrain with the curvature taken out. **Read the Cime de Barbin, at 60 km:** a plane puts it at **+9.5′, above eye level**; a globe at **−4.6′, below it** — fourteen arcminutes and a change of sign. Its prominence over the dips beside it (about 16′) is the same in both models, because those dips are distant too: the test is height above the horizontal, not above a neighbour. The terrain model reads the three summits within 1.5 m of their published heights (Viériou 1,394.9 m, Castellaras 1,400.3 m, Barbin 1,560.0 m).
 
@@ -876,6 +1080,8 @@ Baseline b = **18 km**. Both methods read the same two real angles, so both agre
 
 ## Measuring an angle on a sphere
 
+**What curvature is**, a direction that turns with distance, defined without any globe: [Curvature](/ai/kappa.md#ka-h2def).
+
 A common objection: “angles only mean anything on a flat plane — you can't measure elevation on a ball.” But an angle is measured against a *reference direction*, and every point on a sphere has one: the direction a bubble level settles into. That local horizontal is the tangent at your feet, and it exists everywhere. Below, two protractors sit on a rotating globe — one at the observer, one on the summit — each with **0° along its own tangent**. No plane is drawn anywhere.
 
 · drag to turn it yourself
@@ -883,6 +1089,8 @@ A common objection: “angles only mean anything on a flat plane — you can't m
 *Figure caption:* **Two instruments, two horizons, one sphere.** The blue protractor stands at the observer; its 0° mark lies along the tangent there. The violet protractor stands on the summit with 0° along *its* tangent. Both are ordinary protractors reading ordinary angles — nothing about the curved ground stops either from working. What the curvature does is tilt the two 0° lines relative to each other, by exactly the central angle between the two locations. The mountain is drawn absurdly large (30% of the planet's radius) so the angles are legible; on the real Earth the same tilt is the tiny `b/R` term from section 04.
 
 ## Reciprocal zenith angles — the parameter-free test
+
+**The same test run on simulated lines on a plane and on a sphere**, one reading, two, then two hundred: [Curvature](/ai/kappa.md#ka-h2zen).
 
 Point each protractor at the other station and read the **zenith angle** — the angle down from straight up, which is just 90° minus the elevation. Do it from both ends at once. The sum of those two readings is the single most decisive number in this whole page, because the flat prediction contains *no adjustable quantities at all*.
 
@@ -989,7 +1197,7 @@ Why the picture looks nearly flat. At true scale the drop is a fraction of a per
 10. [10] [Monte Argentera (Wikipedia)](https://en.wikipedia.org/wiki/Monte_Argentera) — the highest summit of the Maritime Alps, **3,297 m**, in Italy just beyond the French border; the target of the second viewpoint.
 11. [11] [Schneeberg (Wikipedia)](https://en.wikipedia.org/wiki/Schneeberg_(Alps)) — the highest mountain of Lower Austria; its summit, the Klosterwappen, is **2,076 m**. The target of a reader's photograph from Vienna.
 12. [12] BEV (Bundesamt für Eich- und Vermessungswesen), [ALS DTM, 1 m terrain model of Austria](https://www.bev.gv.at/Services/Produkte/Digitales-Gelaendehoehenmodell/ALS-Hoehenraster.html) from airborne laser scanning (CC BY 4.0), read by this project's research/bev_dem.py; Austria's counterpart of the IGN's LiDAR HD.
-13. [13] [Mont Agel (Wikipédia, FR)](https://fr.wikipedia.org/wiki/Mont_Agel) — **1,148 m**, above Monaco; the site uses the terrain model's 1,133 m: the IGN's LiDAR HD has no data over 0.13 km² of the summit, a military site, and the RGE ALTI that fills the gap reads 1,133 m there at most (Copernicus GLO-30, a surface model with the buildings, 1,145 m; Wikipédia gave 1,151 m in November 2026). The Basics tab, section on terrain models, gives every value and why they differ.
+13. [13] [Mont Agel (Wikipédia, FR)](https://fr.wikipedia.org/wiki/Mont_Agel) — **1,148 m**, above Monaco; the site uses the terrain model's 1,133 m: the IGN's LiDAR HD has no data over 0.13 km² of the summit, a military site, and the RGE ALTI that fills the gap reads 1,133 m there at most (Copernicus GLO-30, a surface model with the buildings, 1,145 m; Wikipédia gave 1,151 m in November 2026). The Math tab, section on terrain models, gives every value and why they differ.
 14. [14] [Copernicus DEM GLO-30](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model) (ESA), a 30 m surface model of the whole globe, read by this project's research/cop_dem.py where the IGN's data stop (Italy, Corsica seen from afar); a SURFACE model, forests and buildings included.
 
 ## Further reading
@@ -1337,7 +1545,7 @@ Climb, and the sea horizon sinks *below* your eye level. Every sextant sight is 
 - **photograph** the camera's own focal length (EXIF); heading, tilt and roll fitted on the near summits only, for each model
 - skyline residual, photo placed as each model prefers: globe k 2.9′ · straight 1.8′ · plane 2.2′
 
-*Figure caption:* **From the plateau de Caussols, bend the Earth and watch the sea horizon fall.** The view east from 1,210 m, drawn from the IGN's LiDAR and, beyond 45 km, the Copernicus model: the Riviera, Mont Agel, Monte Ceppo in Italy, Corsica 222 km out to sea. It starts on a plane, where the sea rises towards eye level and Mont Agel, 77 m lower than the eye, sits 7′ below the horizon. Its height here is the terrain model's, 1,133 m, not the published 1,148 m: the IGN's LiDAR has no data on the summit, a military site, and the models that fill the gap differ by up to 30 m around it ([Basics](/ai/phys.md#phys-h2dem), terrain models). With 1,148 m it would sit 5′ below the plane's horizon instead of 7′, and 48′ above the refracted globe's instead of 47′. The Earth is then curved to its measured radius, 6,371 km: the horizon falls to 67′ below eye level and Mont Agel rises clear of it. Refraction comes last, and it works the other way: bending light along the curve, it acts as a larger radius, R/(1−k) with k = 0.13, and lifts the far scene back by a few arcminutes (horizon 62′ below). The terrain between the three computed models is interpolated for the animation; the horizon and the named summits are computed at every step. Last, once the model has stopped changing, [Xyphophor](https://x.com/Xyphophor)'s photograph from this spot fades in, then blinks fully on and off to show how well it lands on the drawing. It is framed as the refracted globe prefers (focal length from the camera, heading, tilt and roll fitted on the near summits): its sea horizon lies within 0.1° of that model's and about 45′ below a plane's, and Mont Agel stands 42′ above it.
+*Figure caption:* **From the plateau de Caussols, bend the Earth and watch the sea horizon fall.** The view east from 1,210 m, drawn from the IGN's LiDAR and, beyond 45 km, the Copernicus model: the Riviera, Mont Agel, Monte Ceppo in Italy, Corsica 222 km out to sea. It starts on a plane, where the sea rises towards eye level and Mont Agel, 77 m lower than the eye, sits 7′ below the horizon. Its height here is the terrain model's, 1,133 m, not the published 1,148 m: the IGN's LiDAR has no data on the summit, a military site, and the models that fill the gap differ by up to 30 m around it ([Math](/ai/math.md#math-h2dem), terrain models). With 1,148 m it would sit 5′ below the plane's horizon instead of 7′, and 48′ above the refracted globe's instead of 47′. The Earth is then curved to its measured radius, 6,371 km: the horizon falls to 67′ below eye level and Mont Agel rises clear of it. Refraction comes last, and it works the other way: bending light along the curve, it acts as a larger radius, R/(1−k) with k = 0.13, and lifts the far scene back by a few arcminutes (horizon 62′ below). The terrain between the three computed models is interpolated for the animation; the horizon and the named summits are computed at every step. Last, once the model has stopped changing, [Xyphophor](https://x.com/Xyphophor)'s photograph from this spot fades in, then blinks fully on and off to show how well it lands on the drawing. It is framed as the refracted globe prefers (focal length from the camera, heading, tilt and roll fitted on the near summits): its sea horizon lies within 0.1° of that model's and about 45′ below a plane's, and Mont Agel stands 42′ above it.
 
 *Figure caption:* **Globe.** The surface keeps its shape; only the observer moves. Raise the eye and the tangent point slides outward as √h while the sightline tips further below horizontal: **840.4′ = 14.007°** down, horizon at **36 km**. Everything in the red band beyond it is geometrically hidden.
 
@@ -1382,6 +1590,8 @@ Feed the measured dip into flat geometry and it says the sightline strikes the g
 
 ## The surface you never drew [evidence: prediction]
 
+**Tangents, osculating circles and what curvature means**, from a curve to a surface: [Curvature](/ai/kappa.md#ka-h2def).
+
 Here is the same measurement with **no ground drawn at all**. Every line is one sightline to the horizon, taken from a real vantage point on the *same vertical* — a beach, a ship's bridge, a lighthouse, a cliff, a summit, an airliner — each tipped below horizontal by its own measured dip δ(h). Nothing else is plotted: no circle, no arc, no Earth. Yet the lines cannot enter a certain region, and that forbidden region has a shape. The dip angles alone carve the planet out of the negative space. **Click any sightline** to see which altitude it came from.
 
 Click any sightline in the figure to see the height it was taken from, the dip it produces, and how far its horizon lies.
@@ -1391,6 +1601,8 @@ Click any sightline in the figure to see the height it was taken from, the dip i
 This is what a mathematician calls an **envelope**: a family of straight lines whose boundary traces a curve that none of them crosses. Because a tangent to a circle touches at one point and lies outside it everywhere else, the sightlines can only be tangents of one specific circle — the one whose radius satisfies cos δ = R/(R+h) at *every* height simultaneously. A flat plane produces no envelope at all: with δ = 0 at all heights, every line is horizontal, they never fan, and the empty region is an unbounded half‑plane with no curve anywhere in it.
 
 ## Measuring the Earth from one dip angle [evidence: measurement]
+
+**The mathematics behind it**, curvature as the turn of the vertical between the eye and the horizon, and the same calculation run on readings taken on a plane, which gives no radius: [Curvature](/ai/kappa.md#ka-h2dip).
 
 Turn the formula around. If you can measure your height h and the dip δ, you can solve for R — no satellites, no travel, no second observer:
 
@@ -2495,6 +2707,8 @@ Not cited above, and no claim on this tab rests on it — listed because it is w
 
 ## 01 · Down is a direction, and it is not the same direction twice [evidence: check — Where the radius enters: meridian arcs published after reduction on the spheroid.]
 
+**Eratosthenes' calculation run on many pairs of shadows**, on a sphere and on a plane under the flat model's nearby Sun: [Curvature](/ai/kappa.md#ka-h2erat).
+
 Hang a plumb bob in Marseille and another in Lille and ask the only question that matters: are the two strings **parallel**? On a plane they must be — “down” is one fixed direction for the whole world, so every vertical is a copy of every other. On a sphere they cannot be: each one points at the centre, so two of them separated by **d** along the ground make an angle **d/R** between them, which is 1° for every 111.2 km you travel. Both statements are testable, because the direction of a plumb line can be compared with the stars, and that comparison is exactly what *astronomic latitude* is.
 
 $${\frac{d}{R}}$$
@@ -2914,6 +3128,8 @@ Dependent variable
 
 ## The reverse-engineering, done for real [evidence: check — Where the radius enters: the wave speeds were established with distances measured on the globe.]
 
+**Speed × time over angle, run on trips simulated on a sphere and on the flat-earth map**: one radius on the sphere, a radius that depends on the route on the plane: [Curvature](/ai/kappa.md#ka-h2trav).
+
 Experiment 1e above is a recipe for redoing this measurement yourself: download one earthquake, keep the surface wave, read off arrival times, and plot them against distance both ways. This section is that recipe already carried out — not on numbers this page computed, but on 479 real Rayleigh-wave (LR) arrivals picked by real seismograph networks for nine real earthquakes between 2004 and 2022, pulled from the same public bulletin Experiment 1e's tooling talks to.[13] Every row is one instrument's own reading of its own trace.
 
 $$R = \dfrac{v\,t}{\Delta}$$
@@ -2926,20 +3142,20 @@ Nothing here is fitted to land near 6,371 km: t is a real clock-to-clock arrival
 
 *Figure caption:* **Nine box plots: nine real earthquakes, then all 479 arrivals combined.** Same convention as the surveying tab's box plot — box between the quartiles, bar at the median, whiskers to 1.5 interquartile ranges, dots past them — with 6,371 km drawn as a vertical line. Every box lands within a few thousand kilometres of that line on the first try, with nothing fitted; none goes anywhere near the infinity a flat map would need.
 
-**The same boxes as numbers — median radius, interquartile range, and departure from 6,371 km**
+**The same boxes as numbers — median radius, interquartile range, departure from 6,371 km, the correlation r of the arrival times with the distance over the speed (a plane would give no single line), and their scatter around the line through zero; the picks carry no published error, so no χ²/ν**
 
-| Earthquake | n | Median R | Quartiles | Off 6,371 km |
-| --- | --- | --- | --- | --- |
-| Sumatra 2004 | 19 | **7,646 km** | 6,619–8,065 km | +20.0% |
-| Nias 2005 | 37 | **7,280 km** | 6,700–7,838 km | +14.3% |
-| Tōhoku 2011 | 81 | **7,342 km** | 6,619–7,789 km | +15.2% |
-| Maule 2010 | 54 | **6,095 km** | 5,668–6,980 km | −4.3% |
-| Illapel 2015 | 46 | **6,638 km** | 5,902–7,220 km | +4.2% |
-| Solomon 2013 | 59 | **6,847 km** | 6,499–7,067 km | +7.5% |
-| Alaska 2021 | 146 | **6,737 km** | 5,520–7,623 km | +5.7% |
-| Kuril 2006 | 32 | **7,817 km** | 7,015–8,035 km | +22.7% |
-| Tonga 2022 | 5 | **6,109 km** | 6,106–6,438 km | −4.1% |
-| **all 9 combined** | 479 | **6,910 km** | 5,883–7,616 km | +8.5% |
+| Earthquake | n | Median R | Quartiles | Off 6,371 km | r | Scatter |
+| --- | --- | --- | --- | --- | --- | --- |
+| Sumatra 2004 | 19 | **7,646 km** | 6,619–8,065 km | +20.0% | 0.638 | 5.1 min |
+| Nias 2005 | 37 | **7,280 km** | 6,700–7,838 km | +14.3% | 0.858 | 6.6 min |
+| Tōhoku 2011 | 81 | **7,342 km** | 6,619–7,789 km | +15.2% | 0.881 | 5.6 min |
+| Maule 2010 | 54 | **6,095 km** | 5,668–6,980 km | −4.3% | 0.938 | 4.5 min |
+| Illapel 2015 | 46 | **6,638 km** | 5,902–7,220 km | +4.2% | 0.963 | 4.6 min |
+| Solomon 2013 | 59 | **6,847 km** | 6,499–7,067 km | +7.5% | 0.986 | 2.8 min |
+| Alaska 2021 | 146 | **6,737 km** | 5,520–7,623 km | +5.7% | 0.799 | 6.0 min |
+| Kuril 2006 | 32 | **7,817 km** | 7,015–8,035 km | +22.7% | 0.931 | 4.9 min |
+| Tonga 2022 | 5 | **6,109 km** | 6,106–6,438 km | −4.1% | 0.999 | 1.7 min |
+| **all 9 combined** | 479 | **6,910 km** | 5,883–7,616 km | +8.5% | 0.904 | 5.6 min |
 
 > **This box is wider than the others on this page, and that is expected.** A few percent of median offset and about a quarter of the range in spread is real crustal heterogeneity: Rayleigh waves at 18–22 s run measurably faster under ocean basins than under continents, and these paths mix both.[15] Other agencies' picks, or purely teleseismic distances, do not tighten it — the spread is in the wave, not in the bookkeeping. It is far below the 60–100% a flat map would need. Real data with its honest scatter, landing in the right place without being tuned to, is worth more than a perfect line computed from the model under test.
 
@@ -2957,20 +3173,20 @@ Two numbers, not 479: v_ocean and v_continent are fixed once, from someone else'
 
 *Figure caption:* **The same 479 arrivals, same nine earthquakes, only the velocity now varies path by path.** Same convention: box between the quartiles, bar at the median, whiskers to 1.5 interquartile ranges, 6,371 km as a vertical line. Compare directly against the box plot above — every box should sit measurably closer to the line.
 
-**The corrected boxes as numbers — compare each row against the same row in the uncorrected table above**
+**The corrected boxes as numbers — compare each row against the same row in the uncorrected table above; r and the scatter as in that table**
 
-| Earthquake | n | Median R | Quartiles | Off 6,371 km |
-| --- | --- | --- | --- | --- |
-| Sumatra 2004 | 19 | **6,930 km** | 6,105–7,299 km | +8.8% |
-| Nias 2005 | 37 | **6,922 km** | 6,608–7,300 km | +8.6% |
-| Tōhoku 2011 | 81 | **6,795 km** | 6,379–7,040 km | +6.7% |
-| Maule 2010 | 54 | **6,147 km** | 5,370–6,486 km | −3.5% |
-| Illapel 2015 | 46 | **6,391 km** | 6,049–6,727 km | +0.3% |
-| Solomon 2013 | 59 | **6,739 km** | 6,607–6,926 km | +5.8% |
-| Alaska 2021 | 146 | **6,499 km** | 5,610–7,146 km | +2.0% |
-| Kuril 2006 | 32 | **7,081 km** | 6,895–7,431 km | +11.1% |
-| Tonga 2022 | 5 | **6,266 km** | 6,011–6,599 km | −1.7% |
-| **all 9 combined** | 479 | **6,675 km** | 5,830–7,041 km | +4.8% |
+| Earthquake | n | Median R | Quartiles | Off 6,371 km | r | Scatter |
+| --- | --- | --- | --- | --- | --- | --- |
+| Sumatra 2004 | 19 | **6,930 km** | 6,105–7,299 km | +8.8% | 0.692 | 4.9 min |
+| Nias 2005 | 37 | **6,922 km** | 6,608–7,300 km | +8.6% | 0.910 | 5.5 min |
+| Tōhoku 2011 | 81 | **6,795 km** | 6,379–7,040 km | +6.7% | 0.929 | 4.5 min |
+| Maule 2010 | 54 | **6,147 km** | 5,370–6,486 km | −3.5% | 0.946 | 4.3 min |
+| Illapel 2015 | 46 | **6,391 km** | 6,049–6,727 km | +0.3% | 0.981 | 3.3 min |
+| Solomon 2013 | 59 | **6,739 km** | 6,607–6,926 km | +5.8% | 0.989 | 2.4 min |
+| Alaska 2021 | 146 | **6,499 km** | 5,610–7,146 km | +2.0% | 0.869 | 4.8 min |
+| Kuril 2006 | 32 | **7,081 km** | 6,895–7,431 km | +11.1% | 0.961 | 3.8 min |
+| Tonga 2022 | 5 | **6,266 km** | 6,011–6,599 km | −1.7% | 0.999 | 2.1 min |
+| **all 9 combined** | 479 | **6,675 km** | 5,830–7,041 km | +4.8% | 0.936 | 4.7 min |
 
 The same reconstruction on every Rayleigh arrival of the large sample of the relocation section further down: 261 earthquakes, 13,586 arrivals. The epicentre and origin time come from the ISC as above, with the same 3.5 km/s and the same path correction. They are shown in a box of their own, apart from the nine above.
 
@@ -4971,6 +5187,8 @@ The plane stalls at 56.2 min rms; the sphere settles at 11.2 min, 5 times better
 
 ## The radius of the Earth from a stopwatch and a flight plan [evidence: measurement]
 
+**The same calculation run on trips simulated on a sphere and on the flat-earth map**, where the sphere's formula for the angle does not make the plane fit: [Curvature](/ai/kappa.md#ka-h2trav).
+
 Times alone give a speed, not a size: on a globe twice as large, aircraft twice as fast would keep the same timetable. The [Seismology](/ai/seis.md) tab solves this with a known wave speed; aircraft carry their own. The cruise speed filed in each flight plan is a *true airspeed*, measured through the air, independent of the ground's shape.[10] So fit R:
 
 *Figure caption:* **One radius per route.** Each dot is the radius implied by one route's round-trip time and filed airspeed, against the route's length; teal, the fit over all of them; dashed, the Earth's mean radius. Shortest route first.
@@ -4980,7 +5198,7 @@ $$\langle t \rangle = \frac{d}{v} \cdot \frac{1}{1 - w^2/v^2} > \frac{d}{v}$$
 
 θ: angle between the two airports at the Earth's centre, from their coordinates · v_TAS: filed true airspeed · ⟨t⟩: mean of the two directions with a wind w along the route, always longer than with no wind
 
-On the 90 round-trip routes with a filed plan: **R = 6,513 km ± 83 km**, t_0 = 17 min, 2.2 % above the Earth's mean radius. Route by route, the long flights give 6,181 km (BNE–SIN) to 7,507 km (CDG–HND), median 6,460 km; Tokyo–London, round by the Arctic, 8,135 km. High, as it should be: every known bias pushes up. Detours from the great circle read as a bigger Earth; the wind does not cancel (about 1% for 100 km/h, the formula above); crosswinds lengthen both legs; a filed airspeed is a plan, not a measurement. On a plane the fit has no radius to find: with the disc's distances, the southern routes would need twice the airspeed.
+On the 90 round-trip routes with a filed plan: **R = 6,513 km ± 83 km**, t_0 = 17 min, 2.2 % above the Earth's mean radius. The times follow the distance over the airspeed with a correlation r = 0.993 (a plane would give no single line: the curvature tab runs the same calculation on a flat map); around the line they scatter by 26 min, and no error is filed for each flight, so no χ²/ν is given. Route by route, the long flights give 6,181 km (BNE–SIN) to 7,507 km (CDG–HND), median 6,460 km; Tokyo–London, round by the Arctic, 8,135 km. High, as it should be: every known bias pushes up. Detours from the great circle read as a bigger Earth; the wind does not cancel (about 1% for 100 km/h, the formula above); crosswinds lengthen both legs; a filed airspeed is a plan, not a measurement. On a plane the fit has no radius to find: with the disc's distances, the southern routes would need twice the airspeed.
 
 ## Around the world: east–west and north–south [evidence: prediction]
 
@@ -5450,7 +5668,7 @@ $$\frac{s}{E} = \frac{R}{1-k}$$
 
 ζ₁ and ζ₂ are the zenith angles read at the two ends, s the length of the line from the triangulation (bases and angles, no radius). On a sphere the two verticals differ by s/R and the refraction takes back k of it. So s/E is the effective radius R/(1 − k), the one this site uses for sightlines through the air, read from two angles and a length: **7,490 km** in the median line, 7,072 km in dry Colorado, 7,526 km on the California coast.
 
-> **The flat model, at its best.** On a plane both verticals are parallel: with straight light the two angles add to 180°, and with light bent toward the ground, as it is here, to less. Of the 97 lines, every sum is above 180°; the smallest excess is 354″, on a line of 12.2 km, and the excess grows with the length of the line. **What would vindicate it:** sums at or below 180°, or an excess that does not grow with the distance.
+> **The flat model, at its best.** On a plane both verticals are parallel: with straight light the two angles add to 180°, and with light bent toward the ground, as it is here, to less. Of the 97 lines, every sum is above 180°; the smallest excess is 354″, on a line of 12.2 km, and the excess grows with the length of the line: their correlation is r = 0.998 (a plane gives r near 0), and the line through zero has the slope of an effective radius of 7,467 km. Around it the excesses scatter by 47″, mostly the refraction changing from line to line and from year to year; Schott prints no reading error for each line apart from the adjustment, so no χ²/ν is given. **What would vindicate it:** sums at or below 180°, or an excess that does not grow with the distance.
 
 **The same line, hour by hour.** In September and October 1879 George Davidson's parties at Round Top, 3,173 m up in the Sierra Nevada, and at Jackson Butte in the foothills, 714 m, 72.4 km apart, read each other's zenith angle at the same hour for fourteen days, with thermometers and barometers at both ends[16]. k is 0.145 at night and falls to 0.113 in the early afternoon, every day: the air near the warm lower slope cools faster with height by day. The sum of the two angles stays above 180° at every one of the 210 hours.
 
@@ -5614,6 +5832,8 @@ Rowbotham sighted eight inches above the water, deep in the refraction layer; Wa
 
 ## 02 · Triangulation: the angles confess [evidence: check — Where the radius enters: the spherical excess compared with the globe's prediction.]
 
+**Why the excess is the area divided by R²** (Girard, Gauss), and the same angle sums run on triangles simulated on a plane: [Curvature](/ai/kappa.md#ka-h2inside).
+
 Historic mapping was built from chains of triangles between hilltop stations — theodolite angles plus one measured baseline. On a plane, every triangle's angles sum to exactly 180°. On a sphere they sum to more, by the **spherical excess**, proportional to the triangle's area — and surveyors do not debate this, they *budget* for it, triangle by triangle. Pick a documented network:
 
 *Figure caption:* **Gauss 1823 · Brocken–Hohehagen–Inselsberg.** Each angle 60.0014°; the sum exceeds 180° by **14.9″** — and Gauss *measured* 14.85″: the area law and the theodolite agree to a hundredth of an arcsecond. equal-area equilateral shown; real sides 69 / 85 / 107 km. The triangle rotates with the sphere; drag to orbit.
@@ -5775,19 +5995,19 @@ $$\frac{1}{R^2} = \frac{\sum \varepsilon A}{\sum A^2}$$
 
 α₁, α₂, α₃ are the angles observed at the three stations and ε their excess over 180° (in radians in the second line); A is the triangle's area. The least-squares line through zero gives 1/R². The areas use no radius: each length is carried from a measured base line through the triangles with the observed angles alone, as plane triangles, then Heron's formula. Where a concluded or misprinted angle breaks the chain, 180° minus the two sound angles carries the length on; that triangle never enters the fit.
 
-- 1,458 triangles, 21 misprints set aside, 31 beyond 3σ**R = 6,383 km (16–84 %: 6,375 – 6,393)**with a constant offset of −0.06″: 6,373 kmplane, best offset +3.9″: residuals 8.0″ against 1.30″
+- 1,458 triangles, 21 misprints set aside, 31 beyond 3σ**R = 6,383 km (16–84 %: 6,375 – 6,393)**correlation of excess with area r = 0.987 (a plane: near 0)with a constant offset of −0.06″: 6,373 kmplane, best offset +3.9″: residuals 8.0″ against 1.30″
 
-**The radius survey by survey. Range: 16 to 84 % of a bootstrap over printed pages (∞: a flat surface is not excluded). Plane: how much larger the flat model's residuals are (χ² ratio), with its best constant offset.**
+**The radius survey by survey. Range: 16 to 84 % of a bootstrap over printed pages (∞: a flat surface is not excluded). r: correlation of the excess with the area, which needs no model (a plane gives r near 0, a sphere near 1). Scatter: the residuals around the line, in seconds of arc; the volumes print no reading error independent of their adjustment, so no χ²/ν is given. Plane: how much larger the flat model's residuals are (χ² ratio), with its best constant offset.**
 
-| Survey | Triangles | R | Range | Plane |
-| --- | --- | --- | --- | --- |
-| ● 39th parallel, USA (Schott 1900) | 679 | **6,380 km** | 6,372 – 6,389 | × 75.7 |
-| ● Eastern Oblique Arc, USA (Schott 1902) | 433 | **6,461 km** | 6,413 – 6,513 | × 8.2 |
-| ● Dunkirk–Barcelona (Delambre & Méchain) | 94 | **5,364 km** | 5,123 – 5,596 | × 1.3 |
-| ● Cape of Good Hope (Maclear 1866) | 83 | **6,352 km** | 6,295 – 6,421 | × 7.3 |
-| ● Greenwich–Paris (Roy 1790) | 12 | **24,471 km** | 7,401 – ∞ | × 1.0 |
-| ● Struve arc, Baltic to Danube (1860) | 171 | **6,502 km** | 6,306 – 6,724 | × 1.4 |
-| **all together** | 1,458 | **6,383 km** | 6,375 – 6,393 | × 37.5 |
+| Survey | Triangles | R | Range | r | Scatter | Plane |
+| --- | --- | --- | --- | --- | --- | --- |
+| ● 39th parallel, USA (Schott 1900) | 679 | **6,380 km** | 6,372 – 6,389 | 0.99 | 1.25″ | × 75.7 |
+| ● Eastern Oblique Arc, USA (Schott 1902) | 433 | **6,461 km** | 6,413 – 6,513 | 0.94 | 1.35″ | × 8.2 |
+| ● Dunkirk–Barcelona (Delambre & Méchain) | 94 | **5,364 km** | 5,123 – 5,596 | 0.50 | 1.77″ | × 1.3 |
+| ● Cape of Good Hope (Maclear 1866) | 83 | **6,352 km** | 6,295 – 6,421 | 0.93 | 1.92″ | × 7.3 |
+| ● Greenwich–Paris (Roy 1790) | 12 | **24,471 km** | 7,401 – ∞ | 0.23 | 1.12″ | × 1.0 |
+| ● Struve arc, Baltic to Danube (1860) | 171 | **6,502 km** | 6,306 – 6,724 | 0.54 | 1.12″ | × 1.4 |
+| **all together** | 1,458 | **6,383 km** | 6,375 – 6,393 | **0.99** | 1.30″ | × 37.5 |
 
 *Figure caption:* Each dot is a triangle, coloured by survey: its observed excess against the square root of its area, roughly its side. The globe's curve is the fitted ε = A/R²; the dashed line is the flat model's best case, a constant offset added to every triangle, which cannot follow the size. The largest triangle, Mount Nebo – Tushar – Wheeler Peak in Utah and Nevada, covers 14,524 km² and exceeds 180° by 75.3″.
 
@@ -6561,7 +6781,7 @@ $${\Delta v = u\,\ln\frac{m_0}{m_1}}$$
 
 **In one sentence:** pressure is molecules hitting walls; a closed chamber cancels its pushes, an opening leaves one push unbalanced, a fire keeps it going, and the gas carries off backwards exactly the momentum the rocket gains forwards. The air adds nothing but a push the wrong way. What rockets have put into orbit is measured in the [Satellites](/ai/sat.md) tab, from the Doppler shift of their signals.
 
-**See also**[Basics](/ai/phys.md)[Atmosphere](/ai/atmo.md)[Orbit](/ai/orb.md)[Satellites](/ai/sat.md)[GPS](/ai/gps.md)[Results](/ai/results.md)
+**See also**[Physics](/ai/phys.md)[Atmosphere](/ai/atmo.md)[Orbit](/ai/orb.md)[Satellites](/ai/sat.md)[GPS](/ai/gps.md)[Results](/ai/results.md)
 
 ## Sources for this tab
 
@@ -6673,6 +6893,8 @@ h and k are the scales along the meridian and the parallel. They are equal, so t
 > **The flat model and Mercator.** A flat Earth drawn as Mercator's rectangle would need the poles infinitely long and every route straight on it to be the shortest; neither is the case, and no flat-earth proposal uses it. A flat map with straight shortest routes has to be azimuthal, centred somewhere, which is where the rest of this tab goes.
 
 ## Gauss, 1827: no flat map can be true everywhere
+
+**Gauss's curvature K = κ₁κ₂**, the principal curvatures and why a cylinder unrolls and a sphere does not: [Curvature](/ai/kappa.md#ka-h2surf).
 
 **Every projection gives something up, and this is a theorem, not a lack of skill.** Carl Friedrich Gauss showed in 1827 that the curvature of a surface can be measured from inside it, from lengths alone, and is unchanged by any bending without stretching[12]. A sheet of paper has zero curvature and a sphere 1/R²; so no map of any part of a sphere keeps every length. In 1881 Nicolas Auguste Tissot published how to see what each map gives up: draw small equal circles on the globe and look at the ellipses they become[13].
 
@@ -6829,7 +7051,7 @@ Shorten the arm along the motion by √(1 − v²/c²) and the two round trips t
 
 ## 1905: Einstein drops the aether
 
-**Einstein started from two rules instead of a medium.** First, the principle of relativity: the laws of physics are the same in every frame moving uniformly, so no experiment inside a smoothly moving cabin can tell its speed; Galileo had said it for ships in 1632 ([Basics](/ai/phys.md)). Second, light in vacuum always goes at c, whatever the speed of its source. Together they seem to contradict each other, until one accepts that time and length depend on the frame. Lorentz's transformations then follow from the two rules, with no aether behind them, and Einstein wrote that the introduction of a “light aether” would prove superfluous[14]. The aether was not disproved by one experiment: it became undetectable by construction, and then unnecessary.
+**Einstein started from two rules instead of a medium.** First, the principle of relativity: the laws of physics are the same in every frame moving uniformly, so no experiment inside a smoothly moving cabin can tell its speed; Galileo had said it for ships in 1632 ([Physics](/ai/phys.md)). Second, light in vacuum always goes at c, whatever the speed of its source. Together they seem to contradict each other, until one accepts that time and length depend on the frame. Lorentz's transformations then follow from the two rules, with no aether behind them, and Einstein wrote that the introduction of a “light aether” would prove superfluous[14]. The aether was not disproved by one experiment: it became undetectable by construction, and then unnecessary.
 
 *Figure caption:* **Two identical light clocks.** Each tick is a round trip of light between two mirrors. The clock on the right passes at 0.6 c: its light, at the same speed c, runs along a longer zigzag, so each tick takes γ = 1.25 times longer. After ten ticks of the clock at rest, the moving one has ticked eight times. Click to pause.
 
@@ -6888,7 +7110,7 @@ A is the area enclosed by the loop, Ω its rate of turn, λ the wavelength, φ t
 
 > **What the videos say.** “Einstein himself admitted that you cannot tell whether the Earth moves around the Sun or the Sun around the Earth. So the heliocentric model is a choice, not a fact, and the globe with it.”
 
-**The quotation is real.** Einstein and Infeld wrote in 1938, introducing general relativity, that if the laws of physics hold in every coordinate system, “the struggle, so violent in the early days of science, between the views of Ptolemy and Copernicus would then be quite meaningless. Either CS could be used with equal justification”[29]. It means one may *compute* in a frame where the Earth stands still. In that frame, though, the equations contain centrifugal and Coriolis terms, and a far-off universe sweeping round at enormous speeds; the pendulums, the bulge, the gyroscopes, the satellites come out exactly as in the other frame ([Basics](/ai/phys.md), frames of reference). Choosing a frame changes the velocities in the description; it does not change what instruments read.
+**The quotation is real.** Einstein and Infeld wrote in 1938, introducing general relativity, that if the laws of physics hold in every coordinate system, “the struggle, so violent in the early days of science, between the views of Ptolemy and Copernicus would then be quite meaningless. Either CS could be used with equal justification”[29]. It means one may *compute* in a frame where the Earth stands still. In that frame, though, the equations contain centrifugal and Coriolis terms, and a far-off universe sweeping round at enormous speeds; the pendulums, the bulge, the gyroscopes, the satellites come out exactly as in the other frame ([Physics](/ai/phys.md), frames of reference). Choosing a frame changes the velocities in the description; it does not change what instruments read.
 
 $${\Delta D = D\left(1 - \sqrt{1 - \frac{v^2}{c^2}}\right) \approx D\,\frac{v^2}{2c^2}}$$
 
@@ -6910,7 +7132,7 @@ $${\Delta D = D\left(1 - \sqrt{1 - \frac{v^2}{c^2}}\right) \approx D\,\frac{v^2}
 
 **In one sentence:** the aether was a reasonable idea, tested honestly for a century; the experiments that found nothing found nothing for any Earth, round or flat; the ones that found something found rotation and orbital motion; and relativity, which came out of them, is checked every day by the clocks that position a phone. Where the Earth's shape is actually measured, angles, distances, times and shadows, see the other tabs and [Results](/ai/results.md).
 
-**See also**[Orbit](/ai/orb.md)[Rotation](/ai/rot.md)[Foucault](/ai/fou.md)[GPS](/ai/gps.md)[Basics](/ai/phys.md)[Results](/ai/results.md)
+**See also**[Orbit](/ai/orb.md)[Rotation](/ai/rot.md)[Foucault](/ai/fou.md)[GPS](/ai/gps.md)[Physics](/ai/phys.md)[Results](/ai/results.md)
 
 ## Sources for this tab
 
@@ -7134,7 +7356,7 @@ The phone measures its tilt against apparent gravity. An aircraft that speeds up
 
 *Figure caption:* **Eleven sightlines, no ground.** Each line starts at the reading's height above the terrain of its horizon and is tangent to the circle of the radius its own dip gives. Rule 1: heights are multiplied by the printed factor and the planet is divided by it, at the same scale in both directions, so a line tangent to the true sphere stays tangent to the drawn one. The readings were taken in different places and directions; they are put on one vertical because a dip depends only on the height. The second button subtracts from every reading the constant zero error fitted with the radius (straight light). The lines do not gather on one circle either way: alone, a reading gives a radius between 2,110 and 6,937 km, and between 4,567 and 17,988 km once the offset is subtracted. A single dip read to a tenth of a degree cannot fix a radius; only the trend over the heights can, which is what the fit uses. **Click a line** for its photograph.
 
-**What the readings say.** As they are, with straight light and the true heights, they give R = 4,801 (4,273–5,295) km. That is about a quarter smaller than the surveyed 6,371 km, and smaller still through the day's air (4,309 (3,879–4,708) km). With the phone's GPS heights instead, the frozen 32,173 ft among them, the same fit gives 5,147 (4,780–5,485) km: a wrong height had been making the radius look closer to the truth. Every reading is deeper than the globe's through the day's air, by 0.1° to 1.2°, 0.4° in the median, at low altitude as at cruise. A reading deeper at every height by the same amount is what a zero error does, and removing the accelerations does not remove it. With a constant offset left free, the fit gives R = 5,866 (4,387–7,990) km (day's air, accelerations removed), with an offset of +0.31 (0.00 … +0.65)°. The globe at its surveyed radius then fits with an RMS of 0.29°, the plane's best case with 0.38°.
+**What the readings say.** As they are, with straight light and the true heights, they give R = 4,801 (4,273–5,295) km. That is about a quarter smaller than the surveyed 6,371 km, and smaller still through the day's air (4,309 (3,879–4,708) km). With the phone's GPS heights instead, the frozen 32,173 ft among them, the same fit gives 5,147 (4,780–5,485) km: a wrong height had been making the radius look closer to the truth. Every reading is deeper than the globe's through the day's air, by 0.1° to 1.2°, 0.4° in the median, at low altitude as at cruise. A reading deeper at every height by the same amount is what a zero error does, and removing the accelerations does not remove it. With a constant offset left free, the fit gives R = 5,866 (4,387–7,990) km (day's air, accelerations removed), with an offset of +0.31 (0.00 … +0.65)°. The globe at its surveyed radius then fits with an RMS of 0.29°, the plane's best case with 0.38°. Against each reading's own error, the app's 0.1° display and the uncertainty of the aircraft's acceleration, that is χ²/ν = 3.4 for the globe and 6.9 for the plane's best case: neither comes down to 1, so something that error does not hold, the phone's level or where the horizon is put on the reticle, adds scatter, and it adds about twice as much for the plane. The dips correlate with √h at r = 0.90.
 
 > **Limits, stated plainly.** The dips are the app's readings, set by eye on a hazy horizon through a cabin window, displayed to a tenth of a degree. The phone's tilt is measured against apparent gravity. The track log gives the aircraft's acceleration only every 15 to 30 s, so a brief bank or a change of speed between two fixes goes unseen, and a bank of 1° moves a side-window reading by nearly 1°. The phone's own zero error is unknown, and the constant offset stands for it. From cruise altitude the horizon may be the top of a cloud or haze layer rather than the ground; that raises it and reduces the dip. The heights rest on the transponder and the model's air, good to a few tens of metres. The terrain comes from a 90 m model along a single bearing, the camera's heading coming from the phone's compass inside a metal cabin. Eleven readings cannot pin down both a radius and an offset tightly, hence the wide range.
 

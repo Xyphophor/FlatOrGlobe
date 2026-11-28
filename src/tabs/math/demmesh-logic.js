@@ -1,4 +1,4 @@
-// Calculs de l'animation « maillage » de l'onglet phys (2026-11-25, section Terrain models) : un relief INVENTÉ (un sommet
+// Calculs de l'animation « maillage » de l'onglet math (phys jusqu'au 2026-11-27 ; 2026-11-25, section Terrain models) : un relief INVENTÉ (un sommet
 // pointu), échantillonné sur des grilles de 5 à 40 m, lu par interpolation bilinéaire comme le font les scripts du site
 // (research/lidar_horizon.py, tools/internal/dem). Puis un trou dans la grille fine, comblé par un autre modèle plus grossier
 // et décalé (comme le RGE ALTI dans le trou du LiDAR HD au Mont Agel). Rien de mesuré : l'animation montre le mécanisme.

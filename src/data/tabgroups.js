@@ -9,9 +9,11 @@
 // 2026-10-27 : les fusées (rocket), après l'atmosphère dont elles reprennent les billes.
 // 2026-10-31 : les études de cas (cases), juste avant les contributions.
 // 2026-11-25 : les règles de la comparaison (rules), à côté des bases.
+// 2026-11-27 : la courbure (kappa), à côté des bases : la définition dont se servent toutes les méthodes du rayon.
+// 2026-11-27 (propriétaire) : les bases (phys, « Basics ») coupées en math et physics ; ordre du groupe : règles, math, courbure, physique.
 // 2026-11-21 : la perspective (persp), en tête des objections : le mot revient dans presque toutes.
 export const TAB_GROUPS = [
-  { id: "start", tabs: ["home", "phys", "rules"] },
+  { id: "start", tabs: ["home", "rules", "math", "kappa", "phys"] },
   { id: "sky", tabs: ["elev", "hh", "cnav", "dip", "curv", "twi", "azim", "ecl", "moon"] },
   { id: "ground", tabs: ["dist", "grav", "seis", "mag", "gps"] },
   { id: "motion", tabs: ["rot", "orb", "sat", "scale"] },

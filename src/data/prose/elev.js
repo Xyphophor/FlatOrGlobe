@@ -133,7 +133,7 @@ export const PROSE = [
    },
    {
     "t": "fcap",
-    "html": "<b>The plateau de Caussols: Mont Agel over the sea horizon.</b> From 1,210 m (43.72218° N, 6.93849° E), looking east over the Riviera: Mont Agel<sup class=\"ref\"><a href=\"#s-elev-n13\">[13]</a></sup>, 39 km away and 77 m lower than the eye (1,133 m in the terrain model, 1,148 m published: the IGN's LiDAR has no data on the summit, a military site, and the models that fill the gap differ; <a class=\"xref\" href=\"#tab-phys/phys-h2dem\" data-xref=\"phys\" data-sec=\"phys-h2dem\">Basics</a>), Monte Ceppo, 70 km away in Italy, and Cap Corse, 222 km out to sea. The terrain is the IGN's LiDAR HD to 45 km and the Copernicus 30 m model beyond<sup class=\"ref\"><a href=\"#s-elev-n14\">[14]</a></sup>, a surface model with forests and buildings included. The test is the sea horizon. On a globe it lies <b>62′ below</b> eye level at this height, with standard refraction, and Mont Agel stands <b>47′ above</b> it. On a plane the sea rises towards eye level with distance, so anything lower than the eye must sit below the horizon: Mont Agel <b>7′ below</b> it. <a href=\"https://x.com/Xyphophor\" target=\"_blank\" rel=\"noopener\">Xyphophor</a>'s photograph from this point shows Mont Agel above the sea horizon. Fitted with the camera's own focal length on the near summits alone, it puts the sea horizon within 0.1° of the globe's and about 45′ below the plane's, and Mont Agel 42′ above that horizon (globe 47′, plane 7′ below). Cap Corse would sit on the horizon of a plane and stands 12′ above the globe's.",
+    "html": "<b>The plateau de Caussols: Mont Agel over the sea horizon.</b> From 1,210 m (43.72218° N, 6.93849° E), looking east over the Riviera: Mont Agel<sup class=\"ref\"><a href=\"#s-elev-n13\">[13]</a></sup>, 39 km away and 77 m lower than the eye (1,133 m in the terrain model, 1,148 m published: the IGN's LiDAR has no data on the summit, a military site, and the models that fill the gap differ; <a class=\"xref\" href=\"#tab-math/math-h2dem\" data-xref=\"math\" data-sec=\"math-h2dem\">Math</a>), Monte Ceppo, 70 km away in Italy, and Cap Corse, 222 km out to sea. The terrain is the IGN's LiDAR HD to 45 km and the Copernicus 30 m model beyond<sup class=\"ref\"><a href=\"#s-elev-n14\">[14]</a></sup>, a surface model with forests and buildings included. The test is the sea horizon. On a globe it lies <b>62′ below</b> eye level at this height, with standard refraction, and Mont Agel stands <b>47′ above</b> it. On a plane the sea rises towards eye level with distance, so anything lower than the eye must sit below the horizon: Mont Agel <b>7′ below</b> it. <a href=\"https://x.com/Xyphophor\" target=\"_blank\" rel=\"noopener\">Xyphophor</a>'s photograph from this point shows Mont Agel above the sea horizon. Fitted with the camera's own focal length on the near summits alone, it puts the sea horizon within 0.1° of the globe's and about 45′ below the plane's, and Mont Agel 42′ above that horizon (globe 47′, plane 7′ below). Cap Corse would sit on the horizon of a plane and stands 12′ above the globe's.",
     "k": "elev-caus-cap"
    },
    {
@@ -356,6 +356,11 @@ export const PROSE = [
    },
    {
     "t": "notes",
+    "html": "<b>What curvature is</b>, a direction that turns with distance, defined without any globe: <a class=\"xref\" href=\"#tab-kappa/ka-h2def\" data-xref=\"kappa\" data-sec=\"ka-h2def\">Curvature</a>.",
+    "k": "ka-link-elev1"
+   },
+   {
+    "t": "notes",
     "html": "A common objection: “angles only mean anything on a flat plane — you can't measure elevation on a ball.” But an angle is measured against a <em>reference direction</em>, and every point on a sphere has one: the direction a bubble level settles into. That local horizontal is the tangent at your feet, and it exists everywhere. Below, two protractors sit on a rotating globe — one at the observer, one on the summit — each with <b>0° along its own tangent</b>. No plane is drawn anywhere.",
     "k": "c1cf72c6"
    },
@@ -371,6 +376,11 @@ export const PROSE = [
     "t": "h2",
     "html": "Reciprocal zenith angles — the parameter-free test",
     "k": "2a51c10f"
+   },
+   {
+    "t": "notes",
+    "html": "<b>The same test run on simulated lines on a plane and on a sphere</b>, one reading, two, then two hundred: <a class=\"xref\" href=\"#tab-kappa/ka-h2zen\" data-xref=\"kappa\" data-sec=\"ka-h2zen\">Curvature</a>.",
+    "k": "ka-link-elev2"
    },
    {
     "t": "notes",

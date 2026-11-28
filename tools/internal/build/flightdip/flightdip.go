@@ -506,7 +506,42 @@ func horizon(prof []float64, h, c float64) (eps, z, d float64) {
 
 // obs is one reading for a fit: dip (rad), eye height h and the horizon's
 // ground z (m above sea level), and q = n_ground/n_eye (1: straight light).
-type obs struct{ d, h, z, q float64 }
+type obs struct{ d, h, z, q, s float64 } // s: the reading's error (rad), see DispSig
+
+// DispSig is the error of reading the app's dip, shown to 0.1°: a uniform rounding error, 0.1°/√12 (degrees). With the
+// acceleration tilt's uncertainty (SigTilt) it makes the σ of each reading for χ²/ν (2026-11-27, the curvature tab's rule:
+// χ²/ν only with a reading error known apart from the fit). It does NOT hold the phone's level calibration, nor how the
+// horizon is placed on the reticle: a χ²/ν well above 1 says those are larger than what σ holds.
+const DispSig = 0.1 / 3.4641016151377544
+
+// chi2nu is Σ ((d − b − pred)/s)² / (n − p).
+func chi2nu(os []obs, Rs, b float64, p int) float64 {
+	ss := 0.0
+	for _, o := range os {
+		r := (o.d - b - pred(Rs, o)) / o.s
+		ss += r * r
+	}
+	return ss / float64(len(os)-p)
+}
+
+// corr is Pearson's r of the dips with √h: needs no model of the Earth.
+func corr(os []obs) float64 {
+	n := float64(len(os))
+	mx, my := 0.0, 0.0
+	for _, o := range os {
+		mx += math.Sqrt(o.h)
+		my += o.d
+	}
+	mx, my = mx/n, my/n
+	a, b, c := 0.0, 0.0, 0.0
+	for _, o := range os {
+		x, y := math.Sqrt(o.h)-mx, o.d-my
+		a += x * y
+		b += x * x
+		c += y * y
+	}
+	return a / math.Sqrt(b*c)
+}
 
 // pred is the globe's dip for a reading at radius Rs (Bouguer).
 func pred(Rs float64, o obs) float64 { return Bouguer(Rs, o.h, o.z, o.q) }
@@ -564,6 +599,7 @@ type Fit struct {
 	B, BLo, BHi    float64 // the instrument's constant offset when fitted (degrees), 0 otherwise
 	Out            []int   // photographs excluded by the leave-one-out rule (indices)
 	N              int
+	Chi2nu, Corr   float64 // χ²/ν with each reading's σ (DispSig, SigTilt); r of the dips with √h
 }
 
 func rms(os []obs, Rs, b float64) float64 {
@@ -612,7 +648,8 @@ func fit(name string, all []obs, offset bool, seed uint64) Fit {
 	q := func(p float64) float64 { return bs[int(p*float64(len(bs)-1))] }
 	qb := func(p float64) float64 { return bb[int(p*float64(len(bb)-1))] * 180 / math.Pi }
 	return Fit{Name: name, R: Rf / 1000, Lo: q(0.16) / 1000, Hi: q(0.84) / 1000,
-		Rms: rms(os, Rf, bf) * 180 / math.Pi, Out: out, N: len(os), B: bf * 180 / math.Pi, BLo: qb(0.16), BHi: qb(0.84)}
+		Rms: rms(os, Rf, bf) * 180 / math.Pi, Out: out, N: len(os), B: bf * 180 / math.Pi, BLo: qb(0.16), BHi: qb(0.84),
+		Chi2nu: chi2nu(os, Rf, bf, map[bool]int{false: 1, true: 2}[offset]), Corr: corr(os)}
 }
 
 func contains(a []int, x int) bool {
@@ -630,11 +667,21 @@ func contains(a []int, x int) bool {
 type Alt struct {
 	Name          string
 	Param, B, Rms float64 // D (km) for the plane, R (km) for the globe; offset (degrees); RMS (degrees)
+	Chi2nu        float64 // with each reading's σ; parameters: the offset (globe), D and the offset (plane)
 }
 
 func globeFixed(name string, os []obs) Alt {
 	b := offsetFor(os, R)
-	return Alt{Name: name, Param: R / 1000, B: b * 180 / math.Pi, Rms: rms(os, R, b) * 180 / math.Pi}
+	return Alt{Name: name, Param: R / 1000, B: b * 180 / math.Pi, Rms: rms(os, R, b) * 180 / math.Pi, Chi2nu: chi2nu(os, R, b, 1)}
+}
+
+// readSig is a reading's σ (rad): the display's rounding and, when known, the acceleration tilt's uncertainty.
+func readSig(p Point) float64 {
+	s := DispSig * DispSig
+	if !math.IsNaN(p.SigTilt) {
+		s += p.SigTilt * p.SigTilt
+	}
+	return math.Sqrt(s) * math.Pi / 180
 }
 
 // HazeD are the haze distances tried for the plane (m), 20 to 3,000 km.
@@ -648,7 +695,7 @@ var HazeD = func() []float64 {
 
 // planeHaze fits the plane's haze distance and offset: dips[i] is the
 // reading (rad), tab[k][i] the plane's dip at HazeD[k] for photograph i.
-func planeHaze(name string, dips []float64, tab [][]float64) Alt {
+func planeHaze(name string, dips, sig []float64, tab [][]float64) Alt {
 	best := Alt{Rms: math.Inf(1)}
 	for k, D := range HazeD {
 		b, ss := 0.0, 0.0
@@ -661,7 +708,12 @@ func planeHaze(name string, dips []float64, tab [][]float64) Alt {
 			ss += r * r
 		}
 		if e := math.Sqrt(ss/float64(len(dips))) * 180 / math.Pi; e < best.Rms {
-			best = Alt{Name: name, Param: D / 1000, B: b * 180 / math.Pi, Rms: e}
+			c := 0.0
+			for i := range dips {
+				r := (dips[i] - b - tab[k][i]) / sig[i]
+				c += r * r
+			}
+			best = Alt{Name: name, Param: D / 1000, B: b * 180 / math.Pi, Rms: e, Chi2nu: c / float64(len(dips)-2)}
 		}
 	}
 	return best
@@ -812,7 +864,7 @@ func Compute(root string) (*Result, error) {
 			if math.IsNaN(sel(p)) {
 				continue
 			}
-			o := obs{d: sel(p) * math.Pi / 180, h: p.H, z: p.Zh, q: 1}
+			o := obs{d: sel(p) * math.Pi / 180, h: p.H, z: p.Zh, q: 1, s: readSig(p)}
 			if gps {
 				o.h = p.HGps
 			}
@@ -854,11 +906,11 @@ func Compute(root string) (*Result, error) {
 	}
 	// the plane's tables keep the readings a selector keeps
 	plane := func(name string, sel func(p Point) float64, tab [][]float64) Alt {
-		var d []float64
+		var d, sg []float64
 		var keep []int
 		for i, p := range res.Points {
 			if !math.IsNaN(sel(p)) {
-				d, keep = append(d, sel(p)*math.Pi/180), append(keep, i)
+				d, keep, sg = append(d, sel(p)*math.Pi/180), append(keep, i), append(sg, readSig(p))
 			}
 		}
 		sub := make([][]float64, len(tab))
@@ -867,7 +919,7 @@ func Compute(root string) (*Result, error) {
 				sub[k] = append(sub[k], tab[k][i])
 			}
 		}
-		return planeHaze(name, d, sub)
+		return planeHaze(name, d, sg, sub)
 	}
 	res.Alts = []Alt{
 		globeFixed("globe, R = 6,371 km, no refraction, constant offset", mk(scr, false, false)),
@@ -976,11 +1028,12 @@ func (r *Result) File() preset.File {
 		}
 		fits = append(fits, pyjson.Obj{{K: "name", V: f.Name}, {K: "R", V: round(f.R, 0)}, {K: "lo", V: round(f.Lo, 0)}, {K: "hi", V: round(f.Hi, 0)},
 			{K: "rms", V: round(f.Rms, 3)}, {K: "n", V: f.N}, {K: "out", V: out},
-			{K: "b", V: round(f.B, 3)}, {K: "bLo", V: round(f.BLo, 3)}, {K: "bHi", V: round(f.BHi, 3)}})
+			{K: "b", V: round(f.B, 3)}, {K: "bLo", V: round(f.BLo, 3)}, {K: "bHi", V: round(f.BHi, 3)},
+			{K: "chi2nu", V: round(f.Chi2nu, 2)}, {K: "r", V: round(f.Corr, 3)}})
 	}
 	var alts []any
 	for _, a := range r.Alts {
-		alts = append(alts, pyjson.Obj{{K: "name", V: a.Name}, {K: "param", V: round(a.Param, 0)}, {K: "b", V: round(a.B, 3)}, {K: "rms", V: round(a.Rms, 3)}})
+		alts = append(alts, pyjson.Obj{{K: "name", V: a.Name}, {K: "param", V: round(a.Param, 0)}, {K: "b", V: round(a.B, 3)}, {K: "rms", V: round(a.Rms, 3)}, {K: "chi2nu", V: round(a.Chi2nu, 2)}})
 	}
 	var inputs []string
 	inputs = append(inputs, Dir+"/inputs.lock")

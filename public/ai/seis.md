@@ -187,6 +187,8 @@ Dependent variable
 
 ## The reverse-engineering, done for real [evidence: check — Where the radius enters: the wave speeds were established with distances measured on the globe.]
 
+**Speed × time over angle, run on trips simulated on a sphere and on the flat-earth map**: one radius on the sphere, a radius that depends on the route on the plane: [Curvature](/ai/kappa.md#ka-h2trav).
+
 Experiment 1e above is a recipe for redoing this measurement yourself: download one earthquake, keep the surface wave, read off arrival times, and plot them against distance both ways. This section is that recipe already carried out — not on numbers this page computed, but on 479 real Rayleigh-wave (LR) arrivals picked by real seismograph networks for nine real earthquakes between 2004 and 2022, pulled from the same public bulletin Experiment 1e's tooling talks to.[13] Every row is one instrument's own reading of its own trace.
 
 $$R = \dfrac{v\,t}{\Delta}$$
@@ -199,20 +201,20 @@ Nothing here is fitted to land near 6,371 km: t is a real clock-to-clock arrival
 
 *Figure caption:* **Nine box plots: nine real earthquakes, then all 479 arrivals combined.** Same convention as the surveying tab's box plot — box between the quartiles, bar at the median, whiskers to 1.5 interquartile ranges, dots past them — with 6,371 km drawn as a vertical line. Every box lands within a few thousand kilometres of that line on the first try, with nothing fitted; none goes anywhere near the infinity a flat map would need.
 
-**The same boxes as numbers — median radius, interquartile range, and departure from 6,371 km**
+**The same boxes as numbers — median radius, interquartile range, departure from 6,371 km, the correlation r of the arrival times with the distance over the speed (a plane would give no single line), and their scatter around the line through zero; the picks carry no published error, so no χ²/ν**
 
-| Earthquake | n | Median R | Quartiles | Off 6,371 km |
-| --- | --- | --- | --- | --- |
-| Sumatra 2004 | 19 | **7,646 km** | 6,619–8,065 km | +20.0% |
-| Nias 2005 | 37 | **7,280 km** | 6,700–7,838 km | +14.3% |
-| Tōhoku 2011 | 81 | **7,342 km** | 6,619–7,789 km | +15.2% |
-| Maule 2010 | 54 | **6,095 km** | 5,668–6,980 km | −4.3% |
-| Illapel 2015 | 46 | **6,638 km** | 5,902–7,220 km | +4.2% |
-| Solomon 2013 | 59 | **6,847 km** | 6,499–7,067 km | +7.5% |
-| Alaska 2021 | 146 | **6,737 km** | 5,520–7,623 km | +5.7% |
-| Kuril 2006 | 32 | **7,817 km** | 7,015–8,035 km | +22.7% |
-| Tonga 2022 | 5 | **6,109 km** | 6,106–6,438 km | −4.1% |
-| **all 9 combined** | 479 | **6,910 km** | 5,883–7,616 km | +8.5% |
+| Earthquake | n | Median R | Quartiles | Off 6,371 km | r | Scatter |
+| --- | --- | --- | --- | --- | --- | --- |
+| Sumatra 2004 | 19 | **7,646 km** | 6,619–8,065 km | +20.0% | 0.638 | 5.1 min |
+| Nias 2005 | 37 | **7,280 km** | 6,700–7,838 km | +14.3% | 0.858 | 6.6 min |
+| Tōhoku 2011 | 81 | **7,342 km** | 6,619–7,789 km | +15.2% | 0.881 | 5.6 min |
+| Maule 2010 | 54 | **6,095 km** | 5,668–6,980 km | −4.3% | 0.938 | 4.5 min |
+| Illapel 2015 | 46 | **6,638 km** | 5,902–7,220 km | +4.2% | 0.963 | 4.6 min |
+| Solomon 2013 | 59 | **6,847 km** | 6,499–7,067 km | +7.5% | 0.986 | 2.8 min |
+| Alaska 2021 | 146 | **6,737 km** | 5,520–7,623 km | +5.7% | 0.799 | 6.0 min |
+| Kuril 2006 | 32 | **7,817 km** | 7,015–8,035 km | +22.7% | 0.931 | 4.9 min |
+| Tonga 2022 | 5 | **6,109 km** | 6,106–6,438 km | −4.1% | 0.999 | 1.7 min |
+| **all 9 combined** | 479 | **6,910 km** | 5,883–7,616 km | +8.5% | 0.904 | 5.6 min |
 
 > **This box is wider than the others on this page, and that is expected.** A few percent of median offset and about a quarter of the range in spread is real crustal heterogeneity: Rayleigh waves at 18–22 s run measurably faster under ocean basins than under continents, and these paths mix both.[15] Other agencies' picks, or purely teleseismic distances, do not tighten it — the spread is in the wave, not in the bookkeeping. It is far below the 60–100% a flat map would need. Real data with its honest scatter, landing in the right place without being tuned to, is worth more than a perfect line computed from the model under test.
 
@@ -230,20 +232,20 @@ Two numbers, not 479: v_ocean and v_continent are fixed once, from someone else'
 
 *Figure caption:* **The same 479 arrivals, same nine earthquakes, only the velocity now varies path by path.** Same convention: box between the quartiles, bar at the median, whiskers to 1.5 interquartile ranges, 6,371 km as a vertical line. Compare directly against the box plot above — every box should sit measurably closer to the line.
 
-**The corrected boxes as numbers — compare each row against the same row in the uncorrected table above**
+**The corrected boxes as numbers — compare each row against the same row in the uncorrected table above; r and the scatter as in that table**
 
-| Earthquake | n | Median R | Quartiles | Off 6,371 km |
-| --- | --- | --- | --- | --- |
-| Sumatra 2004 | 19 | **6,930 km** | 6,105–7,299 km | +8.8% |
-| Nias 2005 | 37 | **6,922 km** | 6,608–7,300 km | +8.6% |
-| Tōhoku 2011 | 81 | **6,795 km** | 6,379–7,040 km | +6.7% |
-| Maule 2010 | 54 | **6,147 km** | 5,370–6,486 km | −3.5% |
-| Illapel 2015 | 46 | **6,391 km** | 6,049–6,727 km | +0.3% |
-| Solomon 2013 | 59 | **6,739 km** | 6,607–6,926 km | +5.8% |
-| Alaska 2021 | 146 | **6,499 km** | 5,610–7,146 km | +2.0% |
-| Kuril 2006 | 32 | **7,081 km** | 6,895–7,431 km | +11.1% |
-| Tonga 2022 | 5 | **6,266 km** | 6,011–6,599 km | −1.7% |
-| **all 9 combined** | 479 | **6,675 km** | 5,830–7,041 km | +4.8% |
+| Earthquake | n | Median R | Quartiles | Off 6,371 km | r | Scatter |
+| --- | --- | --- | --- | --- | --- | --- |
+| Sumatra 2004 | 19 | **6,930 km** | 6,105–7,299 km | +8.8% | 0.692 | 4.9 min |
+| Nias 2005 | 37 | **6,922 km** | 6,608–7,300 km | +8.6% | 0.910 | 5.5 min |
+| Tōhoku 2011 | 81 | **6,795 km** | 6,379–7,040 km | +6.7% | 0.929 | 4.5 min |
+| Maule 2010 | 54 | **6,147 km** | 5,370–6,486 km | −3.5% | 0.946 | 4.3 min |
+| Illapel 2015 | 46 | **6,391 km** | 6,049–6,727 km | +0.3% | 0.981 | 3.3 min |
+| Solomon 2013 | 59 | **6,739 km** | 6,607–6,926 km | +5.8% | 0.989 | 2.4 min |
+| Alaska 2021 | 146 | **6,499 km** | 5,610–7,146 km | +2.0% | 0.869 | 4.8 min |
+| Kuril 2006 | 32 | **7,081 km** | 6,895–7,431 km | +11.1% | 0.961 | 3.8 min |
+| Tonga 2022 | 5 | **6,266 km** | 6,011–6,599 km | −1.7% | 0.999 | 2.1 min |
+| **all 9 combined** | 479 | **6,675 km** | 5,830–7,041 km | +4.8% | 0.936 | 4.7 min |
 
 The same reconstruction on every Rayleigh arrival of the large sample of the relocation section further down: 261 earthquakes, 13,586 arrivals. The epicentre and origin time come from the ISC as above, with the same 3.5 km/s and the same path correction. They are shown in a box of their own, apart from the nine above.
 

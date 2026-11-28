@@ -50,7 +50,9 @@ import tabRot from "./tabs/rot/index.js";
 import tabOrb from "./tabs/orb/index.js";
 import tabSat from "./tabs/sat/index.js";
 import tabScale from "./tabs/scale/index.js";
+import tabMath from "./tabs/math/index.js";
 import tabPhys from "./tabs/phys/index.js";
+import tabKappa from "./tabs/kappa/index.js";
 import tabRules from "./tabs/rules/index.js";
 import tabAtmo from "./tabs/atmo/index.js";
 import tabMoon from "./tabs/moon/index.js";
@@ -76,7 +78,7 @@ import tabResults from "./tabs/results/index.js";
 // code n'a besoin d'être modifié pour ajouter un onglet. L'onglet gabarit
 // src/tabs/_example/ n'est plus enregistré : il reste comme référence du
 // contrat (et npm run check le vérifie toujours).
-const TABS = [tabHome, tabPhys, tabRules, tabElev, tabHh, tabRef, tabCnav, tabStar, tabDist, tabDip, tabCurv, tabGrav, tabFou, tabSeis, tabMag, tabSun, tabTwi, tabAzim, tabEcl, tabRot, tabOrb, tabSat, tabScale, tabMoon, tabMap, tabAether, tabPersp, tabSurv, tabCt, tabAtmo, tabRocket, tabCases, tabContrib, tabGps, tabRx, tabAvia, tabObs, tabResults, tabFalsify];
+const TABS = [tabHome, tabRules, tabMath, tabKappa, tabPhys, tabElev, tabHh, tabRef, tabCnav, tabStar, tabDist, tabDip, tabCurv, tabGrav, tabFou, tabSeis, tabMag, tabSun, tabTwi, tabAzim, tabEcl, tabRot, tabOrb, tabSat, tabScale, tabMoon, tabMap, tabAether, tabPersp, tabSurv, tabCt, tabAtmo, tabRocket, tabCases, tabContrib, tabGps, tabRx, tabAvia, tabObs, tabResults, tabFalsify];
 
 const HOME_KEY = "home";
 const tabbar = document.getElementById("tabbar");

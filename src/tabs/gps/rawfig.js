@@ -6,6 +6,8 @@
 //    qui reste est l'aplatissement), avec les rms de la sphère et du plan ;
 //  gpsRawVis : frise des satellites vus par deux stations lointaines (sans orbite).
 // Tous les nombres viennent de rawlogic.js et de data/presets/gps-raw.js.
+import { drawFitBox } from "../../core/fitbox.js";
+import { heightCorr } from "../rx/grouplogic.js";
 import { setupCanvas } from "../../core/canvas.js";
 import { coastLines } from "../../core/globe25d.js";
 import { GPS_RAW } from "../../data/presets/gps-raw.js";
@@ -72,9 +74,14 @@ export function mountGpsRaw(root, tr) {
     if (!W) return;
     const { globe, flat } = colors(cFit), E = rawData().earth;
     ctx.fillStyle = "#fdfdfc"; ctx.fillRect(0, 0, W, H);
-    const tw = (W - 24) / 2, ty = 8, th = 50;
+    const tw = (W - 24) / 2, ty = 8;
+    // l'encadré de l'ajustement (core/fitbox.js, 2026-11-27) : une sphère ajustée, pas une droite ; la dispersion est le rms
+    // r : la hauteur de chaque station au-dessus du meilleur plan contre celle que la sphère ajustée prédit (la flèche)
+    const rB = heightCorr(GPS_RAW.stations.map((s) => s.xyz), E.c, E.R);
+    const B = drawFitBox(ctx, 8, ty, { R: `${num(E.R / 1000)} km`, range: `± ${num(E.seR / 1000, 1)} km`, r: rB, rOf: tr("gr-rof", "height, sphere"), scatter: `${num(E.rms / 1000, 1)} km rms`, chi2nu: null,
+      title: tr("gr-sph2", "sphere through the stations"), col: globe, size: W < 480 ? 9.5 : 10.5, maxW: tw });
+    const th = Math.max(50, B.h);
     const tile = (x, big, small, col) => { ctx.fillStyle = "#f3f5f7"; ctx.fillRect(x, ty, tw, th); label(ctx, big, x + 8, ty + 18, { col, font: "600 16px system-ui, sans-serif" }); wrapLabel(ctx, small, x + 8, ty + 34, tw - 12, { col: SOFT, font: FONT, lh: 11 }); };
-    tile(8, `R = ${num(E.R / 1000)} ± ${num(E.seR / 1000, 1)} km`, `${tr("gr-sph", "sphere through the stations; rms")} ${num(E.rms / 1000, 1)} km`, globe);
     tile(16 + tw, `${num(E.plane.rms / 1000)} km`, tr("gr-plane", "rms of the best plane through the same stations"), flat);
     const x0 = 44, x1 = W - 12, y0 = ty + th + 26, y1 = H - 34, span = 16;
     const X = (lat) => x0 + (lat + 90) / 180 * (x1 - x0), Y = (km) => (y0 + y1) / 2 - km / span * (y1 - y0) / 2;
@@ -130,7 +137,18 @@ export function mountGpsRaw(root, tr) {
     ctx.fillStyle = globe; ctx.globalAlpha = 0.55;
     for (const p of X.pairs) { ctx.beginPath(); ctx.arc(PX(p.deg), PY(Math.min(ymax, p.common)), 2.6, 0, 2 * Math.PI); ctx.fill(); }
     ctx.globalAlpha = 1;
-    wrapLabel(ctx, `${tr("gr-far", "farthest pair that ever tracked the same satellite")}: ${num(X.maxShared, 1)}°`, PX(X.maxShared) - 6, PY(0) - 26, PX(X.maxShared) - x0 - 12, { al: "right", col: globe, font: "600 10.5px system-ui, sans-serif", lh: 12, bl: "bottom" });
+    // l'étiquette tombe dans le nuage de points verts : fond clair sous le texte, vert foncé, halo (lisible sur les points)
+    const farT = `${tr("gr-far", "farthest pair that ever tracked the same satellite")}: ${num(X.maxShared, 1)}°`;
+    const farF = "600 10.5px system-ui, sans-serif", farX = PX(X.maxShared) - 6, farY = PY(0) - 26, farW = PX(X.maxShared) - x0 - 12;
+    ctx.save(); ctx.font = farF;
+    const farL = []; let cur = "";
+    for (const w of farT.split(" ")) { const nx = cur ? `${cur} ${w}` : w; if (cur && ctx.measureText(nx).width > farW) { farL.push(cur); cur = w; } else cur = nx; }
+    if (cur) farL.push(cur);
+    const bw = Math.max(...farL.map((l) => ctx.measureText(l).width));
+    ctx.fillStyle = "rgba(253,253,252,0.92)"; ctx.strokeStyle = globe; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.rect(farX - bw - 5, farY - farL.length * 12 - 5, bw + 10, farL.length * 12 + 8); ctx.fill(); ctx.stroke();
+    ctx.restore();
+    wrapLabel(ctx, farT, farX, farY, farW, { al: "right", col: "#0b4f4a", font: farF, lh: 12, bl: "bottom", halo: true });
   };
 
   const draw = () => { drawMap(); drawFit(); drawVis(); drawShare(); };

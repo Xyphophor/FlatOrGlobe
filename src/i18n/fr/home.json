@@ -47,7 +47,8 @@
   "do-scale": "Voir les mouvements de la Terre sur une horloge, chaque aiguille à sa vitesse vraie, et les distances de la Lune à Andromède.",
   "do-atmo": "Pourquoi l'air tient sans couvercle, comment l'ionosphère renvoie les ondes radio, et pourquoi les satellites ne fondent pas dans une thermosphère à mille degrés.",
   "do-aether": "La lunette pleine d'eau d'Airy, Michelson–Morley, Sagnac, Michelson–Gale : ce qu'était l'éther, ce que chaque expérience a mesuré, et comment la relativité restreinte en est sortie.",
-  "do-phys": "Unités, dérivées et leurs notations, référentiels, lois de Newton, constantes et incertitudes : les définitions dont se servent tous les autres onglets, chacune avec sa formule et une figure.",
+  "do-phys": "Unités, position et vitesse, référentiels, lois de Newton, forces et chocs, mouvement circulaire, ondes et constantes : la physique dont se servent tous les autres onglets, chacune de ses notions avec sa formule et une figure.",
+  "do-math": "Angles et radians, vecteurs, dérivées et leurs notations, incertitude, moindres carrés, r et χ²/ν, et la lecture d'un modèle de terrain : les mathématiques dont se servent tous les autres onglets, chaque outil avec sa formule et une figure.",
   "do-rocket": "Des molécules qui frappent des parois : pourquoi une chambre fermée ne va nulle part, comment un feu entretient sa pression, et pourquoi une fusée pousse plus fort dans le vide que dans l'air.",
   "do-cases": "Un laser vu à 15 km par-dessus la mer, refait avec les thermomètres des opérateurs et l'air, la mer et la marée du soir : ce qu'il faut pour le voir, et ce que leurs relevés pouvaient dire.",
   "hreel-alt": "Vitrine animée de la démarche du site : un globe et un disque plat sur une même balance ; un tableau de verdicts écrits d'avance ; des barres qui comptent les sections de mesure, de validation et de modèle ; le paramètre libre d'un modèle plat balayé jusqu'à son meilleur cas, toujours loin des données ; les comptes des onglets, des sources, des jeux de données et des verdicts ; un terminal qui refait chaque jeu de données ; le rayon de la Terre par les seules mesures ; et la question de ce qui nous ferait changer d'avis",
@@ -99,5 +100,6 @@
   "hreel-outro-a": "Qu'est-ce qui nous ferait changer d'avis ?",
   "hreel-outro-b": "Chaque onglet le dit, d'avance. Regardez, mesurez, vérifiez.",
   "do-persp": "Quatre cubes qui s'éloignent, un Soleil que la perspective ne peut pas coucher, des rayons qui partent en éventail et se resserrent : ce que la perspective rapetisse, et ce qu'elle ne peut pas cacher.",
-  "do-rules": "Fixées avant les résultats : aucune exagération en silence, le modèle plat à son meilleur, le globe jamais ajusté à nos données, les mêmes marges pour les deux, la réfraction toujours montrée, ce qu'on écarte et pourquoi. Les règles que suit chaque onglet."
+  "do-rules": "Fixées avant les résultats : aucune exagération en silence, le modèle plat à son meilleur, le globe jamais ajusté à nos données, les mêmes marges pour les deux, la réfraction toujours montrée, ce qu'on écarte et pourquoi. Les règles que suit chaque onglet.",
+  "do-kappa": "Ce qu'est la courbure, une direction qui tourne avec la distance, des courbes aux surfaces ; comment on la mesure de l'intérieur avec des angles et des longueurs ; et cinq calculs de rayon appliqués à un plan, qui ne donnent aucun rayon."
 }

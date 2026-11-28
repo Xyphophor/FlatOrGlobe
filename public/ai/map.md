@@ -88,6 +88,8 @@ h and k are the scales along the meridian and the parallel. They are equal, so t
 
 ## Gauss, 1827: no flat map can be true everywhere
 
+**Gauss's curvature K = κ₁κ₂**, the principal curvatures and why a cylinder unrolls and a sphere does not: [Curvature](/ai/kappa.md#ka-h2surf).
+
 **Every projection gives something up, and this is a theorem, not a lack of skill.** Carl Friedrich Gauss showed in 1827 that the curvature of a surface can be measured from inside it, from lengths alone, and is unchanged by any bending without stretching[12]. A sheet of paper has zero curvature and a sphere 1/R²; so no map of any part of a sphere keeps every length. In 1881 Nicolas Auguste Tissot published how to see what each map gives up: draw small equal circles on the globe and look at the ellipses they become[13].
 
 *Figure caption:* **Carl Friedrich Gauss** 1777–1855

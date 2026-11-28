@@ -18,8 +18,10 @@ Everything in one file: [llms-full.txt](/llms-full.txt).
 ## Start
 
 - [Home: Flat or globe? Measure it yourself.](/ai/home.md): Twenty measurements · one shape, one motion
-- [Basics: The basics: units, derivatives, frames of reference, Newton's laws and the constants](/ai/phys.md): Basics · the physics the other tabs use
 - [Rules: The rules of the comparison](/ai/rules.md): Start · how the comparison is run
+- [Math: The mathematics: angles, vectors, derivatives, uncertainty and terrain grids](/ai/math.md): Math · the tools the other tabs use
+- [Curvature: Curvature: how fast a direction turns](/ai/kappa.md): Curvature · what it is, how it is measured, and what a plane gives
+- [Physics: The physics: units, motion, frames of reference, Newton's laws, waves and the constants](/ai/phys.md): Physics · the physics the other tabs use
 
 ## Sky & horizon
 

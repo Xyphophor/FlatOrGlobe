@@ -3,6 +3,9 @@
 // tableaux et la ligne de lecture. Les nombres viennent tous de tongalogic.js ;
 // ici on ne fait que dessiner. Figures SVG (FIG), à l'échelle de leurs axes.
 import { FIG } from "../../core/fig.js";
+import { figFitBox, pearson } from "../../core/fitbox.js";
+const sdOf = (a) => { const m = a.reduce((s, x) => s + x, 0) / a.length; return Math.sqrt(a.reduce((s, x) => s + (x - m) ** 2, 0) / (a.length - 1)); };
+
 import { axesStamp } from "../../core/formfigs.js";
 import { makeT } from "../../core/i18n.js";
 import { lambPair } from "./lambsys.js";
@@ -103,7 +106,7 @@ function figR(t) {
 
 /** Le résultat sur une règle en km : intervalle total (±σ et ±1,96σ), statistique seule, chaque alternative, 6 371 km. */
 function figRes(t, lang) {
-  const W = 380, Ht = 150, pl = 16, pr = 16, r0 = 5900, r1 = 6900, y = 70;
+  const W = 380, Ht = 228, pl = 16, pr = 16, r0 = 5900, r1 = 6900, y = 70;
   const X = (R) => pl + ((R - r0) / (r1 - r0)) * (W - pl - pr);
   const { res } = numbers(), km = (x) => fmt(lang, Math.round(x));
   const f = FIG.make({ w: W, h: Ht, alt: t("tg-res-alt", "The radius found, on a ruler in kilometres: a dot at {r} km, a dark bar for the statistical uncertainty alone, a wide pale band for the total uncertainty at one standard deviation and a thinner one at 95 %, small ticks for each alternative reduction, and the mean radius of 6,371 km dashed, inside the band.", { r: km(res.med) }) });
@@ -117,7 +120,12 @@ function figRes(t, lang) {
   f.note(X(6371), y - 26, t("tg-r-true", "6,371 km"), { anchor: "middle", size: 9.5, c: C.ink });
   f.dot(X(res.med), y, { r: 4.5, c: C.globe });
   f.note(X(res.lo95), y + 18, t("tg-res-95", "95%"), { anchor: "start", size: 9, c: C.globe });
-  f.note(W - pr, Ht - 6, t("tg-res-flat", "plane: no finite radius fits"), { anchor: "end", size: 9.5, c: C.flat });
+  f.note(W - pr, y + 60, t("tg-res-flat", "plane: no finite radius fits"), { anchor: "end", size: 9.5, c: C.flat });
+  // l'encadré de l'ajustement (core/fitbox.js, 2026-11-27) : le rayon d'un tour complet, le même à chaque station ; pas une
+  // droite, et la dispersion est l'écart type des rayons des stations gardées
+  { const rd = numbers().radii.lap, Rs = rd.rows.filter((_, i) => rd.keep[i]).map((r) => r.R);
+    const ok = new Set(rd.rows.filter((_, i) => rd.keep[i]).map((r) => r.id)), G = TONGA_STATIONS.filter((s) => s.a1 != null && s.a2 != null && ok.has(s.id));   // r : l'intervalle entre passages contre 2π − 2θ, une droite, stations gardées (règle des 3 σ)
+    figFitBox(f, W - pr, y + 70, { R: res.med, range: `± ${km(res.sigma)} km`, r: pearson(G.map((s) => 2 * Math.PI - 2 * tongaTheta(s)), G.map((s) => s.a2 - s.a1)), rOf: t("fb-gap", "gap, 2π − 2θ"), scatter: `${km(sdOf(Rs))} km (${t("fb-sd", "SD")})`, chi2nu: null, title: `${Rs.length} ${t("fb-st", "stations")}`, col: C.globe, align: "right" }); }
   axesStamp(f, t, t("tg-res-s", "ticks: the alternative reductions"));
   return f;
 }

@@ -31,7 +31,7 @@ export const PROSE = [
  {
   "t": "notes",
   "k": "rules-draw2",
-  "html": "<b>2. Numbers come from geometry, never from the drawing.</b> Every angle, height or distance printed on the site is computed from the true geometry and the data, never measured on a picture, exaggerated or not. The same reading of the terrain, the same air, the same instrument feed both models, so that any difference between them comes from the shape and from nothing else (<a class=\"xref\" href=\"#tab-phys/phys-h2dem\" data-xref=\"phys\" data-sec=\"phys-h2dem\">Basics</a>, terrain models)."
+  "html": "<b>2. Numbers come from geometry, never from the drawing.</b> Every angle, height or distance printed on the site is computed from the true geometry and the data, never measured on a picture, exaggerated or not. The same reading of the terrain, the same air, the same instrument feed both models, so that any difference between them comes from the shape and from nothing else (<a class=\"xref\" href=\"#tab-math/math-h2dem\" data-xref=\"math\" data-sec=\"math-h2dem\">Math</a>, terrain models)."
  },
  {
   "t": "h2",
@@ -163,7 +163,7 @@ export const PROSE = [
  {
   "t": "notes",
   "k": "rules-data5",
-  "html": "<b>16. Terrain heights: the model's, and the published one beside it.</b> Horizons and summits are read from terrain models, the same reading for both models. When the model's height differs from the published one, the page gives both and says what the published one would change; it does not swap one for the other by hand (<a class=\"xref\" href=\"#tab-phys/phys-h2dem\" data-xref=\"phys\" data-sec=\"phys-h2dem\">Basics</a>, terrain models)."
+  "html": "<b>16. Terrain heights: the model's, and the published one beside it.</b> Horizons and summits are read from terrain models, the same reading for both models. When the model's height differs from the published one, the page gives both and says what the published one would change; it does not swap one for the other by hand (<a class=\"xref\" href=\"#tab-math/math-h2dem\" data-xref=\"math\" data-sec=\"math-h2dem\">Math</a>, terrain models)."
  },
  {
   "t": "h2",
@@ -198,6 +198,7 @@ export const PROSE = [
  {
   "t": "xrefs",
   "keys": [
+   "math",
    "phys",
    "falsify",
    "results",

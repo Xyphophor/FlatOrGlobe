@@ -13,6 +13,7 @@ import { routeStats, radiusFromFlights, gcPoint } from "./logic.js";
 import { ROUTES, AIRPORTS } from "../../data/presets/avia-flights.js";
 import { colors, label, dot, plane, orthoGlobe, strokeGlobe, makeLoop, INK, SOFT } from "./draw.js";
 import { num } from "../curv/fmt.js";
+import { drawFitBox } from "../../core/fitbox.js";
 
 let cache = null;
 export function flightRadius() {
@@ -38,6 +39,16 @@ export function radiusPlan() {
   });
   plan = { rows, T: t + HOLD };
   return plan;
+}
+
+/** r et dispersion (min) sur les k premières routes tombées (2026-11-27, règle de l'onglet courbure : r et la dispersion qui
+ *  évoluent à chaque route ; pas de χ²/ν, aucune erreur n'est déposée pour chaque vol). series[k] pour k ≥ 3. */
+let series = null;
+export function radiusSeries() {
+  if (series) return series;
+  const { rows } = radiusPlan();
+  series = rows.map((_, i) => (i < 2 ? null : (({ r, scatter, R }) => ({ r, scatter: scatter * 60, R }))(radiusFromFlights(rows.slice(0, i + 1).map((p) => ({ ...p, both: true }))))));
+  return series;
 }
 
 /** Fraction u (0..1) de l'animation d'une route au temps t. */
@@ -68,13 +79,14 @@ export function mountRadius(root, tr) {
     const gcx = gw / 2, gcy = wide ? H * 0.46 : 40 + gR;
     const capY = wide ? H - 30 : gcy + gR + 16;
     // le nuage : à droite (large) ou en bas (étroit)
-    const x0 = (wide ? gw : 0) + 46, x1 = W - 12, y0 = wide ? 44 : capY + 34, y1 = H - 30;
+    const x0 = (wide ? gw : 0) + 46, x1 = W - 12, y0 = wide ? 44 : capY + 34, y1 = wide ? H - 30 : H - 30 - 78;   // étroit : l'encadré sous le graphe
     const hx = wide ? gw + 8 : 8;
     const dMax = Math.ceil(Math.max(...rows.map((p) => p.gc)) / 2000) * 2000;
     const rLo = 5000, rHi = 9000;
     const X = (d) => x0 + (d / dMax) * (x1 - x0), Y = (r) => y1 - (Math.min(rHi, Math.max(rLo, r)) - rLo) / (rHi - rLo) * (y1 - y0);
     ctx.strokeStyle = "#e3e7ec"; ctx.lineWidth = 1;
-    for (let r = rLo; r <= rHi; r += 1000) { ctx.beginPath(); ctx.moveTo(x0, Y(r)); ctx.lineTo(x1, Y(r)); ctx.stroke(); label(ctx, num(r), x0 - 4, Y(r), { al: "right", col: SOFT, font: "9.5px system-ui, sans-serif" }); }
+    // étroit : une graduation sur deux (l'encadré prend la place)
+    for (let r = rLo; r <= rHi; r += wide ? 1000 : 2000) { ctx.beginPath(); ctx.moveTo(x0, Y(r)); ctx.lineTo(x1, Y(r)); ctx.stroke(); label(ctx, num(r), x0 - 4, Y(r), { al: "right", col: SOFT, font: "9.5px system-ui, sans-serif" }); }
     for (let d = 0; d <= dMax; d += 4000) label(ctx, num(d), X(d), y1 + 11, { al: X(d) > x1 - 20 ? "right" : "center", col: SOFT, font: "9.5px system-ui, sans-serif" });
     label(ctx, tr("rd-x", "great-circle distance of the route (km)"), x1, y1 + 23, { al: "right", col: SOFT, font: "9.5px system-ui, sans-serif" });
     ctx.save(); ctx.setLineDash([5, 4]); ctx.strokeStyle = INK; ctx.beginPath(); ctx.moveTo(x0, Y(6371)); ctx.lineTo(x1, Y(6371)); ctx.stroke(); ctx.restore();
@@ -97,6 +109,9 @@ export function mountRadius(root, tr) {
     }
     label(ctx, `${tr("rd-fit", "all routes together")}: R = ${num(F.R)} ± ${num(F.se)} km`, hx, 12, { col: globe, font: "600 12px system-ui, sans-serif" });
     label(ctx, `${tr("rd-true", "dashed: the Earth's mean radius, 6,371 km")} · ${num(n)}/${num(rows.length)} ${tr("rd-routes", "routes")}`, hx, 26, { col: SOFT, font: "10.5px system-ui, sans-serif" });
+    // l'encadré de l'ajustement (core/fitbox.js) : R, r, dispersion des routes déjà tombées (dès la troisième)
+    const S = n >= 3 ? radiusSeries()[n - 1] : null;
+    if (S) drawFitBox(ctx, wide ? x1 - 4 : W - 6, wide ? y1 - 4 : H - 4, { R: S.R, r: S.r, scatter: `${num(S.scatter)} min`, chi2nu: null, title: `${num(n)} ${tr("rd-routes", "routes")}`, col: globe, size: wide ? 10.5 : 9.5, align: "right", valign: "bottom" });   // en bas à droite : là où ne tombe aucune route
 
     // globe : la vue va du milieu de la route précédente au milieu de celle-ci
     const r = rows[Math.max(0, cur)], u = cur >= 0 ? phase(r, st.t) : 0;

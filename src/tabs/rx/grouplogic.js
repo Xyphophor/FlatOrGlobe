@@ -90,6 +90,20 @@ export function groupFit(parts) {
  * perpendiculaire au plan (rho). Un point sur la sphère vérifie exactement
  * y = cy + √(R² − rho²) : la courbe tracée. Renvoie { pts: [{rho, y}] (km), curve(rho) → y (km) }.
  */
+/**
+ * r de l'encadré d'ajustement (2026-11-27, règle de l'onglet courbure) : la hauteur de chaque point au-dessus du meilleur plan
+ * contre la hauteur que prédit la sphère ajustée (centre c, rayon R : le point ramené sur la sphère le long du rayon). Vaut à
+ * toute échelle, du groupe local au réseau mondial ; le plan prédit zéro partout.
+ */
+export function heightCorr(P, c, R) {
+  const n = P.length, m = [0, 1, 2].map((i) => P.reduce((q, p) => q + p[i], 0) / n), nv = fitPlane(P).normal;
+  const ys = P.map((p) => dot3(sub(p, m), nv));
+  const ps = P.map((p) => { const d = sub(p, c), k = R / norm(d); return dot3(sub([c[0] + d[0] * k, c[1] + d[1] * k, c[2] + d[2] * k], m), nv); });
+  const my = ys.reduce((a, b) => a + b, 0) / n, mp = ps.reduce((a, b) => a + b, 0) / n;
+  let a = 0, b = 0, d = 0; for (let i = 0; i < n; i++) { a += (ys[i] - my) * (ps[i] - mp); b += (ys[i] - my) ** 2; d += (ps[i] - mp) ** 2; }
+  return a / Math.sqrt(b * d);
+}
+
 export function bulge(parts, G) {
   const P = parts.map((p) => p.x), n = P.length, m = [0, 1, 2].map((i) => P.reduce((q, p) => q + p[i], 0) / n);
   let nv = fitPlane(P).normal;

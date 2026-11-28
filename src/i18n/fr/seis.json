@@ -250,5 +250,7 @@
   "msr-quakes": "× = les 8 séismes qui ont lu le plus de stations",
   "msr-alt": "Animation : des stations placées à partir des seuls temps P de séismes ; d’abord en distances en ligne droite sur un plan, qui cale ; puis, du même départ, dans l’espace, où elles se posent sur une sphère ; les lignes dessinées ensuite en arcs de grand cercle ; la vitesse de propagation modifiée, qui ne change que la taille ; d’autres lois de vitesse, qui gardent une sphère ; enfin le nuage tourné sur la vraie carte, avec un arc rouge en pointillé de chaque station à sa position publiée",
   "msr-zoom": "zoom",
-  "msr-true": "même échelle dans toutes les directions"
+  "msr-true": "même échelle dans toutes les directions",
+  "msr-stations": "stations",
+  "rb-r-n": "{n} arrivées, {q} séismes"
 }

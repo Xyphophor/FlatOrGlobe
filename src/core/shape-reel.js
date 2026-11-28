@@ -12,6 +12,7 @@
 // Ce module dessine ; chaque onglet fournit ses données (images 3D des descentes, dans UN repère commun) et sa ligne
 // du temps (stateAt) faite avec les aides exportées ici, et ses lignes de lecture. Vue orthographique d'un vrai nuage
 // 3D (règle 1 : rien n'est étiré).
+import { drawFitBox } from "./fitbox.js";
 import { makeReel, label, REEL_COL, REEL_SANS, ease, clamp } from "./reel.js";
 import { coastLines } from "./globe25d.js";
 
@@ -111,7 +112,7 @@ class Segs {
  * de l'ajustement), cols (couleur de chaque point), fixed?(j) (faux : le point n'est pas fixé par les mesures, dessiné creux),
  * lines (paires [a, b] : a, b < N = points, ≥ N = pivots), zoom?: { factor, centre (indice) }, ringLabel?, linesNote? } ;
  * s (stateAt) : { st, hub, V, o, k, bound, arc, sph, map, err, lines, ring, zoom, pts, sheet?: { z0, fade }, cloud?: { P, cols, a },
- * cloudHub?: { P, a }, read, key } ; readLines(s, T) → [[texte, couleur, gros?]].
+ * cloudHub?: { P, a }, read, key } ; readLines(s, T) → [[texte, couleur, gros?]] (et, facultatif, .fitBox : core/fitbox.js).
  */
 export function drawShape(ctx, b, s, T, fs, cfg, readLines, reads) {
   const N = s.st.length, cx = b.x + b.w / 2, cy = b.y + b.h / 2 + fs * 0.4;
@@ -249,6 +250,8 @@ export function drawShape(ctx, b, s, T, fs, cfg, readLines, reads) {
   lines.forEach(([txt, , big], i) => { ctx.font = `${big ? 800 : 600} ${fs * (big ? 0.62 : 0.5)}px ${REEL_SANS}`; ctx.fillRect(b.x - 3, b.y + fs * (0.45 + 0.85 * i) - fs * 0.42, ctx.measureText(txt).width + 6, fs * 0.84); });
   ctx.restore();
   lines.forEach(([txt, col, big], i) => label(ctx, txt, b.x, b.y + fs * (0.45 + 0.85 * i), { size: fs * (big ? 0.62 : 0.5), col, align: "left", weight: big ? 800 : 600 }));
+  // l'encadré de l'ajustement (core/fitbox.js, 2026-11-27) : readLines peut le joindre aux lignes (lines.fitBox)
+  if (lines.fitBox) drawFitBox(ctx, b.x + b.w - 2, b.y + b.h - 2, { ...lines.fitBox, size: Math.max(9, fs * 0.42), align: "right", valign: "bottom" });
   if (reads) { const txt = lines.map((l) => l[0]).join(" · "); if (reads.textContent !== txt) reads.textContent = txt; }
   void scx; void scy;
 }

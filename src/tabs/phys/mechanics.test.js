@@ -60,7 +60,7 @@ test("prose de la mécanique : valeurs et renvois existent", () => {
   for (const m of all.matchAll(/data-v=\\"(\w+)\\"/g)) assert.ok(vals[m[1]] != null, `valeur ${m[1]}`);
   for (const m of all.matchAll(/s-phys-n(\d+)/g)) assert.ok(+m[1] >= 1 && +m[1] <= SOURCES.length, `[${m[1]}]`);
   const cited = new Set([...all.matchAll(/s-phys-n(\d+)/g)].map((m) => +m[1]));
-  for (let n = 20; n <= 29; n++) assert.ok(cited.has(n), `source ${n} jamais citée`);
+  for (let n = 15; n <= 24; n++) assert.ok(cited.has(n), `source ${n} jamais citée`);
 });
 
 test("choc de billes : quantité de mouvement constante, énergie rendue, même accélération dans tout référentiel inertiel", async () => {

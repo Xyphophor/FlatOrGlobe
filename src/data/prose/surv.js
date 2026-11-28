@@ -83,6 +83,11 @@ export const PROSE = [
  },
  {
   "t": "notes",
+  "html": "<b>Why the excess is the area divided by R²</b> (Girard, Gauss), and the same angle sums run on triangles simulated on a plane: <a class=\"xref\" href=\"#tab-kappa/ka-h2inside\" data-xref=\"kappa\" data-sec=\"ka-h2inside\">Curvature</a>.",
+  "k": "ka-link-surv"
+ },
+ {
+  "t": "notes",
   "html": "Historic mapping was built from chains of triangles between hilltop stations — theodolite angles plus one measured baseline. On a plane, every triangle's angles sum to exactly 180°. On a sphere they sum to more, by the <b>spherical excess</b>, proportional to the triangle's area — and surveyors do not debate this, they <em>budget</em> for it, triangle by triangle. Pick a documented network:",
   "k": "a7301ae8"
  },
@@ -420,12 +425,14 @@ export const PROSE = [
   "id": "sv-tabTri",
   "tbody": "sv-tbTri",
   "k": "x:sv-cap-tri",
-  "caption": "The radius survey by survey. Range: 16 to 84 % of a bootstrap over printed pages (∞: a flat surface is not excluded). Plane: how much larger the flat model's residuals are (χ² ratio), with its best constant offset.",
+  "caption": "The radius survey by survey. Range: 16 to 84 % of a bootstrap over printed pages (∞: a flat surface is not excluded). r: correlation of the excess with the area, which needs no model (a plane gives r near 0, a sphere near 1). Scatter: the residuals around the line, in seconds of arc; the volumes print no reading error independent of their adjustment, so no χ²/ν is given. Plane: how much larger the flat model's residuals are (χ² ratio), with its best constant offset.",
   "head": [
    "Survey",
    "Triangles",
    "R",
    "Range",
+   "r",
+   "Scatter",
    "Plane"
   ]
  },

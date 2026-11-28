@@ -3,7 +3,7 @@
 // calculées une fois, pour que la prose (span.cv[data-v]), les tableaux et les figures disent les mêmes nombres.
 
 // Les sept constantes qui définissent le SI depuis le 20 mai 2019 (brochure du BIPM, sources [1] de l'onglet) : exactes par définition.
-// La gravitation G est mesurée (CODATA 2022, [2]) ; GM, ω, R et g sont propres à la Terre (IERS, GRS80, CGPM 1901 : [11] [12] [16]).
+// La gravitation G est mesurée (CODATA 2022, [2]) ; GM, ω, R et g sont propres à la Terre (IERS, GRS80, CGPM 1901 : [8] [9] [12]).
 export const CONSTANTS = [
   { id: "c", sym: "c", value: "299 792 458", unit: "m/s", cls: "defined", src: 1 },
   { id: "h", sym: "h", value: "6.626 070 15 × 10⁻³⁴", unit: "J·s", cls: "defined", src: 1 },
@@ -13,12 +13,12 @@ export const CONSTANTS = [
   { id: "cs", sym: "Δν_Cs", value: "9 192 631 770", unit: "Hz", cls: "defined", src: 1 },
   { id: "kcd", sym: "K_cd", value: "683", unit: "lm/W", cls: "defined", src: 1 },
   { id: "G", sym: "G", value: "6.674 30(15) × 10⁻¹¹", unit: "m³ kg⁻¹ s⁻²", cls: "measured", src: 2 },
-  { id: "gm", sym: "GM⊕", value: "3.986 004 418 × 10¹⁴", unit: "m³/s²", cls: "earth", src: 11 },
-  { id: "omega", sym: "ω⊕", value: "7.292 115 × 10⁻⁵", unit: "rad/s", cls: "earth", src: 11 },
-  { id: "req", sym: "R_eq", value: "6 378 137", unit: "m", cls: "earth", src: 12 },
-  { id: "geq", sym: "g_eq", value: "9.780 33", unit: "m/s²", cls: "earth", src: 12 },
-  { id: "gpole", sym: "g_pole", value: "9.832 19", unit: "m/s²", cls: "earth", src: 12 },
-  { id: "gn", sym: "g_n", value: "9.806 65", unit: "m/s²", cls: "convention", src: 16 },
+  { id: "gm", sym: "GM⊕", value: "3.986 004 418 × 10¹⁴", unit: "m³/s²", cls: "earth", src: 8 },
+  { id: "omega", sym: "ω⊕", value: "7.292 115 × 10⁻⁵", unit: "rad/s", cls: "earth", src: 8 },
+  { id: "req", sym: "R_eq", value: "6 378 137", unit: "m", cls: "earth", src: 9 },
+  { id: "geq", sym: "g_eq", value: "9.780 33", unit: "m/s²", cls: "earth", src: 9 },
+  { id: "gpole", sym: "g_pole", value: "9.832 19", unit: "m/s²", cls: "earth", src: 9 },
+  { id: "gn", sym: "g_n", value: "9.806 65", unit: "m/s²", cls: "convention", src: 12 },
 ];
 
 export const C_LIGHT = 299792458;           // m/s, exacte

@@ -59,6 +59,13 @@
 // offset per triangle (an observer's bias), and the flat model's best case,
 // K = 0 with that offset fitted (rule 2): the offset cannot follow the area.
 //
+// Also given (2026-11-27, the curvature tab's rule): the Pearson correlation r
+// of the excess with the area, which needs no model of the Earth (a plane
+// gives r near 0 whatever the number of triangles). No χ²/ν: the volumes print
+// no reading error for each angle independent of the adjustment (the closing
+// corrections are the adjustment itself), so only the raw scatter of the
+// residuals, in seconds of arc, is given.
+//
 // References: Schott 1900 and 1902 (above); Gauss 1827, art. 20 (English:
 // Morehead & Hiltebeitel, General Investigations of Curved Surfaces, 1902);
 // A.-M. Legendre, "Mémoire sur les opérations trigonométriques dont les
@@ -688,6 +695,7 @@ type Fit struct {
 	FlatScatter          float64
 	Chi2Ratio            float64 // Σ flat residuals² / Σ globe residuals²
 	SigmaK               float64 // K / its naive standard error
+	Corr                 float64 // Pearson correlation of the excess with the area: needs no model of the Earth (2026-11-27)
 }
 
 // Do fits ps (after the leave-one-out rule) with a page bootstrap.
@@ -708,11 +716,13 @@ func Do(ps []Point, seed uint64) Fit {
 	f.SigmaK = f.K / (f.Scatter / math.Sqrt(sa2))
 	n := float64(len(keep))
 	me, ma = me/n, ma/n
-	sxy, sxx := 0.0, 0.0
+	sxy, sxx, syy := 0.0, 0.0, 0.0
 	for _, p := range keep {
 		sxy += (p.A - ma) * (p.E - me)
 		sxx += (p.A - ma) * (p.A - ma)
+		syy += (p.E - me) * (p.E - me)
 	}
+	f.Corr = sxy / math.Sqrt(sxx*syy)
 	kb := sxy / sxx
 	f.Bias, f.RBias = me-kb*ma, RadiusKm(kb)
 	f.FlatOffset = me
@@ -1195,6 +1205,7 @@ func (res *Result) File() preset.File {
 			{K: "bias", V: pyjson.Round(f.Bias, 3)}, {K: "Rbias", V: km(f.RBias)},
 			{K: "flatOffset", V: pyjson.Round(f.FlatOffset, 3)}, {K: "flatScatter", V: pyjson.Round(f.FlatScatter, 3)},
 			{K: "chi2Ratio", V: pyjson.Round(f.Chi2Ratio, 2)},
+			{K: "r", V: pyjson.Round(f.Corr, 3)},
 		}
 	}
 	flatObj := func(f FlatMap) pyjson.Obj {

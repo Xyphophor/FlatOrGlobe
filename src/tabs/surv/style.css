@@ -1,3 +1,5 @@
 /* surv : tout le style commun vient de src/core/legacy.css. */
 /* 2026-10-28 : les triangles de Schott sur le globe et sur la carte plate */
 #tab-surv #svTriGlobe, #tab-surv #svTriFlat { display: block; width: 100%; height: clamp(260px, 42vw, 380px); border-radius: 8px; }
+/* 2026-11-27 : le tableau des levés a 7 colonnes (r et dispersion) : il défile sur téléphone */
+@media (max-width: 559px) { #tab-surv #sv-tabTri { display: block; overflow-x: auto; } }

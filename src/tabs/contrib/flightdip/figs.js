@@ -9,6 +9,7 @@
 //     le plan (0°, ses tirets au-dessus du niveau dans l'air du jour, et son meilleur cas : un bord dans la brume plus
 //     un décalage constant).
 // Un clic sur une ligne ou un point montre la photo, l'angle et ce que chaque modèle prédit (#fdInfo).
+import { drawFitBox } from "../../../core/fitbox.js";
 import { setupCanvas } from "../../../core/canvas.js";
 import { keyClickable } from "../../../core/a11y.js";
 import { dipGlobe, dipPlane, pointNumbers, sightline, hEff, dipCorrected, R0 } from "./logic.js";
@@ -108,6 +109,10 @@ export function mountFlightDip(container, t, lang, D) {
       ctx.strokeStyle = colOf(p); ctx.beginPath(); ctx.arc(x, Y(p.dipExif), 2.5, 0, 7); ctx.stroke();
       st.plotHits.push({ i, p: [x, Y(p.dip)] });
     });
+    // l'encadré de l'ajustement (core/fitbox.js, 2026-11-27) : l'ajustement tel quel ; χ²/ν avec l'erreur de chaque lecture
+    // (affichage à 0,1°, accélération), r des abaissements contre √h ; en haut à gauche, où aucune lecture ne tombe
+    drawFitBox(ctx, padL + 6, padT + 4, { R: fitFace.R, range: `${num(fitFace.lo)}–${num(fitFace.hi)} km`, r: fitFace.r, scatter: `${num(fitFace.rms, 2)}° rms`, chi2nu: fitFace.chi2nu,
+      title: `${num(fitFace.n)} ${t("fd-box-n", "readings, at face value")}`, col: COL.fit, size: W < 480 ? 9 : 10 });
     // légende
     const L = [[COL.globe, [5, 3], t("fd-l-globe", "globe, R = 6,371 km, straight light")], [COL.globe, [], t("fd-l-globea", "ticks: globe in the day's air")],
       [COL.fit, [2, 2], t("fd-l-fit", "fitted at face value")], [COL.globe, [1, 3], t("fd-l-off", "globe + constant offset")],

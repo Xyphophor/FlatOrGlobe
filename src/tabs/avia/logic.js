@@ -552,18 +552,20 @@ export function pairRms(pairs, model = {}) {
  * curve: [[km, rms]...] (1 000 à 30 000 km) }.
  */
 export function fitRadius(pairs, recon = {}) {
-  let hs = 0, sAA = 0, sAB = 0, sBB = 0;
+  let hs = 0, sAA = 0, sAB = 0, sBB = 0, sA = 0, sB = 0;
   for (const [a, b] of pairs) {
     const A = reduced(a, { R: Infinity }, recon) - reduced(b, { R: Infinity }, recon);
     const B = (a[4] ** 2 + a[5] ** 2 - b[4] ** 2 - b[5] ** 2) * 1e5;
-    sAA += A * A; sAB += A * B; sBB += B * B; hs += (a[2] + b[2]) / 2;
+    sAA += A * A; sAB += A * B; sBB += B * B; hs += (a[2] + b[2]) / 2; sA += A; sB += B;
   }
   const n = pairs.length, hbar = hs / n;
   const rmsAt = (km) => { const u = 1 / (km * 1000 + hbar); return Math.sqrt(Math.max(0, (sAA + 2 * u * sAB + u * u * sBB) / n)); };
   const u = -sAB / sBB, km = (1 / u - hbar) / 1000;
   const curve = [];
   for (let k = 1000; k <= 30000; k += 250) curve.push([k, rmsAt(k)]);
-  return { km, rms: rmsAt(km), curve, rmsAt };
+  // 2026-11-27 (règle de l'onglet courbure) : −A = u·B est une droite par zéro ; r de Pearson de −A contre B
+  const corr = -(sAB - (sA * sB) / n) / Math.sqrt((sAA - (sA * sA) / n) * (sBB - (sB * sB) / n));
+  return { km, rms: rmsAt(km), curve, rmsAt, corr, n };
 }
 
 /**
@@ -702,7 +704,15 @@ export function fitRotRadius(pairs, recon = {}, minPts = 30) {
   const hbar = rows.reduce((p, r) => p + r.h, 0) / rows.length;
   const termOm = rows.reduce((p, r) => p + Math.abs(OMEGA * r.X), 0) / rows.length;
   const termR = rows.reduce((p, r) => p + Math.abs(r.B), 0) / rows.length / (R_M + hbar);
-  return { ...F, dayH, seOm, seKm, seDayH: dayH * seOm / F.om, cov, nGroups: n, per, termOm, termR, flat: { om: omF / OMEGA, rms: rmsF } };
+  // 2026-11-27 (règle de l'onglet courbure) : le coefficient de corrélation multiple, r de −C contre ce que l'ajustement à deux
+  // paramètres prédit (a·X + b·B, moindres carrés sans constante)
+  let sxx = 0, sxb = 0, sbb = 0, sxy = 0, sby = 0;
+  for (const r of rows) { sxx += r.X * r.X; sxb += r.X * r.B; sbb += r.B * r.B; sxy += -r.C * r.X; sby += -r.C * r.B; }
+  const det = sxx * sbb - sxb * sxb, ca = (sxy * sbb - sby * sxb) / det, cb = (sby * sxx - sxy * sxb) / det;
+  const yv = rows.map((r) => -r.C), pv = rows.map((r) => ca * r.X + cb * r.B), my = yv.reduce((p, q) => p + q, 0) / yv.length, mp = pv.reduce((p, q) => p + q, 0) / pv.length;
+  let c1 = 0, c2 = 0, c3 = 0; for (let i = 0; i < yv.length; i++) { c1 += (yv[i] - my) * (pv[i] - mp); c2 += (yv[i] - my) ** 2; c3 += (pv[i] - mp) ** 2; }
+  const multR = c1 / Math.sqrt(c2 * c3);
+  return { ...F, dayH, seOm, seKm, seDayH: dayH * seOm / F.om, cov, nGroups: n, per, termOm, termR, flat: { om: omF / OMEGA, rms: rmsF }, multR };
 }
 
 /**
@@ -751,5 +761,8 @@ export function radiusFromFlights(stats) {
   const res = ys.map((y, i) => y - (t0 + R * xs[i]));
   const se = Math.sqrt(res.reduce((p, q) => p + q * q, 0) / (n - 2) / sxx);
   const per = S.map((s) => ({ key: s.key, gc: s.gc, R: s.tas * (s.h - t0) / (s.gc / R_KM) }));
-  return { R, se, t0, n, per };
+  // 2026-11-27 (règle de kappa) : r de Pearson du temps contre θ/v, et l'écart type des résidus (h) ; pas de χ²/ν, aucune
+  // erreur n'est déposée pour chaque vol
+  const syy = ys.reduce((p, y) => p + (y - my) ** 2, 0), r = sxy / Math.sqrt(sxx * syy), scatter = Math.sqrt(res.reduce((p, q) => p + q * q, 0) / (n - 2));
+  return { R, se, t0, n, per, r, scatter };
 }

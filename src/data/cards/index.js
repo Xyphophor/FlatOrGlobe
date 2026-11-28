@@ -30,10 +30,12 @@ import * as atmo from "./atmo.js";
 import * as map from "./map.js";
 import * as contrib from "./contrib.js";
 import * as phys from "./phys.js";
+import * as math from "./math.js";
 import * as aether from "./aether.js";
 import * as rocket from "./rocket.js";
 import * as cases from "./cases.js";
 import * as persp from "./persp.js";
+import * as kappa from "./kappa.js";
 import * as rules from "./rules.js";
 
-export const CARD_TABS = { results: home, elev, hh, ref, cnav, star, dist, dip, grav, fou, seis, mag, sun, twi, azim, ecl, surv, ct, gps, avia, curv, obs, rot, orb, sat, scale, atmo, map, contrib, phys, aether, rocket, cases, persp, rules };
+export const CARD_TABS = { results: home, elev, hh, ref, cnav, star, dist, dip, grav, fou, seis, mag, sun, twi, azim, ecl, surv, ct, gps, avia, curv, obs, rot, orb, sat, scale, atmo, map, contrib, math, phys, aether, rocket, cases, persp, rules, kappa };

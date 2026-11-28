@@ -47,7 +47,8 @@
   "do-scale": "See the Earth's motions on one clock, each hand at its true speed, and the distances from the Moon to Andromeda.",
   "do-atmo": "Why the air stays without a lid, how the ionosphere bends radio waves, and why satellites do not melt in a thousand-degree thermosphere.",
   "do-aether": "Airy's water telescope, Michelson–Morley, Sagnac, Michelson–Gale: what the aether was, what each experiment measured, and how special relativity came out of it.",
-  "do-phys": "Units, derivatives and their notations, frames of reference, Newton's laws, the constants and uncertainties: the definitions every other tab relies on, each with its formula and a figure.",
+  "do-phys": "Units, position and velocity, frames of reference, Newton's laws, forces and collisions, circular motion, waves and the constants: the physics every other tab relies on, each with its formula and a figure.",
+  "do-math": "Angles and radians, vectors, derivatives and their notations, uncertainty, least squares, r and χ²/ν, and how a terrain model is read: the mathematics every other tab relies on, each with its formula and a figure.",
   "do-rocket": "Molecules hitting walls: why a closed chamber goes nowhere, how a fire keeps its pressure, and why a rocket pushes harder in a vacuum than in air.",
   "do-cases": "A laser seen across 15 km of sea, redone with the operators' own thermometers and that evening's air, sea and tide: what it takes to see it, and what their readings could tell.",
   "hreel-alt": "Animated showcase of the site's approach: a globe and a flat disc on one balance; a table of verdicts written in advance; bars counting the sections that are measures, checks and model predictions; a flat model's free parameter swept to its best case, still short of the data; the counts of tabs, sources, datasets and verdicts; a terminal rebuilding each dataset; the Earth's radius from measurements alone; and the question of what would change our mind",
@@ -99,5 +100,6 @@
   "hreel-outro-a": "What would change our mind?",
   "hreel-outro-b": "Each tab says it, in advance. Look, measure, check.",
   "do-persp": "Four cubes moving away, a Sun that cannot set by perspective, sunbeams that fan out and close up again: what perspective shrinks, and what it cannot hide.",
-  "do-rules": "Fixed before the results: no silent exaggeration, the flat model at its best, the globe never fitted to our data, the same margins for both, refraction always shown, what is set aside and why. The rules every tab follows."
+  "do-rules": "Fixed before the results: no silent exaggeration, the flat model at its best, the globe never fitted to our data, the same margins for both, refraction always shown, what is set aside and why. The rules every tab follows.",
+  "do-kappa": "What curvature is, a direction that turns with distance, from curves to surfaces; how it is measured from inside with angles and lengths; and five radius calculations run on a plane, which give no radius."
 }

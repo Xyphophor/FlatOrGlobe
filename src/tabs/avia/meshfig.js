@@ -50,6 +50,7 @@ const EN = {
   "amr-plane": "plane", "amr-sphere": "sphere", "amr-rms": "rms of the time residuals", "amr-placed": "airports placed", "amr-random": "best of {{starts}} random starts",
   "amr-R": "radius", "amr-units": "units", "amr-tas": "speed", "amr-err": "error after rotation", "amr-median": "median", "amr-max": "largest",
   "amr-loose": "hollow: another place fits its routes almost as well", "amr-ring": "the Earth's size, 6,371 km (reference only)",
+  "amr-routes": "routes",
   "amr-alt": "Animation: airports placed from airborne times alone, one by one, first on a plane, which stalls; then by the same steps on a sphere of free size, which fits; the routes then drawn as great-circle arcs; the size in kilometres from the filed airspeed; finally the cloud turned onto the real map, with a red dashed arc from each airport to its real position",
 };
 
@@ -129,6 +130,8 @@ function readLines(s, T) {
   if (r.v != null) {
     out.push([`${T("amr-tas")}: ${num(r.v)} km/h → R = ${num(R * r.v)} km`, REEL_COL.ink, true]);
     out.push([`${T("amr-sphere")} ${mn(SP.stress)} · ${T("amr-R")} ${num(R, 2)} ${T("amr-units")}`, TEAL, false]);
+    // l'encadré de l'ajustement : une forme ajustée, pas une droite ; dispersion = rms des temps
+    out.fitBox = { R: R * r.v, r: "na", scatter: `${mn(SP.stress)} rms`, chi2nu: null, title: `${num(LINES.length)} ${T("amr-routes")}`, col: TEAL };
   }
   if (r.err != null) {
     out.push([`${T("amr-err")}: ${num(ERR.rms, 1)}° rms (${NFIX})`, RED, true]);

@@ -41,5 +41,7 @@
   "gr-xs": "angle entre les deux stations, vu du centre de la Terre",
   "gr-pairs": "paires de stations : satellites suivis par les deux en même temps, en moyenne",
   "gr-lim": "limite géométrique",
-  "gr-far": "la paire la plus éloignée qui ait jamais suivi le même satellite"
+  "gr-far": "la paire la plus éloignée qui ait jamais suivi le même satellite",
+  "gr-sph2": "sphère par les stations",
+  "gr-rof": "hauteur, sphère"
 }

@@ -8,6 +8,7 @@
 // passe d'un modèle à l'autre ; l'échelle verticale suit (imprimée).
 // En médaillon : l'écart entre lignes voisines selon le rayon mis dans la
 // correction -- le rayon de la Terre, lu dans le poids d'un avion.
+import { drawFitBox } from "../../core/fitbox.js";
 import { setupCanvas } from "../../core/canvas.js";
 import { gravdPairs, pairRms, reduced, fitRadius, fitRotRadius, lineWeights, kScan } from "./logic.js";
 import { GRAVD } from "../../data/presets/avia-gravd.js";
@@ -84,7 +85,8 @@ export function mountEot(root, tr) {
     D.fit.curve.forEach(([km, r], i) => (i ? ctx.lineTo(cx(km), cy(r)) : ctx.moveTo(cx(km), cy(r))));
     ctx.stroke();
     ctx.strokeStyle = INK; ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.moveTo(cx(6371), iy0); ctx.lineTo(cx(6371), iy1); ctx.stroke(); ctx.setLineDash([]);
-    label(ctx, `${tr("eo-best", "best")} R = ${num(D.fit.km)} km`, cx(D.fit.km) + 4, iy0 + 8, { col: globe, font: "600 10.5px system-ui, sans-serif", halo: true });
+    // l'encadré de l'ajustement (core/fitbox.js, 2026-11-27) : pas de χ²/ν (aucune erreur publiée par lecture du gravimètre)
+    drawFitBox(ctx, ix1, iy0 + 4, { R: D.fit.km, r: D.fit.corr, scatter: `${num(D.fit.rms, 1)} mGal rms`, chi2nu: null, title: `${num(D.fit.n)} ${tr("eo-pairs", "pairs of lines")}`, col: globe, size: wide ? 9.5 : 9, align: "right" });
     label(ctx, tr("eo-inset", "rms (mGal) vs the radius R put in the correction (km)"), ix0, iy0 - 8, { col: SOFT, font: "9.5px system-ui, sans-serif" });
   };
   const next = () => { st.from = st.to; st.to = (st.to + 1) % MODELS.length; st.t = 0; };

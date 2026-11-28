@@ -12,9 +12,13 @@ Each card below is one thing you can do, or check, without buying anything. No e
 
 - [Results](/ai/results.md) — The Earth's radius measured some fifteen ways, the rotation and the orbit: every result of the site on one page, measurements and checks kept apart.
 
-- [Basics](/ai/phys.md) — Units, derivatives and their notations, frames of reference, Newton's laws, the constants and uncertainties: the definitions every other tab relies on, each with its formula and a figure.
-
 - [Rules](/ai/rules.md) — Fixed before the results: no silent exaggeration, the flat model at its best, the globe never fitted to our data, the same margins for both, refraction always shown, what is set aside and why. The rules every tab follows.
+
+- [Math](/ai/math.md) — Angles and radians, vectors, derivatives and their notations, uncertainty, least squares, r and χ²/ν, and how a terrain model is read: the mathematics every other tab relies on, each with its formula and a figure.
+
+- [Curvature](/ai/kappa.md) — What curvature is, a direction that turns with distance, from curves to surfaces; how it is measured from inside with angles and lengths; and five radius calculations run on a plane, which give no radius.
+
+- [Physics](/ai/phys.md) — Units, position and velocity, frames of reference, Newton's laws, forces and collisions, circular motion, waves and the constants: the physics every other tab relies on, each with its formula and a figure.
 
 ## How to read the labels
 

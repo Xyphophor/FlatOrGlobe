@@ -93,7 +93,7 @@ export const SOURCES = [
   {
     id: "wikipedia-agel",
     html: `<a href="https://fr.wikipedia.org/wiki/Mont_Agel">Mont Agel (Wikipédia, FR)</a> — <b>1,148 m</b>, above Monaco;
-      the site uses the terrain model's 1,133 m: the IGN's LiDAR HD has no data over 0.13 km² of the summit, a military site, and the RGE ALTI that fills the gap reads 1,133 m there at most (Copernicus GLO-30, a surface model with the buildings, 1,145 m; Wikipédia gave 1,151 m in November 2026). The Basics tab, section on terrain models, gives every value and why they differ.`,
+      the site uses the terrain model's 1,133 m: the IGN's LiDAR HD has no data over 0.13 km² of the summit, a military site, and the RGE ALTI that fills the gap reads 1,133 m there at most (Copernicus GLO-30, a surface model with the buildings, 1,145 m; Wikipédia gave 1,151 m in November 2026). The Math tab, section on terrain models, gives every value and why they differ.`,
   },
   {
     id: "copernicus",

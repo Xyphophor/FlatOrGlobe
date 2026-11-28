@@ -299,7 +299,8 @@ export const SURV_EXCESS = {
     "Rbias": 6370.0,
     "flatOffset": 4.716,
     "flatScatter": 10.897,
-    "chi2Ratio": 75.66
+    "chi2Ratio": 75.66,
+    "r": 0.993
    },
    "flatNP": {
     "lat0": 90.0,
@@ -341,7 +342,8 @@ export const SURV_EXCESS = {
     "Rbias": 6380.9,
     "flatOffset": 3.454,
     "flatScatter": 3.888,
-    "chi2Ratio": 8.22
+    "chi2Ratio": 8.22,
+    "r": 0.938
    },
    "flatNP": {
     "lat0": 90.0,
@@ -383,7 +385,8 @@ export const SURV_EXCESS = {
     "Rbias": 5641.1,
     "flatOffset": 2.051,
     "flatScatter": 2.046,
-    "chi2Ratio": 1.33
+    "chi2Ratio": 1.33,
+    "r": 0.502
    },
    "flatNP": {
     "lat0": 90.0,
@@ -425,7 +428,8 @@ export const SURV_EXCESS = {
     "Rbias": 6444.5,
     "flatOffset": 7.09,
     "flatScatter": 5.175,
-    "chi2Ratio": 7.25
+    "chi2Ratio": 7.25,
+    "r": 0.929
    },
    "flatNP": {
     "lat0": 90.0,
@@ -467,7 +471,8 @@ export const SURV_EXCESS = {
     "Rbias": 8942.8,
     "flatOffset": -0.121,
     "flatScatter": 1.132,
-    "chi2Ratio": 0.99
+    "chi2Ratio": 0.99,
+    "r": 0.229
    }
   },
   {
@@ -493,7 +498,8 @@ export const SURV_EXCESS = {
     "Rbias": 6726.1,
     "flatOffset": 1.361,
     "flatScatter": 1.334,
-    "chi2Ratio": 1.41
+    "chi2Ratio": 1.41,
+    "r": 0.541
    }
   }
  ],
@@ -516,7 +522,8 @@ export const SURV_EXCESS = {
   "Rbias": 6373.0,
   "flatOffset": 3.875,
   "flatScatter": 7.976,
-  "chi2Ratio": 37.54
+  "chi2Ratio": 37.54,
+  "r": 0.987
  },
  "triangles": 1601,
  "misprints": 21,

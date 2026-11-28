@@ -4,6 +4,7 @@
 // document (flux verbatim src/data/prose/seis.js) ; n'expose que
 // wire()/draw()/stop(). Les fonctions pures sont dupliquées, testées,
 // dans src/tabs/seis/logic.js.
+import { figFitBox, fbNum } from "../../core/fitbox.js";
 import { setupCanvas } from "../../core/canvas.js";
 import { makeT } from "../../core/i18n.js";
 import { FIG } from "../../core/fig.js";
@@ -188,13 +189,13 @@ function seisRadiusCorrectedGroups(){
 // Hauteur/positions calculées depuis S.length (pas de constante figée par
 // nombre de lignes) : le nombre de séismes documentés change au fil des
 // campagnes de `fog build seis-radius` (ex-scripts/build_seis_radius.py), sans toucher à cette fonction.
-function seisRadiusFigGeneric(S, hostId, altSuffix, stampSuffix){
+function seisRadiusFigGeneric(S, hostId, altSuffix, stampSuffix, F = null){
   const host = $(hostId); if(!host) return;
   const C = FIG.C;
   const rowH = 34, topY = 40, n = S.length;
   const lastY = topY + (n - 1) * rowH;
   const gridBottom = lastY + 22, lineBottom = lastY + 26;
-  const tickY = gridBottom + 18, trueLabelY = tickY + 18, H = trueLabelY + 40;
+  const tickY = gridBottom + 18, trueLabelY = tickY + 18, H = trueLabelY + (F ? 112 : 40);   // + l'encadré de l'ajustement
   const f = FIG.make({ w:380, h:H,
     alt:`Earth radius reconstructed from real Rayleigh-wave arrivals, ${n - 1} earthquakes, plus all combined` + altSuffix });
   const ST = S.map(q => ctStats(q[1]));
@@ -217,8 +218,16 @@ function seisRadiusFigGeneric(S, hostId, altSuffix, stampSuffix){
     f.path(`M${bx(s.q1)} ${y-9} H${bx(s.q3)} V${y+9} H${bx(s.q1)} Z`, { c:col, w:last ? 2 : 1.4, fill:"none" });
     f.line(bx(s.med), y-9, bx(s.med), y+9, { c:col, w:2.6 });
     s.out.forEach(o => f.dot(bx(o), y, { r:2.2, c:col }));
+    // r du séisme (2026-11-27, règle de l'onglet courbure), à droite des boîtes
+    if (F) f.note(378, y + 4, F[i].r.toFixed(2), { anchor:"end", c: col, size: 9.5 });
   });
+  if (F) f.note(378, 30, "r", { anchor:"end", size: 9.5 });
   f.note(4, trueLabelY, t("sq-radius-axis"));
+  // l'encadré de l'ajustement de tous les séismes (core/fitbox.js) : la médiane, r des temps contre Δ/v, la dispersion ; pas de
+  // χ²/ν, les pointés LR n'ont pas d'erreur publiée
+  if (F) { const s = ST[ST.length - 1], a = F[F.length - 1];
+    figFitBox(f, 376, trueLabelY + 14, { R: `${Math.round(s.med).toLocaleString(document.documentElement.lang || "en")} km`, r: a.r, scatter: `${fbNum(a.scat, 1)} min`, chi2nu: null,
+      title: t("sq-radius-all").replace("{k}", S.length - 1).replace(/<[^>]+>/g, ""), col: FIG.C.ink, align: "right" }); }
   f.notToScale(ST[ST.length - 1].n + stampSuffix);
   f.mountIn(host);
 }
@@ -229,9 +238,25 @@ function seisEventCountStamp(){
   const years = SEIS_RADIUS_EVENTS.map(ev => parseInt(ev.name.match(/\d{4}$/)[0], 10));
   return ` real arrivals, ${SEIS_RADIUS_EVENTS.length} earthquakes ${Math.min(...years)}–${Math.max(...years)}`;
 }
-function seisRadiusFig(){ seisRadiusFigGeneric(seisRadiusGroups(), "seisRadiusFig", "", seisEventCountStamp()); }
-function seisRadiusFig2(){ seisRadiusFigGeneric(seisRadiusCorrectedGroups(), "seisRadiusFig2", ", ocean/continent path correction applied", " real arrivals, ocean/continent path correction applied"); }
-function seisRadiusTableGeneric(S, tbodyId){
+function seisRadiusFig(){ seisRadiusFigGeneric(seisRadiusGroups(), "seisRadiusFig", "", seisEventCountStamp(), seisFitStats(() => SEIS_V20)); }
+function seisRadiusFig2(){ seisRadiusFigGeneric(seisRadiusCorrectedGroups(), "seisRadiusFig2", ", ocean/continent path correction applied", " real arrivals, ocean/continent path correction applied", seisFitStats(seisPathV)); }
+// 2026-11-27 (règle de l'onglet courbure) : pour chaque séisme, la corrélation r du temps d'arrivée avec Δ/v, et la
+// dispersion des temps autour de la droite t = R Δ/v par zéro (minutes) ; pas de χ²/ν : les pointés LR de l'ISC n'ont pas
+// d'erreur publiée, et la dispersion vient surtout de la vitesse qui change d'un trajet à l'autre.
+function seisFitStats(vOf){
+  const one = (rows) => {
+    const x = rows.map(([, , , d, , of]) => SRAD(d) / vOf(of)), y = rows.map((r) => r[4]), n = x.length;
+    const mx = x.reduce((a, b) => a + b, 0) / n, my = y.reduce((a, b) => a + b, 0) / n;
+    let a = 0, b = 0, c = 0, sxy = 0, sxx = 0;
+    for (let i = 0; i < n; i++) { a += (x[i] - mx) * (y[i] - my); b += (x[i] - mx) ** 2; c += (y[i] - my) ** 2; sxy += x[i] * y[i]; sxx += x[i] * x[i]; }
+    const R = sxy / sxx, ss = y.reduce((s, v, i) => s + (v - R * x[i]) ** 2, 0);
+    return { r: a / Math.sqrt(b * c), scat: Math.sqrt(ss / Math.max(1, n - 1)) / 60 };
+  };
+  const per = SEIS_RADIUS_EVENTS.map(ev => one(SEIS_ARRIVALS[ev.key]));
+  per.push(one(SEIS_RADIUS_EVENTS.flatMap(ev => SEIS_ARRIVALS[ev.key])));
+  return per;
+}
+function seisRadiusTableGeneric(S, tbodyId, F = null){
   const tb = $(tbodyId); if(!tb) return;
   tb.innerHTML = S.map((q, i) => {
     const s = ctStats(q[1]), last = i === S.length - 1;
@@ -240,11 +265,12 @@ function seisRadiusTableGeneric(S, tbodyId){
     return `<tr${last ? ' style="border-top:2px solid var(--ink-soft)"' : ""}><td>${lbl}</td><td>${s.n}</td>` +
       `<td><b>${Math.round(s.med).toLocaleString("en-US")} km</b></td>` +
       `<td>${Math.round(s.q1).toLocaleString("en-US")}–${Math.round(s.q3).toLocaleString("en-US")} km</td>` +
-      `<td>${pc >= 0 ? "+" : "−"}${Math.abs(pc).toFixed(1)}%</td></tr>`;
+      `<td>${pc >= 0 ? "+" : "−"}${Math.abs(pc).toFixed(1)}%</td>` +
+      (F ? `<td>${F[i].r.toFixed(3)}</td><td>${F[i].scat.toFixed(1)} min</td>` : "") + `</tr>`;
   }).join("");
 }
-function seisRadiusTable(){ seisRadiusTableGeneric(seisRadiusGroups(), "seisRadiusRows"); }
-function seisRadiusTable2(){ seisRadiusTableGeneric(seisRadiusCorrectedGroups(), "seisRadiusRows2"); }
+function seisRadiusTable(){ seisRadiusTableGeneric(seisRadiusGroups(), "seisRadiusRows", seisFitStats(() => SEIS_V20)); }
+function seisRadiusTable2(){ seisRadiusTableGeneric(seisRadiusCorrectedGroups(), "seisRadiusRows2", seisFitStats(seisPathV)); }
 function seisRadiusReadGeneric(S, elId){
   const el = $(elId); if(!el) return;
   const s = ctStats(S[S.length - 1][1]);

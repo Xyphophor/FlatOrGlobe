@@ -2413,7 +2413,7 @@ export const HOME_FIGS = {
   surv: ["survPairFig", drawSurvPair], obs: ["obsHomeFig", null], ct: ["ct-figOpen", null],
   ecl: ["eclHomeFig", drawEclHome], curv: ["curvHomeFig", drawCurvHome], avia: ["aviaHomeFig", drawAviaHome],
   rx: ["rxHomeFig", drawRxHome], results: ["resultsHomeFig", drawResultsHome],
-  rot: ["rotHomeFig", null], orb: ["orbHomeFig", null], sat: ["satHomeFig", null], scale: ["scaleHomeFig", null], atmo: ["atmoHomeFig", null], moon: ["moonHomeFig", null], map: ["mapHomeFig", null], phys: ["physHomeFig", null], aether: ["aetherHomeFig", null], rocket: ["rocketHomeFig", null], persp: ["perspHomeFig", null], rules: ["rulesHomeFig", null], cases: ["casesHomeFig", null],   // epic19 (+ map 2026-10-08) : figures de leur onglet, chargées par l'accueil
+  rot: ["rotHomeFig", null], orb: ["orbHomeFig", null], sat: ["satHomeFig", null], scale: ["scaleHomeFig", null], atmo: ["atmoHomeFig", null], moon: ["moonHomeFig", null], map: ["mapHomeFig", null], phys: ["physHomeFig", null], aether: ["aetherHomeFig", null], rocket: ["rocketHomeFig", null], persp: ["perspHomeFig", null], kappa: ["kappaHomeFig", null], math: ["mathHomeFig", null], rules: ["rulesHomeFig", null], cases: ["casesHomeFig", null],   // epic19 (+ map 2026-10-08) : figures de leur onglet, chargées par l'accueil
 };
 export function drawHomeFig(key, host, extra = {}) {
   const spec = HOME_FIGS[key]; if (!spec || !host) return false;
